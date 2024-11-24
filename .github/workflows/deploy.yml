@@ -32,8 +32,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          # 或者使用 SSH key:
-          # key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "docs/.vuepress/dist/"
+          source: "docs/.vuepress/dist/*"
           target: "/home/lighthouse/odyssey"
-          strip_components: 3 
+          strip_components: 2
+          overwrite: true
