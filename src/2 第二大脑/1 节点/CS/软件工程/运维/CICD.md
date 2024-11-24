@@ -35,7 +35,7 @@ date modified: 2024-11-12
 
 ## GitHub Actions 工作流脚本
 
-GitHub Actions 是 GitHub 提供的持续集成和持续部署（CI/CD）服务。通过添加这个脚本，你可以实现以下功能：
+[[GitHub Actions]] 是 GitHub 提供的持续集成和持续部署（CI/CD）服务。通过添加这个脚本，你可以实现以下功能：
 
 1. **自动构建**: 每当你推送新的代码到 GitHub 仓库时，这个脚本会自动运行并构建你的 VuePress 网站。
 
