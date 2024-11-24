@@ -2,7 +2,7 @@
 docs/.vuepress/dist/
 .temp/
 .cache/
-
+.obsidian/
 # Node 模块
 node_modules/
 

@@ -14,7 +14,10 @@ FastAPI 是一个可快速构建 API 服务的 Web 框架，可与 NodeJS 和 Go
 
 ## 开发部署
 
-安装 `uvicorn` 作为 asgi 应用服务器
+安装 ```python3
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+```0 作为 asgi 应用服务器
 
 ```text
 pip install uvicorn
@@ -62,7 +65,10 @@ pip install uvicorn
 pip install gunicorn
 ```
 
-Shell 中执行 `gunicorn -v` 有版本输出表示安装成功
+Shell 中执行 ```python3
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+```1 有版本输出表示安装成功
 
   
 2.以配置文件方式启动应用
@@ -115,11 +121,26 @@ gunicorn main:app -b 0.0.0.0:8000 -w 4 -k uvicorn.workers.UvicornWorker --daemon
 
 这是一个启动命令，主要作用是使用 gunicorn 作为应用部署服务器，并指定服务器的启动参数：
 
-- `main:app` 指定了 Gunicorn 要运行的应用程序入口点；
-- `-b 0.0.0.0:8000` 指定了服务器的 IP 地址和端口；
-- `-w 4` 指定了 Gunicorn 使用 4 个工作进程同时处理请求；
-- `-k uvicorn.workers.UvicornWorker` 指定使用 UvicornWorker 作为工作进程的类型；
-- `--daemon` 参数表示将服务器以守护进程 (daemon) 模式启动（后台运行）。
+- ```python3
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+```2 指定了 Gunicorn 要运行的应用程序入口点；
+- ```python3
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+```3 指定了服务器的 IP 地址和端口；
+- ```python3
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+```4 指定了 Gunicorn 使用 4 个工作进程同时处理请求；
+- ```python3
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+```5 指定使用 UvicornWorker 作为工作进程的类型；
+- ```python3
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+```6 参数表示将服务器以守护进程 (daemon) 模式启动（后台运行）。
 
 ## 停止项目
 
@@ -147,110 +168,97 @@ kill -9 进程pid
 
 脚本示例：
 
-```bash
-#!/bin/bash
-​
-# 查找 gunicorn 主进程 PID
-gunicorn_pid=$(ps aux | grep 'gunicorn' | grep -v 'grep' | awk '{print $2}')
-​
-# 如果找到了主进程 PID
-if [ -n "$gunicorn_pid" ]; then
-  echo "Found gunicorn process: $gunicorn_pid"
-  
-  # 给主进程发 SIGINT 信号，请求正常停止进程
-  kill -INT $gunicorn_pid
-  
-  # 睡眠 5 秒等待主进程结束 
-  sleep 5
-  
-  # 查找所有 gunicorn 子进程 PID
-  gunicorn_child_pids=$(pstree -p $gunicorn_pid | grep -oP '([0-9]+)(?=\))')
-  
-  # 如果找到了子进程 PID
-  if [ -n "$gunicorn_child_pids" ]; then
-    echo "Found gunicorn child processes: $gunicorn_child_pids"
-    
-    # 杀死所有子进程
-    for pid in $gunicorn_child_pids; do
-      kill -9 $pid
-    done
-  fi
-  
-  echo "Stopped gunicorn process and child processes"
-  
-else
-  echo "No running gunicorn process found"
-fi
-```
+```python3
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```0
 
 这个脚本可以完成以下操作：
 
 1. 查找 gunicorn 主进程 PID
 2. 给主进程发送 SIGINT 信号请求正常关闭
 3. 睡眠 5 秒等待主进程结束
-4. 使用 `pstree` 命令查找所有 gunicorn 子进程 PID
-5. 使用 `kill` 命令杀死所有子进程
+4. 使用 ```python3
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+```7 命令查找所有 gunicorn 子进程 PID
+5. 使用 ```python3
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+```8 命令杀死所有子进程
 
 您只需要将以上代码保存到一个文件中 (例如 stop_gunicorn.sh)，并确保该文件有执行权限，然后在命令行界面运行该脚本，即可一次性停止 gunicorn 进程和所有子进程：
 
-```text
-bash stop_gunicorn.sh
-```
+```python3
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```1
 
 ## 配置开机自启 (可选）
 
 配置 gunicorn.service 服务开机自启动
 
-```text
-cat >/usr/lib/systemd/system/gunicorn.service << EOF
-[Unit]
-Description=Gunicorn fast
-After=syslog.target network.target remote-fs.target nss-lookup.target
-[Service]
-Type=forking
-PIDFile=/var/run/gunicorn.pid
-ExecStart=/root/.local/share/virtualenvs/fastapi-Xq8atoqR/bin/gunicorn  -c 
-/opt/web/fastapi/gunicorn.py main:app
-ExecReload=/bin/kill -s HUP $MAINPID
-ExecStop=/bin/kill -s QUIT $MAINPID
-PrivateTmp=true
- 
-[Install]
-WantedBy=multi-user.target
- 
-EOF
-```
+```python3
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```2
 
 依次执行下面命令
 
-```text
-systemctl daemon-reload
-systemctl enable gunicorn
-systemctl start gunicorn
-```
+```python3
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```3
 
 查看服务状态
 
-```text
-systemctl status gunicorn
-```
+```python3
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```4
 
 ## 配置 Nginx 代理访问 (可选）
 
-```nginx
-server {
-            listen 80;
-           # listen 443 ssl;
-            server_name api.hmily.vip;
-            access_log  /var/log/nginx/access.log;
-            location / {
-                proxy_pass http://127.0.0.1:8000;
-                proxy_set_header Host $host;
-                proxy_set_header X-Forwarded-For
-                $proxy_add_x_forwarded_for;
-        }
-    }
-```
+```python3
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```5
 
 运行 nginx -s reload，至此就完成了 FastAPI 的生产部署！
 
@@ -264,33 +272,55 @@ server {
 
 1.首先修改源文件，模板文件路径如下：
 
-```text
-fastapi/openapi/docs.py
-```
+```python3
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```6
 
 把 docs.py 文件里的下面这三行
 
 ```python3
-swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui-bundle.js",
-swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui.css",
-swagger_favicon_url: str = "https://fastapi.tiangolo.com/img/favicon.png",
-```
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```7
 
 修改为
 
 ```python3
-swagger_js_url: str="/static/swagger-ui/swagger-ui-bundle.js",
-swagger_css_url: str="/static/swagger-ui/swagger-ui.css",
-swagger_favicon_url: str="/static/swagger-ui/favicon.png",
-```
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```8
 
 2.修改我们的项目代码，添加下面这段代码
 
 ```python3
-from fastapi.staticfiles import StaticFiles
-app.mount('/static', StaticFiles(directory='static'),
-          name='static')
-```
+from fastapi import FastApi
+
+app = FastApi()
+
+
+@app.get('/hello')
+async def hello():
+    return {'message': 'hello World'}
+```9
 
 注意：directory 路径需要根据自己的实际情况设置。
 
