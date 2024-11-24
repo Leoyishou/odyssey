@@ -1,0 +1,202 @@
+{
+  "settings": {
+    "CUSTOM_REGEXPS": {
+      "1000Phares": "",
+      "Basic": "(A:.*?\\nB:.*?)(?:\\n\\*\\*suggestion: (.*?)\\*\\*)",
+      "Basic-75a65---字号50": "",
+      "Basic-a5dd6": "",
+      "Cloze": "",
+      "Friends": "",
+      "MJ05-美剧模板": "",
+      "Obsidian-basic-reversed-source": "",
+      "Obsidian-basic-reversed-source-code": "",
+      "Obsidian-basic-source": "",
+      "Obsidian-basic-source-code": "",
+      "Obsidian-cloze-source": "",
+      "Obsidian-cloze-source-code": "",
+      "Obsidian-spaced-source": "",
+      "Obsidian-spaced-source-code": "",
+      "VocabularySpelling": "",
+      "镇考机经 7.0": ""
+    },
+    "FILE_LINK_FIELDS": {
+      "1000Phares": "Phrase Eng",
+      "Basic": "Front",
+      "Basic-75a65---字号50": "Front",
+      "Basic-a5dd6": "Front",
+      "Cloze": "Text",
+      "Friends": "Timeline",
+      "MJ05-美剧模板": "Timeline",
+      "Obsidian-basic-reversed-source": "Front",
+      "Obsidian-basic-reversed-source-code": "Front",
+      "Obsidian-basic-source": "Front",
+      "Obsidian-basic-source-code": "Front",
+      "Obsidian-cloze-source": "Text",
+      "Obsidian-cloze-source-code": "Text",
+      "Obsidian-spaced-source": "Prompt",
+      "Obsidian-spaced-source-code": "Prompt",
+      "VocabularySpelling": "Word",
+      "镇考机经 7.0": "word"
+    },
+    "CONTEXT_FIELDS": {
+      "Basic": "Back"
+    },
+    "FOLDER_DECKS": {
+      "Untitled": "",
+      "hotel": "",
+      "Untitled 1": "",
+      "Review": ""
+    },
+    "FOLDER_TAGS": {
+      "Untitled": "",
+      "hotel": "",
+      "Untitled 1": "",
+      "Review": ""
+    },
+    "Syntax": {
+      "Begin Note": "START",
+      "End Note": "END",
+      "Begin Inline Note": "STARTI",
+      "End Inline Note": "ENDI",
+      "Target Deck Line": "TARGET DECK",
+      "File Tags Line": "FILE TAGS",
+      "Delete Note Line": "DELETE",
+      "Frozen Fields Line": "FROZEN"
+    },
+    "Defaults": {
+      "Tag": "Obsidian_to_Anki",
+      "Deck": "review",
+      "Scheduling Interval": 0,
+      "Add File Link": false,
+      "Add Context": false,
+      "CurlyCloze": false,
+      "CurlyCloze - Highlights to Clozes": false,
+      "ID Comments": true,
+      "Add Obsidian Tags": false
+    }
+  },
+  "Added Media": [],
+  "File Hashes": {
+    "Review/23-10-06hen.md": "d858be88ece9e1f9149f1d8081f6b49d",
+    "hotel/Untitled.md": "c08799e4d04d326a5d5c6ca0a4cfee84",
+    "Untitled.md": "4bfb1355fe90e72ea29f4e7c37d93a5f",
+    "README.md": "58b90034c27eb123aa7d9d79f99a6402",
+    "LICENSE.md": "b5586e59a56cd23ee2b60dfe4f2dfaf3",
+    "1-desire.md": "21262286f6bb5db1a98f0678713f67b7",
+    "5-speaking.md": "375490c043f73e32624b5c790bb1fa7d",
+    "6-writing.md": "096dfb4a1a2f7766db140bf338e58682",
+    "4-listening.md": "798f902b131a37e07834f87d05cd6c74",
+    "2-common.md": "98df1add9da12e6a47e26a7a440f1729",
+    "3-reading.md": "e596dadec8e82658da9263552a68919f",
+    "Review/Untitled.md": "d41d8cd98f00b204e9800998ecf8427e",
+    "Review/Untitled 1.md": "78eda3e687dacacc60a5540c0ba186b2",
+    "Review/1008.md": "31a80fcb88142d23b840ef6449234d68",
+    "Untitled 1.md": "d6e5ca48889a3c911dea425427c6aadc",
+    "Review/10.md": "b8b474fcc50acddcaa1258f8b55f0acb",
+    "Untitled 1/1.md": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "fields_dict": {
+    "1000Phares": [
+      "Phrase Eng",
+      "Phrase Voice",
+      "Phrase Vn"
+    ],
+    "Basic": [
+      "Front",
+      "Back"
+    ],
+    "Basic-75a65---字号50": [
+      "Front",
+      "Back"
+    ],
+    "Basic-a5dd6": [
+      "Front",
+      "Back"
+    ],
+    "Cloze": [
+      "Text",
+      "Back Extra"
+    ],
+    "Friends": [
+      "Timeline",
+      "Audio",
+      "Video",
+      "Subtitle-EN",
+      "Subtitle-CN",
+      "Notes"
+    ],
+    "MJ05-美剧模板": [
+      "Timeline",
+      "Audio",
+      "Video",
+      "Subtitle-EN",
+      "Subtitle-CN",
+      "Notes"
+    ],
+    "Obsidian-basic-reversed-source": [
+      "Front",
+      "Back",
+      "Source"
+    ],
+    "Obsidian-basic-reversed-source-code": [
+      "Front",
+      "Back",
+      "Source"
+    ],
+    "Obsidian-basic-source": [
+      "Front",
+      "Back",
+      "Source"
+    ],
+    "Obsidian-basic-source-code": [
+      "Front",
+      "Back",
+      "Source"
+    ],
+    "Obsidian-cloze-source": [
+      "Text",
+      "Extra",
+      "Source"
+    ],
+    "Obsidian-cloze-source-code": [
+      "Text",
+      "Extra",
+      "Source"
+    ],
+    "Obsidian-spaced-source": [
+      "Prompt",
+      "Source"
+    ],
+    "Obsidian-spaced-source-code": [
+      "Prompt",
+      "Source"
+    ],
+    "VocabularySpelling": [
+      "Word",
+      "WordType",
+      "Phonetic",
+      "Example",
+      "Sound",
+      "Image",
+      "Content",
+      "Copyright"
+    ],
+    "镇考机经 7.0": [
+      "word",
+      "pos",
+      "audio",
+      "definition",
+      "example_en",
+      "example_zh",
+      "note",
+      "mnemonic",
+      "collocation",
+      "derivative",
+      "reference",
+      "synonym",
+      "antonym",
+      "word_list",
+      "icon_img"
+    ]
+  }
+}
