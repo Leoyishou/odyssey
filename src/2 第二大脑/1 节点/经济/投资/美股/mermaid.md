@@ -78,14 +78,54 @@ graph LR
 
 1. 样式定义：使用 `classDef` 定义了不同的样式类。
 2. 子图（Subgraph）：将券处理（CouponHandle）部分封装在一个子图中，使结构更清晰。
-3. 方向控制：在子图中使用 `direction TB`（Top to Bottom）控制流程方向。
+3. 方向控制：在子图中使用 ```mermaid
+graph LR
+    A[travelco] -->|1. 请求数据| B(SPA)
+    B -->|2. 返回数据| A
+    A -->|3. 存储数据| C[(Redis)]
+    D[Captain] -->|4. 读取数据| C
+
+
+    class A,B,D component;
+    class C database;
+```0（Top to Bottom）控制流程方向。
 4. 。
 5. 样式应用：对不同的节点应用了自定义样式。
 6. 注释：添加了一个指向 Context 的注释。
 7. 图标：在 Context 节点旁添加了一个齿轮图标（使用 Font Awesome）。
 8. 点击事件：为 Context 节点添加了一个点击事件（注意：这在某些 Mermaid 渲染器中可能不支持）。
-9. 换行：在节点文本中使用 `<br>` 来实现换行，使显示更整洁。
-10. 连接线样式：使用 `---` 代替 `-->` 来创建无箭头的连接线（用于图标连接）。
+9. 换行：在节点文本中使用 ```mermaid
+graph LR
+    A[travelco] -->|1. 请求数据| B(SPA)
+    B -->|2. 返回数据| A
+    A -->|3. 存储数据| C[(Redis)]
+    D[Captain] -->|4. 读取数据| C
+
+
+    class A,B,D component;
+    class C database;
+```1 来实现换行，使显示更整洁。
+10. 连接线样式：使用 ```mermaid
+graph LR
+    A[travelco] -->|1. 请求数据| B(SPA)
+    B -->|2. 返回数据| A
+    A -->|3. 存储数据| C[(Redis)]
+    D[Captain] -->|4. 读取数据| C
+
+
+    class A,B,D component;
+    class C database;
+```2 代替 ```mermaid
+graph LR
+    A[travelco] -->|1. 请求数据| B(SPA)
+    B -->|2. 返回数据| A
+    A -->|3. 存储数据| C[(Redis)]
+    D[Captain] -->|4. 读取数据| C
+
+
+    class A,B,D component;
+    class C database;
+```3 来创建无箭头的连接线（用于图标连接）。
 
 [mermaid](mermaid.md)里这个染色不错
 

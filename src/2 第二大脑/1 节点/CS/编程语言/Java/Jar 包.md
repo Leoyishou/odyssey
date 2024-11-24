@@ -57,7 +57,7 @@ https://www.zhihu.com/question/283746123/answer/2046064283
    - 在 `pom.xml` 或 `build.gradle` 中明确指定版本号。
 
 3. 打包配置：
-   - 确保 `META-INF/MANIFEST.MF` 文件包含正确的信息（如版本、构建日期等）。
+   - 确保 `logback.xml`0 文件包含正确的信息（如版本、构建日期等）。
    - 如果JAR是可执行的，指定正确的 Main-Class。
    - 考虑是否需要打包源代码（source JAR）和JavaDoc。
 

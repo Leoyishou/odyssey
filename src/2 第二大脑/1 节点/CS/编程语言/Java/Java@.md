@@ -323,8 +323,8 @@ https://zhuanlan.zhihu.com/p/120913117
 
 | 单词             | 次数  | 中文翻译                                  |
 | -------------- | --- | ------------------------------------- |
-| legitimate<br> |     | 合法的<br>                               |
-| verbosity<br>  |     | 繁琐<br>                                |
+| `legitimate<br>` |     | `合法的<br>`                               |
+| `verbosity<br>`  |     | `繁琐<br>`                                |
 | generics       | 81  | 泛型（复数）|
 | wildcard       | 75  | 通配符                                   |
 | constants      | 70  | 常量                                    |

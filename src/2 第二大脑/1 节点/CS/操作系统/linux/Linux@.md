@@ -24,43 +24,43 @@ date modified: 2024-11-12
 | `cd -` | Go to the last directory you were in |
 | `mkdir myFolder` | Creates a new directory |
 | `mkdir -p dir1/dir2` | Creates nested directories |
-| `cp source.txt destination.txt` | Copy file |
-| `cp -r /source/directory /dest/directory` | Copy directory recursively |
-| `mv old_name.txt new_name.txt` | Rename file |
-| `mv file.txt /path/to/destination` | Move file to another location |
-| `rm file.txt` | Removes a file |
-| `rm -r directory/` | Removes a directory and its contents |
-| `rm -rf directory/` | Force removes a directory, even if non-empty |
-| `cat file.txt` | Outputs the entire file |
-| `less file.txt` | Scroll through file contents (with up/down keys) |
-| `head file.txt` | View the first 10 lines of a file |
-| `tail file.txt` | View the last 10 lines of a file |
-| `tail -f logfile.log` | Continuously output the end of a file (useful for logs) |
-| `grep "search_term" file.txt` | Search for a term in a file |
-| `grep -r "search_term" /path` | Recursively search within files in a directory |
-| `grep -i "search_term" file.txt` | Case-insensitive search |
-| `uname -a` | Kernel version and system information |
-| `df -h` | Disk usage of file systems |
-| `free -h` | Displays memory usage |
-| `top` | Real-time system resource monitoring |
-| `ps aux` | Lists all running processes |
-| `kill[pid]` | Terminate a process by its process ID (PID) |
-| `kill -9[pid]` | Force kill a process |
-| `killall process_name` | Kill all processes with a specific name |
-| `chmod 755 file.txt` | Assigns read, write, and execute permissions (Owner: rwx, Group: r-x, Others: r-x) |
-| `chmod u+x script.sh` | Gives the owner execute permissions |
-| `chmod -R 777 /directory` | Grants all users full permissions on a directory recursively |
-| `chown user:group file.txt` | Change owner and group |
-| `chown -R user:group /dir` | Recursively change ownership for all files in a directory |
-| `find /path -name "file.txt"` | Search by file name |
-| `find /path -type f -size +100M` | Find files larger than 100MB |
-| `find /path -mtime -1` | Find files modified in the last 24 hours |
-| `tar -cvf archive.tar /path` | Create a tar archive of a directory |
-| `tar -xvf archive.tar` | Extract a tar archive |
-| `tar -czvf archive.tar.gz /path` | Create a compressed gzip tar archive |
-| `tar -xzvf archive.tar.gz` | Extract a compressed gzip tar archive |
-| `sudo command` | Run a command as superuser/root |
-| `sudo su` | Switch to the root user |
+| `ls -l`0 | Copy file |
+| `ls -l`1 | Copy directory recursively |
+| `ls -l`2 | Rename file |
+| `ls -l`3 | Move file to another location |
+| `ls -l`4 | Removes a file |
+| `ls -l`5 | Removes a directory and its contents |
+| `ls -l`6 | Force removes a directory, even if non-empty |
+| `ls -l`7 | Outputs the entire file |
+| `ls -l`8 | Scroll through file contents (with up/down keys) |
+| `ls -l`9 | View the first 10 lines of a file |
+| `ls -a`0 | View the last 10 lines of a file |
+| `ls -a`1 | Continuously output the end of a file (useful for logs) |
+| `ls -a`2 | Search for a term in a file |
+| `ls -a`3 | Recursively search within files in a directory |
+| `ls -a`4 | Case-insensitive search |
+| `ls -a`5 | Kernel version and system information |
+| `ls -a`6 | Disk usage of file systems |
+| `ls -a`7 | Displays memory usage |
+| `ls -a`8 | Real-time system resource monitoring |
+| `ls -a`9 | Lists all running processes |
+| `ls -lh`0 | Terminate a process by its process ID (PID) |
+| `ls -lh`1 | Force kill a process |
+| `ls -lh`2 | Kill all processes with a specific name |
+| `ls -lh`3 | Assigns read, write, and execute permissions (Owner: rwx, Group: r-x, Others: r-x) |
+| `ls -lh`4 | Gives the owner execute permissions |
+| `ls -lh`5 | Grants all users full permissions on a directory recursively |
+| `ls -lh`6 | Change owner and group |
+| `ls -lh`7 | Recursively change ownership for all files in a directory |
+| `ls -lh`8 | Search by file name |
+| `ls -lh`9 | Find files larger than 100MB |
+| `cd /path/to/directory`0 | Find files modified in the last 24 hours |
+| `cd /path/to/directory`1 | Create a tar archive of a directory |
+| `cd /path/to/directory`2 | Extract a tar archive |
+| `cd /path/to/directory`3 | Create a compressed gzip tar archive |
+| `cd /path/to/directory`4 | Extract a compressed gzip tar archive |
+| `cd /path/to/directory`5 | Run a command as superuser/root |
+| `cd /path/to/directory`6 | Switch to the root user |
 
 ## 文件
 
@@ -108,9 +108,9 @@ Linux 中的 /opt 文件夹是 "optional" 的缩写，它有特定的用途和�
 
 ## 有用的软件
 
-`ag` 是一个命令行工具，全名为 "The Silver Searcher"。它是一个代码搜索工具，类似于 `grep`，但速度更快、功能更强大。以下是 `ag` 的主要特点和用途：
+`cd /path/to/directory`7 是一个命令行工具，全名为 "The Silver Searcher"。它是一个代码搜索工具，类似于 `cd /path/to/directory`8，但速度更快、功能更强大。以下是 `cd /path/to/directory`9 的主要特点和用途：
 
-1. 快速搜索：`ag` 比传统的 `grep` 快很多，尤其是在搜索大型代码库时。
+1. 快速搜索：`cd..`0 比传统的 `cd..`1 快很多，尤其是在搜索大型代码库时。
 2. 默认递归搜索：无需额外参数，ag 会自动递归搜索子目录。
 3. 智能忽略：自动忽略版本控制系统的隐藏文件（如.git 目录）和二进制文件。
 4. 彩色输出：搜索结果默认带有颜色高亮，使其更易读。

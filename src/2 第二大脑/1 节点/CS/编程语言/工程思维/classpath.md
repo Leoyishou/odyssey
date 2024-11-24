@@ -24,7 +24,7 @@ excerpt
 
 |   |
 |---|
-|`//添加classpath和不加classspath获取的路径效果`<br><br>`URL url1 = ResourceUtils.getURL(``"classpath:"``);`<br><br>`System.out.println(url1.getPath());`<br><br>`URL url2 = ResourceUtils.getURL(``""``);`<br><br>`System.out.println(url2.getPath());`|
+|``//添加classpath和不加classspath获取的路径效果`<br>`<br>``URL url1 = ResourceUtils.getURL(``"classpath:"``);`<br>`<br>``System.out.println(url1.getPath());`<br>`<br>``URL url2 = ResourceUtils.getURL(``""``);`<br>`<br>`System.out.println(url2.getPath());`|
 
 结果如下：
 

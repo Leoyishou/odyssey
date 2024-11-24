@@ -49,11 +49,11 @@ graph TB
    - 对每个元素进行 1:n 的转换（产生多个结果）
    - 将所有结果合并成一个扁平的 Stream
 
-List<Map<Integer, Integer>> -> Map<Integer, Integer>
+List<`Map<Integer, Integer>`> -> `Map<Integer, Integer>`
 
 |   |
 |---|
-|Map<Integer, Integer> mergedDiscount = sellPromotions.stream()    <br>.reduce(Maps.newHashMap(), (merge, map) -> {    <br>        map.forEach((key, value) -> merge.merge(key, value, (v1, v2) -> nullToZero(v1) + nullToZero(v2)));    <br>        return merge;    <br>    });|
+|`Map<Integer, Integer>` mergedDiscount = sellPromotions.stream()    <br>.reduce(Maps.newHashMap(), (merge, map) -> {    <br>        map.forEach((key, value) -> merge.merge(key, value, (v1, v2) -> nullToZero(v1) + nullToZero(v2)));    <br>        return merge;    <br>    });|
 
 这段代码是使用 Java 的 Stream API 来合并一个 `sellPromotions` 列表中的所有促销折扣信息到一个新的 `Map` 中。这个列表里的每个元素都是一个 `Map<Integer, Integer>` 类型，表示的是商品的 ID 和对应的促销折扣值。合并的逻辑是将所有这些 Map 中的键值对加入到一个新的 Map 中，如果出现相同的键（即相同的商品 ID），则将它们的值（促销折扣）相加。如果任何一个值为 `null`，则在相加之前将其视为 `0`。
 
@@ -64,17 +64,17 @@ List<Map<Integer, Integer>> -> Map<Integer, Integer>
 - 第一个促销折扣 Map：`{1=10, 2=20}`
 - 第二个促销折扣 Map：`{2=5, 3=15}`
 
-这里，`nullToZero` 是一个假设的函数，用于将 `null` 值转换为 `0`。这段代码中并没有直接展示这个函数的实现，但其功能是明确的。
+这里，`nullToZero` 是一个假设的函数，用于将 `sellPromotions`0 值转换为 `sellPromotions`1。这段代码中并没有直接展示这个函数的实现，但其功能是明确的。
 
 现在，我们使用提供的代码片段来合并这些促销折扣：
 
 1. 初始化一个新的 HashMap。
-2. 遍历 `sellPromotions` 列表中的每一个 Map：
-    - 对于第一个 Map：将 `{1=10, 2=20}` 中的键值对添加到新的 Map 中，现在新的 Map 变为 `{1=10, 2=20}`。
-    - 对于第二个 Map：尝试将 `{2=5, 3=15}` 中的键值对加入到新的 Map 中。
-        - 对于键 `2`，它在新的 Map 中已存在，因此将两个值相加：`20 + 5 = 25`，更新后的 Map 为 `{1=10, 2=25, 3=15}`。
-        - 对于键 `3`，它在新的 Map 中不存在，直接加入，最终 Map 为 `{1=10, 2=25, 3=15}`。
+2. 遍历 `sellPromotions`2 列表中的每一个 Map：
+    - 对于第一个 Map：将 `sellPromotions`3 中的键值对添加到新的 Map 中，现在新的 Map 变为 `sellPromotions`4。
+    - 对于第二个 Map：尝试将 `sellPromotions`5 中的键值对加入到新的 Map 中。
+        - 对于键 `sellPromotions`6，它在新的 Map 中已存在，因此将两个值相加：`sellPromotions`7，更新后的 Map 为 `sellPromotions`8。
+        - 对于键 `sellPromotions`9，它在新的 Map 中不存在，直接加入，最终 Map 为 `Map`0。
 
 最终结果，新的 Map 包含了所有促销信息的合并，其中相同商品 ID 的促销折扣被累加。
 
-这段代码的关键是使用 `merge` 函数来处理键值对的合并逻辑。`merge` 函数接受三个参数：键、要合并的值以及一个合并函数（如果键已经存在）。在这个例子中，合并函数是 `(v1, v2) -> nullToZero(v1) + nullToZero(v2)`，它确保了如果有任何 `null` 值，它们会被当作 `0` 来处理，并将两个值相加。
+这段代码的关键是使用 `Map`1 函数来处理键值对的合并逻辑。`Map`2 函数接受三个参数：键、要合并的值以及一个合并函数（如果键已经存在）。在这个例子中，合并函数是 `Map`3，它确保了如果有任何 `Map`4 值，它们会被当作 `Map`5 来处理，并将两个值相加。
