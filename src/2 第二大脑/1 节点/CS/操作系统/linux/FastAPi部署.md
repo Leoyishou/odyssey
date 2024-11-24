@@ -1,339 +1,131 @@
----
-draw:
-tags: []
-title: FastAPi部署
-date created: 2023-11-22
-date modified: 2024-11-12
----
+# Python安装与虚拟环境搭建
 
-FastAPI 是一个可快速构建 API 服务的 Web 框架，可与 NodeJS 和 Go 比肩的极高性能（归功于 Starlette 和 Pydantic），是最快的 Python Web 框架之一。更多详情见官网 [FastAPI官网地址](https://link.zhihu.com/?target=https%3A//fastapi.tiangolo.com/zh/)
+## 一、安装 Python3
 
-  
+系统默认自带 Python2.7，但有些应用需要使用 Python3。本指南将介绍如何安装 Python3.6.1 来为开发做准备。
 
-本文对 FastAPI 的开发部署以及生产环境部署做一个记录。
-
-## 开发部署
-
-安装 ```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
-```0 作为 asgi 应用服务器
-
-```text
-pip install uvicorn
+### 1. 下载安装包
+```bash
+wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz
 ```
 
-例：main.py
+### 2. 创建安装目录
+```bash
+# 查看现有 Python 位置
+whereis python
 
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
+# 创建新的安装目录
+mkdir -p /usr/local/python3
 ```
 
-nvicorn main:app --reload 开发模式下运行 热加载
-
-如果是想在 Pycharm 等 IDE 中直接运行，可以在代码中加入
-
-```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
+### 3. 解压并安装
+```bash
+tar -zxvf Python-3.6.1.tgz
+cd Python-3.6.1
+./configure --prefix=/usr/local/python3
+make && make install
 ```
 
-即可直接 run 运行，不需要使用命令行，但只适合用于开发环境。
-
-## 生产环境部署
-
-生产环境：CentOS7.x +Nginx
-
-  
-1.安装 Gunicorn
-
-Gunicorn 是一个 unix 上被广泛使用的高性能的 Python WSGI UNIX HTTP Server，和大多数的 Web 框架兼容，并具有实现简单，轻量级，高性能等特点。
-
-使用 gunicorn 启动应用程序的好处是，它可以处理大量的并发连接,，并且其使用的是预派生子进程的方式，这意味着它能够更好地利用多核 CPU。
-
-安装命令
-
-```text
-pip install uvicorn
-pip install gunicorn
+如果遇到错误 `ModuleNotFoundError: No module named '_ctypes'`，需要安装依赖：
+```bash
+yum install -y libffi-devel 
+./configure --prefix=/usr/local/python3
+make && make install
 ```
 
-Shell 中执行 ```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
-```1 有版本输出表示安装成功
-
-  
-2.以配置文件方式启动应用
-
-创建 gunicorn.py 文件，里面包含下列内容
-
-```python3
-import os
-
-# 设置守护进程
-daemon=True
-# 监听内网端口8000
-bind='0.0.0.0:8000'
-# 设置进程文件目录
-pidfile='./gunicorn.pid'
-chdir='./' # 工作目录
-# 工作模式
-worker_class='uvicorn.workers.UvicornWorker'
-# 并行工作进程数 核心数*2+1个
-workers=3  #multiprocessing.cpu_count()+1
-# 指定每个工作者的线程数
-threads=2
-# 设置最大并发量
-worker_connections = 2000
-loglevel='debug' # 错误日志的日志级别
-access_log_format = '%(t)s %(p)s %(h)s "%(r)s" %(s)s %(L)s %(b)s %(f)s" "%(a)s"'
-# 设置访问日志和错误信息日志路径
-log_dir = "./log"
-if not os.path.exists(log_dir):
-    os.makedirs(log_dir)
-accesslog = "./log/gunicorn_access.log"
-errorlog = "./log/gunicorn_error.log"
+### 4. 配置软链接
+```bash
+ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/python3/bin/pip3 /usr/bin/pip
 ```
 
-## 运行项目
+### 5. 环境变量配置
+```bash
+# 查看版本
+/usr/local/python3/bin/python3 -V
 
-1.上面的 gunicorn.py 文件配置好后，使用如下命令：
+# 编辑环境变量文件
+vim ~/.bash_profile
 
-```text
-gunicorn main:app -c gunicorn.py
+# 在现有 PATH 中添加
+PATH=$PATH:$HOME/bin:/usr/local/python3/bin
+
+# 使配置生效
+source ~/.bash_profile
+
+# 验证安装
+python3 -V  # 显示 Python 3.6.1
+python -V   # 显示 Python 2.7.5
 ```
 
-在 gunicorn_error.log 文件中看到日志输出表示启动成功。
+## 二、pip 配置
 
-2.当然也可以不用配置文件，直接执行下面命令启动应用
+### 1. pip 简介
+pip 是 Python 的包管理工具，用于安装、升级和卸载 Python 包。它能自动处理依赖关系，并从 Python Package Index (PyPI) 下载安装包。
 
-```text
-gunicorn main:app -b 0.0.0.0:8000 -w 4 -k uvicorn.workers.UvicornWorker --daemon
+### 2. pip 版本管理
+```bash
+# 查看版本
+pip -V
+
+# 升级 pip
+python3 -m pip install --upgrade pip
 ```
 
-这是一个启动命令，主要作用是使用 gunicorn 作为应用部署服务器，并指定服务器的启动参数：
+### 3. 配置国内镜像源
+```bash
+# 创建配置目录和文件
+mkdir -p ~/.pip
+vim ~/.pip/pip.conf
 
-- ```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
-```2 指定了 Gunicorn 要运行的应用程序入口点；
-- ```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
-```3 指定了服务器的 IP 地址和端口；
-- ```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
-```4 指定了 Gunicorn 使用 4 个工作进程同时处理请求；
-- ```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
-```5 指定使用 UvicornWorker 作为工作进程的类型；
-- ```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
-```6 参数表示将服务器以守护进程 (daemon) 模式启动（后台运行）。
+# 添加以下配置：
+[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
 
-## 停止项目
-
-如果想要停止 Gunicorn 项目，可以先通过查看进程树找到进程 pid，然后使用 kill 命令结束进程
-
-1.获取 gunicorn 进程树
-
-```text
-pstree -ap | grep gunicorn
+[install]
+trusted-host = mirrors.aliyun.com
 ```
 
-2.终止 gunicorn 任务
-
-```text
-kill -HUP 进程pid
+### 4. 查看已安装的包
+```bash
+python3 -m pip list
 ```
 
-3.如果使用了多进程，那么执行了上述命令后还会有子进程在运行，可以使用如下命令杀死
+## 三、Python 应用部署
 
-```text
-kill -9 进程pid
+### 1. 导出依赖清单
+在本地开发环境中执行：
+```bash
+pip3 freeze > requirements.txt
 ```
 
-当然，这样一个一个关闭太繁琐了，我们可以编写一个 Shell 脚本，来实现一键杀死所有主进程和子进程的功能。
-
-脚本示例：
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```0
-
-这个脚本可以完成以下操作：
-
-1. 查找 gunicorn 主进程 PID
-2. 给主进程发送 SIGINT 信号请求正常关闭
-3. 睡眠 5 秒等待主进程结束
-4. 使用 ```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
-```7 命令查找所有 gunicorn 子进程 PID
-5. 使用 ```python3
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, log_level="info")
-```8 命令杀死所有子进程
-
-您只需要将以上代码保存到一个文件中 (例如 stop_gunicorn.sh)，并确保该文件有执行权限，然后在命令行界面运行该脚本，即可一次性停止 gunicorn 进程和所有子进程：
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```1
-
-## 配置开机自启 (可选）
-
-配置 gunicorn.service 服务开机自启动
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```2
-
-依次执行下面命令
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```3
-
-查看服务状态
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```4
-
-## 配置 Nginx 代理访问 (可选）
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```5
-
-运行 nginx -s reload，至此就完成了 FastAPI 的生产部署！
-
-## **docs/redoc**文档显示空白问题
-
-有时候我们用不同设备或者浏览器会出现 docs/redoc 文档空白不能显示的问题，这是因为模板文件用的是外国的 cdn，所以国内访问会比较慢，出现访问失败的情况，导致显示空白。
-
-解决办法：
-
-修改 FastAPI 源文件，把模板文件保存到本地，然后修改文件路径让其从本地访问。
-
-1.首先修改源文件，模板文件路径如下：
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```6
-
-把 docs.py 文件里的下面这三行
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```7
-
-修改为
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```8
-
-2.修改我们的项目代码，添加下面这段代码
-
-```python3
-from fastapi import FastApi
-
-app = FastApi()
-
-
-@app.get('/hello')
-async def hello():
-    return {'message': 'hello World'}
-```9
-
-注意：directory 路径需要根据自己的实际情况设置。
-
-  
-
-3.把我们的 static 模板文件放置到项目根目录下，静态文件我放网盘了 [百度云文件](https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1nWFSSKtCHA0QEkhEiJTh1w%3Fpwd%3D0516)，有需要可自行下载。
-
-  
-
-最后重新运行我们的项目，便大功告成！
-
-  
-
-  
-2022.11.06  
-如需转载请详细注明来源
+### 2. 创建虚拟环境
+```bash
+# 创建虚拟环境
+python3 -m venv /path/to/new/virtual/environment
+
+# 激活虚拟环境
+cd venv/bin
+source activate
+
+# 退出虚拟环境
+deactivate
+```
+
+### 3. 安装项目依赖
+```bash
+# 升级虚拟环境中的 pip
+python3 -m pip install --upgrade pip --trusted-host pypi.corp.qunar.com
+
+# 安装依赖
+pip3 install -r /opt/project/python/test-python/requirements.txt
+```
+
+## 注意事项
+1. 在虚拟环境中更换 pip 源可能会出现异常，请参考相关文档解决
+2. 建议在虚拟环境中进行项目开发，以避免包冲突
+3. 记得在完成工作后退出虚拟环境
+
+## 参考资料
+- https://blog.csdn.net/smilehappiness/article/details/117337943
+- https://blog.csdn.net/qq_40891747/article/details/116592227
