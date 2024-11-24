@@ -49,7 +49,7 @@ TypeReference 是 Jackson 提供的一个类，用于处理包含泛型的复杂
 
   
 
-- 能够处理复杂的泛型类型，如 List<MyClass> 或 Map<String, MyClass>。
+- 能够处理复杂的泛型类型，如 `List<MyClass> 或 Map<String, MyClass>`。
 - 提供更强的类型安全性。
 
   
