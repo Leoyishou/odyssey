@@ -33,7 +33,7 @@ Class 对象表示一种类型，它是 Java 反射机制的一部分。使用 C
 
   
 
-- 不能处理泛型类型。对于复杂类型（如 List<MyClass>），不能直接使用 Class 对象进行反序列化。
+- 不能处理泛型类型。对于复杂类型，不能直接使用 Class 对象进行反序列化。
 
 
 
@@ -49,7 +49,7 @@ TypeReference 是 Jackson 提供的一个类，用于处理包含泛型的复杂
 
   
 
-- 能够处理复杂的泛型类型，如 `List<MyClass> 或 Map<String, MyClass>`。
+- 能够处理复杂的泛型类型
 - 提供更强的类型安全性。
 
   
@@ -69,5 +69,3 @@ TypeReference 是 Jackson 提供的一个类，用于处理包含泛型的复杂
 - **TypeReference**：用于泛型编程中捕获和存储泛型类型信息，尤其在需要在运行时保留泛型信息的场景下使用，例如在序列化和反序列化时。
 
   
-
-希望这些解释对你理解 Clazz 和 [TypeReference](TypeReference.md) 在 Java 中的不同用法有所帮助。如果你有更多具体的问题或需要进一步的解释，请告诉我。
