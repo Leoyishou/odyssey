@@ -34,31 +34,219 @@ date modified: 2024-11-12
 | 类别   | 子类别  | 命令                | 含义                        |     |
 | ---- | ---- | ----------------- | ------------------------- | --- |
 | 本地操作 | 仓库维度 | `git init`        | 初始化`.git`，文件夹开始被 git 控制   |     |
-|      | 分支维度 | `git branch`      | 列出、创建或删除分支                |     |
-|      |      | `git checkout`    | 切换分支或恢复工作树文件              |     |
-|      |      | `git merge`       | 合并一个或多个分支到当前分支            |     |
-|      |      | `git rebase`      | 在另一个分支基础之上重新应用提交          |     |
-|      | 文件相关 | `git add`         | 从 change 状态到 staged 状态    |     |
-|      |      | `git status`      | 查看工作目录和暂存区的状态             |     |
-|      |      | `git commit -m`   | 提交暂存区的更改                  |     |
-|      |      | `git diff`        | 显示文件的变更                   |     |
-|      |      | `git blame`       | 显示文件每一行的最后修改者             |     |
-|      | 历史相关 | `git log`         | 查看提交历史                    |     |
-|      |      | `git reset`       | 重置当前 HEAD 到指定状态           |     |
-|      |      | `git cherry-pick` | 应用某个特定的提交                 |     |
-|      |      | `git tag`         | 创建、列出、删除或验证一个 GPG 签名的标签对象 |     |
-|      | 临时存储 | `git stash`       | 暂存当前工作目录的更改               |     |
+|      | 分支维度 | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```0      | 列出、创建或删除分支                |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```1    | 切换分支或恢复工作树文件              |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```2       | 合并一个或多个分支到当前分支            |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```3      | 在另一个分支基础之上重新应用提交          |     |
+|      | 文件相关 | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```4         | 从 change 状态到 staged 状态    |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```5      | 查看工作目录和暂存区的状态             |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```6   | 提交暂存区的更改                  |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```7        | 显示文件的变更                   |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```8       | 显示文件每一行的最后修改者             |     |
+|      | 历史相关 | ```bash
+# 设置当前仓库
+git config pull.rebase true
+
+# 或全局设置
+git config --global pull.rebase true
+
+# 然后再拉取
+git pull
+```9         | 查看提交历史                    |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```0       | 重置当前 HEAD 到指定状态           |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```1 | 应用某个特定的提交                 |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```2         | 创建、列出、删除或验证一个 GPG 签名的标签对象 |     |
+|      | 临时存储 | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```3       | 暂存当前工作目录的更改               |     |
 |      |      |                   |                           |     |
-| 远程交互 | 仓库维度 | `git clone`       | 克隆远程仓库到本地                 |     |
-|      |      | `git remote`      | 查看远程仓库                    |     |
-|      |      | `git fetch orgin` | 从远程仓库下载对象和引用              |     |
-|      | 分支维度 | `git pull`        | 从远程仓库拉取最新更改并合并到当前分支       |     |
-|      |      | `git push`        | 将本地的提交推送到远程仓库             |     |
-| 配置   |      | `git config`      | 获取和设置仓库或全局选项              |     |
+| 远程交互 | 仓库维度 | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```4       | 克隆远程仓库到本地                 |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```5      | 查看远程仓库                    |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```6 | 从远程仓库下载对象和引用              |     |
+|      | 分支维度 | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```7        | 从远程仓库拉取最新更改并合并到当前分支       |     |
+|      |      | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```8        | 将本地的提交推送到远程仓库             |     |
+| 配置   |      | ```bash
+# 设置当前仓库
+git config pull.ff only
+
+# 或全局设置
+git config --global pull.ff only
+
+# 然后再拉取
+git pull
+```9      | 获取和设置仓库或全局选项              |     |
 
 ## Submodule
 
-本质就是父文件夹有一个`.git`，然后子文件夹也有`.git`
+本质就是父文件夹有一个```bash
+A---B---C (master)
+     \
+      D---E (origin/master)
+```0，然后子文件夹也有```bash
+A---B---C (master)
+     \
+      D---E (origin/master)
+```1
 
 ## diff
 

@@ -47,14 +47,94 @@ head[参数][文件]
 
 - -q 隐藏文件名
 - -v 显示文件名
-- -c<数目> 显示的字节数
-- -n<行数> 显示的行数
+- -`c<数目>` 显示的字节数
+- -`n<行数>` 显示的行数
 
 ### **实践：**
 
 |   |
 |---|
-|`head -n` `10` `test.log ：查询日志文件中的头``10``行日志;`<br><br>`head -n -``10` `test.log ：查询日志文件除了最后``10``行的其他所有日志;`|
+|```js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```0 ```js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```1 ````js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```2```js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```3```js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```4<br>`<br>```js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```5```js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```6 ```js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```7```js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```8```js
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+/var/log/secure 与安全相关的日志信息
+/var/log/maillog 与邮件相关的日志信息
+/var/log/cron 与定时任务相关的日志信息
+/var/log/spooler 与UUCP和news设备相关的日志信息
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+/var/log/wtmp 该日志文件永久记录每个用户登录、注销及系统的启动、停机的事件
+```9|
 
 ## **cat**
 
@@ -80,7 +160,7 @@ cat[-AbeEnstTuv][--help][--version]文件名
 
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `cat info.log ：查看info.log的全部日志内容`<br><br>`cat info.log \| grep` `"java"` `：查看info.log的java关键字关联的全部内容`<br><br>`cat info.log \| grep -A` `5` `"java"` `：查看info.log的java关键字后``5``行关联的全部内容`<br><br>`cat info.log \| grep -B` `10` `"java"` `：查看info.log的java关键字前``10``行关联的全部内容`<br><br>`cat info.log \| grep -C` `20` `"java"` `：查看info.log的java关键字前后``20``行关联的全部内容`<br><br>`cat -n test.log \| grep` `"debug"` `：查询关键字的日志`<br><br>`cat -n test.log \| grep` `"error"` `\| more ：分页查看，使用空格翻页(使用more/less)`<br><br>`cat -n test.log \| tail -n +``92` `\| head -n` `20` `：如得到``"地形"``关键字所在的行号是``102``行. 此时如果我想查看这个关键字前``10``行和后``10``行的日志` |
+| ``ll`0<br>`<br>`ll`1 `ll`2 ``ll`3<br>`<br>`ll`4 `ll`5 `ll`6 ``ll`7`ll`8`ll`9<br>`<br>`ls -l`0 `ls -l`1 `ls -l`2 ``ls -l`3`ls -l`4`ls -l`5<br>`<br>`ls -l`6 `ls -l`7 `ls -l`8 ``ls -l`9`-t`0`-t`1<br>`<br>`-t`2 `-t`3 ``-t`4<br>`<br>`-t`5 `-t`6 ``-t`7<br>`<br>`-t`8`-t`9 `ll`0 `ll`1 `ll`2`ll`3`ll`4`ll`5`ll`6`ll`7`ll`8`ll`9`ll -t`0 |
 
 ## grep
 
@@ -88,20 +168,20 @@ Linux grep 命令用于查找文件里符合条件的字符串。grep 指令用�
 
 ### 格式
 
-grep [-abcEFGhHilLnqrsvVwxy][-A<显示行数>][-B<显示列数>][-C<显示列数>][-d<进行动作>][-e<范本样式>][-f<范本文件>][--help][范本样式][文件或目录...]
+grep [-abcEFGhHilLnqrsvVwxy][-`A<显示行数>`][-`B<显示列数>`][-`C<显示列数>`][-`d<进行动作>`][-`e<范本样式>`][-`f<范本文件>`][--help][范本样式][文件或目录...]
 
 ### 参数
 
 - -a 或 --text : 不要忽略二进制的数据。
-- -A<显示行数> 或 --after-context=<显示行数> : 除了显示符合范本样式的那一列之外，并显示该行之后的内容。
+- -`A<显示行数>` 或 --after-context=<显示行数> : 除了显示符合范本样式的那一列之外，并显示该行之后的内容。
 - -b 或 --byte-offset : 在显示符合样式的那一行之前，标示出该行第一个字符的编号。
-- -B<显示行数> 或 --before-context=<显示行数> : 除了显示符合样式的那一行之外，并显示该行之前的内容。
+- -`B<显示行数>` 或 --before-context=<显示行数> : 除了显示符合样式的那一行之外，并显示该行之前的内容。
 - -c 或 --count : 计算符合样式的列数。
-- -C<显示行数> 或 --context=<显示行数>或 -<显示行数> : 除了显示符合样式的那一行之外，并显示该行之前后的内容。
+- -`C<显示行数>` 或 --context=<显示行数>或 -<显示行数> : 除了显示符合样式的那一行之外，并显示该行之前后的内容。
 - -d <动作> 或 --directories=<动作> : 当指定要查找的是目录而非文件时，必须使用这项参数，否则 grep 指令将回报信息并停止动作。
-- -e<范本样式> 或 --regexp=<范本样式> : 指定字符串做为查找文件内容的样式。
+- -`e<范本样式>` 或 --regexp=<范本样式> : 指定字符串做为查找文件内容的样式。
 - -E 或 --extended-regexp : 将样式为延伸的 [正则表达式](正则表达式.md) 来使用。
-- -f<规则文件> 或 --file=<规则文件> : 指定规则文件，其内容含有一个或多个规则样式，让 grep 查找符合规则条件的文件内容，格式为每行一个规则样式。
+- -`f<规则文件>` 或 --file=<规则文件> : 指定规则文件，其内容含有一个或多个规则样式，让 grep 查找符合规则条件的文件内容，格式为每行一个规则样式。
 - -F 或 --fixed-regexp : 将样式视为固定字符串的列表。 
 - -G 或 --basic-regexp : 将样式视为普通的表示法来使用。
 - -h 或 --no-filename : 在显示符合样式的那一行之前，不标示该行所属的文件名称。
@@ -124,7 +204,7 @@ grep [-abcEFGhHilLnqrsvVwxy][-A<显示行数>][-B<显示列数>][-C<显示列�
 
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `grep` `"abcd"` `test.log \| wc -l ：查看日志中特定字符的匹配数目`<br><br>`grep` `"text"` `trace.log ：查询单个文件(trace.log)中包含指定text的行`<br><br>`grep` `"text"` `*log* ：利用*适配符，在所有包含log的文件名中 查询 text`<br><br>`grep -r text /home/logs ：以递归的方式，在指定的目录及其子目录下面所有的文件中 查询 text`<br><br>`grep -rn` `"test"` `--exclude=*.txt ：查找包含text，但是排除txt文件`<br><br>`grep -rn` `"text"` `--exclude-from=skip.txt ：排除的条件存储在skip.txt文件里`<br><br>`grep -rn` `"text"` `--exclude-dir=aaa ：排除aaa目录下的所有文件`<br><br>`grep -v text *log ：查找所有不包含 text 的行，即反向查找`<br><br>`grep text -A/B/C n *log ：除了查找的那一行之外，多显示 其之后(-A)/之前(-B)/前后(-C) 的n行的值`<br><br>`grep -E` `"text1 \| text2 \| text3"` `*log ：匹配多个字符串，或关系，匹配其中一个就显示；`<br><br>`grep text1 *log \| grep text2 \|grep text3 ：与关系，匹配所有才显示`<br><br>`grep text *log --color=auto  或者  grep text *log --col ：让匹配的字符串显示颜色`<br><br>`cat filename \| grep -f key.txt ：匹配key.txt文件中所有关键字的行` |
+| `ll -t`1 `ll -t`2 ``ll -t`3<br>`<br>`ll -t`4 `ll -t`5 ``ll -t`6<br>`<br>`ll -t`7 `ll -t`8 ``ll -t`9<br>`<br>``ll`0<br>`<br>`ll`1 `ll`2 ``ll`3<br>`<br>`ll`4 `ll`5 ``ll`6<br>`<br>`ll`7 `ll`8 ``ll`9<br>`<br>``alias ll='ls -l'`0<br>`<br>``alias ll='ls -l'`1<br>`<br>`alias ll='ls -l'`2 `alias ll='ls -l'`3 ``alias ll='ls -l'`4<br>`<br>``alias ll='ls -l'`5<br>`<br>``alias ll='ls -l'`6<br>`<br>`alias ll='ls -l'`7 |
 
 ## **linux 日志文件说明**
 

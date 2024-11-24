@@ -146,9 +146,9 @@ names: List[str] = ["John", "Jane"]
 类型注解可以使用 Python 3.5 引入的函数注解语法来实现，也可以使用类型注解库如 typing 库来提供更丰富的类型注解功能。以下是一个使用类型注解的示例：
 
 ```python
-def add(a: int, b: int) -> int:
-    return a + b
-```
+for i in range(5):
+    print("Python")
+```0
 
 ### 函数
 
@@ -156,65 +156,49 @@ def add(a: int, b: int) -> int:
 
 Java 中定义函数需要使用关键字 void（表示无返回值）或指定返回类型，并使用 return 语句返回值，例如：
 
-```java
-public int add(int a, int b) {
-    return a + b;
-}
-```
+```python
+for i in range(5):
+    print("Python")
+```1
 
 Python 中定义函数使用关键字 def，不需要指定返回类型，并使用 return 语句返回值，例如：
 
 ```python
-def add(a, b):
-    return a + b
-```
+for i in range(5):
+    print("Python")
+```2
 
 #### 静态方法和类方法
 
 在 Java 中，可以使用 static 关键字定义静态方法和静态变量，静态方法可以直接通过类名调用，例如：
 
-```java
-public class MyClass {
-    public static void staticMethod() {
-        System.out.println("Static method");
-    }
-}
-
-MyClass.staticMethod();
-```
+```python
+for i in range(5):
+    print("Python")
+```3
 
 在 Python 中，可以使用@staticmethod 装饰器定义静态方法，静态方法可以通过类名或实例调用，例如：
 
 ```python
-class MyClass:
-    @staticmethod
-    def static_method():
-        print("Static method")
-
-MyClass.static_method()
-```
+for i in range(5):
+    print("Python")
+```4
 
 #### 默认参数
 
 在 Java 中，方法的参数没有默认值，每次调用方法都需要显式传递参数，例如：
 
-```java
-public void greet(String name) {
-    System.out.println("Hello, " + name);
-}
-
-greet("John");
-```
+```python
+for i in range(5):
+    print("Python")
+```5
 
 在 Python 中，方法的参数可以指定默认值，如果调用方法时没有传递对应参数，则使用默认值，例如：
 
 ```python
-def greet(name="John"):
-    print("Hello, " + name)
-
-greet()  # 使用默认值
-greet("Alice")  # 传递参数
-```
+for i in range(5):
+    print("Python")
+```6
 
 #### 函数调用和参数传递
 
@@ -226,109 +210,86 @@ Python 中的参数传递方式是引用传递，也就是说，当你将一个�
 
 例如，在 Java 中，以下代码将打印出 "10"：
 
-```java
-public static void main(String[] args) {
-    int a = 10;
-    changeValue(a);
-    System.out.println(a);
-}
-
-public static void changeValue(int b) {
-    b = 20;
-}
-```
+```python
+for i in range(5):
+    print("Python")
+```7
 
 而在 Python 中，以下代码将打印出 "20"：
 
 ```python
-def main():
-    a = 10
-    changeValue(a)
-    print(a)
-
-def changeValue(b):
-    b = 20
-
-main()
-```
+for i in range(5):
+    print("Python")
+```8
 
 ##### 对象传递方式
 
 在 Java 中，对象是通过引用传递的，即传递的是对象的引用而不是对象本身，例如：
 
-```java
-public void changeValue(StringBuilder str) {
-    str.append(" World");
-}
-
-StringBuilder sb = new StringBuilder("Hello");
-changeValue(sb);
-System.out.println(sb.toString());  // 输出：Hello World
-```
+```python
+for i in range(5):
+    print("Python")
+```9
 
 在 Python 中，对象的传递方式是值传递，但对于可变对象（如列表、字典等），传递的是对象的引用，例如：
 
-```python
-def change_value(lst):
-    lst.append("World")
-
-lst = ["Hello"]
-change_value(lst)
-print(lst)  # 输出：['Hello', 'World']
-```
+```java
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
+}
+```0
 
 #### 匿名函数
 
 在 Java 中，可以使用接口和匿名类来实现类似于匿名函数的功能，例如：
 
 ```java
-Runnable runnable = new Runnable() {
-    @Override
-    public void run() {
-        System.out.println("Hello");
-    }
-};
-```
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
+}
+```1
 
 在 Python 中，可以使用 Lambda 表达式来创建匿名函数，例如：
 
-```python
-my_func = lambda x: x * 2
-result = my_func(3)  # 输出：6
-```
+```java
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
+}
+```2
 
 #### 函数式编程
 
 在 Java 中，函数式编程的支持较为有限，但可以使用 Lambda 表达式和 Stream API 来实现一些函数式编程的特性，例如：
 
 ```java
-import java.util.Arrays;
-import java.util.List;
-
-public class Main {
-    public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
-        
-        // 使用Lambda表达式和Stream API进行函数式编程
-        int sum = numbers.stream()
-                         .filter(n -> n % 2 == 0)
-                         .mapToInt(n -> n * 2)
-                         .sum();
-        
-        System.out.println(sum);  // 输出：18
-    }
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
 }
-```
+```3
 
 在 Python 中，函数式编程是一种核心特性，支持函数作为一等公民，可以使用 Lambda 表达式、高阶函数和内置函数等来实现函数式编程的特性，例如：
 使用 Lambda 表达式和内置函数进行函数式编程
 
-```python
-numbers = [1, 2, 3, 4, 5]
-sum = sum(map(lambda n: n * 2, filter(lambda n: n % 2 == 0, numbers)))
-
-print(sum)  # 输出：18
-```
+```java
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
+}
+```4
 
 ### 数据结构
 
@@ -345,44 +306,61 @@ python 中就 int 和 float,代表一切了,这有点像 js 中的风格,业内�
 字典 - Java 中的 map  
 set - Java 中的 set
 
-```python
-list = [1, 2, 3]
-set = {1, 2, 3}
-map = {"name": "John", "age": 30}
-```
+```java
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
+}
+```5
 
 #### 数组和列表
 
 Java 中的数组是固定长度的，需要在声明时指定大小，并且只能存储相同类型的元素，例如：
 
 ```java
-int[] numbers = new int[3];
-numbers[0] = 1;
-numbers[1] = 2;
-numbers[2] = 3;
-```
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
+}
+```6
 
 在 Python 中，列表是动态长度的数据结构，可以根据需要动态添加或删除元素，例如：
 
-```python
-list = [1, 2, 3]
-list.append(4)
-```
+```java
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
+}
+```7
 
 列表切片  
 在 Java 中，可以使用 List.subList() 方法来获取子列表，例如：
 
 ```java
-List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
-List<Integer> subList = list.subList(1, 4);
-```
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
+}
+```8
 
 在 Python 中，可以使用切片（Slice）操作来获取子列表，例如：
 
-```python
-list = [1, 2, 3, 4, 5]
-subList = list[1:4]
-```
+```java
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else {
+    System.out.println("Negative");
+}
+```9
 
 #### 字典操作
 
@@ -391,49 +369,46 @@ subList = list[1:4]
 在 Python 中，字典的操作更加简洁和方便，可以直接使用字典的方法进行操作，例如：
 
 ```python
-dict = {"name": "John", "age": 30}
-value = dict.get("name")  # 获取值
-dict["city"] = "New York"  # 添加键值对
-del dict["age"]  # 删除键值对
-```
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```0
 
 #### 迭代器
 
 在 Java 中，可以使用迭代器（Iterator）来遍历集合（如 List、Set 等），例如：
 
-```java
-List<String> names = Arrays.asList("John", "Jane", "Tom");
-Iterator<String> iterator = names.iterator();
-
-while (iterator.hasNext()) {
-    String name = iterator.next();
-    System.out.println(name);
-}
-```
+```python
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```1
 
 在 Python 中，可以使用迭代器和生成器来遍历可迭代对象，例如：
 
 ```python
-names = ["John", "Jane", "Tom"]
-iterator = iter(names)
-
-for name in iterator:
-    print(name)
-```
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```2
 
 #### 生成器
 
 在 Python 中，可以使用生成器（Generator）来实现迭代器，使用 yield 关键字定义生成器函数，例如：
 
 ```python
-def my_generator():
-    yield 1
-    yield 2
-    yield 3
-
-for num in my_generator():
-    print(num)
-```
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```3
 
 #### 列表推导式和集合推导
 
@@ -442,49 +417,110 @@ for num in my_generator():
 在 Python 中，可以使用列表推导式和集合推导式来快速创建列表或集合，例如：
 
 ```python
-my_list = [x for x in range(1, 5)]  # 列表推导式
-my_set = {x for x in my_list if x % 2 == 0}  # 集合推导式
-```
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```4
 
 ### 字符串操作
 
 Java 中的字符串是不可变的，使用 + 操作符进行字符串拼接，例如：
 
-```java
-String str1 = "Hello";
-String str2 = "World";
-String result = str1 + " " + str2;
-```
+```python
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```5
 
 Python 中的字符串是可变的，可以使用 + 操作符或 +=运算符进行字符串拼接，例如：
 
 ```python
-str1 = "Hello"
-str2 = "World"
-result = str1 + " " + str2
-```
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```6
 
 ### 模块和导入
 
 在 Java 中，代码通常组织在包（package）中，需要使用 import 语句导入其他包或类，例如：
 
-```java
-import java.util.ArrayList;
-  
-ArrayList<String> list = new ArrayList<>();
-```
+```python
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```7
 
 在 Python 中，代码通常组织在模块（module）中，使用 import 语句导入其他模块或函数，例如：
 
 ```python
-from math import sqrt
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```8
 
-result = sqrt(25)
-```
+在 Python 中，```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
 
-在 Python 中，`tests` 是一个目录（directory），但为了让 Python 解释器能够识别它并从中导入模块，它也被组织成一个 Python 包（package）。要将一个目录转换为 Python 包，你需要在该目录中包含一个名为 `__init__.py` 的文件。这个文件可以是空的，它的存在标志着该目录是一个 Python 包，这样你就可以使用类似 `from tests.app_clients.test_CardProcessor import TestCardProcessor` 这样的导入语句。
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```5 是一个目录（directory），但为了让 Python 解释器能够识别它并从中导入模块，它也被组织成一个 Python 包（package）。要将一个目录转换为 Python 包，你需要在该目录中包含一个名为 ```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
 
-因此，虽然 `tests` 是一个目录，添加 `__init__.py` 文件后，它也起到了 Python 包的作用，使得目录内的所有模块都可以按照包的结构进行导入和组织。这种做法常见于 Python 项目中，特别是那些需要组织大量代码和模块的大型项目。这样的结构有助于维护测试代码的清晰和可管理性，尤其是当项目规模扩大，测试范围增加时。
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```6 的文件。这个文件可以是空的，它的存在标志着该目录是一个 Python 包，这样你就可以使用类似 ```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```7 这样的导入语句。
+
+因此，虽然 ```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```8 是一个目录，添加 ```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```9 文件后，它也起到了 Python 包的作用，使得目录内的所有模块都可以按照包的结构进行导入和组织。这种做法常见于 Python 项目中，特别是那些需要组织大量代码和模块的大型项目。这样的结构有助于维护测试代码的清晰和可管理性，尤其是当项目规模扩大，测试范围增加时。
 
 ### 特殊方法（魔术方法）
 
@@ -495,16 +531,12 @@ result = sqrt(25)
 例如，在 Python 中定义一个类并重写特殊方法的示例：
 
 ```python
-class MyClass:
- def __init__(self, value):
-     self.value = value
-
- def __str__(self):
-     return str(self.value)
-
-obj = MyClass(10)
-print(obj)  # 输出：10
-```
+num = 10
+if num > 0:
+    print("Positive")
+else:
+    print("Negative")
+```9
 
 在 Python 中，以下是一些常见的以 __ 开头和以 __ 结尾的特殊方法：
 **init**()：对象初始化方法，在创建对象时自动调用。
@@ -524,53 +556,60 @@ print(obj)  # 输出：10
 在 Java 中，注释有单行注释（//）和多行注释（/*... */），例如：
 
 ```java
- // 这是单行注释
- 
- /*
-  * 这是多行注释
-  */
-```
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```0
 
 在 Python 中，注释使用井号（#、'''、"""），例如：
 
-```python
-# 这是注释
-'''这是注释'''
-"""这是注释"""
-```
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```1
 
 ### 异常类型
 
 在 Java 中，异常类型需要在方法签名中声明或捕获，例如：
 
 ```java
-public void myMethod() throws IOException {
-    // 可能会抛出IOException的代码
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
 }
 
-try {
-    // 可能会抛出异常的代码
-} catch (IOException e) {
-    // IOException异常的处理
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
 }
-```
+```2
 
 在 Python 中，异常类型不需要在方法签名中声明，可以在 except 块中捕获特定的异常类型，例如：
 
-```python
-def my_method():
-    # 可能会引发异常的代码
-    raise ValueError("Invalid value")
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
 
-try:
-    # 可能会引发异常的代码
-except ValueError as e:
-    # ValueError异常的处理
-else:
-    # 如果没有异常走这里
-finally:
-    # 无论是否异常，总会执行的代码
-```
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```3
 
 #### Python 常见的异常
 
@@ -589,9 +628,17 @@ ValueError：传入无效的参数
 
 python 的比较简单
 
-```python
-with open('a.txt', mode='a') as filename:
-```
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+```4
 
 | r  | 打开文件以进行读取（默认）。如果文件不存在，抛出异常。|
 |----|--------------------------------------------------|

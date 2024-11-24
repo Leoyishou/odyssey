@@ -26,19 +26,19 @@ date modified: 2024-11-12
    - 这就像在 Maven 中删除 `target` 文件夹和 `.m2` 缓存一样
    - `rm` 是删除命令
    - `-rf` 是参数，表示递归(`r`)强制(`f`)删除
-   - `node_modules` 相当于 Maven 的 `target` 文件夹，存放所有依赖包
-   - `package-lock.json` 相当于 Maven 的 `dependency-tree`，记录了确切的依赖版本信息
+   - `node_modules` 相当于 Maven 的 `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`0 文件夹，存放所有依赖包
+   - `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`1 相当于 Maven 的 `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`2，记录了确切的依赖版本信息
 
 
-2. `npm install`
-   - 这就像 Maven 的 `mvn clean install`
-   - 它会根据 `package.json`（相当于 Maven 的 `pom.xml`）重新下载所有依赖
-   - 会重新生成 `package-lock.json`
-   - 会重新创建 `node_modules` 文件夹并下载所有依赖
+2. `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`3
+   - 这就像 Maven 的 `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`4
+   - 它会根据 `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`5（相当于 Maven 的 `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`6）重新下载所有依赖
+   - 会重新生成 `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`7
+   - 会重新创建 `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`8 文件夹并下载所有依赖
 
 简单来说，这两个命令组合起来就是：
 
 1. 清理掉所有已下载的依赖和版本锁定文件
 2. 重新下载所有依赖
 
-这在依赖出问题时很常用，就像 Maven 项目出问题时我们经常用 `mvn clean install` 一样。
+这在依赖出问题时很常用，就像 Maven 项目出问题时我们经常用 `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`9 一样。
