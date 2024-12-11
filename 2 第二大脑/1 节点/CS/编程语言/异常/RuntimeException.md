@@ -1,20 +1,4 @@
----
-draw:
-tags: []
-title: 异常
-date created: 2024-09-12
-date modified: 2024-11-12
----
-- [checked exception](#checked%20exception)
-- [unchecked exception](#unchecked%20exception)
-	- [空指针](#%E7%A9%BA%E6%8C%87%E9%92%88)
-		- [for 循环的对象为空](#for%20%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%AF%B9%E8%B1%A1%E4%B8%BA%E7%A9%BA)
-		- [BigDecimal 数组为空](#BigDecimal%20%E6%95%B0%E7%BB%84%E4%B8%BA%E7%A9%BA)
-	- [ClassCastException](#ClassCastException)
 
-## checked exception
-
-## unchecked exception
 
 ### NPE
 
