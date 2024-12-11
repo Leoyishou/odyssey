@@ -12,7 +12,7 @@ date modified: 2024-11-12
 
 ## 参考资料
 
-[lab2 raft](lab2%20raft.md)
+[Lab2 raft](Lab2%20raft.md)
 
 [6.824 Lab 2: Raft (mit.edu)](http://nil.csail.mit.edu/6.824/2022/labs/lab-raft.html)
 

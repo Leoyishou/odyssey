@@ -1,14 +1,15 @@
 ---
-draw:
-aliases: [计算机领域中文词汇表]
-title: 计算机领域中文词汇表
-tags: []
+draw: 
+aliases: 
+title: 
+tags: 
 date created: 2024-05-19
 date modified: 2024-11-12
 linter-yaml-title-alias: 计算机领域中文词汇表
 ---
 
 外表高大上，看着是宾利的壳，其实核心动力是几个老鼠在壳里面蹬三轮呢。只要你干一两年基本都懂了。
+
 [胡适](胡适.md)说：怕什么真理无穷，**进一寸有进一寸的欢喜**。
 
 <!-- more -->

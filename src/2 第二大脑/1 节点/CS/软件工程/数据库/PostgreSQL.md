@@ -5,6 +5,7 @@ title: PostgreSQL
 date created: 2024-09-15
 date modified: 2024-11-12
 ---
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F12%2F11%2F22-41-58-36c45981869b5cefd5196851aa51fc47-202412112241647-f2b204.png)
 
 ## 数据结构
 

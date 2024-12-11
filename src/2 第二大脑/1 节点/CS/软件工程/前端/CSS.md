@@ -6,7 +6,7 @@ date created: 2024-06-21
 date modified: 2024-11-12
 ---
 
-[设计语言](设计语言.md) - [UIUE](UIUE.md) - [组件库](组件库.md) 本质是给了一堆已经设计好的 css
+[设计语言](设计语言.md) - [UIUE](UIUE.md) - [UI组件库](UI组件库.md) 本质是给了一堆已经设计好的 css
 
 <!-- more -->
   
