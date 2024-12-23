@@ -31,7 +31,7 @@ date modified: 2024-11-12
 
 ## 实践
 
-1. 把 [github](2%20第二大脑/1%20节点/CS/编程语言/Go/github.md) 题解仓库克隆到本地
+1. 把 [github](github.md) 题解仓库克隆到本地
 2. check out 到对应的 revision  
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F22%2F23-03-42-238e1133e08385f20b438501eadec517-20240722230341-38ec0d.png)
 3. 抄袭增量部分的代码，遇到不懂的问 [claude](claude.md) 这相当于 [Java@](Java@.md) 里面的啥

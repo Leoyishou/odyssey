@@ -54,7 +54,7 @@ date modified: 2024-11-12
 	- 平替
 - [豆瓣](豆瓣) 电影和书
 	- raycast 暂无替代，只能用 quicklink 网页搜索了
-- [github](2%20第二大脑/1%20节点/CS/编程语言/Go/github.md) 全集操作
+- [github](github.md) 全集操作
 	- raycast 更强，几乎搜索仓库，issure，pull request 等操作全支持
 - 菜单栏操作搜索
 	- 平替。raycast 自带，alfred 需要插件增强
