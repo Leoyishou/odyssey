@@ -6,6 +6,19 @@ date created: 2024-06-23
 date modified: 2024-11-12
 ---
 
+## 结果
+
+Vue 项目在执行 `npm run build` 后生成的 `dist` 目录就是打包后的静态文件，包含了所有前端资源，比如：
+
+- index.html（入口文件）
+- 编译后的 JavaScript 文件
+- 编译后的 CSS 文件
+- 静态资源（图片等）
+
+
+
+
+
 | Category            | Topics                                                                                                                                                                                                                                                                               |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Essentials          | - Creating an `Application<br>`- Template `Syntax<br>`- Reactivity `Fundamentals<br>`- Computed `Properties<br>`- Class and Style `Bindings<br>`- Conditional `Rendering<br>`- List `Rendering<br>`- Event `Handling<br>`- Form Input `Bindings<br>`- Lifecycle `Hooks<br>`- `Watchers<br>`- Template Refs |
