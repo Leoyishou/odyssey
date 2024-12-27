@@ -7,6 +7,10 @@ date modified: 2024-11-12
 ---
 1.关键词是什么 2.how to send the context 是prompt或者 AI 时代的最关键命题
 
+technical probpem是最容易解决的
+
+business conrext 过于个性化甚至是不可言说之物。
+
 ## 参考资料
 
 一直非常惊叹深度学习后的大模型推理编程竟然如此简单，Llama-3 70B，就两个文件，一个140G的参数文件，一个500行左右的C程序，你就可以和一个压缩了15T tokens的大语言模型对话！
