@@ -3,7 +3,7 @@ draw:
 tags: []
 title: schema
 date created: 2024-10-11
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 可以给不同的人不同的权限，就像你可以决定谁能碰你的乐高。有利于鉴权

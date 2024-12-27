@@ -3,7 +3,7 @@ draw:
 tags: []
 title: enum
 date created: 2024-07-03
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
  枚举是 [JVM@](JVM@.md) 里一张不会变的参考表，就好像 [汉谟拉比法典](汉谟拉比法典)  
@@ -23,7 +23,7 @@ public static BedroomCountEnum[] values();
 public static BedroomCountEnum valueOf(String name);
 ```
 
-2. 反编译一个枚举类看看实际实现：
+1. 反编译一个枚举类看看实际实现：
 
 ```java
 // 原始代码
@@ -96,7 +96,7 @@ public class BedroomCountEnumUtils {
 }
 ```
 
-3. 为什么要克隆数组？
+1. 为什么要克隆数组？
 
 ```java
 // 如果直接返回原数组，可能会被修改

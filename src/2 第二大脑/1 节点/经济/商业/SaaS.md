@@ -1,10 +1,11 @@
 ---
 draw:
 tags: []
-title: Saas
+title: SaaS
 date created: 2024-11-12
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
+
 用户不需要在本地安装软件，可以直接通过浏览器或移动应用程序访问和使用软件。
 
 常见的SaaS应用程序包括：
@@ -16,4 +17,3 @@ date modified: 2024-11-12
 5. email服务（如Gmail）
 
 总的来说，SaaS模式可以帮助用户更好地使用软件，降低成本和提高效率。
-

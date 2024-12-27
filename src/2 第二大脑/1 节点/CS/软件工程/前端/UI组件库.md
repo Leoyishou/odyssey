@@ -1,19 +1,19 @@
 ---
 draw:
 tags: []
-title: 组件库
+title: UI组件库
 date created: 2024-07-29
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ## 组件库排名
 
 https://ui-libs.vercel.app/
 
-[Element Plus](Element%20Plus.md)
+[Element Plus](Element%20Plus.md)  
 [Ant Design](Ant%20Design.md)
-## 常用组件
 
+## 常用组件
 
 | 英文名称            | 中文翻译    |     |     |
 | --------------- | ------- | --- | --- |

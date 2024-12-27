@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Pydantic
 date created: 2024-10-24
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 Pydantic 和 Zod 都是数据验证库，但它们分别针对不同的编程语言生态系统。让我为你详细介绍：
@@ -40,7 +40,7 @@ user = User(id="1", name="John", email="john@example.com")  # id 会自动转换
 user = User(id="abc", name="John", email="invalid-email")  # 会抛出验证错误
 ```
 
-2. 常用功能：
+1. 常用功能：
 - 复杂的嵌套数据结构验证
 - 自定义验证器
 - 数据序列化和反序列化
@@ -92,7 +92,7 @@ const invalidData = {
 };
 ```
 
-2. 常用功能：
+1. 常用功能：
 - 复杂对象和数组验证
 - 条件验证
 - 自定义错误信息
@@ -165,7 +165,7 @@ data = {
 person = Person.parse_obj(data)  # 自动转换为正确类型
 ```
 
-2. 部分数据提取
+1. 部分数据提取
 
 ```python
 from pydantic import BaseModel, Extra
@@ -186,7 +186,7 @@ data = {
 }
 ```
 
-3. 容错值处理
+1. 容错值处理
 
 ```python
 from typing import Optional
@@ -198,7 +198,7 @@ class Response(BaseModel):
     tags: list[str] = []  # 空列表默认值
 ```
 
-4. 自定义解析逻辑
+1. 自定义解析逻辑
 
 ```python
 from pydantic import validator

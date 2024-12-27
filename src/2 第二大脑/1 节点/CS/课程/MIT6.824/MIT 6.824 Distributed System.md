@@ -1,9 +1,9 @@
 ---
 draw:
 tags: []
-title: MIT 6.824$
+title: MIT 6.824 Distributed System
 date created: 2024-07-11
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 Lab：

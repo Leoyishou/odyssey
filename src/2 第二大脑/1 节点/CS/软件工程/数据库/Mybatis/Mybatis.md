@@ -1,11 +1,9 @@
 ---
 draw:
-aliases: [MyBatis 领域词汇表]
 tags: []
-title: MyBatis 领域词汇表
+title: Mybatis
 date created: 2024-01-15
-date modified: 2024-11-12
-linter-yaml-title-alias: MyBatis 领域词汇表
+date modified: 2024-12-27
 ---
 
 ## MyBatis 领域词汇表

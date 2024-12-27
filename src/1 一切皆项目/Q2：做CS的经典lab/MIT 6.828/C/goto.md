@@ -1,6 +1,10 @@
-
-
-
+---
+draw:
+tags: []
+title: goto
+date created: 2024-12-25
+date modified: 2024-12-27
+---
 
 这是一个很好的问题！这里使用 `goto found` 而不是直接写代码主要有两个原因：
 
@@ -32,8 +36,8 @@ found:
 }
 ```
 
+1. **避免重复的锁处理**：
 
-2. **避免重复的锁处理**：
 ```c
 for(p = proc; p < &proc[NPROC]; p++) {
     acquire(&p->lock);
@@ -48,13 +52,14 @@ for(p = proc; p < &proc[NPROC]; p++) {
 }
 ```
 
-
 使用 goto 的好处：
+
 1. 搜索逻辑和初始化逻辑分离
 2. 错误处理更集中
 3. 锁的管理更清晰
 
 就像：
+
 ```java
 // 不好的方式
 for(Parking spot : parkingLots) {
@@ -91,17 +96,12 @@ if(foundSpot != null) {
 }
 ```
 
-
 虽然通常不推荐使用 goto，但在这种特定场景下，它能让代码更清晰和易维护。
-
-
-
-
-
 
 `found` 不是一个独立的方法，它是一个标签（label），是 goto 语句的跳转目标。
 
 在 C 语言中：
+
 ```c
 static struct proc* allocproc(void) {
   struct proc *p;
@@ -126,6 +126,7 @@ found:   // 这是一个标签，不是方法
 Java 中没有 goto 语句，但有类似的替代方案：
 
 1. **使用标签 break**：
+
 ```java
 public Process allocProc() {
     searchBlock: {  // 定义标签
@@ -146,6 +147,7 @@ public Process allocProc() {
 ```
 
 2. **使用方法提取**：
+
 ```java
 public Process allocProc() {
     Process p = findUnusedProcess();
@@ -169,6 +171,7 @@ private Process findUnusedProcess() {
 ```
 
 3. **使用异常控制流**（不推荐）：
+
 ```java
 public Process allocProc() {
     try {
@@ -189,6 +192,7 @@ public Process allocProc() {
 ```
 
 总结：
+
 - C 中的 goto + label 是一种低级的控制流机制
 - Java 不支持 goto，但提供了其他更结构化的替代方案
 - 在大多数情况下，重构为独立方法是更好的选择

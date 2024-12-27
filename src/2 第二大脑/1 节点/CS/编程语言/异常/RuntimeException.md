@@ -1,8 +1,14 @@
+---
+draw:
+tags: []
+title: RuntimeException
+date created: 2024-12-01
+date modified: 2024-12-27
+---
 
+## NPE
 
-### NPE
-
-#### for 循环的对象为空
+### for 循环的对象为空
 
 ```java
 public static void main(String[] args) {  
@@ -13,7 +19,7 @@ public static void main(String[] args) {
 }
 ```
 
-#### BigDecimal 数组为空
+### BigDecimal 数组为空
 
 ```java
 public static void main(String[] args) {  
@@ -27,7 +33,7 @@ public static void main(String[] args) {
 }
 ```
 
-#### List 的 addAll
+### List 的 addAll
 
 从语义上讲，向集合中添加 "nothing" (null) 是没有意义的。addAll 方法的目的是添加一个集合中的所有元素，而不是添加"无"。
 
@@ -45,7 +51,7 @@ public boolean addAll(Collection<? extends E> c) {
 
 如果没有 `Objects.requireNonNull(c)` 这行代码，当 `c` 为 null 时，会在 for 循环中抛出 NullPointerException。这样的异常信息不够明确，可能会误导开发者认为问题出在循环内部的某个元素上。
 
-### ClassCastException
+## ClassCastException
 
 ```java
 public static void main(String[] args) {  
@@ -64,4 +70,4 @@ String str = (String) obj;
 
 `()`的方式做强制类型转换，从 JVM 的视角，两个类的元数据要在多态的那套体系内，前者要兼容后者，像 String 和 BigDecimal 就属于 JVM 里面两个东西八竿子打不着一撇
 
-#### IndexOutOfBoundsException
+### IndexOutOfBoundsException

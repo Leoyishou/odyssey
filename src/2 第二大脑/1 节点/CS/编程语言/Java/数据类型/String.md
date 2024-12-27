@@ -3,7 +3,7 @@ draw:
 tags: []
 title: String
 date created: 2024-07-14
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 在 java 中 String 类为什么要设计成 final？- 胖君的回答 - 知乎  

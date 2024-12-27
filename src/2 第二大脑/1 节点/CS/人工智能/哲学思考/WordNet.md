@@ -3,7 +3,7 @@ draw:
 tags: []
 title: WordNet
 date created: 2024-11-04
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F11%2F05%2F12-00-35-a6aefd4c1cdc143d9c405371da0c6d3d-202411051200771-ef793d.png)

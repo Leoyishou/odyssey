@@ -3,7 +3,7 @@ draw:
 tags: []
 title: IP
 date created: 2024-09-23
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 相对于[TCP](TCP.md)的面向连接的、可靠的、基于字节流的  

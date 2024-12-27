@@ -1,11 +1,12 @@
 ---
 draw:
 tags: []
-title: Viva 产品思路
+title: Viva
 date created: 2024-02-16
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
-## 商业化 
+
+## 商业化
 
 **国内的英语学习是没有全链路数字化的管理系统的**
 

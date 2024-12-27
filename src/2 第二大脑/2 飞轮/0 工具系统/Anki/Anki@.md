@@ -3,7 +3,7 @@ draw:
 title: Anki@
 tags: []
 date created: 2024-05-12
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
   
 
@@ -48,11 +48,11 @@ excerpt
 
                 
 
-
 ## Anki Connect
 
 "allowDuplicate": True,`
-  # 这将告诉 Anki 不要进行重复检查，允许添加重复的卡片。
+
+  ## 这将告诉 Anki 不要进行重复检查，允许添加重复的卡片
 
 ```python
 payload = {

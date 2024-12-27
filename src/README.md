@@ -1,7 +1,9 @@
 ---
+draw:
+tags: []
 home: true
 icon: home
-title: 欢迎来到，我的网站
+title: README
 heroImage: https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fliuyishou%2Ftmp%2F2024%2F11%2F13%2F17-14-06-a0d2becd92049dd744a8b6ff6eeddb65-undraw_read_notes_gqmq-1dee22.svg
 bgImage: 
 bgImageStyle:
@@ -29,9 +31,9 @@ actions:
 
 copyright: false
 footer: Theme by <a href="https://theme-hope.vuejs.press/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
+date created: 2024-11-25
+date modified: 2024-12-27
 ---
-
-
 
 ## 一些有趣的经历
 

@@ -1,3 +1,11 @@
+---
+draw:
+tags: []
+title: NotebookLM
+date created: 2024-12-11
+date modified: 2024-12-27
+---
+
 NotebookLM 的设计理念，完全是在致敬马斯克的第一性原理 从头到尾学东西，非常枯燥且极大考验耐性。未到大BOSS出现，已自损元气 800 如果能从问题切入，互动性地主动去识别问题和解决模式，学东西就变得十分有趣
 
 https://notebooklm.google.com

@@ -1,4 +1,12 @@
-### 学习 C 语言的建议
+---
+draw:
+tags: []
+title: C语言
+date created: 2024-12-16
+date modified: 2024-12-27
+---
+
+## 学习 C 语言的建议
 
 1. **理解与 Java 的差异**  
     你已具备 Java 基础，因此首先需要意识到 C 与 Java 的本质区别：

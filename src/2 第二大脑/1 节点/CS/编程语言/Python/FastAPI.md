@@ -3,9 +3,10 @@ draw:
 tags: []
 title: FastAPI
 date created: 2024-11-09
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
-```
+
+```Java
 my_fastapi_project/
 ├── app/
 │   ├── __init__.py
@@ -75,7 +76,6 @@ my_fastapi_project/
 
 ## 写法
 
-
 ```python:app/main.py
 from fastapi import FastAPI
 from app.services.ai_service import AIService
@@ -115,8 +115,6 @@ def process_text(text: str):
     service = AIService()
     return service.summarize_text(text)
 ```
-
-
 
 ## 最佳实践
 

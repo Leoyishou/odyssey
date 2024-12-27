@@ -1,63 +1,75 @@
+---
+draw:
+tags: []
+title: Lab1 Unix utilities
+date created: 2024-12-11
+date modified: 2024-12-27
+---
 1. 克隆 xv6-labs-2021 仓库并切换到 `util` 分支：
-    
+
     ```bash
     git clone git://g.csail.mit.edu/xv6-labs-2021
     cd xv6-labs-2021
     git checkout util
     ```
-    
+
 2. 确保工具链（riscv64-unknown-elf-gcc、qemu 等）已正确安装。
     
 
 那么快速启动并看到 lab1 效果的方式是：
 
 1. 在 xv6-labs-2021 目录下运行：
-    
+
     ```bash
     make qemu
     ```
-    
+
     这会编译 xv6，并在 QEMU 仿真器中启动 xv6 系统。
+
     
 2. 当你看到类似以下输出时：
-    
-    ```
+
+    ```Java
     xv6 kernel is booting
     init: starting sh
     $
     ```
-    
+
     表示 xv6 已经运行并进入 shell。
+
     
 3. 此时你可以在 xv6 的 shell 中输入命令（如 `ls`、`cat`、`echo`）查看效果。例如：
-    
+
     ```bash
     $ ls
     ```
-    
+
     会列出当前文件系统中的文件，如 README、cat、echo、sh 等。
+
     
 4. 若你已完成 lab1 中的部分修改（如实现了 `sleep` 程序），只需要在本地编译完成后再次运行：
-    
+
     ```bash
     make qemu
     ```
-    
+
     启动 QEMU，就能在 xv6 shell 中执行：
-    
+
     ```bash
     $ sleep 10
     ```
-    
+
     等待片刻后，命令将返回 shell 提示符。这说明你的 `sleep` 程序已生效。
+
     
 5. 如果想要测试你的程序是否满足 lab 的要求，可以运行：
-    
+
     ```bash
     make grade
     ```
-    
+
     或使用指定测试项的命令（根据文档说明）来查看你实现的功能是否通过测试。
+
     
 
 总结来说，只需在 xv6-labs-2021 目录中 `make qemu` 启动虚拟机系统，然后在 xv6 shell 内执行相应的命令，即可快速看到你的 lab1 改动所带来的效果。
@@ -71,51 +83,41 @@
 在 MIT 6.828 的 Lab1 中，你需要在 Makefile 里加入一些条目（targets、规则和变量）来编译和打包你要在 xv6 操作系统里运行的用户态程序。这么做的原因是：
 
 1. **统一编译流程**：Makefile 是一个自动化编译工具。在 Lab1 里，你不光有内核代码（kernel code），也有用户态的测试程序（比如 pingpong、primes、xargs 等）。如果不在 Makefile 中指定这些程序的编译规则，`make` 就不会自动帮你编译、链接这些用户程序，也无法将它们打包进 xv6 的文件系统镜像中。换句话说，Makefile 里的改动让编译器和链接器知道该如何处理、产出对应的可执行文件。
-
-2. **生成可执行文件和镜像文件系统**：xv6 的用户程序需要在实验给的 “用户态文件系统镜像” 中出现，这样系统在启动后才能从内核的 shell 中直接运行这些程序。Makefile 中增加的新内容会规定：
+2. **生成可执行文件和镜像文件系统**：xv6 的用户程序需要在实验给的 "用户态文件系统镜像" 中出现，这样系统在启动后才能从内核的 shell 中直接运行这些程序。Makefile 中增加的新内容会规定：
     - 如何从 `.c` 源文件生成可执行文件（如 `xargs`、`pingpong` 等）。
-    - 如何将编译好的用户程序打包进 xv6 的文件系统镜像（`fs.img`）。  
+    - 如何将编译好的用户程序打包进 xv6 的文件系统镜像（`fs.img`）。
    没有这些信息，`make` 不会把用户程序放进系统镜像里，启动后你就无法在 xv6 中运行这些命令。
 
 3. **实验要求与流程**：MIT 6.828 实验要求你不断丰富 xv6 的功能。早期的 Lab（如 Lab1）就会让你添加一些简单的用户态程序或工具，以测试、展示或检验你对内核和系统调用的理解。这些工具如果不通过 Makefile 进行适当配置，编译系统不清楚要处理哪些文件、生成什么目标文件，以及如何将其整合到可用的文件系统中。
 
 总结来说，给 Makefile 增加相应条目是为了让你的用户态代码自动被编译、链接，并打包进 xv6 的镜像，从而在 xv6 环境中正常运行。这与 Java 项目中使用 `javac` 编译、`jar` 打包的流程是类似的，只不过这里是 C 程序和系统镜像的生成，而 Makefile 起到的作用有点类似于自动化构建脚本，让整个构建和打包过程自动化、可重复、可维护。
 
-
-
-
 ## 具体实现
 
-####  argv 和 argv 是什么的简称
+### argv 和 argv 是什么的简称
 
 argc 和 argv 是 C 语言中 main 函数的标准参数：
 
 - argc = "argument count"
 - 表示命令行参数的数量
 - 至少为1（因为程序名本身就是第一个参数）
-
 - argv = "argument vector"
 - 是一个指向字符串数组的指针
 - 存储所有的命令行参数
 - argv[0] 是程序名
 - argv[1] 到 argv[argc-1] 是实际的命令行参数
 
-
-
-
-
-
 让我帮你分析一下 Lab1 Unix utilities 的实现思路。根据文档，这个 lab 包含几个主要任务:
 
 1. sleep (easy)
-2. pingpong (easy) 
+2. pingpong (easy)
 3. primes (moderate)
 4. find (moderate)
 5. xargs (moderate)
 
 让我们一个一个来实现:
 
-### 1. sleep (easy)
+## 1. sleep (easy)
 
 这是最简单的任务,需要实现一个类似 UNIX sleep 命令的程序。实现步骤:
 
@@ -138,24 +140,29 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-2. 在 Makefile 的 UPROGS 中添加 _sleep
+1. 在 Makefile 的 UPROGS 中添加 _sleep
 
-#### 1. 为什么 argc 要等于 2?
+### 1. 为什么 argc 要等于 2?
+
 - argc 表示命令行参数的数量，包括程序名称
 - 当我们运行 `sleep 10` 时:
-  - argv[0] 是 "sleep" (程序名)
-  - argv[1] 是 "10" (参数)
+  - argv[0]是 "sleep" (程序名)
+  - argv[1]是 "10" (参数)
   - 所以总共应该有 2 个参数
-- 如果 argc != 2，说明用户输入格式不对，比如:
+- 如果 argc!= 2，说明用户输入格式不对，比如:
   - `sleep` (缺少参数，argc = 1)
   - `sleep 10 20` (参数过多，argc = 3)
-#### 2. 为什么要用 atoi 而不直接用 argv?
+
+### 2. 为什么要用 atoi 而不直接用 argv?
+
 - argv 中的参数都是字符串类型 (char*)
 - sleep 系统调用需要的是整数类型的 ticks
 - atoi 函数将字符串转换为整数，比如:
   - "10" -> 10
   - "100" -> 100
-#### 3. 为什么两个分支都需要 exit?
+
+### 3. 为什么两个分支都需要 exit?
+
 - exit(1) 表示程序异常退出
   - 用于参数错误的情况
   - 返回非零值表示错误
@@ -167,7 +174,7 @@ int main(int argc, char *argv[]) {
   - 可能导致未定义行为
   - 父进程无法知道子进程是否正确执行
 
-#### 4. 为什么需要 include 这三个
+### 4. 为什么需要 include 这三个
 
 有了他们，下面的代码才拥有 1.使用基本数据类型 2.使用[[文件系统]] 3.调用[[system call]]的能力
 
@@ -184,7 +191,8 @@ int main(int argc, char *argv[]) {
 
 #include "user/user.h"
 ```
-### 2. pingpong (easy)
+
+## 2. pingpong (easy)
 
 需要实现一个使用管道在父子进程间传递字节的程序:
 
@@ -225,15 +233,17 @@ int main() {
 }
 ```
 
-#### 为啥 fork() == 0是子进程反之是父
+### 为啥 fork() == 0是子进程反之是父
 
 fork() 的特点：调用一次，返回两次
+
 - 在父进程中返回子进程的 PID（大于 0）
 - 在子进程中返回 0
 
-#### read 和 write 方法的第三个参数啥意思，为啥都是 1
+### read 和 write 方法的第三个参数啥意思，为啥都是 1
 
 在 read 和 write 函数中，第三个参数表示要读取或写入的字节数。
+
 ```c
 // 从文件描述符 fd 读取最多 n 个字节到 buf
 ssize_t read(int fd, void *buf, size_t n);
@@ -241,7 +251,8 @@ ssize_t read(int fd, void *buf, size_t n);
 // 向文件描述符 fd 写入 buf 中的 n 个字节
 ssize_t write(int fd, const void *buf, size_t n);
 ```
-### 3. find (moderate)
+
+## 3. find (moderate)
 
 实现一个简单版本的 UNIX find 命令。根据文档([1](https://pdos.csail.mit.edu/6.S081/2020/labs/util.html))的提示:
 

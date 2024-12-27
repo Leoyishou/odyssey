@@ -1,3 +1,10 @@
+---
+draw:
+tags: []
+title: ps
+date created: 2024-12-18
+date modified: 2024-12-27
+---
 
 **在某种程度上可以类比于 Windows 的任务管理器**。
 

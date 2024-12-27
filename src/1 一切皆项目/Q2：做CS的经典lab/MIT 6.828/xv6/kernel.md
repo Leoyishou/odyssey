@@ -1,5 +1,12 @@
+---
+draw:
+tags: []
+title: kernel
+date created: 2024-12-25
+date modified: 2024-12-27
+---
 
-```
+```Java
 . 
 ├── main.c        // lab1
 ├── console.c     // lab1

@@ -1,3 +1,11 @@
+---
+draw:
+tags: []
+title: Google Cloud Platform
+date created: 2024-11-24
+date modified: 2024-12-27
+---
+
 console.cloud.google.com 是 Google Cloud Platform (GCP) 的控制台网址，主要用于：
 
 1. 云资源管理：
@@ -29,14 +37,13 @@ console.cloud.google.com 是 Google Cloud Platform (GCP) 的控制台网址，�
    - Cloud KMS（密钥管理）
 
 相比你现在使用的腾讯云，GCP：
+
 - 全球基础设施更完善
 - AI/ML 服务更丰富
 - 开发者工具更完整
 - 但国内访问可能需要特殊网络环境
 
-
-
-##  Google 登录
+## Google 登录
 
 是的，如果你要在网站中使用 Google 登录功能，确实需要在 Google Cloud Platform (GCP) 控制台进行配置，主要是：
 

@@ -3,7 +3,7 @@ draw:
 title: odyssey - 花三年领悟二语习得的真谛
 tags: [odyssey, 英语之路]
 date created: 2024-04-21
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ![c9a1ec04e68122ea0faf7daf4175f9c5.png|400](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fliuyishou%2Ftmp%2F2024%2F04%2F22%2F00-07-37-1835db2ac20f78f8a3f859bcd1fd4b57-c9a1ec04e68122ea0faf7daf4175f9c5-240236.png?x-oss-process=image/resize,l_400)

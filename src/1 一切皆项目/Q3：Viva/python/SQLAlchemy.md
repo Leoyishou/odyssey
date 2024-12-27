@@ -3,7 +3,7 @@ draw:
 tags: []
 title: SQLAlchemy
 date created: 2024-10-13
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 SQLAlchemy确实提供了连接池管理的功能，类似于MyBatis。SQLAlchemy的连接池管理是自动的，但你可以根据需要进行配置。以下是如何在SQLAlchemy中管理连接池的简要说明：

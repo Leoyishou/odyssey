@@ -3,7 +3,7 @@ draw:
 title: HTTP 1.1
 tags: []
 date created: 2024-06-04
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 Web 开发必须掌握的三个技术：Token、Cookie、Session - 华为云开发者联盟的文章 - 知乎  

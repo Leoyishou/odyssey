@@ -3,7 +3,7 @@ draw:
 title: AI 的能力到底是什么
 tags: [人工智能, 信息革命]
 date created: 2024-03-27
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ![Default_archeology_and_java_code_both_1.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/Default_archeology_and_java_code_both_1.png?x-oss-process=image/resize,l_500)  

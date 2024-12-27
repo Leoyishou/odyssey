@@ -3,7 +3,7 @@ draw:
 title: CSS
 tags: []
 date created: 2024-06-21
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 [设计语言](设计语言.md) - [UIUE](UIUE.md) - [UI组件库](UI组件库.md) 本质是给了一堆已经设计好的 css
@@ -38,6 +38,7 @@ row.find("#t_replay").html("<a target='_blank' href='http://l-siriusvm16.h.cn2.q
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F06%2F26%2F15-45-38-5c0c7a6c8de90ec16d10ad6a036a509e-20240626154537-237cea.png)
 
 ##
+
 
 ```css
 .modal-content {

@@ -3,7 +3,7 @@ draw:
 tags: []
 title: K线图
 date created: 2024-08-07
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 起源：K 线图起源于 18 世纪日本米市，由日本商人本间宗久发明。

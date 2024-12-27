@@ -1,11 +1,9 @@
 ---
 draw:
-aliases: [最佳实践]
 tags: []
-title: 最佳实践
+title: Java@
 date created: 2024-07-03
-date modified: 2024-11-12
-linter-yaml-title-alias: 最佳实践
+date modified: 2024-12-27
 ---
 
 提升？看代码啊，不用看什么spring啊netty之类的庞然大物，说几个力所能及的库，可以好好研究。知识是有索引的，看到不懂得就去查慢慢就提升了。

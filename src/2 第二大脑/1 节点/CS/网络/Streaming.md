@@ -1,6 +1,12 @@
+---
+draw:
+tags: []
+title: Streaming
+date created: 2024-11-25
+date modified: 2024-12-27
+---
+
 OpenAI 的流式输出（Streaming）主要有两种实现方式：Server-Sent Events (SSE) 和 HTTP Chunked Transfer Encoding。让我用图表来说明这两种方式。
-
-
 
 ```mermaid
 sequenceDiagram
@@ -48,12 +54,14 @@ sequenceDiagram
    - 没有自动重连机制
 
 与 WebSocket 相比的主要区别：
+
 - 这两种方式都是基于 HTTP 的单向流式传输
 - 不需要像 WebSocket 那样建立特殊的连接
 - 更轻量级，适合单向的数据流推送
 - 服务器实现更简单，不需要维护长连接状态
 
 实际应用中的选择考虑：
+
 1. 如果只需要服务器到客户端的数据流，SSE 是很好的选择
 2. 如果需要双向实时通信，则应该选择 WebSocket
 3. 如果是简单的数据流传输，Chunked Transfer 也是可行的方案

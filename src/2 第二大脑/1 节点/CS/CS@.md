@@ -1,11 +1,9 @@
 ---
 draw: 
-aliases: 
-title: 
-tags: 
+title: CS@
+tags: []
 date created: 2024-05-19
-date modified: 2024-11-12
-linter-yaml-title-alias: 计算机领域中文词汇表
+date modified: 2024-12-27
 ---
 
 外表高大上，看着是宾利的壳，其实核心动力是几个老鼠在壳里面蹬三轮呢。只要你干一两年基本都懂了。
@@ -13,7 +11,8 @@ linter-yaml-title-alias: 计算机领域中文词汇表
 [胡适](胡适.md)说：怕什么真理无穷，**进一寸有进一寸的欢喜**。
 
 <!-- more -->
-### CS 心法
+
+## CS 心法
 
 任何活儿，无论是存储、网络、[ai infra](https://www.zhihu.com/search?q=ai%20infra&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D)、编译器后端、cuda，等等，都非常简单。外表高大上，看着是宾利的壳，其实核心动力是几个老鼠在壳里面蹬三轮呢。只要你干一两年基本都懂了。
 
@@ -104,7 +103,6 @@ linter-yaml-title-alias: 计算机领域中文词汇表
 | Z      | 压缩     | 减小文件或数据大小的过程         |
 |...  |...  |...                |
 | ==字母== | 术语     | 含义                   |
-
 
 ### CS 之路
 

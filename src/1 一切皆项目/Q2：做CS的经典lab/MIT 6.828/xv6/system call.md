@@ -1,3 +1,11 @@
+---
+draw:
+tags: []
+title: system call
+date created: 2024-12-23
+date modified: 2024-12-27
+---
+
 ```c
 void
 syscall(void)
@@ -15,7 +23,6 @@ syscall(void)
   }
 }
 ```
-
 
 ## 为什么从 a7 寄存器获取系统调用号？
 

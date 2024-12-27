@@ -3,7 +3,7 @@ draw:
 title: JSON
 tags: []
 date created: 2024-06-20
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 JSON 数据中包括 [文字](文字.md) 和 [数字](数字.md) 两类信息

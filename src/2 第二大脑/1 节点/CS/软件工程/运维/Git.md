@@ -1,11 +1,14 @@
 ---
+aliases: [设置当前仓库]
 draw:
 tags: []
-title: Git
+title: 设置当前仓库
 date created: 2024-06-24
-date modified: 2024-11-12
+date modified: 2024-12-27
+linter-yaml-title-alias: 设置当前仓库
 ---
-## Git Commit Message 
+
+## Git Commit Message
 
 |关键词|描述|
 |---|---|
@@ -21,7 +24,6 @@ date modified: 2024-11-12
 |**merge**|代码合并|
 |**sync**|同步主线或分支的bug|
 
-
 |关键词|描述|
 |---|---|
 |**build**|项目构建相关的修改（如webpack配置）|
@@ -35,14 +37,19 @@ date modified: 2024-11-12
 | ---- | ---- | ----------------- | ------------------------- | --- |
 | 本地操作 | 仓库维度 | `git init`        | 初始化`.git`，文件夹开始被 git 控制   |     |
 |      | 分支维度 | ```bash
-# 设置当前仓库
+
+## 设置当前仓库
+
 git config pull.rebase true
 
-# 或全局设置
+## 或全局设置
+
 git config --global pull.rebase true
 
-# 然后再拉取
+## 然后再拉取
+
 git pull
+
 ```0      | 列出、创建或删除分支                |     |
 |      |      | ```bash
 # 设置当前仓库
@@ -269,7 +276,8 @@ git config --global pull.rebase false
 git pull
 ```
 
-2. 使用 rebase 方式（保持历史整洁）：
+1. 使用 rebase 方式（保持历史整洁）：
+
 ```bash
 # 设置当前仓库
 git config pull.rebase true
@@ -281,7 +289,8 @@ git config --global pull.rebase true
 git pull
 ```
 
-3. 只允许快进合并：
+2. 只允许快进合并：
+
 ```bash
 # 设置当前仓库
 git config pull.ff only
@@ -299,26 +308,29 @@ git pull
 - 创建一个新的合并提交
 - 保留完整的历史记录
 - 可能会使提交历史看起来比较混乱
+
 ```bash
 A---B---C (master)
      \
       D---E (origin/master)
 ```
 
-2. Rebase (rebase true):
+1. Rebase (rebase true):
 - 将本地提交移到远程提交之后
 - 历史记录看起来更整洁
 - 可能需要解决更多冲突
+
 ```bash
 A---B---D---E---C' (master)
 ```
 
-3. Fast-forward only (ff only):
+1. Fast-forward only (ff only):
 - 只有在不需要合并的情况下才允许拉取
 - 最安全的选择
 - 如果有分歧会直接失败
 
 快速解决方案：
+
 ```bash
 # 如果你想保留所有历史记录，用 merge
 git pull --no-rebase
@@ -331,11 +343,13 @@ git pull --ff-only
 ```
 
 建议：
+
 1. 对于个人项目，使用 rebase 保持历史整洁
 2. 对于团队项目，使用 merge 保持历史完整
 3. 如果不确定，使用默认的 merge 策略
 
 如果你想查看当前的配置：
+
 ```bash
 git config --get pull.rebase
 git config --get pull.ff
@@ -343,7 +357,7 @@ git config --get pull.ff
 
 需要我详细解释某个方案吗？
 
-```
+```Java
 -----BEGIN CERTIFICATE-----
 MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDaWyT+qv8dduj8
 6M4EBcV08mF3pzqQQ5mHhTIhP94u4A4Z/Vb70cmucG64LkDP1tCWhrcHCDpNgmL5

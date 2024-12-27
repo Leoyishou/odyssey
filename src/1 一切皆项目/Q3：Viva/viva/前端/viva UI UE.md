@@ -1,14 +1,13 @@
 ---
 draw:
 tags: []
-title: UI UE
+title: viva UI UE
 date created: 2024-01-09
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 **可以借鉴** [Kaggle](Kaggle.md)官网的** **UI**，颜色上参考下面这种黑白按钮、蓝色背景、绿色对、黄色错的配色方案吧
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F11%2F24%2F02-33-06-665a4084a0e1ae7f8af39c1063569718-202411240233006-cc9f93.png)
-
 
 ## 作文模块
 

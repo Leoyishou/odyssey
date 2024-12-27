@@ -1,10 +1,11 @@
 ---
 draw:
 tags: []
-title: lab2 raft
+title: Lab2 raft
 date created: 2024-09-02
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
+
 ## 运行
 
 在 Lab2 中，你的 Raft 实现代码主要位于 `6.824/src/raft/` 目录下。与 Lab1 不同，这里不需要像之前运行 MapReduce 一样先编译插件和手动启动进程；相反，你的测试是通过运行 `go test` 命令来自动执行的。
@@ -12,25 +13,25 @@ date modified: 2024-11-12
 **主要命令**（在 `6.824/src/raft` 目录下执行）：
 
 1. 进入 Raft 源码目录：
-    
+
     ```bash
     cd ~/6.824/src/raft
     ```
-    
+
 2. 运行所有测试（包括 2A, 2B, 2C, 2D 全部）：
-    
+
     ```bash
     go test -race
     ```
-    
+
 3. 单独测试某个部分（例如只测试2A部分）：
-    
+
     ```bash
     go test -run 2A -race
     ```
-    
+
     类似地：
-    
+
     ```bash
     go test -run 2B -race
     go test -run 2C -race
@@ -40,6 +41,7 @@ date modified: 2024-11-12
 ## 核心功能实现
 
 1. **Leader 选举**:
+
 ```go
 // 开始选举
 func (rf *Raft) StartElection() {
@@ -74,6 +76,7 @@ func (rf *Raft) StartElection() {
 ```
 
 2. **日志复制**:
+
 ```go
 // Leader 广播日志条目
 func (rf *Raft) BroadcastHeartbeat(isHeartBeat bool) {
@@ -103,6 +106,7 @@ func (rf *Raft) replicateOneRound(peer int) {
 ```
 
 3. **提交日志**:
+
 ```go
 // Leader 推进 commitIndex
 func (rf *Raft) advanceCommitIndexForLeader() {
@@ -125,6 +129,7 @@ func (rf *Raft) advanceCommitIndexForLeader() {
 ```
 
 4. **应用日志**:
+
 ```go
 // 应用已提交的日志到状态机
 func (rf *Raft) applier() {
@@ -155,6 +160,7 @@ func (rf *Raft) applier() {
 ```
 
 5. **心跳机制**:
+
 ```go
 func (rf *Raft) ticker() {
     for rf.killed() == false {
@@ -180,6 +186,7 @@ func (rf *Raft) ticker() {
 ```
 
 这些代码实现了 Raft 的核心机制：
+
 - Leader 选举通过投票实现
 - 日志复制通过 AppendEntries RPC 实现
 - 通过多数确认来提交日志
@@ -222,7 +229,9 @@ func (rf *Raft) ticker() {
 这些测试全面覆盖了Raft算法的核心功能，包括领导选举、日志复制、持久化、恢复、快照等，并在各种网络条件（可靠、不可靠）和故障情况（节点崩溃、网络分区）下进行测试，以确保算法的正确性和鲁棒性。
 
 ## 游戏的全局设置器 make_config
+
 下面是对该函数 `make_config` 的目的
+
 - 创建多个 Raft 节点实例
 - 控制节点间的通信（可以模拟网络分区、延迟等）
 - 启动和停止节点
@@ -234,15 +243,16 @@ func (rf *Raft) ticker() {
 
 | 参数/变量        | 类型           | 含义                                                                          |
 | ------------ | ------------ | --------------------------------------------------------------------------- |
-| `t`          | `*testing.T` | Go 的测试框架中用于表示当前测试用例的对象。`make_config` 使用它来在测试过程中输出错误信息或终止测试。                 |
-| `n`          | `int`        | 要创建的 Raft 节点个数，即集群中服务器的数量。                                                  |
-| `unreliable` | `bool`       | 是否使用不可靠网络。当 `true` 时，模拟丢包、网络延迟、不按序到达的消息，从而测试 Raft 在不可靠通信环境下的表现。             |
-| `snapshot`   | `bool`       | 是否启用快照测试场景。如果为 `true`，则使用 `applierSnap` 来处理日志和快照，否则使用 `applier` 只对日志进行正常应用。 |
-**关于网络可靠/不可靠的实现**：  
+| `t`          | `*testing.T` | Go 的测试框架中用于表示当前测试用例的对象。`make_config` 使用它来在测试过程中输出错误信息或终止测试。|
+| `n`          | `int`        | 要创建的 Raft 节点个数，即集群中服务器的数量。|
+| `unreliable` | `bool`       | 是否使用不可靠网络。当 `true` 时，模拟丢包、网络延迟、不按序到达的消息，从而测试 Raft 在不可靠通信环境下的表现。|
+| `snapshot`   | `bool`       | 是否启用快照测试场景。如果为 `true`，则使用 `applierSnap` 来处理日志和快照，否则使用 `applier` 只对日志进行正常应用。|  
+
+**关于网络可靠/不可靠的实现**：
 在 `make_config` 函数中使用了 `cfg.net = labrpc.MakeNetwork()` 来创建一个模拟的网络对象。`labrpc.Network` 提供了对消息发送、接收的钩子，可通过配置指定如下特性：
-- **可靠网络（unreliable = false）**：  
+- **可靠网络（unreliable = false）**：
     网络不会有意丢包或乱序，消息基本按照发送顺序和预期路线到达对端。
-- **不可靠网络（unreliable = true）**：  
+- **不可靠网络（unreliable = true）**：
     当将网络设置为不可靠后，这个 `labrpc.Network` 实例可能会丢弃某些 RPC 消息、对消息进行延迟、或是对消息重新排序。这就模拟了真实网络中的各种异常情况，使得 Raft 在面对丢包、乱序的环境下仍需要保持正确性与一致性。通过 `cfg.setunreliable(unreliable)` 来开启或关闭这种不确定性。
     
 **关于 `snapshot` 参数的本质与形象解释**：
@@ -251,29 +261,35 @@ func (rf *Raft) ticker() {
 - **使用快照时（snapshot=true）**：当衣柜塞满时，你会把一些旧衣服整理打包起来（生成快照），清空衣柜一部分空间，让衣柜保持较小的负载。随后的新衣服（日志条目）就不会因为衣柜满了而无处安置。
 
 
-**总结**：  
+**总结**：
 通过 `make_config` 函数，可以快速搭建一个包含 n 个 Raft 节点的测试环境，包括网络模拟、持久化存储初始化、日志处理逻辑设置以及节点连接状态的默认配置。这为后续测试用例（如选举、日志复制、持久化、网络分区和快照安装等）提供了基础的运行环境。
+
 ## 代码流程-TestInitialElection2A
 
 TestInitialElection2A的主要思路是验证Raft集群在初始选举时的基本功能。
 
 1. 初始设置:
+
 ```go
 servers := 3
 cfg := make_config(t, servers, false, false)
 ```
+
 - 创建3个Raft服务器的集群
 - false, false 参数表示网络是可靠的(不丢包),且不使用快照功能
 
-2. 第一个检查点 - 选举出领导者:
+1. 第一个检查点 - 选举出领导者:
+
 ```go
 cfg.checkOneLeader()
 ```
+
 - 这个函数会循环检查10次,每次等待450-550ms
 - 检查是否有且仅有一个服务器认为自己是leader
 - 如果发现多个leader或没有leader会失败
 
-3. 第二个检查点 - term一致性检查:
+1. 第二个检查点 - term一致性检查:
+
 ```go
 time.Sleep(50 * time.Millisecond)
 term1 := cfg.checkTerms()
@@ -281,33 +297,40 @@ if term1 < 1 {
     t.Fatalf("term is %v, but should be at least 1", term1)
 }
 ```
+
 - 等待50ms让follower同步选举结果
 - 检查所有服务器的term是否一致
 - term必须至少为1(因为经过了一次选举)
 
-4. 第三个检查点 - 稳定性检查:
+1. 第三个检查点 - 稳定性检查:
+
 ```go
 time.Sleep(2 * RaftElectionTimeout)
 term2 := cfg.checkTerms()
 ```
+
 - 等待2个选举超时时间
 - 再次检查term
 - 如果term改变了(意味着发生了新的选举),会打印警告
 - 这说明在没有故障的情况下,leader应该保持稳定
 
-5. 最后检查点:
+1. 最后检查点:
+
 ```go
 cfg.checkOneLeader()
 ```
+
 - 再次确认仍然有一个leader
 
 这个测试验证了Raft的几个基本特性:
+
 1. 能够选出唯一的leader
 2. 所有节点就term达成一致
 3. 在无故障情况下保持稳定
 4. leader能持续保持领导地位
 
 代码执行流程:
+
 1. Make_config创建集群 -> 启动3个Raft节点
 2. 节点启动后开始选举过程
 3. 等待并验证选举结果
@@ -321,86 +344,106 @@ cfg.checkOneLeader()
 `TestPersist32C` 的测试代码顺序如下：
 
 1. **初始化设置**:
+
    ```go
    servers := 3
    cfg := make_config(t, servers, false, false)
    defer cfg.cleanup()
    ```
+
    - 创建一个包含3个服务器的Raft集群。
    - `make_config` 函数初始化网络、Raft实例、持久化存储等。
 
 2. **开始测试**:
+
    ```go
    cfg.begin("Test (2C): partitioned leader and one follower crash, leader restarts")
    ```
 
 3. **提交第一个命令**:
+
    ```go
    cfg.one(101, 3, true)
    ```
+
    - 提交命令 `101`，期望所有3个服务器都能达成一致。
 
 4. **检查当前的领导者**:
+
    ```go
    leader := cfg.checkOneLeader()
    ```
 
 5. **断开一个跟随者**:
+
    ```go
    cfg.disconnect((leader + 2) % servers)
    ```
+
    - 断开与领导者不相邻的一个跟随者。
 
 6. **提交第二个命令**:
+
    ```go
    cfg.one(102, 2, true)
    ```
+
    - 提交命令 `102`，期望剩下的2个服务器达成一致。
 
 7. **崩溃两个服务器**:
+
    ```go
    cfg.crash1((leader + 0) % servers)
    cfg.crash1((leader + 1) % servers)
    ```
+
    - 崩溃领导者和另一个跟随者。
    
 8. **重新连接并重启一个崩溃的服务器**:
+
    ```go
    cfg.connect((leader + 2) % servers)
    cfg.start1((leader+0)%servers, cfg.applier)
    cfg.connect((leader + 0) % servers)
    ```
+
    - 重新连接之前断开的跟随者。
    - 重启并连接之前崩溃的领导者。
 
 9. **提交第三个命令**:
+
    ```go
    cfg.one(103, 2, true)
    ```
+
    - 提交命令 `103`，期望2个服务器达成一致。
 
 10. **重启并连接另一个崩溃的服务器**:
+
     ```go
     cfg.start1((leader+1)%servers, cfg.applier)
     cfg.connect((leader + 1) % servers)
     ```
 
 11. **提交第四个命令**:
+
     ```go
     cfg.one(104, servers, true)
     ```
+
     - 提交命令 `104`，期望所有3个服务器都能达成一致。
     
 
 12. **结束测试**:
+
     ```go
     cfg.end()
     ```
 
 这个测试的目的是验证在领导者和一个跟随者崩溃后，系统能否正确恢复并继续达成一致。通过模拟网络分区和崩溃，测试Raft的持久化和恢复能力。
 
-
 使用了不同的颜色来表示节点状态：
+
 - 蓝色：领导者节点 leader
 - 绿色：正常工作的节点 worker
 - 红色：崩溃的节点
@@ -501,7 +544,3 @@ flowchart TD
 这个过程可能会在内部进行多次 AppendEntries RPC 往返，直到 S2 更新日志变为 {101,102,103}。同时，S0 作为重启后加入集群的节点，已经有 {101,102}，现在再加上 {103}，两者同步达成了一致。
 
 ## 代码流程-TestSnapshotInstall2D
-
-
-
-

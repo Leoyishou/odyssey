@@ -3,9 +3,10 @@ draw:
 title: Nginx
 tags: [Dev, 信息革命]
 date created: 2024-03-28
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
-```
+
+```Java
 server {
     listen 80;
     server_name 43.154.122.229;  # 替换成你的域名或服务器IP
@@ -18,8 +19,6 @@ server {
     }
 }
 ```
-
-
 
 ```mermaid
 sequenceDiagram
@@ -49,8 +48,6 @@ sequenceDiagram
 ```
 
 让我用一个生活化的比喻来解释：
-
-
 
 ```mermaid
 sequenceDiagram
@@ -101,17 +98,18 @@ sequenceDiagram
    - 然后按配置规则处理请求，像按工作手册指引访客
 
 如果：
+
 - 证书文件错误 → 就像保安的工作证/门禁卡失效
 - Nginx配置错误 → 就像工作手册写错了
 - 文件没有正确挂载 → 就像保安没带工作证和门禁卡来上班
 
 这就是为什么我们要：
+
 1. 确保证书文件格式正确（工作证/门禁卡有效）
 2. 正确配置Nginx（工作手册准确）
 3. 正确挂载文件（保安带齐了证件）
 
 这样整个系统才能安全、正确地工作。
-
 
 ```mermaid
 sequenceDiagram

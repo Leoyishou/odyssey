@@ -1,11 +1,9 @@
 ---
-aliases: [Vue 和 JavaScript 方法使用频率统计（表格版）]
 draw:
 tags: []
-title: Vue 和 JavaScript 方法使用频率统计（表格版）
-linter-yaml-title-alias: Vue 和 JavaScript 方法使用频率统计（表格版）
+title: viva 前端
 date created: 2024-10-01
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ```mermaid

@@ -3,7 +3,7 @@ draw:
 tags: []
 title: LLM
 date created: 2024-10-21
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 1.关键词是什么 2.how to send the context 是prompt或者 AI 时代的最关键命题
 
@@ -120,7 +120,7 @@ OpenAI提供了多种方式来实现function calling:
 
 ](https://platform.openai.com/docs/guides/function-calling)。
 
-2. Assistants API: 专门为构建AI助手设计的API,也支持function calling[
+1. Assistants API: 专门为构建AI助手设计的API,也支持function calling[
     
 
     4
@@ -129,7 +129,7 @@ OpenAI提供了多种方式来实现function calling:
 
 ](https://help.openai.com/en/articles/8555517-function-calling-in-the-openai-api)。
 
-3. Batch API: 用于批量处理的API,同样支持function calling[
+1. Batch API: 用于批量处理的API,同样支持function calling[
     
 
     3
@@ -157,7 +157,7 @@ OpenAI提供了多种方式来实现function calling:
 
 ](https://help.openai.com/en/articles/9492280-function-calling-in-the-chat-playground)。
 
-2. 结构化输出: 通过设置`strict: true`,确保模型生成的函数调用参数完全匹配您提供的JSON Schema[
+1. 结构化输出: 通过设置`strict: true`,确保模型生成的函数调用参数完全匹配您提供的JSON Schema[
     
 
     3

@@ -3,9 +3,10 @@ draw:
 tags: []
 title: iphone
 date created: 2024-11-05
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
-最优解是加拿大版，但是很难买到。  
+
+最优解是加拿大版，但是很难买到。
 如果买不到，次优解是日版
 
 美版：无实体 SIM 卡槽，支持 eSIM，支持卫星通信。 

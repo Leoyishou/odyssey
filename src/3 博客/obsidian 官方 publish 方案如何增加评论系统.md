@@ -3,7 +3,7 @@ draw:
 tags: []
 title: obsidian 官方 publish 方案如何增加评论系统
 date created: 2024-07-15
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 [Integrating Comments in Obsidian Publish - Sparrow's Digital Garden](https://garden.sparrow.zone/Integrating+Comments+in+Obsidian+Publish)
