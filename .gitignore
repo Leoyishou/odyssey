@@ -33,4 +33,6 @@ Thumbs.db
 # 其他
 *.log
 *.tmp
-*.temp 
+*.temp last_commit_with_diff.txt
+commit_diff.txt
+diff_output.txt

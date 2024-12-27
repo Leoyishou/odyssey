@@ -53,11 +53,6 @@ public static void main(String[] args) {
 在《阿里巴巴Java开发手册》中有一条建议，或者说是要求：
 
 
-
-![image-1732523913179](./assets/image-1732523913179.jpg)
-
-
-
 ### BigDecimal如何精确计数？
 
 
@@ -180,10 +175,6 @@ BigDecimal中提供了一个通过double创建BigDecimal的方法——BigDecima
 
 
 而是0.1000000000000000055511151231257827021181583404541015625。这是因为double自身表示的只是一个近似值。
-
-
-
-![image-1732523913446](./assets/image-1732523913446.jpg)
 
 
 
