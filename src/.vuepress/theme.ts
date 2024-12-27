@@ -1,7 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
 
 import { enNavbar, zhNavbar } from "./config/navbar/index.js";
-import { enSidebar, zhSidebar } from "./config/sidebar/index.js";
 
 export default hopeTheme({
   hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
@@ -18,6 +17,11 @@ export default hopeTheme({
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
   docsDir: "src",
+
+  // 自动生成侧边栏
+  sidebar: {
+    "/": "structure",  // 自动生成结构化侧边栏
+  },
 
   locales: {
     "/": {
@@ -144,6 +148,9 @@ export default hopeTheme({
 
       // Install sandpack-vue3 before enabling it
       // sandpack: true,
+
+      // 启用目录
+      toc: true,
     },
 
     // Install @vuepress/plugin-pwa and uncomment these if you want a PWA

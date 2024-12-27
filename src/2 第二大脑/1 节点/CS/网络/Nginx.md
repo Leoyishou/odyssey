@@ -5,6 +5,20 @@ tags: [Dev, 信息革命]
 date created: 2024-03-28
 date modified: 2024-11-12
 ---
+```
+server {
+    listen 80;
+    server_name 43.154.122.229;  # 替换成你的域名或服务器IP
+
+    root /home/lighthouse/odyssey;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+```
+
 
 
 ```mermaid
