@@ -1,11 +1,9 @@
 ---
-aliases: [DDD课程大纲]
 draw:
 tags: []
-title: DDD课程大纲
-linter-yaml-title-alias: DDD课程大纲
+title: DDD
 date created: 2024-08-19
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ddd说白了就是以前的service太乱太多了，把他们按照微服务的思想group by在了几个核心领域下  

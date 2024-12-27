@@ -3,7 +3,7 @@ draw:
 title: v-bind
 tags: []
 date created: 2024-06-23
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
  v-bind 可以简写为 colon

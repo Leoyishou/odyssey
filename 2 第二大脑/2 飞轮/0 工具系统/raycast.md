@@ -3,7 +3,7 @@ draw:
 tags: []
 title: raycast
 date created: 2024-07-11
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 启动器除了 [Alfred](Alfred) 和 [raycast](raycast.md)，还有竞品 [uTools](uTools)、[HapiGo](HapiGo)、[LaunchBar](LaunchBar)。

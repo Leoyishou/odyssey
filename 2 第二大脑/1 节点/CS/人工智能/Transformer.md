@@ -3,10 +3,10 @@ draw:
 tags: []
 title: Transformer
 date created: 2024-07-17
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
-3blue的transformer视频
 
+3blue的transformer视频
 
 Transformer 模型 Q 由 Vaswani 等人在 2017 年提出，最初用于机器翻译任务。与传统的 RNN（循环神经网络）和 LSTM（长短期记忆网络）不同，Transformer 完全基于自注意力机制（Self-Attention Mechanism）实现，并行处理能力更强，训练速度更快。Transformer 的出现彻底改变了 NLP 领域，使得任务的性能显著提升。
 

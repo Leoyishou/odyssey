@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Lab 1 MapReduce
 date created: 2024-08-07
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 N 个人去一个有 m 个坑位的大公共卫生间做清洁，该如何调度？这个实验的目标是实现一个分布式的 MapReduce 系统，包括协调器和工作进程，并确保它能正确处理并行任务、容错等情况。
@@ -11,6 +11,7 @@ N 个人去一个有 m 个坑位的大公共卫生间做清洁，该如何调度
 <!-- more -->
 
 ## 运行
+
 ```bash
 rm mr-out*
 go run -race mrcoordinator.go pg-*.txt
@@ -22,63 +23,66 @@ cat mr-out-* | sort | more
 
 1. **编译插件（应用代码）**  
     首先需要编译你要运行的 MapReduce 应用插件（比如 word count 程序）。进入 `6.824/src/main` 目录，执行：
-    
+
     ```bash
     cd ~/6.824/src/main
     go build -race -buildmode=plugin ../mrapps/wc.go
     ```
-    
+
     成功后会生成 `wc.so` 文件。
+
     
 2. **清理旧的输出文件**  
     运行前先确保没有残留的输出文件：
-    
+
     ```bash
     rm mr-out*
     ```
-    
+
 3. **启动 coordinator**  
     在同一个目录下运行 `mrcoordinator.go`，并传入输入文件列表（比如 `pg-xxx.txt` 文件集）：
-    
+
     ```bash
     go run -race mrcoordinator.go pg-*.txt
     ```
-    
+
     该命令会启动一个 coordinator 进程，并监听来自 worker 的 RPC 请求。
+
     
 4. **启动一个或多个 worker**  
     在另一个终端窗口中，同样在 `src/main` 目录下，启动 worker 进程，并加载你之前编译好的插件 `wc.so`：
-    
+
     ```bash
     go run -race mrworker.go wc.so
     ```
-    
+
     你可以多开几个终端窗口再运行数个相同命令，以模拟多个并发 worker。如果你的实现正确，coordinator 会分配任务给这些 worker，它们会处理完任务并写出最终的 `mr-out-X` 文件。
+
     
 5. **查看输出结果**  
     当任务全部完成后（coordinator 进程会自动退出），你可以查看输出结果：
-    
+
     ```bash
     cat mr-out-* | sort | more
     ```
-    
+
     结果应与 `mrsequential.go` 单机版的输出一致。
+
     
-6. **运行测试脚本**（可选）  
+6. **运行测试脚本**（可选）
     为了验证你的实现正确性，你还可以使用官方提供的测试脚本 `test-mr.sh`：
-    
+
     ```bash
     bash test-mr.sh
     ```
-    
+
     此脚本会依次测试 word-count、indexer、并行度测试以及崩溃恢复测试。如果全部通过，会显示：
-    
-    ```
+
+    ```Java
     *** PASSED ALL TESTS
     ```
-    
 
-**总结**：  
+**总结**：
 要取得实际执行的效果，你需要先编译插件，然后先启动 coordinator（给出输入文件），再启动 worker（加载插件），让 worker 请求并执行任务。最后，查看 `mr-out-*` 文件或运行官方测试脚本来验证结果。
 
 ## 资料
@@ -93,7 +97,7 @@ cat mr-out-* | sort | more
 
 一些文章
 
-```
+```Java
 .
 ├── pg-being_ernest.txt
 ├── pg-dorian_gray.txt
@@ -113,12 +117,12 @@ cat mr-out-* | sort | more
 
 这些文章里单词的出现次数
 
-
 ## 代码流程
 
 让我按照执行顺序来解释 MapReduce 的整个流程：
 
 1. **初始化阶段**:
+
 ```go
 // 1. Coordinator 启动并初始化
 func MakeCoordinator(files []string, nReduce int) *Coordinator {
@@ -135,6 +139,7 @@ func MakeCoordinator(files []string, nReduce int) *Coordinator {
 ```
 
 2. **Map 阶段**:
+
 ```go
 // 2.1 Worker不断发送心跳请求任务
 func Worker(mapF func(string, string) []KeyValue, reduceF func(string, []string) string) {
@@ -169,6 +174,7 @@ func doMapTask(mapF func(string, string) []KeyValue, response *HeartbeatResponse
 ```
 
 3. **Reduce 阶段**:
+
 ```go
 // 3.1 所有Map任务完成后，Coordinator切换到Reduce阶段
 func (c *Coordinator) schedule() {
@@ -198,6 +204,7 @@ func doReduceTask(reduceF func(string, []string) string, response *HeartbeatResp
 ```
 
 4. **任务协调**:
+
 ```go
 // Coordinator通过心跳机制分配任务
 func (c *Coordinator) selectTask(response *HeartbeatResponse) bool {
@@ -209,6 +216,7 @@ func (c *Coordinator) selectTask(response *HeartbeatResponse) bool {
 ```
 
 关键流程：
+
 1. Coordinator 初始化并加载输入文件
 2. Worker 通过心跳获取任务
 3. Map 任务处理单个输入文件，产生中间文件
@@ -216,7 +224,6 @@ func (c *Coordinator) selectTask(response *HeartbeatResponse) bool {
 5. 整个过程通过 RPC 进行通信和协调
 
 这个实现类似于 Google 的 MapReduce 论文，但简化了一些。
-
 
 ## 文件解读
 
@@ -308,4 +315,3 @@ func (c *Coordinator) selectTask(response *HeartbeatResponse) bool {
     └── test_test.go
 
 ```
-

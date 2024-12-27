@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Viva La Vida
 date created: 2024-09-16
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ## 待办区
@@ -49,14 +49,13 @@ date modified: 2024-11-12
 
 - 使用 `add_word(word, freq=None, tag=None)` 和 `del_word(word)` 可在程序中动态修改词典。
     
-- 使用 ```Java
-[  
+- 使用 ```Java  
+[
     {"role": "system", "content": "You are an assistant who can compose sentences with given words or phrases or sentences, you are expert in Chinese and English."},  
-    {"role": "user", "content": f"如果“{word}” 是一个单词或者短语，那么用其生成一个30词以上的托福听力风格的英文句子，并把“{word}” 对应的英文用（）围起来，；如果“{word}” 是一句话的话，把它原封不动返回给我就好，返回结果中不应当有括号"}  
+    {"role": "user", "content": f"如果"{word}" 是一个单词或者短语，那么用其生成一个30词以上的托福听力风格的英文句子，并把"{word}" 对应的英文用（）围起来，；如果"{word}" 是一句话的话，把它原封不动返回给我就好，返回结果中不应当有括号"}  
 ]
 
 word 分别是 in a row， resolution， revolution， Like， that， toilet
-
 
 ```0 可调节单个词语的词频，使其能（或不能）被分出来。
     

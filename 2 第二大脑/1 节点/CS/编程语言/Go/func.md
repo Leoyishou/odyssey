@@ -3,7 +3,7 @@ draw:
 tags: []
 title: func
 date created: 2024-08-15
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ## 静态方法，不属于任何对象或实例

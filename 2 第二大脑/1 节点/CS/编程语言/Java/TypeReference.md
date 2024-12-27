@@ -3,7 +3,7 @@ draw:
 tags: []
 title: TypeReference
 date created: 2024-08-14
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 1. 用的时候的姿势是[匿名内部类](匿名内部类.md)的方式`new TypeReference<Map<String, Map<String, Set<String>>>>(){}`，这样可以使得泛型内容传给其 superClass 的`<T>`

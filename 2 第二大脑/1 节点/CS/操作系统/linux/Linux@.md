@@ -1,24 +1,36 @@
-# Linux 系统参考指南
+---
+aliases: [Linux 系统参考指南]
+draw:
+tags: []
+title: Linux 系统参考指南
+linter-yaml-title-alias: Linux 系统参考指南
+date created: 2024-11-25
+date modified: 2024-12-27
+---
+
+## Linux 系统参考指南
 
 > 一切皆文件
 
-## 一、常用命令速查表
+### 一、常用命令速查表
 
-### 1. 文件和目录操作
+#### 1. 文件和目录操作
+
 | 命令 | 说明 |
 |------|------|
 | `ls` | 列出文件和目录 |
-| `ls -l` | 长格式列表（显示权限、所有者、大小、日期） |
-| `ls -a` | 显示隐藏文件（以点开头的文件） |
+| `ls -l` | 长格式列表（显示权限、所有者、大小、日期）|
+| `ls -a` | 显示隐藏文件（以点开头的文件）|
 | `ls -lh` | 以人类可读格式显示文件大小 |
 | `cd /path/to/directory` | 切换到指定目录 |
-| `cd ..` | 返回上级目录 |
+| `cd..` | 返回上级目录 |
 | `cd ~` | 进入家目录 |
 | `cd -` | 返回上次所在目录 |
 | `mkdir myFolder` | 创建新目录 |
 | `mkdir -p dir1/dir2` | 创建嵌套目录 |
 
-### 2. 文件操作
+#### 2. 文件操作
+
 | 命令 | 说明 |
 |------|------|
 | `cp source.txt destination.txt` | 复制文件 |
@@ -29,19 +41,21 @@
 | `rm -r directory/` | 删除目录及其内容 |
 | `rm -rf directory/` | 强制删除目录及其内容 |
 
-### 3. 文件内容操作
+#### 3. 文件内容操作
+
 | 命令 | 说明 |
 |------|------|
 | `cat file.txt` | 输出整个文件内容 |
 | `less file.txt` | 分页查看文件内容 |
 | `head file.txt` | 查看文件前10行 |
 | `tail file.txt` | 查看文件后10行 |
-| `tail -f logfile.log` | 实时查看文件末尾（常用于日志） |
+| `tail -f logfile.log` | 实时查看文件末尾（常用于日志）|
 | `grep "search_term" file.txt` | 在文件中搜索内容 |
 | `grep -r "search_term" /path` | 递归搜索目录中的文件内容 |
 | `grep -i "search_term" file.txt` | 不区分大小写搜索 |
 
-### 4. 系统信息和进程管理
+#### 4. 系统信息和进程管理
+
 | 命令 | 说明 |
 |------|------|
 | `uname -a` | 显示内核版本和系统信息 |
@@ -49,20 +63,22 @@
 | `free -h` | 显示内存使用情况 |
 | `top` | 实时系统资源监控 |
 | `ps aux` | 列出所有运行进程 |
-| `kill [pid]` | 终止指定进程 |
-| `kill -9 [pid]` | 强制终止进程 |
+| `kill[pid]` | 终止指定进程 |
+| `kill -9[pid]` | 强制终止进程 |
 | `killall process_name` | 终止所有指定名称的进程 |
 
-### 5. 权限管理
+#### 5. 权限管理
+
 | 命令 | 说明 |
 |------|------|
-| `chmod 755 file.txt` | 设置权限（所有者：rwx，组：r-x，其他：r-x） |
+| `chmod 755 file.txt` | 设置权限（所有者：rwx，组：r-x，其他：r-x）|
 | `chmod u+x script.sh` | 给所有者添加执行权限 |
 | `chmod -R 777 /directory` | 递归设置目录权限 |
 | `chown user:group file.txt` | 更改文件所有者和组 |
 | `chown -R user:group /dir` | 递归更改目录所有权 |
 
-### 6. 文件查找和压缩
+#### 6. 文件查找和压缩
+
 | 命令 | 说明 |
 |------|------|
 | `find /path -name "file.txt"` | 按文件名搜索 |
@@ -73,16 +89,19 @@
 | `tar -czvf archive.tar.gz /path` | 创建压缩的tar归档 |
 | `tar -xzvf archive.tar.gz` | 解压压缩的tar归档 |
 
-## 二、系统目录结构
+### 二、系统目录结构
 
-### /opt 目录
+#### /opt 目录
+
 - 全称：optional（可选的）
 - 用途：存放可选的软件包或第三方应用程序
 
-## 三、实用工具推荐
+### 三、实用工具推荐
 
-### 1. ag (The Silver Searcher)
+#### 1. ag (The Silver Searcher)
+
 一个比 grep 更快的代码搜索工具，具有以下特点：
+
 - 搜索速度快
 - 默认递归搜索
 - 自动忽略版本控制系统文件
@@ -91,7 +110,8 @@
 - 支持正则表达式
 - 支持多核加速
 
-### 2. 常用工具清单
+#### 2. 常用工具清单
+
 1. 官方安装包：
 	- nodejs（自带 npm）
 	- Golang

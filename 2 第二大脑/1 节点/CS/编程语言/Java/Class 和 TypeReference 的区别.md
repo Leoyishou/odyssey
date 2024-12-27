@@ -3,7 +3,7 @@ draw:
 title: Class 和 TypeReference 的区别
 tags: []
 date created: 2024-06-06
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 [TypeReference](TypeReference.md)

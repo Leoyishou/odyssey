@@ -3,7 +3,7 @@ draw:
 tags: []
 title: keep-alive
 date created: 2024-06-24
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 使用 keep-alive 可以在组件切换时保持组件的状态，而不需要重新加载或重新渲染

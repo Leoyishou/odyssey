@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Jar 包
 date created: 2024-07-02
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 1. 一个项目内，不想代码重复的时候，靠 import 复用
 2. 多个项目间，不想代码重复的时候，只能靠 Jar 包了，另外也可以保护 Jar 包中的代码，不被别人随意修改。

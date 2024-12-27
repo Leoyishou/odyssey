@@ -1,29 +1,44 @@
 ---
+aliases: [查看一下现有python的位置]
 draw:
 tags: []
-title: Python安装
+title: 查看一下现有python的位置
 date created: 2023-11-22
-date modified: 2024-11-12
+date modified: 2024-12-27
+linter-yaml-title-alias: 查看一下现有python的位置
 ---
 
 系统默认自带了一个 ```bash
-# 查看一下现有python的位置
-whereis python
+
+## 查看一下现有python的位置
+
+whereis python  
 python: /usr/bin/python /usr/bin/python2.7 /usr/bin/python2.7-config /usr/lib/python2.7 /usr/lib64/python2.7 /etc/python /usr/include/python2.7
-# 在一个不冲突的位置创建安装目录
-mkdir -p /usr/local/python3
+
+## 在一个不冲突的位置创建安装目录
+
+mkdir -p /usr/local/python3  
 ```3，我们有的应用需要用到 ```bash
-# 查看一下现有python的位置
-whereis python
+
+## 查看一下现有python的位置
+
+whereis python  
 python: /usr/bin/python /usr/bin/python2.7 /usr/bin/python2.7-config /usr/lib/python2.7 /usr/lib64/python2.7 /etc/python /usr/include/python2.7
-# 在一个不冲突的位置创建安装目录
-mkdir -p /usr/local/python3
+
+## 在一个不冲突的位置创建安装目录
+
+mkdir -p /usr/local/python3  
 ```4 来运行，那我们就来为系统安装一个 ```bash
-# 查看一下现有python的位置
-whereis python
+
+## 查看一下现有python的位置
+
+whereis python  
 python: /usr/bin/python /usr/bin/python2.7 /usr/bin/python2.7-config /usr/lib/python2.7 /usr/lib64/python2.7 /etc/python /usr/include/python2.7
-# 在一个不冲突的位置创建安装目录
+
+## 在一个不冲突的位置创建安装目录
+
 mkdir -p /usr/local/python3
+
 ```5 为后面的开发做准备。
 
 ## 下载压缩包
@@ -34,7 +49,7 @@ wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz
 
 Bash
 
-## 创建目录
+### 创建目录
 
 ```bash
 # 查看一下现有python的位置
@@ -46,7 +61,7 @@ mkdir -p /usr/local/python3
 
 Bash
 
-## 解压并安装到指定目录
+### 解压并安装到指定目录
 
 ```bash
 tar -zxvf Python-3.6.1.tgz
@@ -68,7 +83,7 @@ make && make install
 
 Bash
 
-## 链接软连接
+### 链接软连接
 
 ```bash
 ln -s /usr/local/python3/bin/python3 /usr/bin/python3
@@ -78,14 +93,14 @@ ln -s /usr/local/python3/bin/pip3 /usr/bin/pip
 
 Bash
 
-## 查看版本
+### 查看版本
 
 ```bash
 /usr/local/python3/bin/python3 -V
 Python 3.6.1
 ```
 
-## 添加 PATH 环境变量
+### 添加 PATH 环境变量
 
 ```bash
 vim ~/.bash_profile
@@ -104,17 +119,26 @@ Python 2.7.5
 Bash
 
 这样系统就并存了 ```bash
-# 查看一下现有python的位置
-whereis python
+
+## 查看一下现有python的位置
+
+whereis python  
 python: /usr/bin/python /usr/bin/python2.7 /usr/bin/python2.7-config /usr/lib/python2.7 /usr/lib64/python2.7 /etc/python /usr/include/python2.7
-# 在一个不冲突的位置创建安装目录
-mkdir -p /usr/local/python3
+
+## 在一个不冲突的位置创建安装目录
+
+mkdir -p /usr/local/python3  
 ```6 和 ```bash
-# 查看一下现有python的位置
-whereis python
+
+## 查看一下现有python的位置
+
+whereis python  
 python: /usr/bin/python /usr/bin/python2.7 /usr/bin/python2.7-config /usr/lib/python2.7 /usr/lib64/python2.7 /etc/python /usr/include/python2.7
-# 在一个不冲突的位置创建安装目录
+
+## 在一个不冲突的位置创建安装目录
+
 mkdir -p /usr/local/python3
+
 ```7，也为后面的多应用独立环境的隔离做好了准备工作。
 
 ## 六、pip 配置工作

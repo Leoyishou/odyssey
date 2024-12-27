@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Autodl
 date created: 2024-10-22
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 Autodl（Auto Deep Learning）是一个在中国比较流行的深度学习云平台，主要提供GPU算力租用服务。以下是它的主要特点：
@@ -48,7 +48,7 @@ python train.py
 scp -P <端口> root@<实例IP>:结果文件 本地路径
 ```
 
-2. 常见使用建议：
+1. 常见使用建议：
 - 使用前先估算好需要的时长和配置
 - 重要数据要及时备份
 - 不用时记得停止实例以节省费用

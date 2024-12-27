@@ -1,3 +1,10 @@
+---
+draw:
+tags: []
+title: AARRR
+date created: 2024-12-15
+date modified: 2024-12-27
+---
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F12%2F12%2F15-54-55-53f8159d70f0f41511cfb513e9bd47dd-202412121554273-a37b27.png)
 

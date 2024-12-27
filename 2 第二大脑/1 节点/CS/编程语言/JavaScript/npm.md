@@ -3,7 +3,7 @@ draw:
 tags: []
 title: npm
 date created: 2024-11-08
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ## 目录
@@ -14,11 +14,12 @@ date modified: 2024-11-12
 ## 命令
 
  `npm create vue@latest`
+
 - 创建一个新的 Vue.js 项目脚手架，类似 Spring Boot 项目脚手架
 - 通过交互式命令行让你选择项目配置（TypeScript、路由、Pinia、测试工具等）
-- 自动生成项目结构和基础代码
+- 自动生成项目结构和基础代码  
 配置好构建工具（通常是 Vite）
-相当于
+相当于  
 `curl https://start.spring.io/starter.zip -d dependencies=web,data-jpa -d type=maven-project -o demo.zip`
 
 

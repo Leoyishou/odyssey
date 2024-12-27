@@ -3,7 +3,7 @@ draw:
 tags: []
 title: HTTP 2
 date created: 2024-09-21
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ![](https://cdn-a.markji.com/files/631575926dda045792bf5318_hd.jpg?e=1727092647503&token=xX63b9jqTlDOcGmctt5K9254rV0LG8hS9BmDeFBy:mopBSl-XxBH6o00PeSVwjbYgTZw=)

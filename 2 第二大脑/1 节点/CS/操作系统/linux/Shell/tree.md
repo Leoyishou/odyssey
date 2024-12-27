@@ -3,7 +3,7 @@ draw:
 tags: []
 title: tree
 date created: 2024-07-02
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 `tree` 命令的一些有用选项：

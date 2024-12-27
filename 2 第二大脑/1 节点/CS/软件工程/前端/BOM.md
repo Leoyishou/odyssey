@@ -4,7 +4,7 @@ draw:
 tags: []
 title: BOM
 date created: 2024-09-30
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 BOM (浏览器对象模型)，用面向对象的方式操作浏览器

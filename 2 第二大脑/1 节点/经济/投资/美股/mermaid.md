@@ -3,7 +3,7 @@ draw:
 tags: []
 title: mermaid
 date created: 2024-09-07
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ## 官方文档
@@ -78,16 +78,16 @@ graph LR
 
 1. 样式定义：使用 `classDef` 定义了不同的样式类。
 2. 子图（Subgraph）：将券处理（CouponHandle）部分封装在一个子图中，使结构更清晰。
-3. 方向控制：在子图中使用 ```mermaid
-graph LR
-    A[travelco] -->|1. 请求数据| B(SPA)
-    B -->|2. 返回数据| A
+3. 方向控制：在子图中使用 ```mermaid  
+graph LR  
+    A[travelco]-->|1. 请求数据| B(SPA)  
+    B -->|2. 返回数据| A  
     A -->|3. 存储数据| C[(Redis)]
-    D[Captain] -->|4. 读取数据| C
+    D[Captain]-->|4. 读取数据| C
 
-
-    class A,B,D component;
+    class A,B,D component;  
     class C database;
+
 ```0（Top to Bottom）控制流程方向。
 4. 。
 5. 样式应用：对不同的节点应用了自定义样式。

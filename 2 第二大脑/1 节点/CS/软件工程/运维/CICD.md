@@ -3,17 +3,15 @@ draw:
 tags: []
 title: CICD
 date created: 2023-12-10
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 **continuous integration and continuous delivery/continuous deployment**
 
 一条`git push`触发一连串命令，比如
+
 - 构建你的 VuePress 项目
 - 运行测试
 - 部署到 GitHub Pages 或其他服务器
-
-
-
 
 在软件开发中，"build" 和 "deploy" 是两个不同的阶段：
 
@@ -31,36 +29,27 @@ date modified: 2024-11-12
 
 总结来说，Build 是创建软件的过程，而 Deploy 是将构建好的软件部署到实际使用环境的过程。
 
-
-
 ## GitHub Actions 工作流脚本
 
 [[GitHub Actions]] 是 GitHub 提供的持续集成和持续部署（CI/CD）服务。通过添加这个脚本，你可以实现以下功能：
 
 1. **自动构建**: 每当你推送新的代码到 GitHub 仓库时，这个脚本会自动运行并构建你的 VuePress 网站。
-
 2. **自动部署**: 构建完成后，脚本可以将生成的静态文件自动部署到 GitHub Pages 或其他托管服务。
-
 3. **质量控制**: 你可以在脚本中添加测试步骤，确保每次更改都符合项目标准。
 
 ## 选择是否添加脚本
 
 - 如果你计划使用 GitHub 托管你的项目，并希望自动化部署过程，选择添加这个脚本是个不错的选择。
-
 - 如果你不打算使用 GitHub 托管，或者prefer手动部署，你可以选择不添加这个脚本。
 
 ## 脚本的好处
 
 1. **省时省力**: 自动化部署流程可以节省大量手动操作时间。
-
 2. **一致性**: 确保每次部署都遵循相同的步骤，减少人为错误。
-
 3. **版本控制**: 部署脚本也被版本控制，方便追踪和管理部署流程的变化。
 
 如果你决定添加这个脚本，它通常会被保存在你项目的 `.github/workflows` 目录下，文件名类似 `deploy.yml`。你可以根据需要随时修改这个脚本，以适应你的特定需求[1][3].
 
-
-
-```
+```Java
 
 ```

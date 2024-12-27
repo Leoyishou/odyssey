@@ -1,3 +1,11 @@
+---
+draw:
+tags: []
+title: VPS
+date created: 2024-11-24
+date modified: 2024-12-27
+---
+
 VPS (Virtual Private Server) 和云服务器的主要区别：
 
 1. VPS：
@@ -14,7 +22,7 @@ VPS (Virtual Private Server) 和云服务器的主要区别：
   - DigitalOcean
   - Bandwagon（搬瓦工）
 
-2. 云服务器（如 Google Cloud）：
+1. 云服务器（如 Google Cloud）：
 - 本质：基于整个云计算基础设施
 - 特点：
   - 资源弹性伸缩
@@ -34,12 +42,14 @@ VPS (Virtual Private Server) 和云服务器的主要区别：
   - 阿里云
 
 选择建议：
+
 1. 小型个人网站、博客 → VPS 足够
 2. 企业应用、需要扩展性 → 云服务器更合适
 3. 预算有限 → VPS 更经济
 4. 需要完整生态 → 云服务器更合适
 
 你现在使用的是腾讯云服务器，相比 VPS 有更好的：
+
 1. 安全性
 2. 稳定性
 3. 可扩展性

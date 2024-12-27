@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Table
 date created: 2024-10-30
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 Guava的Table是一个双键映射的数据结构,类似于Map<R, `Map<C, V>`>。主要特点:
@@ -21,7 +21,7 @@ table.put("row1", "col1", 1);
 Integer value = table.get("row1", "col1");
 ```
 
-2. 常用视图:
+1. 常用视图:
 
 ```java
 // 获取所有行的Map
@@ -34,7 +34,7 @@ Map<String, Integer> row = table.row("row1");
 Map<String, Map<String, Integer>> columnMap = table.columnMap();
 ```
 
-3. 主要实现类:
+1. 主要实现类:
 - HashBasedTable: 基于HashMap
 - TreeBasedTable: 基于TreeMap,支持排序
 - ImmutableTable: 不可变实现

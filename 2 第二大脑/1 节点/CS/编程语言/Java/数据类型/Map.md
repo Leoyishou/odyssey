@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Map
 date created: 2024-07-19
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 ## Map 的本质是一个带了查找功能的 `List<Entry>`

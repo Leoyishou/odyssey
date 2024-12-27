@@ -3,7 +3,7 @@ draw:
 tags: []
 title: conda
 date created: 2024-07-13
-date modified: 2024-11-12
+date modified: 2024-12-27
 ---
 
 请问大神们，pip install 和 conda install 有什么区别吗？- ZERO-XJ 的回答 - 知乎  
