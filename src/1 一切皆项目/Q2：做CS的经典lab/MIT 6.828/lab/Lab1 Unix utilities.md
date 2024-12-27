@@ -1,8 +1,3 @@
-
-
-
-
-
 1. 克隆 xv6-labs-2021 仓库并切换到 `util` 分支：
     
     ```bash
@@ -90,6 +85,25 @@
 
 
 ## 具体实现
+
+####  argv 和 argv 是什么的简称
+
+argc 和 argv 是 C 语言中 main 函数的标准参数：
+
+- argc = "argument count"
+- 表示命令行参数的数量
+- 至少为1（因为程序名本身就是第一个参数）
+
+- argv = "argument vector"
+- 是一个指向字符串数组的指针
+- 存储所有的命令行参数
+- argv[0] 是程序名
+- argv[1] 到 argv[argc-1] 是实际的命令行参数
+
+
+
+
+
 
 让我帮你分析一下 Lab1 Unix utilities 的实现思路。根据文档，这个 lab 包含几个主要任务:
 

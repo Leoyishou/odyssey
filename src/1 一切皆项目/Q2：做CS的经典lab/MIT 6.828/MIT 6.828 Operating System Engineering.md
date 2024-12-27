@@ -28,3 +28,5 @@ https://pdos.csail.mit.edu/6.828/2021/xv6/book-riscv-rev2.pdf
 https://github.com/PKUFlyingPig/MIT6.S081-2020fall
 课程原视频：
 https://www.youtube.com/watch?v=J3LCzufEYt0&list=PLTsf9UeqkReZHXWY9yJvTwLJWYYPcKEqK
+官方地址：
+https://pdos.csail.mit.edu/6.S081/2020/

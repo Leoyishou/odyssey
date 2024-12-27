@@ -5,6 +5,8 @@ title: Transformer
 date created: 2024-07-17
 date modified: 2024-11-12
 ---
+3blue的transformer视频
+
 
 Transformer 模型 Q 由 Vaswani 等人在 2017 年提出，最初用于机器翻译任务。与传统的 RNN（循环神经网络）和 LSTM（长短期记忆网络）不同，Transformer 完全基于自注意力机制（Self-Attention Mechanism）实现，并行处理能力更强，训练速度更快。Transformer 的出现彻底改变了 NLP 领域，使得任务的性能显著提升。
 
@@ -46,7 +48,7 @@ Q 是问题，K 是 key，V 是 value
 
 ```
 
-上面的部分『我爱你』只是变成了序列无关的embedding，但是现实中「我爱你」和「你爱我」其实是不同的，所以在 embedding 的时候还要加入*位置编码*以反应单词出现顺序的信息
+上面的部分『我爱你』只是变成了序列无关的embedding，但是现实中「我爱你」和「你爱我」其实是不同的，所以在 embedding 的时候还要加入位置编码以反应单词出现顺序的信息
 
 知名大学教授
 
