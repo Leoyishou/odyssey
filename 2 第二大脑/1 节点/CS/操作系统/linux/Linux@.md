@@ -1,16 +1,26 @@
 ---
-aliases: [Linux 系统参考指南]
 draw:
 tags: []
-title: Linux 系统参考指南
-linter-yaml-title-alias: Linux 系统参考指南
+title: Linux@
 date created: 2024-11-25
-date modified: 2024-12-27
+date modified: 2024-12-28
 ---
 
 ## Linux 系统参考指南
 
 > 一切皆文件
+
+## 文件
+
+### 常用目录解释
+
+| 目录   | 含义                    | 描述                                 |
+| ---- | --------------------- | ---------------------------------- |
+| /etc | et cetera源自拉丁语，表示"等等" | 存放系统和应用程序的配置文件，最初用于存放不属于其他目录的文件    |
+| /usr | Unix System Resources | 代表 Unix 系统资源                       |
+| /var | variable              | 代表可变数据，用于存放可变数据，如数据库文件、软件包数据、用户数据等 |
+
+`/var/lib/` 存储系统运行时的持久性数据，
 
 ### 一、常用命令速查表
 

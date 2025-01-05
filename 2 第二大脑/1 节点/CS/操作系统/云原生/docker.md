@@ -1,13 +1,34 @@
 ---
 draw:
 tags: []
-title: docker
+title: Docker
 date created: 2024-07-20
-date modified: 2024-12-27
+date modified: 2024-12-29
 ---
 
-`docker run -it --rm viva_backend /bin/bash`  
+所有有状态的服务，都别放在docker里跑。例如mysal、redis、elasticsearch、activemq。因为这些服务都要保证高可用和稳定性，放在docker里很难做到，就算是k8s里，也不建议放。这也是为什么云厂商会提供这些有状态的saas服务，例如在aws里，会提供mysal、redis、mq的服务。
+
+学习 Docker 生态的三步通常是指：
+
+Docker (基础)  
+[docker compose](docker%20compose.md) (多容器应用管理)  
+[[Docker Swarm]] 或 [[Kubernetes]] (容器编排，用于生产环境)
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F20%2F22-46-47-16d0d8394aee51737c6924bf849aa23c-20240720224647-c2b05e.png)
+
+## run：运行某个 container
+
+``docker run -it --rm viva_backend /bin/bash`  `
+
+## exec：进入某个 container
+
+`docker exec -it e16baf6e001c /bin/bash`
+
+## build
+
+![image.png|1800](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F12%2F28%2F02-09-07-13f6fe76d8c90b92a33f7dbfa237e686-202412280209138-04c38c.png)
+
+![Uploading file...i61jc]()
 
 [Orbstack](Orbstack.md) 是 [MacBook](MacBook.md) 用 docker 的最佳实践
 

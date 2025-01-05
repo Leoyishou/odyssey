@@ -1,11 +1,9 @@
 ---
-aliases: [设置当前仓库]
 draw:
 tags: []
-title: 设置当前仓库
+title: Git
 date created: 2024-06-24
-date modified: 2024-12-27
-linter-yaml-title-alias: 设置当前仓库
+date modified: 2025-01-01
 ---
 
 ## Git Commit Message
@@ -289,7 +287,7 @@ git config --global pull.rebase true
 git pull
 ```
 
-2. 只允许快进合并：
+1. 只允许快进合并：
 
 ```bash
 # 设置当前仓库

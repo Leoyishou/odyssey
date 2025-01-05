@@ -3,10 +3,12 @@ draw:
 tags: []
 title: docker compose
 date created: 2024-07-20
-date modified: 2024-12-27
+date modified: 2024-12-28
 ---
 
-Docker Compose 是一个用于定义和运行多容器 [[docker]] 应用程序的工具。
+**Docker Compose**：在单机上管理多容器应用，使用简单的 `docker-compose.yml` 文件即可快速编排多个容器之间的依赖和网络通信。
+
+Docker Compose 是一个用于定义和运行多容器 [[Docker]] 应用程序的工具。
 
 - 是 Docker 的补充工具
 - 用于管理多个容器

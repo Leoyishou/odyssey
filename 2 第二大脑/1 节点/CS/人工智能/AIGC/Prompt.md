@@ -4,8 +4,10 @@ draw:
 tags: []
 title: Prompt
 date created: 2024-10-24
-date modified: 2024-12-27
+date modified: 2024-12-29
 ---
+
+https://eamtute8hsd.feishu.cn/wiki/C9jDwyYMoivt35kKBJuck9j3n1g?fromScene=spaceOverview
 
 ## 关键词，知识压缩的艺术
 
