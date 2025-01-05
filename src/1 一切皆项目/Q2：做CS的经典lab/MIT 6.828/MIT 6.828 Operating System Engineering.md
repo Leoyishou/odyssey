@@ -3,8 +3,26 @@ draw:
 tags: []
 title: MIT 6.828 Operating System Engineering
 date created: 2024-12-11
-date modified: 2024-12-27
+date modified: 2024-12-30
 ---
+
+## Lab
+
+| Lab | Tasks |
+|---|---|
+| [[Lab1 Unix utilities]] | • 实现基本的Unix工具（如sleep, find, ping-pong等）<br>• 熟悉xv6系统调用<br>• 初步了解Unix系统编程 |
+| [[Lab2 System calls]] | • 添加系统调用到xv6<br>• 实现trace和sysinfo系统调用<br>• 理解系统调用机制 |
+| [[Lab3 Page tables]] | • 实现页表相关功能<br>• 添加物理页面的分配追踪<br>• 实现用户页面访问权限控制 |
+| [[Lab4 Traps]] | • 实现RISC-V汇编陷阱处理<br>• 实现时钟中断<br>• RISC-V的陷阱机制 |
+| [[Lab5 Lazy allocation]] | • 实现延迟页面分配<br>• 处理页面错误<br>• 优化内存使用 |
+| [[Lab6 Copy on Write]] | • 实现写时复制fork<br>• 优化进程创建<br>• 实现页面引用计数 |
+| [[Lab7 Multithreading]] | • 实现用户级线程<br>• 实现线程切换<br>• 实现线程同步原语 |
+| [[Lab8 Lock]] | • 实现自旋锁和睡眠锁<br>• 提高并行性<br>• 减少锁竞争 |
+| [[Lab9 File system]] | • 实现大文件支持<br>• 实现符号链接<br>• 优化文件系统性能 |
+| [[Lab10 mmap]] | • 实现mmap系统调用<br>• 实现内存映射文件<br>• 处理页面错误 |
+| [[Lab11 Network Driver]] | • 实现网络设备驱动<br>• 实现网络数据包收发<br>• 了解设备驱动编程 |
+
+注意：课程可能会随时间更新实验内容，这个列表基于较新的版本，但具体细节可能会有所变化。建议参考课程官方文档获取最新信息。
 
 ## 配环境
 

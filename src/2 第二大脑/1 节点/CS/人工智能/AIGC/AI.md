@@ -3,8 +3,126 @@ draw:
 tags: []
 title: AI
 date created: 2024-11-03
-date modified: 2024-12-27
+date modified: 2025-01-02
 ---
+
+## 2024年AI大事纪
+
+一月  
+1.05 Mobile Aloha 斯坦福  
+1.10 LumaAI Genie 文生3D  
+1.11 GPTs GPTstore上线，AI的appstore，你赚到钱了吗  
+Magnific爆火网络，光靠AI放大狂澜  
+1.30 一月的最后一天。Apple Vision Pro宣布2.2开售
+
+二月  
+2.04 通义千问发布Qwen1.5 72b等大量模型  
+2.08日谷歌发布Bard 变身Gemini 正式打响大模型之战和奥特曼抗衡  
+奥特曼筹钱7万亿刀买算力  
+2.12，Stable Cascade 对英文理解升级不再是歪歪扭扭的数字  
+2.15 Meta杨乐坤 V-jepa  
+2.17 SORA，DIT架构，直到现在也是热点中的热点  
+2.28 LTX，一句话生成电影  
+2.29 Figure接入OpenAI大模型，获得openAI融资
+
+三月  
+3.02 北大学生宣布要做opensora,复刻sora模型  
+阿里公布EMO，最强对嘴型，引起大众讨论  
+3.3 Claude3发布，GPT最强对手出现  
+苹果放弃造车，转身大模型却力不从心，发布3b 7b 30b MM1，制造AI手机  
+英伟达科技春晚，发布GB200，Blackwell DGX等AI计算基础设施，股价一路飙升  
+3.5 TripoSR发布，完全开源，0.5s图生模型  
+3.12 Devin首个AI程序员  
+3.17马斯克开源Grok1，314b创开源模型最大尺寸，发布Grok1.5，但始终被OMM三座大山压住  
+3.18 Kimi AI 200w字无损上下文理解，下载量破五十万  
+3.21 SUNO V3爆火，AI音乐，每个人都可以创作音乐  
+3.21 脑机接口人体实验成功，瘫痪也能玩游戏  
+3.23 SD母公司StabilityAI ceo辞职 主创出走，SAI开始下坡  
+ViggleAI 上传图片即可模拟动作
+
+四月  
+4.11 Google cloud next大会 发布Gemini 1.5 自研TPU，运算速度提升4倍  
+4.15 Adobe premiere宣布将引入sora和runway 编辑  
+4. 18 Meta Lamma3发布，最强开源大模型  
+Meta智能眼镜爆单，成为各大博主最爱设备  
+4.25 通义千问开源Qwen1.5 110B模型  
+4.27 生数科技国产Vidu大模型官宣，对标sora  
+4.29 Github Copilot workspace程序员最爱AI助手
+
+五月  
+5.07 Apple发布AI芯片M4 3nm制程，加持苹果各种硬件  
+5.09 字节的dreamina 改中文名即梦，国内AI视频战争正式打响  
+5.10 IC-Light 张吕敏新作  
+5.13 宇树科技发布新一代机器人G1，工人国内顶级，一些人认为已经超越波士顿动力  
+5.14 OpenAI春季发布会，发布GPT4o，展示情感语音模式，视频交互等大饼引起轰动但并未发布，等了半年  
+5.15 Google发布Project Astra, veo视频模型，但是风头被几天前的openAI抢掉  
+5.15 伊利亚离开OpenAI  
+5.31 YOLOV10
+
+六月  
+6.07 阿里Qwen2发布，开源的神，成为国产大模型之光  
+6.10 快手可灵大模型发布，对标Sora  
+6.20 Claude3.5 Sonnet 发布，GPQA 测试中达到 67.2%, 各方面指标击败4o，成为科研人员，科学家，程序员最爱大模型  
+6.20 伊利亚成立新公司SSI，打造安全智能 5billon usd valued  
+6.21 腾讯元宝更新1000万字文本处理  
+6.21 华为HDC2024 盘古大模型百行千业  
+6.28 Material controlnent发布，AI研究室
+
+七月  
+7.02 Runway发布Gen-3 Alpha，被认为AI视频领域第一  
+7.04 快手开源LivePortrait，亲测超强对嘴型AI模型  
+7.20 萝卜快跑，无人驾驶出租车在国内多个城市上线，引发巨大争议  
+7.23 Meta发布开源Llama3.1 405b 成为超强开源大模型  
+GraphRAG走红，根据输入的文本库创建一个 知识图谱  
+阿里开源cosyvoice与sensevoice，语音转文字与文字转语音，带有情感，识别快速
+
+八月  
+8.01 SAI核心成员成立BFL发布Flux模型  
+8.13 Grok2  
+8.16 Gemini live上线，对标GPT语音模型  
+8.20LTX开放使用  
+8.29阿里云发布Qwen2VL，国产大模型视觉交互  
+海螺AI功能升级，效果被认可
+
+九月  
+9.10 Apple秋季发布会，最无聊的一次，AI = Apple Intelligence  
+9.12 GPT o1发布，提出所谓思维链，想想再回答你  
+9.13 AI教母华人李飞飞WorldLabs成立，估值10亿美金  
+9.17 Google发布GameGen，实时生成下一帧游戏  
+9.19 阿里开源有史以来最多的一次模型，qwen2.5全家桶开源  
+9.20 华为发布Cloudmatrix云计算基础设施  
+9.20 Cursor爆火，AI代码编辑器，大语言+ ctrlCV作对一件事就可以  
+9.24 GPT高级语音模式上线  
+9.26 Tripo2.0 AI图生成3D效果突飞猛进  
+9.27 Meta connect大会 发布AI眼睛Orion 预计2027发售
+
+十月  
+10.1 Pika1.5 更新多种挤压飞走特效爆红网络  
+10.2Flux1.1pro  
+10.8诺贝尔物理学奖颁给了辛顿和或普菲尔德，两位AI奠基人  
+10.11马斯克发布会，cybercab与robovan，人形机器人  
+10.16 Adobe年度大会，Project Turntable让大象转身  
+PersonaTalk：字节跳动音频驱动嘴型，暂未发布  
+10.28 AutoGLM，智谱AI，AI接管生活
+
+十一月  
+11.05 腾讯混元3D开源模型  
+11.06 川普获胜，AI监管可能废除  
+11.13 云深处科技发布机器人 山猫 爆火网络  
+11.26 Sora遭到艺术家泄露  
+11.29 Mac mini 可以装在口袋的桌面级电脑
+
+十二月  
+12.02 李飞飞空间智能初见成果  
+12.03 腾讯开源混元视频大模型，最强开源视频模型  
+12.06 OpenAI持续十二天发布会，填补了视频交互模式，sora等大坑，并预测明年的O3  
+12.07 微软Trellis 2024最强开源图生3D模型  
+12.11 谷歌发布Gemini2.0，视觉交互超强智能体  
+12.16 智源机器人量产  
+12.17 谷歌Veo-2发布，生成4K，效果吊打Sora  
+12.20 Genesis AI物理引擎  
+12.23 宇树科技 B2-w 吕布骑狗 走红网络  
+12.26 DeepSeek V3 开源模型爆火，671B参数仅558万美元训练成本
 
 ## AI基础设施普及
 

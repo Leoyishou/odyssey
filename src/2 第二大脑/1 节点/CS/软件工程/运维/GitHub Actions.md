@@ -6,6 +6,22 @@ date created: 2024-11-25
 date modified: 2024-12-27
 ---
 
+## 本质
+
+一条`git push`触发一连串命令，比如
+
+- 构建你的 VuePress 项目
+- 运行测试
+- 部署到 GitHub Pages 或其他服务器
+
+##
+
+一条`git push`触发一连串命令，比如
+
+- 构建你的 VuePress 项目
+- 运行测试
+- 部署到 GitHub Pages 或其他服务器
+
 是的，这里的"本地"指的是 GitHub Actions 的运行环境（也就是 GitHub 提供的临时虚拟机）。让我解释一下整个流程：
 
 1. 当你推送代码到 GitHub 时，GitHub Actions 会：
