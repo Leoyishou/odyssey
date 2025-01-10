@@ -3,8 +3,18 @@ draw:
 tags: []
 title: PostgreSQL
 date created: 2024-09-15
-date modified: 2024-12-29
+date modified: 2025-01-07
 ---
+
+```Java
+
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ root      |                                                            | {}
+```
 
 ```Java
 postgresql://<用户名>:<密码>@<主机名>:<端口>/<数据库名>

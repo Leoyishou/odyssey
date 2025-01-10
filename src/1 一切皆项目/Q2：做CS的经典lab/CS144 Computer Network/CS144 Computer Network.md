@@ -58,7 +58,7 @@ stream reassembler 将**带索引的字节流碎片**重组成有序的字节流
 | Lab                         | Tasks                                                                        |
 | --------------------------- | ---------------------------------------------------------------------------- |
 | [[Lab0 Networking Warmup]]  | • 实现字节流(ByteStream)<br>• 熟悉环境设置和基础工具<br>• 主要是热身练习，为后续实验打基础                   |
-| [[Lab1 Stream Reassembler]] | • 实现TCP的流重组器(StreamReassembler)<br>• 处理乱序到达的数据并重组为有序字节流<br>• 模拟TCP如何处理失序的数据包 |
+| [[数据流重组 Lab1 Stream Reassembler]] | • 实现TCP的流重组器(StreamReassembler)<br>• 处理乱序到达的数据并重组为有序字节流<br>• 模拟TCP如何处理失序的数据包 |
 | [[Lab2 TCP Receiver]]       | • 实现TCP接收端<br>• 处理序列号(Sequence Numbers)<br>• 管理接收窗口(Receive Window)          |
 | [[Lab3 TCP Sender]]         | • 实现TCP发送端<br>• 实现重传机制<br>• 实现流量控制                                           |
 | [[Lab4 TCP Connection]]     | • 将之前的Sender和Receiver组合<br>• 实现完整的TCP连接<br>• 处理连接的建立和终止                      |

@@ -3,17 +3,19 @@ draw:
 tags: []
 title: 如何开始学习一个 Lab，以 MIT6.824 Distributed System为例 $
 date created: 2024-07-22
-date modified: 2024-12-27
+date modified: 2025-01-06
 ---
 
  [建立直觉](建立直觉)与代码落地相结合，尝试将[使用 “隐喻” 的方式帮你建立对 Raft 的直觉 | 木鸟杂记 (qtmuniao.com)](https://www.qtmuniao.com/2023/11/15/raft-explain/)中的故事作为注释标记到代码实现上。
 
-<!-- more -->
+## 最佳实践
 
-## 前言
-
-- 前置知识只有 [Git](Git.md) 一个，尤其是用好 Jetbrain 的 GUI
+1. 前置知识只有 [Git](Git.md) 一个，尤其是用好 Jetbrain 的 GUI
+2. lab 一定要 commit 到能跑 test 的程度，这样才能给小节点一个彻底的完成，以后接进度的时候不需要多余的心智。
 - 找到靠谱答案，去 [解耦学习](解耦学习.md)
+
+git 抄作业  
+![image.png|1800](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F01%2F06%2F22-13-04-2f118a96464afcf24cf4405b3c3a062e-202501062213608-cbec8d.png)
 
 ## 前期准备
 

@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Docker
 date created: 2024-07-20
-date modified: 2024-12-29
+date modified: 2025-01-08
 ---
 
 所有有状态的服务，都别放在docker里跑。例如mysal、redis、elasticsearch、activemq。因为这些服务都要保证高可用和稳定性，放在docker里很难做到，就算是k8s里，也不建议放。这也是为什么云厂商会提供这些有状态的saas服务，例如在aws里，会提供mysal、redis、mq的服务。
@@ -91,3 +91,57 @@ Copy
 `# 检查配置文件位置 docker-compose exec frontend sh -c 'ls -l /etc/nginx/conf.d/'`
 
 要执行这些检查吗？从哪个开始？我们可以根据结果一步步找出问题所在。
+
+## 文件路径问题
+
+我理解你的问题 - 这是一个典型的 Docker 容器中的文件路径问题。让我解释一下原因和解决方案：
+
+问题的根源在于:
+
+1. 在 Docker 容器中,工作目录被设置为 `/app`
+2. 你的日志配置使用的是相对路径 `logs/app.log`
+3. 当容器重启时,除非明确配置 volume 映射,否则写入的文件会丢失
+
+这里有两种解决方案:
+
+1. 将日志目录映射到宿主机:
+
+```yaml
+services:
+  backend:
+    volumes:
+      - ./viva-backend/.env:/app/.env
+      - ./viva-backend/logs:/app/logs  # 添加这行来持久化日志
+```
+
+2. 修改日志配置使用绝对路径:
+
+```python
+# logging_config.py
+log_dir = '/app/logs'  # 使用绝对路径
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
+
+file_handler = RotatingFileHandler(
+    os.path.join(log_dir, 'app.log'),
+    maxBytes=10485760,
+    backupCount=5
+)
+```
+
+我建议使用第一种方案,因为:
+
+1. 可以在容器外部直接访问日志文件
+2. 容器重启时日志不会丢失
+3. 便于日志收集和分析
+
+另外,建议在 Dockerfile 中添加创建日志目录的步骤:
+
+```dockerfile
+# 在 WORKDIR /app 之后添加
+RUN mkdir -p /app/logs && chmod 777 /app/logs
+```
+
+这样可以确保容器启动时日志目录已存在且具有适当的权限。
+
+你觉得这些解决方案中哪一个更适合你的需求?

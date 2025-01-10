@@ -3,8 +3,14 @@ draw:
 tags: []
 title: docker compose
 date created: 2024-07-20
-date modified: 2024-12-28
+date modified: 2025-01-08
 ---
+
+```Java
+docker compose build frontend
+docker compose up -d frontend
+
+```
 
 **Docker Compose**：在单机上管理多容器应用，使用简单的 `docker-compose.yml` 文件即可快速编排多个容器之间的依赖和网络通信。
 
