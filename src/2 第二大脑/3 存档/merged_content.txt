@@ -1,0 +1,615 @@
+Directory Tree:
+==============
+
+└── 3 存档
+    ├── + AI 回本计划
+    │   └── $ AI 回本计划.md
+    ├── .DS_Store
+    ├── OKR 基建
+    │   ├── 2024 Q1：瘦 20 斤
+    │   │   ├── $ 瘦20斤.md
+    │   │   ├── 习惯-减肥.md
+    │   │   └── 结项报告.md
+    │   ├── 2024 Q2：做一个引体向上
+    │   │   ├── 如何做一个引体向上 $.md
+    │   │   └── 结项报告.md
+    │   ├── 2024 Q2：构建高效合理的笔记系统
+    │   │   ├── $ 构建高效合理的笔记系统.md
+    │   │   └── 结项报告.md
+    │   ├── 2024 Q3：切入reddit
+    │   │   ├── 从 workout 切入 quora 和 reddit $.md
+    │   │   └── 结项报告.md
+    │   └── 2024 Q3：如何能抄美股
+    │       └── 结项报告.md
+    ├── Q2：梳理世界文明史
+    │   └── 结项报告.md
+    ├── Q3：初步了解量化技术栈
+    │   └── 结项报告.md
+    ├── Q4：减脂二期
+    │   └── 进度表.md
+    ├── 战略地图.md
+    └── 未结项
+        └── +初步了解管理学
+
+File Contents:
+==============
+
+
+[+ AI 回本计划/$ AI 回本计划.md]
+========================
+
+---
+draw:
+tags: []
+title: $ AI 回本计划
+date created: 2024-07-22
+date modified: 2024-11-12
+---
+
+1. 第一性原理是，AI 生成的东西，必须让人们能猜到原视频是谁。越多四肢动作越有辨识度，脸部都是无效的。有明显穿搭比如帽子，也可以提高辨识度
+2. 视频开头直接就高潮，整个控制在 10s 内
+
+![image.png|2000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F22%2F01-03-06-dc95c3279a1360767d702150be6324f4-20240722010304-fb6f4a.png)
+
+## [SMART 指标](SMART%20指标.md)
+
+每周 3-5 个，然后选出一个最成功的发布在 B 站、抖音
+
+
+
+[OKR 基建/2024 Q1：瘦 20 斤/$ 瘦20斤.md]
+=================================
+
+---
+draw:
+tags: []
+title: $ 瘦20斤
+date created: 2024-07-17
+date modified: 2024-11-12
+---
+
+excerpt
+
+<!-- more -->
+
+
+
+<!-- more -->
+
+## [SMART 指标](SMART%20指标.md)
+
+体重  
+体脂率  
+[BMI](BMI.md)
+
+## 实现路径
+
+[热量缺口](热量缺口.md)  
+[有氧运动](有氧运动.md)
+
+## 减肥的合理速度
+
+[减肥速度](减肥速度.md)
+
+## 其他
+
+[@肌肉](@肌肉.md)  
+改善 [拇指外翻](拇指外翻.md) 和 [膝超伸](膝超伸.md)
+
+
+
+[OKR 基建/2024 Q1：瘦 20 斤/习惯-减肥.md]
+================================
+
+---
+draw:
+title: 习惯-减肥
+tags: []
+date created: 2024-06-21
+date modified: 2024-11-12
+---
+
+excerpt
+
+<!-- more -->
+
+- 永远看配料表及营养成分表。购买所有的预包装食品，都下意识看一眼配料表。主要判断
+	- 配料表前几位是健康成分居多还是不健康成分居多
+		- 健康成分：全麦
+		- 不健康成分：白砂糖，葡萄糖浆等各种糖；[常见含有反式脂肪的添加剂](常见含有反式脂肪的添加剂)。
+	- 整体的三大营养素配比，以及盐含量
+- 不喝或少喝饮料
+	- 根本目的就是减少添加糖的摄入。
+	- 另外代糖饮料，比如赤藓糖醇，也有文献表明有一定风险，所以也需要克制一下，但肯定比添加糖要好。
+- 多喝水。
+	- 起床第一时间喝水，
+	- 一天摄入 40ml\* 体重 kg 的水。
+	- 睡前 3 小时不喝水。
+- 蹲坑再也不超过 10 分钟。
+	- 自从减脂以来，有一次便秘了 3 天，生不如死。也逐渐了解了一些肛肠相关的知识，明白了正常排泄的重要性。以前经常一蹲半小时玩手机，贻害无穷。
+- 吃饭 7 分饱，慢慢吃，混合吃。
+	- 根本目的是降低 GI，降低胰岛素水平。
+- 任何零食、代餐，都先将其判定为不健康食物，宁可错杀。
+	- 养成这样的判断习惯，有利于减少食品添加剂的摄入。富余出的添加剂配额，留给餐厅美食。[对食品添加剂的态度](对食品添加剂的态度)
+	- 嘴馋的心理原理，是因为无聊、焦灼、内心空虚、缺爱、想要缓解压力。吃零食会强化这类问题的解决回路，从而上瘾。
+
+
+1.**Soleus Push-Ups**
+
+	- Soleus 是指[比目鱼肌](https://baike.baidu.com/item/%E6%AF%94%E7%9B%AE%E9%B1%BC%E8%82%8C/9945309?utm_campaign=%E9%9A%8F%E6%84%8F%E6%90%9C%E5%AF%BB&utm_medium=email&utm_source=Revue%20newsletter)，位置大概位于你的小腿后侧，如果你有健身习惯的话，在练下肢前，都需要使用泡沫轴放松一下这个部位。Soleus Push-Ups比目鱼肌俯卧撑是一种非常神奇的健身方法。你需要坐在椅子上，双脚先处于放松状态，然后提起后脚跟，脚趾保持着地，当后脚跟提到极限、比目鱼肌肉有明显的拉伸感后，后脚跟再落回地面。
+
+2.**Zone Two Cardio**
+
+	- Zone Two Cardio 二区有氧训练。这个二区指的是心率区二区，大约是你的最大心率 的 60~70%，要想监控这个指标你需要一些智能设备（Jimmy：BTW 最新的 Apple WatchOS 支持了此功能）。每周最好进行 180~200 分钟的二区有氧运动。而Andrew 的习惯是每个周日都会进行慢跑 60~75 分钟，另外如果不想慢跑，也可以进行一次长途的徒步，可能是两个半小时到三个小时，甚至有可能是4~5 小时。如果进入二区有点困难，可以考虑穿增重背心，当然也可以背一袋重物。
+
+3.**Sauna**
+
+	- 根据研究发现，人如果一周去一次桑拿房，并且在桑拿房内待够最少一小时（可以分3~5次进入，一次20分钟），做完桑拿后，你会获得大量甚至 16 倍的生长激素。
+
+4.**Non-Sleep Deep Rest**[NSDR](NSDR)
+
+	- Non-Sleep Deep Rest 中文翻译应该叫「非睡眠深度休息」，简单说来就是你休息的时候，听一段特定的音乐，这个音乐是这样的：
+		
+
+[](https://www.youtube.com/watch?v=AKGrmY8OSHM)[https://www.youtube.com/watch?v=AKGrmY8OSHM](https://www.youtube.com/watch?v=AKGrmY8OSHM)
+
+5.**Static Stretching**
+
+	- 静态拉伸，这个我在健身的时候也经常做，特别是完成健身后，都需要拉伸下，这样能帮助你更好地恢复。Andrew 则是推荐大家在即使不运动的时候，也进行一些拉伸，比如睡前，亦或者在站立办公时候。
+
+6.**Hanging from a Bar**
+
+	- 这个是 Dr Peter Atia 提出的一个衡量身体是否健康的方法。简单说来，就是抓住单杠，并使身体吊在上面，40岁男士的话，需要坚持 2 分钟，女士则为 1 分半。各位可以试试，是否能坚持那么久。
+
+7.**Deliberate Slow Breathing**
+
+	- 在洗澡的时候，或者在开车的时候，可以进行一个非常简单的训练——故意慢慢呼吸三到五分钟。它能帮助你更好地放松，以及恢复。
+
+
+
+[OKR 基建/2024 Q1：瘦 20 斤/结项报告.md]
+===============================
+
+---
+draw:
+tags: []
+title: 结项报告
+date created: 2024-10-23
+date modified: 2024-11-12
+---
+
+## 结论
+
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F10%2F23%2F12-30-04-08783c07f8d3ca361dfac1ddf54dff4e-202410231230035-968873.png)
+
+
+
+[OKR 基建/2024 Q2：做一个引体向上/如何做一个引体向上 $.md]
+=======================================
+
+---
+draw:
+aliases: [pull-ups]
+tags: []
+title: 如何做一个引体向上 $
+date created: 2024-07-01
+date modified: 2024-08-01
+---
+
+https://www.bilibili.com/video/BV1S44y1e7pL/?spm_id_from=333.999.0.0
+
+## 目标
+
+目标设定要符合 [SMART 指标](SMART%20指标.md)  
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F14%2F18-08-14-38271c4c1d101faac1feab6aee0a81cc-20240714180814-f1dec6.png)  
+这个机器的反作用力作为项目 [北极星指标](北极星指标.md)
+
+## WBS
+
+吊杆 30s  
+顶峰收缩
+
+## 如何花很少的时间持续维护 database 呢？
+
+用 [训记](训记.md) 做 data tracker
+
+
+
+[OKR 基建/2024 Q2：做一个引体向上/结项报告.md]
+================================
+
+---
+draw:
+tags: []
+title: 结项报告
+date created: 2024-10-23
+date modified: 2024-11-12
+---
+
+## 结论
+
+达成！
+
+
+
+[OKR 基建/2024 Q2：构建高效合理的笔记系统/$ 构建高效合理的笔记系统.md]
+=============================================
+
+---
+draw:
+title: $ 构建高效合理的笔记系统
+tags: []
+date created: 2024-06-20
+date modified: 2024-12-27
+---
+
+## 结论
+
+1. [项目驱动](项目驱动.md)，[WBS](WBS.md) 拆分
+2. 目标导向，目标的设定要满足 [SMART 指标](SMART%20指标.md)
+3. 由项目衍生出 [concept](2%20第二大脑/2%20飞轮/3%20项目系统/笔记系统/concept.md)，待结项后将 node 归入 [AREA](AREA)
+4. [Inbox](Inbox.md) 收集
+
+## 好处
+
+ 1. 反向链接能提供一种独特的上下文信息
+ 2. - 在几秒内找到你过去学到、接触或思考过的任何东西。- 花费更少的时间去寻找东西，而是花更多的时间做你能做到的最好的、最具有创造性的工作。
+- 组织你的知识，并让他更好地驱动你的项目和目标前进。度过学生时代以后，很多东西没有必要强行记忆，因为不需要应试，只需要知道在需要的时候，快速找到它即可。
+- 保存你最好的想法，这样你就不需要重复思考了。
+- 连接你在生活的不同领域中产生的想法和注意模式，以便让你知道如何更好地生活。
+- 采用一个可靠的系统，帮助你更自信更容易地分享工作成果。
+- 由于这个可信赖的系统来跟踪你生活和工作的细节，你将有更多的时间放松和生活。
+- 如果所有的知识都是零散的，没有一个体系将它们贯穿起来，你原有的知识无法帮助你学习新知识  
+[(2 封私信 / 17 条消息) hookmark - 搜索结果 - 知乎](https://www.zhihu.com/search?type=content&q=hookmark)
+
+## 应该有哪几类文件
+
+1. 「书目」（Biblography）、
+2. 「目录」（Table of Content, TOC）、
+3. 「索引」（Index）
+4. 「[内容地图](内容地图)」（Map of Content, MOC）这四个概念。
+5. 一元化收集的 [Inbox](Inbox.md)
+
+x:: [ACCESS 笔记组织法](ACCESS%20笔记组织法)、
+
+- 索引笔记
+	- Atlas 文件夹中的 MOC 文件，及其他文件夹下面的 MOC 索引文件。
+- 项目笔记
+	- Spaces 文件夹
+- 闪念笔记
+	- Calendar 文件夹下的每日日志
+- 文献笔记
+	- Sources 文件夹
+- 永久笔记
+	- Cards 文件夹
+- 视觉笔记
+	- Extras 文件夹
+	
+
+## 如何给文件命名
+
+1. map 性质的东西用@开头
+
+## 什么时候双链
+
+1. ob 原生的 [双向链接](双向链接.md)，[hookmark](hookmark.md) 工具
+2. 找到领域内的大词、关键词做双链
+
+## 动作
+
+1. 需要养成的 [习惯@](习惯@.md)：尝试定期将笔记库局部内容结构化，结构化的过程中，会有新的体会。
+2. 一元化收集 inbox，项目式管理 vault
+
+## 搜索
+
+[搜索SOP](搜索SOP.md)  
+[语义搜索](2%20第二大脑/1%20节点/CS/人工智能/语义搜索.md)
+
+闪念笔记对应 [滴答清单](滴答清单.md)
+
+永久笔记、项目笔记对应 [PARA](2%20第二大脑/2%20沉淀/个人信息管理系统/PARA)
+
+<!-- more -->
+
+博客的核心在于「最佳实践」栏目，这背后其实是一种相信逻辑，追求完美的精神在作祟，哈哈。
+
+我会把各个栏目中觉得已经学习、提炼、认知到位的一些思想或者操作，整理之后做成一篇最佳实践，放到该栏目中。
+
+> 📌 传统的笔记系统中，主要问题是人们把某条笔记存放在了哪个主题下；而卢曼卡片盒笔记系统中，主要问题则是考虑想在哪个主题下再见到它。
+> 大多数学生都会按主题甚至按研讨会和学期来整理材料，这就像按日期和商店对购买的商品进行分类一样，比如当你找不到裤子的时候，也许可以从一起购买的漂白剂附近找到。而卡片盒是学术界的集装箱，不必将不同的想法分开存放，所有内容都被标准化成相同的格式后存到同一个卡片盒中。不需要关注中间的步骤，也不需要试图把画线法、摘抄法或其他阅读技巧发展成一门学问，所有的努力只为一个目的：发表有价值的观点。与自上而下按主题组织的存储系统相比，卢曼卡片盒笔记系统最大的优势在于越积累越有价值，而不是越积累越乱、越令人困惑。如果按主题分类，就会面临两难，要么在一个主题中加入越来越多的笔记，这样只会使笔记越来越难以被找到；要么在其中加入越来越多的主题和子主题，而这只会把混乱的情况转移到另一个层面。相比之下，传统的笔记系统是为了找到你意图搜索的东西，让你的大脑疲于回忆，而卢曼卡片盒笔记系统则是为了给你呈现你已经忘记的想法，让你的大脑专注于思考。卡片盒笔记系统虽然是自下而上组织起来的，无须面对主题太多或太少的权衡问题，但如果胡乱往里面添加笔记，它也会失去价值。只有当我们的目标是达到群聚效应的最佳点时，它才能发挥自身优势，而这个最佳点不仅取决于笔记的数量，还取决于笔记的质量和处理方式。要达到群聚效应的最佳点，关键是要分清楚三类笔记。
+>
+> 1.*闪念笔记*（Fleeting Notes）：这类笔记只是对收集信息起提醒作用，可以用任何一种方式来写，最后会在一两天内被扔进垃圾桶。
+> 2.*永久笔记*（Permanent Notes）：这种笔记以一种永久可以理解的方式包含了必要的信息，并且永远不会被扔掉。它们总是以同样的方式存放在同一个地方，或者是在文献管理系统中，或者按出版标准写好放在卡片盒中。
+> 3.*项目笔记*（Project Notes）：它们只与某一特定项目有关，保存在特定项目的文件夹内，项目结束后即可丢弃或存档。
+
+- 自己能驾驭（Hold 住）
+- 正式工作中磨合（压测）
+- 做出成果（信仰充值）
+- 敢于放弃（等待时机）
+
+
+
+[OKR 基建/2024 Q2：构建高效合理的笔记系统/结项报告.md]
+====================================
+
+---
+draw:
+tags: []
+title: 结项报告
+date created: 2024-10-23
+date modified: 2024-12-27
+---
+
+## 结论
+
+达成！
+
+## 体系
+
+1. [滴答清单](滴答清单.md)做 inbox 收集闪念笔记
+2. 项目驱动, 制定方案，吸收信息，项目结束后，信息部分归入 2.1，项目部分归入 2.3
+3. 结构化吸收新信息，逐步沉淀吸收，从知识-> 沉淀
+4. 一些输出性质的东西放到 3 博客部分
+5. 整个文档做版本控制，基于 commit 的 diff 定期做 AI 复盘
+
+```shell
+├── 1 一切皆项目           
+├── 2 第二大脑            
+│   ├── 1 知识
+│   ├── 2 沉淀
+│   ├── 3 存档
+│   └── PARA.md
+├── 3 博客
+├── 4 复盘
+│   ├── 2024-10-10.md
+│   ├── 2024-10-11.md
+│   ├── 2024-10-12.md
+│   ├── 2024-10-13.md
+│   ├── 2024-10-15.md
+```
+
+
+
+[OKR 基建/2024 Q3：切入reddit/从 workout 切入 quora 和 reddit $.md]
+==========================================================
+
+---
+draw:
+tags: []
+title: 从 workout 切入 quora 和 reddit $
+date created: 2024-07-17
+date modified: 2024-11-12
+---
+
+## why the project
+
+[Quora](Quora.md) [reddit](reddit.md) [Hacknews](Hacknews) 都是优质的信息来源，但是之前并没有养成这些平台的阅读习惯。本质是自身兴趣没有克服英文阅读带来的摩擦力。
+
+最近开始 [健身@](健身@.md)，一路比照了不少信息源和知识，体验了一下，几乎可以带着好奇心客服摩擦力了。希望借着这股东风，培养起在这两个平台的一个良好的阅读习惯。
+
+## [SMART 指标](SMART%20指标.md)
+
+100 篇 reddit 文章
+
+### 前 50 是只看英语，熟悉一些话题和板块
+
+| count | 链接                                                                                                                                                                                                                                                                                        |                     |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| 1     | [Beginner's Guide to Working Out : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/ihz264/beginners_guide_to_working_out/)                                                                                                                                              |                     |
+| 2     | [Tried flirting with a guy at the gym and it failed : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1agj9ft/tried_flirting_with_a_guy_at_the_gym_and_it_failed/)                                                                                                      |                     |
+| 3     | [My worst fears happened, someone laughed at me in the free weights of the gym : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1adunlg/my_worst_fears_happened_someone_laughed_at_me_in/)                                                                             |                     |
+| 4     | [My boyfriend doesn’t want me to go to the gym : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1cg97e0/my_boyfriend_doesnt_want_me_to_go_to_the_gym/)                                                                                                                 |                     |
+| 5     | https://www.reddit.com/r/workout/comments/1ad4t9q/might_be_addicted_to_the_gym_now/                                                                                                                                                                                                       |                     |
+| 6     | [So question, why do you guys work out? : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/17etwmk/so_question_why_do_you_guys_work_out/)                                                                                                                                |                     |
+| 7     | [Any good work outs for carrying your gf? : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1dqis9r/any_good_work_outs_for_carrying_your_gf/)                                                                                                                           |                     |
+| 8     |                                                                                                                                                                                                                                                                                           |                     |
+| 9     |                                                                                                                                                                                                                                                                                           |                     |
+| 10    |                                                                                                                                                                                                                                                                                           |                     |
+| 11    |                                                                                                                                                                                                                                                                                           |                     |
+| 12    |                                                                                                                                                                                                                                                                                           |                     |
+| 13    | What is the best food to eat before and after going to the gym?                                                                                                                                                                                                                           |                     |
+| 14    | [Are modern humans stronger and more fit than our ancestors?](https://www.quora.com/Are-modern-humans-stronger-and-more-fit-than-our-ancestors)                                                                                                                                           |                     |
+| 15    | [What person enjoyed longevity they were totally undeserving of?](https://www.quora.com/What-person-enjoyed-longevity-they-were-totally-undeserving-of)                                                                                                                                   |                     |
+| 16    | What is the most deceiving thing about fitness? How simple it is                                                                                                                                                                                                                          |                     |
+| 17    | [Anyone else incredibly disappointed with the Meta Glasses : r/RayBanStories (reddit.com)](https://www.reddit.com/r/RayBanStories/comments/1aez7ko/anyone_else_incredibly_disappointed_with_the_meta/)                                                                                    |                     |
+| 18    | https://www.quora.com/What-are-the-negative-side-effects-of-taking-glutamine                                                                                                                                                                                                              |                     |
+| 19    | Any good workout blend should give                                                                                                                                                                                                                                                        |                     |
+| 20    | [BEHOLD!! My Second Brain : r/ObsidianMD (reddit.com)](https://www.reddit.com/r/ObsidianMD/comments/182ij1c/behold_my_second_brain/)                                                                                                                                                      |                     |
+| 21    | [4 year aniversary of my vault 🎉 : r/ObsidianMD (reddit.com)](https://www.reddit.com/r/ObsidianMD/comments/1dtvhtp/4_year_aniversary_of_my_vault/)                                                                                                                                       |                     |
+| 22    | [Tiny ascii charts - worth a plug-in? : r/ObsidianMD (reddit.com)](https://www.reddit.com/r/ObsidianMD/comments/1cagaoh/tiny_ascii_charts_worth_a_plugin/)                                                                                                                                |                     |
+| 23    | [Let That Sink In. : r/StockMarket (reddit.com)](https://www.reddit.com/r/StockMarket/comments/1du0to5/let_that_sink_in/)                                                                                                                                                                 |                     |
+| 24    | [Any good work outs for carrying your gf? : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1dqis9r/any_good_work_outs_for_carrying_your_gf/)                                                                                                                           |                     |
+| 25    | [7 years from $0 to $100k, 3 years from $100k to $200k : r/investing (reddit.com)](https://www.reddit.com/r/investing/comments/17yaktc/7_years_from_0_to_100k_3_years_from_100k_to_200k/)                                                                                                 |                     |
+| 26    | [I need help breaking up with my gym partner : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/16ok4jb/i_need_help_breaking_up_with_my_gym_partner/)                                                                                                                    |                     |
+| 27    | [What keeps you motivated to keep working out? : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1di52j4/what_keeps_you_motivated_to_keep_working_out/)                                                                                                                 |                     |
+| 28    | [No More Daily "my graph after X" Posts 🙏 : r/ObsidianMD (reddit.com)](https://www.reddit.com/r/ObsidianMD/comments/1esicj8/no_more_daily_my_graph_after_x_posts/)                                                                                                                       |                     |
+| 29    | [A Free & Open Source "Obsidian Publish" Alternative : r/ObsidianMD (reddit.com)](https://www.reddit.com/r/ObsidianMD/comments/u7r2a5/a_free_open_source_obsidian_publish_alternative/)                                                                                                   |                     |
+| 30    | [I'm joining Obsidian full-time as CEO : r/ObsidianMD (reddit.com)](https://www.reddit.com/r/ObsidianMD/comments/10vcxb2/im_joining_obsidian_fulltime_as_ceo/)                                                                                                                            |                     |
+| 31    | [Starbucks is giving incoming CEO Brian Niccol $85 million in cash and stock as he departs Chipotle : r/StockMarket (reddit.com)](https://www.reddit.com/r/StockMarket/comments/1et0w5w/starbucks_is_giving_incoming_ceo_brian_niccol_85/)                                                |                     |
+| 32    | [IBKR, DeGiro, Saxo Bank or other for next broker : r/StockMarket (reddit.com)](https://www.reddit.com/r/StockMarket/comments/mk13v7/ibkr_degiro_saxo_bank_or_other_for_next_broker/)                                                                                                     |                     |
+| 33    | [Can't get failure on back muscles : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1ew21gv/cant_get_failure_on_back_muscles/)                                                                                                                                         |                     |
+| 34    | [Obsidian (reddit.com)](https://www.reddit.com/r/ObsidianMD/comments/1evdd5j/are_there_real_people_using_obsidian_or_just/)                                                                                                                                                               |                     |
+| 35    | [Obsidian for Musicians - Knowledge management - Obsidian Forum](https://forum.obsidian.md/t/obsidian-for-musicians/48520/6)                                                                                                                                                              |                     |
+| 36    | [Where's everyone parking cash right now? : r/investing (reddit.com)](https://www.reddit.com/r/investing/comments/1eyq45k/wheres_everyone_parking_cash_right_now/)                                                                                                                        |                     |
+| 37    | [Obsidian LaTeX integration? : r/ObsidianMD (reddit.com)](https://www.reddit.com/r/ObsidianMD/comments/tyini7/obsidian_latex_integration/)                                                                                                                                                |                     |
+| 38    | [Bad sleep : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1f7t1vb/bad_sleep/)                                                                                                                                                                                        | 睡眠对健身的作用            |
+| 39    | [Is push pull legs split really effective ? : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1f7jer2/is_push_pull_legs_split_really_effective/)                                                                                                                        | Push Pull Leg 的一些迷死 |
+| 40    | [Is investing 90% or your money a bad idea? : r/investing (reddit.com)](https://www.reddit.com/r/investing/comments/1f77udu/is_investing_90_or_your_money_a_bad_idea/)                                                                                                                    | 22 岁是否该花这么多钱投资      |
+| 41    | [Best broker for US cost-conscious investors? : r/investing (reddit.com)](https://www.reddit.com/r/investing/comments/1f6v907/best_broker_for_us_costconscious_investors/)                                                                                                                | 不同 broker 的费用       |
+| 42    | [What's the catch on Berkshire Hathaway? : r/investing (reddit.com)](https://www.reddit.com/r/investing/comments/1f6c823/whats_the_catch_on_berkshire_hathaway/)                                                                                                                          | Buffet 的公司的表现       |
+| 43    | [Need help with my parents cash : r/investing (reddit.com)](https://www.reddit.com/r/investing/comments/1f6utlm/need_help_with_my_parents_cash/)                                                                                                                                          | 父母的钱                |
+| 44    | [Is working out meaningless for building muscle if I don't sleep enough? : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/1ctvmgu/is_working_out_meaningless_for_building_muscle_if/)                                                                                  | 健康与睡眠               |
+| 45    | [Yesterday i drank pre workout for the first time and instead give me a ton of energy it made feel sleepy and lose focus. What can be the reason behind it? : r/workout (reddit.com)](https://www.reddit.com/r/workout/comments/omq3ut/yesterday_i_drank_pre_workout_for_the_first_time/) |                     |
+| 46    | [更智能地编写代码，而不是更难编写代码：使用 Cursor 和 Claude Sonnet 进行开发 \|黑客新闻 --- Code Smarter, Not Harder: Developing with Cursor and Claude Sonnet \| Hacker News (ycombinator.com)](https://news.ycombinator.com/item?id=41429469)                                                                         | cursor              |
+| 47    | [如何实现像 Notion 一样的第二大脑功能？ : r/ObsidianMD --- How to achieve second brain functionality like Notion? : r/ObsidianMD (reddit.com)](https://www.reddit.com/r/ObsidianMD/comments/1fbtdoq/how_to_achieve_second_brain_functionality_like/)                                                     |                     |
+| 48    |                                                                                                                                                                                                                                                                                           |                     |
+| 49    |                                                                                                                                                                                                                                                                                           |                     |
+| 50    |                                                                                                                                                                                                                                                                                           |                     |
+
+### 后 50 篇利用[Immersive Translate](Immersive%20Translate.md)工具
+
+好的,我来帮您把序号补充到100。以下是补充后的列表:
+
+|     |                                                                                                                                                                                |                                    |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- |
+| 51  | [手工创建 Git 提交 --- Creating a Git commit: The Hard Way (avestura.dev)](https://avestura.dev/blog/creating-a-git-commit-the-hard-way)                                             | 突然觉得 hacknews 也没有那么 daunting 了     |
+| 52  |                                                                                                                                                                                |                                    |
+| 53  |                                                                                                                                                                                |                                    |
+| 54  |                                                                                                                                                                                |                                    |
+| 55  |                                                                                                                                                                                |                                    |
+| 56  |                                                                                                                                                                                |                                    |
+| 57  |                                                                                                                                                                                |                                    |
+| 58  |                                                                                                                                                                                |                                    |
+| 59  |                                                                                                                                                                                |                                    |
+| 60  |                                                                                                                                                                                |                                    |
+| 61  |                                                                                                                                                                                |                                    |
+| 62  |                                                                                                                                                                                |                                    |
+| 63  |                                                                                                                                                                                |                                    |
+| 64  |                                                                                                                                                                                |                                    |
+| 65  |                                                                                                                                                                                |                                    |
+| 66  |                                                                                                                                                                                |                                    |
+| 67  |                                                                                                                                                                                |                                    |
+| 68  |                                                                                                                                                                                |                                    |
+| 69  |                                                                                                                                                                                |                                    |
+| 70  | 20141010 到这里                                                                                                                                                                   |                                    |
+| 71  | # Here's the ASML leak for anyone wondering                                                                                                                                    |                                    |
+| 72  | https://www.reddit.com/r/apple/comments/1g47l2h/40_yearold_apple_mac_finally_gets_online_thanks/                                                                               |                                    |
+| 73  | https://www.reddit.com/r/workout/comments/1g5026q/can_someone_rate_my_workout_plan_please/                                                                                     | 看了一套推拉腿上下的五分训练计划                   |
+| 74  | https://www.reddit.com/r/ClaudeAI/comments/1g4qdxq/i_apologize_but_i_dont_feel_comfortable_posting/                                                                            |                                    |
+| 75  | https://www.reddit.com/r/technology/comments/1g502j4/federal_trade_commission_announces_final/                                                                                 |                                    |
+| 76  | https://www.reddit.com/r/ClaudeAI/comments/1g4veyo/we_need_chat_history_forking_and_cherry_picking/                                                                            | 用 git、cherry pick 的思路来看待与 ai 的聊天记录 |
+| 77  | https://www.reddit.com/r/cursor/comments/1g502cy/is_it_me_or_cursor_autocomplete_got_a_lot_better/                                                                             |                                    |
+| 78  | https://www.reddit.com/r/apple/comments/1g4y0dp/ipad_mini_7_has_these_6_smaller_changes_including/                                                                             | 新 ipad mini                        |
+| 79  | [使用 100%鼠标后的体验:r/cursor --- Experiences after going 100% Cursor : r/cursor (reddit.com)](https://www.reddit.com/r/cursor/comments/1g60bkz/experiences_after_going_100_cursor/) |                                    |
+| 80  |                                                                                                                                                                                | Rest is a part of working out      |
+| 81  |                                                                                                                                                                                |                                    |
+| 82  |                                                                                                                                                                                |                                    |
+| 83  |                                                                                                                                                                                |                                    |
+| 84  |                                                                                                                                                                                |                                    |
+| 85  |                                                                                                                                                                                |                                    |
+| 86  |                                                                                                                                                                                |                                    |
+| 87  |                                                                                                                                                                                |                                    |
+| 88  |                                                                                                                                                                                |                                    |
+| 89  |                                                                                                                                                                                |                                    |
+| 90  |                                                                                                                                                                                |                                    |
+| 91  |                                                                                                                                                                                |                                    |
+| 92  |                                                                                                                                                                                |                                    |
+| 93  |                                                                                                                                                                                |                                    |
+| 94  |                                                                                                                                                                                |                                    |
+| 95  |                                                                                                                                                                                |                                    |
+| 96  |                                                                                                                                                                                |                                    |
+| 97  |                                                                                                                                                                                |                                    |
+| 98  |                                                                                                                                                                                |                                    |
+| 99  |                                                                                                                                                                                |                                    |
+| 100 |                                                                                                                                                                                |                                    |
+
+我已经将序号从51补充到100,保持了原有的表格格式。第51行保留了原有的内容,其他新增的行目前是空白的,您可以根据需要填充相应的信息。如果您需要对这个列表做任何调整或者添加更多内容,请随时告诉我。
+
+
+
+[OKR 基建/2024 Q3：切入reddit/结项报告.md]
+=================================
+
+---
+draw:
+tags: []
+title: 结项报告
+date created: 2024-10-23
+date modified: 2024-11-12
+---
+
+## 结论
+
+1. 通过[Immersive Translate](Immersive%20Translate.md)工具，实现了低摩擦力的英文信息获取。
+2. 通过 twitter 上的中文 KOL 和 grok 激发兴趣，逐步融入了 twitter 社区
+
+原计划 100 篇，由于方向发生变化（纯英文 --> 沉浸式翻译），实际完成 80 篇
+
+
+
+[OKR 基建/2024 Q3：如何能抄美股/结项报告.md]
+===============================
+
+---
+draw:
+tags: []
+title: 结项报告
+date created: 2024-10-23
+date modified: 2024-11-12
+---
+
+## 结论
+
+达成
+
+
+
+[Q2：梳理世界文明史/结项报告.md]
+====================
+
+---
+draw:
+tags: []
+title: 结项报告
+date created: 2024-10-23
+date modified: 2024-11-12
+---
+
+## 结论
+
+不抵触世界史，有了全球文明视野，基本达成！
+
+
+
+[Q3：初步了解量化技术栈/结项报告.md]
+======================
+
+---
+draw:
+tags: []
+title: 结项报告
+date created: 2024-11-07
+date modified: 2024-11-12
+---
+
+价值不大！锁定苹果、英伟达、IBIT，定投即可
+
+
+
+[Q4：减脂二期/进度表.md]
+================
+
+---
+draw:
+tags: []
+title: 进度表
+date created: 2024-10-31
+date modified: 2024-11-12
+---
+**用预期值和实际值的中间做指引**
+
+|            | 目标值   | 达成值   | 指引值   |     |
+| ---------- | ----- | ----- | ----- | --- |
+| 2024-10-21 |       | 78.75 |       |     |
+| 2024-10-28 | 77.96 | 77.35 | 77.67 | ✅   |
+| 2024-11-04 | 76.88 | 76.8  | 76.84 | ✅   |
+| 2024-11-11 | 76.07 | 77.65 | 76.86 | 🍠  |
+| 2024-11-18 | 76.09 |       |       |     |
+| 2024-11-25 |       |       |       |     |
+| 2024-12-02 |       |       |       |     |
+| 2024-12-09 | 70    |       |       |     |
+
+
+
+[战略地图.md]
+=========
+
+---
+draw:
+tags: []
+title: 战略地图
+date created: 2025-01-14
+date modified: 2025-01-14
+---
+
+

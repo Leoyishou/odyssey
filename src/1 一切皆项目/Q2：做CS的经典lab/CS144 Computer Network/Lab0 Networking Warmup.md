@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Lab0 Networking Warmup
 date created: 2024-12-30
-date modified: 2025-01-01
+date modified: 2025-01-15
 ---
 
 这个代码是 Stanford CS144 (Computer Networking) 课程中第一个 lab 的一部分，实现了一个基本的字节流（ByteStream）抽象。这个实现的目的和意义包括：
@@ -106,3 +106,16 @@ canRead = min(6, 10) = 6 (只能写入6个字符)
 - canWrite 是还能装多少水
 - data.size() 是想要倒入的水量
 - canRead 是实际能倒入的水量
+
+## 参考
+
+https://doraemonzzz.com/2022/01/30/2022-1-30-CS144-Lab0%E7%BF%BB%E8%AF%91/#4-%E5%86%85%E5%AD%98%E4%B8%AD%E5%8F%AF%E9%9D%A0%E7%9A%84%E5%AD%97%E8%8A%82%E6%B5%81
+
+1. 在你的提交中，请只对`webget.cc`和`libsponge`顶层的源代码（`byte_stream.hh`和`byte_stream.cc`）进行修改。请不要修改`libsponge/util`中的任何测试或帮助程序。
+2. 在提交任何作业之前，请按顺序运行这些：
+    - (a) `make format`(使编码风格正常化)
+    - (b) `make`(确保代码可以编译)
+    - (c) `make check_lab0`(确保自动测试通过)
+3. 完成编辑`writeups/lab0.md`，写上这项作业花了你多少时间，以及任何其他评论。
+4. 准备提交时，请按照[https://cs144.github.io/submit](https://cs144.github.io/submit)。在提交之前，请确保你已经提交了你想要的一切。
+5. 如有任何问题，请在周二晚上的实验课上尽快告知课程负责人，或在Piazza上发表问题。祝您好运，欢迎来到CS144!

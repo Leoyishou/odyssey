@@ -3,8 +3,12 @@ draw:
 title: JSON
 tags: []
 date created: 2024-06-20
-date modified: 2025-01-03
+date modified: 2025-01-16
 ---
+
+## 忽略null
+
+JsonInclude.Include.NON_NULL 表示在序列化时会忽略值为 null 的字段，不会将它们包含在生成的 JSON 中。
 
 JSON 数据中包括 [文字](文字.md) 和 [数字](数字.md) 两类信息
 

@@ -3,7 +3,7 @@ draw:
 tags: []
 title: CS144 Computer Network
 date created: 2024-09-21
-date modified: 2025-01-02
+date modified: 2025-01-15
 ---
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F09%2F23%2F11-51-40-d83ae1e55a6a6ef17e6e6b169e730006-202409231151421-2ce186.png)
@@ -55,15 +55,15 @@ stream reassembler 将**带索引的字节流碎片**重组成有序的字节流
 
 ## Lab
 
-| Lab                         | Tasks                                                                        |
-| --------------------------- | ---------------------------------------------------------------------------- |
-| [[Lab0 Networking Warmup]]  | • 实现字节流(ByteStream)<br>• 熟悉环境设置和基础工具<br>• 主要是热身练习，为后续实验打基础                   |
-| [[数据流重组 Lab1 Stream Reassembler]] | • 实现TCP的流重组器(StreamReassembler)<br>• 处理乱序到达的数据并重组为有序字节流<br>• 模拟TCP如何处理失序的数据包 |
-| [[Lab2 TCP Receiver]]       | • 实现TCP接收端<br>• 处理序列号(Sequence Numbers)<br>• 管理接收窗口(Receive Window)          |
-| [[Lab3 TCP Sender]]         | • 实现TCP发送端<br>• 实现重传机制<br>• 实现流量控制                                           |
-| [[Lab4 TCP Connection]]     | • 将之前的Sender和Receiver组合<br>• 实现完整的TCP连接<br>• 处理连接的建立和终止                      |
-| [[Lab5 Network Interface]]  | • 实现网络接口层<br>• ARP (Address Resolution Protocol)协议<br>• 以太网帧的处理              |
-| [[Lab6 Router]]             | • 实现路由器的核心功能<br>• 路由表的查找和维护<br>• IP数据包的转发                                    |
+| Lab                               | Tasks                                                                        | 认知                           |
+| --------------------------------- | ---------------------------------------------------------------------------- | ---------------------------- |
+| [[Lab0 Networking Warmup]]        | • 实现字节流(ByteStream)<br>• 熟悉环境设置和基础工具<br>• 主要是热身练习，为后续实验打基础                   | ByteStream的本质是一个 char 的deque |
+| [[数据流重组 Lab1 Stream Reassembler]] | • 实现TCP的流重组器(StreamReassembler)<br>• 处理乱序到达的数据并重组为有序字节流<br>• 模拟TCP如何处理失序的数据包 |                              |
+| [[Lab2 TCP Receiver]]             | • 实现TCP接收端<br>• 处理序列号(Sequence Numbers)<br>• 管理接收窗口(Receive Window)          |                              |
+| [[Lab3 TCP Sender]]               | • 实现TCP发送端<br>• 实现重传机制<br>• 实现流量控制                                           |                              |
+| [[Lab4 TCP Connection]]           | • 将之前的Sender和Receiver组合<br>• 实现完整的TCP连接<br>• 处理连接的建立和终止                      |                              |
+| [[Lab5 Network Interface]]        | • 实现网络接口层<br>• ARP (Address Resolution Protocol)协议<br>• 以太网帧的处理              |                              |
+| [[Lab6 Router]]                   | • 实现路由器的核心功能<br>• 路由表的查找和维护<br>• IP数据包的转发                                    |                              |
 
 ## 编译
 
@@ -85,7 +85,9 @@ make
 ./apps/webget stanford.edu /class/cs144
 ```
 
-**
+- (a) `make format`(使编码风格正常化)
+- (b) `make`(确保代码可以编译)
+- (c) `make check_lab0`(确保自动测试通过)
 
 ## How to Excel in CS144: A Comprehensive Guide
 

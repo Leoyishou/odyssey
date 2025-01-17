@@ -37,7 +37,7 @@ excerpt
 		- google
 - 从未听说过
 	- 新闻、观点碰撞
-		- [Inoreader](Inoreader) 的 [RSS](RSS) 文章
+		- [Inoreader](Inoreader) 的 [RSS](RSS.md) 文章
 		- 知乎（有持续劣化趋势，
 		- 微博
 		- [小红书](小红书)
