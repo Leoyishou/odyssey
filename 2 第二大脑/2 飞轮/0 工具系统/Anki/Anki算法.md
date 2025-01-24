@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Anki算法
 date created: 2023-12-03
-date modified: 2024-11-12
+date modified: 2025-01-22
 ---
 - [信息源](#%E4%BF%A1%E6%81%AF%E6%BA%90)
 - [名词解释](#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A)
@@ -62,14 +62,14 @@ bury：今天先不回答，明天再回答
 
 从 review 到 new 是通过 again
 
-| dfda | new1 | new2 | new3 | a | 2.5x | 2.5 * 1.5 | 1.2 |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| new1 |  |  |  |  |  |  |  |
-| new2 |  |  |  |  |  |  |  |
-| new3 |  |  |  |  |  |  |  |
-| a |  | again |  |  | good | esay | hard |
-| 2.5x | again |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
+| dfda | new1  | new2  | new3 | a   | 2.5x | 2.5 * 1.5 | 1.2  |
+| ---- | ----- | ----- | ---- | --- | ---- | --------- | ---- |
+| new1 |       |       |      |     |      |           |      |
+| new2 |       |       |      |     |      |           |      |
+| new3 |       |       |      |     |      |           |      |
+| a    |       | again |      |     | good | esay      | hard |
+| 2.5x | again |       |      |     |      |           |      |
+|      |       |       |      |     |      |           |      |
 
 ## 存在的问题
 
