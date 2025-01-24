@@ -3,14 +3,14 @@ draw:
 tags: []
 title: 阿里Java开发手册@
 date created: 2024-07-03
-date modified: 2024-11-12
+date modified: 2025-01-21
 ---
 
 [代码风格](代码风格.md)  
 [naming 12](naming%2012.md)  
 [注释](注释.md)  
 [常量定义 3](常量定义%203.md)  
-[Object-Relational Mapping 11 - 18+ 7](Object-Relational%20Mapping%2011%20-%2018+%207.md)  
+[对象关系映射11 - 18+ 7](对象关系映射11%20-%2018+%207.md)  
 [日期时间 2-5](日期时间%202-5.md)  
 [集合处理  4-15](集合处理%20%204-15.md)  
 [并发处理](并发处理.md)  

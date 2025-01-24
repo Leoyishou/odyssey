@@ -1,37 +1,21 @@
 ---
 draw:
 tags: []
-title: Lab0 Networking Warmup
+title: Lab0 ByteStream
 date created: 2024-12-30
-date modified: 2025-01-15
+date modified: 2025-01-21
 ---
 
-这个代码是 Stanford CS144 (Computer Networking) 课程中第一个 lab 的一部分，实现了一个基本的字节流（ByteStream）抽象。这个实现的目的和意义包括：
+## 目标
 
-1. 构建 TCP 的基础
-   - ByteStream 是实现 TCP 协议的基础组件之一
-   - 它模拟了 TCP 中可靠数据传输的基本机制
-   - 提供了流量控制的基本实现（通过 capacity 限制）
+实现了一个带容量限制的字节流 ByteStream，这为后续的 TCP 流量控制、可靠传输奠定基础。
 
-2. 实现重要的抽象概念
-   - 实现了一个有限容量的缓冲区
-   - 处理了数据的写入（write）和读取（read）操作
-   - 管理了流的开始和结束状态
-
-3. 核心功能包括：
    - write：向流中写入数据
    - read：从流中读取数据
    - peek_output：预览数据但不移除
    - pop_output：移除数据但不返回
    - 流量控制：通过 capacity 限制缓冲区大小
    - 状态跟踪：记录已读/已写字节数，检查流是否结束
-
-4. 教学目的
-   - 帮助理解计算机网络中的流控制概念
-   - 练习基本的数据结构操作
-   - 为后续实现更复杂的 TCP 功能打基础
-
-这个实验是整个 TCP 实现项目的第一步，通过实现这个基础的字节流，学生可以更好地理解 TCP 协议中的数据流动机制，为后续实现更复杂的 TCP 功能（如可靠传输、流量控制等）打下基础。
 
 ## 通过 capacity 限制 是怎么体现出来的
 
@@ -42,8 +26,6 @@ date modified: 2025-01-15
 当接收窗口满时，发送方必须等待接收方处理数据后才能继续发送
 
 ### write
-
-让我用 ASCII 图解释这段代码的逻辑：
 
 ```Java
 【ByteStream 的缓冲区示意图】

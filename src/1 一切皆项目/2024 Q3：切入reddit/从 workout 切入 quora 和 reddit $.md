@@ -3,7 +3,7 @@ draw:
 tags: []
 title: 从 workout 切入 quora 和 reddit $
 date created: 2024-07-17
-date modified: 2024-11-12
+date modified: 2025-01-20
 ---
 
 ## why the project
@@ -127,5 +127,3 @@ date modified: 2024-11-12
 | 98  |                                                                                                                                                                                |                                    |
 | 99  |                                                                                                                                                                                |                                    |
 | 100 |                                                                                                                                                                                |                                    |
-
-我已经将序号从51补充到100,保持了原有的表格格式。第51行保留了原有的内容,其他新增的行目前是空白的,您可以根据需要填充相应的信息。如果您需要对这个列表做任何调整或者添加更多内容,请随时告诉我。

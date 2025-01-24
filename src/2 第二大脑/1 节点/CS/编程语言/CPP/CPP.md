@@ -3,7 +3,7 @@ draw:
 tags: []
 title: CPP
 date created: 2024-09-21
-date modified: 2025-01-01
+date modified: 2025-01-23
 ---
 
 ## \0
@@ -17,7 +17,7 @@ date modified: 2025-01-01
 char str[] = "Hello";  // 实际存储：['H','e','l','l','o','\0']
 ```
 
-2. 表示空白或未使用的位置
+1. 表示空白或未使用的位置
 
 ```cpp
 // 在 StreamReassembler 中的用法
@@ -32,7 +32,7 @@ buffer.push_back('\0');  // 用 \0 标记这个位置暂时没有有效数据
   有效数据   空位置标记
 ```
 
-3. 与位图（bitmap）配合使用
+1. 与位图（bitmap）配合使用
 
 ```cpp
 std::deque<char> buffer;   // 存储数据
