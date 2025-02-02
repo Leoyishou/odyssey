@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Assignment 2 word2vec
 date created: 2025-01-24
-date modified: 2025-01-24
+date modified: 2025-01-25
 ---
 - [干了啥](#%E5%B9%B2%E4%BA%86%E5%95%A5)
 - [naive-softmax](#naive-softmax)
@@ -15,6 +15,11 @@ date modified: 2025-01-24
 - [数学知识点](#%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E7%82%B9)
 
 ## 干了啥
+
+Word2vec 是一个软件包实际上包含：**两个算法**：continuous bag-of-words（CBOW）和 skip-gram。
+
+- CBOW 是根据中心词周围的上下文单词来预测该词的词向量。
+- skip-gram 则相反，是根据中心词预测周围上下文的词的概率分布。
 
 在实现 skip-gram 的 word2vec 时，我们需要为每一个"中心词 (center word)"及其上下文"外词 (outside word)"计算损失并做梯度更新。**有两种主要方法**可以定义和计算这个损失：
 

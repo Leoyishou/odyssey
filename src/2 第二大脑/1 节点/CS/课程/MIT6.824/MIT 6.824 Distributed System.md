@@ -3,8 +3,11 @@ draw:
 tags: []
 title: MIT 6.824 Distributed System
 date created: 2024-07-11
-date modified: 2024-12-27
+date modified: 2025-01-27
 ---
+
+计算机硕士开题想基于MIT 6.824做一个分布式存储引擎，请问想法是否可行？- 知乎  
+https://www.zhihu.com/question/53471701
 
 Lab：
 https://www.youtube.com/watch?v=IdCbMO0Ey9I&feature=youtu.be

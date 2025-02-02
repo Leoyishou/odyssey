@@ -3,76 +3,36 @@ draw:
 tags: []
 title: Lab1 Unix utilities
 date created: 2024-12-11
-date modified: 2024-12-27
+date modified: 2025-01-25
 ---
-1. 克隆 xv6-labs-2021 仓库并切换到 `util` 分支：
 
-    ```bash
-    git clone git://g.csail.mit.edu/xv6-labs-2021
-    cd xv6-labs-2021
-    git checkout util
-    ```
+## 任务
 
-2. 确保工具链（riscv64-unknown-elf-gcc、qemu 等）已正确安装。
-    
+| 测试项目                       | 状态  | 分数    | 问题描述                      |
+| -------------------------- | --- | ----- | ------------------------- |
+| sleep, no arguments        | 通过  | 5/5   | 无                         |
+| sleep, returns             | 通过  | 5/5   | 无                         |
+| sleep, makes syscall       | 通过  | 10/10 | 无                         |
+| pingpong                   | 通过  | 20/20 | 无                         |
+| primes                     | 失败  | 0/20  | exec 失败，未输出素数             |
+| find, in current directory | 通过  | 10/10 | 无                         |
+| find, recursive            | 通过  | 10/10 | 无                         |
+| xargs                      | 失败  | 0/19  | 'hello' 出现次数错误（期望3次，实际0次）|
+| time                       | 失败  | 0/1   | 缺少 time.txt 文件            |
 
-那么快速启动并看到 lab1 效果的方式是：
+## 知识点
 
-1. 在 xv6-labs-2021 目录下运行：
+1. `exit(0)`:
 
-    ```bash
-    make qemu
-    ```
+- 表示程序正常退出
+- 是约定俗成的成功状态码
+- 通常意味着程序完成了它的任务且没有遇到错误
 
-    这会编译 xv6，并在 QEMU 仿真器中启动 xv6 系统。
+1. `exit(1)` (或任何非零值):
 
-    
-2. 当你看到类似以下输出时：
-
-    ```Java
-    xv6 kernel is booting
-    init: starting sh
-    $
-    ```
-
-    表示 xv6 已经运行并进入 shell。
-
-    
-3. 此时你可以在 xv6 的 shell 中输入命令（如 `ls`、`cat`、`echo`）查看效果。例如：
-
-    ```bash
-    $ ls
-    ```
-
-    会列出当前文件系统中的文件，如 README、cat、echo、sh 等。
-
-    
-4. 若你已完成 lab1 中的部分修改（如实现了 `sleep` 程序），只需要在本地编译完成后再次运行：
-
-    ```bash
-    make qemu
-    ```
-
-    启动 QEMU，就能在 xv6 shell 中执行：
-
-    ```bash
-    $ sleep 10
-    ```
-
-    等待片刻后，命令将返回 shell 提示符。这说明你的 `sleep` 程序已生效。
-
-    
-5. 如果想要测试你的程序是否满足 lab 的要求，可以运行：
-
-    ```bash
-    make grade
-    ```
-
-    或使用指定测试项的命令（根据文档说明）来查看你实现的功能是否通过测试。
-
-    
-
-总结来说，只需在 xv6-labs-2021 目录中 `make qemu` 启动虚拟机系统，然后在 xv6 shell 内执行相应的命令，即可快速看到你的 lab1 改动所带来的效果。
+- 表示程序异常退出
+- 是错误状态码
+- 通常用于表示程序遇到了错误或异常情况
 
 ## 思想
 
