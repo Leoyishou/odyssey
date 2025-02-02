@@ -3,8 +3,26 @@ draw:
 tags: []
 title: AI
 date created: 2024-11-03
-date modified: 2025-01-02
+date modified: 2025-01-28
 ---
+
+| 公司/产品                   | 核心基因特征                                                                   |
+| ----------------------- | ------------------------------------------------------------------------ |
+| OpenAI                  | 对decoder-only和AGI的绝对信仰，不惜一切技术、硬件、成本、员工代价实现AGI                            |
+| Mistral AI              | 通过MoE技术降低训练成本，不执着于复制OpenAI模型                                             |
+| Llama                   | 专注于复制OpenAI的成果，开源模型，增加参数规模                                               |
+| Deepseek                | 以成本控制为核心，通过MoE降低训练成本，通过multi head latent attention降低推理成本，追求最低API价格和GPU成本 |
+| AI21                    | 全力推进Mamba架构，对Mamba技术路线的坚定信仰                                              |
+| Moonshot                | 专注提升context window，优化开发者体验                                               |
+| Groq/Sambanova/Cerebras | 致力于挑战NVIDIA地位，自研推理芯片，通过大量片上SRAM实现10-1000倍推理性能提升                          |
+| Claude                  | 专注提升模型编程能力，在AGI到来前打造高效的Agentic程序员助手                                      |
+| 字节豆包                    | 重视营销推广，借鉴抖音等产品运营经验，追求全民化应用推广                                             |
+| Perplexity              | 专注搜索+网页阅读+总结的问答工具，不自研模型，以用户体验为核心，挑战Google搜索                              |
+| 大模型五小虎                  | 追随Llama路线，在合规框架下服务中国国企市场                                                 |
+| 华为                      | 主打"盘古大模型"营销，借GPU禁运机会推广高价Ascend 910C                                      |
+| Google Gemini           | 追随OpenAI路线，整合Google生态优势(Workspace/Cloud/One/Search)                      |
+| Microsoft               | 深度整合OpenAI技术到自有产品生态                                                      |
+| 阿里Qwen                  | 开发Llama的低配版本                                                             |
 
 ## 2024年AI大事纪
 

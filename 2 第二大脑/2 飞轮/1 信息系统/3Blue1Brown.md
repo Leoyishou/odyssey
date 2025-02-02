@@ -3,8 +3,23 @@ draw:
 tags: []
 title: 3Blue1Brown
 date created: 2024-09-22
-date modified: 2024-11-12
+date modified: 2025-01-26
 ---
+
+## 神经网络系列
+
+| 序号  |                                                          | 时长    | 观看量  |     |     |
+| --- | -------------------------------------------------------- | ----- | ---- | --- | --- |
+| 1   | But what is a neural network? \| Deep learning chapter 1 | 18:40 | 18M  | ✅   |     |
+| 2   | Gradient descent, how neural networks learn \| DL2       | 20:33 | 7.4M | ✅   |     |
+| 3   | Backpropagation, step-by-step \| DL3                     | 12:47 | 4.8M | ✅   |     |
+| 4   | Backpropagation calculus \| DL4                          | 10:18 | 3M   | ✅   |     |
+| 5   | Large Language Models explained briefly                  | 7:58  | 1.2M | ✅   |     |
+| 6   | Transformers (how LLMs work) explained visually \| DL5   | 27:14 | 4.4M |     |     |
+| 7   | Attention in transformers, step-by-step \| DL6           | 26:10 | 2.1M |     |     |
+| 8   | How might LLMs store facts \| DL7                        | 22:43 | 1M   |     |     |
+|     |                                                          |       |      |     |     |
+|     |                                                          |       |      |     |     |  
 
 这些列表是各种数学和科学主题的视频课程或播放列表。以下是它们的中文翻译：
 

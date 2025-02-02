@@ -3,7 +3,7 @@ draw:
 tags: []
 title: Transformer
 date created: 2024-07-17
-date modified: 2024-12-27
+date modified: 2025-01-29
 ---
 
 3blue的transformer视频
@@ -52,9 +52,8 @@ Q 是问题，K 是 key，V 是 value
 
 知名大学教授
 
-[@ProfTomYeh](https://x.com/ProfTomYeh)
-
-使用 Google 表格的可编程能力从零实现了一个「Transformer」模型！![🤯](https://abs-0.twimg.com/emoji/v2/svg/1f92f.svg "Exploding head") [https://by-hand.ai/sp/tfmr](https://t.co/1ILGSnbVM1) 此电子表格引发了几万次副本拷贝，还有配套视频教程，支持调参、了解注意力、矩阵变换、配套练习！![🔥](https://abs-0.twimg.com/emoji/v2/svg/1f525.svg "Fire") 并重新计算查看变化！
+[@ProfTomYeh](https://x.com/ProfTomYeh)  
+ 并重新计算查看变化！
 
 千万不要搁那研究 k 是建值，q 是查询，v 是值，如果你看到这种讲解，基本就别看了，那作者自己也没搞明白。
 

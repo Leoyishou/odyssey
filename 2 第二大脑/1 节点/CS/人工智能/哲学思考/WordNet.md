@@ -3,8 +3,50 @@ draw:
 tags: []
 title: WordNet
 date created: 2024-11-04
-date modified: 2024-12-27
+date modified: 2025-01-25
 ---
+
+## Human language and word meaning
+
+人类之所以比类人猿更"聪明"，是因为我们有语言，因此是一个人机网络，其中人类语言作为网络语言。人类语言具有 **信息功能** 和 **社会功能**。
+
+据估计，人类语言只有大约5000年的短暂历。语言是人类变得强大的主要原因。写作是另一件让人类变得强大的事情。它是使知识能够在空间上传送到世界各地，并在时间上传送的一种工具。
+
+但是，相较于如今的互联网的传播速度而言，人类语言是一种缓慢的语言。然而，只需人类语言形式的几百位信息，就可以构建整个视觉场景。这就是自然语言如此迷人的原因。
+
+**How do we represent the meaning of a word?**
+
+***meaning***
+
+- 用一个词、词组等表示的概念。
+- 一个人想用语言、符号等来表达的想法。
+- 表达在作品、艺术等方面的思想
+
+理解意义的最普遍的语言方式(**linguistic way**): 语言符号与语言符号的意义的转化
+
+$$
+\boxed{\text{signifier(symbol)}\Leftrightarrow \text{signified(idea or thing)}} \\
+= \textbf{denotational semantics}
+$$
+
+> denotational semantics 指称语义
+
+**How do we have usable meaning in a computer?**
+
+***WordNet***, 一个包含同义词集和上位词("is a"关系) ***synonym sets and hypernyms*** 的列表的辞典
+
+![image-20191112172053381](imgs/image-20191112172053381.png)
+
+**Problems with resources like WordNet**
+
+- 作为一个资源很好，但忽略了细微差别
+    - 例如"proficient"被列为"good"的同义词。这只在某些上下文中是正确的。
+- 缺少单词的新含义
+    - 难以持续更新
+    - 例如 wicked, badass, nifty, wizard, genius, ninja, bombest
+- 主观的
+- 需要人类劳动来创造和调整
+- 无法计算单词相似度
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F11%2F05%2F12-00-35-a6aefd4c1cdc143d9c405371da0c6d3d-202411051200771-ef793d.png)
 
