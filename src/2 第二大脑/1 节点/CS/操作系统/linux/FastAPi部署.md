@@ -1,0 +1,154 @@
+---
+draw:
+title: FastAPi部署
+date created: 2024-11-25
+date modified: 2025-02-06
+---
+
+## Python安装与虚拟环境搭建
+
+### 一、安装 Python3
+
+系统默认自带 Python2.7，但有些应用需要使用 Python3。本指南将介绍如何安装 Python3.6.1 来为开发做准备。
+
+#### 1. 下载安装包
+
+```bash
+wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz
+```
+
+#### 2. 创建安装目录
+
+```bash
+# 查看现有 Python 位置
+whereis python
+
+# 创建新的安装目录
+mkdir -p /usr/local/python3
+```
+
+#### 3. 解压并安装
+
+```bash
+tar -zxvf Python-3.6.1.tgz
+cd Python-3.6.1
+./configure --prefix=/usr/local/python3
+make && make install
+```
+
+如果遇到错误 `ModuleNotFoundError: No module named '_ctypes'`，需要安装依赖：
+
+```bash
+yum install -y libffi-devel 
+./configure --prefix=/usr/local/python3
+make && make install
+```
+
+#### 4. 配置软链接
+
+```bash
+ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/python3/bin/pip3 /usr/bin/pip
+```
+
+#### 5. 环境变量配置
+
+```bash
+# 查看版本
+/usr/local/python3/bin/python3 -V
+
+# 编辑环境变量文件
+vim ~/.bash_profile
+
+# 在现有 PATH 中添加
+PATH=$PATH:$HOME/bin:/usr/local/python3/bin
+
+# 使配置生效
+source ~/.bash_profile
+
+# 验证安装
+python3 -V  # 显示 Python 3.6.1
+python -V   # 显示 Python 2.7.5
+```
+
+### 二、pip 配置
+
+#### 1. pip 简介
+
+pip 是 Python 的包管理工具，用于安装、升级和卸载 Python 包。它能自动处理依赖关系，并从 Python Package Index (PyPI) 下载安装包。
+
+#### 2. pip 版本管理
+
+```bash
+# 查看版本
+pip -V
+
+# 升级 pip
+python3 -m pip install --upgrade pip
+```
+
+#### 3. 配置国内镜像源
+
+```bash
+# 创建配置目录和文件
+mkdir -p ~/.pip
+vim ~/.pip/pip.conf
+
+# 添加以下配置：
+[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
+
+[install]
+trusted-host = mirrors.aliyun.com
+```
+
+#### 4. 查看已安装的包
+
+```bash
+python3 -m pip list
+```
+
+### 三、Python 应用部署
+
+#### 1. 导出依赖清单
+
+在本地开发环境中执行：
+
+```bash
+pip3 freeze > requirements.txt
+```
+
+#### 2. 创建虚拟环境
+
+```bash
+# 创建虚拟环境
+python3 -m venv /path/to/new/virtual/environment
+
+# 激活虚拟环境
+cd venv/bin
+source activate
+
+# 退出虚拟环境
+deactivate
+```
+
+#### 3. 安装项目依赖
+
+```bash
+# 升级虚拟环境中的 pip
+python3 -m pip install --upgrade pip --trusted-host pypi.corp.qunar.com
+
+# 安装依赖
+pip3 install -r /opt/project/python/test-python/requirements.txt
+```
+
+### 注意事项
+
+1. 在虚拟环境中更换 pip 源可能会出现异常，请参考相关文档解决
+2. 建议在虚拟环境中进行项目开发，以避免包冲突
+3. 记得在完成工作后退出虚拟环境
+
+### 参考资料
+
+- https://blog.csdn.net/smilehappiness/article/details/117337943
+- https://blog.csdn.net/qq_40891747/article/details/116592227
