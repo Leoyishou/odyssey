@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
 title: Assignment 4
 date created: 2025-01-25
-date modified: 2025-01-26
+date modified: 2025-02-14
 ---
 
 下面给你一个简要的「**任务清单**」，帮助你快速了解 **Assignment #4** 的所有要求，并知道需要在哪些文件里完成哪些功能，以及有哪些书面回答的题目要写在 Written 作业里并提交。
@@ -149,4 +148,4 @@ date modified: 2025-01-26
     - 把**所有文字分析回答**（包括 Part 1(g), Part 1(j), Part 2(a)(b)(c)）整理成一个 PDF（或学校要求的排版），上传到相应的 Written 作业入口。
     - 在 Gradescope 上"**tag 对应页面**"时，记得把每个题目对应到 PDF 中正确的页码，否则可能被扣分。
 
-完成以上流程，你就完成了 CS224n Assignment #4。祝你一切顺利，得到理想的 BLEU 分数并顺利完成作业！
+完成以上流程，你就完成了 CS224n Assignment 4。祝你一切顺利，得到理想的 BLEU 分数并顺利完成作业！

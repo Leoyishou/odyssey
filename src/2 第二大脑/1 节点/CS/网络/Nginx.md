@@ -1,9 +1,8 @@
 ---
 draw:
 title: Nginx
-tags: [Dev, 信息革命]
 date created: 2024-03-28
-date modified: 2024-12-27
+date modified: 2025-02-14
 ---
 
 ```Java
