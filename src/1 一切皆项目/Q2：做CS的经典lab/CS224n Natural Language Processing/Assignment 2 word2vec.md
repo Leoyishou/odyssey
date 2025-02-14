@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
 title: Assignment 2 word2vec
 date created: 2025-01-24
-date modified: 2025-01-25
+date modified: 2025-02-14
 ---
 - [干了啥](#%E5%B9%B2%E4%BA%86%E5%95%A5)
 - [naive-softmax](#naive-softmax)

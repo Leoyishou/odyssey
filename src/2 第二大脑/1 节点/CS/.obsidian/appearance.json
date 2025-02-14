@@ -1,9 +1,0 @@
-{
-  "accentColor": "#1ba1f4",
-  "theme": "moonstone",
-  "enabledCssSnippets": [
-    "my-custom-style"
-  ],
-  "baseFontSize": 23,
-  "cssTheme": "Blue Topaz"
-}

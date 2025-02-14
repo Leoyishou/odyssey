@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
 title: CS224n Natural Language Processing
 date created: 2025-01-23
-date modified: 2025-01-29
+date modified: 2025-02-14
 ---
 
 | 课程编号  | 主题                                                  | 主要知识点                                                                                                              |                   |

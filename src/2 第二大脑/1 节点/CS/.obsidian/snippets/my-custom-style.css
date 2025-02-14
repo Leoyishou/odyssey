@@ -1,8 +1,0 @@
-/* 改变编辑器的最大宽度 */
-.markdown-source-view,
-.markdown-preview-view {
-  max-width: 1600px; /* 或者你希望的任何宽度 */
-  margin-left: auto;
-  margin-right: auto;
-}
-

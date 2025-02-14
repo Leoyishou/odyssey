@@ -1,6 +1,5 @@
 ---
 draw:
-tags: []
 home: true
 icon: home
 title: README
@@ -32,7 +31,7 @@ actions:
 copyright: false
 footer: Theme by <a href="https://theme-hope.vuejs.press/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
 date created: 2024-11-25
-date modified: 2025-01-18
+date modified: 2025-02-14
 ---
 
 ## 一些有趣的经历
