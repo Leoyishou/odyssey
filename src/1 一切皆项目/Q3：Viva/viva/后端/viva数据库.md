@@ -1,0 +1,134 @@
+---
+draw:
+title: viva数据库
+date created: 2024-10-22
+date modified: 2025-02-24
+---
+
+针对这种中英文对照的分词数据，我来建议几种数据库存储方案：
+
+1. 关系型数据库设计：
+
+```sql
+-- 原文表
+CREATE TABLE translations (
+    id SERIAL PRIMARY KEY,
+    original_text TEXT NOT NULL,
+    translated_text TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 分词表
+CREATE TABLE segments (
+    id SERIAL PRIMARY KEY,
+    translation_id INTEGER REFERENCES translations(id),
+    english TEXT,
+    chinese TEXT,
+    segment_order INTEGER,  -- 保持词语顺序
+    CONSTRAINT fk_translation 
+        FOREIGN KEY (translation_id) 
+        REFERENCES translations(id) 
+        ON DELETE CASCADE
+);
+
+-- 索引
+CREATE INDEX idx_translation_id ON segments(translation_id);
+CREATE INDEX idx_english ON segments(english);
+CREATE INDEX idx_chinese ON segments(chinese);
+```
+
+1. MongoDB (文档型数据库) 方案：
+
+```javascript
+{
+  _id: ObjectId(),
+  original: "如果我们真的将专注力视为脑力工作者最弥足珍贵的资源...",
+  translation: "If we truly regard focus as the most precious resource...",
+  segments: [
+    {
+      english: "If",
+      chinese: "如果",
+      order: 0
+    },
+    {
+      english: "we",
+      chinese: "我们",
+      order: 1
+    },
+    // ...其他分词
+  ],
+  createdAt: ISODate()
+}
+```
+
+1. 使用Redis作为缓存层：
+
+```python
+# 使用 Hash 结构存储
+translation_key = f"translation:{translation_id}"
+redis.hset(translation_key, mapping={
+    "original": original_text,
+    "translation": translated_text
+})
+
+# 使用 List 存储分词
+segments_key = f"segments:{translation_id}"
+for segment in segments:
+    redis.rpush(segments_key, json.dumps(segment))
+```
+
+建议：
+
+1. 如果需要关系完整性和复杂查询：
+   - 使用关系型数据库（PostgreSQL/MySQL）
+   - 便于进行分词统计、搜索等操作
+   - 支持事务和数据一致性
+
+2. 如果需要灵活的数据结构和快速读写：
+   - 使用MongoDB
+   - 数据结构可以灵活变化
+   - 适合存储大量文本数据
+   - 方便进行文档级别的操作
+
+3. 混合使用方案：
+   - PostgreSQL存储核心数据
+   - MongoDB存储分词详情
+   - Redis做热点数据缓存
+
+实现建议：
+
+```python
+# PostgreSQL 实现示例
+def save_translation(data):
+    with connection.cursor() as cursor:
+        # 插入原文记录
+        cursor.execute("""
+            INSERT INTO translations (original_text, translated_text)
+            VALUES (%s, %s)
+            RETURNING id
+        """, (data['original'], data['translation']))
+        
+        translation_id = cursor.fetchone()[0]
+        
+        # 批量插入分词
+        segments_data = [(
+            translation_id,
+            segment['english'],
+            segment['chinese'],
+            idx
+        ) for idx, segment in enumerate(data['segments'])]
+        
+        cursor.executemany("""
+            INSERT INTO segments (translation_id, english, chinese, segment_order)
+            VALUES (%s, %s, %s, %s)
+        """, segments_data)
+```
+
+这样的设计考虑了：
+
+1. 数据完整性和关联关系
+2. 查询效率（通过索引优化）
+3. 分词顺序的保持
+4. 未来可能的扩展需求（如添加用户系统、版本控制等）
+
+你觉得哪种方案更适合你的需求？我可以针对具体方案提供更详细的建议。
