@@ -2,7 +2,7 @@
 draw:
 title: conda
 date created: 2024-07-13
-date modified: 2025-02-06
+date modified: 2025-03-13
 ---
 
 请问大神们，pip install 和 conda install 有什么区别吗？- ZERO-XJ 的回答 - 知乎  
@@ -11,6 +11,9 @@ https://www.zhihu.com/question/395145313/answer/2551141843
 ## 常用操作
 
 ```Java
+conda create -n 环境名 python=3.10
+
+
 列出所有环境
 conda info --envs
 

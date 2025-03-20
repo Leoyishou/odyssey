@@ -2,8 +2,35 @@
 draw:
 title: WordNet
 date created: 2024-11-04
-date modified: 2025-02-06
+date modified: 2025-03-20
 ---
+
+以单词 **"learn"** 为例，WordNet的数据结构通常如下：
+下面是添加了**中文字段名称**的 WordNet 数据格式示例（以单词 **bad** 为例）：
+
+|字段名称（英文）|字段名称（中文）|示例内容|
+|---|---|---|
+|Synset Name|同义词集名称|bad.a.01|
+|Part of Speech|词性|a（形容词）|
+|Definition|定义|having undesirable or negative qualities|
+|Examples|示例|["a bad report card", "bad habits", "a bad impression"]|
+|Lemmas|词条|["bad"]|
+|Hypernyms|上位词|["evil.a.01"]（更广义的词义，泛指负面特质）|
+|Hyponyms|下位词|["atrocious.a.01", "abominable.a.01", "terrible.a.01"]（更具体或更强烈的负面含义）|
+
+这样清晰地标明中英文对照，便于理解各字段含义和使用 WordNet 数据进行分析。
+
+|字段名称|示例内容|
+|---|---|
+|Synset Name|learn.v.01|
+|Part of Speech|v (动词)|
+|Definition|gain knowledge or skills|
+|Examples|["She learned dancing from her sister."]|
+|Lemmas|["learn", "larn", "acquire"]|
+|Hypernyms|["study.v.01"](更广义词)|
+|Hyponyms|["catch_up.v.02", "memorize.v.01", "study.v.04"](更具体词)|
+
+WordNet的数据以这样结构化的方式呈现，有助于深入理解词义之间的关系。​​
 
 ## Human language and word meaning
 
