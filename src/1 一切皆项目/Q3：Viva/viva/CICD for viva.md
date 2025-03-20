@@ -1,10 +1,17 @@
 ---
 draw:
-tags: []
 title: CICD for viva
 date created: 2024-12-27
-date modified: 2024-12-28
+date modified: 2025-03-14
 ---
+
+| 步骤       | 当前问题      | 优化后效果             |
+| -------- | --------- | ----------------- |
+| Docker构建 | 缓存未利用     | 利用分层缓存，速度提升 > 70% |
+| 镜像大小     | 大量依赖，镜像偏大 | 镜像减小 >50%，拉取速度更快  |
+| SCP文件上传  | 全量上传慢     | 仅镜像仓库拉取或增量上传，快数倍  |
+| 服务器镜像构建  | 重复构建镜像    | 镜像不再构建，仅拉取，提速明显   |
+
 1. 本地开发 Viva 项目代码
 2. 推送到 GitHub，触发 GitHub Actions, GitHub Actions 执行以下步骤：
 	- 检出代码
@@ -32,7 +39,7 @@ GitHub 仓库设置流程：
    - Admin: 可以管理仓库设置
 ```
 
-2. **分支保护策略**：
+1. **分支保护策略**：
 
 ```plaintext
 保护主分支设置流程：
@@ -43,7 +50,7 @@ GitHub 仓库设置流程：
    - 要求状态检查通过才能合并
 ```
 
-3. **工作流程建议**：
+1. **工作流程建议**：
 
 ```yaml:.github/workflows/deploy.yml
 name: Deploy Viva Project
@@ -135,7 +142,7 @@ services:
     └── Dockerfile
 ```
 
-2. **环境变量管理**：
+1. **环境变量管理**：
 - 在 GitHub 仓库设置中配置 Secrets：
   - `DOCKERHUB_USERNAME` louisleonard
   - `DOCKERHUB_TOKEN` dckr_pat_U2MIMviLW8x3YR5kAQS5k8RBrkA
@@ -258,3 +265,214 @@ PR 审查清单：
 2. 团队大小
 3. 维护周期
 4. 扩展需求
+
+---
+
+你这个 CI/CD 流程整体思路清晰，结构明确，Docker 和 SSH 部署都配置得比较完整。但每次触发 GitHub Action 都比较慢，通常和**构建流程**、**镜像大小**、**网络传输**、**服务器 IO 性能**等环节有关。接下来详细分析你的配置并提供优化建议：
+
+---
+
+## 🚩 一、为什么你的 GitHub Action 执行慢？
+
+根据你的配置，慢的环节主要有：
+
+### **1. Docker 构建（Build）**
+
+- 每次都在执行完全的 Docker 构建，未有效使用缓存，导致每次构建过程缓慢。
+- Docker 的依赖安装步骤重复，耗时较长。
+
+### **2. 文件上传（SCP）**
+
+- 使用 `appleboy/scp-action` 每次上传整个项目到服务器，包含了大量可能并未修改的文件，导致上传缓慢。
+
+### **3. SSH 部署过程中的 Docker 镜像重建**
+
+- SSH 到服务器后，又强制执行了后端镜像的重建：
+
+    ```bash
+    docker-compose build --no-cache backend
+    ```
+
+    这一步会完全忽略缓存，导致再次耗费大量时间。
+
+---
+
+## 🛠️ 二、优化建议
+
+### 🚀 **1. 充分利用 Docker 缓存**
+
+Docker 的分层缓存机制能极大提高速度：
+
+- **Dockerfile 优化**  
+    **原理**：Dockerfile 中依赖安装（如 Python 依赖）和代码拷贝应分离，以避免每次小改动都重新安装依赖。
+    
+    **示例 Dockerfile 优化**：
+
+    ```dockerfile
+    FROM python:3.12-slim
+    
+    WORKDIR /app
+    
+    # 先复制依赖清单并安装依赖
+    COPY requirements.txt .
+    RUN pip install -r requirements.txt
+    
+    # 最后才复制源代码，充分利用缓存
+    COPY . .
+    
+    CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+    ```
+
+    每次只有当 `requirements.txt` 有变化时才重新安装依赖，代码的变动则只更新最上层，速度更快。
+
+    
+
+---
+
+### 🌊 **2. Docker 镜像优化：减小镜像体积**
+
+- 使用轻量级基础镜像，如 `python:3.12-alpine` 或 `python:3.12-slim`。
+- 清理构建时产生的临时文件：
+
+    ```dockerfile
+    RUN pip install -r requirements.txt && rm -rf /root/.cache/pip
+    ```
+
+---
+
+### 📦 **3. 改善文件上传过程**
+
+你目前使用 SCP 一次性上传所有文件，即使很多文件未发生变动：
+
+**改进方案**：
+
+- **只上传 Docker Compose 文件和构建好的镜像（推荐）** 实践中，前后端镜像一般推送到 Docker Hub 或阿里云镜像仓库，服务器端仅需拉取镜像即可，无需上传大量源码文件：
+
+    ```yaml
+    - name: Build and push Docker images
+      run: |
+        docker-compose build
+        docker-compose push
+    ```
+
+    然后 SSH 到服务器仅拉取镜像：
+
+    ```bash
+    docker-compose pull
+    docker-compose up -d
+    ```
+
+- **采用 rsync 代替 SCP** 如果确实需要上传文件，使用`appleboy/rsync-action`，只上传差异文件，速度明显提升。
+    
+
+---
+
+### 🚨 **4. 服务器端减少镜像重建**
+
+当前你 SSH 后执行了：
+
+```bash
+docker-compose build --no-cache backend
+```
+
+建议改为直接使用从 Docker Hub 拉取的镜像，而非在服务器上重新构建：
+
+```bash
+docker-compose pull
+docker-compose up -d
+```
+
+服务器端无需再重复构建镜像，速度显著提高。
+
+---
+
+### ⏱️ **5. GitHub Action 优化：使用缓存 Action**
+
+在 GitHub Actions 中加入缓存：
+
+```yaml
+- name: Cache Docker layers
+  uses: actions/cache@v3
+  with:
+    path: /tmp/.buildx-cache
+    key: ${{ runner.os }}-buildx-${{ github.sha }}
+    restore-keys: |
+      ${{ runner.os }}-buildx-
+```
+
+在构建时指定缓存路径：
+
+```yaml
+- name: Set up Docker Buildx
+  uses: docker/setup-buildx-action@v2
+  with:
+    driver-opts: image=moby/buildkit:latest
+```
+
+---
+
+### ⚙️ **6. Workflow 结构优化**
+
+- 可考虑分离测试与部署 job，单独做快速的单元测试检查，后端容器镜像的构建只在成功测试后才执行，这样可以更快速定位问题。
+- 同时合理设置 Action 并发运行策略，防止过多任务并发，挤占 Action 的资源。
+
+---
+
+## 🌟 **推荐的 CI/CD 流程改进**
+
+整体优化的推荐流程：
+
+**GitHub Actions:**
+
+1. 拉取代码
+2. 单元测试（快速）
+3. 构建 Docker 镜像（使用缓存，优化Dockerfile）
+4. 推送到 Docker Hub 或其他镜像仓库
+
+**服务器端:**
+
+1. 拉取镜像 (`docker-compose pull`)
+2. 直接启动服务 (`docker-compose up -d`)
+
+这样速度最快，效果最明显。
+
+---
+
+## 🚦 **示例优化后流程**
+
+**GitHub Action 改进版配置片段示例**：
+
+```yaml
+- name: Build and push Docker images
+  uses: docker/build-push-action@v5
+  with:
+    context: .
+    push: true
+    tags: louisleonard/viva-backend:latest
+    cache-from: type=gha
+    cache-to: type=gha,mode=max
+
+- name: SSH deploy
+  uses: appleboy/ssh-action@master
+  with:
+    host: ${{ secrets.SERVER_B_HOST }}
+    username: ${{ secrets.SERVER_B_USERNAME }}
+    password: ${{ secrets.SERVER_B_PASSWORD }}
+    script: |
+      cd /path/to/deploy
+      docker-compose pull
+      docker-compose up -d
+```
+
+---
+
+## 🎯 **总结优化后效果**
+
+|步骤|当前问题|优化后效果|
+|---|---|---|
+|Docker构建|缓存未利用|利用分层缓存，速度提升 > 70%|
+|镜像大小|大量依赖，镜像偏大|镜像减小 >50%，拉取速度更快|
+|SCP文件上传|全量上传慢|仅镜像仓库拉取或增量上传，快数倍|
+|服务器镜像构建|重复构建镜像|镜像不再构建，仅拉取，提速明显|
+
+通过这些优化，你的 GitHub Action 流程执行速度将有显著提升，开发部署效率会大幅提高。

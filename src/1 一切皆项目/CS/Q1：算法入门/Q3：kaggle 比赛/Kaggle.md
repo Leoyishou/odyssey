@@ -2,7 +2,7 @@
 draw:
 title: Kaggle
 date created: 2024-10-13
-date modified: 2025-03-02
+date modified: 2025-03-20
 ---
 
 整体而言，Kaggle Notebook 的设计本意就是方便复现，大部分高评分 Notebook 都是可以直接运行的。
@@ -45,7 +45,45 @@ Kaggle给机器学习新手和顶尖选手带来的好处是最大的，反倒�
 
 对于大神来说，如果可以保证自己至少拿银牌并且有大概率拿金牌。那么一方面，参加kaggle不失为一份兼职，可以组队带打并收取一定的费用，如果能力超强还可以拿到比赛的奖金。另一方面，如果真能在几次比赛中得个前三，那确实可以在应聘国内外大厂的时候拿出来炫耀一下，还是很加分的。
 
+以下是专门为初学者制作的一份 Kaggle 平台使用速查表（Cheatsheet）：
+
+|**功能类别**|**操作**|**说明**|
+|---|---|---|
+|**数据集**|查找数据集|在顶部导航栏点击「Datasets」，输入关键字搜索|
+||下载数据集|进入数据集页面后，点击右侧「Download」按钮|
+||创建数据集|点击「Datasets」→「New Dataset」，上传数据文件并添加描述|
+|**Notebook**|创建Notebook|点击「Code」→「New Notebook」，选择语言（Python、R等）|
+||运行Notebook|Notebook界面点击「Run」或使用快捷键（Shift+Enter）|
+||添加代码/文本单元格|使用界面顶部的「+ Code」或「+ Markdown」按钮|
+||保存Notebook|Notebook界面右上角点击「Save Version」|
+||发布Notebook|点击「Save Version」，勾选「Public」进行发布|
+|**竞赛**|加入竞赛|点击顶部导航栏「Competitions」，选择竞赛并点击「Join Competition」|
+||提交结果|在竞赛页面选择「Submit Predictions」，上传结果文件|
+||查看排行榜|在竞赛页面点击「Leaderboard」|
+|**讨论区**|提问交流|点击顶部「Discussion」，创建问题或浏览现有帖子|
+||回复帖子|在讨论区帖子下方的回复框输入内容并提交|
+|**快捷键**|运行代码单元格|`Shift + Enter`|
+||添加单元格|`a` (上方插入)、`b` (下方插入)|
+||删除单元格|双击左侧单元格编号后按两次`d`键 (`d`+`d`)|
+||代码自动补全|按下`Tab`键|
+||查看函数说明|在函数名后面加`?`并运行|
+|**常用命令（Python）**|查看文件列表|`!ls`|
+||安装库|`!pip install package-name`|
+||读取CSV文件|`pd.read_csv('file.csv')`|
+||检查数据前5行|`df.head()`|
+|**提交格式**|CSV 文件要求|通常需包含ID列和预测结果列，明确参赛页面上的格式|
+||示例提交代码|`df.to_csv('submission.csv', index=False)`|
+|**资源**|官方文档|[Kaggle官方文档](https://www.kaggle.com/docs)|
+||入门教程|[Kaggle Learn入门教程](https://www.kaggle.com/learn)|
+
+希望以上内容能帮助你更快地熟悉和掌握 Kaggle 平台的使用！
+
+___
+
 [[baseline]]
+
+装依赖  
+![CleanShot 2025-03-17 at 02.32.44@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_3XbejjHF4p%2F2025%2F03%2F17%2F02-33-17-288bf40aa581e22c89234b458a46f1c4-CleanShot%202025-03-17%20at%2002.32.44-2x-4b06bb.png)
 
 看起来你已经成功上传了baseline文件到Kaggle，出现了"No Data Sources Found"提示，这是因为代码需要比赛数据才能运行。接下来的步骤是：
 

@@ -2,11 +2,52 @@
 draw:
 title: DDD
 date created: 2024-08-19
-date modified: 2025-02-06
+date modified: 2025-03-15
 ---
 
 ddd说白了就是以前的service太乱太多了，把他们按照微服务的思想group by在了几个核心领域下  
 mapping的出生和essay的出生有关，但是之后的更新就和essay包括sentence都没关系了。ddd的核心就是把domain划分好，每个domain提供自己的能力，最外层的大逻辑放在application层  
+
+```Java
+your-project/
+	├── interfaces
+	│   └── controller
+	│       ├── UserController.java
+	│       └── OrderController.java
+	│
+	├── application
+	│   └── service
+	│       ├── UserAppService.java
+	│       └── OrderAppService.java
+	│
+	├── domain
+	│   ├── entity
+	│   │   ├── User.java
+	│   │   └── Order.java
+	│   ├── repository
+	│   │   ├── UserRepository.java（接口）
+	│   │   └── OrderRepository.java（接口）
+	│   ├── service
+	│   │   └── UserDomainService.java（可选，纯业务逻辑）
+	│   └── event
+	│       └── OrderCreatedEvent.java
+	│
+	├── infrastructure
+	│   └── persistence
+	│       ├── mapper
+	│       │   ├── UserMapper.java
+	│       │   └── OrderMapper.java
+	│       └── repository
+	│           ├── UserRepositoryImpl.java（仓储接口实现）
+	│           └── OrderRepositoryImpl.java
+	│
+	├── config
+	├── scripts
+	├── tests
+	├── docs
+	└── README.md
+```
+
 ![image.png|1800](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F10%2F01%2F16-13-49-a18227f44755f78e7dffc31ab0b840fa-202410011613361-7387ac.png)
 
 ## 贫血充血？
@@ -19,25 +60,91 @@ mapping的出生和essay的出生有关，但是之后的更新就和essay包括
 
 ## 分层
 
-```sql
-com/qunar/hotel/
-│
-├── interfaces/
-│   ├── DetailController.java            # 传统的controller
-│   │
-│   └── service/
-│       └── AbstractPriceService.java    # 传统的service
-│
-├── engine/
-│   └── TransferBizProcess.java          # 传统service中的核心处理逻辑
-│
-└── infrastructure/  # 基础层
-    └── future/                          # 外部调用
-        ├── AsyncFuture.java
-        ├── FutureCallback.java
-        ├── FutureTask.java
-        └── ... (其他相关的future类)
+如果你将传统的**Controller-Service-Mapper**结构迁移到领域驱动设计（DDD）的一级目录体系下，可以按照以下方式映射：
+
+---
+
+### 一、Controller 放置到接口层（`interfaces`）
+
+- 传统项目中的 `Controller` 通常负责接口暴露和请求处理，对应 DDD 中的**接口层**。
+
+```Java
+interfaces/
+└── controller/
+    ├── UserController.java
+    └── OrderController.java
 ```
+
+职责说明：
+
+- 接收前端请求、参数校验和转换。
+- 调用应用服务层（application）提供的服务接口。
+- 将结果封装为视图或响应对象返回给前端。
+
+---
+
+### 二、Service 放置到应用服务层（`application`）
+
+- 传统项目的 `Service` 通常混合了业务逻辑和事务控制。在DDD中，它们被分为两部分：
+    
+    - **应用服务层（Application Service）**（调用领域逻辑、事务管理）
+    - **领域服务（Domain Service）**（纯业务逻辑，与事务和外部技术无关）
+
+但一般来说，传统项目中的大多数`Service`方法都应直接迁移到应用服务层：
+
+```Java
+application/
+└── service/
+    ├── UserAppService.java
+    └── OrderAppService.java
+```
+
+职责说明：
+
+- 调用领域层（domain）的聚合根和领域服务。
+- 控制事务（@Transactional）、权限控制等。
+- 编排、协调不同领域逻辑或多个聚合的操作。
+
+注意：如果发现某个 `Service` 中有大量业务逻辑，这些业务逻辑应提炼为领域服务或聚合方法，放置在`domain`层。
+
+---
+
+### 三、Mapper 放置到基础设施层（`infrastructure`）
+
+- 传统项目的 `Mapper`（如MyBatis的mapper.xml和mapper接口）是具体的数据库访问实现，应归入基础设施层：
+
+```Java
+infrastructure/
+└── persistence/
+    ├── mapper/
+    │   ├── UserMapper.java
+    │   └── OrderMapper.java
+    └── repository/
+        ├── UserRepositoryImpl.java
+        └── OrderRepositoryImpl.java
+```
+
+职责说明：
+
+- 提供数据存取的具体实现（例如MyBatis、JPA）。
+- 实现领域层定义的`Repository`接口。
+- 数据持久化和数据访问的具体技术细节。
+
+---
+
+### 建议迁移步骤
+
+- **识别核心业务**：将真正的业务逻辑提炼到`domain`层，保持纯净。
+- **拆分Service**：
+    - 业务编排、事务、权限控制放在`application`。
+    - 纯业务逻辑放在`domain`。
+- **封装数据访问**：
+    - mapper实现和ORM框架放到`infrastructure`。
+    - 使用领域定义的仓储接口进行解耦。
+
+---
+
+通过以上方式，传统三层架构能更自然地适应领域驱动设计的分层结构，实现更好的关注点分离和更清晰的项目结构。
 
 ## 通用语言
 

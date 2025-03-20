@@ -2,8 +2,10 @@
 draw:
 title: Viva
 date created: 2024-02-16
-date modified: 2025-02-16
+date modified: 2025-03-14
 ---
+
+[CICD for viva](CICD%20for%20viva.md)
 
 ## 商业化
 
