@@ -2,7 +2,7 @@
 draw:
 title: go.mod
 date created: 2024-12-11
-date modified: 2025-02-06
+date modified: 2025-03-26
 ---
 
 `go mod init 6.824` 这个命令在 Go 中类似于在 Java 项目中创建 `pom.xml`（Maven）或 `build.gradle`（Gradle）文件。

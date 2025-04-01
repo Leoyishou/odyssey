@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
 title: MECE
 date created: 2024-07-11
-date modified: 2024-11-12
+date modified: 2025-03-27
 ---
 
 MECE，是 Mutually Exclusive Collectively Exhaustive，中文意思是 " 相互独立，完全穷尽 "。也就是对于一个重大的议题，能够做到不重叠、不遗漏的分类，而且能够借此有效把握问题的核心，并解决问题的方法。

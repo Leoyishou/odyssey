@@ -2,12 +2,45 @@
 draw:
 title: Shell
 date created: 2024-07-27
-date modified: 2025-02-06
+date modified: 2025-03-25
 ---
+- [Map   选项->参数](#Map%20%20%20%E9%80%89%E9%A1%B9-%3E%E5%8F%82%E6%95%B0)
+- [一个-与两个--](#%E4%B8%80%E4%B8%AA-%E4%B8%8E%E4%B8%A4%E4%B8%AA--)
+- [Shell 是接口，bash 是实现](#Shell%20%E6%98%AF%E6%8E%A5%E5%8F%A3%EF%BC%8Cbash%20%E6%98%AF%E5%AE%9E%E7%8E%B0)
+	- [实现类](#%E5%AE%9E%E7%8E%B0%E7%B1%BB)
+- [作用](#%E4%BD%9C%E7%94%A8)
+- [Shell脚本](#Shell%E8%84%9A%E6%9C%AC)
+
+## Map   选项->参数
+
+```Java
+command [options] [arguments]
+命令 主选项(-或--) 参数
+
+所以本质是个<option，argument>的 Map，
+Option (key, 带-或--) -> Argument (value，可能为空或隐式布尔值true)
+```
 
 **七步之外 Python 快，七步之内 Shell 更快。**
 
-## 接口
+## 一个-与两个--
+
+| 短选项接单个字母 | 长选项接整个单词        | 含义             |
+| -------- | --------------- | -------------- |
+| `-i`     | `--interactive` | 交互式（保持stdin打开）|
+| `-t`     | `--tty`         | 分配伪终端          |
+| `-d`     | `--detach`      | 后台运行容器         |
+| `-v`     | `--volume`      | 挂载卷            |
+| `-p`     | `--publish`     | 端口映射           |
+
+| 写法示例                                             | 含义                           | 等效与否      |
+| ------------------------------------------------ | ---------------------------- | --------- |
+| `docker exec -it container bash`                 | 交互式执行bash                    | ✅         |
+| `docker exec --interactive --tty container bash` | 完整参数形式                       | ✅         |
+| `docker exec container bash`                     | 没有交互终端，非交互执行命令               | ❌ 不等效     |
+|                                                  |                              |           |
+
+## Shell 是接口，bash 是实现
 
 Shell是操作系统的外壳，是用户与操作系统内核进行交互的接口。它主要有两个重要功能：
 
@@ -15,12 +48,15 @@ Shell是操作系统的外壳，是用户与操作系统内核进行交互的接
 2. 脚本语言：Shell还是一种解释执行的脚本语言，可以编写和执行Shell脚本。这些脚本可以包含系统命令、程序控制结构（如循环和函数）等。
 
 Shell 本质上是：
+
     - 一个接口规范（用户与操作系统交互的标准）
+
     - 定义了基本的行为（命令执行、IO 处理等）
 
-## 实现类
+### 实现类
 
 不同的 Shell 是这个接口的不同实现：
+
     - sh：最基础的实现  
     - bash：基于 sh 的增强实现  
     - zsh：基于 bash 概念的更高级实现

@@ -8,7 +8,7 @@ date modified: 2024-11-12
 
 【集合】HashMap扩容
 
-[Map](Map.md)
+[Map, Dict](Map,%20Dict.md)
 
 1、map允许一个null key，多个null value，table都不允许
 

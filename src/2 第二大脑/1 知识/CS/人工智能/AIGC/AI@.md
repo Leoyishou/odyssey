@@ -2,8 +2,22 @@
 draw:
 title: AI@
 date created: 2024-11-03
-date modified: 2025-03-20
+date modified: 2025-03-26
 ---
+
+git config --global user.email "liuysh20@gmail.com"
+
+| 类别         | 内容                                                       |
+| ---------- | -------------------------------------------------------- |
+| **AI 硬件**  | • GPU性能<br>• 租用平台<br>• 快速推理技术                            |
+| **AI 模型**  | • 主流开闭源模型<br>• Openrouter<br>• 硅基流动                      |
+| **AI 微调**  | • 强化学习微调Qwen2.5-1.5B、框架选择、参数设置、模型评估                      |
+| **AI 练习**  | • Exercism<br>• Kaggle<br>• Huggingface<br>• Wandb 平台的使用 |
+| **AI 资讯**  | • HackerNews<br>• X<br>• YouTube 列表                      |
+| **AI IDE** | • Cursor 使用技巧                                            |
+| **AI 学习**  | • 知识图谱与知识库使用心得                                           |
+| **AI 商业化** | • Chatwise 盈利模式的探讨<br>• 自写插件<br>• 细分场景发现                 |
+| **AI 课程**  | • CS229<br>• CS224n                                      |
 
 ## 真正的NLP发展的历史时间线
 

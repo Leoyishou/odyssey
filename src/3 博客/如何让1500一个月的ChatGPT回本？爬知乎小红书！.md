@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
 title: 如何让1500一个月的ChatGPT回本？爬知乎小红书！
 date created: 2025-01-27
-date modified: 2025-01-27
+date modified: 2025-03-28
 ---
 1. 思考力资源、注意力资源 -> 信息吞吐量变了
 2. 爬取内容 https://github.com/NanmiCoder/MediaCrawler
