@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
 title: 3Blue1Brown
 date created: 2024-09-22
-date modified: 2025-01-26
+date modified: 2025-03-27
 ---
 
 ## 神经网络系列

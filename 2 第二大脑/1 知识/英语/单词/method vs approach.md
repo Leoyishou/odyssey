@@ -2,7 +2,7 @@
 draw:
 title: method vs approach
 date created: 2025-01-17
-date modified: 2025-02-06
+date modified: 2025-03-23
 ---
 
 从中文视角理解 "**method**" 和 "**approach**" 的区别，可以概括为：**method** 一般指更具体、更可操作的"方法/步骤/技术手段"，而 **approach** 更强调"思路/路径/策略"，往往指较宏观、整体性的解决问题方式。下面结合一些中文语境举例说明它们在使用上的差异：

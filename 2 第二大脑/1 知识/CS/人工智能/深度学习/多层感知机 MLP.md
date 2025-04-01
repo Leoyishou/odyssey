@@ -2,14 +2,16 @@
 draw:
 title: 多层感知机 MLP
 date created: 2025-02-14
-date modified: 2025-02-14
+date modified: 2025-03-27
 ---
 
 ## 案例
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F01%2F26%2F17-11-08-23b92ea8f94d137be070996366dea9a6-202501261711777-7e48d7.png)
 
-## 1. 输入层到隐藏层的计算
+## 前向传播
+
+### 1. 输入层到隐藏层的计算
 
 $z^{(1)} = W^{(1)}x + b^{(1)}$  
 $a^{(1)} = \sigma(z^{(1)})$
@@ -35,7 +37,7 @@ a₁ = σ(-0.9) = 1/(1 + e⁰·⁹) ≈ 0.29
 a₂ = σ(0.3) = 1/(1 + e⁻⁰·³) ≈ 0.57
 ```
 
-## 2. 隐藏层到输出层的计算
+### 2. 隐藏层到输出层的计算
 
 $z^{(2)} = W^{(2)}a^{(1)} + b^{(2)}$  
 $a^{(2)} = \sigma(z^{(2)})$
@@ -55,7 +57,7 @@ z² = 0.5(0.29) + 0.2(0.57) + 0.1
 输出 = σ(0.359) = 1/(1 + e⁻⁰·³⁵⁹) ≈ 0.589
 ```
 
-## 3. 损失函数
+## 3. [[损失函数]]
 
 对于使用均方误差(MSE)作为损失函数  
 $C_0 = (a^{(L)} - y)^2$
@@ -101,6 +103,7 @@ $\frac{\partial C_0}{\partial W_2^{(2)}} = (-0.822) \times 0.242 \times 0.574 \a
 来推导对偏置 $b^{(2)}$ 的偏导数。
 
 我们仍然使用链式法则：
+
 $\frac{\partial C_0}{\partial b^{(2)}} = \frac{\partial z^{(2)}}{\partial b^{(2)}} \frac{\partial a^{(2)}}{\partial z^{(2)}} \frac{\partial C_0}{\partial a^{(2)}}$
 
 其中：
@@ -110,6 +113,7 @@ $\frac{\partial C_0}{\partial b^{(2)}} = \frac{\partial z^{(2)}}{\partial b^{(2)
 3. $\frac{\partial z^{(2)}}{\partial b^{(2)}} = 1$ (因为 $z^{(2)} = W^{(2)}a^{(1)} + b^{(2)}$，对 $b^{(2)}$ 求导就是 1)
 
 所以：
+
 $\frac{\partial C_0}{\partial b^{(2)}} = (-0.822) \times 0.242 \times 1 \approx -0.199$
 
 ## 5. 参数更新

@@ -1,11 +1,8 @@
 ---
-aliases: [Obsidian FastStart脚本使用指南]
 draw:
-tags: []
-title: Obsidian FastStart脚本使用指南
+title: Obsidian
 date created: 2024-07-15
-date modified: 2024-12-27
-linter-yaml-title-alias: Obsidian FastStart脚本使用指南
+date modified: 2025-03-31
 ---
 
 ## Obsidian FastStart脚本使用指南

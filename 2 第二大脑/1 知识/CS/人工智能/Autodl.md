@@ -1,10 +1,19 @@
 ---
 draw:
-tags: []
-title: Autodl
+title: AutoDL
 date created: 2024-10-22
-date modified: 2024-12-27
+date modified: 2025-03-24
 ---
+
+```Java
+# 开梯子
+source /etc/network_turbo
+
+
+# 清空回收站
+rm -rf /root/autodl-tmp/.Trash-0/*
+
+```
 
 Autodl（Auto Deep Learning）是一个在中国比较流行的深度学习云平台，主要提供GPU算力租用服务。以下是它的主要特点：
 

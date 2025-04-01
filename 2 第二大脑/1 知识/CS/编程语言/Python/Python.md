@@ -2,8 +2,15 @@
 draw:
 title: Python
 date created: 2023-12-18
-date modified: 2025-03-15
+date modified: 2025-03-26
 ---
+
+
+
+
+
+
+2. 布尔逻辑判断，坚持用`and`**, `or`**, **`not`**
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F10%2F01%2F16-16-11-6bce63c81909280b883a0e96da394ff0-202410011616703-32886c.png)
 

@@ -21,7 +21,7 @@ date modified: 2025-02-25
 
 数据：
 [String](String.md)  
-[Array](Array.md)  
+[Array、数组](Array、数组.md)  
 [类型强转](类型强转)  
 [常量](常量.md)
 
