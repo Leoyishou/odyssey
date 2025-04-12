@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
 title: cursor
 date created: 2024-09-09
-date modified: 2024-12-27
+date modified: 2025-04-02
 ---
 
 ## 打印
@@ -43,6 +42,7 @@ https://www.v2ex.com/t/1070302#reply2
 - 文案 将所有这些内容放入一个名为 `[http://instruction.md](https://t.co/GzdTkD8jW4)` 的文件（名字随便起），这样Cursor可以随时进行索引。
 
 2/ 获取一个 `.cursorrules` 文件 很多人忽略了这一步。我理解，编写 `.cursorrules` 文件可能让人望而生畏，但它确实能带来极大帮助。这是一个我总是推荐的优秀仓库，可以帮助你入门。选择你的技术栈，并根据你的偏好进行编辑：
+
 https://github.com/PatrickJS/awesome-cursorrules?tab=readme-ov-file 这个网站提供了很多最佳实践
 
 3/ 使用 v0 构建登陆页面 从你的 `[http://instructions.md](https://t.co/dpTHYqzjIN)` 文件中获取核心功能、配色方案和组件。额外提示：可以参考其他登陆页面的截图，以便让 v0 更好地理解你的想法。使用组件库，我推荐 shadcn，因为 v0 与它配合良好。我也常用 MagicUI。记住，你不需要让 v0 完美无缺。你只需要一个足够好的基础，便于你后续在 Cursor 中进一步编辑和优化。

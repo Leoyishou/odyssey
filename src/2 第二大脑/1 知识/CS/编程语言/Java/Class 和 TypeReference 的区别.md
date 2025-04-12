@@ -2,7 +2,7 @@
 draw:
 title: Class 和 TypeReference 的区别
 date created: 2024-06-06
-date modified: 2025-02-06
+date modified: 2025-04-08
 ---
 
 [TypeReference](TypeReference.md)

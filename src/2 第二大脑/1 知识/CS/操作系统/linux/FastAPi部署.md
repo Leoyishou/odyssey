@@ -2,7 +2,7 @@
 draw:
 title: FastAPi部署
 date created: 2024-11-25
-date modified: 2025-02-06
+date modified: 2025-04-07
 ---
 
 ## Python安装与虚拟环境搭建
