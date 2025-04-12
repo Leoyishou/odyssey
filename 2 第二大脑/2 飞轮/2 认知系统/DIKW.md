@@ -2,8 +2,10 @@
 draw:
 title: DIKW
 date created: 2024-08-07
-date modified: 2025-03-27
+date modified: 2025-04-08
 ---
+
+![CleanShot 2025-03-27 at 15.27.48@2x.png|500](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_ebeJ5vgXnA%2F2025%2F03%2F27%2F15-28-10-dbb6bf03dfbae1bef35789407005533e-CleanShot%202025-03-27%20at%2015.27.48-2x-1c2939.png)
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F10%2F01%2F17-12-01-4e8abb4b7a7c1949763a09009776dfa5-202410011712243-f5dc5e.png)
 

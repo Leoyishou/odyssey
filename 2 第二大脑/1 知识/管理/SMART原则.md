@@ -1,10 +1,11 @@
 ---
 draw:
-tags: []
-title: SMART 指标
+title: SMART原则
 date created: 2024-07-01
-date modified: 2024-11-12
+date modified: 2025-04-05
 ---
+
+SMART 原则：KR 通常需要符合“具体（Specific）、可衡量（Measurable）、可实现（Achievable）、相关性（Relevant）、有时限（Time-bound）”。
 
 specific  
 measurable  

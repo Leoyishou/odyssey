@@ -2,7 +2,7 @@
 draw: 
 title: CS@
 date created: 2024-05-19
-date modified: 2025-03-27
+date modified: 2025-04-08
 ---
 
 外表高大上，看着是宾利的壳，其实核心动力是几个老鼠在壳里面蹬三轮呢。只要你干一两年基本都懂了。
@@ -29,7 +29,7 @@ date modified: 2025-03-27
 | [[网络@]]               | [CS144 Computer Network](CS144%20Computer%20Network.md)                                     |
 | [[数据库@]]              | [[UCB CS186 Introduction to Database System]]                                               |
 | [[分布式系统]]             | [MIT 6.824 Distributed System](MIT%206.824%20Distributed%20System.md)                       |
-| [机器学习](机器学习.md)       | [[2 第二大脑/1 知识/CS/CS229 Machine Learning]]                                                                                   |
+| [机器学习ML](机器学习ML.md)       | [[2 第二大脑/1 知识/CS/CS229 Machine Learning]]                                                                                   |
 | [[深度学习]]              | [[CS224n Natural Language Processing]]                                                      |
 
 | 语言                          |
@@ -47,7 +47,7 @@ date modified: 2025-03-27
 
 你能把活儿干出花来，能快速的超越自己的限制，最重要的是计算机各个领域的基本视野和概念。
 
-你必须知道计算机科学几乎所有的领域基本的想法是什么。比如 tcp 怎么维护 [虚拟链接](https://www.zhihu.com/search?q=%E8%99%9A%E6%8B%9F%E9%93%BE%E6%8E%A5&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 传递信息，如何做微观的拥塞控制；编译器怎么 [parse](https://www.zhihu.com/search?q=parse&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 出来 ir，如何对 ir 优化；分布式算法如何协调工作；[流式计算](https://www.zhihu.com/search?q=%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 里面 unbounded data 怎么做 [window/trigger](https://www.zhihu.com/search?q=window%2Ftrigger&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D)；[机器学习](机器学习.md) 里面各种模型是如何拟合数据的，为什么需要不同的拟合方式；mysql 中事务怎么做，行锁怎么设计的；[linux kernel](https://www.zhihu.com/search?q=linux%20kernel&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 的进程调度怎么设计、[异步 io](https://www.zhihu.com/search?q=%E5%BC%82%E6%AD%A5%20io&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 怎么设计……
+你必须知道计算机科学几乎所有的领域基本的想法是什么。比如 tcp 怎么维护 [虚拟链接](https://www.zhihu.com/search?q=%E8%99%9A%E6%8B%9F%E9%93%BE%E6%8E%A5&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 传递信息，如何做微观的拥塞控制；编译器怎么 [parse](https://www.zhihu.com/search?q=parse&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 出来 ir，如何对 ir 优化；分布式算法如何协调工作；[流式计算](https://www.zhihu.com/search?q=%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 里面 unbounded data 怎么做 [window/trigger](https://www.zhihu.com/search?q=window%2Ftrigger&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D)；[机器学习ML](机器学习ML.md) 里面各种模型是如何拟合数据的，为什么需要不同的拟合方式；mysql 中事务怎么做，行锁怎么设计的；[linux kernel](https://www.zhihu.com/search?q=linux%20kernel&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 的进程调度怎么设计、[异步 io](https://www.zhihu.com/search?q=%E5%BC%82%E6%AD%A5%20io&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3054501672%7D) 怎么设计……
 
 有了这些视野之后，你要把它们从具体的领域中抽象成概念。
 

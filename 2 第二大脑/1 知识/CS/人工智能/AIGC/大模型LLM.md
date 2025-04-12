@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
-title: LLM
+title: 大模型LLM
 date created: 2024-10-21
-date modified: 2024-12-27
+date modified: 2025-04-05
 ---
 1.关键词是什么 2.how to send the context 是prompt或者 AI 时代的最关键命题
 
@@ -11,16 +10,64 @@ technical probpem是最容易解决的
 
 business conrext 过于个性化甚至是不可言说之物。
 
-## 参考资料
+#Roadmap
 
-一直非常惊叹深度学习后的大模型推理编程竟然如此简单，Llama-3 70B，就两个文件，一个140G的参数文件，一个500行左右的C程序，你就可以和一个压缩了15T tokens的大语言模型对话！
-https://x.com/TaNGSoFT/status/1784338359068033527
+| 周次     | 内容主题 | 学习时长 | 具体内容                                                                                                      |
+| ------ | ---- | ---- | --------------------------------------------------------------------------------------------------------- |
+| ❤️ 第一周 | 基本概念 | 4小时  | 环境搭建（[[Python]]/[[PyTorch]]）、[[Transformer]]架构简介、[[自注意力机制]]机制、基础文本生成（Hello World示例）|
+| ❤️ 第二周 | 核心组件 | 5小时  | [词向量、词嵌入](词向量、词嵌入.md)嵌入（Word Embeddings）、位置编码（Positional Encoding）、多头注意力（Multi-Head Attention）、前馈网络（Feed-Forward）|
+| ❤️ 第三周 | 实践入门 | 5小时  | 实现简单Transformer模块、微调预训练模型（如BERT）、文本分类任务（基于Hugging Face库）|
+| ❤️ 第四周 | 进阶应用 | 6小时  | 生成任务（GPT文本生成）、模型压缩技术（知识蒸馏）、Prompt Engineering、模型评估（BLEU/ROUGE指标）|
+| ❤️ 第五周 | 高级主题 | 18小时 | 预训练与微调策略（ZeRO/DeepSpeed）、模型伦理与偏见、多模态大模型（CLIP/DALL·E）、模型部署（ONNX/TensorRT）|
+| ❤️ 第六周 | 前沿探索 | 38小时 | 大模型优化（MoE架构）、强化学习对齐（RLHF）、Agent开发（AutoGPT）|
+
+  大模型必看博主/机构
+
+  2. 👨🏻‍💻 李沐（《动手学深度学习》作者）
+  3. 👨🏻‍💻 Andrej Karpathy（OpenAI研究员，技术解读深入）
+  4. 👨🏻‍💻 Hugging Face团队（开源模型库与教程
+
+  
+  5. 日常自学神仙网站
+  6. 🚀 新手：Hugging Face Courses（免费实战教程）
+  7. 🚀 进阶：Papers With Code（论文+代码复现）
+  8. 🚀 刷题：LeetCode（算法与模型优化题）
+  9. 🚀 项目：GitHub（开源大模型项目库）
+  
+  
+  10. 📚 学习物料
+  11. 🛠️ 工具包推荐 PyTorch/TensorFlow
+  12. 安装包 Jupyter Notebook
+  13. 环境配置 Hugging Face Transformers 库
+  14.
+  15.
+  16.
+  17. 📖 经典书籍与论文《Attention Is All You Need》（Transformer原论文）《深度学习》（花书，理论基石）《Natural Language Processing with Transformers》（Hugging Face实战指南）📝 笔记与课程《李宏毅深度学习笔记》（大模型章节）《斯坦福CS224n（NLP公开课）》《动手学大模型》系列
+  18.
+  
+  19. 🌱 附加资源 Kaggle大模型竞赛案例 OpenAI官方技术博客 ArXiv最新论文跟踪 [#大模型](https://www.xiaohongshu.com/search_result?keyword=%25E5%25A4%25A7%25E6%25A8%25A1%25E5%259E%258B&type=54&source=web_note_detail_r10) [#人工智能](https://www.xiaohongshu.com/search_result?keyword=%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD&type=54&source=web_note_detail_r10) [#](https://www.xiaohongshu.com/search_result?keyword=AI%25E5%25B7%25A5%25E5%2585%25B7&type=54&source=web_note_detail_r10)
+
+## 历史
+
+以下是从过去到现在，按时间顺序梳理的LLM（大型语言模型）关键技术发展节点：
+
+- **2012年**：AlexNet赢得ImageNet比赛，开启深度学习热潮。
+- **2013年**：Google提出Word2Vec，推动[自然语言处理 NLP](自然语言处理%20NLP.md)进入[[深度学习]]时代。
+- **2014年**：Seq2Seq与Attention机制问世，显著提升机器翻译能力。
+- **2017年6月**：Transformer架构发表（论文《Attention Is All You Need》），NLP进入Transformer时代。
+- **2018年6月**：OpenAI推出GPT-1，开启预训练生成模型时代。
+- **2018年10月**：Google提出BERT，建立双向预训练新标准。
+- **2019年6月**：Meta推出RoBERTa，优化BERT架构，推动预训练模型研究深入。
+- **2020年5月**：OpenAI发布GPT-3（1750亿参数），展示大规模模型惊人的语言生成能力。
+- **2022年11月**：OpenAI发布ChatGPT，推动LLM首次大众化，引发全球关注。
+- **2023年至今**：GPT-4及各类LLM广泛普及与产业落地，标志着大型语言模型技术进入产业化新时代。
 
 ## 两个问题
 
 ### 大模型幻觉
 
   " 大模型幻觉 " 是指人们在与大语言模型交互时可能产生的一种错觉，即错误地认为这些模型具有真正的理解能力、意识或感知。这种幻觉通常源于模型生成的文本质量非常高，能够流畅、连贯地回答问题或进行对话，使人们感觉就像是在与一个真实的、有理解力的人类交谈。
+
   举一个论坛上的例子，怎么写出更好的 prompt？回答 A 介绍了一堆循序渐进的步骤，但是高赞的回答 B 说到，这一切的前提首先是它是个 prompt 专家！那么它是吗？
 
   

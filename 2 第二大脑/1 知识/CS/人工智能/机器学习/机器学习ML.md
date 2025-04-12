@@ -1,9 +1,24 @@
 ---
 draw:
-title: 机器学习
+title: 机器学习ML
 date created: 2024-07-13
-date modified: 2025-02-22
+date modified: 2025-04-05
 ---
+```Java
+output_folder/
+│
+├── Data/
+│   ├── train/
+│   ├── test/
+│   └── validation/
+│
+├── main.py
+├── model.py
+├── utils.py
+├── train.py
+├── test.py
+└── test_notebook.ipynb
+```
 
 | 类型    | 主要特点          | 学习方式           | 典型算法/模型                                           |
 | ----- | ------------- | -------------- | ------------------------------------------------- |

@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
 title: Dribbble
 date created: 2024-11-15
-date modified: 2024-12-27
+date modified: 2025-04-10
 ---
 
 Dribbble 是一个面向设计师的在线社区，成立于 2009 年，由 Dan Cedarholm 和 Rich Thornett 创办。它为设计师提供了一个平台，用于展示他们的创作、分享灵感、互相学习以及寻找工作机会。

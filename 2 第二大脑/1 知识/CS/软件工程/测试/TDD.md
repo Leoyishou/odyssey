@@ -2,8 +2,9 @@
 draw:
 title: TDD
 date created: 2024-01-18
-date modified: 2025-02-06
+date modified: 2025-04-05
 ---
+**代码实现的留痕似乎不如测试过程的留痕更有意义**
 
 ## Spring Boot applications are typically tested at three main levels
 

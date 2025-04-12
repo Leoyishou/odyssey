@@ -11,6 +11,6 @@ date modified: 2024-11-12
 
 ![image.png|2000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F22%2F01-03-06-dc95c3279a1360767d702150be6324f4-20240722010304-fb6f4a.png)
 
-## [SMART 指标](SMART%20指标.md)
+## [SMART原则](SMART原则.md)
 
 每周 3-5 个，然后选出一个最成功的发布在 B 站、抖音

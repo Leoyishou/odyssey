@@ -2,7 +2,7 @@
 draw:
 title: JVM@
 date created: 2024-07-14
-date modified: 2025-02-06
+date modified: 2025-04-08
 ---
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F09%2F20%2F19-15-39-b5a27ea6955dff8eadca5d56b025dfcc-202409201915990-43d59b.png)
@@ -19,6 +19,7 @@ date modified: 2025-02-06
 题目中所问的Eden区的大小是指年轻代的大小，直接根据-Xmn：500M和-XX:SurvivorRatio=3可以直接计算得出  
 500M×(3/(3+1+1))  
 =500M×（3/5）
+
 =500M×0.6  
 =300M  
 所以Eden区域的大小为300M  

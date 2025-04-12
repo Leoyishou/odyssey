@@ -1,9 +1,8 @@
 ---
 draw:
-tags: []
 title: Cerebras
 date created: 2024-11-19
-date modified: 2024-12-27
+date modified: 2025-04-03
 ---
 
 Cerebras Systems以其**Wafer Scale Engine (WSE)**技术而闻名，
