@@ -2,14 +2,23 @@
 draw:
 title: cursor
 date created: 2024-09-09
-date modified: 2025-04-03
+date modified: 2025-04-15
 ---
+## 上下文选择
+
+command + K 代码段落维度
+
+@ 文件维度
+
+@ 文件夹维度
+
+@ git branch 维度
 
 ## 打印
 
 2. 找bug的时候，我更喜欢用AI自动化的生成很多 print, 然后再根据结构让AI找出问题的地方，缩小bug范围，比直接让AI找出bug，可能更快，因为有时候我们找不到bug，提示词本身就有误导
-1. 从[Dribbble](Dribbble.md)找 UI 灵感，截图给 cursor
-2. 修改 ai 给的第一版错误代码的时候，为了排查原因可以让 ai 加一些日志，然后运行，然后把日志结果给ai，帮助 ai 排查
+3. 从[Dribbble](Dribbble.md)找 UI 灵感，截图给 cursor
+4. 修改 ai 给的第一版错误代码的时候，为了排查原因可以让 ai 加一些日志，然后运行，然后把日志结果给ai，帮助 ai 排查
 
 https://www.v2ex.com/t/1070302#reply2
 

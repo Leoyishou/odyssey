@@ -21,7 +21,7 @@ date modified: 2024-11-12
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F29%2F10-47-40-c77de7f51ed2973f17e76e1fed9e1d52-20240729104739-183e3a.png)
 
-1、内存和磁盘使用方面 [Spark](Spark) vs MapReduce 不等于内存 vs 磁盘，Spark 和 MapReduce 的计算都发生在内存中，区别在于：•MapReduce 需要将每次计算的结果写入磁盘，然后再从磁盘读取数据，从而导致了频繁的磁盘 10。•Spark 通常不需要将计算的结果写入磁盘，可以在内存中进行迭代计算 Q。这得益于 Spark 的 RDD 和 DAG（有向无环图 Q），其中 DAG 记录了 job 的 stage 以及在 job 执行过程中父 RDD 和子 RDD 之间的依赖关系。中间结果能够以 RDD 的形式存放在内存中，极大减少了磁盘 I0Q。
+1、内存和磁盘使用方面 [Spark](Spark.md) vs MapReduce 不等于内存 vs 磁盘，Spark 和 MapReduce 的计算都发生在内存中，区别在于：•MapReduce 需要将每次计算的结果写入磁盘，然后再从磁盘读取数据，从而导致了频繁的磁盘 10。•Spark 通常不需要将计算的结果写入磁盘，可以在内存中进行迭代计算 Q。这得益于 Spark 的 RDD 和 DAG（有向无环图 Q），其中 DAG 记录了 job 的 stage 以及在 job 执行过程中父 RDD 和子 RDD 之间的依赖关系。中间结果能够以 RDD 的形式存放在内存中，极大减少了磁盘 I0Q。
 2、Shuffle 上的不同 Spark 和 MapReduce 在计算过程中通常都不可避免的会进行 Shuffle，Shuffle 都会落盘，但：• MapReduce 在 Shuffle 时需要花费大量时间进行排序，排序在 MapReduce 的 Shuffle 中似乎是不可避免的；• Spark 在 Shuffle 时则只有部分场景才需要排序，支持基于 Hash 的分布式聚合，更加省时；
 
 ## 特性

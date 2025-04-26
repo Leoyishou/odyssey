@@ -2,20 +2,14 @@
 draw:
 title: Viva
 date created: 2024-02-16
-date modified: 2025-03-14
+date modified: 2025-04-17
 ---
 
 [CICD for viva](CICD%20for%20viva.md)
 
 ## 商业化
 
-**国内的英语学习是没有全链路数字化的管理系统的**
-
-## 主要功能
-
-功能是用户上传中文文章后，会分词，然后用户输入自己认为的英文翻译，网站会帮忙检查对错，并生成闪卡用于间隔复习。
-
-with the function of users uploading Chinese articles, which will be segmented, and then users inputting their own English translations, and the website will help check the correctness and generate flashcards for spaced repetition review.
+**国内的*高阶*英语学习是没有全链路数字化的管理系统的**
 
 ## 愿景
 
@@ -23,6 +17,150 @@ with the function of users uploading Chinese articles, which will be segmented, 
 还是软件开发中数字化+智能化的方式  
 网站本身首先是一个传感器，将过去白白流逝掉的英语使用信息数字化保存  
 其次是一个算法平台，从数据中挖掘规律，找到学习中最痒的那个点，反馈用户
+
+## 设计思想
+
+### 什么是英语能力
+
+英语的本质是四个 Map，每种 Entry 的数量决定了能力
+
+|                      |      |              |            |          |          |     |     |
+| -------------------- | ---- | ------------ | ---------- | -------- | -------- | --- | --- |
+| 四种 Map               | 类型   | 作用           | 3000 Entry | 5000     | 8000     |     |     |
+| Map<Symbol，Thought>  | 阅读词汇 | 看到单词 → 理解含义  | 高考水平       | 六级 500 分 | 雅思阅读 7.0 |     |     |
+| Map<Audio，Thought>   | 听力词汇 | 听到声音 → 理解含义  | 六级 500 分   | 六级 600 分 |          |     |     |
+| Map<Thought，Sound>   | 口语词汇 | 想表达含义 → 说出声音 | 雅思口语 6.5   | 雅思口语 7.5 |          |     |     |
+| Map<Thought, Symbol> | 写作词汇 | 想表达含义 → 写出单词 | 雅思写作 6.5   | 雅思写作 7.0 |          |     |     |
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F04%2F17%2F18-23-42-14ded7dbcc760cb1cf1bdbf8cc854ef4-202504171823695-d671cc.png)
+
+[音标](音标.md)和[英语语法@](英语语法@.md)是两个非常小的模块
+
+主要的工作量在于[被动词汇](被动词汇)和[主动词汇](主动词汇.md)的积累
+
+听力和阅读是被动型映射，听力是上限，阅读是下限。能听出来的基本都可以认出（在掌握音标的前提下）。
+
+写作和口语是主动型映射，写作是上限，口语是下限。能写出来的基本都会说（在掌握音标的前提下）。
+
+SortedMap<Thought，Expression>，sorted by 词频＋场景 这样效率最高
+
+  1. 找老外，聊 30 分钟
+  2. 复盘 90 分钟，Thought，Expression
+  3. review
+
+### 解决痛点
+
+1. 主动词汇：基于中文上下文的精准中译英的主动词汇寻找，并按照英文语序呈现
+2. 被动词汇：基于兴趣内容生成播客音频
+3. 间隔复习、精听
+
+## 几大模块
+
+### 主动词汇模块
+
+1. 用户上传中文文章
+    
+2. 中文文章分成『中文句卡』
+    
+3. 中文句卡翻译成英文句子
+    
+4. 按照英文语序找到每个对应的中文
+    
+5. 根据 wordNet 做拓展（让 AI 选择最符合的意群，拿到实际的可替换同义词）
+    
+
+### 进度和复盘模块
+
+1. Anki 里的 supermo 算法
+2. 根据用户的词频积累对照 COCA 语料库得到进度
+3. 根据用户的语法使用对照 general 的英语语法现象得到进度
+4. 找到主动词汇和被动词汇的 gap 部分
+
+### 被动词汇模块
+
+1. 浏览器插件
+2. 根据用户的所有中文文章和英文翻译生成播客（google 接口）
+3. 播客精听
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+
+可以参考 github 的 insights 获取灵感
+
+![](https://hf7l9aiqzx.feishu.cn/space/api/box/stream/download/asynccode/?code=MTFlMjliN2IyYjliODgxYzhjOTMyMGRlNTU3ODM0YmVfR1NpcEh6SGh0dlcwZWd2NkwxZ0RTSmpla3JOWWR6WDBfVG9rZW46UklaWGJCcWU5b2hjUHN4TEZsdGNYNTVabmZHXzE3NDQ4ODUzMzk6MTc0NDg4ODkzOV9WNA)
+
+    
+
+  
+
+## 待开发模块
+
+1. **CICD**
+    
+2. 间隔复习模块supermo
+    
+    1. 前端 kaggle+小红书
+        
+    2. 后端
+        
+3. **已有性能优化**
+    
+4. **观测性和复盘模块**
+    
+5. **内容生成播客模块，被动模块**
+    
+6. **前端**
+    
+
+  
+
+## 会员体系
+
+1. 免费用户能获得基础的主动词汇的服务（DeepSeek 的 API 很便宜，每人加个限额即可控制成本）
+    
+2. 付费用户可以选用更好的 AI 基座，解锁更多的模块（比如复盘模块）
+    
+
+  
+
+## 服务器
+
+
+
+
+
+
+___
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

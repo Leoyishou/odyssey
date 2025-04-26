@@ -1,11 +1,10 @@
 ---
 draw:
-tags: []
 title: Word2vec
 date created: 2025-01-25
-date modified: 2025-01-25
+date modified: 2025-04-14
 ---
-
+**
 非常有效的概率模型：Word2vec。Word2vec 是一个软件包实际上包含：
 
 - **两个算法**：continuous bag-of-words（CBOW）和 skip-gram。CBOW 是根据中心词周围的上下文单词来预测该词的词向量。skip-gram 则相反，是根据中心词预测周围上下文的词的概率分布。

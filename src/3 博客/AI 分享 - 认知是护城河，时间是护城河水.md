@@ -9,14 +9,14 @@ date modified: 2025-04-03
 3. 开源模型（[[Python]] > [PyTorch](PyTorch.md) > [[深度学习]] > [[微调]]）
 	1. Exercism + Colab + Kaggle 构建底层能力
 		1. [[Exercism]] 的使用
-		2. [[Colab]] 的使用，结合下面手写多层感知机
+		2. [[colab]] 的使用，结合下面手写多层感知机
 		3. [[Kaggle]] 的使用，面向项目学习
 	2. 什么是深度学习？
 		1. 历史简述 李飞飞 wordnet imageNet   alexnet（算力、数据、模型）
 		2. 手写[多层感知机 MLP](多层感知机%20MLP.md)
 			1. 几个关键概念：梯度、损失函数、收敛、过拟合
 			2. 线性+非线性=世界规律
-		3. [[transformer]]简介（基于 PyTorch 实现）
+		3. [[Transformer]]简介（基于 PyTorch 实现）
 		4. 名校 lab：[CS229 Machine Learning](CS229%20Machine%20Learning.md)、[CS224n Natural Language Processing](CS224n%20Natural%20Language%20Processing.md)
 	3. 大模型微调：监督微调（SFT）、强化学习微调 (如 GRPO)
 		1. [微调实战 -- 用Open-R1微调Qwen模型，强化AI数学推理能力](微调实战%20--%20用Open-R1微调Qwen模型，强化AI数学推理能力.md)、[open-r1](open-r1.md)
