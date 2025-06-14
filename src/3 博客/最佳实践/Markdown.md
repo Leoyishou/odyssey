@@ -2,12 +2,14 @@
 draw:
 title: Markdown
 date created: 2024-03-28
-date modified: 2025-04-22
+date modified: 2025-04-26
 ---
 
 Markdown 是 bit 赠予世界的笔，就像 code style 一样，Linter 是个很好的风格固化工具！
 
 <!-- more -->
+
+微软的工具：[**https://x.com/karminski3/status/1913760024435863982?s=46**](https://x.com/karminski3/status/1913760024435863982?s=46)
 
 - [ ] 探索一段时间 linter 后把配置信息粘贴到这里就可以了 ⏰ 2024-05-07 📅 2024-05-07
 

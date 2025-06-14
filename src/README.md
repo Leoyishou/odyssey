@@ -2,16 +2,14 @@
 draw:
 title: README
 date created: 2024-11-25
-date modified: 2025-04-25
+date modified: 2025-05-02
 ---
-
-https://docs.google.com/presentation/d/1s6P7P0qOcriFKrViuAbETHaUtcZBkSwlugDUi57QyIY/edit?usp=sharing
 
 如你所看到的，这是我的一个个人网站，也是我自己工作流的一部分，当做一个[[数字花园]]/[第二大脑](第二大脑.md) publish 在这里了。
 
 | 标签               | 详情                                        |
 | ---------------- | ----------------------------------------- |
-| **Background**   | 人文地理学（本科）-> 旧石器考古（硕士）-> 程序员（工作）|
+| **Background**   | 人文地理学（本科）-> 旧石器考古（硕士）-> 程序员（工作）-> 产品经理    |
 | **Interests**    | 历史、地理、文学，CS（前端、后端、算法）|
 | **Sports**       | 健身（增力训练）、游泳、篮球、橄榄球                        |
 | **Productivity** | [[番茄工作法]]（5000h+）、[[Obsidian]]笔记（本网站内容来源）|
@@ -26,7 +24,7 @@ https://docs.google.com/presentation/d/1s6P7P0qOcriFKrViuAbETHaUtcZBkSwlugDUi57Q
 
 ![CleanShot 2025-03-27 at 15.27.48@2x.png|500](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_ebeJ5vgXnA%2F2025%2F03%2F27%2F15-28-10-dbb6bf03dfbae1bef35789407005533e-CleanShot%202025-03-27%20at%2015.27.48-2x-1c2939.png)
 
-![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F04%2F23%2F19-05-15-862162b3677e5d48915e456b421ae122-202504231905883-da7220.png)
+![image.png|500](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F04%2F23%2F19-05-15-862162b3677e5d48915e456b421ae122-202504231905883-da7220.png)
 
 在知识管理领域，有一个经典的[DIKW](DIKW.md)模型（数据-信息-知识-智慧金字塔）：　
 
@@ -41,7 +39,7 @@ https://docs.google.com/presentation/d/1s6P7P0qOcriFKrViuAbETHaUtcZBkSwlugDUi57Q
 
 1. 捕捉(Capture)
 	1. 通过[滴答清单](滴答清单.md)做 inbox 收集闪念笔记，随时记录灵感或者看到好信息的链接，不错过任何灵感火花。
-	2. 通过[一切皆项目](一切皆项目)的项目驱动, 制定方案，吸收信息，项目结束后，信息部分归入 2.1，项目部分归入 2.3
+	2. 通过[一切皆项目$](一切皆项目$.md)的项目驱动, 制定方案，吸收信息，项目结束后，信息部分归入 2.1，项目部分归入 2.3
 2. 组织(Organize)：将 1 中的信息总结沉淀到[第二大脑](第二大脑.md)的[知识](2%20第二大脑/1%20宇宙概念树/知识.md)中，将信息按主题、项目或领域进行分类整理，建立清晰的知识结构。
 3. 提炼(Distill)：将[[2 第二大脑/1 宇宙概念树/知识]]中的内容进一步沉淀到[[飞轮]]
 	1. **[[信息系统]]** - 收集、整理和存储各类数据和信息的基础
