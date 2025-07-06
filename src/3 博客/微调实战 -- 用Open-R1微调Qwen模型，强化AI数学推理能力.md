@@ -2,7 +2,7 @@
 draw:
 title: 微调实战 -- 用Open-R1微调Qwen模型，强化AI数学推理能力
 date created: 2025-03-11
-date modified: 2025-03-11
+date modified: 2025-06-17
 ---
 
 ## 参考比赛
@@ -56,12 +56,12 @@ https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-2
 
 ## 内容简介
 
-|   |   |   |   |   |
-|---|---|---|---|---|
-||名称|通俗解释|作用举例|官方地址|
-|模型基座|Qwen2.5-1.5B-Instruct|一个通用的人工智能模型（像个聪明但不太专业的学生）|能够回答基本问题，但数学解题能力一般，需要额外训练||
-|微调数据集|OpenR1-Math-220k|一个包含约22万道数学题目的数据集，每道题附带清晰的解题过程和答案（就像一本附答案详解的数学练习册）|提供大量题目供模型练习，教会模型解决数学题的思路|[https://huggingface.co/datasets/open-r1/OpenR1-Math-220k](https://huggingface.co/datasets/open-r1/OpenR1-Math-220k)|
-|训练框架|Open-R1框架|一个训练工具或平台（相当于专门的数学教练），用来教导模型如何清晰、有逻辑地推理解答数学问题|指导模型如何进行有效的推理训练，使数学能力变强|[https://github.com/huggingface/open-r1?tab=readme-ov-file](https://github.com/huggingface/open-r1?tab=readme-ov-file)|
+|       |                       |                                                    |                           |                                                                                                                        |
+| ----- | --------------------- | -------------------------------------------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+|       | 名称                    | 通俗解释                                               | 作用举例                      | 官方地址                                                                                                                   |
+| 模型基座  | Qwen2.5-1.5B-Instruct | 一个通用的人工智能模型（像个聪明但不太专业的学生）| 能够回答基本问题，但数学解题能力一般，需要额外训练 |                                                                                                                        |
+| 微调数据集 | OpenR1-Math-220k      | 一个包含约22万道数学题目的数据集，每道题附带清晰的解题过程和答案（就像一本附答案详解的数学练习册）| 提供大量题目供模型练习，教会模型解决数学题的思路  | [https://huggingface.co/datasets/open-r1/OpenR1-Math-220k](https://huggingface.co/datasets/open-r1/OpenR1-Math-220k)   |
+| 训练框架  | Open-R1框架             | 一个训练工具或平台（相当于专门的数学教练），用来教导模型如何清晰、有逻辑地推理解答数学问题      | 指导模型如何进行有效的推理训练，使数学能力变强   | [https://github.com/huggingface/open-r1?tab=readme-ov-file](https://github.com/huggingface/open-r1?tab=readme-ov-file) |
 
 文档内容：详细介绍了使用AutoDL云平台搭建GPU环境，并以Open-R1项目为实例进行部署与微调训练的全过程。内容涵盖了GPU机器选型、环境配置、依赖安装、项目文件获取、基础模型（Qwen2.5-1.5B-Instruct）及数据集（OpenR1-Math-220k）的下载步骤，以及如何通过修改YAML配置文件参数，启动基于Accelerate框架的监督微调（SFT）。附有配置文件中各参数的详细说明，帮助大家快速上手Open-R1项目的训练实践。
 
