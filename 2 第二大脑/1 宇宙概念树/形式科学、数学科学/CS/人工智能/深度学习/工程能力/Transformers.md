@@ -1,10 +1,10 @@
 ---
-draw:
-title: Transformers
+comment_id: f7b90af9
 date created: 2024-07-18
 date modified: 2025-04-07
+draw: null
+title: Transformers
 ---
-
 就像[Java@](Java@.md)中的 List 和 Lists 的关系一样
 
 架构与实现：

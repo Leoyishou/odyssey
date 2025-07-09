@@ -1,10 +1,10 @@
 ---
-draw:
-title: BirdCLEF 2025
+comment_id: 28f9fd31
 date created: 2025-03-24
 date modified: 2025-05-12
+draw: null
+title: BirdCLEF 2025
 ---
-
 技巧总结：
 
 1. 把声音数据转化成 mel 图做模式提取和类别识别

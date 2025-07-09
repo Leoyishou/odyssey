@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Prompt Caching
+comment_id: 401e2f19
 date created: 2024-11-25
 date modified: 2024-12-27
+draw: null
+tags: []
+title: Prompt Caching
 ---
-
 OpenAI的Prompt Caching功能是自动启用的,无需开发者手动开启。以下是关于OpenAI Prompt Caching的主要信息:
 
 1. 自动应用:  

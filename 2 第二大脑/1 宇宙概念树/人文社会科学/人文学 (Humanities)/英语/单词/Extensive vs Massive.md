@@ -1,11 +1,10 @@
 ---
-draw:
-title: Extensive vs Massive
+comment_id: d5986460
 date created: 2025-02-26
 date modified: 2025-02-26
+draw: null
+title: Extensive vs Massive
 ---
-
-
 **核心差异：**  
 Extensive 强调覆盖范围广泛、全面，侧重于延展性和覆盖度。Massive 强调体积、数量或规模巨大，侧重于量的庞大和强度。二者都表示"大"，但前者关注广度，后者关注量级和强度。
 

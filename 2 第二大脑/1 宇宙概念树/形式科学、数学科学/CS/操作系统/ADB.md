@@ -1,10 +1,10 @@
 ---
-draw:
-title: ADB
+comment_id: 1d805dc1
 date created: 2025-04-15
 date modified: 2025-04-15
+draw: null
+title: ADB
 ---
-
 当然可以！下面是对安卓 ADB（Android Debug Bridge）的形象介绍：
 
 ---

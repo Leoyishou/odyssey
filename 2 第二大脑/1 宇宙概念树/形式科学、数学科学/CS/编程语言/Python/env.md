@@ -1,10 +1,10 @@
 ---
-draw:
-title: env
+comment_id: 2f7a562c
 date created: 2025-01-18
 date modified: 2025-02-06
+draw: null
+title: env
 ---
-
 关于 `load_dotenv()` 和环境变量的读取优先级，我来解释一下：
 
 1. `load_dotenv()` 会从项目中的 `.env` 文件加载环境变量，但它不会覆盖已经存在的环境变量。具体的优先级是：

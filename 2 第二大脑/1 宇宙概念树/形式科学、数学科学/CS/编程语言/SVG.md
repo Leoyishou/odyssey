@@ -1,8 +1,9 @@
 ---
-draw:
-title: SVG
+comment_id: 8cc79b00
 date created: 2025-03-03
 date modified: 2025-03-03
+draw: null
+title: SVG
 ---
 **SVG**（Scalable Vector Graphics，可缩放矢量图形）是一种用来描述**二维矢量图形**的**XML标记语言**。
 

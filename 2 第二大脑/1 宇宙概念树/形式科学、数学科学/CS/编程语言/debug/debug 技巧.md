@@ -1,10 +1,10 @@
 ---
-draw:
-title: debug 技巧
+comment_id: f9d04f16
 date created: 2024-10-25
 date modified: 2025-03-10
+draw: null
+title: debug 技巧
 ---
-
 左边的栈里面可以 set frame 跳到之前的栈，实现方法里面的进退自如。
 
 ## mark object

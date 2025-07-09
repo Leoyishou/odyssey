@@ -1,10 +1,10 @@
 ---
-draw:
-title: Uvicorn
+comment_id: faa9098a
 date created: 2025-03-24
 date modified: 2025-03-25
+draw: null
+title: Uvicorn
 ---
-
 通俗来说，**Uvicorn** 就是一个用来运行 Python 写的 Web 应用程序的服务器工具。
 
 想象一下：

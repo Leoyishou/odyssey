@@ -1,10 +1,10 @@
 ---
-draw:
-title: RuntimeException
+comment_id: 93a6e6cd
 date created: 2024-12-01
 date modified: 2025-03-21
+draw: null
+title: RuntimeException
 ---
-
 ## NPE
 
 ### for 循环的对象为空

@@ -1,8 +1,9 @@
 ---
-draw:
-title: Shell
+comment_id: 891489c2
 date created: 2024-07-27
 date modified: 2025-03-25
+draw: null
+title: Shell
 ---
 - [Map   选项->参数](#Map%20%20%20%E9%80%89%E9%A1%B9-%3E%E5%8F%82%E6%95%B0)
 - [一个-与两个--](#%E4%B8%80%E4%B8%AA-%E4%B8%8E%E4%B8%A4%E4%B8%AA--)

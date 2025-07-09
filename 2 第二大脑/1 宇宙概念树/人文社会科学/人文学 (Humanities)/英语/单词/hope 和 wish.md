@@ -1,10 +1,10 @@
 ---
-draw:
-title: hope 和 wish
+comment_id: f2e0f971
 date created: 2025-01-13
 date modified: 2025-02-15
+draw: null
+title: hope 和 wish
 ---
-
 Hope (希望):
 
 - 对可能实现的事

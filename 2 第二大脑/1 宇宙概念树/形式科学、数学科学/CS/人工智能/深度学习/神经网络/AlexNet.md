@@ -1,10 +1,10 @@
 ---
-draw:
-title: AlexNet
+comment_id: c89a3928
 date created: 2025-03-23
 date modified: 2025-03-23
+draw: null
+title: AlexNet
 ---
-
 > 数据 + 算法 + 算力（GPU）的第一次金风玉露一相逢  
 > #comment
 

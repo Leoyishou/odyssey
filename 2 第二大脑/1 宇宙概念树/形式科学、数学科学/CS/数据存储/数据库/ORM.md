@@ -1,10 +1,10 @@
 ---
-draw:
-title: ORM
+comment_id: 79f75d5d
 date created: 2024-10-17
 date modified: 2025-02-06
+draw: null
+title: ORM
 ---
-
 ## 是啥？
 
 ORM 是 "Object-Relational Mapping"（对象关系映射）的缩写。在数据库上下文中，ORM 是一种编程技术，用于将面向对象编程语言中的对象与关系型数据库中的表进行映射。

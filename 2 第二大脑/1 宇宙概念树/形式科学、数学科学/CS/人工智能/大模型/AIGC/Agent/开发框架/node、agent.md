@@ -1,10 +1,10 @@
 ---
-draw:
-title: node、agent
+comment_id: bb8a4164
 date created: 2025-04-18
 date modified: 2025-04-18
+draw: null
+title: node、agent
 ---
-
 Thought for 4 seconds
 
 | Node                                             |                                                          |

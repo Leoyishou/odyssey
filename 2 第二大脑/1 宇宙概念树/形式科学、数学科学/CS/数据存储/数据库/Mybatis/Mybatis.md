@@ -1,10 +1,10 @@
 ---
-draw:
-title: Mybatis
+comment_id: a7b6c1c5
 date created: 2024-01-15
 date modified: 2025-02-14
+draw: null
+title: Mybatis
 ---
-
 ## 查询结果
 
  #最佳实践 通过`<resultMap`映射到某一个类，这样更解耦

@@ -1,10 +1,10 @@
 ---
-draw:
-title: Styles
+comment_id: 2ac6bfa2
 date created: 2025-02-16
 date modified: 2025-02-16
+draw: null
+title: Styles
 ---
-
 是的,你说得对。右侧的 Styles 面板显示的是当前选中元素所有生效的 CSS 样式,包括:
 
 1. 元素直接应用的样式(行内样式)

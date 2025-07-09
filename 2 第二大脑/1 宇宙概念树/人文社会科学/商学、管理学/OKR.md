@@ -1,10 +1,10 @@
 ---
-draw:
-title: OKR
+comment_id: 869fb216
 date created: 2025-04-05
 date modified: 2025-04-05
+draw: null
+title: OKR
 ---
-
 #第一性原理 聚焦+可衡量
 
 ## 一、OKR 的核心特征

@@ -1,11 +1,12 @@
 ---
-aliases: [卷积神经网络]
-draw: 
-title: CNN
+aliases:
+- 卷积神经网络
+comment_id: 86957a4b
 date created: 2024-09-22
 date modified: 2025-03-23
+draw: null
+title: CNN
 ---
-
 做[[卷积 convolution]]的目的是为了用一种数学的方法把各种猫猫图片中的共性提取出来。卷机核是想要的特征，有几个卷机核就有几个简化特征图，滑动窗口的方式遍历一遍图像，就知道哪个区域这种特征的满足程度
 
 1. 输入文本转词向量矩阵:

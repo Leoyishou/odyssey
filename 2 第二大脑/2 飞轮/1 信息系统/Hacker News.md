@@ -1,10 +1,10 @@
 ---
-draw:
-title: Hacker News
+comment_id: a2bcaaf3
 date created: 2025-04-02
 date modified: 2025-04-02
+draw: null
+title: Hacker News
 ---
-
 虽然它是一个全球性的技术社区网站，但它的**精神内核和话语体系高度硅谷化**，你也可以把它看作是“硅谷文化的网络广场”。
 
 你这个观察非常对！Hacker News 的“上榜机制”和你在别的平台（比如微博、知乎、Reddit、Twitter）看到的那种「按点赞数排榜」完全不一样。

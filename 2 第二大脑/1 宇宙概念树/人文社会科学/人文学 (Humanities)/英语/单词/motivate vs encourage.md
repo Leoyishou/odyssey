@@ -1,12 +1,13 @@
 ---
-aliases: ["motivate vs encourage  "]
-draw:
-title: "motivate vs encourage  "
-linter-yaml-title-alias: "motivate vs encourage  "
+aliases:
+- 'motivate vs encourage  '
+comment_id: cadf7d61
 date created: 2025-02-24
 date modified: 2025-02-24
+draw: null
+linter-yaml-title-alias: 'motivate vs encourage  '
+title: 'motivate vs encourage  '
 ---
-
 ## motivate vs encourage  
 
 | 词汇  | 核心含义 | 主要区别 |

@@ -1,11 +1,12 @@
 ---
-draw:
-title: MacBook
-tags: [最佳实践]
+comment_id: 54c92c67
 date created: 2024-03-28
 date modified: 2025-01-28
+draw: null
+tags:
+- 最佳实践
+title: MacBook
 ---
-
 ![Picture11.png|400](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fliuyishou%2Ftmp%2F2024%2F04%2F08%2F19-57-58-de45178122daa947171e5e1accc5eb39-Picture11-23ce74.png?x-oss-process=image/resize,l_400)  
 如果效率工具带来的生产力提高都不足以 cover 软件本身的费用，那应该反思自己工作的价值了。
 

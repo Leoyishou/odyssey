@@ -1,10 +1,10 @@
 ---
-draw:
-title: PostgreSQL
+comment_id: b09b5b4e
 date created: 2024-09-15
 date modified: 2025-02-06
+draw: null
+title: PostgreSQL
 ---
-
 ```Java
 
 postgres=# \du

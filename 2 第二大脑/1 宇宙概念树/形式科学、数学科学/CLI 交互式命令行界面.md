@@ -1,10 +1,10 @@
 ---
-draw:
-title: CLI 交互式命令行界面
+comment_id: af78e5c6
 date created: 2025-04-13
 date modified: 2025-04-13
+draw: null
+title: CLI 交互式命令行界面
 ---
-
 nteractive Command Line Interface
 
 这种CLI交互方式的学名是"**交互式命令行界面**"(Interactive Command Line Interface)，也常被称为：

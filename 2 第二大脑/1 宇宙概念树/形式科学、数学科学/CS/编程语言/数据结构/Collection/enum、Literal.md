@@ -1,8 +1,9 @@
 ---
-draw:
-title: enum、Literal
+comment_id: '72119186'
 date created: 2025-04-17
 date modified: 2025-04-17
+draw: null
+title: enum、Literal
 ---
 **Interpreting the question**
 

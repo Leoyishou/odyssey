@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Llama
+comment_id: 84c3ac52
 date created: 2024-11-09
 date modified: 2024-12-27
+draw: null
+tags: []
+title: Llama
 ---
-
 ```mermaid
 graph LR
     A[Meta AI] -->|Develops| B(LLaMA Models)

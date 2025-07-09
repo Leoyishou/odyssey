@@ -1,10 +1,10 @@
 ---
-draw:
-title: Scope vs Extent
+comment_id: 7e424715
 date created: 2025-02-15
 date modified: 2025-02-15
+draw: null
+title: Scope vs Extent
 ---
-
 ## Scope vs Extent
 
 |**项目**|**Scope**|**Extent**|

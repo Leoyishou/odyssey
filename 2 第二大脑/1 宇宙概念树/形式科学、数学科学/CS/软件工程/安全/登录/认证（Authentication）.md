@@ -1,11 +1,12 @@
 ---
-draw: 
-aliases: [Authentication]
-title: 认证（Authentication）
+aliases:
+- Authentication
+comment_id: 09517e13
 date created: 2024-01-18
 date modified: 2025-04-14
+draw: null
+title: 认证（Authentication）
 ---
-
 认证是证明你真的是如你所说的那个人
 
 | 认证方法 (Authentication Method)  | 例子                     |                                                   | 优点 (Pros)       | 缺点 (Cons)        |

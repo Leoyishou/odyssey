@@ -1,10 +1,10 @@
 ---
-draw:
-title: When You Are Old
+comment_id: c4470c45
 date created: 2024-04-08
 date modified: 2025-02-06
+draw: null
+title: When You Are Old
 ---
-
 ![Picture8.png|400](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fliuyishou%2Ftmp%2F2024%2F04%2F08%2F00-44-24-c2d9a061eba427929cdab46317f0f30f-Picture8-98068f.png?x-oss-process=image/resize,l_300)
 
 叶芝的诗太美了！

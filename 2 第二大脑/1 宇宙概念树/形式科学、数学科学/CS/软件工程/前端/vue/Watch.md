@@ -1,10 +1,10 @@
 ---
-draw:
-title: Watch
+comment_id: aa627d67
 date created: 2024-07-31
 date modified: 2025-02-06
+draw: null
+title: Watch
 ---
-
 ```js
 watch(() => props.data, () => {
   totalItems.value = props.data.length;

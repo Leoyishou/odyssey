@@ -1,8 +1,9 @@
 ---
-draw:
-title: MLOps
+comment_id: 6eaa2725
 date created: 2025-03-24
 date modified: 2025-03-24
+draw: null
+title: MLOps
 ---
 **MLOps（Machine Learning Operations）**，通俗地说，就是：
 

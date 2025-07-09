@@ -1,10 +1,10 @@
 ---
-draw:
-title: python虚拟环境
+comment_id: fc36328b
 date created: 2025-03-23
 date modified: 2025-04-11
+draw: null
+title: python虚拟环境
 ---
-
 这属于 **Python虚拟环境（Virtual Environment）的创建和激活操作**。
 
 ---

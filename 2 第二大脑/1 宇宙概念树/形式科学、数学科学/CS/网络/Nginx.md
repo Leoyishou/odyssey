@@ -1,10 +1,10 @@
 ---
-draw:
-title: Nginx
+comment_id: 079ae7c5
 date created: 2024-03-28
 date modified: 2025-02-14
+draw: null
+title: Nginx
 ---
-
 ```Java
 server {
     listen 80;

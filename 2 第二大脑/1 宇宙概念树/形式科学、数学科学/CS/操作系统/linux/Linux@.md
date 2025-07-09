@@ -1,10 +1,10 @@
 ---
-draw:
-title: Linux@
+comment_id: 0d7ac116
 date created: 2024-11-25
 date modified: 2025-07-02
+draw: null
+title: Linux@
 ---
-
 ## Linux 系统参考指南
 
 > 一切皆文件

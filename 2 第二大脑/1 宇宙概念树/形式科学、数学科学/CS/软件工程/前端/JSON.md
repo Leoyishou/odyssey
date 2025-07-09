@@ -1,10 +1,10 @@
 ---
-draw:
-title: JSON
+comment_id: adbc7c6e
 date created: 2024-06-20
 date modified: 2025-02-06
+draw: null
+title: JSON
 ---
-
 ## 忽略null
 
 JsonInclude.Include.NON_NULL 表示在序列化时会忽略值为 null 的字段，不会将它们包含在生成的 JSON 中。

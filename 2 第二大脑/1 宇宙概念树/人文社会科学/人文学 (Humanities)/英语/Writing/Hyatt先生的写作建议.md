@@ -1,10 +1,10 @@
 ---
-draw:
-title: Hyatt先生的写作建议
+comment_id: c60f4942
 date created: 2024-01-07
 date modified: 2025-02-06
+draw: null
+title: Hyatt先生的写作建议
 ---
-
 General Suggestions for Chinese Writers of English
 
 - [1 ACTIVE AND PASSIVE VOICE](#1%20ACTIVE%20AND%20PASSIVE%20VOICE)

@@ -1,12 +1,13 @@
 ---
-draw:
-aliases: [Uniform Resource Locator]
-title: URL
-tags: []
+aliases:
+- Uniform Resource Locator
+comment_id: 4803f93c
 date created: 2024-06-05
 date modified: 2024-12-27
+draw: null
+tags: []
+title: URL
 ---
-
 excerpt
 
 <!-- more -->

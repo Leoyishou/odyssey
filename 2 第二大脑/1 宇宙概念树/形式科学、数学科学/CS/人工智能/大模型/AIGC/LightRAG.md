@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: LightRAG
+comment_id: 145442c0
 date created: 2024-11-25
 date modified: 2024-12-27
+draw: null
+tags: []
+title: LightRAG
 ---
-
 ## 本质
 
 1. 为什么要这么设计:

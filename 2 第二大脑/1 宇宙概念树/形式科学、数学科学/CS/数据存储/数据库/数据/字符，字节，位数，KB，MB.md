@@ -1,10 +1,10 @@
 ---
-draw:
-title: 字符，字节，位数，KB，MB
+comment_id: 128f3a32
 date created: 2024-04-28
 date modified: 2025-02-06
+draw: null
+title: 字符，字节，位数，KB，MB
 ---
-
 ![IST_1183_99214.png|400](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Ftmp%2F%E5%8D%83%E5%9B%BE_%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E5%9C%A8%E7%BA%BF%E6%90%9C%E7%B4%A2%E4%BB%A3%E7%A0%81%E6%94%BE%E5%A4%A7%E9%95%9C_%E5%9B%BE%E7%89%87%E7%BC%96%E5%8F%B769890404%2F2024%2F05%2F02%2F15-28-24-4d32c6186a8465f253c9ff0fd51e9105-IST_1183_99214-7bf59a.png)
 
 在 Java 中十万个长度为 "beijing_123132" 的字符串是多少 M？

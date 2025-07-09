@@ -1,10 +1,10 @@
 ---
-draw:
-title: AI 与英语学习，语音模型，文字模型
+comment_id: fb77ca31
 date created: 2024-03-17
 date modified: 2025-02-06
+draw: null
+title: AI 与英语学习，语音模型，文字模型
 ---
-
 Telegram 是迄今为止最棒的即时聊天软件，在这个自由新世界，不必自我审查（Freedom of speech）。
 
 - AI 一日千里的发展

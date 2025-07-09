@@ -1,10 +1,10 @@
 ---
-draw:
-title: 索引Index
+comment_id: 9f2ecd73
 date created: 2025-04-16
 date modified: 2025-04-16
+draw: null
+title: 索引Index
 ---
-
 以下是 LlamaIndex 支持的主要索引类型及其特点，整理成 Markdown 表格，方便您对比和选择：
 
 | 索引类型                             | 描述                                                       | 优点                          | 适用场景                    |

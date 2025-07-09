@@ -1,10 +1,10 @@
 ---
-draw:
-title: keep-alive
+comment_id: 49938b2b
 date created: 2024-06-24
 date modified: 2025-02-06
+draw: null
+title: keep-alive
 ---
-
 使用 keep-alive 可以在组件切换时保持组件的状态，而不需要重新加载或重新渲染
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F06%2F24%2F22-29-34-ca5f616bed31a9f48c106d7b8bdb68cf-20240624222934-1b92e6.png)  

@@ -1,10 +1,10 @@
 ---
-draw:
-title: Groovy
+comment_id: babe4935
 date created: 2024-08-19
 date modified: 2025-02-06
+draw: null
+title: Groovy
 ---
-
 Groovy是一种基于[Java@](Java@.md)平台的面向对象编程语言
 
 Groovy常被用于以下场景：

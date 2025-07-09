@@ -1,13 +1,15 @@
 ---
-aliases: [IDEA实用插件及功能介绍]
-draw:
-title: IDEA实用插件及功能介绍
-tags: [最佳实践]
+aliases:
+- IDEA实用插件及功能介绍
+comment_id: 80abf973
 date created: 2024-04-20
 date modified: 2024-12-27
+draw: null
 linter-yaml-title-alias: IDEA实用插件及功能介绍
+tags:
+- 最佳实践
+title: IDEA实用插件及功能介绍
 ---
-
 ## IDEA实用插件及功能介绍
 
 ### 常用插件列表

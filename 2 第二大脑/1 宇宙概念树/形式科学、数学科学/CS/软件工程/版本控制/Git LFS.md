@@ -1,10 +1,10 @@
 ---
-draw:
-title: Git LFS
+comment_id: '83951606'
 date created: 2025-03-26
 date modified: 2025-03-26
+draw: null
+title: Git LFS
 ---
-
 Git LFS（Large File Storage）是一个专门用于处理大文件的 Git 扩展工具。通常情况下，Git 很擅长管理文本文件，比如代码，但对于图片、视频、音频等大文件管理效率并不好。
 
 ## 为什么需要 Git LFS？

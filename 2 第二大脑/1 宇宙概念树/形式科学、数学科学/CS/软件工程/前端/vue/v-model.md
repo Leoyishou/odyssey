@@ -1,10 +1,10 @@
 ---
-draw:
-title: v-model
+comment_id: efd338c1
 date created: 2024-06-23
 date modified: 2025-02-06
+draw: null
+title: v-model
 ---
-
 ## 与 v-bind 的区别
 
 v-model 是双向绑定

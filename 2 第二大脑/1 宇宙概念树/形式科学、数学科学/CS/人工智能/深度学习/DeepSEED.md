@@ -1,10 +1,10 @@
 ---
-draw:
-title: DeepSEED
+comment_id: 651d9bbb
 date created: 2025-03-23
 date modified: 2025-03-23
+draw: null
+title: DeepSEED
 ---
-
 DeepSEED 是清华大学研究团队开发的一种人工智能辅助工具，旨在高效设计合成启动子。启动子是调控基因表达的关键元件，通过设计具有特定特性的合成启动子，可以精确控制基因表达，这在生物合成工程和基因治疗中具有重要意义。citeturn0search9
 
 传统的启动子设计主要关注转录因子结合位点（TFBS）的组合和排列。然而，最近的研究表明，TFBS 周围的侧翼序列也显著影响启动子的特性。DeepSEED 通过结合专家知识和深度学习技术，优化这些侧翼序列，以设计出具有所需特性的合成启动子。citeturn0search9

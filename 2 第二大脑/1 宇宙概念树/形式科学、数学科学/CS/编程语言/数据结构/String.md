@@ -1,10 +1,10 @@
 ---
-draw:
-title: String
+comment_id: '97093596'
 date created: 2024-07-14
 date modified: 2025-03-27
+draw: null
+title: String
 ---
-
 ## 认知
 
 两者都是[[不可变的]]字符序列。任何看起来修改字符串的操作实际上都是创建并返回一个**新**的字符串对象。

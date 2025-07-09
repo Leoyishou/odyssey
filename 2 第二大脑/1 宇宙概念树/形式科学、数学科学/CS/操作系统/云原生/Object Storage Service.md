@@ -1,10 +1,10 @@
 ---
-draw:
-title: Object Storage Service
+comment_id: 35a19734
 date created: 2024-05-01
 date modified: 2025-02-06
+draw: null
+title: Object Storage Service
 ---
-
 excerpt
 
 <!-- more -->

@@ -1,10 +1,10 @@
 ---
-draw:
-title: baseline
+comment_id: 7e3d7616
 date created: 2025-02-27
 date modified: 2025-02-27
+draw: null
+title: baseline
 ---
-
 在Kaggle比赛中，"baseline"（基线）是一个特定的术语，指的是一个基础模型或解决方案，它有几个重要作用：
 
 1. **起点参考**：为参赛者提供一个基础出发点，展示如何处理数据、构建模型和生成提交结果的完整流程

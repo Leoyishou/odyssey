@@ -1,11 +1,11 @@
 ---
-draw:
-title: TCP
-tags: []
+comment_id: 46d752cd
 date created: 2024-06-05
 date modified: 2025-01-23
+draw: null
+tags: []
+title: TCP
 ---
-
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F01%2F23%2F16-14-37-aa6311aba36bf79a9845a6da3c62664e-202501231614289-d4c6c5.png)
 
 1. 状态显示：

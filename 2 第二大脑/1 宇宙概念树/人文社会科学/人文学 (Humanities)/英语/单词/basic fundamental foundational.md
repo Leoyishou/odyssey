@@ -1,10 +1,10 @@
 ---
-draw:
-title: basic fundamental foundational
+comment_id: 059cf529
 date created: 2025-01-23
 date modified: 2025-02-15
+draw: null
+title: basic fundamental foundational
 ---
-
 Basic (基础的):
 
 - 最低层次的需求或知识

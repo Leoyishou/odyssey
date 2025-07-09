@@ -1,6 +1,7 @@
 ---
-draw:
-title: 基于属性的访问控制 (ABAC)
+comment_id: 418d3ca9
 date created: 2025-04-14
 date modified: 2025-04-14
+draw: null
+title: 基于属性的访问控制 (ABAC)
 ---

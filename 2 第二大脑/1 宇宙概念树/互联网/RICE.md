@@ -1,10 +1,10 @@
 ---
-draw:
-title: RICE
+comment_id: 351da782
 date created: 2025-06-26
 date modified: 2025-06-26
+draw: null
+title: RICE
 ---
-
 **RICE（Reach, Impact, Confidence, Effort）**：
 
 `方案 A：Reach 60 × Impact 1.2 × Confidence 0.6 ÷ Effort 2 = 21.6` `方案 B：Reach 45 × Impact 1.5 × Confidence 0.8 ÷ Effort 1 = 54.0` `→ 方案 B 分高`

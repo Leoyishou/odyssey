@@ -1,10 +1,10 @@
 ---
-draw:
-title: lambda表达式
+comment_id: f0a44a87
 date created: 2024-08-15
 date modified: 2025-02-06
+draw: null
+title: lambda表达式
 ---
-
 ## 本质
 
 匿名内部类的简写方式

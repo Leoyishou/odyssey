@@ -1,12 +1,13 @@
 ---
-aliases: [Mojito Translate]
-draw:
-title: Mojito Translate
-linter-yaml-title-alias: Mojito Translate
+aliases:
+- Mojito Translate
+comment_id: ea35668e
 date created: 2025-04-14
 date modified: 2025-04-14
+draw: null
+linter-yaml-title-alias: Mojito Translate
+title: Mojito Translate
 ---
-
 ## Mojito Translate
 
 Effortlessly translate, save, and manage your multilingual content

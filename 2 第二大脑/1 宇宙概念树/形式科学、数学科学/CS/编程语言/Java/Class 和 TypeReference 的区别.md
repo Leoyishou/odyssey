@@ -1,10 +1,10 @@
 ---
-draw:
-title: Class 和 TypeReference 的区别
+comment_id: '98348754'
 date created: 2024-06-06
 date modified: 2025-04-08
+draw: null
+title: Class 和 TypeReference 的区别
 ---
-
 [TypeReference](TypeReference.md)
 
 <!-- more -->

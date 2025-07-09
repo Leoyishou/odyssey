@@ -1,10 +1,10 @@
 ---
-draw:
-title: dubbo
+comment_id: 1ab68fa3
 date created: 2024-09-04
 date modified: 2025-02-06
+draw: null
+title: dubbo
 ---
-
 ## 通信协议
 
 dubbo协议（默认）：端口20880，使用 [[Netty]] 通信

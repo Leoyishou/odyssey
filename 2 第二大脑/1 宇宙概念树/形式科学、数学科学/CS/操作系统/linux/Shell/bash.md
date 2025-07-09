@@ -1,10 +1,10 @@
 ---
-draw:
-title: bash
+comment_id: 4cfca4f9
 date created: 2024-07-11
 date modified: 2025-02-06
+draw: null
+title: bash
 ---
-
 ## Bash 命令速查手册
 
 ### 简介

@@ -1,10 +1,10 @@
 ---
-draw:
-title: 递归比较对象，记录 diff 日志
+comment_id: 708729d5
 date created: 2024-04-18
 date modified: 2025-02-18
+draw: null
+title: 递归比较对象，记录 diff 日志
 ---
-
 是的，Java 生态中有多个开源工具可以用于比较（diff）同一类的两个对象之间的数据差异。你已经熟悉 [`equator`](https://github.com/yusaint/Equator)，这里介绍一些其他常见的开源 diff 库：
 
 ## 1. **Java Object Differ**

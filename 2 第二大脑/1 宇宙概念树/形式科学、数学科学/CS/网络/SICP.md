@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: SICP
+comment_id: 7626f0d5
 date created: 2025-01-16
 date modified: 2025-01-16
+draw: null
+tags: []
+title: SICP
 ---
-
 SICP (Structure and Interpretation of Computer Programs，《计算机程序的构造和解释》)是一本非常经典的计算机科学教材。这本书主要讲解了以下核心内容：
 
 1. 程序设计的基本原则和编程思维方式。书中使用 Scheme（一种 Lisp 方言）作为教学语言，不过重点不是教授特定的编程语言，而是传授通用的程序设计概念。

@@ -1,10 +1,10 @@
 ---
-draw:
-title: SDK
+comment_id: 09fe8138
 date created: 2024-11-29
 date modified: 2025-02-06
+draw: null
+title: SDK
 ---
-
 让我来解释一下 SDK (Software Development Kit) 和 API (Application Programming Interface) 的主要区别：
 
 1. 抽象层级不同：

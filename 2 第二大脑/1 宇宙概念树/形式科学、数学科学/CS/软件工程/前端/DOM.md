@@ -1,10 +1,10 @@
 ---
-draw: Document Object Model
-title: DOM
+comment_id: 0d6e90ca
 date created: 2024-06-23
 date modified: 2025-02-06
+draw: Document Object Model
+title: DOM
 ---
-
 用面向对象的方式操作浏览器上的[HTML](HTML.md)
 
 - Document：代表整个HTML文档

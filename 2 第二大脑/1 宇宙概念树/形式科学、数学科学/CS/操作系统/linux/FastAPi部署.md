@@ -1,10 +1,10 @@
 ---
-draw:
-title: FastAPi部署
+comment_id: e57e7204
 date created: 2024-11-25
 date modified: 2025-04-07
+draw: null
+title: FastAPi部署
 ---
-
 ## Python安装与虚拟环境搭建
 
 ### 一、安装 Python3

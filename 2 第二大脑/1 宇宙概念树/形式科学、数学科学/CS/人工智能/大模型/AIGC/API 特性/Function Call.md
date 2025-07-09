@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Function Call
+comment_id: 9a5df38a
 date created: 2024-11-15
 date modified: 2024-12-27
+draw: null
+tags: []
+title: Function Call
 ---
-
 是的，理解正确！在 **Function Calling** 和 **GPT Actions** 中，"tools" 的确有所不同：
 
 1. **Function Calling**：

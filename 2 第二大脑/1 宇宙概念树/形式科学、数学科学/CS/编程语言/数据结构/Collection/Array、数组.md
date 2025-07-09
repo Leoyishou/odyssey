@@ -1,11 +1,12 @@
 ---
-draw:
-aliases: [数组]
-title: Array、数组
+aliases:
+- 数组
+comment_id: 2f8e8b2f
 date created: 2024-07-16
 date modified: 2025-03-27
+draw: null
+title: Array、数组
 ---
-
 String[]y = x. toArray(new String[0]); 里面传 new String[0]的意义是啥？
 
 在 Java 中，将 List 转换为数组时，使用 toArray(T[]a) 方法是一个常见的做法。传递一个类型为 T 的空数组作为参数，告诉 toArray 方法要返回的数组类型。具体传递 new String[0]的意义如下：

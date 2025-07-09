@@ -1,10 +1,10 @@
 ---
-draw:
-title: Sector vs Section
+comment_id: a6b38bce
 date created: 2025-02-15
 date modified: 2025-02-15
+draw: null
+title: Sector vs Section
 ---
-
 ## Sector vs Section
 
 |**项目**|**Sector**|**Section**|

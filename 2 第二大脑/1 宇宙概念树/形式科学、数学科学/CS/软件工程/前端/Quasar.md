@@ -1,10 +1,10 @@
 ---
-draw:
-title: Quasar
+comment_id: 12b6da14
 date created: 2025-04-07
 date modified: 2025-04-26
+draw: null
+title: Quasar
 ---
-
 Quasar 的音标是 `/ˈkweɪzɑːr/`
 
 |选项|用途|是否完整应用|是否需要 Quasar CLI|典型场景|

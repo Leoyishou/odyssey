@@ -1,10 +1,10 @@
 ---
-draw:
-title: 3Blue1Brown
+comment_id: 25fe6c2c
 date created: 2024-09-22
 date modified: 2025-03-27
+draw: null
+title: 3Blue1Brown
 ---
-
 ## 神经网络系列
 
 | 序号  |                                                          | 时长    | 观看量  |     |     |

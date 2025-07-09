@@ -1,10 +1,10 @@
 ---
-draw:
-title: Go 语言学习路线
+comment_id: 2f30ee57
 date created: 2024-06-17
 date modified: 2025-02-06
+draw: null
+title: Go 语言学习路线
 ---
-
  C 语言的理念和 Python 的姿态
 
 <!-- more -->

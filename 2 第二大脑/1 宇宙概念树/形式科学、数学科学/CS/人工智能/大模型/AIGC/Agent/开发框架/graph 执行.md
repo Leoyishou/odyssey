@@ -1,10 +1,10 @@
 ---
-draw:
-title: graph 执行
+comment_id: 8cf17039
 date created: 2025-04-18
 date modified: 2025-04-18
+draw: null
+title: graph 执行
 ---
-
 | 执行                        |                                                  |
 | ------------------------- |:----------------------------------------------- |
 | 同步阻塞式一次性执行；返回最终 State 增量。| `result = graph.invoke({'messages':[...]}, cfg)` |

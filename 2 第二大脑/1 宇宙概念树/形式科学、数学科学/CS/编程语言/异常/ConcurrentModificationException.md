@@ -1,10 +1,10 @@
 ---
-draw:
-title: ConcurrentModificationException
+comment_id: 7b7d6764
 date created: 2025-03-21
 date modified: 2025-03-21
+draw: null
+title: ConcurrentModificationException
 ---
-
 以下的改写一定能彻底避免此问题：
 
 **方案（1）强烈推荐：使用`computeIfAbsent`方法（完全线程安全）**

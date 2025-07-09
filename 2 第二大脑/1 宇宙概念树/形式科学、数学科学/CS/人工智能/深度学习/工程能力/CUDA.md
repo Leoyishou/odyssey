@@ -1,10 +1,10 @@
 ---
-draw:
-title: CUDA
+comment_id: 8be15c18
 date created: 2025-03-23
 date modified: 2025-03-30
+draw: null
+title: CUDA
 ---
-
 这是一个很常见但容易让人困惑的问题，我来给你清晰地解答：
 
 CUDA 既不是单纯的软件，也不是单纯的硬件，而是一个结合了两者的概念。

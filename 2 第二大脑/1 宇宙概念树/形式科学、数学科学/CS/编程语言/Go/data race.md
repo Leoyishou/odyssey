@@ -1,11 +1,12 @@
 ---
-draw:
-aliases: [数据竞争]
-title: data race
+aliases:
+- 数据竞争
+comment_id: 5969524a
 date created: 2024-07-22
 date modified: 2025-02-06
+draw: null
+title: data race
 ---
-
 其实就是读写冲突或者写写冲突
 
 - 什么是 data race? 数据竞争是在并发编程中出现的一个问题。它发生在两个或多个并发操作（比如 goroutines）同时访问同一块内存，并且至少有一个操作是写操作的时候。

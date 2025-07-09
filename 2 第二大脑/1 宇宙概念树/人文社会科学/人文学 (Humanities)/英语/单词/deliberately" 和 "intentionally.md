@@ -1,10 +1,10 @@
 ---
-draw:
-title: 'deliberately" 和 "intentionally'
+comment_id: 0e4d812a
 date created: 2025-01-14
 date modified: 2025-02-09
+draw: null
+title: deliberately" 和 "intentionally
 ---
-
 Deliberately (深思熟虑地):
 
 - 经过仔细思考

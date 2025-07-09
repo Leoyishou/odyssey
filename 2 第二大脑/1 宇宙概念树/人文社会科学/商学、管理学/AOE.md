@@ -1,11 +1,13 @@
 ---
-aliases: [Activity On Edge, 活动边网络]
-draw: 
-title: AOE
+aliases:
+- Activity On Edge
+- 活动边网络
+comment_id: 0e488f99
 date created: 2024-08-24
 date modified: 2025-07-07
+draw: null
+title: AOE
 ---
-
 ```mermaid
 graph LR
     1((1)) --> |需求分析 3天| 2((2))

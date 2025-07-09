@@ -1,10 +1,10 @@
 ---
-draw:
-title: Map, Dict
+comment_id: dfe13018
 date created: 2024-07-19
 date modified: 2025-03-31
+draw: null
+title: Map, Dict
 ---
-
 ## 认知
 
 Map 的本质是一个带了查找功能的 `List<Entry>`

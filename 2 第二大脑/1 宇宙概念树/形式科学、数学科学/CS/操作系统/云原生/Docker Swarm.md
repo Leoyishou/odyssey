@@ -1,8 +1,9 @@
 ---
-draw:
-title: Docker Swarm
+comment_id: 2dec0a3e
 date created: 2024-12-28
 date modified: 2025-03-25
+draw: null
+title: Docker Swarm
 ---
 - - **Docker Swarm**：与 Docker Compose 类似的声明式编排语法（同一个 `docker-compose.yml` 文件稍加改动就能直接用于 Swarm），并且 Swarm 直接内置在 Docker Engine 中，不需要额外安装其他组件，易于上手。
 - **功能完整，能够满足常见生产场景**

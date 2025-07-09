@@ -1,10 +1,10 @@
 ---
-draw:
-title: HashMap
+comment_id: f489ab0b
 date created: 2024-08-19
 date modified: 2025-02-06
+draw: null
+title: HashMap
 ---
-
 ## 拉链法解决哈希冲突
 
  当两个不同的键映射到同一个哈希桶时，HashMap不会简单地覆盖已存在的元素。

@@ -1,10 +1,10 @@
 ---
-draw:
-title: OOM
+comment_id: 60dc2142
 date created: 2024-07-31
 date modified: 2025-02-06
+draw: null
+title: OOM
 ---
-
 OOM（Out of Memory）后，服务直接挂掉，需要重启
 
 这篇文章主要讲述了JVM中的错误处理机制，核心内容是：

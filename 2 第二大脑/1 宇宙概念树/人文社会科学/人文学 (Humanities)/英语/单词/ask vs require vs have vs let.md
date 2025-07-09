@@ -1,10 +1,10 @@
 ---
-draw:
-title: ask vs require vs have vs let
+comment_id: 269174cd
 date created: 2025-02-15
 date modified: 2025-02-15
+draw: null
+title: ask vs require vs have vs let
 ---
-
 ## **ask vs require vs have vs let**
 
 ### **核心含义和差异**

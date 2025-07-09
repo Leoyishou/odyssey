@@ -1,10 +1,10 @@
 ---
-draw:
-title: NFTurbo
+comment_id: 6c97a9d7
 date created: 2024-10-27
 date modified: 2025-05-03
+draw: null
+title: NFTurbo
 ---
-
 ## 目标
 
 熟悉一下[ElasticSearch](ElasticSearch.md)，对电商中除了报价之外的其他模块的代码实现有一个思路

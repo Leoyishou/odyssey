@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: RSS
+comment_id: 8e3d7acd
 date created: 2025-01-17
 date modified: 2025-01-17
+draw: null
+tags: []
+title: RSS
 ---
-
 > Everything is RSSible. The world's largest RSS network.
 
 > 其实 RSS 已经是一个非常落后的理念了，把所有内容源都扔进一个容器慢慢就堆积如山变成 never read 了。当初 Mailbrew 的思路就很好，把订阅源做成 newsletter 自己给自己发邮件，时效性强的做成按天发送，比如每日天气、股票、热点新闻，时效性不强的可以做成按周发送，相比刷 RSS 更方便也没有那么焦虑。另外有些儿时效性极强的，比如很多炒股的账号，更适合打开推特的个人推送通知，阅读晚了就没意义了。

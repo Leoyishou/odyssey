@@ -1,8 +1,9 @@
 ---
-draw:
-title: PyTorch Lightning
+comment_id: 13d0126d
 date created: 2025-04-12
 date modified: 2025-05-12
+draw: null
+title: PyTorch Lightning
 ---
 ## 1. `train.py`——“厨师的全套餐配方”
 

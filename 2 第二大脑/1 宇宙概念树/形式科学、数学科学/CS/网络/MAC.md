@@ -1,10 +1,10 @@
 ---
-draw:
-title: MAC
+comment_id: 87728a97
 date created: 2024-09-23
 date modified: 2025-05-26
+draw: null
+title: MAC
 ---
-
 【MAC】传输帧长啥样？
 
 ```Java

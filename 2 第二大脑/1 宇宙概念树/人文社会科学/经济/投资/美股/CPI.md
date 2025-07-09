@@ -1,11 +1,12 @@
 ---
-aliases: [Consumer Price Index]
-draw: 
-title: CPI
+aliases:
+- Consumer Price Index
+comment_id: d3c02173
 date created: 2024-09-11
 date modified: 2025-02-06
+draw: null
+title: CPI
 ---
-
 ## 计算方式
 
 - 想象你有一个神奇的购物篮子

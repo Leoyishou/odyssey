@@ -1,8 +1,9 @@
 ---
-draw:
-title: PDCA循环
+comment_id: 9acf45bd
 date created: 2025-06-01
 date modified: 2025-06-02
+draw: null
+title: PDCA循环
 ---
 **每一次周末学习的任务最好做到****pdca****，把这个准则加入到一切皆项目中** **有一种****commit****的思想才能最大化利用好大碎片时间完成支线任务**
 

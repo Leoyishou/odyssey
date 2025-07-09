@@ -1,10 +1,10 @@
 ---
-draw:
-title: bionic reading
+comment_id: a414571a
 date created: 2024-07-11
 date modified: 2025-05-03
+draw: null
+title: bionic reading
 ---
-
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F17%2F14-29-01-13d336f8510dc31118af625274a6e218-20240717142900-8e5f34.png)
 
 bionic reading 是一种阅读技术,旨在提高阅读速度和理解效率。它的主要特点是:

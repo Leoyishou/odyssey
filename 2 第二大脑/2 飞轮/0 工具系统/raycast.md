@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: raycast
+comment_id: e097349a
 date created: 2024-07-11
 date modified: 2024-12-27
+draw: null
+tags: []
+title: raycast
 ---
-
 启动器除了 [Alfred](Alfred) 和 [raycast](raycast.md)，还有竞品 [uTools](uTools)、[HapiGo](HapiGo)、[LaunchBar](LaunchBar)。
 
 多方考察，发现 raycast 异军突起，最有实力，开发团队全远程办公，大概有 20 人。
