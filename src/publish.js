@@ -1,15 +1,23 @@
 // publish.js —— 放到仓库根目录
 function injectGiscus() {
     console.log('Giscus: 尝试注入评论系统...');
+    
+    // 防止重复注入
     if (document.getElementById('giscus-container')) {
         console.log('Giscus: 评论容器已存在，跳过注入');
         return;
     }
+    
+    // 等待页面完全加载
+    if (document.readyState !== 'complete') {
+        console.log('Giscus: 页面未完全加载，稍后重试...');
+        setTimeout(injectGiscus, 500);
+        return;
+    }
+    
     const container = document.createElement('div');
     container.id = 'giscus-container';
     container.style.marginTop = '3rem';
-    
-    // 添加样式以匹配正文宽度
     container.style.maxWidth = '100%';
     container.style.margin = '3rem auto 0';
     container.style.padding = '0';
@@ -20,80 +28,52 @@ function injectGiscus() {
     s.dataset.repoId      = "R_kgDOPJw6Yg";
     s.dataset.category    = 'Comments';
     s.dataset.categoryId  = "DIC_kwDOPJw6Ys4CstfW";
-    // 获取文档的唯一标识符（按优先级）
-    const getDocumentId = () => {
-        // 1. 尝试从页面内容中查找 comment_id
-        // Obsidian Publish 可能会将 frontmatter 渲染在页面某处
-        const pageContent = document.body.innerText;
-        const commentIdMatch = pageContent.match(/comment_id:\s*([a-f0-9]{8})/);
-        if (commentIdMatch) {
-            console.log('Giscus: 找到 comment_id:', commentIdMatch[1]);
-            return commentIdMatch[1];
-        }
-        
-        // 2. 尝试从 meta 标签获取（如果 Obsidian 支持）
-        const commentIdMeta = document.querySelector('meta[name="comment-id"]');
-        if (commentIdMeta?.content) {
-            console.log('Giscus: 从 meta 标签找到 comment_id:', commentIdMeta.content);
-            return commentIdMeta.content;
-        }
-        
-        // 3. 使用文件路径作为稳定标识
-        // 保留完整路径结构，这样即使文件名相同但在不同目录也能区分
-        const pathname = window.location.pathname;
-        const cleanPath = pathname
-            .replace(/\.html$/, '')
-            .replace(/\/$/, '')
-            .replace(/^\//, '');
-        
-        if (cleanPath && cleanPath !== 'index') {
-            console.log('Giscus: 使用路径作为标识:', cleanPath);
-            return cleanPath;
-        }
-        
-        // 4. 最后使用标题
-        const title = document.title || 'untitled';
-        console.log('Giscus: 使用标题作为标识:', title);
-        return title;
-    };
     
-    const documentId = getDocumentId();
-    console.log('Giscus: 最终使用的文档ID:', documentId);
-    console.log('Giscus: 当前页面URL:', window.location.href);
-    console.log('Giscus: 页面标题:', document.title);
+    // 使用更简单可靠的路径映射
+    // Obsidian Publish 的 URL 格式通常是：https://your-site.obsidian.md/path/to/file
+    const pathname = window.location.pathname;
+    const cleanPath = pathname
+        .replace(/^\//, '')      // 去掉开头的 /
+        .replace(/\/$/, '')      // 去掉结尾的 /
+        .replace(/\.html$/, '')  // 去掉 .html 后缀
+        .replace(/\.md$/, '');   // 去掉 .md 后缀
     
-    s.dataset.mapping     = 'specific';
-    s.dataset.term        = documentId;
+    // 如果路径为空或是首页，使用特殊标识
+    const documentId = cleanPath || 'homepage';
+    
+    console.log('Giscus: 调试信息 --------');
+    console.log('- 当前URL:', window.location.href);
+    console.log('- 路径名:', pathname);
+    console.log('- 清理后路径:', cleanPath);
+    console.log('- 最终ID:', documentId);
+    console.log('- 页面标题:', document.title);
+    console.log('------------------------');
+    
+    // 使用 pathname 映射，这是最可靠的方式
+    s.dataset.mapping     = 'pathname';
+    s.dataset.strict      = '0';  // 允许模糊匹配
     s.dataset.reactionsEnabled = '1';
     s.dataset.theme       = 'preferred_color_scheme';
-    s.crossOrigin = 'anonymous'; s.async = true;
+    s.dataset.lang        = 'zh-CN';
+    s.crossOrigin = 'anonymous'; 
+    s.async = true;
   
     container.appendChild(s);
     
-    // 尝试多个可能的选择器
+    // 尝试多个可能的容器
     const targetElement = 
         document.querySelector('.markdown-preview-view') || 
         document.querySelector('.publish-article-content') ||
         document.querySelector('.content') ||
         document.querySelector('article') ||
-        document.querySelector('main');
+        document.querySelector('main') ||
+        document.querySelector('[class*="content"]');
     
     if (targetElement) {
         targetElement.appendChild(container);
         console.log('Giscus: 评论容器已添加到:', targetElement.className || targetElement.tagName);
         
-        // 获取父容器的计算样式，以确保评论区对齐
-        const parentStyles = window.getComputedStyle(targetElement);
-        const parentPadding = parentStyles.getPropertyValue('padding-left');
-        const parentWidth = parentStyles.getPropertyValue('max-width');
-        
-        // 如果父容器有特定的内边距或最大宽度，应用到评论容器
-        if (parentPadding && parentPadding !== '0px') {
-            container.style.paddingLeft = '0';
-            container.style.paddingRight = '0';
-        }
-        
-        // 添加响应式样式
+        // 添加样式
         const style = document.createElement('style');
         style.textContent = `
             #giscus-container {
@@ -103,13 +83,11 @@ function injectGiscus() {
             #giscus-container .giscus {
                 max-width: 100% !important;
             }
-            /* 确保 iframe 也是响应式的 */
             #giscus-container iframe {
                 max-width: 100% !important;
             }
         `;
         document.head.appendChild(style);
-        
     } else {
         // 如果找不到合适的容器，添加到 body 末尾
         document.body.appendChild(container);
@@ -117,17 +95,37 @@ function injectGiscus() {
     }
     
     console.log('Giscus: 注入完成！');
-  }
+}
   
-  // 使用多个事件确保脚本执行
-  if (document.readyState === 'loading') {
+// 监听页面变化（Obsidian Publish 可能是单页应用）
+let lastPath = window.location.pathname;
+const checkForPageChange = () => {
+    if (window.location.pathname !== lastPath) {
+        console.log('Giscus: 检测到页面变化，重新注入评论系统');
+        lastPath = window.location.pathname;
+        
+        // 移除旧的评论容器
+        const oldContainer = document.getElementById('giscus-container');
+        if (oldContainer) {
+            oldContainer.remove();
+        }
+        
+        // 重新注入
+        setTimeout(injectGiscus, 500);
+    }
+};
+
+// 每秒检查一次页面是否变化
+setInterval(checkForPageChange, 1000);
+
+// 初始注入
+if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', injectGiscus);
-  } else {
+} else {
     injectGiscus();
-  }
-  
-  // 备用：页面完全加载后再次尝试
-  window.addEventListener('load', () => {
+}
+
+// 备用：页面完全加载后再次尝试
+window.addEventListener('load', () => {
     setTimeout(injectGiscus, 1000);
-  });
-  
+});
