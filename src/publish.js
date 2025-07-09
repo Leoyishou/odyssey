@@ -57,8 +57,13 @@ function injectGiscus() {
         return title;
     };
     
+    const documentId = getDocumentId();
+    console.log('Giscus: 最终使用的文档ID:', documentId);
+    console.log('Giscus: 当前页面URL:', window.location.href);
+    console.log('Giscus: 页面标题:', document.title);
+    
     s.dataset.mapping     = 'specific';
-    s.dataset.term        = getDocumentId();
+    s.dataset.term        = documentId;
     s.dataset.reactionsEnabled = '1';
     s.dataset.theme       = 'preferred_color_scheme';
     s.crossOrigin = 'anonymous'; s.async = true;
