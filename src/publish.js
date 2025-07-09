@@ -21,6 +21,9 @@ function injectGiscus() {
     s.dataset.category    = 'Comments';
     s.dataset.categoryId  = "DIC_kwDOPJw6Ys4CstfW";
     s.dataset.mapping     = 'og:title';    // 以页面标题匹配，不受路径影响
+    // 如果需要更精确的控制，可以改为：
+    // s.dataset.mapping     = 'specific';
+    // s.dataset.term        = document.querySelector('meta[name="comment-id"]')?.content || 'default';
     s.dataset.reactionsEnabled = '1';
     s.dataset.theme       = 'preferred_color_scheme';
     s.crossOrigin = 'anonymous'; s.async = true;
