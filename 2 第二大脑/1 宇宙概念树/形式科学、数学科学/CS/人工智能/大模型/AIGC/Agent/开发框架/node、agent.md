@@ -1,0 +1,106 @@
+---
+draw:
+title: node、agent
+date created: 2025-04-18
+date modified: 2025-04-18
+---
+
+Thought for 4 seconds
+
+| Node                                             |                                                          |
+| ------------------------------------------------ |:------------------------------------------------------- |
+| 内置虚拟node；分别代表图的入口和终止条件。| `START` `EMD` `graph_builder.add_edge(START, "chatbot")` |
+|                                                  |                                                          |
+| 预构建节点；自动并行执行 LLM 返回的 tool_calls 并生成 ToolMessage。| `tool_node = ToolNode(tools=my_tools)`                   |
+| 一整套 **“带工具路由 + ReAct 推理 + 记忆管理”** 的 [[子图、执行器]]   | create_react_agent                                       |
+| 给 LLM 声明可调用工具，配合 ToolNode 使用。| `llm_with_tools = llm.bind_tools(tools)`                 |
+
+## 一句话先说清
+
+- **`create_react_agent`** 生成的是一整套 **“带工具路由 + ReAct 推理 + 记忆管理”** 的 **子图**／执行器，基本开箱即用。
+    
+- **普通 Node**（你自己写的 `def some_node(state): …`）只是图里的 **单个步骤**，要自己决定“读状态、做事、写回状态、跳去哪里”。
+    
+
+---
+
+## 1 概念层级
+
+|层级|`create_react_agent`|普通 Node|
+|---|---|---|
+|**颗粒度**|_子图 / Executor_：内部已包含一系列调用循环|_原子步骤_：一段同步或异步函数|
+|**职责**|- 解析提示- 让 LLM 想 (Reasoning)- 选工具 & 调用- 处理工具结果- 把动作写回 `AgentState`- 决定继续还是结束|你自己写什么就做什么；常见是：- 调一个 LLM / API / 业务逻辑- 更新 `State` 字段- 返回 `Command(goto=…, update=…)`|
+|**返回值**|直接产出 `AgentState`（内部自己循环），调用者通常只关心最终 `messages`|必须返回 `Command` 指明：① 下一跳 `goto` ② 要更新哪些状态|
+|**需要手写的东西**|基本只写 Prompt 模板 + 工具列表；复杂流程全交给框架|Node 函数体 + Prompt（如需要）+ 显式路由逻辑|
+|**适用场景**|快速拉起“LLM + 多工具”的对话式 Agent；关注业务而非框架细节|对流程有**精细控制**需求，或 Node 逻辑与 ReAct 不匹配（数据库事务、调用外部服务、规则判断等）|
+
+---
+
+## 2 在 Taurus 里的示例对比
+
+### 2.1 用 `create_react_agent`
+
+```python
+# agents/agents.py
+research_agent = create_react_agent(
+    get_llm_by_type("qunar_chat_model"),
+    tools=[tavily_tool, crawl_tool],
+    prompt=lambda state: apply_prompt_template("researcher", state),
+)
+```
+
+- 你 **不用关心** 工具调用顺序、思考链、错误重试等；
+    
+- 想用时直接 `research_agent.invoke(state)`，返回最后一步的 `AgentState`。
+    
+
+### 2.2 手写 Node
+
+```python
+# graph/nodes.py
+def planner_node(state: State) -> Command[Literal["supervisor", "__end__"]]:
+    messages = apply_prompt_template("planner", state)
+    stream = llm.stream(messages)          # 你自己控制流式
+    full_response = "".join([c.content for c in stream])
+
+    goto = "supervisor" if is_json(full_response) else "__end__"
+    return Command(
+        update={"messages": [AIMessage(content=full_response)]},
+        goto=goto,
+    )
+```
+
+- 逻辑、异常处理、路由都要你亲自写；
+    
+- 优势是**完全可控**，想怎样就怎样。
+    
+
+---
+
+## 3 如何一起用？
+
+在 Taurus 里，你常见两种用法：
+
+1. **把 `create_react_agent` 生成的 Agent 当成“黑盒工具”**  
+    在某个 Node 里简单 `result = research_agent.invoke(state)`，再把结果塞回大的 `State`。
+    
+2. **纯手写 Node 组合成大图**  
+    比如 `supervisor_node → planner_node → reporter_node`，每一步都显式 `Command(goto=…)`。
+    
+
+这样可以按需取舍：
+
+- **简单搜索 / 抓取** → 用 React‑Agent，省事；
+    
+- **流程敏感或需要业务判断** → 手写 Node，细节自己把控。
+    
+
+---
+
+### 小结
+
+- **`create_react_agent`**：像“自动挡”，更高抽象层，帮你把 **ReAct 循环 + 工具调用** 都包了。
+    
+- **普通 Node**：像“手动挡”，粒度小，**路由与状态更新全靠你自己**。
+    
+- 两者可以在一张图里混用，各做各擅长的事情。
