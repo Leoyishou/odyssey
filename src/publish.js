@@ -32,10 +32,14 @@ function injectGiscus() {
     
     if (targetElement) {
         targetElement.appendChild(container);
+        console.log('Giscus: 评论容器已添加到:', targetElement.className || targetElement.tagName);
     } else {
         // 如果找不到合适的容器，添加到 body 末尾
         document.body.appendChild(container);
+        console.log('Giscus: 未找到合适容器，评论添加到 body 末尾');
     }
+    
+    console.log('Giscus: 注入完成！');
   }
   
   // 使用多个事件确保脚本执行
