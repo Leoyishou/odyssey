@@ -1,6 +1,10 @@
 // publish.js —— 放到仓库根目录
 function injectGiscus() {
-    if (document.getElementById('giscus-container')) return;
+    console.log('Giscus: 尝试注入评论系统...');
+    if (document.getElementById('giscus-container')) {
+        console.log('Giscus: 评论容器已存在，跳过注入');
+        return;
+    }
     const container = document.createElement('div');
     container.id = 'giscus-container';
     container.style.marginTop = '3rem';
