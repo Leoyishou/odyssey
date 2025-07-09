@@ -38,6 +38,35 @@ function injectGiscus() {
     if (targetElement) {
         targetElement.appendChild(container);
         console.log('Giscus: 评论容器已添加到:', targetElement.className || targetElement.tagName);
+        
+        // 获取父容器的计算样式，以确保评论区对齐
+        const parentStyles = window.getComputedStyle(targetElement);
+        const parentPadding = parentStyles.getPropertyValue('padding-left');
+        const parentWidth = parentStyles.getPropertyValue('max-width');
+        
+        // 如果父容器有特定的内边距或最大宽度，应用到评论容器
+        if (parentPadding && parentPadding !== '0px') {
+            container.style.paddingLeft = '0';
+            container.style.paddingRight = '0';
+        }
+        
+        // 添加响应式样式
+        const style = document.createElement('style');
+        style.textContent = `
+            #giscus-container {
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            #giscus-container .giscus {
+                max-width: 100% !important;
+            }
+            /* 确保 iframe 也是响应式的 */
+            #giscus-container iframe {
+                max-width: 100% !important;
+            }
+        `;
+        document.head.appendChild(style);
+        
     } else {
         // 如果找不到合适的容器，添加到 body 末尾
         document.body.appendChild(container);
