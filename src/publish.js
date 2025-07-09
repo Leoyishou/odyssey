@@ -20,7 +20,7 @@ function injectGiscus() {
     s.dataset.repoId      = "R_kgDOPJw6Yg";
     s.dataset.category    = 'Comments';
     s.dataset.categoryId  = "DIC_kwDOPJw6Ys4CstfW";
-    s.dataset.mapping     = 'pathname';    // 以页面路径匹配
+    s.dataset.mapping     = 'og:title';    // 以页面标题匹配，不受路径影响
     s.dataset.reactionsEnabled = '1';
     s.dataset.theme       = 'preferred_color_scheme';
     s.crossOrigin = 'anonymous'; s.async = true;
