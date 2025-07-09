@@ -1,10 +1,10 @@
 ---
-draw:
-title: Kaggle
+comment_id: ee9176b2
 date created: 2024-10-13
 date modified: 2025-06-15
+draw: null
+title: Kaggle
 ---
-
 整体而言，Kaggle Notebook 的设计本意就是方便复现，大部分高评分 Notebook 都是可以直接运行的。
 
 ```mermaid

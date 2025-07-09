@@ -1,12 +1,11 @@
 ---
-draw:
-title: Anki@
-tags: []
+comment_id: 0eb76d9b
 date created: 2024-05-12
 date modified: 2024-12-27
+draw: null
+tags: []
+title: Anki@
 ---
-  
-
 excerpt
 
 <!-- more -->

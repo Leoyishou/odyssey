@@ -1,10 +1,10 @@
 ---
-draw:
-title: Transformer 模型实践教程—pytorch 版
+comment_id: 37b87526
 date created: 2025-04-05
 date modified: 2025-04-18
+draw: null
+title: Transformer 模型实践教程—pytorch 版
 ---
-
 注意力提供“信息融合”，前馈网络提供“非线性转换”，各自有残差路径便于梯度传播。
 
 ___

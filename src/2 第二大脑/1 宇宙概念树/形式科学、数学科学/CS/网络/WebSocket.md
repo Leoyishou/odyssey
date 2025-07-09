@@ -1,11 +1,11 @@
 ---
-draw:
-title: WebSocket
-tags: []
+comment_id: 106f4f82
 date created: 2024-06-05
 date modified: 2024-12-27
+draw: null
+tags: []
+title: WebSocket
 ---
-
 excerpt
 
 <!-- more -->

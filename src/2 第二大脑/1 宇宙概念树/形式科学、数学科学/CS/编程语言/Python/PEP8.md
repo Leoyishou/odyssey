@@ -1,10 +1,10 @@
 ---
-draw:
-title: PEP8
+comment_id: 04760f2b
 date created: 2024-09-17
 date modified: 2025-03-15
+draw: null
+title: PEP8
 ---
-
 ## 命名规范
 
 1. **文件名（模块名）**：使用 **蛇形命名法**（snake_case），例如 my_module.py。

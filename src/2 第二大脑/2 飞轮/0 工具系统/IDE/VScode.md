@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: VScode
+comment_id: fff8600e
 date created: 2024-07-11
 date modified: 2024-11-12
+draw: null
+tags: []
+title: VScode
 ---
-
 setting.json
 
 作用：obsidian 和 logseq 的批量编辑能力较差，可以用 vscode 打开进行批量编辑，比如正则替换，yaml 区的批量编辑等。安装 foam 插件以后，核心的双链功能已经完美支持了。

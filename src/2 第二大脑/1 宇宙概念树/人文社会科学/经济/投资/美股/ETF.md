@@ -1,11 +1,12 @@
 ---
-draw:
-aliases: [Exchange Traded Fund]
-title: ETF
+aliases:
+- Exchange Traded Fund
+comment_id: a882f94a
 date created: 2024-07-14
 date modified: 2025-02-06
+draw: null
+title: ETF
 ---
-
 想投资 A，买不起，就通过 ETF 间接投资
 
 交易所交易基金  

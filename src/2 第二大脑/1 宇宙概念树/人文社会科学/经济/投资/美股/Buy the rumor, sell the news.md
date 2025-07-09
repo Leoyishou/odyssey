@@ -1,10 +1,10 @@
 ---
-draw:
-title: Buy the rumor, sell the news
+comment_id: 2f2ff0f0
 date created: 2024-10-11
 date modified: 2025-02-06
+draw: null
+title: Buy the rumor, sell the news
 ---
-
 "Buy the rumor, sell the news"（买入传闻，卖出消息）是一种常见的交易策略，其核心理念是利用市场对信息的预期和反应来获利。这个策略基于以下几个关键观点：
 
 1. 市场预期：

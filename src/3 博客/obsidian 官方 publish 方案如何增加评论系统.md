@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: obsidian 官方 publish 方案如何增加评论系统
+comment_id: bb496b0e
 date created: 2024-07-15
 date modified: 2025-01-21
+draw: null
+tags: []
+title: obsidian 官方 publish 方案如何增加评论系统
 ---
-
 关于评论系统的更换。
 
 前几天有位朋友给我留言，让我挺受感动的：

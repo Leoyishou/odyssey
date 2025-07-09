@@ -1,11 +1,12 @@
 ---
-draw:
-title: pre的最佳实践
-tags: [最佳实践]
+comment_id: 6e44cdd8
 date created: 2024-04-09
 date modified: 2024-12-27
+draw: null
+tags:
+- 最佳实践
+title: pre的最佳实践
 ---
-
 excerpt
 
 <!-- more -->

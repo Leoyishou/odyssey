@@ -1,10 +1,10 @@
 ---
-draw:
-title: gitigonre
+comment_id: 996af7b8
 date created: 2024-11-25
 date modified: 2025-02-06
+draw: null
+title: gitigonre
 ---
-
 - `/node_modules` - 依赖包体积大，而且可以通过 package.json 重新安装
 - `dist` 和 `build` - 这是构建产物，不需要提交到代码库
 - 环境文件 (.env.local) - 通常包含敏感信息如 API 密钥

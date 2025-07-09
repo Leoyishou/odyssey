@@ -1,10 +1,10 @@
 ---
-draw:
-title: guarantee vs promise
+comment_id: e380c524
 date created: 2025-02-20
 date modified: 2025-03-06
+draw: null
+title: guarantee vs promise
 ---
-
 ## guarantee vs promise
 
 |词汇|核心含义|差异|

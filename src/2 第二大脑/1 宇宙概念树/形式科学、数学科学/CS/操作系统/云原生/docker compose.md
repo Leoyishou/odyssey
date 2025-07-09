@@ -1,10 +1,10 @@
 ---
-draw:
-title: docker compose
+comment_id: 5ef24f39
 date created: 2024-07-20
 date modified: 2025-03-15
+draw: null
+title: docker compose
 ---
-
 ```Java
 docker compose build frontend
 docker compose up -d frontend

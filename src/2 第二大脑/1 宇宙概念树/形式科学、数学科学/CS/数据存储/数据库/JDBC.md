@@ -1,10 +1,10 @@
 ---
-draw:
-title: JDBC
+comment_id: 9b22d6ef
 date created: 2025-01-18
 date modified: 2025-02-06
+draw: null
+title: JDBC
 ---
-
 | MySQL | JDBCType      | JavaType                   |
 | ----- | ------------- | -------------------------- |
 |       | CHAR          | String                     |

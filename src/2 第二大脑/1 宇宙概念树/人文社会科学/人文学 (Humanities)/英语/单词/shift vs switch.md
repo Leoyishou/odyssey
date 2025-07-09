@@ -1,12 +1,13 @@
 ---
-aliases: ["shift vs switch  "]
-draw:
-title: "shift vs switch  "
-linter-yaml-title-alias: "shift vs switch  "
+aliases:
+- 'shift vs switch  '
+comment_id: 8959ec67
 date created: 2025-02-24
 date modified: 2025-02-24
+draw: null
+linter-yaml-title-alias: 'shift vs switch  '
+title: 'shift vs switch  '
 ---
-
 ## shift vs switch  
 
 | 词汇  | 核心含义 | 主要区别 |

@@ -1,10 +1,10 @@
 ---
-draw:
-title: VISA
+comment_id: acbc0fbd
 date created: 2024-10-28
 date modified: 2025-02-06
+draw: null
+title: VISA
 ---
-
 1. Namespace(命名空间)作用:
 
 - VISA/银联/Mastercard就像是最顶层的namespace

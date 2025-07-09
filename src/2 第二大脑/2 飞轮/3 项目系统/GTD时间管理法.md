@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: GTD时间管理法
+comment_id: 4833dad5
 date created: 2024-10-16
 date modified: 2024-11-12
+draw: null
+tags: []
+title: GTD时间管理法
 ---
-
 GTD时间管理法是"Getting Things Done"(把事情做完)的缩写,是由美国生产力专家戴维·艾伦(David Allen)提出的一种时间管理系统。这种方法旨在提高个人和职业生产力,减少压力,增加效率。GTD的核心理念包括:
 
 1. 收集:把所有需要注意或行动的事项都记录下来,不让任何事情在脑子里滞留。

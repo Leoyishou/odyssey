@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Makefile
+comment_id: 6c8b23a4
 date created: 2024-12-18
 date modified: 2024-12-27
+draw: null
+tags: []
+title: Makefile
 ---
-
 让我用简单的方式来解释 Makefile：
 
 想象你在搭乐高玩具城堡：

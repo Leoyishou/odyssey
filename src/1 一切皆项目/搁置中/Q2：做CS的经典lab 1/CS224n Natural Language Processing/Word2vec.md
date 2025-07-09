@@ -1,8 +1,9 @@
 ---
-draw:
-title: Word2vec
+comment_id: 08ac65ec
 date created: 2025-01-25
 date modified: 2025-04-14
+draw: null
+title: Word2vec
 ---
 **
 非常有效的概率模型：Word2vec。Word2vec 是一个软件包实际上包含：

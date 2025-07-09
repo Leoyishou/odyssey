@@ -1,3 +1,7 @@
+---
+comment_id: bedd696d
+---
+
 
 ### **2. VC 维（Vapnik-Chervonenkis Dimension）**
 VC 维（**Vapnik-Chervonenkis 维数**）是一种**衡量假设类复杂度**的数学工具，表示某个假设空间 $H$ 在最坏情况下能够**完全分开**（shatter）的点的最大数量。

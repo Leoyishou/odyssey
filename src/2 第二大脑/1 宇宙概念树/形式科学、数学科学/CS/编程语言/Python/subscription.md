@@ -1,8 +1,9 @@
 ---
-draw:
-title: subscription
+comment_id: bfb2c4eb
 date created: 2025-05-02
 date modified: 2025-05-02
+draw: null
+title: subscription
 ---
 ## Python 里的 “subscription” 到底是什么？
 

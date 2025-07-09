@@ -1,10 +1,10 @@
 ---
-draw:
-title: Java 基础题$
+comment_id: 131b0db3
 date created: 2024-08-23
 date modified: 2025-05-03
+draw: null
+title: Java 基础题$
 ---
-
 ## [第一性原理](第一性原理.md)
 
 回顾[Java@](Java@.md)的细节、低频知识，打牢语言基础。

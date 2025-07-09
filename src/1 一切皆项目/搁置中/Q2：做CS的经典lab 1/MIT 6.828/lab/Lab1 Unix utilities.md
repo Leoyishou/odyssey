@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Lab1 Unix utilities
+comment_id: bd172796
 date created: 2024-12-11
 date modified: 2025-01-25
+draw: null
+tags: []
+title: Lab1 Unix utilities
 ---
-
 ## 任务
 
 | 测试项目                       | 状态  | 分数    | 问题描述                      |

@@ -1,10 +1,10 @@
 ---
-draw:
-title: Serializable
+comment_id: 8935d953
 date created: 2024-10-31
 date modified: 2025-02-06
+draw: null
+title: Serializable
 ---
-
 **可序列化的本质是：一个对象是可 IO 的**
 1. 磁盘 IO，对象持久化 - 将对象状态保存到磁盘
 2. 网络 IO，在网络上传输对象数据、在分布式系统比如不同JVM间传递对象

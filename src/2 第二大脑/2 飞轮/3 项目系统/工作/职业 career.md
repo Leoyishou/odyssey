@@ -1,8 +1,9 @@
 ---
-draw:
-title: 职业 career
+comment_id: b20489a8
 date created: 2024-07-13
 date modified: 2025-03-10
+draw: null
+title: 职业 career
 ---
 **快速成长的核心是把****15****类型的问题都见过一遍，要求就是重复率不能太高，如果你有简单问题一直重复，估计会耽误时间，所以幸好早就看到**
 

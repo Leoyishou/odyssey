@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: C语言
+comment_id: b44b4c3c
 date created: 2024-12-16
 date modified: 2024-12-27
+draw: null
+tags: []
+title: C语言
 ---
-
 ## 学习 C 语言的建议
 
 1. **理解与 Java 的差异**  

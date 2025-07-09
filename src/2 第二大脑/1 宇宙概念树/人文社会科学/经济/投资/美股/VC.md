@@ -1,11 +1,12 @@
 ---
-draw:
-aliases: [Venture Capital]
-title: VC
+aliases:
+- Venture Capital
+comment_id: 686210ec
 date created: 2024-06-20
 date modified: 2025-02-06
+draw: null
+title: VC
 ---
-
 看看- 看asix zA16Z这些基金们 [YC](YC) [VC](VC.md)投什么项目
 
 <!-- more -->

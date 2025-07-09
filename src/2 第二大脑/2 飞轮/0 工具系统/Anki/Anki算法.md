@@ -1,9 +1,10 @@
 ---
-draw:
-tags: []
-title: Anki算法
+comment_id: 0d9da175
 date created: 2023-12-03
 date modified: 2025-01-22
+draw: null
+tags: []
+title: Anki算法
 ---
 - [信息源](#%E4%BF%A1%E6%81%AF%E6%BA%90)
 - [名词解释](#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A)

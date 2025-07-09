@@ -1,8 +1,9 @@
 ---
-draw:
-title: Qualtrics
+comment_id: de21c75a
 date created: 2025-05-28
 date modified: 2025-05-29
+draw: null
+title: Qualtrics
 ---
 **Qualtrics 就是一套把「收集反馈 → 解析洞察 → 触发行动」做成“流水线”的体验管理（Experience Management, XM）平台。**你可以把它想成专门处理“人的体验数据”的全栈数据平台：前端像问卷 / 聊天机器人在不停采集信号，后端一堆 AI 引擎在实时分析，最后再把结果推给客服、营销或 HR 系统去执行。
 ## 为啥会有这玩意儿？

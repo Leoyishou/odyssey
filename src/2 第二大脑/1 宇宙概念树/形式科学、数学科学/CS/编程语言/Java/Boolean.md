@@ -1,10 +1,10 @@
 ---
-draw:
-title: Boolean
+comment_id: 52206e3d
 date created: 2025-02-20
 date modified: 2025-02-20
+draw: null
+title: Boolean
 ---
-
 是的，如果 `preRunTask.getBasicGroupsTickPriorityAcked()` 或 `preRunTask.getDiffGroupsTickPriorityAcked()` 返回 `null`，在执行 `&&` 操作时会抛出 `NullPointerException`，因为 `&&` 操作符需要两个操作数都为布尔值。如果其中一个值为 `null`，就会导致空指针异常。
 
 ## 原因

@@ -22,17 +22,39 @@ function injectGiscus() {
     s.dataset.categoryId  = "DIC_kwDOPJw6Ys4CstfW";
     // 获取文档的唯一标识符（按优先级）
     const getDocumentId = () => {
-        // 1. 优先使用 frontmatter 中的 comment_id
+        // 1. 尝试从页面内容中查找 comment_id
+        // Obsidian Publish 可能会将 frontmatter 渲染在页面某处
+        const pageContent = document.body.innerText;
+        const commentIdMatch = pageContent.match(/comment_id:\s*([a-f0-9]{8})/);
+        if (commentIdMatch) {
+            console.log('Giscus: 找到 comment_id:', commentIdMatch[1]);
+            return commentIdMatch[1];
+        }
+        
+        // 2. 尝试从 meta 标签获取（如果 Obsidian 支持）
         const commentIdMeta = document.querySelector('meta[name="comment-id"]');
-        if (commentIdMeta?.content) return commentIdMeta.content;
+        if (commentIdMeta?.content) {
+            console.log('Giscus: 从 meta 标签找到 comment_id:', commentIdMeta.content);
+            return commentIdMeta.content;
+        }
         
-        // 2. 使用文件名（去掉扩展名）作为备选
+        // 3. 使用文件路径作为稳定标识
+        // 保留完整路径结构，这样即使文件名相同但在不同目录也能区分
         const pathname = window.location.pathname;
-        const filename = pathname.split('/').pop().replace('.html', '').replace('.md', '');
-        if (filename && filename !== 'index') return filename;
+        const cleanPath = pathname
+            .replace(/\.html$/, '')
+            .replace(/\/$/, '')
+            .replace(/^\//, '');
         
-        // 3. 最后使用标题
-        return document.title || pathname;
+        if (cleanPath && cleanPath !== 'index') {
+            console.log('Giscus: 使用路径作为标识:', cleanPath);
+            return cleanPath;
+        }
+        
+        // 4. 最后使用标题
+        const title = document.title || 'untitled';
+        console.log('Giscus: 使用标题作为标识:', title);
+        return title;
     };
     
     s.dataset.mapping     = 'specific';

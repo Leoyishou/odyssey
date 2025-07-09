@@ -1,10 +1,10 @@
 ---
-draw:
-title: JVM参数
+comment_id: b8063adf
 date created: 2023-12-26
 date modified: 2025-02-06
+draw: null
+title: JVM参数
 ---
-
 ## 标准参数
 
 标准参数是 jvm 所有版本都是支持的参数。

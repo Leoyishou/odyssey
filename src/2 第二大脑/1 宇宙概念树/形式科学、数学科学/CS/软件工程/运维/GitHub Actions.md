@@ -1,10 +1,10 @@
 ---
-draw:
-title: GitHub Actions
+comment_id: 74107f82
 date created: 2024-11-25
 date modified: 2025-02-06
+draw: null
+title: GitHub Actions
 ---
-
 ## 本质
 
 一条`git push`触发一连串命令，比如

@@ -1,10 +1,10 @@
 ---
-draw:
-title: Material Design
+comment_id: d0addf30
 date created: 2025-04-14
 date modified: 2025-04-14
+draw: null
+title: Material Design
 ---
-
 根据Google官方 Material Design 规范（Material.io 官方文档），Material Design 明确定义了以下关键特征：
 
 布局 (Layout)：使用网格系统、卡片、明确的阴影与层次结构。

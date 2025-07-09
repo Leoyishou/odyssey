@@ -1,8 +1,9 @@
 ---
-draw:
-title: Assignment 2 word2vec
+comment_id: 8cf41ad9
 date created: 2025-01-24
 date modified: 2025-02-14
+draw: null
+title: Assignment 2 word2vec
 ---
 - [干了啥](#%E5%B9%B2%E4%BA%86%E5%95%A5)
 - [naive-softmax](#naive-softmax)

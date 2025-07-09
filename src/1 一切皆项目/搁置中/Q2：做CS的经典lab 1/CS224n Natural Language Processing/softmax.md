@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: softmax
+comment_id: 2bc1dc2e
 date created: 2025-01-24
 date modified: 2025-01-24
+draw: null
+tags: []
+title: softmax
 ---
-
 ```mermaid
 flowchart LR
     A[输入向量] --> B[计算指数]

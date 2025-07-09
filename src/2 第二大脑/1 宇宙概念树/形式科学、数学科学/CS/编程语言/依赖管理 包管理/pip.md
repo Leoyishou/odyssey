@@ -1,10 +1,10 @@
 ---
-draw:
-title: pip
+comment_id: edb1f503
 date created: 2025-03-23
 date modified: 2025-04-16
+draw: null
+title: pip
 ---
-
 以下是pip常用命令的markdown表格版：
 
 | 功能                    | 命令示例                                                                       | 备注                                 |

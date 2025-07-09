@@ -1,10 +1,10 @@
 ---
-draw:
-title: CR
+comment_id: '98634191'
 date created: 2025-02-04
 date modified: 2025-02-06
+draw: null
+title: CR
 ---
-
 ## 一、题目
 
 [第五届CR大赛-鲲鹏试卷.pdf](https://wiki.corp.qunar.com/download/attachments/905739467/%E7%AC%AC%E4%BA%94%E5%B1%8ACR%E5%A4%A7%E8%B5%9B-%E9%B2%B2%E9%B9%8F%E8%AF%95%E5%8D%B7.pdf?version=1&modificationDate=1717568963000&api=v2)

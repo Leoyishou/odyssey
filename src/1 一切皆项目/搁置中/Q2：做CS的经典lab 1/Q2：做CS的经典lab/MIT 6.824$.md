@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: MIT 6.824$
+comment_id: 6ae2f963
 date created: 2024-07-11
 date modified: 2024-11-12
+draw: null
+tags: []
+title: MIT 6.824$
 ---
-
 Lab：
 https://www.youtube.com/watch?v=IdCbMO0Ey9I&feature=youtu.be
 

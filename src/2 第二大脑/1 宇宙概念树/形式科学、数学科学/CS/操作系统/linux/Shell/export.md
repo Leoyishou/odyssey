@@ -1,10 +1,10 @@
 ---
-draw:
-title: export
+comment_id: 46ce0125
 date created: 2024-11-26
 date modified: 2025-02-06
+draw: null
+title: export
 ---
-
 是的，这是一个 bash 命令。这条命令是在修改和导出环境变量 PYTHONPATH：
 
 让我解释一下这条命令的组成部分：

@@ -1,10 +1,10 @@
 ---
-draw:
-title: viva前端CICD
+comment_id: 9debc268
 date created: 2025-03-14
 date modified: 2025-03-15
+draw: null
+title: viva前端CICD
 ---
-
 根据你提供的前端部署配置，前端中实际使用的仓库变量和密码（`secrets`）如下：
 
 ---

@@ -1,10 +1,10 @@
 ---
-draw:
-title: vLLM
+comment_id: df09807a
 date created: 2025-03-24
 date modified: 2025-03-24
+draw: null
+title: vLLM
 ---
-
 vLLM 是一个开源的 Python 库，用于快速、高效地部署大型语言模型（LLMs）。它的主要目标是显著提升 LLMs 的推理速度和吞吐量，使其更适用于生产环境。
 
 以下是 vLLM 的一些关键特点和功能：

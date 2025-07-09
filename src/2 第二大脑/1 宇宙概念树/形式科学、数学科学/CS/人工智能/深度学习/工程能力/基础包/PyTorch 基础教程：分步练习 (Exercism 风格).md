@@ -1,10 +1,10 @@
 ---
-draw:
-title: PyTorch 基础教程：分步练习 (Exercism 风格)
+comment_id: e0256494
 date created: 2025-03-27
 date modified: 2025-04-22
+draw: null
+title: PyTorch 基础教程：分步练习 (Exercism 风格)
 ---
-
 ## PyTorch 基础教程：分步练习 (Exercism 风格)
 
 本教程面向有一定 Python 编程基础的读者，通过一系列循序渐进的练习，在大约 20 小时内掌握 PyTorch 的基础概念和编程方法。每一步练习围绕一个核心概念，包含理论介绍、编程任务以及用于验证结果的简单测试。**请按照顺序逐步完成每个练习**，可以在 Google [[colab]] 等环境运行。

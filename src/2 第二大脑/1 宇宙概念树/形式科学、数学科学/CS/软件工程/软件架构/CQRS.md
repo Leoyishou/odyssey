@@ -1,8 +1,9 @@
 ---
-draw:
-title: CQRS
+comment_id: 9f8d7a24
 date created: 2025-05-06
 date modified: 2025-05-13
+draw: null
+title: CQRS
 ---
 > 举个例子，<<刑事诉讼法>>是很少的写，很多的读，比如教材里面、法院的法官、律师们的参考资料等等
 

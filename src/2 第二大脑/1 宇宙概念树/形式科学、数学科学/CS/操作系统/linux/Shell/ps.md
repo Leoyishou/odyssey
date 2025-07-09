@@ -1,10 +1,10 @@
 ---
-draw:
-title: ps
+comment_id: d3901205
 date created: 2024-12-18
 date modified: 2025-02-06
+draw: null
+title: ps
 ---
-
 **在某种程度上可以类比于 Windows 的任务管理器**。
 
 

@@ -1,8 +1,9 @@
 ---
-draw:
-title: Immutable List，tuple
+comment_id: '69053348'
 date created: 2025-03-26
 date modified: 2025-03-29
+draw: null
+title: Immutable List，tuple
 ---
 **
 两者都保证了实例本身是不可变的（不能添加、删除、替换元素）。

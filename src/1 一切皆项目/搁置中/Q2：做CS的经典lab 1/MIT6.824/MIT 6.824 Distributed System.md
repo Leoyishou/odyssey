@@ -1,10 +1,10 @@
 ---
-draw:
-title: MIT 6.824 Distributed System
+comment_id: c8301fbc
 date created: 2024-07-11
 date modified: 2025-04-08
+draw: null
+title: MIT 6.824 Distributed System
 ---
-
 计算机硕士开题想基于MIT 6.824做一个分布式存储引擎，请问想法是否可行？- 知乎  
 https://www.zhihu.com/question/53471701
 

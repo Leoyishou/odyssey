@@ -1,11 +1,10 @@
 ---
-draw:
-title: uv
+comment_id: ad7da869
 date created: 2025-03-24
 date modified: 2025-04-18
+draw: null
+title: uv
 ---
-
-
 ```Java
 uv venv taurus --python 3.12
 source taurus/bin/activate

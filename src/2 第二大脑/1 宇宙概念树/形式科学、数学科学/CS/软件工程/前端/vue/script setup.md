@@ -1,10 +1,10 @@
 ---
-draw:
-title: script setup
+comment_id: e1fb34c1
 date created: 2024-06-19
 date modified: 2025-02-06
+draw: null
+title: script setup
 ---
-
 excerpt
 
 <!-- more -->

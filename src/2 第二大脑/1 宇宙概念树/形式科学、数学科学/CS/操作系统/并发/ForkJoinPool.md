@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: ForkJoinPool
+comment_id: 51c5e789
 date created: 2024-12-06
 date modified: 2024-12-27
+draw: null
+tags: []
+title: ForkJoinPool
 ---
-
 ForkJoinPool和ThreadPoolExecutor都是Java中用于并发执行任务的线程池框架，但它们在设计理念、工作方式和适用场景上有明显区别。
 
 1. 任务分解模型与使用场景：

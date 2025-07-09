@@ -1,10 +1,10 @@
 ---
-draw:
-title: RAG
+comment_id: ad519781
 date created: 2024-11-25
 date modified: 2025-04-16
+draw: null
+title: RAG
 ---
-
 ![CleanShot 2025-04-16 at 23.15.49@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_O3jP7AdX37%2F2025%2F04%2F16%2F23-16-02-ef5fe329d3cc4d7db1a070e6f38b3a72-CleanShot%202025-04-16%20at%2023.15.49-2x-30531a.png)
 
 本文的核心观点总结如下：

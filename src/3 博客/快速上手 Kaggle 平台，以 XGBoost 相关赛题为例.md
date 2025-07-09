@@ -1,8 +1,9 @@
 ---
-draw:
-title: 快速上手 Kaggle 平台，以 XGBoost 相关赛题为例
+comment_id: ffa0be3c
 date created: 2025-03-02
 date modified: 2025-04-03
+draw: null
+title: 快速上手 Kaggle 平台，以 XGBoost 相关赛题为例
 ---
 **🎯 Kaggle 是一个数据科学的在线平台，每个赛题就是一个数据分析的场景，而且上面的代码都是公开的，数据也都存储在云上，只要点几下，就能直接在云端环境运行别人的代码，快速实现项目复现和模型训练。是一个很好的算法学习和实战的平台，可以用来学习和练手：**
 

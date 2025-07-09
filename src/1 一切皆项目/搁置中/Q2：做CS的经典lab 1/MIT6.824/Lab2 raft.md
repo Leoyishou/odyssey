@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Lab2 raft
+comment_id: d925666d
 date created: 2024-09-02
 date modified: 2024-12-27
+draw: null
+tags: []
+title: Lab2 raft
 ---
-
 ## 运行
 
 在 Lab2 中，你的 Raft 实现代码主要位于 `6.824/src/raft/` 目录下。与 Lab1 不同，这里不需要像之前运行 MapReduce 一样先编译插件和手动启动进程；相反，你的测试是通过运行 `go test` 命令来自动执行的。

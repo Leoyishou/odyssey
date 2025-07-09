@@ -1,10 +1,10 @@
 ---
-draw:
-title: crossfit
+comment_id: 5d5d74c9
 date created: 2024-05-08
 date modified: 2025-02-06
+draw: null
+title: crossfit
 ---
-
 excerpt
 
 <!-- more -->

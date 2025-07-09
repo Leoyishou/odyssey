@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Neural Machine Translation
+comment_id: 8550c39e
 date created: 2025-01-29
 date modified: 2025-01-29
+draw: null
+tags: []
+title: Neural Machine Translation
 ---
-
 这些任务需要"从一个序列映射到另一个序列"，因此就有了 Seq2Seq 模型。-
 
 - **机器翻译**：输入是某种语言的句子，输出是另一种语言的句子。

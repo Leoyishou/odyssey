@@ -1,10 +1,10 @@
 ---
-draw:
-title: tree
+comment_id: 0c80cb2f
 date created: 2024-07-02
 date modified: 2025-02-06
+draw: null
+title: tree
 ---
-
 `tree` 命令的一些有用选项：
 
 - `-L n`：限制显示深度为 n 层

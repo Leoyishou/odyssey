@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: RISC-V
+comment_id: b5582dbb
 date created: 2024-12-16
 date modified: 2024-12-27
+draw: null
+tags: []
+title: RISC-V
 ---
-
 ## 学习 RISC-V 的建议
 
 1. **RISC-V 基本概念**  

@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: size_t
+comment_id: 05926b26
 date created: 2024-12-31
 date modified: 2024-12-31
+draw: null
+tags: []
+title: size_t
 ---
-
 `size_t` 是一个无符号整数类型（unsigned integer type），它的具体大小取决于系统架构：
 
 1. 在不同系统上的大小：

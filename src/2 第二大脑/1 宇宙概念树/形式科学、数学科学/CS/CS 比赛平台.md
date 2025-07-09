@@ -1,10 +1,10 @@
 ---
-draw:
-title: CS 比赛平台
+comment_id: cc23dea8
 date created: 2025-03-03
 date modified: 2025-05-03
+draw: null
+title: CS 比赛平台
 ---
-
 类似 **Kaggle** 和 **LeetCode** 这种提供数据科学、算法刷题和竞赛的平台还有不少，它们各自有不同的特色，以下通俗分类介绍：
 
 ---

@@ -1,10 +1,10 @@
 ---
-draw:
-title: func
+comment_id: 69007b59
 date created: 2024-08-15
 date modified: 2025-02-06
+draw: null
+title: func
 ---
-
 ## 静态方法，不属于任何对象或实例
 
 ```go

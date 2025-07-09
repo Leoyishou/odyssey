@@ -1,10 +1,10 @@
 ---
-draw:
-title: v-bind
+comment_id: 08c25d1e
 date created: 2024-06-23
 date modified: 2025-02-06
+draw: null
+title: v-bind
 ---
-
  v-bind 可以简写为 colon
 
 下面代码中的 key color 这些属性前面加了 colon 后，都是可以动态改变的

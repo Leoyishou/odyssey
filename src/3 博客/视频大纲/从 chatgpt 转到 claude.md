@@ -1,9 +1,10 @@
 ---
-draw:
-tags: []
-title: 从 chatgpt 转到 claude
+comment_id: 12a877ed
 date created: 2024-07-24
 date modified: 2024-11-12
+draw: null
+tags: []
+title: 从 chatgpt 转到 claude
 ---
 1. 号, google
 2. 信用卡 rmb - 欧易 --> u -- dupay

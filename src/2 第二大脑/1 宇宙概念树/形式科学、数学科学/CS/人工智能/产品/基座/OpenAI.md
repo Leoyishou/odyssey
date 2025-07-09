@@ -1,11 +1,10 @@
 ---
-draw:
-title: OpenAI
+comment_id: a4b436f2
 date created: 2024-06-18
 date modified: 2025-02-21
+draw: null
+title: OpenAI
 ---
-
-
 <!-- more -->
 
 [How Assistants work - OpenAI API](https://platform.openai.com/docs/assistants/how-it-works)

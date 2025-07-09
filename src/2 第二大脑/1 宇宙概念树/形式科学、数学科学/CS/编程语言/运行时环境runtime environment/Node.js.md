@@ -1,10 +1,10 @@
 ---
-draw:
-title: Node.js
+comment_id: 7a8ba436
 date created: 2025-04-08
 date modified: 2025-04-08
+draw: null
+title: Node.js
 ---
-
 确实，"Node.js"这个名称容易让人误解为一门编程语言，这主要有几个原因：
 
 1. **命名方式相似**：许多编程语言都有".js"、".py"等后缀，如JavaScript、TypeScript、CoffeeScript，所以Node.js的命名格式类似于这些语言。

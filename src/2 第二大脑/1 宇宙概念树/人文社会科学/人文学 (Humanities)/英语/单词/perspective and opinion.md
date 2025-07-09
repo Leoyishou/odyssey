@@ -1,10 +1,10 @@
 ---
-draw:
-title: perspective and opinion
+comment_id: c222bd87
 date created: 2025-02-15
 date modified: 2025-02-15
+draw: null
+title: perspective and opinion
 ---
-
 ## Perspective vs. Opinion
 
 |词汇|核心含义|关键差异|

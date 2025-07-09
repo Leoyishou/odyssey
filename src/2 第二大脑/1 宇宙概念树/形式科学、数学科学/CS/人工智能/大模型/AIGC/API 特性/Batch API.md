@@ -1,9 +1,10 @@
 ---
-draw:
-tags: []
-title: Batch API
+comment_id: fd7f710a
 date created: 2024-11-25
 date modified: 2024-12-27
+draw: null
+tags: []
+title: Batch API
 ---
 **Batch API** 是一种可以批量处理大量请求的异步接口，非常适合那些不需要立即返回结果的任务。例如，如果你有一个庞大的数据集需要分类、要进行大量的嵌入生成，或者需要对模型进行评估，那么 Batch API 可以帮助你更快、更省成本地完成这些工作。
 

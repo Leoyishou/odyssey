@@ -1,10 +1,10 @@
 ---
-draw:
-title: 多层感知机 MLP
+comment_id: e99f01ba
 date created: 2025-02-14
 date modified: 2025-03-27
+draw: null
+title: 多层感知机 MLP
 ---
-
 ## 案例
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F01%2F26%2F17-11-08-23b92ea8f94d137be070996366dea9a6-202501261711777-7e48d7.png)

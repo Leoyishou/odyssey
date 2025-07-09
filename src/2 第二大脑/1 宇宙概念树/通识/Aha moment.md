@@ -1,10 +1,10 @@
 ---
-draw:
-title: Aha moment
+comment_id: 8dd1c481
 date created: 2024-09-01
 date modified: 2025-02-06
+draw: null
+title: Aha moment
 ---
-
 一个突然的顿悟或领悟的时刻
 
 例句：

@@ -1,10 +1,10 @@
 ---
-draw:
-title: Welcome In My Mind
+comment_id: ef348545
 date created: 2025-02-23
 date modified: 2025-04-03
+draw: null
+title: Welcome In My Mind
 ---
-
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F11%2F12%2F01-12-34-294df0a0e7f12e12cbf497c944c19a61-202411120112792-b7a37f.png)
 
 如果你需要一个闹钟的话，那么你也一定需要一个第二大脑。

@@ -1,10 +1,10 @@
 ---
-draw:
-title: Git
+comment_id: 2c3f5d0c
 date created: 2024-06-24
 date modified: 2025-02-15
+draw: null
+title: Git
 ---
-
 ## Git Commit Message
 
 |关键词|描述|

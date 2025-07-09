@@ -1,12 +1,13 @@
 ---
-aliases: [Kafka 在跨系统数据同步中的应用]
-draw:
-title: Kafka 在跨系统数据同步中的应用
-linter-yaml-title-alias: Kafka 在跨系统数据同步中的应用
+aliases:
+- Kafka 在跨系统数据同步中的应用
+comment_id: ae0362d8
 date created: 2025-02-15
 date modified: 2025-02-15
+draw: null
+linter-yaml-title-alias: Kafka 在跨系统数据同步中的应用
+title: Kafka 在跨系统数据同步中的应用
 ---
-
 Kafka 在跨系统数据同步中的应用主要体现在其数据一致性和同步机制，尤其是 "double fetch" 方式对数据同步的启发。
 
 我会研究 Kafka 在跨系统数据同步中的具体实现方式，包括：

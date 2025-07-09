@@ -1,9 +1,10 @@
 ---
-draw:
-tags: []
-title: Ollama
+comment_id: b53ced45
 date created: 2024-12-08
 date modified: 2024-12-27
+draw: null
+tags: []
+title: Ollama
 ---
 **本地跑开源模型用的！**
 

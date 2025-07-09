@@ -1,10 +1,10 @@
 ---
-draw:
-title: mermaid
+comment_id: fbd6951d
 date created: 2024-09-07
 date modified: 2025-02-06
+draw: null
+title: mermaid
 ---
-
 ## 官方文档
 
 https://mermaid.nodejs.cn/intro/

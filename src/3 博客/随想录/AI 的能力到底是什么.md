@@ -1,10 +1,10 @@
 ---
-draw:
-title: AI 的能力到底是什么
+comment_id: '86236084'
 date created: 2024-03-27
 date modified: 2025-02-14
+draw: null
+title: AI 的能力到底是什么
 ---
-
 ![Default_archeology_and_java_code_both_1.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/Default_archeology_and_java_code_both_1.png?x-oss-process=image/resize,l_500)  
 看到一个有趣的问题，如果把 π 的前 1000 位给 GPT，让它预测出后 1000 位，结果可信吗？
 

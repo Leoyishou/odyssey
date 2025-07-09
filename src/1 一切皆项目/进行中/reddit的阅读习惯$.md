@@ -1,10 +1,10 @@
 ---
-draw:
-title: reddit的阅读习惯$
+comment_id: 8eda5b9a
 date created: 2024-07-17
 date modified: 2025-05-03
+draw: null
+title: reddit的阅读习惯$
 ---
-
 ## 结论
 
 1. 通过[Immersive Translate](Immersive%20Translate.md)工具，实现了低摩擦力的英文信息获取。

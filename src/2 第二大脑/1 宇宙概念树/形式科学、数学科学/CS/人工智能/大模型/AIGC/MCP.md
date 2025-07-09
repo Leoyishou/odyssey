@@ -1,10 +1,10 @@
 ---
-draw:
-title: MCP
+comment_id: b61bcbc1
 date created: 2025-03-02
 date modified: 2025-04-14
+draw: null
+title: MCP
 ---
-
 filesystem
 
 https://mcp.so/server/filesystem/modelcontextprotocol

@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: 如何开始学习一个 Lab，以 MIT6.824 Distributed System为例 $
+comment_id: '76882820'
 date created: 2024-07-22
 date modified: 2024-11-12
+draw: null
+tags: []
+title: 如何开始学习一个 Lab，以 MIT6.824 Distributed System为例 $
 ---
-
  [建立直觉](建立直觉)与代码落地相结合，尝试将[使用 “隐喻” 的方式帮你建立对 Raft 的直觉 | 木鸟杂记 (qtmuniao.com)](https://www.qtmuniao.com/2023/11/15/raft-explain/)中的故事作为注释标记到代码实现上。
 
 <!-- more -->

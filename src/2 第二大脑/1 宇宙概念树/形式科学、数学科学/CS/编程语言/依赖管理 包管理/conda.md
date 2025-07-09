@@ -1,10 +1,10 @@
 ---
-draw:
-title: conda
+comment_id: ddabe571
 date created: 2024-07-13
 date modified: 2025-03-24
+draw: null
+title: conda
 ---
-
 ## Conda 常用命令 Cheatsheet
 
 ### 环境管理

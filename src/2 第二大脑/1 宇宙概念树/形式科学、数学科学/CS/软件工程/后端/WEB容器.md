@@ -1,10 +1,10 @@
 ---
-draw:
-title: WEB容器
+comment_id: 286711c5
 date created: 2023-12-25
 date modified: 2025-06-20
+draw: null
+title: WEB容器
 ---
-
 forward proxy, reverse proxy
 
 从哪儿到哪儿算正向？

@@ -1,10 +1,10 @@
 ---
-draw:
-title: promise vs guarantee
+comment_id: 6d13bb4d
 date created: 2025-01-17
 date modified: 2025-02-06
+draw: null
+title: promise vs guarantee
 ---
-
 从中文视角来看，**promise** 和 **guarantee** 都可以翻译为"保证"，但二者在语气和场景上仍有一定区别。大体而言，
 
 - **promise** 更侧重"承诺"或"答应"，强调个人或组织自发的意愿与行动；

@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: system call
+comment_id: 445ef0fe
 date created: 2024-12-23
 date modified: 2024-12-27
+draw: null
+tags: []
+title: system call
 ---
-
 ```c
 void
 syscall(void)

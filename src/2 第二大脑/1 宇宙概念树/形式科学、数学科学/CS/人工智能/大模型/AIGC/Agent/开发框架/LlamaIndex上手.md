@@ -1,10 +1,10 @@
 ---
-draw:
-title: LlamaIndex上手
+comment_id: f4ce9d54
 date created: 2025-04-16
 date modified: 2025-04-16
+draw: null
+title: LlamaIndex上手
 ---
-
 下面给出一个参考示例教程，整体风格与前面 PyTorch 基础教程类似，分步骤介绍 **LlamaIndex**（原名 GPT Index）的核心概念与常用功能。每一步包含「**理论介绍**」、「**编程任务**」和「**验证**」三部分，帮助读者循序渐进地掌握 LlamaIndex 的使用。该教程的目标是让你在大约 10~15 小时内，对 LlamaIndex 的主流功能（数据接入、索引构建、查询、与 LLM 结合等）形成整体认识，并能完成简单项目。**每步的示例代码可在 Jupyter Notebook、Colab 或任何 Python 环境运行。**
 
 > **假设前置条件**：读者对 Python 基础较熟悉，对语言模型（LLM）或向量检索有基本概念即可。**关于模型和接口**：本教程在示例中以 OpenAI 接口为例，其他模型或私有 API 的使用方式与此类似，只需替换相关的配置和调用方式。**关于环境**：如果在 Colab 环境使用，请先 `!pip install llama-index openai`。**教程结构总览**：

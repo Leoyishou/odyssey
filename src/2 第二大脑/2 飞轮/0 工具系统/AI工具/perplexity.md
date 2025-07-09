@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: perplexity
+comment_id: 3653adf5
 date created: 2024-11-25
 date modified: 2024-12-27
+draw: null
+tags: []
+title: perplexity
 ---
-
 ## Home（主页）
 
 这是基础搜索界面，用户可以在这里直接输入问题并获取答案。它提供了实时的搜索功能，能够理解自然语言提问并给出准确的回答[4]。

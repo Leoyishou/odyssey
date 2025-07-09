@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: GloVe
+comment_id: 6d467bdb
 date created: 2025-01-24
 date modified: 2025-01-24
+draw: null
+tags: []
+title: GloVe
 ---
-
 > _先用世界上所有的文本得到共现矩阵，
 > 然后确定好参数也就是想做成几维，之后给每个词一个初始 embedding，
 > 再通过随机梯度下降移动这些 embedding，直到两个 embedding 的点积等于最初共生矩阵里的数的对数

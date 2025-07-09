@@ -1,10 +1,10 @@
 ---
-draw:
-title: Set
+comment_id: e61a47f6
 date created: 2024-08-13
 date modified: 2025-03-27
+draw: null
+title: Set
 ---
-
 ## 认知
 
 Set 的本质是一个带了去重功能的 `List<Entry>`

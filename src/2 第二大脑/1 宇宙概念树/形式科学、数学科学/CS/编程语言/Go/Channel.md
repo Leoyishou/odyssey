@@ -1,10 +1,10 @@
 ---
-draw:
-title: Channel
+comment_id: ea41b12d
 date created: 2024-07-22
 date modified: 2025-02-06
+draw: null
+title: Channel
 ---
-
 ```go
 c.server()          //普通调用一个函数
 go c.schedule()     //异步起一个线程

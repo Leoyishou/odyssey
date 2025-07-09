@@ -1,10 +1,10 @@
 ---
-draw:
-title: 微调实战 -- 用Open-R1微调Qwen模型，强化AI数学推理能力
+comment_id: efb805eb
 date created: 2025-03-11
 date modified: 2025-06-17
+draw: null
+title: 微调实战 -- 用Open-R1微调Qwen模型，强化AI数学推理能力
 ---
-
 ## 参考比赛
 
 https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-2

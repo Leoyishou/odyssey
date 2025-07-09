@@ -1,10 +1,10 @@
 ---
-draw:
-title: Unsloth
+comment_id: dfb720e7
 date created: 2025-03-24
 date modified: 2025-07-04
+draw: null
+title: Unsloth
 ---
-
 Unsloth 是一个开源工具，专门用来加速大语言模型（LLMs）的微调过程。https://github.com/unslothai/unsloth
 
 - 高效微调：Unsloth 的微调速度比传统方法快 2-5 倍，内存占用减少 50%-80%。这意味着你可以用更少的资源完成微调任务。

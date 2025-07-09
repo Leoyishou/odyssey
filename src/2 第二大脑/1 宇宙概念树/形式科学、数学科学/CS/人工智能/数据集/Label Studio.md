@@ -1,10 +1,10 @@
 ---
-draw:
-title: Label Studio
+comment_id: f71d85f6
 date created: 2025-06-30
 date modified: 2025-06-30
+draw: null
+title: Label Studio
 ---
-
 下图左侧的七个 **Project Settings** 子菜单控制的是「项目级」功能，作用分别如下（以自部署的开源 Label Studio v1.x 为例）：
 
 | 菜单                     | 典型设置                                            | 作用简介                                                                                                                                                                                                                                                                                                                                           | 何时最常用                   |

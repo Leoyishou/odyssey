@@ -1,10 +1,10 @@
 ---
-draw:
-title: SPA 单页应用
+comment_id: b54bfa2d
 date created: 2025-04-13
 date modified: 2025-04-14
+draw: null
+title: SPA 单页应用
 ---
-
 正确！对于一个SPA（单页应用）前端：
 
 1. 服务器实际上只会 host 构建后的文件，而不是开发时的源文件。在构建过程中：

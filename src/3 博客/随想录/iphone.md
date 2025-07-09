@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: iphone
+comment_id: 3a345b3e
 date created: 2024-11-05
 date modified: 2024-12-27
+draw: null
+tags: []
+title: iphone
 ---
-
 最优解是加拿大版，但是很难买到。
 如果买不到，次优解是日版
 

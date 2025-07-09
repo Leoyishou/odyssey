@@ -1,10 +1,10 @@
 ---
-draw:
-title: UE 相关杂七杂八
+comment_id: a0618ca7
 date created: 2025-04-09
 date modified: 2025-04-09
+draw: null
+title: UE 相关杂七杂八
 ---
-
 问题分类：
 
 你所描述的界面属于经典的**范围选择问题（Range Selection）** 和 **值域映射问题（Value Mapping）**的变体。具体表现为：用户设定旅游天数后，需要根据景点的优先级（A、B、C级）在对应的时间范围内，合理规划并可视化各个景点的安排，呈现出景点与时间轴的直观关系。

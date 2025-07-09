@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Lab 1 MapReduce
+comment_id: c0f1bc9b
 date created: 2024-08-07
 date modified: 2024-11-12
+draw: null
+tags: []
+title: Lab 1 MapReduce
 ---
-
 N 个人去一个有 m 个坑位的大公共卫生间做清洁，该如何调度？这个实验的目标是实现一个分布式的 MapReduce 系统，包括协调器和工作进程，并确保它能正确处理并行任务、容错等情况。
 
 <!-- more -->

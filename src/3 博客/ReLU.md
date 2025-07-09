@@ -1,10 +1,10 @@
 ---
-draw:
-title: ReLU
+comment_id: 1ede93d4
 date created: 2025-04-07
 date modified: 2025-04-08
+draw: null
+title: ReLU
 ---
-
 `ReLU` 是**修正线性单元 (Rectified Linear Unit)** 的缩写，它是神经网络中一种非常常用和重要的**激活函数 (Activation Function)**。
 
 **它是干什么的？**

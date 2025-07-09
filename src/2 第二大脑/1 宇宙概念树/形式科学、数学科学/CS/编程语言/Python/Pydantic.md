@@ -1,10 +1,10 @@
 ---
-draw:
-title: Pydantic
+comment_id: 45def34e
 date created: 2024-10-24
 date modified: 2025-02-06
+draw: null
+title: Pydantic
 ---
-
 Pydantic 和 Zod 都是数据验证库，但它们分别针对不同的编程语言生态系统。让我为你详细介绍：
 
 ## Pydantic

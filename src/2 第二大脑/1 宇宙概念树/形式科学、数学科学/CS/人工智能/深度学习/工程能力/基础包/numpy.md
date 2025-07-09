@@ -1,10 +1,10 @@
 ---
-draw:
-title: numpy
+comment_id: 388f0ddc
 date created: 2025-05-01
 date modified: 2025-05-02
+draw: null
+title: numpy
 ---
-
 ![CleanShot 2025-05-02 at 01.12.36@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_jzOmk6moae%2F2025%2F05%2F02%2F01-13-39-7cf6eebd668b80f9b99970571048771e-CleanShot%202025-05-02%20at%2001.12.36-2x-627d49.png)
 
 axis0是填横条的那些格子（按列计算），1 是填竖条的那些格子（按行计算）

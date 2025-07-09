@@ -1,10 +1,10 @@
 ---
-draw:
-title: viva 前端
+comment_id: 2be1a8cb
 date created: 2024-10-01
 date modified: 2025-02-16
+draw: null
+title: viva 前端
 ---
-
 ```mermaid
 graph LR
     A[EssayList.vue] -->|选择文章| B[EssayDetail.vue]

@@ -1,10 +1,10 @@
 ---
-draw:
-title: TypeReference
+comment_id: 9a6240e3
 date created: 2024-08-14
 date modified: 2025-02-06
+draw: null
+title: TypeReference
 ---
-
 1. 用的时候的姿势是[匿名内部类](匿名内部类.md)的方式`new TypeReference<Map<String, Map<String, Set<String>>>>(){}`，这样可以使得泛型内容传给其 superClass 的`<T>`
 2. 这里的泛型信息是会保留在字节码中，且可以同过[反射](反射.md)的 API 拿到的。
 

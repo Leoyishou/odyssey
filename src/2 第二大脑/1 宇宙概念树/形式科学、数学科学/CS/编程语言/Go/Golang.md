@@ -1,10 +1,10 @@
 ---
-draw:
-title: Golang
+comment_id: e48c92e5
 date created: 2024-07-11
 date modified: 2025-02-06
+draw: null
+title: Golang
 ---
-
 [指针](指针.md)  
 [切片](切片.md) [内建函数](内建函数.md)  
 [并发编程-Go](并发编程-Go.md)  

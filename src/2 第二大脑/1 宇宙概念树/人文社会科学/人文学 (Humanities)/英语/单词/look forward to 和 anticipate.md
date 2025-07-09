@@ -1,10 +1,10 @@
 ---
-draw:
-title: look forward to 和 anticipate
+comment_id: d863bf32
 date created: 2025-01-16
 date modified: 2025-02-09
+draw: null
+title: look forward to 和 anticipate
 ---
-
 下面用最简洁的语言从第一性原理出发，归纳出这两个表达的本质区别，并用 Markdown 表格呈现结果：
 
 |单词|本质区别|

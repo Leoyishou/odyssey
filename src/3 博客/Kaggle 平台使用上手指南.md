@@ -1,10 +1,10 @@
 ---
-draw:
-title: Kaggle 平台使用上手指南
+comment_id: '25209407'
 date created: 2025-03-23
 date modified: 2025-03-23
+draw: null
+title: Kaggle 平台使用上手指南
 ---
-
 ## Kaggle房价预测比赛入门指南
 
 Kaggle 上的 "House Prices: Advanced Regression Techniques"（房价预测）比赛是初学者练习完整机器学习流程的一个很好的起点[1]。通过这个比赛，您可以学习从数据探索、模型训练到生成提交结果的整个过程。本指南将一步步带您从零开始参与该比赛，最终成功提交预测结果并查看分数（排名高低并不重要，重在参与和学习）。

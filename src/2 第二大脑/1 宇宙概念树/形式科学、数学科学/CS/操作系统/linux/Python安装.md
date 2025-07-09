@@ -1,10 +1,10 @@
 ---
-draw:
-title: Python安装
+comment_id: c0c44f76
 date created: 2023-11-22
 date modified: 2025-02-06
+draw: null
+title: Python安装
 ---
-
 系统默认自带了一个 ```bash
 
 ## 查看一下现有python的位置

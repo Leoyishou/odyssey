@@ -1,10 +1,10 @@
 ---
-draw:
-title: XGboost
+comment_id: f8177ce0
 date created: 2025-01-24
 date modified: 2025-03-02
+draw: null
+title: XGboost
 ---
-
 #第一性原理 Extreme Gradient Boosting（每一步都计算损失函数的梯度，指导下一棵树往哪个方向去纠正错误）
 [[决策树]]就是类似于用纹不纹身来判断一个人是不是好女孩，价值观太单一了，用 xgboost 搞多棵树，逐步补充自己判断失误的地方  
 单棵[[决策树]]就像是用一个过于简单的标准来判断，比如"纹身=不好"这种非黑即白的思维。这样显然是有偏见且不准确的：

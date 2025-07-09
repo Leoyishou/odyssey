@@ -1,10 +1,10 @@
 ---
-draw:
-title: Logback
+comment_id: 6843ea48
 date created: 2024-08-08
 date modified: 2025-02-06
+draw: null
+title: Logback
 ---
-
 用 AI 来解释 logback 配置是个不错的方法，如下
 
 这是一个 Logback 日志配置文件。我将用表格形式总结主要组件和其功能：

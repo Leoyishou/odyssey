@@ -1,10 +1,10 @@
 ---
-draw:
-title: colab
+comment_id: d6e966c6
 date created: 2025-03-27
 date modified: 2025-04-18
+draw: null
+title: colab
 ---
-
 Colab，全称 **Google Colaboratory**，是谷歌提供的一种在线代码运行平台，简单讲就是：
 
 你可以直接用浏览器打开，不需要在自己的电脑上安装复杂的软件或环境，就能免费地：

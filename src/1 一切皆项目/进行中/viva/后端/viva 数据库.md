@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: viva 数据库
+comment_id: 6c064067
 date created: 2024-10-02
 date modified: 2024-12-27
+draw: null
+tags: []
+title: viva 数据库
 ---
-
 ## 更新时间和创建时间字段
 
 1. 为这俩字段设置默认值`CURRENT_TIMESTAMP`

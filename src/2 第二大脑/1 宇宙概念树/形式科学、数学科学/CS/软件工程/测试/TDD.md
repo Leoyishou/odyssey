@@ -1,8 +1,9 @@
 ---
-draw:
-title: TDD
+comment_id: e6a3565a
 date created: 2024-01-18
 date modified: 2025-04-05
+draw: null
+title: TDD
 ---
 **代码实现的留痕似乎不如测试过程的留痕更有意义**
 

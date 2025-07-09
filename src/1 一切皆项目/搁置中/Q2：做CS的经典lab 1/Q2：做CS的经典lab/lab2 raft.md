@@ -1,10 +1,10 @@
 ---
-draw:
-title: lab2 raft
+comment_id: 66b90eb7
 date created: 2024-09-02
 date modified: 2025-05-26
+draw: null
+title: lab2 raft
 ---
-
 ## 测试
 
 这些测试全面覆盖了Raft算法的核心功能，包括领导选举、日志复制、持久化、恢复、快照等，并在各种网络条件（可靠、不可靠）和故障情况（节点崩溃、网络分区）下进行测试，以确保算法的正确性和鲁棒性。

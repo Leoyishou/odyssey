@@ -1,10 +1,10 @@
 ---
-draw:
-title: IBKR
+comment_id: 1572d7eb
 date created: 2024-08-08
 date modified: 2025-02-06
+draw: null
+title: IBKR
 ---
-
 ## 换汇
 
 家人们，换汇不是还有手续费 2 刀么？我感觉也一般呀!  

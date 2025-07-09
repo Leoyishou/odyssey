@@ -1,12 +1,13 @@
 ---
-draw: https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fliuyishou%2Ftmp%2F2024%2F07%2F29%2F14-29-11-250102658e306624126296f0a23acee6-mapreduce.drawio-e226df.png
-aliases: [拆解-规约]
-tags: []
-title: MapReduce
+aliases:
+- 拆解-规约
+comment_id: 25003c25
 date created: 2024-07-11
 date modified: 2024-11-12
+draw: https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fliuyishou%2Ftmp%2F2024%2F07%2F29%2F14-29-11-250102658e306624126296f0a23acee6-mapreduce.drawio-e226df.png
+tags: []
+title: MapReduce
 ---
-
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F28%2F17-58-18-a630259d341bb3f30076abf7ae563b59-20240728175817-c677c1.png)
 
 <!-- more -->

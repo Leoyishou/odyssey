@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: kernel
+comment_id: ff67ee5d
 date created: 2024-12-25
 date modified: 2024-12-27
+draw: null
+tags: []
+title: kernel
 ---
-
 ```Java
 . 
 ├── main.c        // lab1

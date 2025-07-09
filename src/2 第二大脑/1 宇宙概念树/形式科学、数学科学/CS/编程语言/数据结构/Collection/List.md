@@ -1,10 +1,10 @@
 ---
-draw:
-title: List
+comment_id: fde2a1f1
 date created: 2024-08-13
 date modified: 2025-03-27
+draw: null
+title: List
 ---
-
 好的，根据你之前的要求和补充，我为你整理了一个包含 Python `list` 和 Java `List` (以 `ArrayList` 为代表) 常见高频操作的对比表格，并按个人理解的常用频率大致排序：
 
 | 目的            | **Java  (针对 List/ArrayList)**                                                                                                                                                                                           | **Python**                                                           |     | **备注 (Remarks)**                                                                                            |

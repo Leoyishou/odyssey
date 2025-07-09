@@ -1,10 +1,10 @@
 ---
-draw:
-title: OOP-Klass Model
+comment_id: b7ea6710
 date created: 2024-11-30
 date modified: 2025-02-06
+draw: null
+title: OOP-Klass Model
 ---
-
 让我用简单的话解释：
 
 想象你有一个玩具盒子(这就是Java对象)。这个盒子分两部分：

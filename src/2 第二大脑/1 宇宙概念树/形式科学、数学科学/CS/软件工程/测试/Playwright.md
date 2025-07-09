@@ -1,10 +1,10 @@
 ---
-draw:
-title: Playwright
+comment_id: f9f8e51f
 date created: 2025-03-13
 date modified: 2025-03-14
+draw: null
+title: Playwright
 ---
-
 **Playwright** 是一个由微软开发的开源的浏览器自动化测试框架，专门用来做网页和前端自动化测试。
 
 ---

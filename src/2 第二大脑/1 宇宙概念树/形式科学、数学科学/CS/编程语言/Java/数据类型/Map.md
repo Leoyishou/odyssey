@@ -1,10 +1,10 @@
 ---
-draw:
-title: Map
+comment_id: 9cb74268
 date created: 2024-07-19
 date modified: 2025-05-02
+draw: null
+title: Map
 ---
-
 ## Map 的本质是一个带了查找功能的 `List<Entry>`
 
 ```java

@@ -1,10 +1,10 @@
 ---
-draw:
-title: LLM大模型
+comment_id: b97a1e4b
 date created: 2024-10-21
 date modified: 2025-07-03
+draw: null
+title: LLM大模型
 ---
-
 #最佳实践   大语言模型系统化学习只需要看斯坦福三节课就够了：CS25: 通识类的整体介绍 CS224N: NLP+深度神经网络+Transformer CS336: 大语言模型从头实现，尤其是会介绍最新的进展（比如为什么现在的LLM都用SwiGLU）如果深度了解机器学习基础，可上CS229机器学习以及CS230深度学习。以上所有课程均Online+有视频+随业界进展实时更新。
 
 想学习大语言模型(LLM)，应该从哪个开源模型开始？- 三风的回答 - 知乎

@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Lab 2 Key Value server
+comment_id: 33edb2f4
 date created: 2024-08-07
 date modified: 2024-11-12
+draw: null
+tags: []
+title: Lab 2 Key Value server
 ---
-
 ## 资料
 
 [Raft 算法介绍 - 谭新宇的博客 (tanxinyu.work)](https://tanxinyu.work/raft/)

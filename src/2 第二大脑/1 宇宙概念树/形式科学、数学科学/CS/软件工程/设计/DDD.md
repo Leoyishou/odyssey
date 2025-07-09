@@ -1,10 +1,10 @@
 ---
-draw:
-title: DDD
+comment_id: 7041fe7c
 date created: 2024-08-19
 date modified: 2025-03-15
+draw: null
+title: DDD
 ---
-
 ddd说白了就是以前的service太乱太多了，把他们按照微服务的思想group by在了几个核心领域下  
 mapping的出生和essay的出生有关，但是之后的更新就和essay包括sentence都没关系了。ddd的核心就是把domain划分好，每个domain提供自己的能力，最外层的大逻辑放在application层  
 

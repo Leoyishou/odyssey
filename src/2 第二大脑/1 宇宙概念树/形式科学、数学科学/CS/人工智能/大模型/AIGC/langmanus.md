@@ -1,10 +1,10 @@
 ---
-draw:
-title: langmanus
+comment_id: 20f8e7d8
 date created: 2025-03-24
 date modified: 2025-03-24
+draw: null
+title: langmanus
 ---
-
 这个任务完整地演示了 **LangManus** 是如何通过一个多智能体协作系统，自动地处理用户提出的问题。以下是对整个过程的详细解读：
 
 ---

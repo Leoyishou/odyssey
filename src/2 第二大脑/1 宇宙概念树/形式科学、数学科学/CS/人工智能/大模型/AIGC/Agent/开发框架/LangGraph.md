@@ -1,8 +1,9 @@
 ---
-draw:
-title: LangGraph
+comment_id: 5d8e2aad
 date created: 2025-04-16
 date modified: 2025-04-18
+draw: null
+title: LangGraph
 ---
 1. 持久化与回放 (Checkpointer & Resume) 通过 **Checkpointer** 可把执行状态写入文件 / DB，意外中断后继续执行。
 2. 条件分支、动态路由 **理论介绍**  graph.add_conditional_edges(node, fn)` 允许根据 fn 返回的标签动态路由。常用模式：**Router Node**。

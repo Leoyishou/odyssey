@@ -1,10 +1,10 @@
 ---
-draw:
-title: Genspark
+comment_id: 94a9a9ee
 date created: 2025-04-09
 date modified: 2025-04-09
+draw: null
+title: Genspark
 ---
-
 Genspark 似乎是一家 AI 驱动的搜索引擎，2023 年由前百度高管 Eric Jing 和 Kay Zhu 创立，总部位于加利福尼亚州帕洛阿尔托。
 
 对比分析

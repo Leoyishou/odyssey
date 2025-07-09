@@ -1,10 +1,10 @@
 ---
-draw:
-title: Watchpoint
+comment_id: a9773bd0
 date created: 2024-10-25
 date modified: 2025-02-06
+draw: null
+title: Watchpoint
 ---
-
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F10%2F25%2F11-49-57-e927f53ea46bd4a5adfcda031168c752-202410251149040-96a728.png)
 
 在 IDEA 的调试视图中，这个"靶子"或"目标"符号🎯表示要为该变量设置**字段观察点**（Field Watchpoint）。

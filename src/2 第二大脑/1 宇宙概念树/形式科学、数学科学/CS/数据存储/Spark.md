@@ -1,10 +1,10 @@
 ---
-draw:
-title: Spark
+comment_id: 3fadad0e
 date created: 2025-02-24
 date modified: 2025-02-24
+draw: null
+title: Spark
 ---
-
 Spark：更快、更灵活的干活工具
 
 [[MapReduce]] 虽然能干活，但有点慢，因为它每次计算完都要把结果写回硬盘，再读出来做下一步。Spark 就厉害了，它是个更快的计算引擎，把数据尽量放在内存里跑，速度比 MapReduce 快很多。

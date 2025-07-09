@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Assignment 5
+comment_id: 2471b053
 date created: 2025-01-26
 date modified: 2025-01-26
+draw: null
+tags: []
+title: Assignment 5
 ---
-
 下面给你一个「**任务概览**」，帮助你理解 **CS224n: Assignment #5[updated]** 的整体要求，包括代码部分（coding）需要实现的功能，以及书面部分（written）需要回答的分析问题。和之前的作业类似，你将分别在 Gradescope 上提交 **Assignment 5[coding]** 和 **Assignment 5[written]**。注意，这个作业编码量相对大，并且我们提供的辅助检查（sanity-check）非常有限，你需要投入更多时间自测和调试。
 
 ---

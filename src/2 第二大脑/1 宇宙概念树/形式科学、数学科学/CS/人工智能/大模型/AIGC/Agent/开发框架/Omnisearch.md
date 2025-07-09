@@ -1,12 +1,13 @@
 ---
-aliases: [Omnisearch 开发者教程系列]
-draw:
-title: Omnisearch 开发者教程系列
-linter-yaml-title-alias: Omnisearch 开发者教程系列
+aliases:
+- Omnisearch 开发者教程系列
+comment_id: 20e71a8d
 date created: 2025-04-16
 date modified: 2025-04-16
+draw: null
+linter-yaml-title-alias: Omnisearch 开发者教程系列
+title: Omnisearch 开发者教程系列
 ---
-
 明白了，我将为开发人员编写一个类似风格的 Omnisearch 教程，涵盖其核心概念、功能使用与编码实践，帮助他们快速掌握如何构建文档搜索系统并与实际项目集成。我会按照循序渐进的方式来组织内容，并提供代码示例和验证步骤。
 
 我会尽快整理好初版教程并分享给你。

@@ -1,12 +1,13 @@
 ---
-aliases: [Comprehensive Vocabulary Hierarchy Table]
-draw:
-title: Comprehensive Vocabulary Hierarchy Table
-linter-yaml-title-alias: Comprehensive Vocabulary Hierarchy Table
+aliases:
+- Comprehensive Vocabulary Hierarchy Table
+comment_id: 83f15761
 date created: 2025-03-20
 date modified: 2025-03-20
+draw: null
+linter-yaml-title-alias: Comprehensive Vocabulary Hierarchy Table
+title: Comprehensive Vocabulary Hierarchy Table
 ---
-
 ## Comprehensive Vocabulary Hierarchy Table
 
 | Level 1 | COCA Rank | Level 2 | COCA Rank |

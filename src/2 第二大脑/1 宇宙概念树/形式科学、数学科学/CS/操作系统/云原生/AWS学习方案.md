@@ -1,10 +1,10 @@
 ---
-draw:
-title: AWS学习方案
+comment_id: b2078714
 date created: 2024-01-24
 date modified: 2025-02-06
+draw: null
+title: AWS学习方案
 ---
-
 用起来吧。
 我也是最近开始学的，分享下路线。
 

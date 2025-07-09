@@ -1,10 +1,10 @@
 ---
-draw:
-title: HDFS
+comment_id: 305a483d
 date created: 2025-02-24
 date modified: 2025-02-24
+draw: null
+title: HDFS
 ---
-
 ## **HDFS 是啥？**
 
 HDFS（**Hadoop Distributed File System**，Hadoop 分布式文件系统）是 Hadoop 生态中的**核心存储组件**，专门用于**存储超大规模数据（TB/PB 级）**，适用于大数据存储和处理。

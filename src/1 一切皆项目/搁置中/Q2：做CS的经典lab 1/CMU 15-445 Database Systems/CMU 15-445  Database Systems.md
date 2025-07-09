@@ -1,10 +1,10 @@
 ---
-draw:
-title: CMU 15-445  Database Systems
+comment_id: 138d91b7
 date created: 2025-01-29
 date modified: 2025-02-20
+draw: null
+title: CMU 15-445  Database Systems
 ---
-
 关于 Spring 2023 的通关指南，可以参考 [@xzhseh](https://github.com/xzhseh) 的这篇[CMU 15-445/645 (Spring 2023) Database Systems 通关指北](https://zhuanlan.zhihu.com/p/637960746)，里面涵盖了全部你需要的通关道具，和通关方式建议，以及最重要的，我自己在做 Project 的过程中遇到的，看到的，和自己亲自踩过的坑。
 
 顾源:  

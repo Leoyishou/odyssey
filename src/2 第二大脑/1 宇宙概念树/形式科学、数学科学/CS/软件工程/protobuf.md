@@ -1,10 +1,10 @@
 ---
-draw:
-title: protobuf
+comment_id: c062bb8e
 date created: 2024-12-10
 date modified: 2025-02-06
+draw: null
+title: protobuf
 ---
-
 你有一份「秘密文件」（`byte[]` 的二进制数据），想把它变成一本「故事书」（你的自定义Java对象DailySortPrice）。
 可是这个二进制数据是用「特别的语言」写的，别人不一定看得懂。
 Protobuf 就像是一本「词典」，按照 `.proto` 文件的定义将二进制数据翻译成一种「标准语言」（Protobuf对象）。

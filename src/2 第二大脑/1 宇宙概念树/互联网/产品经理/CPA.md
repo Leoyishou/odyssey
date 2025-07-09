@@ -1,8 +1,9 @@
 ---
-draw:
-title: CPA
+comment_id: e6e72806
 date created: 2025-06-09
 date modified: 2025-06-09
+draw: null
+title: CPA
 ---
 **CPA 是 “Cost Per Acquisition / Cost Per Action” 的缩写，中文常译为「每次获客成本」或「每次转化成本」。**
 

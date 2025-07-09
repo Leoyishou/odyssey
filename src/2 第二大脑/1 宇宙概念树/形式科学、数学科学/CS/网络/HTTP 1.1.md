@@ -1,10 +1,10 @@
 ---
-draw:
-title: HTTP 1.1
+comment_id: fec45974
 date created: 2024-06-04
 date modified: 2025-02-06
+draw: null
+title: HTTP 1.1
 ---
-
 Web 开发必须掌握的三个技术：Token、Cookie、Session - 华为云开发者联盟的文章 - 知乎  
 https://zhuanlan.zhihu.com/p/171787680  
 还分不清 Cookie、Session、Token、JWT？- 老刘的文章 - 知乎  

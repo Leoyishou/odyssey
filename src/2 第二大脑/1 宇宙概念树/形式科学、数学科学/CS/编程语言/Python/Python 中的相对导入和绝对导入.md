@@ -1,10 +1,10 @@
 ---
-draw:
-title: Python 中的相对导入和绝对导入
+comment_id: 4643792e
 date created: 2025-03-15
 date modified: 2025-03-15
+draw: null
+title: Python 中的相对导入和绝对导入
 ---
-
 ## 绝对导入
 
 绝对导入是从项目的根目录开始引用模块的方式。无论你的当前文件位于项目的哪个位置，绝对导入的路径都是固定的。

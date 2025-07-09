@@ -1,13 +1,11 @@
 ---
-draw:
-tags: []
-title: QEMU
+comment_id: d5fe5a6f
 date created: 2024-12-11
 date modified: 2024-12-27
+draw: null
+tags: []
+title: QEMU
 ---
-
-
-
 ---
 
 ## 1. **虚拟化功能**

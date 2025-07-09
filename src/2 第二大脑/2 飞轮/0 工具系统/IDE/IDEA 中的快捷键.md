@@ -1,11 +1,11 @@
 ---
-draw:
-title: IDEA 中的快捷键
-tags: []
+comment_id: 7e6597dc
 date created: 2024-05-16
 date modified: 2024-11-12
+draw: null
+tags: []
+title: IDEA 中的快捷键
 ---
-
 excerpt
 
 <!-- more -->

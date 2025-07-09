@@ -1,10 +1,10 @@
 ---
-draw:
-title: temperature
+comment_id: a30104e0
 date created: 2025-04-06
 date modified: 2025-04-06
+draw: null
+title: temperature
 ---
-
 结果验证：`model_gpt.generate` 将基于 GPT-2 继续生成文本。`max_length=50` 指定总长度上限（包含初始prompt的tokens）。对贪婪搜索，模型每一步都选概率最高的词，输出确定；对随机采样，我们设置了 `do_sample=True`，并使用 top-k 和 top-p (nucleus) 采样方法来引入随机选择（top_k=50表示每步仅从概率最高的50个词中抽样，top_p=0.9表示从累计概率0.9的候选中抽样），这些技术通常使文本更有趣且避免太离谱的词。
 
 您会看到两段不同的续写，例如：

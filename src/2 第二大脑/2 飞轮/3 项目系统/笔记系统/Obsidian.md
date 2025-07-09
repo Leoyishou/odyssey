@@ -1,10 +1,10 @@
 ---
-draw:
-title: Obsidian
+comment_id: de58cc80
 date created: 2024-07-15
 date modified: 2025-03-31
+draw: null
+title: Obsidian
 ---
-
 ## Obsidian FastStart脚本使用指南
 
 ### 背景介绍

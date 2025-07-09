@@ -1,11 +1,12 @@
 ---
-aliases: [Remote Procedure Call]
-draw: 
-title: RPC
+aliases:
+- Remote Procedure Call
+comment_id: 0799b6c6
 date created: 2024-09-21
 date modified: 2025-02-06
+draw: null
+title: RPC
 ---
-
 ## 本质
 
 RPC（Remote Procedure Call），又叫做远程过程调用。远程调用的本质就是 `resp = func（req）`一个方法门面，用本地 CPU 干，就是本地调用，让远方的 CPU 干就是远程过程调用。

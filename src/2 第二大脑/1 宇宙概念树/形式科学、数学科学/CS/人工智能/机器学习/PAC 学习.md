@@ -1,10 +1,10 @@
 ---
-draw:
-title: PAC 学习
+comment_id: 38640c05
 date created: 2025-02-22
 date modified: 2025-02-22
+draw: null
+title: PAC 学习
 ---
-
 ## **1. PAC 学习（Probably Approximately Correct Learning）**
 
 PAC 学习（**可能近似正确学习**）是一种**机器学习理论框架**，用于分析学习算法在有限数据集上的**泛化能力**，即它能否在未见过的数据上仍然表现良好。

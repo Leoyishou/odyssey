@@ -1,8 +1,9 @@
 ---
-draw:
-title: AIGC可能并没有多强大
+comment_id: e7e58b90
 date created: 2023-12-04
 date modified: 2025-03-20
+draw: null
+title: AIGC可能并没有多强大
 ---
 - [一、使用经历和分享内容](#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E7%BB%8F%E5%8E%86%E5%92%8C%E5%88%86%E4%BA%AB%E5%86%85%E5%AE%B9)
 - [二、一些前置概念](#%E4%BA%8C%E3%80%81%E4%B8%80%E4%BA%9B%E5%89%8D%E7%BD%AE%E6%A6%82%E5%BF%B5)

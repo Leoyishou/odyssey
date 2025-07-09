@@ -1,10 +1,10 @@
 ---
-draw:
-title: IDB
+comment_id: 4fee74cb
 date created: 2025-04-15
 date modified: 2025-04-15
+draw: null
+title: IDB
 ---
-
 当然可以！下面是对 **IDB** 的形象介绍：
 
 ---

@@ -1,10 +1,10 @@
 ---
-draw:
-title: COMD
+comment_id: 41aaace6
 date created: 2024-12-15
 date modified: 2025-02-06
+draw: null
+title: COMD
 ---
-
 ## COMD 能力模型：4 种复杂度 +3 个维度
 
 为了彻底解决要求不明确的问题，让你更好地理解不同职级的能力差异，我根据自己的思考和担任晋升评委的经验，提炼出了一套兼容性很强又容易理解的能力模型：**面向复杂度的多维度能力模型**（Complexity-Oriented & Multi-Dimension Capability Model），简称 **COMD 能力模型**。

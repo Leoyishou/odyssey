@@ -1,8 +1,9 @@
 ---
-draw:
-title: 骨干网络 Backbones
+comment_id: 7244a77e
 date created: 2025-05-12
 date modified: 2025-05-12
+draw: null
+title: 骨干网络 Backbones
 ---
 ```Java
 

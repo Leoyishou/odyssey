@@ -1,10 +1,10 @@
 ---
-draw:
-title: Java@
+comment_id: 478c78fa
 date created: 2024-07-03
 date modified: 2025-05-10
+draw: null
+title: Java@
 ---
-
 提升？看代码啊，不用看什么spring啊netty之类的庞然大物，说几个力所能及的库，可以好好研究。知识是有索引的，看到不懂得就去查慢慢就提升了。
 
 1.lombok*，看看怎么实现的，这个牵涉java的编译部分挺有意思；通过注解对几种设计模式的实现很有意思；试着扩展，比如能不能搞个单例的注解？

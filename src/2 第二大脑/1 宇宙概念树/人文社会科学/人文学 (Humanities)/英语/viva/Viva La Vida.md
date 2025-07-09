@@ -1,10 +1,10 @@
 ---
-draw:
-title: Viva La Vida
+comment_id: d8e3e556
 date created: 2024-09-16
 date modified: 2025-02-06
+draw: null
+title: Viva La Vida
 ---
-
 ## 待办区
 
 - [ ] 逐步梳理清楚文件结构，是的 git 的东西变得清晰

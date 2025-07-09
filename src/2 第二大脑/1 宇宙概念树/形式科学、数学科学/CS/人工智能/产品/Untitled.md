@@ -1,10 +1,10 @@
 ---
-draw:
-title: Untitled
+comment_id: bb2ff845
 date created: 2025-04-09
 date modified: 2025-04-09
+draw: null
+title: Untitled
 ---
-
 Key Points
 
 - Research suggests that AI-driven travel planning tools vary by region, with global tools like Mindtrip and iplan.ai offering web and app support, while Chinese tools like Wanderboat AI are often web-only.

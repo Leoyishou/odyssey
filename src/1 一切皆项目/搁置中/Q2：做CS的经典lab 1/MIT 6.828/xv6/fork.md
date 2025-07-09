@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: fork
+comment_id: ce9e07ab
 date created: 2024-12-25
 date modified: 2024-12-27
+draw: null
+tags: []
+title: fork
 ---
-
 ```Java
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                  父进程 (在用户态) 调用 fork()                             │

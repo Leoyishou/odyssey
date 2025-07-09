@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: Lab3 Page tables
+comment_id: bef85915
 date created: 2024-12-25
 date modified: 2024-12-27
+draw: null
+tags: []
+title: Lab3 Page tables
 ---
-
 ## ## A kernel page table per process ([hard](https://pdos.csail.mit.edu/6.S081/2020/labs/guidance.html))
 
 ### 为什么要对进程的页表做四次映射

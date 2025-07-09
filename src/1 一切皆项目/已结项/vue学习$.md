@@ -1,10 +1,10 @@
 ---
-draw:
-title: vue学习$
+comment_id: 2d0ed803
 date created: 2024-07-17
 date modified: 2025-05-03
+draw: null
+title: vue学习$
 ---
-
 ```ts
 .
 ├── dist                # 构建后的生产环境文件目录

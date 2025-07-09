@@ -1,10 +1,10 @@
 ---
-draw:
-title: Assignment 5 CNN
+comment_id: 5a77d11a
 date created: 2025-01-26
 date modified: 2025-02-06
+draw: null
+title: Assignment 5 CNN
 ---
-
 这项实验主要让你设计、实现并训练一个基于字符级别的神经机器翻译系统，具体来说包括以下几个方面：
 
 1. **字符级卷积编码器**：你需要用字符级的卷积神经网络（CNN）来替代传统的词汇查找方式生成词嵌入，这样可以更好地捕捉词内部的形态信息，并处理未登录词（）的问题。

@@ -1,10 +1,10 @@
 ---
-draw:
-title: int
+comment_id: 9f00fee5
 date created: 2024-07-22
 date modified: 2025-02-06
+draw: null
+title: int
 ---
-
 4 个 byte  
 4 × 8 个 bit  
 00000000 00000000 00000000 00000000

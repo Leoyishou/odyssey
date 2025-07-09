@@ -1,11 +1,11 @@
 ---
-draw:
-tags: []
-title: xv6
+comment_id: 2b882dfa
 date created: 2024-12-11
 date modified: 2024-12-27
+draw: null
+tags: []
+title: xv6
 ---
-
 xv6是一个用于教学目的的操作系统，它是MIT为其操作系统课程(6.828)开发的。让我详细解释一下:
 
 xv6是Unix Version 6(V6)的一个简化重写版本。Unix V6是1975年发布的经典Unix版本,而xv6则保留了V6的基本设计理念,但使用现代的C语言从头重写,并针对x86架构做了调整。

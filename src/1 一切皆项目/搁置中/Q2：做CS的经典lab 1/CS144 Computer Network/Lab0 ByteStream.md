@@ -1,10 +1,10 @@
 ---
-draw:
-title: Lab0 ByteStream
+comment_id: deda4b73
 date created: 2024-12-30
 date modified: 2025-02-20
+draw: null
+title: Lab0 ByteStream
 ---
-
 ## 目标
 
 实现了一个带容量限制的字节流 ByteStream，这为后续的 TCP 流量控制、可靠传输奠定基础。

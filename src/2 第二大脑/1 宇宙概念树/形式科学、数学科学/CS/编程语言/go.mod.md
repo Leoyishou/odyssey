@@ -1,10 +1,10 @@
 ---
-draw:
-title: go.mod
+comment_id: 0e5808bb
 date created: 2024-12-11
 date modified: 2025-03-26
+draw: null
+title: go.mod
 ---
-
 `go mod init 6.824` 这个命令在 Go 中类似于在 Java 项目中创建 `pom.xml`（Maven）或 `build.gradle`（Gradle）文件。
 
 让我详细解释一下：

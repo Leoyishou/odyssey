@@ -1,10 +1,10 @@
 ---
-draw:
-title: CICD
+comment_id: 81443d6d
 date created: 2023-12-10
 date modified: 2025-02-06
+draw: null
+title: CICD
 ---
-
 这段话主要表达了作者对简单透明的运维工具的偏好，以及对当前复杂化趋势的担忧。让我具体分析一下几个关键点：
 
 1. 对 Jenkins 的赞赏：

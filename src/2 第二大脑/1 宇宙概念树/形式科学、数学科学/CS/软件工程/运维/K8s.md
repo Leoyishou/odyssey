@@ -1,10 +1,10 @@
 ---
-draw:
-title: K8s
+comment_id: 3d3b1033
 date created: 2023-12-04
 date modified: 2025-02-06
+draw: null
+title: K8s
 ---
-
 ## 配置细节
 
 [Setup Your K8s Cluster with AWS EC2 | by Milinda Nandasena | Medium](https://milindasenaka96.medium.com/setup-your-k8s-cluster-with-aws-ec2-3768d78e7f05)

@@ -1,10 +1,10 @@
 ---
-draw:
-title: 英语沉浸式学习 OKR
+comment_id: 09a2b98f
 date created: 2025-04-05
 date modified: 2025-04-05
+draw: null
+title: 英语沉浸式学习 OKR
 ---
-
 好的！下面是一个视觉清晰的 **英语沉浸式学习 OKR 表格模板（适合 Notion 或 Excel 使用）**，你可以直接复制粘贴使用：
 
 ---

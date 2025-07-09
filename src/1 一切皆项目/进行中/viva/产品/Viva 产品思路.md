@@ -1,9 +1,10 @@
 ---
-draw:
-tags: []
-title: Viva 产品思路
+comment_id: c4279133
 date created: 2024-02-16
 date modified: 2024-11-12
+draw: null
+tags: []
+title: Viva 产品思路
 ---
 帮我做一个 kaggle 风格的网站，功能是用户上传中文文章后，会分词，然后用户输入自己认为的英文翻译，网站会帮忙检查对错，并生成闪卡用于间隔复习。
 

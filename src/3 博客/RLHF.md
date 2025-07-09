@@ -1,10 +1,10 @@
 ---
-draw:
-title: RLHF
+comment_id: 1116ee48
 date created: 2025-04-06
 date modified: 2025-04-06
+draw: null
+title: RLHF
 ---
-
 ## 步骤21：强化学习对齐（RLHF）
 
 理论：基于人类反馈的强化学习 (RLHF) 是近年用来对齐 (Align) 大型语言模型行为的关键技术。它通过引入人类偏好来优化模型，使模型输出更符合人意图、安全可靠。RLHF流程通常：先有一个预训练语言模型，通过人类标注一些模型输出的质量，训练一个奖励模型打分，然后使用强化学习（如PPO算法）让语言模型尽量生成高分输出，同时不偏离原先语言能力太远。OpenAI 的 InstructGPT、ChatGPT 都应用了RLHF，使得模型愿意遵循指令、减少不良行为。

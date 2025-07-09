@@ -1,10 +1,10 @@
 ---
-draw:
-title: CheatSheet
+comment_id: 062667a2
 date created: 2024-07-10
 date modified: 2025-03-07
+draw: null
+title: CheatSheet
 ---
-
 作弊用小抄，也引申为精炼的笔记
 
 ---

@@ -1,10 +1,10 @@
 ---
-draw:
-title: BigDecimal
+comment_id: e6d0134d
 date created: 2024-07-16
 date modified: 2025-03-27
+draw: null
+title: BigDecimal
 ---
-
 ROUND_HALF_UP 四舍五入
 
 compareTo

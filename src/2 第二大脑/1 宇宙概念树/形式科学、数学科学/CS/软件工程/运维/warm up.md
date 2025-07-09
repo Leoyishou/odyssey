@@ -1,10 +1,10 @@
 ---
-draw:
-title: warm up
+comment_id: db4d3051
 date created: 2023-12-08
 date modified: 2025-02-06
+draw: null
+title: warm up
 ---
-
 how we can address the issue of jvm warm-up time and this is something that obviously affects lots of people when they're running applications that are compiled into byte codes  
 and the idea behind this presentation is to sort of go into look at a number of different potential solutions to this problem because really there isn't one solution to fit everything  
 so we'll look at a variety of different approaches to how you can alleviate or even eliminate the whole warm-up issue now the first thing to look at is what do we kind of mean by starting a Java application  

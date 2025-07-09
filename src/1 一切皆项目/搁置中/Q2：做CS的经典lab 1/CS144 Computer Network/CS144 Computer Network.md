@@ -1,10 +1,10 @@
 ---
-draw:
-title: CS144 Computer Network
+comment_id: ccbce4e1
 date created: 2024-09-21
 date modified: 2025-02-20
+draw: null
+title: CS144 Computer Network
 ---
-
 ## 环境部署
 
 Ubuntu 18.04 [BYO Linux installation (stanford.edu)](https://stanford.edu/class/cs144/vm_howto/vm-howto-byo.html)  
