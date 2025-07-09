@@ -1,14 +1,16 @@
 ---
+draw:
+title: 为 Obsidian Publish 添加评论系统
 comment_id: a7b3d4f9
 date created: 2025-07-10
-tags: [Obsidian, 教程, 博客]
+date modified: 2025-07-10
 ---
 
-# 为 Obsidian Publish 添加评论系统
+## 为 Obsidian Publish 添加评论系统
 
 Obsidian Publish 是官方提供的发布服务，但缺少评论功能。本文介绍如何通过 Giscus 为你的 Obsidian Publish 网站添加评论系统。
 
-## 什么是 Giscus
+### 什么是 Giscus
 
 [Giscus](https://giscus.app) 是一个基于 GitHub Discussions 的评论系统。它将评论存储在你的 GitHub 仓库的 Discussions 中，完全免费且数据归你所有。
 
@@ -19,34 +21,36 @@ Obsidian Publish 是官方提供的发布服务，但缺少评论功能。本文
 - 有反应表情（emoji reactions）
 - 支持多种主题
 
-## 准备工作
+### 准备工作
 
-### 1. 创建 GitHub 仓库
+#### 1. 创建 GitHub 仓库
 
 如果还没有，需要创建一个公开的 GitHub 仓库用于存储评论。
 
-### 2. 启用 Discussions
+#### 2. 启用 Discussions
 
 在仓库的 Settings → General → Features 中，勾选 "Discussions"。
 
-### 3. 安装 Giscus App
+#### 3. 安装 Giscus App
 
 访问 [Giscus App](https://github.com/apps/giscus) 并安装到你的仓库。
 
-## 配置 Giscus
+### 配置 Giscus
 
-### 1. 获取配置信息
+#### 1. 获取配置信息
 
 访问 [giscus.app](https://giscus.app) 并填写：
+
 - 输入你的仓库名（格式：`用户名/仓库名`）
 - 选择 Discussion 分类（建议使用 "Announcements" 或创建 "Comments"）
 - 选择映射方式（推荐 "pathname" 或 "og:title"）
 
 页面会自动生成配置代码。记下以下信息：
+
 - `data-repo-id`
 - `data-category-id`
 
-### 2. 创建 publish.js
+#### 2. 创建 publish.js
 
 在 Obsidian 仓库根目录创建 `publish.js`：
 
@@ -126,25 +130,25 @@ window.addEventListener('load', () => {
 });
 ```
 
-### 3. 发布到 Obsidian Publish
+#### 3. 发布到 Obsidian Publish
 
 1. 在 Obsidian 中打开发布面板
 2. 选中 `publish.js` 文件
 3. 点击发布
 
-## 高级配置：永久绑定评论
+### 高级配置：永久绑定评论
 
 默认情况下，如果文件重命名或移动，评论会丢失。以下是解决方案：
 
-### 方案 1：使用标题映射
+#### 方案 1：使用标题映射
 
 将 `mapping` 设置为 `'og:title'`，这样只要文章标题不变，评论就会保留。
 
-### 方案 2：使用唯一 ID（推荐）
+#### 方案 2：使用唯一 ID（推荐）
 
 为每篇文章添加唯一标识符，使评论永久绑定。
 
-#### 1. 创建 ID 生成脚本
+##### 1. 创建 ID 生成脚本
 
 创建 `add_comment_ids.py`：
 
@@ -200,14 +204,14 @@ for filepath in Path('.').rglob('*.md'):
         print(f"已添加 comment_id: {filepath}")
 ```
 
-#### 2. 运行脚本
+##### 2. 运行脚本
 
 ```bash
 pip install pyyaml
 python add_comment_ids.py
 ```
 
-#### 3. 更新 publish.js
+##### 3. 更新 publish.js
 
 修改 `getDocumentId` 函数以支持 comment_id：
 
@@ -240,7 +244,7 @@ s.dataset.mapping = 'specific';
 s.dataset.term = getDocumentId();
 ```
 
-### 设置 Git Hook（可选）
+#### 设置 Git Hook（可选）
 
 自动为新文件添加 comment_id：
 
@@ -269,7 +273,7 @@ exit 0
 chmod +x .git/hooks/pre-commit
 ```
 
-## 调试技巧
+### 调试技巧
 
 1. **检查是否加载成功**
    - 打开浏览器开发者工具（F12）
@@ -284,11 +288,12 @@ chmod +x .git/hooks/pre-commit
    - 评论不显示：确认 GitHub 仓库是公开的
    - 评论丢失：检查映射方式是否正确
 
-## 总结
+### 总结
 
 通过以上步骤，你的 Obsidian Publish 网站就拥有了完整的评论功能。使用 comment_id 方案后，即使文件重命名或移动，评论也会永久保留。
 
 这个方案的优势：
+
 - ✅ 完全免费
 - ✅ 数据自主可控
 - ✅ 支持 Markdown 和表情

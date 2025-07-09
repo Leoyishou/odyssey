@@ -1,140 +1,112 @@
-// publish.js —— 放到仓库根目录
-let currentGiscusContainer = null;
+/*****************************************************************
+ * publish.js —— 放在仓库根目录
+ * 功能：在 Obsidian Publish 页面为每篇笔记加载 giscus 评论，
+ *       用 front-matter 中的 comment_id 作为唯一键。
+ ******************************************************************/
 
-function injectGiscus() {
-    console.log('Giscus: 尝试注入评论系统...');
-    
-    // 等待页面完全加载
+/* --------- 工具函数：从原始 Markdown 抽取 comment_id --------- */
+function getCommentId() {
+    /* Publish 会把 Markdown 原文放进 <script type="text/plain">…</script> */
+    const raw =
+      document.querySelector('script[type="text/plain"]')?.textContent ||
+      document.body.innerText;                          // 兜底：直接扫可见文本
+  
+    const m = raw.match(/comment_id:\s*([0-9a-fA-F-]+)/);
+    return m ? m[1].trim() : null;                      // 例如 “8f4c3d0a”
+  }
+  
+  /* ------------------------ 主注入函数 ------------------------ */
+  function injectGiscus() {
+    console.log('[Giscus] 尝试注入…');
+  
+    /* 防重复 */
+    if (document.getElementById('giscus-container')) {
+      console.log('[Giscus] 已存在，跳过');
+      return;
+    }
+  
+    /* 等页面完全加载再执行 */
     if (document.readyState !== 'complete') {
-        console.log('Giscus: 页面未完全加载，稍后重试...');
-        setTimeout(injectGiscus, 500);
-        return;
+      setTimeout(injectGiscus, 300);
+      return;
     }
-    
-    // 移除旧的评论容器
-    if (currentGiscusContainer) {
-        currentGiscusContainer.remove();
-        currentGiscusContainer = null;
-        console.log('Giscus: 已移除旧的评论容器');
+  
+    /* 读取 comment_id，没有就放弃加载评论 */
+    const cid = getCommentId();
+    if (!cid) {
+      console.warn('[Giscus] 未找到 comment_id，页面不加载评论');
+      return;
     }
-    
+  
+    /* 创建容器 */
     const container = document.createElement('div');
     container.id = 'giscus-container';
-    container.style.marginTop = '3rem';
-    container.style.maxWidth = '100%';
-    container.style.margin = '3rem auto 0';
-    container.style.padding = '0';
-    
-    currentGiscusContainer = container;
+    container.style.cssText = 'margin:3rem auto 0;max-width:100%;padding:0;';
   
+    /* 创建 giscus 脚本 */
     const s = document.createElement('script');
     s.src = 'https://giscus.app/client.js';
     s.dataset.repo        = 'Leoyishou/odyssey';
-    s.dataset.repoId      = "R_kgDOPJw6Yg";
+    s.dataset.repoId      = 'R_kgDOPJw6Yg';
     s.dataset.category    = 'Comments';
-    s.dataset.categoryId  = "DIC_kwDOPJw6Ys4CstfW";
-    
-    // 使用页面标题作为唯一标识
-    // 这是最可靠的方式，因为每篇文章的标题应该是唯一的
-    s.dataset.mapping     = 'og:title';
-    s.dataset.strict      = '0';
+    s.dataset.categoryId  = 'DIC_kwDOPJw6Ys4CstfW';
+  
+    /* 关键：用 comment_id 作为主键 */
+    s.dataset.mapping     = 'id';
+    s.dataset.term        = cid;
+  
     s.dataset.reactionsEnabled = '1';
     s.dataset.theme       = 'preferred_color_scheme';
     s.dataset.lang        = 'zh-CN';
-    s.crossOrigin = 'anonymous'; 
-    s.async = true;
-    
-    // 调试信息
-    console.log('Giscus: 调试信息 --------');
-    console.log('- 当前URL:', window.location.href);
-    console.log('- 页面标题:', document.title);
-    console.log('- OG标题:', document.querySelector('meta[property="og:title"]')?.content);
-    console.log('------------------------');
+    s.crossOrigin         = 'anonymous';
+    s.async               = true;
   
     container.appendChild(s);
-    
-    // 尝试多个可能的容器
-    const targetElement = 
-        document.querySelector('.markdown-preview-view') || 
-        document.querySelector('.publish-article-content') ||
-        document.querySelector('.content') ||
-        document.querySelector('article') ||
-        document.querySelector('main') ||
-        document.querySelector('[class*="content"]') ||
-        document.querySelector('.cm-content-container');
-    
-    if (targetElement) {
-        targetElement.appendChild(container);
-        console.log('Giscus: 评论容器已添加到:', targetElement.className || targetElement.tagName);
-    } else {
-        // 如果找不到合适的容器，添加到 body 末尾
-        document.body.appendChild(container);
-        console.log('Giscus: 未找到合适容器，评论添加到 body 末尾');
-    }
-    
-    // 添加样式
+  
+    /* 选个合适节点挂载 */
+    const target =
+      document.querySelector('.markdown-preview-view') ||
+      document.querySelector('.publish-article-content') ||
+      document.querySelector('.content') ||
+      document.querySelector('article') ||
+      document.querySelector('main') ||
+      document.querySelector('[class*="content"]') ||
+      document.body;
+  
+    target.appendChild(container);
+    console.log('[Giscus] 已挂载到:', target.className || target.tagName);
+  
+    /* 附加自适应样式 */
     if (!document.getElementById('giscus-style')) {
-        const style = document.createElement('style');
-        style.id = 'giscus-style';
-        style.textContent = `
-            #giscus-container {
-                width: 100% !important;
-                box-sizing: border-box !important;
-            }
-            #giscus-container .giscus {
-                max-width: 100% !important;
-            }
-            #giscus-container iframe {
-                max-width: 100% !important;
-            }
-        `;
-        document.head.appendChild(style);
+      const style = document.createElement('style');
+      style.id = 'giscus-style';
+      style.textContent = `
+        #giscus-container{width:100%!important;box-sizing:border-box!important;}
+        #giscus-container .giscus{max-width:100%!important;}
+        #giscus-container iframe{max-width:100%!important;}
+      `;
+      document.head.appendChild(style);
     }
-    
-    console.log('Giscus: 注入完成！');
-}
-
-// 监听页面变化（Obsidian Publish 是单页应用）
-let lastTitle = document.title;
-let checkInterval = null;
-
-function startMonitoring() {
-    // 清除旧的监听器
-    if (checkInterval) {
-        clearInterval(checkInterval);
+  }
+  
+  /* --------------------- 单页应用路径监控 --------------------- */
+  let lastPath = window.location.pathname;
+  function watchPathChange() {
+    if (window.location.pathname !== lastPath) {
+      lastPath = window.location.pathname;
+      console.log('[Giscus] 路径变更，重新注入');
+      document.getElementById('giscus-container')?.remove();
+      setTimeout(injectGiscus, 500);
     }
-    
-    checkInterval = setInterval(() => {
-        if (document.title !== lastTitle) {
-            console.log('Giscus: 检测到页面标题变化:', lastTitle, '->', document.title);
-            lastTitle = document.title;
-            
-            // 等待页面内容加载完成
-            setTimeout(() => {
-                injectGiscus();
-            }, 1000);
-        }
-    }, 500);
-}
-
-// 初始注入
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        injectGiscus();
-        startMonitoring();
-    });
-} else {
+  }
+  setInterval(watchPathChange, 1000);
+  
+  /* ------------------------- 初始注入 ------------------------- */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectGiscus);
+  } else {
     injectGiscus();
-    startMonitoring();
-}
-
-// 监听浏览器的前进/后退
-window.addEventListener('popstate', () => {
-    console.log('Giscus: 检测到浏览器导航');
-    setTimeout(injectGiscus, 500);
-});
-
-// 备用：页面完全加载后再次尝试
-window.addEventListener('load', () => {
-    setTimeout(injectGiscus, 1000);
-});
+  }
+  window.addEventListener('load', () => setTimeout(injectGiscus, 800));
+  window.addEventListener('popstate', () => setTimeout(injectGiscus, 500));
+  

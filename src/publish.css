@@ -1,0 +1,7 @@
+/* 强制让 front-matter 显示出来 */
+.frontmatter,
+.frontmatter-container,
+.markdown-preview-view:not(.show-frontmatter) .frontmatter {
+  display: block !important;   /* 取消 display:none */
+  white-space: pre;            /* 保留缩进 */
+}
