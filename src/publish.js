@@ -20,10 +20,23 @@ function injectGiscus() {
     s.dataset.repoId      = "R_kgDOPJw6Yg";
     s.dataset.category    = 'Comments';
     s.dataset.categoryId  = "DIC_kwDOPJw6Ys4CstfW";
-    s.dataset.mapping     = 'og:title';    // 以页面标题匹配，不受路径影响
-    // 如果需要更精确的控制，可以改为：
-    // s.dataset.mapping     = 'specific';
-    // s.dataset.term        = document.querySelector('meta[name="comment-id"]')?.content || 'default';
+    // 获取文档的唯一标识符（按优先级）
+    const getDocumentId = () => {
+        // 1. 优先使用 frontmatter 中的 comment_id
+        const commentIdMeta = document.querySelector('meta[name="comment-id"]');
+        if (commentIdMeta?.content) return commentIdMeta.content;
+        
+        // 2. 使用文件名（去掉扩展名）作为备选
+        const pathname = window.location.pathname;
+        const filename = pathname.split('/').pop().replace('.html', '').replace('.md', '');
+        if (filename && filename !== 'index') return filename;
+        
+        // 3. 最后使用标题
+        return document.title || pathname;
+    };
+    
+    s.dataset.mapping     = 'specific';
+    s.dataset.term        = getDocumentId();
     s.dataset.reactionsEnabled = '1';
     s.dataset.theme       = 'preferred_color_scheme';
     s.crossOrigin = 'anonymous'; s.async = true;
