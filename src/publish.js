@@ -8,6 +8,11 @@ function injectGiscus() {
     const container = document.createElement('div');
     container.id = 'giscus-container';
     container.style.marginTop = '3rem';
+    
+    // 添加样式以匹配正文宽度
+    container.style.maxWidth = '100%';
+    container.style.margin = '3rem auto 0';
+    container.style.padding = '0';
   
     const s = document.createElement('script');
     s.src = 'https://giscus.app/client.js';
