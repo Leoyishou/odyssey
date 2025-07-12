@@ -41,7 +41,7 @@ function getUid() {
     /* 创建容器 */
     const container = document.createElement('div');
     container.id = 'giscus-container';
-    container.style.cssText = 'margin:3rem auto 0;max-width:100%;padding:0;';
+    container.style.cssText = 'margin:3rem auto 0;padding:0;';
   
     /* 创建 giscus 脚本 */
     const s = document.createElement('script');
