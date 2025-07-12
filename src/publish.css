@@ -6,28 +6,38 @@
   white-space: pre;            /* 保留缩进 */
 }
 
-/* 让评论区和正文保持一样的宽度 */
+/* 让评论区和正文保持一样的宽度和对齐 */
+.markdown-preview-view #giscus-container,
+.publish-article-content #giscus-container,
 #giscus-container {
   max-width: var(--file-line-width, 700px) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: var(--file-margins) !important;
-  padding-right: var(--file-margins) !important;
+  margin: 3rem auto 0 auto !important;
+  padding: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 /* 确保 giscus iframe 占满容器宽度 */
 #giscus-container .giscus,
-#giscus-container .giscus-frame {
+#giscus-container .giscus-frame,
+#giscus-container iframe {
   width: 100% !important;
   max-width: 100% !important;
+  display: block !important;
+  margin: 0 !important;
 }
 
-/* 如果上面的变量不起作用，使用固定值作为后备方案 */
+/* 桌面端：匹配正文的宽度和位置 */
 @media (min-width: 768px) {
   #giscus-container {
     max-width: 700px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* 如果正文有特定的容器，让评论区继承相同的样式 */
+  .markdown-preview-view > #giscus-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -35,7 +45,8 @@
 @media (max-width: 767px) {
   #giscus-container {
     max-width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding: 0 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
