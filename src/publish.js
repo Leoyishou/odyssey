@@ -63,18 +63,30 @@ function getUid() {
   
     container.appendChild(s);
   
-    /* 选个合适节点挂载 */
-    const target =
-      document.querySelector('.markdown-preview-view') ||
-      document.querySelector('.publish-article-content') ||
-      document.querySelector('.content') ||
-      document.querySelector('article') ||
-      document.querySelector('main') ||
-      document.querySelector('[class*="content"]') ||
-      document.body;
-  
-    target.appendChild(container);
-    console.log('[Giscus] 已挂载到:', target.className || target.tagName);
+    /* 选个合适节点挂载 - 优先选择 .mod-footer */
+    const modFooters = document.querySelectorAll('.mod-footer');
+    const lastModFooter = modFooters[modFooters.length - 1];
+    
+    if (lastModFooter) {
+      // 如果找到 .mod-footer，插入到它的后面（作为兄弟元素）
+      lastModFooter.parentNode.insertBefore(container, lastModFooter.nextSibling);
+      console.log('[Giscus] 已挂载到 .mod-footer 后面');
+      return;
+    } else {
+      // 如果没有 .mod-footer，使用原来的逻辑
+      const target =
+        document.querySelector('.markdown-preview-sizer') ||
+        document.querySelector('.markdown-preview-view') ||
+        document.querySelector('.publish-article-content') ||
+        document.querySelector('.content') ||
+        document.querySelector('article') ||
+        document.querySelector('main') ||
+        document.querySelector('[class*="content"]') ||
+        document.body;
+      
+      target.appendChild(container);
+      console.log('[Giscus] 已挂载到:', target.className || target.tagName);
+    }
   
     /* 附加自适应样式 */
     if (!document.getElementById('giscus-style')) {
