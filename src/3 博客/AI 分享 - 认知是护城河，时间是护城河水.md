@@ -1,9 +1,7 @@
 ---
-comment_id: 08dc687a
 date created: 2025-03-28
 date modified: 2025-07-10
-draw: null
-title: AI 分享 - 认知是护城河，时间是护城河水
+uid: 6c0bf41a-5c0a-4d74-8135-5141cbc2dc75
 ---
 1. 工具：[[翻墙]]🪜、[[Obsidian]]、[[Cursor]]
 2. 算力：[AutoDL](AutoDL.md)

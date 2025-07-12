@@ -1,9 +1,7 @@
 ---
-comment_id: efb805eb
 date created: 2025-03-11
-date modified: 2025-06-17
-draw: null
-title: 微调实战 -- 用Open-R1微调Qwen模型，强化AI数学推理能力
+date modified: 2025-07-10
+uid: 1bb54700-f395-4395-b6f9-d15b849f27ac
 ---
 ## 参考比赛
 

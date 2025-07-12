@@ -1,10 +1,7 @@
 ---
-comment_id: bef85915
 date created: 2024-12-25
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Lab3 Page tables
+date modified: 2025-07-10
+uid: ddb3879a-292d-4a73-b9af-795d781a6fbc
 ---
 ## ## A kernel page table per process ([hard](https://pdos.csail.mit.edu/6.S081/2020/labs/guidance.html))
 
@@ -20,6 +17,7 @@ title: Lab3 Page tables
 ```
 
 这四次映射是为了让进程能访问不同的硬件设备，每个映射对应一个不同的设备：
+
 UART0 (Universal Asynchronous Receiver/Transmitter)  
 kvmmapkern(pagetable, UART0, UART0, PGSIZE, PTE_R | PTE_W);  
 串口通信设备  

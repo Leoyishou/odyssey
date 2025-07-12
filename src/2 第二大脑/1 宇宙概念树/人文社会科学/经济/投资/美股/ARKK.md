@@ -1,9 +1,7 @@
 ---
-comment_id: 7f4d4867
 date created: 2024-08-10
-date modified: 2025-02-06
-draw: null
-title: ARKK
+date modified: 2025-07-10
+uid: 9d81cd2c-846d-40f5-9889-685741a92c4a
 ---
 **ARK Innovation ETF**（交易代码：ARKK），由 Cathie Wood 管理，投资于具有颠覆性创新的科技公司。这类投资波动较大，但也有潜力带来高回报，尤其是在技术进步和市场前景看好的情况下。
 

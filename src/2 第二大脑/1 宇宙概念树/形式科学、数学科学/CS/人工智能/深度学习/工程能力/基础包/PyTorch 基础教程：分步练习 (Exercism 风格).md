@@ -1,9 +1,7 @@
 ---
-comment_id: e0256494
 date created: 2025-03-27
-date modified: 2025-04-22
-draw: null
-title: PyTorch 基础教程：分步练习 (Exercism 风格)
+date modified: 2025-07-10
+uid: 2cec1c74-d633-4cf6-9cef-18d9579c0ddb
 ---
 ## PyTorch 基础教程：分步练习 (Exercism 风格)
 

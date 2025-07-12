@@ -1,10 +1,7 @@
 ---
-comment_id: cec2b5b6
 date created: 2024-12-18
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Lab2 System calls
+date modified: 2025-07-10
+uid: b7c859c9-d8c6-4c2f-89c7-cc3a2a7be70a
 ---
 ```Java
 ```

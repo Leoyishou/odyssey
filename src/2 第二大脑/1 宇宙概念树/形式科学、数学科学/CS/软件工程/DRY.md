@@ -1,12 +1,10 @@
 ---
-aliases:
-- Don't Repeat Yourself
-comment_id: f7028cff
+aliases: [Don't Repeat Yourself]
 date created: 2024-09-30
-date modified: 2025-02-06
-draw: null
-title: DRY
+date modified: 2025-07-10
+uid: 9b8fb889-020c-401c-b528-ec1d735b3ecf
 ---
+
 DRY 原则：Don't Repeat Yourself
 
 DRY 原则指出，在一个系统中，每一块知识都必须有一个单一、明确、权威的表示。

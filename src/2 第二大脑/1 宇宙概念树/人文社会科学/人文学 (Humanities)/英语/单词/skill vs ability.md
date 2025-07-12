@@ -1,10 +1,9 @@
 ---
-comment_id: 5acc55e4
 date created: 2025-01-16
-date modified: 2025-02-09
-draw: null
-title: skill vs ability
+date modified: 2025-07-10
+uid: 768283fd-fbd1-4b50-b3f8-a3e37e6a63e7
 ---
+
 从第一性原理分析:
 
 Skill (技能):

@@ -1,9 +1,7 @@
 ---
-comment_id: 66fc2f61
 date created: 2025-04-23
-date modified: 2025-04-23
-draw: null
-title: PRD
+date modified: 2025-07-10
+uid: ddc5eae5-bc09-4034-8661-66ed9113aa5f
 ---
 **Analyzing**
 
@@ -27,6 +25,6 @@ Thought for 6 seconds
 
 ---
 
-### 一句话总结
+## 一句话总结
 
 这份 PPT 通过“**六大核心内容 + 明确流程节点 + 数据驱动**”的方法论，教你写出让所有协作方一目了然、能落地、可评估的专业 PRD，并强调 **沟通记录、数据监控与后评估** 是新人最容易忽视却决定项目成败的关键。citeturn0file0

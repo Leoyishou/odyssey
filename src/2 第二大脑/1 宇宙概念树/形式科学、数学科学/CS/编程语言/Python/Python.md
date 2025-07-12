@@ -1,9 +1,7 @@
 ---
-comment_id: 9055f980
 date created: 2023-12-18
-date modified: 2025-03-26
-draw: null
-title: Python
+date modified: 2025-07-10
+uid: f5a5e42c-4168-4335-9f26-8bee4d1e7f0f
 ---
 2. 布尔逻辑判断，坚持用`and`**, `or`**, **`not`**
 

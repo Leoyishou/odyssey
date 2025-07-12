@@ -1,9 +1,7 @@
 ---
-comment_id: 25fe6c2c
 date created: 2024-09-22
-date modified: 2025-03-27
-draw: null
-title: 3Blue1Brown
+date modified: 2025-07-10
+uid: 5479014e-ce6f-4abf-aa80-0e9019aa204e
 ---
 ## 神经网络系列
 

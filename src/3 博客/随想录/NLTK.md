@@ -1,11 +1,9 @@
 ---
-comment_id: 807c24e9
 date created: 2024-11-05
-date modified: 2024-11-12
-draw: null
-tags: []
-title: NLTK
+date modified: 2025-07-10
+uid: ef665887-a4be-43be-9fa7-c4812e5df82c
 ---
+
 NLTK（Natural Language Toolkit）是一个用于处理人类语言数据的Python库，广泛应用于自然语言处理（NLP）领域。其主要功能包括：
 
   

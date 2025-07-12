@@ -1,9 +1,7 @@
 ---
-comment_id: 14ad71ab
 date created: 2025-06-21
-date modified: 2025-06-21
-draw: null
-title: Fermi／期望值模型
+date modified: 2025-07-10
+uid: 88540546-e3e0-4660-ba5c-effb9a600aee
 ---
 **一句话对标**
 

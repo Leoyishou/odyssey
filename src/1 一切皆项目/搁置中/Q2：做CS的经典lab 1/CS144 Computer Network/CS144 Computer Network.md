@@ -1,9 +1,7 @@
 ---
-comment_id: ccbce4e1
 date created: 2024-09-21
-date modified: 2025-02-20
-draw: null
-title: CS144 Computer Network
+date modified: 2025-07-10
+uid: 3bfe53ea-8831-40c9-a306-1c1656aade5c
 ---
 ## 环境部署
 

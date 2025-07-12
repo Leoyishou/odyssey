@@ -1,12 +1,10 @@
 ---
-aliases:
-- Browser Object Model
-comment_id: 60d2f305
+aliases: [Browser Object Model]
 date created: 2024-09-30
-date modified: 2025-02-06
-draw: null
-title: BOM
+date modified: 2025-07-10
+uid: e3849e56-9186-420f-830d-da5858a3bac7
 ---
+
 BOM (浏览器对象模型)，用面向对象的方式操作浏览器
 
 BOM包含[DOM](DOM.md)。`window.document`就是DOM的入口点。

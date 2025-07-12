@@ -1,10 +1,9 @@
 ---
-comment_id: 61bdadcc
 date created: 2024-07-20
-date modified: 2025-02-06
-draw: null
-title: var
+date modified: 2025-07-10
+uid: a0b5275c-3173-4463-add4-e829f26d3239
 ---
+
 本意是 java 语法本身太冗余，对于**傻子能看得懂的类型**，做一个简化的写法，省事。
 
 但是大部分 [IDE](IDE) 已经做到这一点了，都提供了强力的补全功能，类名，函数名，泛型参数，自动继承，自动 try catch，自动生成 getter setter。

@@ -1,9 +1,7 @@
 ---
-comment_id: f0df9057
 date created: 2025-04-17
-date modified: 2025-06-15
-draw: null
-title: PyPI
+date modified: 2025-07-10
+uid: 4a74158f-dda3-4204-9aac-d77bd745bcd5
 ---
 ## PyPI (Python Package Index) 通俗解释
 

@@ -1,10 +1,9 @@
 ---
-comment_id: 922a7d7f
 date created: 2024-10-09
-date modified: 2025-02-15
-draw: null
-title: Bolt
+date modified: 2025-07-10
+uid: 925468cb-09c2-40f0-a654-a2cfe2b50d42
 ---
+
 bolt 这个词本身有"闪电"、"螺栓"的含义，在代码中使用时通常暗示：
 
 - 快速执行

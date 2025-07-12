@@ -1,12 +1,13 @@
 ---
-comment_id: 5f36f3e1
 date created: 2024-08-07
-date modified: 2025-02-06
-draw: null
-title: K线图
+date modified: 2025-07-10
+uid: 84fcaeaa-a747-43c3-9288-e8be7127aa86
 ---
+
 起源：K 线图起源于 18 世纪日本米市，由日本商人本间宗久发明。
+
 宽：代表一个时间段（如 1 分钟、1 天、1 周等）
+
 高：如果是代表上涨的红色，那么从下到上依次是 最低价、开盘价、收盘价、最高价
 
 ```java  

@@ -1,10 +1,9 @@
 ---
-comment_id: 292d9af9
 date created: 2025-01-23
-date modified: 2025-04-12
-draw: null
-title: ARP
+date modified: 2025-07-10
+uid: 40399004-a1d2-45b2-a166-01ebf9015c52
 ---
+
 让我用一个生活中的例子来解释 ARP (Address Resolution Protocol，地址解析协议)：
 
 想象你搬到了一个新的小区，这个小区里：

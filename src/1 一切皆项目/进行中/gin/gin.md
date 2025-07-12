@@ -1,10 +1,9 @@
 ---
-comment_id: 90ad4216
 date created: 2025-05-03
-date modified: 2025-06-15
-draw: null
-title: gin
+date modified: 2025-07-10
+uid: 0458374e-8c73-494d-8a66-348c4291eed5
 ---
+
 Thought for 5 seconds
 
 的确，上面那段「Hello Cursor」示例只演示了**单用户**调用 API。

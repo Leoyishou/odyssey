@@ -1,9 +1,7 @@
 ---
-comment_id: f748ab0e
 date created: 2024-05-08
-date modified: 2025-02-06
-draw: null
-title: ELK
+date modified: 2025-07-10
+uid: f9e319fc-0c1d-4bdc-8b16-9e12fd21a86f
 ---
 1. 想象你有一个超大的玩具箱，里面装满了各种各样的玩具。
 2. Kibana 就像是一个魔法镜子，可以帮你快速找到你想要的玩具，还能告诉你有多少个。

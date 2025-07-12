@@ -1,9 +1,7 @@
 ---
-comment_id: 305a483d
 date created: 2025-02-24
-date modified: 2025-02-24
-draw: null
-title: HDFS
+date modified: 2025-07-10
+uid: 5c7e6fc1-0e4b-4ca3-867b-d62c79a62ce6
 ---
 ## **HDFS 是啥？**
 

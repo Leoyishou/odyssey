@@ -1,9 +1,7 @@
 ---
-comment_id: 082dd576
 date created: 2025-04-18
-date modified: 2025-04-18
-draw: null
-title: memory
+date modified: 2025-07-10
+uid: 13d3cfb2-ae46-45a2-9b28-d34c1cec492c
 ---
 **Searching for memory patterns**
 

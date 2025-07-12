@@ -1,11 +1,9 @@
 ---
-comment_id: 01c5c710
 date created: 2024-07-14
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Netty
+date modified: 2025-07-10
+uid: 694c3cbe-0cd2-4f0d-b84c-540bef340964
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F12%2F15%2F01-19-10-bf254d4e3407430afe8a2c274df1964a-202412150119247-7b0969.png)
 
 Langchain 是写大模型应用的框架，而 Netty 就是写聊天室应用的框架。

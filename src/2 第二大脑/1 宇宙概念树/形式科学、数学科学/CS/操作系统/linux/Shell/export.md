@@ -1,10 +1,9 @@
 ---
-comment_id: 46ce0125
 date created: 2024-11-26
-date modified: 2025-02-06
-draw: null
-title: export
+date modified: 2025-07-10
+uid: fd1df3f3-d1c9-41c9-bb58-a5dc8dc6fd7a
 ---
+
 是的，这是一个 bash 命令。这条命令是在修改和导出环境变量 PYTHONPATH：
 
 让我解释一下这条命令的组成部分：

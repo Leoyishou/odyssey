@@ -1,10 +1,7 @@
 ---
-comment_id: b886a07d
 date created: 2024-10-07
-date modified: 2024-12-27
-draw: null
-tags: []
-title: viva 后端
+date modified: 2025-07-10
+uid: ab26481e-79a5-459a-bcab-2c8ef2a09751
 ---
 ```mermaid
 classDiagram

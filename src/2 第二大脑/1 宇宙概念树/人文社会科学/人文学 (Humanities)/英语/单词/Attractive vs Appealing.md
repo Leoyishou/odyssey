@@ -1,10 +1,9 @@
 ---
-comment_id: da3602cf
 date created: 2025-01-22
-date modified: 2025-02-09
-draw: null
-title: Attractive vs Appealing
+date modified: 2025-07-10
+uid: 77dcb177-cf41-4a3f-a1d4-3ce0921aedcc
 ---
+
 Attractive (吸引人的):
 
 - 强调外表和物理层面的吸引力

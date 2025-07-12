@@ -1,10 +1,9 @@
 ---
-comment_id: 297629cb
 date created: 2025-04-07
-date modified: 2025-04-07
-draw: null
-title: pnpm
+date modified: 2025-07-10
+uid: f5bcfc4e-9161-47bb-b546-93951e659969
 ---
+
 pnpm 是一个 JavaScript 包管理器，类似于 npm 和 Yarn，但有一些独特的特点和优势：
 
 1. **磁盘空间效率**：pnpm 使用硬链接和符号链接来共享依赖包，而不是像 npm 那样为每个项目复制一份依赖。这大大节省了磁盘空间。

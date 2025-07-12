@@ -1,9 +1,7 @@
 ---
-comment_id: 66b90eb7
 date created: 2024-09-02
-date modified: 2025-05-26
-draw: null
-title: lab2 raft
+date modified: 2025-07-10
+uid: 9abf64c4-a4e7-4813-b75f-107b5029f4b2
 ---
 ## 测试
 

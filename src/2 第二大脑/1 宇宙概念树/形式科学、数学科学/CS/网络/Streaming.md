@@ -1,11 +1,9 @@
 ---
-comment_id: b4ef4822
 date created: 2024-11-25
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Streaming
+date modified: 2025-07-10
+uid: 31a68152-a525-4b73-a4d5-6bfe8831df35
 ---
+
 OpenAI 的流式输出（Streaming）主要有两种实现方式：Server-Sent Events (SSE) 和 HTTP Chunked Transfer Encoding。让我用图表来说明这两种方式。
 
 ```mermaid

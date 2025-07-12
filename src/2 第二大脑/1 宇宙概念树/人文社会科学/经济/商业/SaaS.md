@@ -1,10 +1,9 @@
 ---
-comment_id: 9dc12124
 date created: 2024-11-12
-date modified: 2025-02-06
-draw: null
-title: SaaS
+date modified: 2025-07-10
+uid: 78592cb7-0061-4c88-a30c-21365a75c8cf
 ---
+
 用户不需要在本地安装软件，可以直接通过浏览器或移动应用程序访问和使用软件。
 
 常见的SaaS应用程序包括：

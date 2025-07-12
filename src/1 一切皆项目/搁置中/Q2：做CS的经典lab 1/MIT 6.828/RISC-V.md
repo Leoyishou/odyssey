@@ -1,10 +1,7 @@
 ---
-comment_id: b5582dbb
 date created: 2024-12-16
-date modified: 2024-12-27
-draw: null
-tags: []
-title: RISC-V
+date modified: 2025-07-10
+uid: fdbad66e-c81b-4991-9b4f-2888b86ae10c
 ---
 ## 学习 RISC-V 的建议
 

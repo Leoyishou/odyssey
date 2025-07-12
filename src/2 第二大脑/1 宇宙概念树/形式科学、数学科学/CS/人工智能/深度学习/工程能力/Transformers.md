@@ -1,10 +1,9 @@
 ---
-comment_id: f7b90af9
 date created: 2024-07-18
-date modified: 2025-04-07
-draw: null
-title: Transformers
+date modified: 2025-07-10
+uid: 7e558a2c-e8d2-4561-ae99-58c6d43f241d
 ---
+
 就像[Java@](Java@.md)中的 List 和 Lists 的关系一样
 
 架构与实现：

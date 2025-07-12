@@ -1,10 +1,9 @@
 ---
-comment_id: e1fb34c1
 date created: 2024-06-19
-date modified: 2025-02-06
-draw: null
-title: script setup
+date modified: 2025-07-10
+uid: 82a3b4f4-0d80-4448-ba39-21dc3e282a7b
 ---
+
 excerpt
 
 <!-- more -->

@@ -1,10 +1,9 @@
 ---
-comment_id: 679ffd0d
 date created: 2023-11-23
-date modified: 2025-06-24
-draw: null
-title: Agent
+date modified: 2025-07-10
+uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F06%2F22%2F17-24-01-c5c45b18b04df68c4875acad4a0681fb-202506221724165-718f08.png)
 
 突然有个思考 agent的不确定来自于需求的不确定，刚性需求其实全部接口化了。  所以更好的模式是工作台。比如spring 比如gammas

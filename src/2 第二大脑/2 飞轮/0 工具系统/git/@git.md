@@ -1,11 +1,9 @@
 ---
-comment_id: 801d7bb9
 date created: 2024-06-25
-date modified: 2024-11-12
-draw: null
-tags: []
-title: '@git'
+date modified: 2025-07-10
+uid: c78ab21b-cebf-414c-8a35-91c245ab253e
 ---
+
 git 一定要用 [GUI](GUI.md)  
 git 一定要用 [GUI](GUI.md)  
 git 一定要用 [GUI](GUI.md)

@@ -1,11 +1,9 @@
 ---
-comment_id: f5dc2b41
 date created: 2024-12-25
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Lab4 traps
+date modified: 2025-07-10
+uid: 587e4ba3-85a6-4ce0-890e-72dd9a98fa14
 ---
+
 先来回顾一下这个 **backtrace** 函数做了什么，再解释它为什么这样写——主要和 **RISC-V 的函数栈帧布局**、**xv6 内核栈大小** 以及 **如何检测栈回溯的终点** 有关。
 
 ```c

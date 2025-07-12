@@ -1,10 +1,9 @@
 ---
-comment_id: 81939a4c
 date created: 2025-02-16
-date modified: 2025-02-16
-draw: null
-title: display
+date modified: 2025-07-10
+uid: 9a612387-da3b-4755-a51b-f0d012e2db23
 ---
+
 我来创建一个图示来展示 `display: flex` 的主要概念和特性。
 
 <chat-artifact id="flex-diagram" version="0" type="image/svg+xml" title="Flexbox Layout Explanation">

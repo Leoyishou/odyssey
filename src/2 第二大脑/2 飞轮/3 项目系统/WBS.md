@@ -1,11 +1,9 @@
 ---
-comment_id: e714e75a
 date created: 2024-07-01
-date modified: 2024-11-12
-draw: null
-tags: []
-title: WBS
+date modified: 2025-07-10
+uid: 200d531a-f5f0-48ff-b574-255eefe44e1f
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F08%2F10%2F13-19-24-34ec750881be67422a3188dab6a23ff4-202408101319507-1a8922.png)
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F08%2F10%2F13-19-01-54067f06e16f6579c1f29a7ec7dea56b-202408101319002-b4dcf0.png)

@@ -1,11 +1,9 @@
 ---
-comment_id: 6f91be21
 date created: 2025-01-01
-date modified: 2025-01-27
-draw: null
-tags: []
-title: 关于 CS 的经典 Lab
+date modified: 2025-07-10
+uid: baa71ee0-b25f-45e2-b400-16481b61e994
 ---
+
 随着实验的一步步做下来，本质就像做一个需求一样。
 
 一步步熟悉不同的类，里面的代码逻辑细节，从而和过去的抽象的知识（端上的产品）结合起来的过程。

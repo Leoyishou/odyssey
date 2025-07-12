@@ -1,9 +1,7 @@
 ---
-comment_id: b8063adf
 date created: 2023-12-26
-date modified: 2025-02-06
-draw: null
-title: JVM参数
+date modified: 2025-07-10
+uid: 96aedf53-c500-42ca-a524-965042dd1997
 ---
 ## 标准参数
 

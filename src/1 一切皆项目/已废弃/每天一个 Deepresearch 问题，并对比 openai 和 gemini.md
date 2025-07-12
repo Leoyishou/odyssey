@@ -1,10 +1,9 @@
 ---
-comment_id: be8a3c5b
 date created: 2025-04-22
-date modified: 2025-04-25
-draw: null
-title: 每天一个 Deepresearch 问题，并对比 openai 和 gemini
+date modified: 2025-07-10
+uid: babc49f7-2b90-4a42-ae54-b4e620215baa
 ---
+
 |                     |                                                           |
 | ------------------- | --------------------------------------------------------- |
 | 2025年04月22日22:52:58 | [西方九大哲学经典入门教程 _ exercism](西方九大哲学经典入门教程%20_%20exercism.md) |

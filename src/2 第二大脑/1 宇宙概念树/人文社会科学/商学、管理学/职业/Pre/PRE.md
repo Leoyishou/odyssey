@@ -1,9 +1,7 @@
 ---
-comment_id: 00597f64
 date created: 2024-12-15
-date modified: 2025-02-06
-draw: null
-title: PRE
+date modified: 2025-07-10
+uid: 263d9831-2369-47cb-a869-747bc7cacd6e
 ---
 ## PPT 只是提词器
 

@@ -1,10 +1,9 @@
 ---
-comment_id: 96fafb80
 date created: 2024-12-29
-date modified: 2025-02-06
-draw: null
-title: CodeReview
+date modified: 2025-07-10
+uid: 10bf25ba-bb1f-4668-bf44-3b35b4ad47c8
 ---
+
 国内对codereview还处于很初级的认识，集中在三点：
 
 1. 因为协作少，架构意识缺乏，对cr还停留在检查初级bug的观点，没意识到cr实际上是为了在不同人员的交流中进一步完善优化产品代码架构，也是为了减少无效交流，提高沟通效率的做法。

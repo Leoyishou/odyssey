@@ -1,11 +1,9 @@
 ---
-comment_id: aa7e0842
 date created: 2024-12-25
-date modified: 2024-12-27
-draw: null
-tags: []
-title: goto
+date modified: 2025-07-10
+uid: c494db53-88b4-4b17-855f-e2149650e954
 ---
+
 这是一个很好的问题！这里使用 `goto found` 而不是直接写代码主要有两个原因：
 
 1. **代码结构清晰**：

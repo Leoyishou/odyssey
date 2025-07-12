@@ -1,9 +1,7 @@
 ---
-comment_id: 27126a72
 date created: 2025-04-03
-date modified: 2025-04-03
-draw: null
-title: AI infra
+date modified: 2025-07-10
+uid: ab3a9b67-cd0e-4ac1-b641-d8e5e61f1dbb
 ---
 - 核心任务：
     

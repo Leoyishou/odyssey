@@ -1,10 +1,7 @@
 ---
-comment_id: b44b4c3c
 date created: 2024-12-16
-date modified: 2024-12-27
-draw: null
-tags: []
-title: C语言
+date modified: 2025-07-10
+uid: 67110a86-4fd6-4637-8d84-bd892bb2ded5
 ---
 ## 学习 C 语言的建议
 

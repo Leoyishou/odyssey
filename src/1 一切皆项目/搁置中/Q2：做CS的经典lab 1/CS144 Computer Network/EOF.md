@@ -1,11 +1,9 @@
 ---
-comment_id: 1655858c
 date created: 2024-12-30
-date modified: 2024-12-30
-draw: null
-tags: []
-title: EOF
+date modified: 2025-07-10
+uid: 74b98416-0a9c-4f92-8be8-b80644a4f54f
 ---
+
 EOF (End Of File) 是"文件结束"的意思。在网络编程中，EOF 表示数据流的结束。
 
 在你的 webget 程序中：

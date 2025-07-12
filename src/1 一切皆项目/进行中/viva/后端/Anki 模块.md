@@ -1,11 +1,9 @@
 ---
-comment_id: 0d066d70
 date created: 2024-10-27
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Anki 模块
+date modified: 2025-07-10
+uid: 4171b770-c69d-483d-9383-edef257e4ff6
 ---
+
 让我帮你看看Anki的开源网页版选项。
 
 ```tsx

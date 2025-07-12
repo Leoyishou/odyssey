@@ -1,10 +1,7 @@
 ---
-comment_id: 35c80c70
 date created: 2024-12-30
-date modified: 2025-01-23
-draw: null
-tags: []
-title: Lab3 TCP Sender
+date modified: 2025-07-10
+uid: 62606478-ff41-454e-bf45-9eb9a152c580
 ---
 ## 参考资料
 

@@ -1,10 +1,7 @@
 ---
-comment_id: 445ef0fe
 date created: 2024-12-23
-date modified: 2024-12-27
-draw: null
-tags: []
-title: system call
+date modified: 2025-07-10
+uid: dc5da772-9ef9-4285-aa0a-17f6e0733b09
 ---
 ```c
 void

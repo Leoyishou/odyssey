@@ -1,9 +1,7 @@
 ---
-comment_id: eed0586f
 date created: 2025-06-17
-date modified: 2025-06-19
-draw: null
-title: lora
+date modified: 2025-07-10
+uid: dc4f8a14-097c-42ce-9f3a-043a0b67b81d
 ---
 **LoRA = Low‑Rank Adaptation**  
 它是一种**参数高效微调（PEFT）**方法，由 Microsoft 在 2021 年提出，专门用来把大模型的“迁移成本”降到传统全参微调的千分之一甚至万分之一。核心思想是：

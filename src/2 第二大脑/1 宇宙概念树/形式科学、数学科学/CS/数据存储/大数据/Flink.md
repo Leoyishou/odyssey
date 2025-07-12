@@ -1,10 +1,9 @@
 ---
-comment_id: 200ca3af
 date created: 2025-02-24
-date modified: 2025-02-24
-draw: null
-title: Flink
+date modified: 2025-07-10
+uid: 7c85238c-94d9-43a3-9f59-437dffe75dcd
 ---
+
 Flink：实时流的专家
 
 Flink 跟 Spark 有点像，也是个计算引擎，但它更擅长处理"实时数据"。比如，你网站上的用户点击数据源源不断地进来，Flink 能一边接收一边处理，延迟很低。Spark 也能做流处理，但它更偏向"微批次"（攒一小批数据再处理），而 Flink 是真正的"流水线式"处理。

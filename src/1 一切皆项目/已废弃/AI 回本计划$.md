@@ -1,9 +1,7 @@
 ---
-comment_id: d8df1c0a
 date created: 2024-07-22
-date modified: 2025-05-03
-draw: null
-title: AI 回本计划$
+date modified: 2025-07-10
+uid: 1f0ba86d-a9ba-4bcd-8f07-7b69a524657c
 ---
 1. 第一性原理是，AI 生成的东西，必须让人们能猜到原视频是谁。越多四肢动作越有辨识度，脸部都是无效的。有明显穿搭比如帽子，也可以提高辨识度
 2. 视频开头直接就高潮，整个控制在 10s 内

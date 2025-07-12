@@ -1,10 +1,9 @@
 ---
-comment_id: dc33a888
 date created: 2024-11-25
-date modified: 2025-02-06
-draw: null
-title: ssh-remote
+date modified: 2025-07-10
+uid: 52d91867-14ce-496c-9d37-38e73a226217
 ---
+
 让我介绍一下 SSH Remote 开发模式的主要特点和优势：
 
 1. 基本概念

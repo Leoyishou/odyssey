@@ -1,9 +1,7 @@
 ---
-comment_id: d3748757
 date created: 2025-03-27
-date modified: 2025-03-27
-draw: null
-title: 用 cursor 写了个贼牛的插件
+date modified: 2025-07-10
+uid: fb5ef452-0ef8-45de-9ec3-b5d8486ef44c
 ---
  1. 过去的痛点
 	 1. 蓝思值未知？

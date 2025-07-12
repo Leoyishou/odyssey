@@ -1,10 +1,9 @@
 ---
-comment_id: 6cd1411b
 date created: 2025-01-24
-date modified: 2025-05-13
-draw: null
-title: Assignment 3
+date modified: 2025-07-10
+uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
 ---
+
 下面给你一个简要的**任务概览**，帮助你理清整个作业需要完成的内容及交付物。在实际完成作业时，你需要同时写一些"**理论部分解答**"（相当于 written 作业）和"**代码实现**"（coding 作业），并按照助教要求提交。
 
 ---

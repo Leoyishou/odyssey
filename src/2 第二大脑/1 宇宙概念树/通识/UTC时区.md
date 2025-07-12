@@ -1,10 +1,9 @@
 ---
-comment_id: 7310db32
 date created: 2025-01-23
-date modified: 2025-02-06
-draw: null
-title: UTC时区
+date modified: 2025-07-10
+uid: a0bf0de3-01a8-4fc2-87a4-5cce39a1e656
 ---
+
 | 时区       | 主要国家/城市                                       |
 | -------- | --------------------------------------------- |
 | UTC-8    | 美国太平洋时间（洛杉矶、旧金山）|

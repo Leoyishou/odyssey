@@ -1,9 +1,7 @@
 ---
-comment_id: 4f1dc8d1
 date created: 2025-02-24
-date modified: 2025-02-24
-draw: null
-title: based vs according
+date modified: 2025-07-10
+uid: 7bc238b2-4c25-437b-834d-a8bb632cd41e
 ---
 ## based vs according
 

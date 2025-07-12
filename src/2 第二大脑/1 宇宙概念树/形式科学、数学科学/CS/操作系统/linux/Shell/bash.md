@@ -1,9 +1,7 @@
 ---
-comment_id: 4cfca4f9
 date created: 2024-07-11
-date modified: 2025-02-06
-draw: null
-title: bash
+date modified: 2025-07-10
+uid: e103055b-8fea-4002-9fc7-b259613bfb09
 ---
 ## Bash 命令速查手册
 

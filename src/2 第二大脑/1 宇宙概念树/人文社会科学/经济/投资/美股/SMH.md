@@ -1,10 +1,9 @@
 ---
-comment_id: 5628035e
 date created: 2024-08-13
-date modified: 2025-02-06
-draw: null
-title: SMH
+date modified: 2025-07-10
+uid: f654e48c-1305-44cb-bf43-aeed4e2c63d2
 ---
+
 SMH (VanEck Semiconductor ETF) 主要成分股
 
 - 台湾积体电路制造公司（TSMC）

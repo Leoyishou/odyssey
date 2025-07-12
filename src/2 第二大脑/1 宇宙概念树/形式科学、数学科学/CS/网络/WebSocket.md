@@ -1,11 +1,9 @@
 ---
-comment_id: 106f4f82
 date created: 2024-06-05
-date modified: 2024-12-27
-draw: null
-tags: []
-title: WebSocket
+date modified: 2025-07-10
+uid: 5fd87b65-4551-4275-b629-88536e27b37b
 ---
+
 excerpt
 
 <!-- more -->

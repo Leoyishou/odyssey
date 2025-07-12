@@ -1,9 +1,7 @@
 ---
-comment_id: b09b5b4e
 date created: 2024-09-15
-date modified: 2025-02-06
-draw: null
-title: PostgreSQL
+date modified: 2025-07-10
+uid: 7e78906a-69db-4221-a6a5-76133152b266
 ---
 ```Java
 

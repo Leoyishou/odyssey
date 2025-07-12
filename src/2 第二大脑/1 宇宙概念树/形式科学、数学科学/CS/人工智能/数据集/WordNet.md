@@ -1,10 +1,9 @@
 ---
-comment_id: ee8a2998
 date created: 2024-11-04
-date modified: 2025-06-09
-draw: null
-title: WordNet
+date modified: 2025-07-10
+uid: e3a4cff8-d82b-4726-b8f7-01cfb19dc6a9
 ---
+
 以单词 **"learn"** 为例，WordNet的数据结构通常如下：
 
 下面是添加了**中文字段名称**的 WordNet 数据格式示例（以单词 **bad** 为例）：

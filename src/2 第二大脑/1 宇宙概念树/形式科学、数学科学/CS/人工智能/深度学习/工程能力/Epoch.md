@@ -1,10 +1,9 @@
 ---
-comment_id: 3ed157f7
 date created: 2025-03-23
-date modified: 2025-03-23
-draw: null
-title: Epoch
+date modified: 2025-07-10
+uid: da18b997-17cf-461d-a04a-9913cf6c6048
 ---
+
 美音：`[ˈepək]`（类似于“诶帕克”，重音也在第一个音节“诶”）
 
 用通俗的方式讲：

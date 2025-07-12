@@ -1,10 +1,9 @@
 ---
-comment_id: b92298fb
 date created: 2025-07-02
-date modified: 2025-07-02
-draw: null
-title: LangSmith
+date modified: 2025-07-10
+uid: 4a4b8764-f846-4309-a03b-6f13899e8aba
 ---
+
 | 入口 | 核心作用 | 典型使用场景 | 快速上手提示 |
 |------|----------|--------------|--------------|
 | Trace an Application | **对接代码 → 采集 Trace → 可视化调试**<br>查看每次链调用 / LLM 请求的调用树、耗时、Token 用量、错误栈 | • 本地跑脚本或启动 API 服务<br>• 想定位 Prompt 拼装、Tool 调用或外部依赖的瓶颈 | ① 在代码里 `pip install langsmith`<br>② 设置 `LANGSMITH_TRACING=true` 等环境变量<br>③ 运行程序，后台自动生成 Trace |

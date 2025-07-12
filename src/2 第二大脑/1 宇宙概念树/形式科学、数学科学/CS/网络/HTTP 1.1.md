@@ -1,10 +1,9 @@
 ---
-comment_id: fec45974
 date created: 2024-06-04
-date modified: 2025-02-06
-draw: null
-title: HTTP 1.1
+date modified: 2025-07-10
+uid: 6256e1a0-006c-490f-a582-ac9cf6086422
 ---
+
 Web 开发必须掌握的三个技术：Token、Cookie、Session - 华为云开发者联盟的文章 - 知乎  
 https://zhuanlan.zhihu.com/p/171787680  
 还分不清 Cookie、Session、Token、JWT？- 老刘的文章 - 知乎  
@@ -17,7 +16,9 @@ https://zhuanlan.zhihu.com/p/164696755
 ## 为什么永远只用 POST
 
 支持 POST 包裹rpc的方式与后台交互，一份api文档前后端通用。RESTful这玩意就是自 high，一结合业务就拧巴、纠结，碰上杠精挑刺更是痛不欲生，而且还割裂了前后端的语义。
+
 曾经我也是 rest 的拥趸，谁用谁难受。接口调用的本质是 RPC。
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F11%2F03%2F22-04-39-550660c31548ff82acecc91e7b1ab380-202411032204948-cdf794.png)
 
 GET 跟 POST 相比有什么优势呢？答曰：GET 接口返回的内容可以被缓存！（有人可能会说 GET 不能附加 body，其实这是不对的。GET 请求也可以像 POST 那样提交数据。）也就说，GET 比 POST 唯一的区别是 GET 请求的结果可以被缓存。这恰恰有很大的问题。我们对外提供接口，内容一般是动态的。如果中间节点缓存了结果，就可能出现意想不到的结果。所以说，在动态接口*领域，GET 的这个缓存特性反而是缺点，而非优点。
@@ -39,9 +40,13 @@ HTTP（Hypertext Transfer Protocol）是一种在计算机网络中用于传输�
 常见的 HTTP 请求方式有四种：
 
 POST（添加）
+
 GET（查询）
+
 DELETE（删除）
+
 PUT（修改）
+
 下面将分别对这四种请求方式进行详细介绍。
 
 1. POST 请求  
@@ -71,15 +76,22 @@ Content-Length: 123
 POST 请求的优点包括：
 
 可以提交比 GET 更大的数据量。
+
 相对更安全，因为请求参数不会被包含在 URL 中。
+
 POST 请求的缺点包括：
 
 对服务器性能的影响较大。
+
 不适用于对同一资源进行多次操作。
+
 2.3. 应用场景  
 向服务器提交表单数据。
+
 向服务器上传文件。
+
 创建资源或提交数据到服务器。
+
 3. GET 请求  
 GET 请求用于向指定资源发出请求，请求中包含了资源的 URL 和请求参数。服务器端通过解析请求参数来返回相应的资源，不会修改服务器端的状态。
 
@@ -96,13 +108,18 @@ Host: example.com
 GET 请求的优点包括：
 
 可以被缓存和浏览器保存。
+
 对服务器性能的影响较小。
+
 GET 请求的缺点包括：
 
 不适合用于提交敏感数据。
+
 仅适用于对资源进行查询操作，不能修改服务器端的状态。
+
 3.3. 应用场景  
 获取资源信息。
+
 对资源进行查询操作。
 
 ```http

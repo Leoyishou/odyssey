@@ -1,9 +1,7 @@
 ---
-comment_id: a7b6c1c5
 date created: 2024-01-15
-date modified: 2025-02-14
-draw: null
-title: Mybatis
+date modified: 2025-07-10
+uid: 610caa63-13f4-467e-96de-6cbbe2a58f1d
 ---
 ## 查询结果
 

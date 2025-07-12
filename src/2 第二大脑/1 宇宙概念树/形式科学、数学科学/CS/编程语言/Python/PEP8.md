@@ -1,9 +1,7 @@
 ---
-comment_id: 04760f2b
 date created: 2024-09-17
-date modified: 2025-03-15
-draw: null
-title: PEP8
+date modified: 2025-07-10
+uid: dbcd2533-1e0c-428f-b556-f0da06953814
 ---
 ## 命名规范
 

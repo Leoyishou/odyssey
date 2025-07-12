@@ -1,10 +1,7 @@
 ---
-comment_id: 84c3ac52
 date created: 2024-11-09
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Llama
+date modified: 2025-07-10
+uid: a59cecc6-b414-4d63-b67b-aebb1cee3d89
 ---
 ```mermaid
 graph LR

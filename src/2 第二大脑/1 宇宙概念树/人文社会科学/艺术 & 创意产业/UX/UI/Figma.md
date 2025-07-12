@@ -1,10 +1,9 @@
 ---
-comment_id: c5a74a25
 date created: 2024-07-29
-date modified: 2025-02-06
-draw: null
-title: Figma
+date modified: 2025-07-10
+uid: 1f30099e-a00d-4896-a4b8-fac5d9147c33
 ---
+
 以前是脑子里想布局，直接让 AI 写代码。以后可以先用 Figma 拖拽出一个样板图，再用 anima 插件直接生成 vue 代码
 
 <!-- more -->

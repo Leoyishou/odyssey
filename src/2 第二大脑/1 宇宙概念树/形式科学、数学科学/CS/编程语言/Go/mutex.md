@@ -1,12 +1,10 @@
 ---
-aliases:
-- mutual exclusion
-comment_id: 3b0408ab
+aliases: [mutual exclusion]
 date created: 2024-07-22
-date modified: 2025-02-06
-draw: null
-title: mutex
+date modified: 2025-07-10
+uid: 4c40f7df-16ab-46bd-80d1-9eb97ed15f4b
 ---
+
 互斥锁
 
 生活中的比喻: 想象一下公共厕所的门锁:

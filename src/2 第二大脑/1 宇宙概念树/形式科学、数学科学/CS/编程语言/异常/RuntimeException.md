@@ -1,9 +1,7 @@
 ---
-comment_id: 93a6e6cd
 date created: 2024-12-01
-date modified: 2025-03-21
-draw: null
-title: RuntimeException
+date modified: 2025-07-10
+uid: 53b40c62-e503-40e1-bf2f-68ad303a4db2
 ---
 ## NPE
 

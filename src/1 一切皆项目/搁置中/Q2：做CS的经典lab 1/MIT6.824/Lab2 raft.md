@@ -1,10 +1,7 @@
 ---
-comment_id: d925666d
 date created: 2024-09-02
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Lab2 raft
+date modified: 2025-07-10
+uid: 6aa356fd-2b33-4521-9faa-e3b41e7a62bc
 ---
 ## 运行
 

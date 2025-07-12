@@ -1,10 +1,9 @@
 ---
-comment_id: 0a0bbfb6
 date created: 2024-06-20
-date modified: 2025-02-06
-draw: null
-title: Vue3 和 Vue2
+date modified: 2025-07-10
+uid: 4526de32-0035-41bc-9307-08ec72daec4c
 ---
+
 excerpt
 
 <!-- more -->

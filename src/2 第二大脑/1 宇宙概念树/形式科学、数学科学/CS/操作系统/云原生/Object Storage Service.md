@@ -1,10 +1,9 @@
 ---
-comment_id: 35a19734
 date created: 2024-05-01
-date modified: 2025-02-06
-draw: null
-title: Object Storage Service
+date modified: 2025-07-10
+uid: ec4fe99f-f6b8-4134-b8f0-ca2613c5ccd2
 ---
+
 excerpt
 
 <!-- more -->

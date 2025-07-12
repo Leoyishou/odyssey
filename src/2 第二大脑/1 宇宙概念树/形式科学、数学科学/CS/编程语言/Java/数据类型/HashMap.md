@@ -1,9 +1,7 @@
 ---
-comment_id: f489ab0b
 date created: 2024-08-19
-date modified: 2025-02-06
-draw: null
-title: HashMap
+date modified: 2025-07-10
+uid: 21ee61ac-6fe5-4b13-b3f2-674711e2101c
 ---
 ## 拉链法解决哈希冲突
 

@@ -1,10 +1,9 @@
 ---
-comment_id: 368fa522
 date created: 2024-03-28
-date modified: 2025-04-26
-draw: null
-title: Markdown
+date modified: 2025-07-10
+uid: 617cb0e5-a9df-4ab7-b065-2d5858097804
 ---
+
 Markdown 是 bit 赠予世界的笔，就像 code style 一样，Linter 是个很好的风格固化工具！
 
 <!-- more -->

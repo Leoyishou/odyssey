@@ -1,10 +1,9 @@
 ---
-comment_id: 2eb894b5
 date created: 2025-02-23
-date modified: 2025-03-13
-draw: null
-title: DeepSeek
+date modified: 2025-07-10
+uid: e6504ecc-8e4c-4ba1-b25b-90d4c253295d
 ---
+
 Deepseek v3 和 llama-like 的模型有很大的区别，infra 层做了很多优化。但是 infra 厂商不一定会愿意
 
  llama-like 是 dense decoder，大部分显卡适配这种  

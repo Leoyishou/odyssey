@@ -1,10 +1,7 @@
 ---
-comment_id: ce9e07ab
 date created: 2024-12-25
-date modified: 2024-12-27
-draw: null
-tags: []
-title: fork
+date modified: 2025-07-10
+uid: 0fabc65d-49ce-4814-a8a1-32d20dc821fb
 ---
 ```Java
 ┌─────────────────────────────────────────────────────────────────────────────┐

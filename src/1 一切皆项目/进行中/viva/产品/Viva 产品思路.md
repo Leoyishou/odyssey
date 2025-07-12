@@ -1,15 +1,12 @@
 ---
-comment_id: c4279133
 date created: 2024-02-16
-date modified: 2024-11-12
-draw: null
-tags: []
-title: Viva 产品思路
+date modified: 2025-07-10
+uid: 09d32dc3-e623-437a-a9a2-c2354a7cf088
 ---
+
 帮我做一个 kaggle 风格的网站，功能是用户上传中文文章后，会分词，然后用户输入自己认为的英文翻译，网站会帮忙检查对错，并生成闪卡用于间隔复习。
 
 Help me build a Kaggle-style website, with the function of users uploading Chinese articles, which will be segmented, and then users inputting their own English translations, and the website will help check the correctness and generate flashcards for spaced repetition review.
-
 
 **我想做的是英语世界的溯源系统**  
 还是软件开发中数字化+智能化的方式  

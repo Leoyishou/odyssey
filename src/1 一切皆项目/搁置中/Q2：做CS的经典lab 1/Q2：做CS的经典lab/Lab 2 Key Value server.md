@@ -1,10 +1,7 @@
 ---
-comment_id: 33edb2f4
 date created: 2024-08-07
-date modified: 2024-11-12
-draw: null
-tags: []
-title: Lab 2 Key Value server
+date modified: 2025-07-10
+uid: 32a450d3-7349-465f-aa70-b9d874fd3b1d
 ---
 ## 资料
 

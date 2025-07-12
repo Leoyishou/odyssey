@@ -1,10 +1,9 @@
 ---
-comment_id: 138d91b7
 date created: 2025-01-29
-date modified: 2025-02-20
-draw: null
-title: CMU 15-445  Database Systems
+date modified: 2025-07-10
+uid: 82e655f4-a437-4863-bf71-84ebc6295878
 ---
+
 关于 Spring 2023 的通关指南，可以参考 [@xzhseh](https://github.com/xzhseh) 的这篇[CMU 15-445/645 (Spring 2023) Database Systems 通关指北](https://zhuanlan.zhihu.com/p/637960746)，里面涵盖了全部你需要的通关道具，和通关方式建议，以及最重要的，我自己在做 Project 的过程中遇到的，看到的，和自己亲自踩过的坑。
 
 顾源:  
@@ -20,7 +19,9 @@ Michael Xu (作者):
 
 遂光者:  
 自己作为数据库方向的phd，并且现在也在业界当一个数据库内核开发人员，整体上是比较同意guyuan的说法的。
+
 15-445确实是一门好课，但是Bustub确实是过于toy了，如果想从事数据库内核研发，看Bustub的代码意义不大。pg、mysql、clickhouse的代码可以多看看（虽然mysql的代码比较丑），而且源码分析的博客也挺多的。
 
 当然作者的说法也没错，每个人的需求不一样，很多新人没有大型项目的代码阅读&开发经验，做一个课程pj入门这个领域也挺好的。
+
 总结就是，这个项目适合新人入门。新人入门后如果在这个项目上花很多时间做性能优化/细读这个项目其他模块的源码，则意义不大。去业界实习/看成熟数据库源码会更高效。

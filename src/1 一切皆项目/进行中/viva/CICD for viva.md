@@ -1,10 +1,9 @@
 ---
-comment_id: 5249a119
 date created: 2024-12-27
-date modified: 2025-03-14
-draw: null
-title: CICD for viva
+date modified: 2025-07-10
+uid: ee9db5ce-f455-4661-adbf-f6edf48d5216
 ---
+
 | 步骤       | 当前问题      | 优化后效果             |
 | -------- | --------- | ----------------- |
 | Docker构建 | 缓存未利用     | 利用分层缓存，速度提升 > 70% |

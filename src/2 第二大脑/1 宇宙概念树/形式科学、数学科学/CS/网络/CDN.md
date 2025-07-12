@@ -1,10 +1,9 @@
 ---
-comment_id: bc695004
 date created: 2025-02-14
-date modified: 2025-04-13
-draw: null
-title: CDN
+date modified: 2025-07-10
+uid: 360559e0-c38c-449d-b1b8-913c520ebd94
 ---
+
 我来解释一下这个问题：
 
 CDN版本和SDK版本的主要区别不是存储位置，而是使用方式和处理方式。让我澄清一下：

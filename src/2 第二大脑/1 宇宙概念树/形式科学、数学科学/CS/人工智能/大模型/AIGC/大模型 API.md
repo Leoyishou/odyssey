@@ -1,10 +1,9 @@
 ---
-comment_id: d125db57
 date created: 2025-07-02
-date modified: 2025-07-03
-draw: null
-title: 大模型 API
+date modified: 2025-07-10
+uid: 55b3a867-91ad-437f-8d45-aac2ebab849f
 ---
+
 | 模型 | 版本/发布日期 | 平均输出速度 | 首字节延迟 | 相对 GPT-4 Turbo |
 |------|--------------|-------------|-----------|-----------------|
 | **GPT-4o mini** | Jul 2024 | **≈ 108 t/s** | 0.42 s | **≈ 2.3 ×** |

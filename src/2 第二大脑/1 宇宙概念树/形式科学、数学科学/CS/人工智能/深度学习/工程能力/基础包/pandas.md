@@ -1,10 +1,9 @@
 ---
-comment_id: 77b1404f
 date created: 2024-10-13
-date modified: 2025-05-02
-draw: null
-title: pandas
+date modified: 2025-07-10
+uid: b737bc09-d9cc-421b-b973-130c16ee19a7
 ---
+
 pandas 在使用时语法感觉很乱，有什么学习的技巧吗？- 奕高的回答 - 知乎  
 https://www.zhihu.com/question/289788451/answer/2167204031
 

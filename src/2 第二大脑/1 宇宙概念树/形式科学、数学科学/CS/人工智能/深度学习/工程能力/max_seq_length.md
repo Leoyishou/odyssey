@@ -1,9 +1,7 @@
 ---
-comment_id: fa99bff2
 date created: 2025-03-24
-date modified: 2025-03-24
-draw: null
-title: max_seq_length
+date modified: 2025-07-10
+uid: 8c365c94-6f67-4bce-8f5d-8505d6b45c7a
 ---
 **通俗明确地说**：
 

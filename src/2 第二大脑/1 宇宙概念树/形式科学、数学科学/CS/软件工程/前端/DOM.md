@@ -1,10 +1,9 @@
 ---
-comment_id: 0d6e90ca
 date created: 2024-06-23
-date modified: 2025-02-06
-draw: Document Object Model
-title: DOM
+date modified: 2025-07-10
+uid: 362ea03d-d30b-4d95-b093-35e04353bb45
 ---
+
 用面向对象的方式操作浏览器上的[HTML](HTML.md)
 
 - Document：代表整个HTML文档

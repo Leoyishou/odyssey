@@ -1,12 +1,7 @@
 ---
-aliases:
-- Mojito Translate
-comment_id: ea35668e
 date created: 2025-04-14
-date modified: 2025-04-14
-draw: null
-linter-yaml-title-alias: Mojito Translate
-title: Mojito Translate
+date modified: 2025-07-10
+uid: 3728b2c2-4955-46b0-a404-3cd0b0804e6d
 ---
 ## Mojito Translate
 

@@ -1,9 +1,7 @@
 ---
-comment_id: 4643792e
 date created: 2025-03-15
-date modified: 2025-03-15
-draw: null
-title: Python 中的相对导入和绝对导入
+date modified: 2025-07-10
+uid: eb2655d7-0d32-4489-9b40-042b8bbdd993
 ---
 ## 绝对导入
 

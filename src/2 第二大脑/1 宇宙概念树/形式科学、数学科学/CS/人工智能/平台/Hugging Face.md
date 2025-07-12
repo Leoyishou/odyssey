@@ -1,9 +1,7 @@
 ---
-comment_id: 7ca73676
 date created: 2024-07-17
-date modified: 2025-03-26
-draw: null
-title: Hugging Face
+date modified: 2025-07-10
+uid: 3c07133f-c8f3-40be-aeed-befd62f7040b
 ---
 ```bash
 huggingface-cli login

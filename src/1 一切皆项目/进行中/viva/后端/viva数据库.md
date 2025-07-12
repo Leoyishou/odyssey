@@ -1,10 +1,9 @@
 ---
-comment_id: d92db499
 date created: 2024-10-22
-date modified: 2025-02-24
-draw: null
-title: viva数据库
+date modified: 2025-07-10
+uid: 3a897111-741b-44a5-9688-45eb2cb2159b
 ---
+
 针对这种中英文对照的分词数据，我来建议几种数据库存储方案：
 
 1. 关系型数据库设计：

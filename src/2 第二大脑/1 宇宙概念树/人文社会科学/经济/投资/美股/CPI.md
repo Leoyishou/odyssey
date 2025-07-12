@@ -1,11 +1,8 @@
 ---
-aliases:
-- Consumer Price Index
-comment_id: d3c02173
+aliases: [Consumer Price Index]
 date created: 2024-09-11
-date modified: 2025-02-06
-draw: null
-title: CPI
+date modified: 2025-07-10
+uid: 3aa06e03-b245-434a-9e82-73abff787a12
 ---
 ## 计算方式
 

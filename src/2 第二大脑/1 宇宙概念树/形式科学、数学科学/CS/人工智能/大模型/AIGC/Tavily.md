@@ -1,9 +1,7 @@
 ---
-comment_id: 50ceac86
 date created: 2025-03-24
-date modified: 2025-03-24
-draw: null
-title: Tavily
+date modified: 2025-07-10
+uid: 802ffcd8-6641-4cd6-b33a-ed1a681cf146
 ---
 **Tavily** 是一个专门为大模型（例如ChatGPT、GPT-4等）以及自动化智能体系统提供网络搜索和信息检索服务的平台。
 

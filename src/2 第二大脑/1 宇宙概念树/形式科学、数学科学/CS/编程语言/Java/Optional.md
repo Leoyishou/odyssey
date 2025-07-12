@@ -1,9 +1,7 @@
 ---
-comment_id: f481a7d5
 date created: 2024-08-02
-date modified: 2025-02-06
-draw: null
-title: Optional
+date modified: 2025-07-10
+uid: c3611b3d-d3c0-4aee-a51a-6f9aeecdb0ed
 ---
 ```java
 

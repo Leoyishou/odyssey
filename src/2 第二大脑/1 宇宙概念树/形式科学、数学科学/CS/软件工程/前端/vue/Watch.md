@@ -1,9 +1,7 @@
 ---
-comment_id: aa627d67
 date created: 2024-07-31
-date modified: 2025-02-06
-draw: null
-title: Watch
+date modified: 2025-07-10
+uid: 9aa783dd-12df-45c4-8158-0ced750c5cb2
 ---
 ```js
 watch(() => props.data, () => {

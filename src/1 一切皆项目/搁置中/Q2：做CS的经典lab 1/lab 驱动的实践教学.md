@@ -1,10 +1,7 @@
 ---
-comment_id: 2a3a5b16
 date created: 2025-01-29
-date modified: 2025-01-29
-draw: null
-tags: []
-title: lab 驱动的实践教学
+date modified: 2025-07-10
+uid: 4d0f88ad-61a0-49ba-a5c7-93d03ada1637
 ---
 - **MIT 6.828**（操作系统）用 xv6 做实验，从内核最小原型出发，逐步构建 OS 核心组件。
 - **MIT 6.824**（分布式系统）强调容错、复制、一致性等分布式关键技术，lab 实现 Raft、KV 存储等。

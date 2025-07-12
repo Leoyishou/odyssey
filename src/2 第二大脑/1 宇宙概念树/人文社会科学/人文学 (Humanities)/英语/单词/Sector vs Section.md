@@ -1,9 +1,7 @@
 ---
-comment_id: a6b38bce
 date created: 2025-02-15
-date modified: 2025-02-15
-draw: null
-title: Sector vs Section
+date modified: 2025-07-10
+uid: 146149c5-cd33-4408-aa04-01fff92cc042
 ---
 ## Sector vs Section
 

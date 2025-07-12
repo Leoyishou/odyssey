@@ -1,11 +1,9 @@
 ---
-comment_id: 9b468758
 date created: 2024-06-29
-date modified: 2024-11-12
-draw: null
-tags: []
-title: IDEA
+date modified: 2025-07-10
+uid: a7267c22-15b1-43d5-804b-0ae0aba3b238
 ---
+
 [IDEA 代码警告](IDEA%20代码警告.md)  
 [IDEA 中的快捷键](IDEA%20中的快捷键.md)  
 [IDEA 插件的最佳实践](IDEA%20插件的最佳实践.md)

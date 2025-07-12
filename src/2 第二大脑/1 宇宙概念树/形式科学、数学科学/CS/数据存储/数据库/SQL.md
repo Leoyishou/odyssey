@@ -1,10 +1,9 @@
 ---
-comment_id: 61bf38e9
 date created: 2024-10-03
-date modified: 2025-02-06
-draw: null
-title: SQL
+date modified: 2025-07-10
+uid: 15d24aa6-7e31-4d4c-baa2-9018df8b852c
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F10%2F03%2F19-40-07-52b881783ca0b97348eed37fa772b69e-202410031940711-70c86a.png)
 
 ## limit

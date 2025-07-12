@@ -1,10 +1,7 @@
 ---
-comment_id: 2bc1dc2e
 date created: 2025-01-24
-date modified: 2025-01-24
-draw: null
-tags: []
-title: softmax
+date modified: 2025-07-10
+uid: a25ddc44-7dc3-4eb7-a29a-f883a9072bc9
 ---
 ```mermaid
 flowchart LR

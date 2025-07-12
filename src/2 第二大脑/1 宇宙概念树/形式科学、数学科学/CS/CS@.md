@@ -1,10 +1,9 @@
 ---
-comment_id: 4c5fcfb9
 date created: 2024-05-19
-date modified: 2025-06-22
-draw: null
-title: CS@
+date modified: 2025-07-10
+uid: b5ef6834-6399-4b0b-98b2-df5a5659df91
 ---
+
 外表高大上，看着是宾利的壳，其实核心动力是几个老鼠在壳里面蹬三轮呢。只要你干一两年基本都懂了。
 
 [胡适](胡适.md)说：怕什么真理无穷，**进一寸有进一寸的欢喜**。

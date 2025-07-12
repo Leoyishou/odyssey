@@ -1,9 +1,7 @@
 ---
-comment_id: 424368ff
 date created: 2024-08-17
-date modified: 2025-02-06
-draw: null
-title: util
+date modified: 2025-07-10
+uid: a08333ef-ccfc-4c83-8d77-912103f16628
 ---
 - 集合框架：
     - List 接口及其实现：ArrayList, LinkedList, Vector

@@ -1,7 +1,5 @@
 ---
-comment_id: 2f3aaf93
 date created: 2024-07-29
-date modified: 2025-04-26
-draw: null
-title: PWA - Progressive Web Apps
+date modified: 2025-07-10
+uid: c7ab2beb-efaa-4758-a8eb-a98e2bc440cd
 ---

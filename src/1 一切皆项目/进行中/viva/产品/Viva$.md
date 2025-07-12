@@ -1,10 +1,9 @@
 ---
-comment_id: 3edb5a23
 date created: 2024-02-16
-date modified: 2025-06-15
-draw: null
-title: Viva$
+date modified: 2025-07-10
+uid: 0f37bf92-60ce-4f74-87bc-f17e6f7d801b
 ---
+
 viva 的数据可视化可以参考 B 站的流量占比分析
 
 探索 AI 对于个人开发者的赋能

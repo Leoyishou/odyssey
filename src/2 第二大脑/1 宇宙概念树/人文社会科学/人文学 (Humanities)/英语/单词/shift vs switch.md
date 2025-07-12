@@ -1,12 +1,7 @@
 ---
-aliases:
-- 'shift vs switch  '
-comment_id: 8959ec67
 date created: 2025-02-24
-date modified: 2025-02-24
-draw: null
-linter-yaml-title-alias: 'shift vs switch  '
-title: 'shift vs switch  '
+date modified: 2025-07-10
+uid: f1386bd3-710b-4124-afc8-5ed7df98a42b
 ---
 ## shift vs switch  
 

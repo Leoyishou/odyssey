@@ -1,16 +1,18 @@
 ---
-comment_id: e99ad35d
+uid: 8d19b481-d969-49d6-b8fe-e0fa8bacf32e
+date created: 2025-07-10
+date modified: 2025-07-10
 ---
 
-# CLAUDE.md
+## CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+### Project Overview
 
 This is an Obsidian-based personal knowledge management system (PKM) called "Odyssey" that follows the PARA (Projects, Areas, Resources, Archives) methodology combined with the DIKW (Data-Information-Knowledge-Wisdom) model. The content is primarily in Chinese.
 
-## Repository Structure
+### Repository Structure
 
 The repository contains four main directories:
 
@@ -21,16 +23,19 @@ The repository contains four main directories:
 - **3 博客/** - Blog posts and articles
 - **4 复盘/** - Weekly/annual reviews and retrospectives
 
-## Key Commands
+### Key Commands
 
-### Markdown Processing
+#### Markdown Processing
 ```bash
 python merge_markdown.py
 ```
+
 Combines all markdown files from the four main directories into `combined_markdown.txt`.
 
-### Git Operations
+#### Git Operations
+
 The repository uses git for version control. Common operations:
+
 ```bash
 git status
 git add .
@@ -38,30 +43,30 @@ git commit -m "commit message"
 git push
 ```
 
-## Development Guidelines
+### Development Guidelines
 
-### File Organization
+#### File Organization
 - All content files are in Markdown format (.md)
 - Use Chinese file names that clearly describe the content
 - Files with `$` suffix (e.g., `项目$.md`) are typically index or overview files
 - Files with `@` suffix (e.g., `管理学@.md`) are category or topic aggregation files
 
-### Linking Convention
+#### Linking Convention
 - Use Obsidian-style wikilinks: `[[filename]]` for internal references
 - External links use standard markdown: `[text](url)`
 - Image links follow the pattern: `![alt text|size](image_url)`
 
-### Content Structure
+#### Content Structure
 - Each file typically starts with YAML frontmatter containing metadata
 - Use hierarchical headings (##, ###) for content organization
 - Tag system includes: `#第一性原理`, `#最佳实践`, `#comment`
 
-### Working with Obsidian Features
+#### Working with Obsidian Features
 - The repository is designed to work with Obsidian's graph view and backlinks
 - Maintain the existing folder structure to preserve the knowledge hierarchy
 - When creating new content, place it in the appropriate category folder
 
-## Important Notes
+### Important Notes
 
 - This is a personal knowledge base with content spanning multiple domains
 - The primary language is Chinese, with some English technical terms

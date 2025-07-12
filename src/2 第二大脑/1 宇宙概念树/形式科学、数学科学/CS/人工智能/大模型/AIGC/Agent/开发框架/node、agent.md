@@ -1,10 +1,9 @@
 ---
-comment_id: bb8a4164
 date created: 2025-04-18
-date modified: 2025-04-18
-draw: null
-title: node、agent
+date modified: 2025-07-10
+uid: 6d139e25-fa72-42e5-9a23-9fb5c0f6fb46
 ---
+
 Thought for 4 seconds
 
 | Node                                             |                                                          |

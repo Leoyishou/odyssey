@@ -1,12 +1,7 @@
 ---
-aliases:
-- 'motivate vs encourage  '
-comment_id: cadf7d61
 date created: 2025-02-24
-date modified: 2025-02-24
-draw: null
-linter-yaml-title-alias: 'motivate vs encourage  '
-title: 'motivate vs encourage  '
+date modified: 2025-07-10
+uid: 9f9324cf-dd66-4645-87bd-07c88d446a84
 ---
 ## motivate vs encourage  
 

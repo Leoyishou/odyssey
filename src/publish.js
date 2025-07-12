@@ -5,13 +5,13 @@
  ******************************************************************/
 
 /* --------- 工具函数：从原始 Markdown 抽取 comment_id --------- */
-function getCommentId() {
+function getUid() {
     /* Publish 会把 Markdown 原文放进 <script type="text/plain">…</script> */
     const raw =
       document.querySelector('script[type="text/plain"]')?.textContent ||
       document.body.innerText;                          // 兜底：直接扫可见文本
   
-    const m = raw.match(/comment_id:\s*([0-9a-fA-F-]+)/);
+    const m = raw.match(/uid:\s*([0-9a-fA-F-]+)/);
     return m ? m[1].trim() : null;                      // 例如 “8f4c3d0a”
   }
   
@@ -32,9 +32,9 @@ function getCommentId() {
     }
   
     /* 读取 comment_id，没有就放弃加载评论 */
-    const cid = getCommentId();
-    if (!cid) {
-      console.warn('[Giscus] 未找到 comment_id，页面不加载评论');
+    const uid = getUid();
+    if (!uid) {
+      console.warn('[Giscus] 未找到 uid，页面不加载评论');
       return;
     }
   
@@ -53,7 +53,7 @@ function getCommentId() {
   
     /* 关键：用 comment_id 作为主键 */
     s.dataset.mapping     = 'id';
-    s.dataset.term        = cid;
+    s.dataset.term        = uid;
   
     s.dataset.reactionsEnabled = '1';
     s.dataset.theme       = 'preferred_color_scheme';

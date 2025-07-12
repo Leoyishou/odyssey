@@ -1,10 +1,9 @@
 ---
-comment_id: 49bc9cc1
 date created: 2024-06-03
-date modified: 2025-02-06
-draw: null
-title: var、let、const 的区别
+date modified: 2025-07-10
+uid: efc3c49c-debf-4a18-9b0f-d5fe21a2f85c
 ---
+
 excerpt
 
 <!-- more -->

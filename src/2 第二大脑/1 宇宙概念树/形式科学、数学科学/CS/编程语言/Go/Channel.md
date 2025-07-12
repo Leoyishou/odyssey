@@ -1,9 +1,7 @@
 ---
-comment_id: ea41b12d
 date created: 2024-07-22
-date modified: 2025-02-06
-draw: null
-title: Channel
+date modified: 2025-07-10
+uid: b606f0ef-afae-41b0-a82e-34a0a9e7f8ba
 ---
 ```go
 c.server()          //普通调用一个函数

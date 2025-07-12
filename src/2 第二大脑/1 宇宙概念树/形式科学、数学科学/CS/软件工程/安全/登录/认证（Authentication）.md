@@ -1,12 +1,10 @@
 ---
-aliases:
-- Authentication
-comment_id: 09517e13
+aliases: [Authentication]
 date created: 2024-01-18
-date modified: 2025-04-14
-draw: null
-title: 认证（Authentication）
+date modified: 2025-07-10
+uid: 2bf58458-2bee-441e-8a4c-03d21e419695
 ---
+
 认证是证明你真的是如你所说的那个人
 
 | 认证方法 (Authentication Method)  | 例子                     |                                                   | 优点 (Pros)       | 缺点 (Cons)        |

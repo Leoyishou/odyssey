@@ -1,9 +1,7 @@
 ---
-comment_id: e7e58b90
 date created: 2023-12-04
-date modified: 2025-03-20
-draw: null
-title: AIGC可能并没有多强大
+date modified: 2025-07-10
+uid: 11c747e1-7d50-456a-9d7a-63cd82482775
 ---
 - [一、使用经历和分享内容](#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E7%BB%8F%E5%8E%86%E5%92%8C%E5%88%86%E4%BA%AB%E5%86%85%E5%AE%B9)
 - [二、一些前置概念](#%E4%BA%8C%E3%80%81%E4%B8%80%E4%BA%9B%E5%89%8D%E7%BD%AE%E6%A6%82%E5%BF%B5)
@@ -59,6 +57,7 @@ Chatgpt、Midjourney、Elvenlabs、assemblyai
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213151812.png)
 
 langchain 只是将大模型开发的过程高度抽象化，最终 tools、agent 等都是基于老的 API 实现（在 playground 展示老的 api）
+
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213150655.png)  
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213151952.png)
 
@@ -105,6 +104,7 @@ langchain 只是将大模型开发的过程高度抽象化，最终 tools、agen
 ### Openai 的最新 API
 
 使用开发者大会之后的新 api 开发（在 playground 展示新的 api）
+
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213151616.png)
 
 ### 展示数据处理过程

@@ -1,10 +1,9 @@
 ---
-comment_id: 4609d597
 date created: 2024-06-23
-date modified: 2025-04-14
-draw: null
-title: Vue3@
+date modified: 2025-07-10
+uid: 0892f044-f15d-4b0b-810e-7158102ce68c
 ---
+
 #第一性原理
 
 Vue 是为[[SPA 单页应用]]的开发服务的，[[dist]]

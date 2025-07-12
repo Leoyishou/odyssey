@@ -1,10 +1,9 @@
 ---
-comment_id: 81f03589
 date created: 2024-12-01
-date modified: 2025-05-09
-draw: null
-title: CheckedException
+date modified: 2025-07-10
+uid: d6bba9e1-b9bb-401d-9f0d-e774fd824fbe
 ---
+
 受检异常：编译器强制要求必须用 try-catch 处理或者用 throws 声明抛出
 
 常见的受检异常包括：

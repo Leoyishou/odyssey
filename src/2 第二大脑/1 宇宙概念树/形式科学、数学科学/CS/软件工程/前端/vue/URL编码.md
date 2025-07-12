@@ -1,10 +1,9 @@
 ---
-comment_id: c46147cc
 date created: 2024-06-20
-date modified: 2025-02-06
-draw: null
-title: URL编码
+date modified: 2025-07-10
+uid: 20ea8a60-18bc-451d-81ea-6f6f4134bec5
 ---
+
 URL 中使用特殊字符时，不会引起歧义或错误
 
 <!-- more -->

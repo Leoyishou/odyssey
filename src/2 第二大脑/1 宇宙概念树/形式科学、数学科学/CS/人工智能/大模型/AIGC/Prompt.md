@@ -1,12 +1,10 @@
 ---
-aliases:
-- Prompt engineering
-comment_id: 0deeb239
+aliases: [Prompt engineering]
 date created: 2024-10-24
-date modified: 2025-04-29
-draw: null
-title: Prompt
+date modified: 2025-07-10
+uid: 2cc50e5f-b1af-4021-8ff6-f4d481685961
 ---
+
 #最佳实践 **最好的** **prompt** **管理工具是搜狗输入法**
 
 https://eamtute8hsd.feishu.cn/wiki/C9jDwyYMoivt35kKBJuck9j3n1g?fromScene=spaceOverview

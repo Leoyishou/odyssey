@@ -1,10 +1,9 @@
 ---
-comment_id: fd7ea95f
 date created: 2025-04-14
-date modified: 2025-04-14
-draw: null
-title: 设计令牌系统 design tokens
+date modified: 2025-07-10
+uid: da255025-23d7-4a0e-9089-680cdb218d61
 ---
+
 Design tokens 是一套全局的设计变量，用于存储和管理应用中所有关键的视觉设计决策，例如颜色、字体、间距、边框、阴影、动画等属性。它们通常以简单、机器可读的格式（例如 JSON、YAML 或 CSS 自定义属性）记录，并作为整个项目中的单一设计源泉，从而确保在不同组件、模块乃至多个平台之间实现设计一致性。
 
 ---

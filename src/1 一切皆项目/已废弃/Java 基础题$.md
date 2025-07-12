@@ -1,9 +1,7 @@
 ---
-comment_id: 131b0db3
 date created: 2024-08-23
-date modified: 2025-05-03
-draw: null
-title: Java 基础题$
+date modified: 2025-07-10
+uid: e7fed0a5-56cd-41b9-99a3-099a30ae162d
 ---
 ## [第一性原理](第一性原理.md)
 

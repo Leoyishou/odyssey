@@ -1,11 +1,9 @@
 ---
-comment_id: 6c8b23a4
 date created: 2024-12-18
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Makefile
+date modified: 2025-07-10
+uid: e3797c9f-ce5e-4cf9-95cf-b4c441b95bfe
 ---
+
 让我用简单的方式来解释 Makefile：
 
 想象你在搭乐高玩具城堡：

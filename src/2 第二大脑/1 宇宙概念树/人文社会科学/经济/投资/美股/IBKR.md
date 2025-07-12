@@ -1,9 +1,7 @@
 ---
-comment_id: 1572d7eb
 date created: 2024-08-08
-date modified: 2025-02-06
-draw: null
-title: IBKR
+date modified: 2025-07-10
+uid: 920b6869-70bd-40ca-b98e-dfc8565f4adc
 ---
 ## 换汇
 

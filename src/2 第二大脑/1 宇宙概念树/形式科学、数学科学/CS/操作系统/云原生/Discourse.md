@@ -1,10 +1,9 @@
 ---
-comment_id: c2284b31
 date created: 2024-05-12
-date modified: 2025-02-06
-draw: null
-title: Discourse
+date modified: 2025-07-10
+uid: 451093f4-75bc-4c8a-9887-9a819272a1ee
 ---
+
 Discourse 的设计注重用户体验和社区参与
 
 <!-- more -->

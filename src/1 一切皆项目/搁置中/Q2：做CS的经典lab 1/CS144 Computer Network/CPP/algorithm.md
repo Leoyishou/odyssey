@@ -1,11 +1,9 @@
 ---
-comment_id: 926127f5
 date created: 2024-12-31
-date modified: 2024-12-31
-draw: null
-tags: []
-title: algorithm
+date modified: 2025-07-10
+uid: bf9a0095-6026-4a3f-8a99-f414fa8c8a5f
 ---
+
 `<algorithm>` 是 C++ 标准库中的一个头文件，提供了大量有用的算法函数。以下是一些常用的算法：
 
 ```cpp

@@ -1,11 +1,9 @@
 ---
-comment_id: 113de9a0
 date created: 2024-12-31
-date modified: 2024-12-31
-draw: null
-tags: []
-title: r n
+date modified: 2025-07-10
+uid: 379218c0-ed80-4e06-aed9-ee0afa2ff171
 ---
+
 `\n` 和 `\r\n` 的区别主要与不同操作系统的换行符历史有关：
 
 1. `\n`（Line Feed，LF）

@@ -1,10 +1,7 @@
 ---
-comment_id: ce8095b0
 date created: 2024-12-30
-date modified: 2025-01-21
-draw: null
-tags: []
-title: CMake
+date modified: 2025-07-10
+uid: 72917e91-094f-456a-93c2-3bd997f3afa7
 ---
 - **含义**：CMake 是一个跨平台的构建系统生成器（build system generator）。它本身不直接编译你的代码，而是根据你在 `CMakeLists.txt` 中的配置，去生成实际的构建脚本（如 Makefile、Ninja 构建脚本、Visual Studio 工程文件等）。
 - **作用**：

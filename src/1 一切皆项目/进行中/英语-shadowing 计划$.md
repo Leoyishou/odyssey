@@ -1,10 +1,9 @@
 ---
-comment_id: 2f54436f
 date created: 2025-07-06
-date modified: 2025-07-06
-draw: null
-title: 英语-shadowing 计划$
+date modified: 2025-07-10
+uid: 4ea927d5-69b6-4e1d-b6ba-e4f592b72694
 ---
+
 目标：尝试用 shadowing 的方式突破英语瓶颈，或许能从高频组合中拿到日常英语的[Transformer](Transformer.md)权重
 
 [SMART原则](SMART原则.md)：

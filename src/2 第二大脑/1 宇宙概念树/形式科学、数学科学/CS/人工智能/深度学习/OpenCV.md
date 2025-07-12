@@ -1,7 +1,5 @@
 ---
-comment_id: c91f466a
 date created: 2025-02-14
-date modified: 2025-03-23
-draw: null
-title: OpenCV
+date modified: 2025-07-10
+uid: f201a01a-ba21-455d-8ebe-6a16c83794b0
 ---

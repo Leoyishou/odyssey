@@ -1,9 +1,7 @@
 ---
-comment_id: 996af7b8
 date created: 2024-11-25
-date modified: 2025-02-06
-draw: null
-title: gitigonre
+date modified: 2025-07-10
+uid: 8840acd4-d4c9-4899-b687-78dc98a581e2
 ---
 - `/node_modules` - 依赖包体积大，而且可以通过 package.json 重新安装
 - `dist` 和 `build` - 这是构建产物，不需要提交到代码库

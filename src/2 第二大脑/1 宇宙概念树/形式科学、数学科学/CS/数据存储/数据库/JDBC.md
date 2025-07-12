@@ -1,10 +1,9 @@
 ---
-comment_id: 9b22d6ef
 date created: 2025-01-18
-date modified: 2025-02-06
-draw: null
-title: JDBC
+date modified: 2025-07-10
+uid: 5af30e56-1df6-4537-baa4-59193ae0378c
 ---
+
 | MySQL | JDBCType      | JavaType                   |
 | ----- | ------------- | -------------------------- |
 |       | CHAR          | String                     |

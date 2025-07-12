@@ -1,10 +1,7 @@
 ---
-comment_id: 6c064067
 date created: 2024-10-02
-date modified: 2024-12-27
-draw: null
-tags: []
-title: viva 数据库
+date modified: 2025-07-10
+uid: 13027684-f30a-4567-bded-e95ed3bc99b8
 ---
 ## 更新时间和创建时间字段
 

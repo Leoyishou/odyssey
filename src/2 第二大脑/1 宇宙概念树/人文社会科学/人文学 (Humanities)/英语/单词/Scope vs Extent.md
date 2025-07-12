@@ -1,9 +1,7 @@
 ---
-comment_id: 7e424715
 date created: 2025-02-15
-date modified: 2025-02-15
-draw: null
-title: Scope vs Extent
+date modified: 2025-07-10
+uid: 99fc2f13-179c-40ea-9ab7-e54f8634591c
 ---
 ## Scope vs Extent
 

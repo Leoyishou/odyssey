@@ -1,10 +1,9 @@
 ---
-comment_id: c94ffd03
 date created: 2024-08-20
-date modified: 2025-02-06
-draw: null
-title: Throwable@
+date modified: 2025-07-10
+uid: df7974cd-d726-4f0a-9207-caaa2e9db814
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F08%2F20%2F11-27-07-48ce5245af8e69526d54787f51fab89d-202408201127685-ec753b.png)
 
 ```mermaid

@@ -1,10 +1,7 @@
 ---
-comment_id: e1190e4f
 date created: 2024-09-21
-date modified: 2024-11-12
-draw: null
-tags: []
-title: 比特币，共识算法，MIT6.824
+date modified: 2025-07-10
+uid: 3e99a13d-278f-4ad0-a988-a2d4523f1f6f
 ---
 ## 道，IBIT的收益
 

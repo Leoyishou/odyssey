@@ -1,10 +1,7 @@
 ---
-comment_id: 32657d31
 date created: 2024-10-07
-date modified: 2024-11-12
-draw: null
-tags: []
-title: claude
+date modified: 2025-07-10
+uid: 44165569-25af-42b9-b347-2562b7b5041e
 ---
 ## claude 已经成神
 

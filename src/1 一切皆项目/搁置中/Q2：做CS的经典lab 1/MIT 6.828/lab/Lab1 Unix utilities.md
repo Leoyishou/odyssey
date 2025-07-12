@@ -1,10 +1,7 @@
 ---
-comment_id: bd172796
 date created: 2024-12-11
-date modified: 2025-01-25
-draw: null
-tags: []
-title: Lab1 Unix utilities
+date modified: 2025-07-10
+uid: 1122b7fd-eddf-46cd-aaaf-bafb94e8ad1f
 ---
 ## 任务
 

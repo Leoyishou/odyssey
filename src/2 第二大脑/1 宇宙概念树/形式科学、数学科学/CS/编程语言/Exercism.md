@@ -1,7 +1,5 @@
 ---
-comment_id: c5d4bb82
 date created: 2025-03-25
-date modified: 2025-03-25
-draw: null
-title: Exercism
+date modified: 2025-07-10
+uid: 820bd31b-17a2-4ff1-b706-38d2fd897631
 ---

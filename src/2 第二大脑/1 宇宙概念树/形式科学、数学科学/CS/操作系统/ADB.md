@@ -1,10 +1,9 @@
 ---
-comment_id: 1d805dc1
 date created: 2025-04-15
-date modified: 2025-04-15
-draw: null
-title: ADB
+date modified: 2025-07-10
+uid: d6ebfcd0-8dd0-4e1a-84cc-14cbf8a8cd99
 ---
+
 当然可以！下面是对安卓 ADB（Android Debug Bridge）的形象介绍：
 
 ---

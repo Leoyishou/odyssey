@@ -1,10 +1,9 @@
 ---
-comment_id: 32d9b279
 date created: 2025-04-09
-date modified: 2025-04-09
-draw: null
-title: AI 旅游产品
+date modified: 2025-07-10
+uid: 1dc1d572-5cc8-4fab-8c1c-5cd1b6174a88
 ---
+
 [[Genspark]]
 
 以下是包括前面提到的全球与中国的 AI 驱动旅行规划工具的完整对比表格，以 markdown 格式呈现：

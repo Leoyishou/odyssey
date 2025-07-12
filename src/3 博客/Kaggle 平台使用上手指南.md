@@ -1,9 +1,7 @@
 ---
-comment_id: '25209407'
 date created: 2025-03-23
-date modified: 2025-03-23
-draw: null
-title: Kaggle 平台使用上手指南
+date modified: 2025-07-10
+uid: 256de812-c348-46a3-bc81-2933eaa7ae5d
 ---
 ## Kaggle房价预测比赛入门指南
 

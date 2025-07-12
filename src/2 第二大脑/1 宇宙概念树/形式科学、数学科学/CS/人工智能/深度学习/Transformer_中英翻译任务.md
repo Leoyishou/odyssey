@@ -1,10 +1,9 @@
 ---
-comment_id: a90d0e46
 date created: 2025-03-29
-date modified: 2025-03-29
-draw: null
-title: Transformer_中英翻译任务
+date modified: 2025-07-10
+uid: 37934d96-8bb1-462a-ba38-1ba9d5971121
 ---
+
 transformer_learn.ipynb
 
 https://colab.research.google.com/drive/1J3kj7cGJIFMurjnbW_Bphn65FILWDrMp#scrollTo=AN5oDdVXx5UT

@@ -1,10 +1,9 @@
 ---
-comment_id: 2292e89b
 date created: 2024-07-22
-date modified: 2025-03-08
-draw: null
-title: github
+date modified: 2025-07-10
+uid: ddda7e28-61ae-40d2-b8b8-471ba9f6c282
 ---
+
 谢邀，我来分享一下我从大一萌新一路走来用Github踩坑的一些经验。
 
 先说个冷知识：GitHub个人主页其实可以DIY成动态简历。在仓库里新建一个和自己账号同名的repo，写个README.md文件，用[Markdown](https://zhida.zhihu.com/search?content_id=712626173&content_type=Answer&match_order=1&q=Markdown&zhida_source=entity)语法加上动态图标和项目展示，这样你就拥有了一个赛博名片。如果未来找工作，面试的时候能够当着面试官介绍你在Github上的项目，会很加分。

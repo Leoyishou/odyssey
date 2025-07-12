@@ -1,9 +1,7 @@
 ---
-comment_id: 7244a77e
 date created: 2025-05-12
-date modified: 2025-05-12
-draw: null
-title: 骨干网络 Backbones
+date modified: 2025-07-10
+uid: 90c97b57-6cdd-4d06-a130-c67f49364cc7
 ---
 ```Java
 

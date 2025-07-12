@@ -1,9 +1,7 @@
 ---
-comment_id: 8cf41ad9
 date created: 2025-01-24
-date modified: 2025-02-14
-draw: null
-title: Assignment 2 word2vec
+date modified: 2025-07-10
+uid: ce401382-3d36-461e-8ebf-b2e912f48fd8
 ---
 - [干了啥](#%E5%B9%B2%E4%BA%86%E5%95%A5)
 - [naive-softmax](#naive-softmax)
@@ -329,6 +327,7 @@ $$ P(O = o | C = c) = \sigma(u_o^T v_c) = \frac{1}{1 + \exp(-u_o^T v_c)} $$
 $$ J_{neg-sample}(v_c, o, U) = -\log(\sigma(u_o^T v_c)) - \sum_{k=1}^K \log(\sigma(-u_k^T v_c)) $$
 
 σ（小写希腊字母 sigma）通常用来表示 sigmoid 函数。
+
 对于正样本，我们希望模型预测其为正样本的概率尽可能高。而要使 $\sigma(u_o^T v_c)$ 接近 1，我们需要使 ​$u_o^T v_c$ 尽可能大（[Sigmoid函数](Sigmoid函数.md)图像）
 
 所以：

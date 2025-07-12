@@ -1,10 +1,9 @@
 ---
-comment_id: 1d3b89e8
 date created: 2025-04-08
-date modified: 2025-04-08
-draw: null
-title: meridian
+date modified: 2025-07-10
+uid: b1f8ab2d-1542-402d-83c3-9265f7f29b87
 ---
+
 https://github.com/iliane5/meridian
 
 >**Presidential-level intelligence briefings, built with AI, tailored for you.**

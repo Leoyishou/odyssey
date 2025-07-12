@@ -1,9 +1,7 @@
 ---
-comment_id: b2f80371
 date created: 2024-11-05
-date modified: 2025-03-21
-draw: null
-title: ImageNet
+date modified: 2025-07-10
+uid: 11f2c1eb-bd74-4dcc-b77e-7af07c2f3738
 ---
 1. ImageNet 的起源是有人和李飞飞说，要为理解视觉世界提供一个完整的基础，大约需要三万个独立的概念
 2. ImageNet 的基础是[WordNet](WordNet.md)中选出的2.2万个名词

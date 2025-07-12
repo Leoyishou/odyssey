@@ -1,12 +1,7 @@
 ---
-aliases:
-- Comprehensive Vocabulary Hierarchy Table
-comment_id: 83f15761
 date created: 2025-03-20
-date modified: 2025-03-20
-draw: null
-linter-yaml-title-alias: Comprehensive Vocabulary Hierarchy Table
-title: Comprehensive Vocabulary Hierarchy Table
+date modified: 2025-07-10
+uid: 9d510b0c-ec0b-4717-aa20-c1dcc3ba720e
 ---
 ## Comprehensive Vocabulary Hierarchy Table
 

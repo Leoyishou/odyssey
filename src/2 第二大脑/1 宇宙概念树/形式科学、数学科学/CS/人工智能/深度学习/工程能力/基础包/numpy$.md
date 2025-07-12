@@ -1,10 +1,9 @@
 ---
-comment_id: d61688af
 date created: 2025-05-02
-date modified: 2025-05-02
-draw: null
-title: numpy$
+date modified: 2025-07-10
+uid: 470b3f90-c367-4b4f-841d-2df312cdebb0
 ---
+
 明白了，我将为您生成一个中文版的 NumPy 基础教程，采用 Exercism 风格、共约 10 小时学习量，面向已有 Python 基础的用户，聚焦 NumPy 高频使用的概念与技能，配有逐步练习与验证代码。请稍等，我会尽快整理完成并呈现给您。
 
 ## NumPy 基础教程：逐步练习指南

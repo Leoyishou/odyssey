@@ -1,10 +1,9 @@
 ---
-comment_id: 3e96b516
 date created: 2024-11-03
-date modified: 2025-03-26
-draw: null
-title: AI@
+date modified: 2025-07-10
+uid: 85f84200-3332-41bf-a78c-51616e70a079
 ---
+
 git config --global user.email "liuysh20@gmail.com"
 
 | 类别         | 内容                                                       |

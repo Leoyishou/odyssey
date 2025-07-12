@@ -1,9 +1,7 @@
 ---
-comment_id: 1116ee48
 date created: 2025-04-06
-date modified: 2025-04-06
-draw: null
-title: RLHF
+date modified: 2025-07-10
+uid: a064b942-bbe6-45ba-9667-c931906ab47d
 ---
 ## 步骤21：强化学习对齐（RLHF）
 

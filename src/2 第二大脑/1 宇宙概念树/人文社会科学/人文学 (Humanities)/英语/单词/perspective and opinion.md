@@ -1,9 +1,7 @@
 ---
-comment_id: c222bd87
 date created: 2025-02-15
-date modified: 2025-02-15
-draw: null
-title: perspective and opinion
+date modified: 2025-07-10
+uid: 1ed80893-ba50-4c78-8d8a-304907734cea
 ---
 ## Perspective vs. Opinion
 

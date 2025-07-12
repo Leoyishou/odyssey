@@ -1,10 +1,7 @@
 ---
-comment_id: ff67ee5d
 date created: 2024-12-25
-date modified: 2024-12-27
-draw: null
-tags: []
-title: kernel
+date modified: 2025-07-10
+uid: c10a2a81-fee9-474b-9f4c-ab3123e11c49
 ---
 ```Java
 . 

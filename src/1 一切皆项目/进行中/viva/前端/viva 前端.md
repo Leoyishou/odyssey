@@ -1,9 +1,7 @@
 ---
-comment_id: 2be1a8cb
 date created: 2024-10-01
-date modified: 2025-02-16
-draw: null
-title: viva 前端
+date modified: 2025-07-10
+uid: 9f12a117-9e5f-4ecb-acdb-ef5de5363b74
 ---
 ```mermaid
 graph LR

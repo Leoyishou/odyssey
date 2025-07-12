@@ -1,10 +1,9 @@
 ---
-comment_id: e56d24b9
 date created: 2025-03-23
-date modified: 2025-03-23
-draw: null
-title: Wandb
+date modified: 2025-07-10
+uid: a71119c0-72c8-4b9b-9c67-05257a1ff5ad
 ---
+
 ![CleanShot 2025-03-23 at 22.05.19@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_OE2L5mEAdA%2F2025%2F03%2F23%2F22-05-29-26857a1ac80ee5a8ba296850be1e5bf5-CleanShot%202025-03-23%20at%2022.05.19-2x-85d82b.png)
 
 ![CleanShot 2025-03-23 at 22.05.32@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_18ZFAj6Gaa%2F2025%2F03%2F23%2F22-05-39-11d477b4c30b13889135d8337fa6d174-CleanShot%202025-03-23%20at%2022.05.32-2x-bd16f2.png)

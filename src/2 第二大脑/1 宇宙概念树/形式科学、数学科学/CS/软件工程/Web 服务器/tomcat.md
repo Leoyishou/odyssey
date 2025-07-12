@@ -1,10 +1,9 @@
 ---
-comment_id: eb2d2990
 date created: 2024-07-14
-date modified: 2025-03-24
-draw: null
-title: tomcat
+date modified: 2025-07-10
+uid: 86f71512-d715-4109-8e2b-037310bbc2f5
 ---
+
 tomcat 与 nginx，apache 的区别是什么？- 代码小郭的回答 - 知乎  
 https://www.zhihu.com/question/32212996/answer/3218239422
 

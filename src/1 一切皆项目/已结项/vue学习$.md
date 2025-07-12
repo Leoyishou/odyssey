@@ -1,9 +1,7 @@
 ---
-comment_id: 2d0ed803
 date created: 2024-07-17
-date modified: 2025-05-03
-draw: null
-title: vue学习$
+date modified: 2025-07-10
+uid: 73010c66-ebe3-48ad-8942-fc35f0712c64
 ---
 ```ts
 .

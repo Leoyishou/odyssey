@@ -1,12 +1,11 @@
 ---
-comment_id: 6ae2f963
 date created: 2024-07-11
-date modified: 2024-11-12
-draw: null
-tags: []
-title: MIT 6.824$
+date modified: 2025-07-10
+uid: 8e160aa2-b817-4d96-b826-8778931bf0f1
 ---
+
 Lab：
+
 https://www.youtube.com/watch?v=IdCbMO0Ey9I&feature=youtu.be
 
 学习分布式系统需要怎样的知识？- 量子位的回答 - 知乎  

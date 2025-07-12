@@ -1,10 +1,7 @@
 ---
-comment_id: 1e4b249c
 date created: 2024-09-17
-date modified: 2024-11-12
-draw: null
-tags: []
-title: 从大火 cursor 谈谈什么是好的软件，程序员该有危机了
+date modified: 2025-07-10
+uid: 5ebe4986-6b61-4687-9bde-997890fb3b0d
 ---
 ## 小小的复制粘贴就价值十亿美金吗？Paste
 

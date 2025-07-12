@@ -1,11 +1,10 @@
 ---
-comment_id: d8ca7599
 date created: 2024-05-01
-date modified: 2025-02-06
-draw: null
+date modified: 2025-07-10
 excalidraw-plugin: parsed
-title: 类图_brick
+uid: bf39f364-0531-45f0-bbdf-ebd535fd97fa
 ---
+
 ==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 ## Text Elements

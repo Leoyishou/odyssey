@@ -1,9 +1,7 @@
 ---
-comment_id: 4e733ee6
 date created: 2025-01-25
-date modified: 2025-02-06
-draw: null
-title: Assignment 4 RNNs
+date modified: 2025-07-10
+uid: 01418300-0af1-42d4-9b14-7638d7fd8d4e
 ---
 - [实操](#%E5%AE%9E%E6%93%8D)
 	- [1. 本地开发和调试](#1.%20%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E5%92%8C%E8%B0%83%E8%AF%95)

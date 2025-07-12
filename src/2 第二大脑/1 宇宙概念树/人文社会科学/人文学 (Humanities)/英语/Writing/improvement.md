@@ -1,10 +1,9 @@
 ---
-comment_id: 507f1deb
 date created: 2024-01-02
-date modified: 2025-02-06
-draw: null
-title: improvement
+date modified: 2025-07-10
+uid: 93893889-c08d-4b6c-a39b-5bc338baedd8
 ---
+
 transaction vs trade  
 贸易摩擦 trade friction  
 粮食安全 food security  

@@ -1,8 +1,5 @@
 ---
-comment_id: 76aa8046
 date created: 2024-12-30
-date modified: 2024-12-30
-draw: null
-tags: []
-title: Lab5 Network Interface
+date modified: 2025-07-10
+uid: d89ff38d-a70f-4090-aa7c-4bf15110ce65
 ---

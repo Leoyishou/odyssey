@@ -1,10 +1,9 @@
 ---
-comment_id: 028bc958
 date created: 2024-10-03
-date modified: 2025-02-06
-draw: null
-title: Cisco
+date modified: 2025-07-10
+uid: 9ff934ec-44ce-48aa-9fc8-35cf5a00b744
 ---
+
 1982年斯坦福大学校园里有五千多台电脑，大部分无法直接沟通。思科 (Cisco) 就是在这样一个环境里产生，由一对夫妇 Sandy Lerner 和 Leonard Bosack 创立，他们建造的路由器可以让局域网之间直接沟通。
 
 后二人离开斯坦福创业，为此摊上了高额的房贷和信用卡债务。他们的产品受到了市场的欢迎，但是很长时间里在非常拥挤的环境日夜劳作，极为辛苦。

@@ -1,9 +1,7 @@
 ---
-comment_id: 79f75d5d
 date created: 2024-10-17
-date modified: 2025-02-06
-draw: null
-title: ORM
+date modified: 2025-07-10
+uid: f5f44d1a-3bdf-4d66-8d89-fe5e1da90464
 ---
 ## 是啥？
 

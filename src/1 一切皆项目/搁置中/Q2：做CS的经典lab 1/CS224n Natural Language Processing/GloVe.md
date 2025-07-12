@@ -1,10 +1,7 @@
 ---
-comment_id: 6d467bdb
 date created: 2025-01-24
-date modified: 2025-01-24
-draw: null
-tags: []
-title: GloVe
+date modified: 2025-07-10
+uid: b1bd3b1a-0802-4019-8436-6df746e9e190
 ---
 > _先用世界上所有的文本得到共现矩阵，
 > 然后确定好参数也就是想做成几维，之后给每个词一个初始 embedding，

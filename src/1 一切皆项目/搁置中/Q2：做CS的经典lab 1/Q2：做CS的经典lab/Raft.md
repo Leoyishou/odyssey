@@ -1,11 +1,9 @@
 ---
-comment_id: db778c63
 date created: 2024-08-07
-date modified: 2024-11-12
-draw: null
-tags: []
-title: Raft
+date modified: 2025-07-10
+uid: aa349c30-575a-4243-a3ea-73ac0f081df2
 ---
+
 简而言之，其名字即来自于 `R{eliable|plicated|dundant} And Fault-Tolerant`，也来自于这是一艘可以帮助你逃离 Paxos 小岛的救生筏（Raft）。
 
 <!-- more -->

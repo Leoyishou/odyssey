@@ -1,10 +1,9 @@
 ---
-comment_id: 3d5a8c01
 date created: 2025-04-12
-date modified: 2025-04-12
-draw: null
-title: Transformer 模型实践教程— PyTorch Lightning版
+date modified: 2025-07-10
+uid: 334744b5-c08d-4a1b-8456-67ae09a2c8a4
 ---
+
 下面给出 **原教程**（纯 PyTorch / Hugging Face Trainer 方式）与 **Lightning 版**（使用 PyTorch Lightning）在代码结构上的**关键差异**，也就是哪些地方被“简化”或“改动”了。简单来说，Lightning 主要帮我们**“收拢”了训练循环**（forward / backward / 优化器更新 / 日志记录 等），所以凡是原教程里手写或借助其它手段做的地方，都在 Lightning 里被**集中**和**自动**处理了。
 
 ---

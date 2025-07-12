@@ -1,16 +1,16 @@
 ---
-comment_id: '86236084'
 date created: 2024-03-27
-date modified: 2025-02-14
-draw: null
-title: AI 的能力到底是什么
+date modified: 2025-07-10
+uid: 686ba107-fc31-48ee-b8b6-5c69665599c0
 ---
+
 ![Default_archeology_and_java_code_both_1.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/Default_archeology_and_java_code_both_1.png?x-oss-process=image/resize,l_500)  
 看到一个有趣的问题，如果把 π 的前 1000 位给 GPT，让它预测出后 1000 位，结果可信吗？
 
 <!-- more -->
 
 显然每个人心中都有自己的答案了。但是，换一个场景，比如旅行推荐，为什么你就愿意相信了呢？
+
 从本质来讲，AI 目前最颠覆性的能力还是在语言本身
 
 第二个能力是一定会给你答案，不管对不对。这可能会滋生一些懒惰。比如钱学森之问，不靠解放思想，开化文明去解决，而是靠所谓的 AI 技术给一个飘飘然的答案，可能吗？

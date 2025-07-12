@@ -1,10 +1,9 @@
 ---
-comment_id: 45b478b8
 date created: 2025-03-23
-date modified: 2025-06-15
-draw: null
-title: GPU 显卡
+date modified: 2025-07-10
+uid: 62ba879d-3d7a-4190-8a97-e1d7a46a167f
 ---
+
 `fp16` 和 `bf16` 是两种浮点数精度类型，常用于AI模型训练，二者主要区别如下：
 
 ## 一、数值精度差异

@@ -1,9 +1,7 @@
 ---
-comment_id: c89a3928
 date created: 2025-03-23
-date modified: 2025-03-23
-draw: null
-title: AlexNet
+date modified: 2025-07-10
+uid: 8c2d7b25-21df-4f16-8c00-71d024003d23
 ---
 > 数据 + 算法 + 算力（GPU）的第一次金风玉露一相逢  
 > #comment

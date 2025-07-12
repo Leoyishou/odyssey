@@ -1,11 +1,9 @@
 ---
-comment_id: f8c49eea
 date created: 2024-09-21
-date modified: 2024-12-27
-draw: null
-tags: []
-title: HTTP 2
+date modified: 2025-07-10
+uid: a4fecabc-f395-48f0-9f0f-83afbdbb09e5
 ---
+
 ![](https://cdn-a.markji.com/files/631575926dda045792bf5318_hd.jpg?e=1727092647503&token=xX63b9jqTlDOcGmctt5K9254rV0LG8hS9BmDeFBy:mopBSl-XxBH6o00PeSVwjbYgTZw=)
 
 | 特性         | HTTP/1.1                                             | HTTP/2                       |

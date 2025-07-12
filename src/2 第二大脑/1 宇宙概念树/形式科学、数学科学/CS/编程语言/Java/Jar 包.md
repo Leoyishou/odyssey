@@ -1,9 +1,7 @@
 ---
-comment_id: b4f1eb6e
 date created: 2024-07-02
-date modified: 2025-02-06
-draw: null
-title: Jar 包
+date modified: 2025-07-10
+uid: 602a019d-e27e-4410-84d0-b5bed79f394e
 ---
 1. 一个项目内，不想代码重复的时候，靠 import 复用
 2. 多个项目间，不想代码重复的时候，只能靠 Jar 包了，另外也可以保护 Jar 包中的代码，不被别人随意修改。

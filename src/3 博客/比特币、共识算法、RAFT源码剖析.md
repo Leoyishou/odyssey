@@ -1,10 +1,7 @@
 ---
-comment_id: a31ff314
 date created: 2024-12-08
-date modified: 2024-12-27
-draw: null
-tags: []
-title: 比特币、共识算法、RAFT源码剖析
+date modified: 2025-07-10
+uid: 8b510db5-9af2-44c8-b5a9-eae021d1b484
 ---
 ## 比特币突破 10 万美金
 
@@ -233,6 +230,7 @@ flowchart TD
 ## 需求
 
 货币、账本？
+
 ![image.png|500](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F12%2F11%2F16-22-01-c84261436fb3914a4c3041f45d021ab8-202412111622093-388141.png)
 
 - 有一群完全不信任彼此的人（节点），他们都想维护一份共同的记账本（交易记录表）。

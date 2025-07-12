@@ -1,20 +1,20 @@
 ---
-comment_id: dbded41d
 date created: 2024-04-21
-date modified: 2025-02-06
-draw: null
-title: Python 与 Java 的对比学习
+date modified: 2025-07-10
+uid: 00b5c5f7-ccb8-47ff-8ede-7f2658c27e0e
 ---
+
 ![905063d6b84ffbcb1813ce99c82eea3c.png|400](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fliuyishou%2Ftmp%2F2024%2F04%2F21%2F15-45-05-d47b1fe071104587f73c8abde6155188-905063d6b84ffbcb1813ce99c82eea3c-3222f7.png?x-oss-process=image/resize,l_400)
 
 > Life is short, you need Python  
-> ——Bruce Eckel
+>——Bruce Eckel
 
 <!-- more -->
 
 ## 解释器与虚拟机
 
 [都是解释执行，为什么跑java的叫虚拟机，而python ruby等只能叫解释器?](https://www.zhihu.com/question/647430973/answer/3440440306)？
+
 [lua](https://www.zhihu.com/search?q=lua&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3440440306%7D) 也是脚本语言，人家 lua 的就叫虚拟机。
 
 区别不是什么解释执行的问题，而是概念本身就很清晰明确。虚拟机，它为什么叫虚拟机？这才是你应该思考的问题。虚拟机，它本身就是对物理机的一个虚拟，就是在模拟 CPU 指令和执行的过程，虚拟机一般分为 [寄存器](https://www.zhihu.com/search?q=%E5%AF%84%E5%AD%98%E5%99%A8&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3440440306%7D) 虚拟机和栈虚拟机，这也是对物理机的模拟。Lua 就是寄存器虚拟机，Java 是栈虚拟机，一个是模拟寄存器操作，一个是模拟栈操作。
