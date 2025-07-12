@@ -7,14 +7,23 @@
 }
 
 /* 让评论区和正文保持一样的宽度和对齐 */
-.markdown-preview-view #giscus-container,
-.publish-article-content #giscus-container,
-#giscus-container {
+/* 将评论区移到 .markdown-preview-sizer 同级 */
+.markdown-preview-view > #giscus-container {
+  position: relative !important;
+  width: calc(100% - 2 * var(--file-margins, 0px)) !important;
   max-width: var(--file-line-width, 700px) !important;
   margin: 3rem auto 0 auto !important;
   padding: 0 !important;
-  width: 100% !important;
   box-sizing: border-box !important;
+}
+
+/* 匹配 .markdown-preview-sizer 的样式 */
+#giscus-container {
+  padding-left: var(--file-margins) !important;
+  padding-right: var(--file-margins) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: var(--file-line-width, 700px) !important;
 }
 
 /* 确保 giscus iframe 占满容器宽度 */
@@ -27,17 +36,12 @@
   margin: 0 !important;
 }
 
-/* 桌面端：匹配正文的宽度和位置 */
+/* 桌面端：与正文对齐 */
 @media (min-width: 768px) {
-  #giscus-container {
-    max-width: 700px !important;
-    padding: 0 !important;
-  }
-  
-  /* 如果正文有特定的容器，让评论区继承相同的样式 */
   .markdown-preview-view > #giscus-container {
-    margin-left: auto !important;
-    margin-right: auto !important;
+    max-width: 700px !important;
+    width: 100% !important;
+    padding: 0 !important;
   }
 }
 
@@ -46,7 +50,5 @@
   #giscus-container {
     max-width: 100% !important;
     padding: 0 1rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 }
