@@ -1,9 +1,7 @@
 ---
-comment_id: 7807c759
 date created: 2024-08-19
-date modified: 2025-03-27
-draw: null
-title: 数字、number
+date modified: 2025-07-10
+uid: e91c8480-263c-49a3-8c4d-ec1268bd909a
 ---
 - uint8是8位（1字节），范围是0到255。是无符号的，只能表示非负数。
 - int64是64位（8字节），范围是大约-9.2千万亿到+9.2千万亿。是有符号的，可以表示负数、零和正数。

@@ -1,10 +1,9 @@
 ---
-comment_id: 8b386826
 date created: 2025-03-23
-date modified: 2025-03-23
-draw: null
-title: checkpoint
+date modified: 2025-07-10
+uid: 27ee99fa-e7aa-4f17-b477-f0dbfaefe01b
 ---
+
 是的，**checkpoint**的最大好处之一就是能从上次训练中断的位置继续训练，无需重新开始。
 
 具体而言，checkpoint 保存了：

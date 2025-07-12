@@ -1,12 +1,8 @@
 ---
-aliases:
-- Activity On Edge
-- 活动边网络
-comment_id: 0e488f99
+aliases: [Activity On Edge, 活动边网络]
 date created: 2024-08-24
-date modified: 2025-07-07
-draw: null
-title: AOE
+date modified: 2025-07-10
+uid: 2c4abc4f-fcfa-4853-9aaf-256855f35462
 ---
 ```mermaid
 graph LR

@@ -1,11 +1,9 @@
 ---
-comment_id: 7001af1a
 date created: 2024-10-13
-date modified: 2024-12-27
-draw: null
-tags: []
-title: pycache
+date modified: 2025-07-10
+uid: 8e715c2d-d861-4230-a4ed-e588cdceec23
 ---
+
 .pycache 文件夹是 [Python](Python.md) 的一个重要优化机制，用于存储字节码缓存文件。让我详细解释一下它的作用和工作原理：
 
 ```mermaid

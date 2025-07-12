@@ -1,10 +1,7 @@
 ---
-comment_id: 2bc7619c
 date created: 2024-07-11
-date modified: 2024-11-12
-draw: null
-tags: []
-title: owner 机制
+date modified: 2025-07-10
+uid: 087ba169-9d46-4b48-8afb-cdbdc3956103
 ---
 - 敏捷项目拆分成子项目后的运作问题：
 	- 实际工作场景中，往往所有人都身兼多职，挂着很多职责，那么从自利角度看，所有人肯定是优先处理最能让自己产生绩效的任务。这种全员自利，如果纯靠一个 leader 去统筹协调所有子项目或 task，会累死他并且效果不明显。怎么办？

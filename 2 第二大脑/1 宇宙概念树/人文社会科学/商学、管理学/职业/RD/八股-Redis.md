@@ -1,10 +1,9 @@
 ---
-comment_id: 6609dda8
 date created: 2025-05-26
-date modified: 2025-05-26
-draw: null
-title: 八股-Redis
+date modified: 2025-07-10
+uid: dea186f5-bdb8-4b49-8d96-13b46c5cf17f
 ---
+
 [[八股-Redis]]/✅RDB和AOF的写回策略分别是什么？.md  
 Redis/✅Redis 5.0中的 Stream是什么？.md  
 Redis/✅Redis Cluster 中使用事务和 lua 有什么限制？.md  

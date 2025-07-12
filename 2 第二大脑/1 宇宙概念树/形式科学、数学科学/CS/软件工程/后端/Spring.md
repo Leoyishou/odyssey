@@ -1,10 +1,9 @@
 ---
-comment_id: 1cf93a38
 date created: 2024-07-13
-date modified: 2025-02-25
-draw: null
-title: Spring
+date modified: 2025-07-10
+uid: d25aa953-1173-46ce-959d-0f9b2944637a
 ---
+
 Spring 源码阅读指南 - 沈世钧的文章 - 知乎  
 https://zhuanlan.zhihu.com/p/51393923
 

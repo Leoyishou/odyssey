@@ -1,9 +1,7 @@
 ---
-comment_id: ddabe571
 date created: 2024-07-13
-date modified: 2025-03-24
-draw: null
-title: conda
+date modified: 2025-07-10
+uid: 92689d98-303f-4b22-a8a0-c67872330a2e
 ---
 ## Conda 常用命令 Cheatsheet
 

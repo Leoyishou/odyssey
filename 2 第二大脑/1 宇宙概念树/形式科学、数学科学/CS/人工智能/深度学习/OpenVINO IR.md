@@ -1,10 +1,9 @@
 ---
-comment_id: 7d25feb3
 date created: 2025-05-12
-date modified: 2025-05-12
-draw: null
-title: OpenVINO IR
+date modified: 2025-07-10
+uid: 659ab488-50e4-435b-b35b-090b4fc2cfbc
 ---
+
 对，可以把它们想成**“做饭 → 料理包 → 微波即食餐”**这一条食物加工流水线，只是主角变成了深度学习模型。
 
 |阶段|烹饪类比|你手里的文件|适用场景|

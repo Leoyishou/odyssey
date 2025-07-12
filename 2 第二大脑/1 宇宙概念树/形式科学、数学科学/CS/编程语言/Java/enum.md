@@ -1,10 +1,9 @@
 ---
-comment_id: 603e6d6f
 date created: 2024-07-03
-date modified: 2025-02-06
-draw: null
-title: enum
+date modified: 2025-07-10
+uid: b676b217-488a-4185-b6c8-992296c98104
 ---
+
  枚举是 [JVM@](JVM@.md) 里一张不会变的参考表，就好像 [汉谟拉比法典](汉谟拉比法典)  
  所以枚举的 field 应该是 final 的，不然会出这种警告 `Non-final field 'code' in enum 'HomogenizationSelectorType'`
 

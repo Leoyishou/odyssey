@@ -1,9 +1,7 @@
 ---
-comment_id: 079ae7c5
 date created: 2024-03-28
-date modified: 2025-02-14
-draw: null
-title: Nginx
+date modified: 2025-07-10
+uid: ba34484f-d027-4ac5-8b72-b3c636fcd627
 ---
 ```Java
 server {

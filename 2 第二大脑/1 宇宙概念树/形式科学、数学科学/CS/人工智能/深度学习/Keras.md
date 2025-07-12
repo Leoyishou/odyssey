@@ -1,10 +1,9 @@
 ---
-comment_id: bc23c542
 date created: 2025-03-24
-date modified: 2025-03-24
-draw: null
-title: Keras
+date modified: 2025-07-10
+uid: ce700210-e6d8-4fca-b425-ab27ddf3d630
 ---
+
 Keras快速原型（Keras Rapid Prototyping）意思是：
 
 **使用Keras框架快速构建、调整和测试神经网络模型的过程。**

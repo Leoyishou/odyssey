@@ -1,9 +1,7 @@
 ---
-comment_id: c67fc5c4
 date created: 2025-03-23
-date modified: 2025-03-24
-draw: null
-title: Packing
+date modified: 2025-07-10
+uid: c157bf64-d5c2-44a6-a825-0d628868eae0
 ---
 **Packing**（打包）通俗来说，就是把短句子们一个接一个地拼成更长的句子，充分利用模型的训练空间，让训练过程更高效。
 

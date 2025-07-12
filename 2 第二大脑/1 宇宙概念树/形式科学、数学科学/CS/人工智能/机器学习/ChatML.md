@@ -1,10 +1,9 @@
 ---
-comment_id: a74da71e
 date created: 2025-03-23
-date modified: 2025-03-23
-draw: null
-title: ChatML
+date modified: 2025-07-10
+uid: f5e9af2f-01d1-45a7-9de5-9db9c33a4c86
 ---
+
 ChatML（Chat Markup Language）是一种专门为聊天模型设计的格式，明确区分不同角色（如 system, user, assistant）的发言。
 
 下面是一个ChatML格式的例子：

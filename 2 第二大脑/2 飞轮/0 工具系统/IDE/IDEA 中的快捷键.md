@@ -1,11 +1,9 @@
 ---
-comment_id: 7e6597dc
 date created: 2024-05-16
-date modified: 2024-11-12
-draw: null
-tags: []
-title: IDEA 中的快捷键
+date modified: 2025-07-10
+uid: 1b33f6f9-707c-499f-a7b1-9ced236f016d
 ---
+
 excerpt
 
 <!-- more -->

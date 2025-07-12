@@ -1,9 +1,7 @@
 ---
-comment_id: f948cf54
 date created: 2025-02-15
-date modified: 2025-02-15
-draw: null
-title: Frauded vs Deceived
+date modified: 2025-07-10
+uid: 37ef1244-2df3-4a4f-8890-fd699942bb5d
 ---
 ## Frauded vs Deceived
 

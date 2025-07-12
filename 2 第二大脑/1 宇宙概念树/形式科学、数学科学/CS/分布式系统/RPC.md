@@ -1,11 +1,8 @@
 ---
-aliases:
-- Remote Procedure Call
-comment_id: 0799b6c6
+aliases: [Remote Procedure Call]
 date created: 2024-09-21
-date modified: 2025-02-06
-draw: null
-title: RPC
+date modified: 2025-07-10
+uid: 8d9a0a3b-4b27-4386-860e-3baeb6670bd2
 ---
 ## 本质
 
@@ -18,6 +15,7 @@ RPC（Remote Procedure Call），又叫做远程过程调用。远程调用的�
 ## 为啥需要 RPC 协议？
 
 简单的[TCP](TCP.md)因为粘包，并不能实现让远方的 CPU 干活的这个诉求，所以需要一些协议，早在 70 年代就涌现初很多 RPC 协议。
+
 但是这些 RPC 本质都是方言，应用范围很小，类似与电脑上的 360 管家和 360 公司的服务器通话。后来，有了浏览器以后，不同公司的服务器要互相通话了，这就需要一种普通话。[HTTP 1.1](HTTP%201.1.md)就诞生了！
 
 ## 有了[HTTP 1.1](HTTP%201.1.md)为啥还需要其他 RPC 协议 呢？

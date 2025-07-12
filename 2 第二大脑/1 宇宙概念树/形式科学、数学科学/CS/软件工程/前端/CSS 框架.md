@@ -1,10 +1,9 @@
 ---
-comment_id: dfbb1a16
 date created: 2024-12-03
-date modified: 2025-04-14
-draw: null
-title: CSS 框架
+date modified: 2025-07-10
+uid: faf67e6d-b78d-45e7-8f19-4fe4c37d87b1
 ---
+
 CSS 框架主要有以下几类：
 
 1. 传统全功能框架

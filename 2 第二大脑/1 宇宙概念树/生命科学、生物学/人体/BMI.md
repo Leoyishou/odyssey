@@ -1,11 +1,8 @@
 ---
-aliases:
-- Body Mass Index
-comment_id: ad1cb95f
+aliases: [Body Mass Index]
 date created: 2024-07-17
-date modified: 2025-02-06
-draw: null
-title: BMI
+date modified: 2025-07-10
+uid: bf9138be-a152-46e8-af9b-eeb37444d9f6
 ---
 - 计算公式：BMI = 体重 (kg) / 身高²(m²)
 - 单位：

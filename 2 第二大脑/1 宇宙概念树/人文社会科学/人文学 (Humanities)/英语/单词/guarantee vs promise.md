@@ -1,9 +1,7 @@
 ---
-comment_id: e380c524
 date created: 2025-02-20
-date modified: 2025-03-06
-draw: null
-title: guarantee vs promise
+date modified: 2025-07-10
+uid: f575dc36-600e-4286-88be-20c5196489f9
 ---
 ## guarantee vs promise
 

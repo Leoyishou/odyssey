@@ -1,10 +1,9 @@
 ---
-comment_id: a48670f2
 date created: 2024-05-06
-date modified: 2025-06-01
-draw: null
-title: Corrective feedback Loop
+date modified: 2025-07-10
+uid: 8e8e56e5-878f-459e-805e-6e7c22fbb45f
 ---
+
 学习就是想尽一切办法找到最痒的那个点！
 
 > 当直觉与书本知识冲突，是最好的学习机会，抓住它，你就可能走入新的境界  

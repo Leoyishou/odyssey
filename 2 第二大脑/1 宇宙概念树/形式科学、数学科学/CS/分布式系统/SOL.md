@@ -1,10 +1,9 @@
 ---
-comment_id: 065be417
 date created: 2025-01-18
-date modified: 2025-02-06
-draw: null
-title: SOL
+date modified: 2025-07-10
+uid: a3036651-1ba0-4ebf-bb09-ed00c85a8075
 ---
+
 SOL (Solana)：
 
 - Solana网络的原生代币

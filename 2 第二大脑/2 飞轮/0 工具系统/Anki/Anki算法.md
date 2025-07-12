@@ -1,10 +1,7 @@
 ---
-comment_id: 0d9da175
 date created: 2023-12-03
-date modified: 2025-01-22
-draw: null
-tags: []
-title: Anki算法
+date modified: 2025-07-10
+uid: 957586f6-e8e3-4c8f-adc6-da401aa35938
 ---
 - [信息源](#%E4%BF%A1%E6%81%AF%E6%BA%90)
 - [名词解释](#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A)
@@ -47,15 +44,19 @@ bury：今天先不回答，明天再回答
 ### 神经元建立阶段
 
 对应 new card queue，
+
 目标是毕业，
+
 核心是通过几个 step 实现神经元的初步建立，比如 1m 10m 1d 这三个点形成了 1m-10m 10m-1d 1d-xx 等三个 step  
 所有的动作影响的是目前位于第几个 step，good 可以移动到下一个
 
 ### 神经元保活阶段
 
 对应 review queue，
+
 核心是失效时间，其增长倍数 ease 是一个大于 1.3 的数字, 默认为 2.5,  
 积极反馈的时候倍数增大，惩罚的时候倍数减小，极端情况下回退到习得阶段。
+
 所有的动作最终都是影响距离下一次激活 refresh 的时间  
 ![image.png|600](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/20240206023828.png)
 

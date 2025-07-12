@@ -1,9 +1,7 @@
 ---
-comment_id: 38640c05
 date created: 2025-02-22
-date modified: 2025-02-22
-draw: null
-title: PAC 学习
+date modified: 2025-07-10
+uid: 872c5bac-399c-4fe6-9d86-09fc55c55d9e
 ---
 ## **1. PAC 学习（Probably Approximately Correct Learning）**
 

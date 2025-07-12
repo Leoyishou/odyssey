@@ -1,10 +1,9 @@
 ---
-comment_id: 1912c415
 date created: 2025-03-23
-date modified: 2025-04-05
-draw: null
-title: open-r1
+date modified: 2025-07-10
+uid: 3d27072b-2f7a-4aeb-a610-1771cc5c09ce
 ---
+
 [微调实战 -- 用Open-R1微调Qwen模型，强化AI数学推理能力](微调实战%20--%20用Open-R1微调Qwen模型，强化AI数学推理能力.md)
 
 [[分布式训练策略]]

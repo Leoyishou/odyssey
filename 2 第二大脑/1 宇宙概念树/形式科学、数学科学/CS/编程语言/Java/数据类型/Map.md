@@ -1,9 +1,7 @@
 ---
-comment_id: 9cb74268
 date created: 2024-07-19
-date modified: 2025-05-02
-draw: null
-title: Map
+date modified: 2025-07-10
+uid: 4eb4a0b7-3e06-4069-9361-390a2b2cec4c
 ---
 ## Map 的本质是一个带了查找功能的 `List<Entry>`
 

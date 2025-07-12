@@ -1,10 +1,9 @@
 ---
-comment_id: e8dda8c1
 date created: 2024-10-30
-date modified: 2025-03-27
-draw: null
-title: Table
+date modified: 2025-07-10
+uid: 8ba811a4-eb1e-4971-8f27-d0dc188be695
 ---
+
 Guava的Table是一个双键映射的数据结构,类似于Map<R, `Map<C, V>`>。主要特点:
 
 1. 基本操作:

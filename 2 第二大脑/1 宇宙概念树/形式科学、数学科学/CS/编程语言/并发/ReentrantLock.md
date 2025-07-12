@@ -1,7 +1,5 @@
 ---
-comment_id: 282b198c
 date created: 2024-08-17
-date modified: 2025-02-26
-draw: null
-title: ReentrantLock
+date modified: 2025-07-10
+uid: 1d65d594-27e0-4647-9847-e16b3b2e6f99
 ---

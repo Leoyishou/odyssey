@@ -1,9 +1,7 @@
 ---
-comment_id: ad7da869
 date created: 2025-03-24
-date modified: 2025-04-18
-draw: null
-title: uv
+date modified: 2025-07-10
+uid: 0fc91684-868b-49f2-9d2e-c4008eef39b5
 ---
 ```Java
 uv venv taurus --python 3.12

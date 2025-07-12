@@ -1,9 +1,7 @@
 ---
-comment_id: 69007b59
 date created: 2024-08-15
-date modified: 2025-02-06
-draw: null
-title: func
+date modified: 2025-07-10
+uid: 09514c28-8b87-4b06-acae-b447d2f95395
 ---
 ## 静态方法，不属于任何对象或实例
 

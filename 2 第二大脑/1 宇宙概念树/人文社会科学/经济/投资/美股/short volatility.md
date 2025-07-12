@@ -1,10 +1,9 @@
 ---
-comment_id: 4dce42c6
 date created: 2024-08-30
-date modified: 2025-02-06
-draw: null
-title: short volatility
+date modified: 2025-07-10
+uid: db673056-df40-4b87-a178-6b3e29d45ae2
 ---
+
 主要方法：通常，做空波动率主要是通过卖出期权来实现的。期权是一种金融合约，给予买家在特定日期以特定价格买入或卖出某个资产的权利。
 
 具体操作：

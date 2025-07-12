@@ -1,10 +1,9 @@
 ---
-comment_id: b72f7e43
 date created: 2024-11-25
-date modified: 2025-02-06
-draw: null
-title: AI API
+date modified: 2025-07-10
+uid: 5537f688-37bd-4195-8235-31e549ab6dbe
 ---
+
 以下是对这些 LLM（大型语言模型）相关参数和选项的解释与介绍：
 
 1. **Model（模型）**：
@@ -112,6 +111,7 @@ JSON mode和Structured Outputs的主要区别在于：
 - 自动进行类型检查和验证
 
 举个例子来说：
+
 假设你想要获取一个用户的信息：
 
 使用JSON mode时，模型可能返回：

@@ -1,10 +1,9 @@
 ---
-comment_id: 7041fe7c
 date created: 2024-08-19
-date modified: 2025-03-15
-draw: null
-title: DDD
+date modified: 2025-07-10
+uid: c7a2cb24-342a-4295-962c-01f5d6b4f380
 ---
+
 ddd说白了就是以前的service太乱太多了，把他们按照微服务的思想group by在了几个核心领域下  
 mapping的出生和essay的出生有关，但是之后的更新就和essay包括sentence都没关系了。ddd的核心就是把domain划分好，每个domain提供自己的能力，最外层的大逻辑放在application层  
 
@@ -56,6 +55,7 @@ your-project/
 充血模型：业务逻辑主要在域对象内部实现，比如`ProductRoom`这种，类里面有很多业务动作
 
 贫血模型：对象主要负责存储数据，类似于数据结构。
+
 充血模型：对象不仅存储数据，还负责实现与之相关的业务逻辑。
 
 ## 分层
@@ -153,6 +153,7 @@ infrastructure/
 比如商促、抽佣、优惠黑名单这些就是通用语言。我们现在==事件风暴==还不够规范，导致一些通用语言并没有对齐。
 
 不过，一个好处是，在数字化工具中，通过工程的方式实现了下面的表格。
+
 ![image.png|1500](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F09%2F29%2F14-28-41-ab406962b2bc951065bd6535229b5b7b-202409291428559-e48d3c.png)
 
 Here's the Markdown representation of the table in the image:

@@ -1,10 +1,9 @@
 ---
-comment_id: 3055ac62
 date created: 2025-02-14
-date modified: 2025-06-15
-draw: null
-title: PyTorch
+date modified: 2025-07-10
+uid: 49016454-7774-4e12-a8dc-c3898825f84e
 ---
+
 当然，这是对 GitHub 用户 "lucidrains" (Phil Wang) 的中文介绍：
 
 ---

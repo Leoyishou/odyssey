@@ -1,10 +1,9 @@
 ---
-comment_id: f141d8d4
 date created: 2025-02-22
-date modified: 2025-02-22
-draw: null
-title: plan vs regulate
+date modified: 2025-07-10
+uid: 4147a21f-2065-431f-8747-ec647ee06ec9
 ---
+
 plan vs regulate# plan vs regulate
 
 ## 1. 核心含义和差异

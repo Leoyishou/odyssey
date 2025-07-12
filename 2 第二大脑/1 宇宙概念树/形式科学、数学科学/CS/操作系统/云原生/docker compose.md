@@ -1,9 +1,7 @@
 ---
-comment_id: 5ef24f39
 date created: 2024-07-20
-date modified: 2025-03-15
-draw: null
-title: docker compose
+date modified: 2025-07-10
+uid: 264eeccd-dc11-4d32-a633-d1b54faf2b01
 ---
 ```Java
 docker compose build frontend
@@ -82,6 +80,7 @@ RUN conda run -n viva pip install --no-cache-dir oss2 supermemo2
 ```
 
 由于`conda run`可能会出现环境临时化、命令隔离问题，**不一定真正安装到了你的 conda 环境**。
+
 保险起见，最好是这样明确指定安装：
 
 ```dockerfile

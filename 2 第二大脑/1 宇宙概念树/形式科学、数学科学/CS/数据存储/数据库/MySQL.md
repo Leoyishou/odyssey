@@ -1,10 +1,9 @@
 ---
-comment_id: ca24b523
 date created: 2024-07-31
-date modified: 2025-02-25
-draw: null
-title: MySQL
+date modified: 2025-07-10
+uid: d125477c-d51e-42f3-b15a-67c5425f90ab
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F10%2F03%2F19-36-10-1028673df0cbd44890ba678e109badd7-202410031936659-73b8fd.png)
 
 | 模块   | 讲次   | 标题                           | 时长    |     |

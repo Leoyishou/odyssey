@@ -1,9 +1,7 @@
 ---
-comment_id: 62da3195
 date created: 2024-06-23
-date modified: 2025-02-06
-draw: null
-title: HTML
+date modified: 2025-07-10
+uid: 2e3f4128-b643-41f3-ba17-59a5efa525ab
 ---
 ```html
 

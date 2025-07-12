@@ -1,7 +1,5 @@
 ---
-comment_id: 0e19ba6a
 date created: 2024-10-02
-date modified: 2025-04-14
-draw: null
-title: OAuth
+date modified: 2025-07-10
+uid: 35768fc6-b62d-4098-9c50-1ac364181ff8
 ---

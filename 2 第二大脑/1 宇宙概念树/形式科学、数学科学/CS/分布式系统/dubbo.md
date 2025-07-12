@@ -1,9 +1,7 @@
 ---
-comment_id: 1ab68fa3
 date created: 2024-09-04
-date modified: 2025-02-06
-draw: null
-title: dubbo
+date modified: 2025-07-10
+uid: 5904165f-3e4b-48d3-80cb-3d75586dbfa6
 ---
 ## 通信协议
 

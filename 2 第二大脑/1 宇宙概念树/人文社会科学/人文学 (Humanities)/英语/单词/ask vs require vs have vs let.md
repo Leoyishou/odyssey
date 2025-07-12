@@ -1,9 +1,7 @@
 ---
-comment_id: 269174cd
 date created: 2025-02-15
-date modified: 2025-02-15
-draw: null
-title: ask vs require vs have vs let
+date modified: 2025-07-10
+uid: d7636ede-2749-4413-bde6-dc6efd043f27
 ---
 ## **ask vs require vs have vs let**
 

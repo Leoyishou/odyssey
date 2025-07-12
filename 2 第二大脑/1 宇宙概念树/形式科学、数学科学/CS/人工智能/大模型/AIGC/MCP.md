@@ -1,10 +1,9 @@
 ---
-comment_id: b61bcbc1
 date created: 2025-03-02
-date modified: 2025-04-14
-draw: null
-title: MCP
+date modified: 2025-07-10
+uid: 656a8baa-58d9-4b8f-a2ae-772c6a2a7f04
 ---
+
 filesystem
 
 https://mcp.so/server/filesystem/modelcontextprotocol

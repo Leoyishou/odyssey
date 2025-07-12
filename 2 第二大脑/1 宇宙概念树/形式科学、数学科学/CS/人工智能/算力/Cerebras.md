@@ -1,10 +1,9 @@
 ---
-comment_id: 76d4c5e5
 date created: 2024-11-19
-date modified: 2025-04-03
-draw: null
-title: Cerebras
+date modified: 2025-07-10
+uid: cc3f62a6-a3a1-4ce9-a9fe-73d8649f0320
 ---
+
 Cerebras Systems以其**Wafer Scale Engine (WSE)**技术而闻名，
 
 内存和计算离的特别近，该技术允许在单个芯片上集成高达**900,000个核心**。

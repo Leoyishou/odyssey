@@ -1,10 +1,9 @@
 ---
-comment_id: d9c393a7
 date created: 2024-09-16
-date modified: 2025-02-06
-draw: null
-title: Z世代
+date modified: 2025-07-10
+uid: 98b552b8-07fb-4c59-8887-ed4222002d27
 ---
+
 Z世代（Generation Z）是指出生在特定年代范围内的人群。让我为您详细解释一下：
 
 1. 出生年份：

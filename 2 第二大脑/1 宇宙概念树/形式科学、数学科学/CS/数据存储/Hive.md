@@ -1,10 +1,9 @@
 ---
-comment_id: 34778b44
 date created: 2025-02-24
-date modified: 2025-02-24
-draw: null
-title: Hive
+date modified: 2025-07-10
+uid: 04a0c01d-7530-4c75-b71c-6a3c2f0e7dde
 ---
+
 #第一性原理  
 Hadoop 和 MapReduce 很强大，但写 MapReduce 代码太麻烦了，像你这样的后端开发，可能觉得直接写 SQL 查数据更爽。Hive 就干这个事。它是架在 Hadoop 上的一个工具，给你一个类似 SQL 的语言（叫 HiveQL），让你可以用熟悉的 SELECT... FROM... WHERE 这种语句去查数据。
 

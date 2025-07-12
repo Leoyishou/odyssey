@@ -1,10 +1,7 @@
 ---
-comment_id: b53ced45
 date created: 2024-12-08
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Ollama
+date modified: 2025-07-10
+uid: 2ea16c36-60f3-4ff8-b924-067cc8d40716
 ---
 **本地跑开源模型用的！**
 

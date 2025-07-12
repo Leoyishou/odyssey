@@ -1,10 +1,9 @@
 ---
-comment_id: dee3c19a
 date created: 2024-07-14
-date modified: 2025-04-08
-draw: null
-title: JVM@
+date modified: 2025-07-10
+uid: d9daafad-fd98-482b-b6b5-1517615c9036
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F09%2F20%2F19-15-39-b5a27ea6955dff8eadca5d56b025dfcc-202409201915990-43d59b.png)
 
 -Xmn：500M，就是说年轻代大小是500M（包括一个Eden和两个Survivor）

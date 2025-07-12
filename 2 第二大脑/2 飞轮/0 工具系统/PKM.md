@@ -1,11 +1,9 @@
 ---
-comment_id: 8f2221f6
 date created: 2024-05-11
-date modified: 2024-11-12
-draw: null
-tags: []
-title: PKM
+date modified: 2025-07-10
+uid: 1fd0aa34-4b61-4bb7-af2a-87e232bbf17e
 ---
+
 ![Picture1.png#pic_center|650](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fliuyishou%2Ftmp%2F2024%2F05%2F19%2F16-01-04-6623a1664f4c04c9731d8a701e80210d-Picture1-5bd74b.png)
 
 personal knowledge management

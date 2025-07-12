@@ -1,10 +1,9 @@
 ---
-comment_id: b2492d5f
 date created: 2024-12-12
-date modified: 2025-02-06
-draw: null
-title: make
+date modified: 2025-07-10
+uid: f94eea4e-123f-4924-b665-19057145944b
 ---
+
 `make qemu` 和 Java 中没有完全对应的一条单一命令，但大致可以类比为以下两步的组合：
 
 1. **javac**：在 Java 中，`javac` 用于编译 Java 源码生成字节码（.class 文件）。在 xv6 项目中，`make qemu` 会调用 Makefile 中的指令，对 xv6 的 C/汇编代码进行编译、链接等操作生成可执行的内核镜像和相关文件。

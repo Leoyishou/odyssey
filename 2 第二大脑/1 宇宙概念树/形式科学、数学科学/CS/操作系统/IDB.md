@@ -1,10 +1,9 @@
 ---
-comment_id: 4fee74cb
 date created: 2025-04-15
-date modified: 2025-04-15
-draw: null
-title: IDB
+date modified: 2025-07-10
+uid: 883783a3-aefd-4ce0-82e6-1b2f432b8e2d
 ---
+
 当然可以！下面是对 **IDB** 的形象介绍：
 
 ---

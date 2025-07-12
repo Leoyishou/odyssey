@@ -1,10 +1,9 @@
 ---
-comment_id: 84eb09a2
 date created: 2024-07-03
-date modified: 2025-03-24
-draw: null
-title: Maven
+date modified: 2025-07-10
+uid: 725666d6-75cc-4a99-aee0-b59072d6425a
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F03%2F15-07-20-2317aa337084a11cf816a1c37968b75a-20240703150719-1f22aa.png)
 
 ## 全球共享的共有仓库

@@ -1,10 +1,9 @@
 ---
-comment_id: e02bc6ab
 date created: 2024-11-24
-date modified: 2025-02-06
-draw: null
-title: Google Cloud Platform
+date modified: 2025-07-10
+uid: c18b6231-a2dc-4266-87b7-e1d99b36a77b
 ---
+
 console.cloud.google.com 是 Google Cloud Platform (GCP) 的控制台网址，主要用于：
 
 1. 云资源管理：

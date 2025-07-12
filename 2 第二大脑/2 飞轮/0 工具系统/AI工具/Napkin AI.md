@@ -1,9 +1,7 @@
 ---
-comment_id: adaa4a30
 date created: 2024-10-20
-date modified: 2024-11-12
-draw: null
-tags: []
-title: Napkin AI
+date modified: 2025-07-10
+uid: 8e255a28-fd31-4e6b-b222-63db590215b5
 ---
+
 AI 利用文字和示意图之间关联信息，可以画一些 PPT 中的图片，不错的工具，可以帮助为自己的文字寻找最合适的示意图。

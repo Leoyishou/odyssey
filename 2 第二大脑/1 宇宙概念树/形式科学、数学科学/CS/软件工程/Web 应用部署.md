@@ -1,10 +1,9 @@
 ---
-comment_id: 0d98c25b
 date created: 2025-04-07
-date modified: 2025-04-07
-draw: null
-title: Web 应用部署
+date modified: 2025-07-10
+uid: b19b17a4-4bbb-4cab-9885-48a54a68475e
 ---
+
 好的，将你的 Quasar 项目作为 Web 应用部署到你自己的服务器上，主要包含以下几个步骤：
 
 1. **构建生产版本的应用:**

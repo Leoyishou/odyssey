@@ -1,10 +1,9 @@
 ---
-comment_id: 255176bf
 date created: 2025-03-27
-date modified: 2025-03-31
-draw: null
-title: 类型系统 type
+date modified: 2025-07-10
+uid: 55501306-df4a-4d35-b1b9-13f0e4e8ab2a
 ---
+
 理解了，你是在问关于编程语言类型系统的问题。你碰到的是类型系统的经典问题，涉及静态类型和动态类型（包括鸭子类型）的区别。
 
 ## 类型系统的分类

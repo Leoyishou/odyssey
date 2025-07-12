@@ -1,9 +1,7 @@
 ---
-comment_id: 0d7ac116
 date created: 2024-11-25
-date modified: 2025-07-02
-draw: null
-title: Linux@
+date modified: 2025-07-10
+uid: b87d3d45-2f74-4c71-971e-169b6929a9ae
 ---
 ## Linux 系统参考指南
 

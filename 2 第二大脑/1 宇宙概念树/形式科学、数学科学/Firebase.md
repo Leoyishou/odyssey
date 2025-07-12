@@ -1,10 +1,9 @@
 ---
-comment_id: 297753e7
 date created: 2025-04-12
-date modified: 2025-04-26
-draw: null
-title: Firebase
+date modified: 2025-07-10
+uid: d3b76c95-0fcd-4191-9420-8f922229d18f
 ---
+
 为了回答您的问题，我们需要分析帖子中提到的工具（特别是 Supabase）与 Firebase 之间的关系，并结合提供的网页搜索结果来进一步说明。以下是详细的解答：
 
 Supabase 与 Firebase 的关系

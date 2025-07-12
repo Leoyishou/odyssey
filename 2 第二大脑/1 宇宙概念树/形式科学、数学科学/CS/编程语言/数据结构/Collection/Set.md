@@ -1,9 +1,7 @@
 ---
-comment_id: e61a47f6
 date created: 2024-08-13
-date modified: 2025-03-27
-draw: null
-title: Set
+date modified: 2025-07-10
+uid: fdc277b9-6cf9-4bba-b013-c91d155e4f88
 ---
 ## 认知
 

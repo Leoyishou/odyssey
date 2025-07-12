@@ -1,10 +1,7 @@
 ---
-comment_id: 145442c0
 date created: 2024-11-25
-date modified: 2024-12-27
-draw: null
-tags: []
-title: LightRAG
+date modified: 2025-07-10
+uid: f6b53cc7-8f0d-41f4-bc9d-c4afc04249c3
 ---
 ## 本质
 

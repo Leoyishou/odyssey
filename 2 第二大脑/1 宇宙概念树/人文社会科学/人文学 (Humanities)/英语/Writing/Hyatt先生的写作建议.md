@@ -1,10 +1,9 @@
 ---
-comment_id: c60f4942
 date created: 2024-01-07
-date modified: 2025-02-06
-draw: null
-title: Hyatt先生的写作建议
+date modified: 2025-07-10
+uid: e416ce9d-b630-4e10-a890-f6867529705f
 ---
+
 General Suggestions for Chinese Writers of English
 
 - [1 ACTIVE AND PASSIVE VOICE](#1%20ACTIVE%20AND%20PASSIVE%20VOICE)
@@ -87,6 +86,7 @@ The girl was riding her bike. She was sleepy. Many cars were in the road. The gi
   
 
 实义动词的动词举例来说（没有意思）：
+
 The girl rode her bike. She felt sleepy. Many cars buzzed up and down the road. The girl peddled slowly. One driver had drunk too much beer. He drove very poorly. The drunk man felt sleepy too. The man also approached the girl She saw him and he drove straight at her. She needed to get out of the way. She drove into the ditch to avoid the drunk man who ran off the road.  
 实义动词的动词举例来说：rode, felt, buzzed, peddled, had drunk, drove, felt, approached, saw, drove, needed, drove,ran.  
 
@@ -292,6 +292,7 @@ Roy and I we went to the store with Marcy and Melinda as well as went swimming l
   
 
 更好理解的表达：
+
 Roy and I are good friends, and we went to the store with Marcy and Melinda.  
 Roy and I we went to the store with Marcy and Melinda as well as went swimming later.   
 

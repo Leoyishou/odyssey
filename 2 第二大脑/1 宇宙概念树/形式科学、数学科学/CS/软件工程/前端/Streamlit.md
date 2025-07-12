@@ -1,10 +1,9 @@
 ---
-comment_id: b8d71e11
 date created: 2024-06-19
-date modified: 2025-02-06
-draw: null
-title: Streamlit
+date modified: 2025-07-10
+uid: 94bd9152-b7f3-4786-b65c-684744ae7e0d
 ---
+
 excerpt
 
 <!-- more -->

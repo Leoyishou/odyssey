@@ -1,10 +1,9 @@
 ---
-comment_id: 618c5408
 date created: 2024-06-12
-date modified: 2025-03-27
-draw: null
-title: PARA
+date modified: 2025-07-10
+uid: 22052c0d-c535-4564-bd11-2b7f92375897
 ---
+
 知识与概念最初是绑定项目的。
 
 项目目标达成，某种程度上意味着这些知识概念的有效性，那么就可以进一步沉淀到 [Area](Area) 了  

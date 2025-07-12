@@ -1,12 +1,9 @@
 ---
-comment_id: 54c92c67
 date created: 2024-03-28
-date modified: 2025-01-28
-draw: null
-tags:
-- 最佳实践
-title: MacBook
+date modified: 2025-07-10
+uid: 83570c16-511f-48eb-bc05-ca44c7a474d1
 ---
+
 ![Picture11.png|400](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fliuyishou%2Ftmp%2F2024%2F04%2F08%2F19-57-58-de45178122daa947171e5e1accc5eb39-Picture11-23ce74.png?x-oss-process=image/resize,l_400)  
 如果效率工具带来的生产力提高都不足以 cover 软件本身的费用，那应该反思自己工作的价值了。
 
@@ -53,7 +50,8 @@ axure
 [平台与插件](平台与插件)
 
 就好比线性代数里的基向量，好的工具往往是两个极端，一种是足够傻瓜，开箱即用。另一种是提供了基向量，你可以搭建出整个线性空间！Obsidian、Raycast、Chrome 等都是很好的例子。
+
 [维特根斯坦，与代码世界，还有小说](维特根斯坦，与代码世界，还有小说.md)
 
-> [!INFO]提示  
+>[!INFO]提示  
 > 测试一下。在网站中嵌入 ppt 的体验如何。可以鼠标移到左下角将其最大化。

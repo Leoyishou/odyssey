@@ -1,10 +1,9 @@
 ---
-comment_id: 1fd6baac
 date created: 2024-04-25
-date modified: 2025-04-14
-draw: null
-title: NoSQL
+date modified: 2025-07-10
+uid: cf8e8b4c-fa9a-458e-94a9-7d7784562d98
 ---
+
 excerpt
 
 <!-- more -->

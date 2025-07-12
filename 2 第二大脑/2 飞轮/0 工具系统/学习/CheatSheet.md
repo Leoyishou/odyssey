@@ -1,10 +1,9 @@
 ---
-comment_id: 062667a2
 date created: 2024-07-10
-date modified: 2025-03-07
-draw: null
-title: CheatSheet
+date modified: 2025-07-10
+uid: 16272530-6d3b-471e-baa7-e175eccb273c
 ---
+
 作弊用小抄，也引申为精炼的笔记
 
 ---

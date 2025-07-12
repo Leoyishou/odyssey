@@ -1,11 +1,9 @@
 ---
-comment_id: 47168ce1
 date created: 2024-07-13
-date modified: 2024-11-12
-draw: null
-tags: []
-title: Telegram
+date modified: 2025-07-10
+uid: f60b2cb2-1868-4fda-8cc1-84cdaa56a6bc
 ---
+
  世界上最流行的信息传递应用程序之一。它简单，快速，安全，而且免费。
 
 Telegram 最好的一点是，它非常安全。信息是用一种几乎不可能被破解的秘密酱汁加密的。此外，Telegram 是为数不多的提供端对端加密的信息传递应用程序之一。这意味着，你的信息从发送者到接收者都是完全安全的。

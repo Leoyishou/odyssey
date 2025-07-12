@@ -1,10 +1,9 @@
 ---
-comment_id: 1543a696
 date created: 2025-01-21
-date modified: 2025-02-06
-draw: null
-title: Toolchain
+date modified: 2025-07-10
+uid: 9fb01bea-cf7a-4d39-a367-ce8701093b68
 ---
+
 让我来解释一下这三者之间的关系：
 
 Toolchain（工具链）:

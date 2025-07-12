@@ -1,12 +1,10 @@
 ---
-aliases:
-- 隐含波动率
-comment_id: 0d517c88
+aliases: [隐含波动率]
 date created: 2024-08-27
-date modified: 2025-02-06
-draw: null
-title: IV
+date modified: 2025-07-10
+uid: 5ff9290b-2819-4c99-a4a7-e750773fb6be
 ---
+
 想象IV就像是一个"兴奋指数"：
 
 - 当股票的IV高时，就像是股票很兴奋，可能会有大幅度的涨跌。

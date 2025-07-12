@@ -1,9 +1,7 @@
 ---
-comment_id: de58cc80
 date created: 2024-07-15
-date modified: 2025-03-31
-draw: null
-title: Obsidian
+date modified: 2025-07-10
+uid: 29dcaf0f-a1d1-4568-a64d-820adaa4556e
 ---
 ## Obsidian FastStart脚本使用指南
 

@@ -1,10 +1,9 @@
 ---
-comment_id: 844caa4a
 date created: 2025-01-20
-date modified: 2025-02-09
-draw: null
-title: Continuous vs. Consistent
+date modified: 2025-07-10
+uid: 60207571-f24f-4899-914a-c42e28077efd
 ---
+
 Continuous (连续的):
 
 - 时间/空间上不间断

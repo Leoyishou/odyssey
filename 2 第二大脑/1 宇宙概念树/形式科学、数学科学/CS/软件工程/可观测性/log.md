@@ -1,9 +1,7 @@
 ---
-comment_id: c79e0b49
 date created: 2024-09-28
-date modified: 2025-02-06
-draw: null
-title: log
+date modified: 2025-07-10
+uid: 0d00238a-9e50-4dae-90cc-7b8b53802d4f
 ---
 1. **日志框架**：就像是一个超级聪明的记事本，可以帮你记录程序运行时发生的各种事情。
 2. **Handler**：是告诉这个记事本"怎么记"和"记到哪里"的指令。

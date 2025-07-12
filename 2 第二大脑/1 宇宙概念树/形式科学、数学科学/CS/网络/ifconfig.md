@@ -1,10 +1,7 @@
 ---
-comment_id: ecba128c
 date created: 2024-11-25
-date modified: 2024-12-27
-draw: null
-tags: []
-title: ifconfig
+date modified: 2025-07-10
+uid: 4eba3fc6-5849-49ad-9db2-86a57a0cce0a
 ---
 ## 公网 IP
 

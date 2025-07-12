@@ -1,11 +1,9 @@
 ---
-comment_id: 5a34ab56
 date created: 2024-06-12
-date modified: 2024-11-12
-draw: null
-tags: []
-title: known unknowns
+date modified: 2025-07-10
+uid: 966be0b1-347f-4f9c-97f2-10f771896adc
 ---
+
 excerpt
 
 <!-- more -->

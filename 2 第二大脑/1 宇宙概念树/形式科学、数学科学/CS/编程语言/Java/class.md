@@ -1,9 +1,6 @@
 ---
-aliases:
-- 类
-comment_id: bdcc9935
+aliases: [类]
 date created: 2024-07-22
-date modified: 2025-02-06
-draw: null
-title: class
+date modified: 2025-07-10
+uid: 51e3d0a7-0093-477c-8260-f20d01417f18
 ---

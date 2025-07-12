@@ -1,10 +1,9 @@
 ---
-comment_id: 785fc38f
 date created: 2025-03-23
-date modified: 2025-03-23
-draw: null
-title: ViT
+date modified: 2025-07-10
+uid: 3d956e54-4d0d-4879-8bd7-8707cf8e89d8
 ---
+
 CV（计算机视觉）中的 **ViT** 全称为 **Vision Transformer**，是一种基于Transformer架构的深度学习模型，主要用于图像分类、检测、分割等视觉任务。
 
 ---

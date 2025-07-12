@@ -1,9 +1,7 @@
 ---
-comment_id: 8935d953
 date created: 2024-10-31
-date modified: 2025-02-06
-draw: null
-title: Serializable
+date modified: 2025-07-10
+uid: 837c9b53-d7d8-4449-b774-919aada2f8f1
 ---
 **可序列化的本质是：一个对象是可 IO 的**
 1. 磁盘 IO，对象持久化 - 将对象状态保存到磁盘

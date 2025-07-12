@@ -1,10 +1,9 @@
 ---
-comment_id: 94b3af1e
 date created: 2025-05-02
-date modified: 2025-05-02
-draw: null
-title: pandas$
+date modified: 2025-07-10
+uid: b6d17f2e-433f-4502-9175-fcb60d1cddac
 ---
+
 下面把 **“理论介绍 / 学习目标”** 全部补回，同时保留 **`None` 占位的练习代码**，方便您边读概念边动手。每一步依旧遵循：
 
 > 理论介绍 → 编程任务（`None` 占位）→ 验证代码

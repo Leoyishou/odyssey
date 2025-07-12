@@ -1,10 +1,9 @@
 ---
-comment_id: a4ceb9b4
 date created: 2024-11-09
-date modified: 2025-02-23
-draw: null
-title: FastAPI
+date modified: 2025-07-10
+uid: 985098b1-2023-4040-9e0e-186c4fafe358
 ---
+
 http://localhost:8000/docs 特别好用，能自动生成文档
 
 ![CleanShot 2025-02-23 at 23.23.08@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_NTodROYXzX%2F2025%2F02%2F23%2F23-23-19-aea6ab6cdd38013ed2398d4e24594ef8-CleanShot%202025-02-23%20at%2023.23.08-2x-f3c78b.png)

@@ -1,9 +1,7 @@
 ---
-comment_id: 8c889d6c
 date created: 2024-07-01
-date modified: 2025-05-02
-draw: null
-title: Taste 品味
+date modified: 2025-07-10
+uid: 2884b792-2e47-4359-b402-e82f7862bca6
 ---
 > "It comes down to trying to expose yourself to the best things that humans have done, and then try to bring those things into what you're doing. I mean, Picasso had a saying: 'Good artists copy, great artists steal.' And we have always been shameless about stealing great ideas.  
 > Part of what made the Macintosh great was that the people working on it were musicians and poets and artists and zoologists and historians, who also happened to be the best computer scientists in the world. But if it hadn't been computer science, these people would've been doing amazing things in other fields. Because they had a broad set of interests—they brought all that into the product.  
@@ -60,7 +58,6 @@ title: Taste 品味
 5. 强调创造而非服从：审美活动本质是创造性诠释，鼓励个体主动赋义。
 
 6. 把人生当作品：作品可以反复雕琢、删改、升华——这对应尼采的“自我超克”。
-
 
 ##.如何系统培养审美眼光？——四步练习法
 

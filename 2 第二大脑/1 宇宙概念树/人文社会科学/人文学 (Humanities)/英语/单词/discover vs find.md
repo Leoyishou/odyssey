@@ -1,10 +1,9 @@
 ---
-comment_id: f1ceb7f4
 date created: 2025-01-17
-date modified: 2025-02-23
-draw: null
-title: discover vs find
+date modified: 2025-07-10
+uid: 9ec30233-2090-4801-8690-99d9fe5c8799
 ---
+
 下面的表格从基本概念出发，用最简洁的语言对比了 **discover** 和 **find** 的区别：
 
 |**比较维度**|**discover**|**find**|

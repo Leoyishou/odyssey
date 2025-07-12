@@ -1,10 +1,9 @@
 ---
-comment_id: 1c48ff9c
 date created: 2024-11-19
-date modified: 2025-04-18
-draw: null
-title: LlamaIndex
+date modified: 2025-07-10
+uid: 79dea59a-f397-4b14-aade-c578e5f0cc39
 ---
+
 #handsDirty
 
 https://colab.research.google.com/drive/1SmjpWrz8NzU7UyEDvbv9qEqGm_2keWEq#scrollTo=h3tA6La8Bhxl

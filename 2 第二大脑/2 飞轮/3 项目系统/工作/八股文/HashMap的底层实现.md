@@ -1,11 +1,9 @@
 ---
-comment_id: a321c23e
 date created: 2024-08-13
-date modified: 2024-12-27
-draw: null
-tags: []
-title: HashMap的底层实现
+date modified: 2025-07-10
+uid: 8741b9c1-0b29-4ee4-8d1d-66f6c1c752bb
 ---
+
 【集合】HashMap的底层实现
 
 [Map, Dict](Map,%20Dict.md)

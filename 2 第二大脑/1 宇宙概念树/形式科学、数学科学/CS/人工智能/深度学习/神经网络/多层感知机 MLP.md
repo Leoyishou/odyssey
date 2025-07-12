@@ -1,9 +1,7 @@
 ---
-comment_id: e99f01ba
 date created: 2025-02-14
-date modified: 2025-03-27
-draw: null
-title: 多层感知机 MLP
+date modified: 2025-07-10
+uid: 34a61e6c-b5a2-4e7d-9cdd-15896d4e9fb3
 ---
 ## 案例
 

@@ -1,9 +1,7 @@
 ---
-comment_id: 3d3b1033
 date created: 2023-12-04
-date modified: 2025-02-06
-draw: null
-title: K8s
+date modified: 2025-07-10
+uid: 104c873a-047f-4fcb-8e4c-11fa2b4d8643
 ---
 ## 配置细节
 

@@ -1,13 +1,7 @@
 ---
-aliases:
-- Assistants Function Calling with Streaming
-comment_id: 3bca4a18
 date created: 2024-11-16
-date modified: 2024-12-27
-draw: null
-linter-yaml-title-alias: Assistants Function Calling with Streaming
-tags: []
-title: Assistants Function Calling with Streaming
+date modified: 2025-07-10
+uid: 7d201719-aa22-4696-9967-ba2d0c678449
 ---
 1. 创建有状态的 thread、无状态的 assistant
 2. 把 message 加到 thread 中

@@ -1,10 +1,9 @@
 ---
-comment_id: 47ac9cc5
 date created: 2024-07-13
-date modified: 2025-04-03
-draw: null
-title: youtube
+date modified: 2025-07-10
+uid: b8baa139-efe4-4d2d-a919-e3c72a915842
 ---
+
 生活精致的 youtober？- 知乎用户 CfnIWH 的回答 - 知乎  
 https://www.zhihu.com/question/301014108/answer/983944527
 

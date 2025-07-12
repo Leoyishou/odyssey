@@ -1,10 +1,9 @@
 ---
-comment_id: 63129f45
 date created: 2025-04-30
-date modified: 2025-04-30
-draw: null
-title: ONEPAGE
+date modified: 2025-07-10
+uid: 1506a103-22f2-4600-9432-8830bfbd94d6
 ---
+
 下面先给你一个「完善 ONEPAGE 的整体思路」框架，帮助你快速对照检查缺口，再决定哪些部分要深入补充、哪些可以压缩。之后如果你需要，我可以针对某一节给出具体示例或直接帮你改写。
 
 ---

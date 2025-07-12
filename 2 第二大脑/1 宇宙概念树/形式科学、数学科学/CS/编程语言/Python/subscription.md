@@ -1,9 +1,7 @@
 ---
-comment_id: bfb2c4eb
 date created: 2025-05-02
-date modified: 2025-05-02
-draw: null
-title: subscription
+date modified: 2025-07-10
+uid: a2d047cc-6962-40e2-8338-466a36f25167
 ---
 ## Python 里的 “subscription” 到底是什么？
 

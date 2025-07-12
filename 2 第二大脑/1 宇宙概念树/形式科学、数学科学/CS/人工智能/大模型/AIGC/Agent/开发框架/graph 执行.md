@@ -1,10 +1,9 @@
 ---
-comment_id: 8cf17039
 date created: 2025-04-18
-date modified: 2025-04-18
-draw: null
-title: graph 执行
+date modified: 2025-07-10
+uid: 465232bc-4cbd-4f4e-9189-b747a0bff37a
 ---
+
 | 执行                        |                                                  |
 | ------------------------- |:----------------------------------------------- |
 | 同步阻塞式一次性执行；返回最终 State 增量。| `result = graph.invoke({'messages':[...]}, cfg)` |

@@ -1,11 +1,9 @@
 ---
-comment_id: 196d5f7f
 date created: 2024-09-23
-date modified: 2024-12-27
-draw: null
-tags: []
-title: IP
+date modified: 2025-07-10
+uid: 4078dbec-4998-4ab4-9bb4-0bdb7e83e18b
 ---
+
 相对于[TCP](TCP.md)的面向连接的、可靠的、基于字节流的  
 IP协议是无连接的，不可靠的，基于数据报的  
 而TCP就像是在这个邮政系统之上增加了跟踪、确认收货、按顺序整理的服务。

@@ -1,10 +1,9 @@
 ---
-comment_id: c1abac14
 date created: 2025-02-24
-date modified: 2025-02-24
-draw: null
-title: GRPOTrainer
+date modified: 2025-07-10
+uid: faf564e8-f63f-4403-8b21-93759726a6cd
 ---
+
 这个名字由两个部分组成：
 
 1. **GRPOTrainer**：

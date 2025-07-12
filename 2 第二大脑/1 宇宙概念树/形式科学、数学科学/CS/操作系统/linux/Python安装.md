@@ -1,10 +1,9 @@
 ---
-comment_id: c0c44f76
 date created: 2023-11-22
-date modified: 2025-02-06
-draw: null
-title: Python安装
+date modified: 2025-07-10
+uid: 485bf3bb-601c-4bc7-b983-30e75fbb7415
 ---
+
 系统默认自带了一个 ```bash
 
 ## 查看一下现有python的位置
@@ -69,6 +68,7 @@ make && make install
 
 错误代码 ModuleNotFoundError: No module named '_ctypes'  
 该错误是因为本机缺少 libffi-devel 包，
+
 只需安装此包即可 # 安装命令  
 注意在安装完缺少的依赖包后，仍需重新运行对应所在的配置、编译和执行安装命令
 

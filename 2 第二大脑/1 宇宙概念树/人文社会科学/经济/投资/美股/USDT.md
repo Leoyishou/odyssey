@@ -1,10 +1,9 @@
 ---
-comment_id: c66fcb37
 date created: 2024-09-16
-date modified: 2025-02-06
-draw: null
-title: USDT
+date modified: 2025-07-10
+uid: f17d3a96-66a6-4dd0-bc26-f37c01ed4a47
 ---
+
 在加密货币和区块链领域中，"铸造了10亿USDT"和"taida"这两个概念有不同的含义：
 
 1. "铸造了10亿USDT"：

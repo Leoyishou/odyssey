@@ -1,11 +1,8 @@
 ---
-aliases:
-- 循环神经网络
-comment_id: 353b03fa
+aliases: [循环神经网络]
 date created: 2024-09-22
-date modified: 2025-06-15
-draw: null
-title: RNN
+date modified: 2025-07-10
+uid: 8cf73d5b-9ada-4ee0-9118-5ea82a9f97b9
 ---
 **2.89** **复制打开抖音，看看【小黑黑讲****AI****的作品】****RNN****循环神经网络是如何工作的** **#** **机器学习** **#...** **[**[**验证码中间页**](https://v.douyin.com/ifvGjQ15/)**](**[https://v.douyin.com/ifvGjQ15/](ticktick://ttMarkdownLink)**)** **X@Z.mQ 04/04 usE:/**
 https://www.douyin.com/video/6950546751442914567?previous_page=app_code_link

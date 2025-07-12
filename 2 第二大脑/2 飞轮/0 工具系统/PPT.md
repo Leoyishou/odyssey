@@ -1,11 +1,9 @@
 ---
-comment_id: 812d55ea
 date created: 2024-11-17
-date modified: 2024-12-31
-draw: null
-tags: []
-title: PPT
+date modified: 2025-07-10
+uid: de87cbcf-6639-4efb-99a1-aec97e011dcc
 ---
+
 做ppt最痛苦的是非专业的你在摆弄一个专业的工具
 
 三招做出苹果风格的幻灯片  

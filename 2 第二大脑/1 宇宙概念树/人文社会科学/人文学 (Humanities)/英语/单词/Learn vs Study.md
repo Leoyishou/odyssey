@@ -1,10 +1,9 @@
 ---
-comment_id: 1c9c3a50
 date created: 2025-01-20
-date modified: 2025-02-09
-draw: null
-title: Learn vs Study
+date modified: 2025-07-10
+uid: 7f3c946d-f4c2-4c4f-bb51-607536ff5e36
 ---
+
 | 特征 | Learn | Study |
 |---|---|---|
 | 本质 | **获取知识的过程** | **研究和分析的行为** |

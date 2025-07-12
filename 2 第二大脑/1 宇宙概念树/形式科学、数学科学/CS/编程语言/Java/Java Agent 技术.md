@@ -1,10 +1,9 @@
 ---
-comment_id: 8ff6372a
 date created: 2024-05-23
-date modified: 2025-02-06
-draw: null
-title: Java Agent 技术
+date modified: 2025-07-10
+uid: 6ef17415-7847-4d60-b884-998421f9c911
 ---
+
 excerpt
 
 <!-- more -->

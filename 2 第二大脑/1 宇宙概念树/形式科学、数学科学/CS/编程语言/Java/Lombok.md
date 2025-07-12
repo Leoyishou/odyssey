@@ -1,10 +1,9 @@
 ---
-comment_id: c9779039
 date created: 2024-09-09
-date modified: 2025-02-26
-draw: null
-title: Lombok
+date modified: 2025-07-10
+uid: f51d4a25-1e78-40af-82cb-803f3052e706
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F02%2F26%2F16-48-23-ee0e20fdee43246b96afb8d40cbe4b2b-202502261648529-ae0990.png)
 
 ## 作用

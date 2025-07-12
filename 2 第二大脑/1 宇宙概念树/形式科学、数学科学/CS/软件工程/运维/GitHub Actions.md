@@ -1,9 +1,7 @@
 ---
-comment_id: 74107f82
 date created: 2024-11-25
-date modified: 2025-02-06
-draw: null
-title: GitHub Actions
+date modified: 2025-07-10
+uid: a72f5403-cfdd-494e-a884-d97c87d04749
 ---
 ## 本质
 

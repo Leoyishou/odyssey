@@ -1,10 +1,9 @@
 ---
-comment_id: 5e038638
 date created: 2025-02-14
-date modified: 2025-05-18
-draw: null
-title: UEUI
+date modified: 2025-07-10
+uid: 850d4bd3-7865-496a-875c-56e8a5da3223
 ---
+
 #最佳实践   模仿 Dribbble 或 Behance 上的 UI 界面，尝试复刻
 
 Grok3 这套 思维链 展示的 UX 也太酷了  

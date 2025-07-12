@@ -1,10 +1,9 @@
 ---
-comment_id: 6ff7e1f9
 date created: 2025-01-16
-date modified: 2025-02-06
-draw: null
-title: Significantly vs Obviously
+date modified: 2025-07-10
+uid: 1a6bff48-0473-4429-a979-dababfbeb426
 ---
+
 从中文角度来理解，"significantly"和"obviously"都可以用来表达"程度"或"明显性"，但它们所强调的重点有所不同。以下从含义、语气、使用场景等方面进行区分，并给出一些具体用法示例。
 
 ---

@@ -1,9 +1,7 @@
 ---
-comment_id: d3901205
 date created: 2024-12-18
-date modified: 2025-02-06
-draw: null
-title: ps
+date modified: 2025-07-10
+uid: a816fc9e-3c31-424f-b6e8-2541a51c0d1a
 ---
 **在某种程度上可以类比于 Windows 的任务管理器**。
 

@@ -1,11 +1,9 @@
 ---
-comment_id: e68f19cb
 date created: 2024-10-29
-date modified: 2024-11-12
-draw: null
-tags: []
-title: vuepress
+date modified: 2025-07-10
+uid: 697804d5-e701-4636-9ed4-982833029ec9
 ---
+
 快速开发自己的静态网站  
 [首页 | VuePress](https://vuepress.github.io/zh/)
 

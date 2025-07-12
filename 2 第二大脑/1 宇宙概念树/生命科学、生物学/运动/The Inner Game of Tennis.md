@@ -1,10 +1,9 @@
 ---
-comment_id: 3b550d90
 date created: 2025-02-20
-date modified: 2025-02-20
-draw: null
-title: The Inner Game of Tennis
+date modified: 2025-07-10
+uid: 4b8299a0-3e90-4297-bd83-fc5c78d98e7c
 ---
+
 《The Inner Game of Tennis》（《内在网球》）是由W·蒂莫西·高威（W. Timothy Gallwey）在1970年代首次出版的一本关于网球及个人成长的经典著作。虽然书名直指"网球"，但它真正讨论的主题超越了球场，涉及心理学、注意力管理和自我认知，对各类运动项目甚至工作与生活都有启发性。
 
   

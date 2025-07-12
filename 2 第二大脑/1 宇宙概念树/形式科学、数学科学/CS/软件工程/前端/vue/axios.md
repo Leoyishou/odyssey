@@ -1,9 +1,7 @@
 ---
-comment_id: 479393a1
 date created: 2024-06-23
-date modified: 2025-02-06
-draw: null
-title: axios
+date modified: 2025-07-10
+uid: f0037a35-c08b-42eb-8df8-b3f11aa69aa8
 ---
 ```js
 >>>> request.js

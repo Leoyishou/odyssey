@@ -1,10 +1,9 @@
 ---
-comment_id: c21d6618
 date created: 2025-04-12
-date modified: 2025-04-12
-draw: null
-title: Mixup
+date modified: 2025-07-10
+uid: e17e21d3-be5f-43e7-903d-469ff5338010
 ---
+
 好的，我们来审查一下你关于 "mixup" 概念的疑问。
 
 **Step 1. 提取与审查**

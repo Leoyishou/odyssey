@@ -1,10 +1,9 @@
 ---
-comment_id: 6b577e19
 date created: 2024-10-11
-date modified: 2025-02-06
-draw: null
-title: schema
+date modified: 2025-07-10
+uid: c282b42e-de1f-43c7-909c-831ad03beeb6
 ---
+
 可以给不同的人不同的权限，就像你可以决定谁能碰你的乐高。有利于鉴权
 
 <!-- more -->

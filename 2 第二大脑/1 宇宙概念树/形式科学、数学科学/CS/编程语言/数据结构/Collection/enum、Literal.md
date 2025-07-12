@@ -1,9 +1,7 @@
 ---
-comment_id: '72119186'
 date created: 2025-04-17
-date modified: 2025-04-17
-draw: null
-title: enum、Literal
+date modified: 2025-07-10
+uid: 45833656-5e51-4606-9f36-923bdebd1d1d
 ---
 **Interpreting the question**
 

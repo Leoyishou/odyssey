@@ -1,10 +1,9 @@
 ---
-comment_id: 5d5d74c9
 date created: 2024-05-08
-date modified: 2025-02-06
-draw: null
-title: crossfit
+date modified: 2025-07-10
+uid: dc769e34-2885-466d-acdb-fd0903d1b1c4
 ---
+
 excerpt
 
 <!-- more -->

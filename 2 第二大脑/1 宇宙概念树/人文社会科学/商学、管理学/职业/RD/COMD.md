@@ -1,9 +1,7 @@
 ---
-comment_id: 41aaace6
 date created: 2024-12-15
-date modified: 2025-02-06
-draw: null
-title: COMD
+date modified: 2025-07-10
+uid: fa218fb7-fb2f-49ad-8c2d-f0782456e60b
 ---
 ## COMD 能力模型：4 种复杂度 +3 个维度
 

@@ -1,10 +1,9 @@
 ---
-comment_id: ce0a82a5
 date created: 2024-11-24
-date modified: 2025-02-06
-draw: null
-title: VPS
+date modified: 2025-07-10
+uid: 6bff47df-4d9f-405d-8e63-24ab0d59fb56
 ---
+
 VPS (Virtual Private Server) 和云服务器的主要区别：
 
 1. VPS：

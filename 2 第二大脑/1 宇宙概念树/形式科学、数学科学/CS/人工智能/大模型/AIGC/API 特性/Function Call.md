@@ -1,11 +1,9 @@
 ---
-comment_id: 9a5df38a
 date created: 2024-11-15
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Function Call
+date modified: 2025-07-10
+uid: 9a5c9cd6-69f8-4761-bd00-97a27516dbf5
 ---
+
 是的，理解正确！在 **Function Calling** 和 **GPT Actions** 中，"tools" 的确有所不同：
 
 1. **Function Calling**：

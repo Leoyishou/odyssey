@@ -1,10 +1,9 @@
 ---
-comment_id: 1b9d5a2d
 date created: 2025-04-18
-date modified: 2025-04-18
-draw: null
-title: MessageState、AgentState
+date modified: 2025-07-10
+uid: 37099cfd-444f-4379-8fc3-e12e26592f2c
 ---
+
 Thought for 5 seconds
 
 下面用一句话先概括，然后再分开解释：

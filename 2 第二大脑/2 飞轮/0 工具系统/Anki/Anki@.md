@@ -1,11 +1,9 @@
 ---
-comment_id: 0eb76d9b
 date created: 2024-05-12
-date modified: 2024-12-27
-draw: null
-tags: []
-title: Anki@
+date modified: 2025-07-10
+uid: e85fb2fc-c7e0-4bf9-8ed7-0893bf6f31d4
 ---
+
 excerpt
 
 <!-- more -->

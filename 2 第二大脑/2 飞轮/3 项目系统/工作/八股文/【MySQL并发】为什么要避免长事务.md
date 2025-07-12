@@ -1,11 +1,9 @@
 ---
-comment_id: 405cb592
 date created: 2024-08-12
-date modified: 2024-11-12
-draw: null
-tags: []
-title: 【MySQL并发】为什么要避免长事务
+date modified: 2025-07-10
+uid: 33cf8be2-56c8-4a5d-b713-be4a7ddcaa36
 ---
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F08%2F12%2F11-29-54-afaad237c32da0a46c9a36ac04a76511-202408121129413-3d6a12.png)
 
 回滚日志undolog中保留着过去版本的回滚方法，

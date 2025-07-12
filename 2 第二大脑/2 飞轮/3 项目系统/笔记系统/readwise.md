@@ -1,11 +1,9 @@
 ---
-comment_id: 1cc38a93
 date created: 2024-01-16
-date modified: 2024-11-12
-draw: null
-tags: []
-title: readwise
+date modified: 2025-07-10
+uid: 1c5682cd-57de-455e-9ab6-f6b3f59dcc71
 ---
+
 readwise 的两个维度
 
 信息维度的 inbox、later、achieve，在 library 中完成

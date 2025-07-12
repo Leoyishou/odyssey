@@ -1,10 +1,9 @@
 ---
-comment_id: 487cb362
 date created: 2025-03-30
-date modified: 2025-03-31
-draw: null
-title: 解包 unpacking
+date modified: 2025-07-10
+uid: f967b662-ebfd-45b7-8d87-4d225d2be533
 ---
+
 以下是 Python、Go、JavaScript 三种语言中常见的 unpacking（解包、解构）方法对比：
 
 [迭代器模式](迭代器模式.md)

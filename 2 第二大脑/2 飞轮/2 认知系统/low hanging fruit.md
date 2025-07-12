@@ -1,11 +1,9 @@
 ---
-comment_id: d5c19353
 date created: 2024-06-02
-date modified: 2024-11-12
-draw: null
-tags: []
-title: low hanging fruit
+date modified: 2025-07-10
+uid: 570390ce-9ca9-4667-9fd5-902631f90e2e
 ---
+
 一下内容来自 [oldwinter/knowledge-garden: 我的第二大脑 second brain，我的数字花园 digital garden，用obsidian双链笔记软件写作而成 (github.com)](https://github.com/oldwinter/knowledge-garden)
 
 <!-- more -->

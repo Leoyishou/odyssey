@@ -1,9 +1,7 @@
 ---
-comment_id: e57e7204
 date created: 2024-11-25
-date modified: 2025-04-07
-draw: null
-title: FastAPi部署
+date modified: 2025-07-10
+uid: f54ab01b-bd19-4a34-ad4e-f94c8ed90e13
 ---
 ## Python安装与虚拟环境搭建
 

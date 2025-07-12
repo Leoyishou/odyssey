@@ -1,9 +1,7 @@
 ---
-comment_id: 351da782
 date created: 2025-06-26
-date modified: 2025-06-26
-draw: null
-title: RICE
+date modified: 2025-07-10
+uid: 085005db-06dd-4614-a0c2-b2c6bff36c1c
 ---
 **RICE（Reach, Impact, Confidence, Effort）**：
 

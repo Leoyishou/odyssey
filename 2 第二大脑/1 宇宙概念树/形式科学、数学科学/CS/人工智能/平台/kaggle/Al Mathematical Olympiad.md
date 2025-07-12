@@ -1,9 +1,7 @@
 ---
-comment_id: e439fb76
 date created: 2025-03-03
-date modified: 2025-03-03
-draw: null
-title: Al Mathematical Olympiad
+date modified: 2025-07-10
+uid: 2f4f9ec3-f120-4a08-8842-d59bdf3eb521
 ---
 > 思路一：纯生成路线  
 > 这老师用 DeepSeek r1 14b 当 base，open r1 grpo弄半天。结果正确率还下降了，哈哈哈  

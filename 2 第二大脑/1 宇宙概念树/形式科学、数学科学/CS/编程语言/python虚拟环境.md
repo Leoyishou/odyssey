@@ -1,10 +1,9 @@
 ---
-comment_id: fc36328b
 date created: 2025-03-23
-date modified: 2025-04-11
-draw: null
-title: python虚拟环境
+date modified: 2025-07-10
+uid: c3a087b7-bf8a-4fb1-97a7-510d1b3c1e0e
 ---
+
 这属于 **Python虚拟环境（Virtual Environment）的创建和激活操作**。
 
 ---

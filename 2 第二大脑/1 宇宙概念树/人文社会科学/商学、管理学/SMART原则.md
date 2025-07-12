@@ -1,10 +1,9 @@
 ---
-comment_id: ac521d9c
 date created: 2024-07-01
-date modified: 2025-04-05
-draw: null
-title: SMART原则
+date modified: 2025-07-10
+uid: cacee35b-7d5f-43f3-8888-5585107a8ba0
 ---
+
 SMART 原则：KR 通常需要符合“具体（Specific）、可衡量（Measurable）、可实现（Achievable）、相关性（Relevant）、有时限（Time-bound）”。
 
 specific  

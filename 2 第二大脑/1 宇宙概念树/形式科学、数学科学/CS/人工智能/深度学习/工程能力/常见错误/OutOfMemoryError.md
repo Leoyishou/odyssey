@@ -1,10 +1,9 @@
 ---
-comment_id: 75df0fcb
 date created: 2025-03-23
-date modified: 2025-03-23
-draw: null
-title: OutOfMemoryError
+date modified: 2025-07-10
+uid: 7a1d0e7d-2df7-438c-ae84-af0ed966b1d9
 ---
+
 你遇到的报错问题为：
 
 ```Java

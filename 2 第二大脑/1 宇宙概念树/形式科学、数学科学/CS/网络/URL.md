@@ -1,13 +1,10 @@
 ---
-aliases:
-- Uniform Resource Locator
-comment_id: 4803f93c
+aliases: [Uniform Resource Locator]
 date created: 2024-06-05
-date modified: 2024-12-27
-draw: null
-tags: []
-title: URL
+date modified: 2025-07-10
+uid: 18610253-fce0-4471-94bf-e2634b0e04da
 ---
+
 excerpt
 
 <!-- more -->

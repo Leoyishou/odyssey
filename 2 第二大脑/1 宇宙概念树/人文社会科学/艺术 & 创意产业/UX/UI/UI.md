@@ -1,9 +1,7 @@
 ---
-comment_id: 3a94f9d9
 date created: 2025-04-14
-date modified: 2025-04-27
-draw: null
-title: UI
+date modified: 2025-07-10
+uid: 02ac91bb-955a-4c9e-bc83-0e25b765894f
 ---
 - **设计系统与一致性原则：**  
     现代化的产品往往依赖于系统化的设计语言和设计系统（如 Google 的 Material Design、Apple 的 Human Interface Guidelines）。这不仅包括视觉元素（颜色、字体、图标等）的一致性，还涉及组件、动画和交互模式的标准化。
