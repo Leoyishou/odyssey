@@ -68,14 +68,12 @@ function getUid() {
     const lastModFooter = modFooters[modFooters.length - 1];
     
     if (lastModFooter) {
-      // 如果找到 .mod-footer，插入到它的后面（作为兄弟元素）
-      lastModFooter.parentNode.insertBefore(container, lastModFooter.nextSibling);
-      console.log('[Giscus] 已挂载到 .mod-footer 后面');
-      return;
+      // 如果找到 .mod-footer，插入到它里面
+      lastModFooter.appendChild(container);
+      console.log('[Giscus] 已挂载到 .mod-footer 内部');
     } else {
       // 如果没有 .mod-footer，使用原来的逻辑
       const target =
-        document.querySelector('.markdown-preview-sizer') ||
         document.querySelector('.markdown-preview-view') ||
         document.querySelector('.publish-article-content') ||
         document.querySelector('.content') ||
