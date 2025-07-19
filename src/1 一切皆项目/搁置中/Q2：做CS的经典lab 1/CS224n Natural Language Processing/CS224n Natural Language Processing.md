@@ -9,8 +9,8 @@ uid: 463222e9-30fa-425d-a311-72040fafc975
 | 1 & 2 | [[词向量、词嵌入]] (Word Vectors)                              | - 词义表示：one-hot 向量、词义相似度<br>- Word2vec (skip-gram, CBOW)：目标函数、梯度推导、负采样<br>- GloVe：共现矩阵、目标函数<br>- 词向量的评估方法：内在评估、外在评估 | 输入是句子，输出是词向量      |
 | 3     | [[神经网络]] (Neural Networks)                          | - 神经网络基础：神经元、激活函数、前向传播、反向传播<br>- 梯度下降：随机梯度下降、小批量梯度下降<br>- 神经网络的训练技巧：正则化、dropout<br>- 神经网络的应用：情感分析                  | 用线性函数+非线性函数拟合一切规律 |
 | 4     | [[依存句法分析]] (Dependency Parsing)                     | - 依存句法：依存树、依存关系<br>- 基于转移的依存句法分析：arc-standard 转移系统<br>- 神经网络在依存句法分析中的应用                                            |                   |
-| 5     | 循环神经网络[RNN](RNN.md) (Recurrent Neural Networks)     | - RNN 的基本结构：隐藏状态、时间步<br>- RNN 的变体：LSTM、GRU<br>- 语言模型：RNN 语言模型、困惑度<br>- RNN 的应用：命名实体识别                              |                   |
-| 6     | 神经机器翻译 ([[Neural Machine Translation]])             | - 序列到序列模型 (Seq2Seq)：[编码器、解码器](编码器、解码器.md)<br>- [[自注意力机制]] (Attention)：点积注意力、缩放点积注意力<br>- Beam search：提高翻译质量的方法     |                   |
+| 5     | 循环神经网络[循环神经网络RNN](循环神经网络RNN.md) (Recurrent Neural Networks)     | - RNN 的基本结构：隐藏状态、时间步<br>- RNN 的变体：LSTM、GRU<br>- 语言模型：RNN 语言模型、困惑度<br>- RNN 的应用：命名实体识别                              |                   |
+| 6     | 神经机器翻译 ([[Neural Machine Translation]])             | - 序列到序列模型 (Seq2Seq)：[编码器](编码器.md)<br>- [[自注意力机制]] (Attention)：点积注意力、缩放点积注意力<br>- Beam search：提高翻译质量的方法     |                   |
 | 7     | [[问答系统]] (Question Answering)                       | - 阅读理解式问答：给定文章和问题，找到答案<br>- BiDAF 模型：双向注意力流<br>- 其他问答模型：Match-LSTM、QANet                                           |                   |
 | 8     | 卷积神经网络[CNN](CNN.md) (Convolutional Neural Networks) | - CNN 的基本结构：卷积层、池化层<br>- CNN 在 NLP 中的应用：文本分类、句子建模                                                                  |                   |
 

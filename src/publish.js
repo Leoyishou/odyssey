@@ -1,10 +1,10 @@
 /*****************************************************************
  * publish.js —— 放在仓库根目录
  * 功能：在 Obsidian Publish 页面为每篇笔记加载 giscus 评论，
- *       用 front-matter 中的 comment_id 作为唯一键。
+ *       用 front-matter 中的 uid 作为唯一键。
  ******************************************************************/
 
-/* --------- 工具函数：从原始 Markdown 抽取 comment_id --------- */
+/* --------- 工具函数：从原始 Markdown 抽取 uid --------- */
 function getUid() {
     /* Publish 会把 Markdown 原文放进 <script type="text/plain">…</script> */
     const raw =
@@ -31,7 +31,7 @@ function getUid() {
       return;
     }
   
-    /* 读取 comment_id，没有就放弃加载评论 */
+    /* 读取 uid，没有就放弃加载评论 */
     const uid = getUid();
     if (!uid) {
       console.warn('[Giscus] 未找到 uid，页面不加载评论');
@@ -50,8 +50,8 @@ function getUid() {
     s.dataset.repoId      = 'R_kgDOPJw6Yg';
     s.dataset.category    = 'Comments';
     s.dataset.categoryId  = 'DIC_kwDOPJw6Ys4CstfW';
-  
-    /* 关键：用 comment_id 作为主键 */
+
+    /* 关键：用 uid 作为主键 */
     s.dataset.mapping     = 'id';
     s.dataset.term        = uid;
   
