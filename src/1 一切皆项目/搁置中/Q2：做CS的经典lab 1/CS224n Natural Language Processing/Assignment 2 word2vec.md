@@ -416,7 +416,7 @@ Negative sampling 通过只关注少量正负样本，大大降低了 Word2Vec �
 
 1. 其他数学概念：
 - [[softmax]]
-- [[交叉熵]] (Cross Entropy)
+- [[交叉熵 cross_entropy]] (Cross Entropy)
 - 对数函数 (Logarithm，出现在损失函数中)
 - one-hot 向量
 - 指数函数 (Exponential Function，在 softmax 和 sigmoid 中)

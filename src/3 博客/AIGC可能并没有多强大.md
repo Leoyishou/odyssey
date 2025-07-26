@@ -1,6 +1,6 @@
 ---
 date created: 2023-12-04
-date modified: 2025-07-10
+date modified: 2025-07-19
 uid: 11c747e1-7d50-456a-9d7a-63cd82482775
 ---
 - [一、使用经历和分享内容](#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E7%BB%8F%E5%8E%86%E5%92%8C%E5%88%86%E4%BA%AB%E5%86%85%E5%AE%B9)
@@ -30,28 +30,28 @@ uid: 11c747e1-7d50-456a-9d7a-63cd82482775
 		- [1. hugging face](#1.%20hugging%20face)
 		- [2. youtuber：Matt Wolfe、assemblyAI](#2.%20youtuber%EF%BC%9AMatt%20Wolfe%E3%80%81assemblyAI)
 
-## 一、使用经历和分享内容
+# 一、使用经历和分享内容
 
 Chatgpt、Midjourney、Elvenlabs、assemblyai  
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213162208.png)
 
 分享内容简单介绍
 
-## 二、一些前置概念
+# 二、一些前置概念
 
-### 2.1 大模型幻觉
+## 2.1 大模型幻觉
 
   " 大模型幻觉 " 是指人们在与大语言模型交互时可能产生的一种错觉，即错误地认为这些模型具有真正的理解能力、意识或感知。这种幻觉通常源于模型生成的文本质量非常高，能够流畅、连贯地回答问题或进行对话，使人们感觉就像是在与一个真实的、有理解力的人类交谈。  
   举一个论坛上的例子，怎么写出更好的 prompt？回答 A 介绍了一堆循序渐进的步骤，但是高赞的回答 B 说到，这一切的前提首先是它是个 prompt 专家！那么它是吗？
 
   
 
-### 2.2 大模型的本质是什么？
+## 2.2 大模型的本质是什么？
 
   是人类的工具，但是无法提供情感支持。  
   有两类工具，第一种是拿来就可以解决问题，实现目标的，比如战场上的一把枪，可以对赤手空拳的敌人降维打击；第二种是拿来可以提高我们自己解决问题的能力的，比如一个哑铃，我们可以通过它练习自己的力量，从而战胜力量不如我们的敌人。
 
-## 三、项目一：旅行助手
+# 三、项目一：旅行助手
 
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213150959.png)  
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213151812.png)
@@ -61,9 +61,9 @@ langchain 只是将大模型开发的过程高度抽象化，最终 tools、agen
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213150655.png)  
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213151952.png)
 
-## 四、一些概念
+# 四、一些概念
 
-### 4.1 AI 决策
+## 4.1 AI 决策
 
 	traditional deterministic code
 
@@ -73,55 +73,55 @@ langchain 只是将大模型开发的过程高度抽象化，最终 tools、agen
 
  
 
-### 4.2 上下文限制、embedding 与向量数据库
+## 4.2 上下文限制、embedding 与向量数据库
 
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213152540.png)
 
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213150325.png)
 
-### 4.3 prompt engineering 有必要吗？
+## 4.3 prompt engineering 有必要吗？
 
 应用开发中是有用的！以 json 输出为例  
 个人应用中性价比不高，另外对于一个黑箱，大量场景无法测试收益，设置为 template 嵌入到工具中更高效，核心是人设 + 结果约束  
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213160747.png)
 
-### 4.4 结果约束
+## 4.4 结果约束
 
 展示项目中的 json 约束 prompt  
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213141914.png)
 
-### 4.5 Streaming
+## 4.5 Streaming
 
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213152831.png)
 
-### 4.6 总结
+## 4.6 总结
 
 - langchain 的本质：最终 tools、agent 等都是基于老的 API 实现（在 playground 展示老的 api），所有机制的实现都只是一段一段的 prompt。
 - 最炫的点是通过自然语言调用本地函数
 
-## 五、项目二：口语复盘工具
+# 五、项目二：口语复盘工具
 
-### Openai 的最新 API
+## Openai 的最新 API
 
 使用开发者大会之后的新 api 开发（在 playground 展示新的 api）
 
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213151616.png)
 
-### 展示数据处理过程
+## 展示数据处理过程
 
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213151451.png)  
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213151144.png)  
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213151049.png)
 
-### 总结
+## 总结
 
 - 这个工具能够奏效的逻辑起点是：对于中文，gpt 只会说没道理的话，但是不会产生不通顺的话，而通顺正是这个场景下用户的使用目的。
 - 只是复盘的工具，解决不了沟通的欲望。市面上一些其他的口语 AI 应用，无法让人产生持久的交流欲望  
 	是人类的工具，但是无法提供情感支持
 
-## 六、避免大模型幻觉，反复确认它的真实本领
+# 六、避免大模型幻觉，反复确认它的真实本领
 
-### 6.1 第一类工具的范畴
+## 6.1 第一类工具的范畴
 
 - 基本都是围绕着它的两个核心能力展开的，1: 语义理解 2: 一定能生成一个回答
 - 检查错别字
@@ -133,12 +133,12 @@ langchain 只是将大模型开发的过程高度抽象化，最终 tools、agen
 ![image.png|100](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213155245.png)  
 ![image.png|100](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213155322.png)
 
-### 6.2 第二类工具的范畴
+## 6.2 第二类工具的范畴
 
 - 语言学习
 - 对于一个新领域的冷启动，交互式初探
 
-## 七、总结：时刻用两类工具论审视 AI 发展
+# 七、总结：时刻用两类工具论审视 AI 发展
 
 	  有两类工具，第一种是拿来就可以解决问题，实现目标的，比如战场上的一把枪，可以对赤手空拳的敌人降维打击；第二种是拿来可以提高我们自己解决问题的能力的，比如一个哑铃，我们可以通过它练习自己的力量，从而战胜力量不如我们的敌人。
 - 当 AI 作为第一类工具时，一定会被各种公司通过商业化制作成简单易上手的产品，对于个人来说，无需焦虑，只需享受，真的好用的 AI 产品一定会快速出圈！
@@ -147,28 +147,28 @@ langchain 只是将大模型开发的过程高度抽象化，最终 tools、agen
 - 间隔重复，大量练习，时间的投入永远是个人能力的护城河
 - 数据驱动&心态开放
 
-## 八、其他
+# 八、其他
 
-### 8.1 多模态的 AI 产品
+## 8.1 多模态的 AI 产品
 
 文字、图片、视频、声音  
 Midjourney  
 Eleven labs
 
-### 8.2 怎么样快速上手一款 AI 产品
+## 8.2 怎么样快速上手一款 AI 产品
 
 1. playground 试接口（展示 [OpenAI](OpenAI.md)和、assemblyai、Eleven labs）
 2. 遇到问题查 forum 或者 discord
 
-### 8.3 怎么样获取最新的 AI 资讯
+## 8.3 怎么样获取最新的 AI 资讯
 
-#### 1. hugging face
+### 1. hugging face
 
 [Hugging Face – The AI community building the future.](https://huggingface.co/)  
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213150520.png)
 
 The platform where the machine learning community collaborates on models, datasets, and applications.
 
-#### 2. youtuber：Matt Wolfe、assemblyAI
+### 2. youtuber：Matt Wolfe、assemblyAI
 
 ![image.png|1000](https://cdn.jsdelivr.net/gh/Leoyishou/imageHosting@main/img/20231213144248.png)

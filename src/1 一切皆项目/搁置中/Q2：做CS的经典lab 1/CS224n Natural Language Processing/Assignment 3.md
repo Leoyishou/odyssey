@@ -1,6 +1,6 @@
 ---
 date created: 2025-01-24
-date modified: 2025-07-10
+date modified: 2025-07-19
 uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
 ---
 
@@ -8,7 +8,7 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
 
 ---
 
-## Part 1: Machine Learning & Neural Networks（8 分）
+# Part 1: Machine Learning & Neural Networks（8 分）
 
 这是一些**基础理论题**，主要围绕 Adam 优化器和 Dropout 这两种神经网络技术展开。
 
@@ -30,33 +30,33 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
 
 ---
 
-## Part 2: Neural Transition-Based Dependency Parsing（44 分）
+# Part 2: Neural Transition-Based Dependency Parsing（44 分）
 
 这一部分是整个作业的核心：**实现一个基于神经网络的依存句法解析器**，并分析一些错误解析案例。你需要完成以下工作：
 
-### 2(a) 理解并列出完整的转移序列 (4 分)
+## 2(a) 理解并列出完整的转移序列 (4 分)
 
 给定示例句 "I parsed this sentence correctly"，以及一张目标依存树，你需要：
 
 - **一步步** 写出 parser 的状态转移（stack、buffer、所用的 transition 以及新增的依存关系）。
 - 作业里已经示例了前面三步，你需要把后续步骤完整列出来，直到解析结束。
 
-### 2(b) 解析一个 n 词句子，需要多少步？(2 分)
+## 2(b) 解析一个 n 词句子，需要多少步？(2 分)
 
 - 用简洁的理由说明，对长度为 n 的句子，为什么需要特定数量的 SHIFT / LEFT-ARC / RIGHT-ARC 步骤才能完成依存解析。
 
-### 2(c) 实现 `PartialParse` 的两个函数 (6 分)
+## 2(c) 实现 `PartialParse` 的两个函数 (6 分)
 
 - 你需要在 `parser_transitions.py` 里完成类 `PartialParse` 的 `init` 与 `parse_step` 方法，来实现"单步"转移的逻辑。
 - 可以用 `python parser_transitions.py part_c` 进行基本测试（但并非完整测试）。
 
-### 2(d) 实现 `minibatch_parse` 函数 (8 分)
+## 2(d) 实现 `minibatch_parse` 函数 (8 分)
 
 - 同样在 `parser_transitions.py` 里，按照给定算法"**小批量解析**"多句话。
 - 你要用 `model`（提供的一个示例模型）去预测下一步应该做哪种转移，然后对这一小批的 partial parses 同步执行转移。
 - 测试命令：`python parser_transitions.py part_d`。
 
-### 2(e) 训练并实现神经网络依存解析器 (12 分)
+## 2(e) 训练并实现神经网络依存解析器 (12 分)
 
 - 核心是 `parser_model.py` 和 `run.py` 文件中的若干 TODO：
     1. **`parser_model.py`**
@@ -76,7 +76,7 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
     - 你可以先 `python run.py -d` (debug 模式) 进行快速训练，看看是否能到 ~65+ 的 UAS；
     - 如果要跑完整训练，大约需要 **1 小时**，最好在 debug 确认没大问题后再跑全量。
 
-### 2(f) 错误解析分析 (12 分)
+## 2(f) 错误解析分析 (12 分)
 
 作业给出了四个句子的**错误**依存树，每个句子只有一个错误，对应四种常见错误类型：
 
@@ -97,21 +97,21 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
 
 ---
 
-## 最终提交
+# 最终提交
 
-### 1. 代码提交（Assignment 3 [coding]）
+## 1. 代码提交（Assignment 3 [coding]）
 
 1. 你在 `parser_transitions.py`、`parser_model.py` 和 `run.py` 里完成的所有实现。
 2. 作业官方提供了 `collect_submission.sh` 脚本来打包你的代码到 `assignment3.zip`。
 3. 把 `assignment3.zip` 上传到 Gradescope 的 "**Assignment 3[coding]**"。
 
-### 2. 书面报告提交（Assignment 3 [written]）
+## 2. 书面报告提交（Assignment 3 [written]）
 
 你对 Part 1 (Adam + Dropout)、Part 2 (a)(b)(f) 等**问答题**、**错误解析分析**、**模型性能汇报**等写在一个 PDF（或学校要求的格式）里，上传到 "**Assignment 3 [written]**"。
 
 ---
 
-## 总结
+# 总结
 
 - **Part 1 (written)**：回答关于 Adam 和 Dropout 的理论题。
 - **Part 2 (written + coding)**：
@@ -126,9 +126,9 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
 
 ---
 
-### **1. 理论部分（8分）**
+## **1. 理论部分（8分）**
 
-#### **(a) Adam优化器**
+### **(a) Adam优化器**
 
 - **问题 i**：解释动量的作用  
   **答案要点**：
@@ -139,7 +139,7 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
   - **参数更新幅度**：梯度较小的参数会获得更大的更新（因为 `v` 较小，分母 `sqrt(v)` 较小）。
   - **帮助学习的原因**：自适应调整不同参数的学习率，避免梯度较小的参数被忽略，适合稀疏数据。
 
-#### **(b) Dropout**
+### **(b) Dropout**
 
 - **问题 i**：计算 `γ`  
   **答案要点**：
@@ -152,9 +152,9 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
 
 ---
 
-### **2. 依赖解析实现（44分）**
+## **2. 依赖解析实现（44分）**
 
-#### **(a) 解析步骤分析（4分）**
+### **(a) 解析步骤分析（4分）**
 
 - **句子**："I parsed this sentence correctly"  
   **解析步骤示例**（需补充完整）：
@@ -165,12 +165,12 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
   |[ROOT, I]|[parsed,...]| -                         | SHIFT             |
   |[ROOT, parsed]|[this,...]| parsed → I                | LEFT-ARC          |
 
-#### **(b) 解析步骤数（2分）**
+### **(b) 解析步骤数（2分）**
 
 - **答案**：`2n - 1` 步（n为句子词数）
   **解释**：每个词需一次SHIFT进入堆栈，每个依赖需一次ARC操作（共n-1次）。
 
-#### **(c) 实现 `PartialParse` 类（6分）**
+### **(c) 实现 `PartialParse` 类（6分）**
 
 - **关键函数**：
 
@@ -194,7 +194,7 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
               self.dependencies.append((head, dependent))
   ```
 
-#### **(d) 实现 `minibatch_parse`（8分）**
+### **(d) 实现 `minibatch_parse`（8分）**
 
 - **算法核心**：分批处理未完成的解析状态，动态移除已完成解析。
   **代码框架**：
@@ -212,7 +212,7 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
       return [p.dependencies for p in partial_parses]
   ```
 
-#### **(e) 实现神经网络模型（12分）**
+### **(e) 实现神经网络模型（12分）**
 
 - **关键组件**：
   - **嵌入层（Embedding）**：手动实现（禁止使用 `torch.nn.Embedding`）。
@@ -245,7 +245,7 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
   - **目标**：在开发集（dev set）上达到UAS > 87，测试集（test set）接近92.5。
   - **调参技巧**：调整隐藏层维度（`hidden_size`）、Adam超参数（`β1`, `β2`）、学习率（`α`）。
 
-#### **(f) 错误分析（12分）**
+### **(f) 错误分析（12分）**
 
 - **错误类型与修正示例**：
   **i. 句子**：
@@ -270,7 +270,7 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
 
 ---
 
-### **3. 提交要求**
+## **3. 提交要求**
 
 - **代码**：实现 `parser_transitions.py` 和 `parser_model.py`，确保通过测试。
 - **报告**：记录开发集和测试集的UAS分数（目标：开发集 > 87，测试集接近论文的92.5）。
@@ -278,7 +278,7 @@ uid: 2f4638d8-70d1-4ea2-832c-64939711f4d2
 
 ---
 
-### **关键调试技巧**
+## **关键调试技巧**
 
 1. **梯度检查**：使用 `torch.autograd.gradcheck` 验证手动实现的梯度。
 2. **维度对齐**：确保所有张量操作维度匹配（如嵌入向量拼接后的输入维度）。
