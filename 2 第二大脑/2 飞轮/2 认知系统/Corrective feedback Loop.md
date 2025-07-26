@@ -1,6 +1,6 @@
 ---
 date created: 2024-05-06
-date modified: 2025-07-10
+date modified: 2025-07-19
 uid: 8e8e56e5-878f-459e-805e-6e7c22fbb45f
 ---
 
@@ -33,7 +33,7 @@ uid: 8e8e56e5-878f-459e-805e-6e7c22fbb45f
 
 <iframe src="https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2F9e20f478899dc29eb19741386f9343c8%2FVideo%2F2024%2F04%2F29%2F22-51-01-a812f630dfad190370c0203a0b482358-534_1714402177-ad2cee.mp4" allowfullscreen="true" style="border-radius: 30px; overflow: hidden; border: 3px solid #ccc; width: 360px; height: 640px; display: block; margin: 20px auto; aspect-ratio: 9 / 16;" frameborder="0"></iframe>
 
-## 实践
+# 实践
 
 1. 打 [王者荣耀](王者荣耀) 和 [绝地求生](绝地求生) 找陪玩和代练
 2. [健身@](健身@.md) 找教练
