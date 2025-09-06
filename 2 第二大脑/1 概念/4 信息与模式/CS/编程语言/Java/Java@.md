@@ -1,6 +1,6 @@
 ---
 date created: 2024-07-03
-date modified: 2025-07-10
+date modified: 2025-09-01
 uid: f7c85af3-ce2d-4d95-a5fa-3ba90315fec2
 ---
 
@@ -13,7 +13,7 @@ uid: f7c85af3-ce2d-4d95-a5fa-3ba90315fec2
 4. apache+的httpclient以及okhttp*，不用急着看源码。先用他们写写代码，仔细体会同样的http 请求封装的不同，背后体现思想的不同  
 5. 跳出java，学其他语言体会背后的思想；至少要学一下c/一门脚本语言/haskell*等函数式语言
 
-## Unstaged
+# Unstaged
 
 [Lombok](Lombok.md)  
 [权限控制符](权限控制符.md)  
@@ -43,7 +43,7 @@ javac 用来识别代码
 
 ---
 
-## [最佳实践](最佳实践.md)
+# [最佳实践](最佳实践.md)
 
 ###《Effective Java》规范
 

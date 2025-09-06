@@ -1,9 +1,9 @@
 ---
 date created: 2024-07-14
-date modified: 2025-07-10
+date modified: 2025-09-01
 uid: 3bad1cda-b0a4-42a1-919c-13c345f0fd9d
 ---
-## 认知
+# 认知
 
 两者都是[[不可变的]]字符序列。任何看起来修改字符串的操作实际上都是创建并返回一个**新**的字符串对象。
 
@@ -12,7 +12,7 @@ https://www.zhihu.com/question/31345592/answer/114126087
 
 Strings are [immutable](不可变的.md) sequences of Unicode code points -- individual "characters" or code points (strings of length 1)
 
-## [CheatSheet](CheatSheet.md)
+# [CheatSheet](CheatSheet.md)
 
 好的，在您提供的表格基础上，补充“字符串转数字”和“字符串转布尔”这两项：
 
@@ -38,7 +38,7 @@ Strings are [immutable](不可变的.md) sequences of Unicode code points -- ind
 |                         |                                                         |                                                                                         |                                                                                                                                |
 |                         |                                                         |                                                                                         |                                                                                                                                |
 
-## python 中的 string
+# python 中的 string
 
 ```Python
 def remove_suffix_ness(word):
@@ -52,7 +52,7 @@ def remove_suffix_ness(word):
     
 - **错误原因:** Python 中的**字符串 (string) 是不可变的 (immutable)**。这意味着你**不能**直接修改字符串中的某个字符。语句 `new_word[-1]= 'y'` 试图修改字符串，这是不允许的，它实际上不会产生任何效果（或者在某些情况下会直接报错 `TypeError`）。因此，即使 `if` 条件满足，`new_word` 仍然是 `"heavi"`，函数最后返回的就是 `"heavi"`。
 
-## java 中的 string
+# java 中的 string
 
 下面这个 n 次的循环，时间复杂度其实是 n 方
 
@@ -88,7 +88,7 @@ $$
 > 所以不要在 for 循环中用`+`来连接字符串
 
 - StringBuffer线程安全，但是性能较低
-- StringBuilder线程不安全，但是只有多个线程共用一个实例时才会产生
+- [[StringBuilder]]线程不安全，但是只有多个线程共用一个实例时才会产生
 - 就像 HashTable 也是线程安全但是我们一般不用一样，因为性能低
 
 ```java

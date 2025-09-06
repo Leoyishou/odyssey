@@ -1,11 +1,17 @@
 ---
 uid: 13741f0c-e7cd-4354-b0b8-9ed9f56beaee
 date created: 2025-07-19
-date modified: 2025-07-19
+date modified: 2025-08-31
 ---
 旋转位置编码（Rotary Position Embedding，RoPE）是论文[ROFORMER: ENHANCED TRANSFORMER WITH ROTARY POSITION EMBEDDING](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2104.09864.pdf) 提出的一种能够将相对位置信息依赖集成到 [self-attention](https://zhida.zhihu.com/search?content_id=601987732&content_type=Answer&match_order=1&q=self-attention&zhida_source=entity) 中并提升 transformer 架构性能的位置编码方式。而目前很火的 LLaMA、GLM 模型也是采用该位置编码方式。
 
-  
+# 数学对于深度学习的重要性
+
+没有数学就没有RoPE，你现在只能用[ALiBi](https://zhida.zhihu.com/search?content_id=668828424&content_type=Answer&match_order=1&q=ALiBi&zhida_source=entity)
+
+没有数学也不会有VAE，你现在只能用[GAN](https://zhida.zhihu.com/search?content_id=668828424&content_type=Answer&match_order=1&q=GAN&zhida_source=entity)
+
+
 
 
 

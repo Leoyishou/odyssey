@@ -1,0 +1,80 @@
+---
+date created: 2025-09-01
+date modified: 2025-09-01
+uid: 6cd4a088-7a7e-45f5-a1ff-5387487eb1ca
+---
+
+# 八股-Java并发
+
+## 面试题
+- AQS为什么采用双向链表？
+- AQS是如何实现线程的等待和唤醒的？
+- AQS的同步队列和条件队列原理？
+- CAS一定有自旋吗？
+- CAS在操作系统层面是如何保证原子性的？
+- CompletableFuture的底层是如何实现的？
+- CountDownLatch、CyclicBarrier、Semaphore区别？
+- ForkJoinPool和ThreadPoolExecutor区别是什么？
+- JDK21 中的虚拟线程是怎么回事？
+- Java是如何判断一个线程是否存活的？
+- Java线程出现异常，进程为啥不会退出？
+- LongAdder和AtomicLong的区别？
+- Thread.sleep(0)的作用是什么？
+- ThreadLocal为什么会导致内存泄漏？如何解决的？
+- ThreadLocal的应用场景有哪些？
+- happens-before和as-if-serial有啥区别和联系？
+- int a = 1 是原子性操作吗
+- run_start、wait_sleep、notify_notifyAll区别_
+- sychronized是非公平锁吗，那么是如何体现的？
+- synchronized 的锁能降级吗？
+- synchronized和reentrantLock区别？
+- synchronized是如何保证原子性、可见性、有序性的？
+- synchronized是怎么实现的？
+- synchronized的重量级锁很慢，为什么还需要重量级锁？
+- synchronized的锁优化是怎样的？
+- synchronized的锁升级过程是怎样的？
+- synchronized锁的是什么？
+- volatile是如何保证可见性和有序性的？
+- volatile能保证原子性吗？为什么？
+- 三个线程分别顺序打印0-100
+- 为什么JDK 15要废弃偏向锁？
+- 为什么不建议通过Executors构建线程池
+- 为什么不能在try-catch中捕获子线程的异常_
+- 为什么虚拟线程不能用synchronized？
+- 为什么虚拟线程不要和线程池一起用？
+- 为什么虚拟线程尽量避免使用ThreadLocal
+- 什么是AQS的独占模式和共享模式？
+- 什么是CAS？存在什么问题？
+- 什么是Java内存模型（JMM）？
+- 什么是ThreadLocal，如何实现的？
+- 什么是Unsafe？
+- 什么是happens-before原则？
+- 什么是可重入锁，怎么实现可重入锁？
+- 什么是多线程中的上下文切换？
+- 什么是守护线程，和普通线程有什么区别？
+- 什么是并发，什么是并行？
+- 什么是总线嗅探和总线风暴，和JMM有什么关系？
+- 什么是死锁，如何解决？
+- 什么是线程池，如何实现的？
+- 公平锁和非公平锁的区别？
+- 创建线程有几种方式？
+- 到底啥是内存屏障？到底怎么加的？
+- 如何保证多线程下 i++ 结果正确？
+- 如何实现主线程捕获子线程异常
+- 如何对多线程进行编排
+- 如何理解AQS？
+- 如何让Java的线程池顺序执行任务？
+- 并发编程中的原子性和数据库ACID的原子性一样吗？
+- 有三个线程T1,T2,T3如何保证顺序执行？
+- 有了CAS为啥还需要volatile？
+- 有了InheritableThreadLocal为啥还需要TransmittableThreadLocal？
+- 有了MESI为啥还需要JMM？
+- 有了synchronized为什么还需要volatile_
+- 有哪些实现线程安全的方案_
+- 父子线程之间怎么共享_传递数据？
+- 线程同步的方式有哪些？
+- 线程数设定成多少更合适？
+- 线程是如何被调度的？
+- 线程有几种状态，状态之间的流转是怎样的？
+- 线程池的拒绝策略有哪些？
+- 能不能谈谈你对线程安全的理解？

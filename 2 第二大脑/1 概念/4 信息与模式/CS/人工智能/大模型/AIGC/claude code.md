@@ -1,14 +1,21 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-08-26
+date modified: 2025-08-30
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # Summary
 
+Claude Code 逆向工程研究仓库
+https://github.com/shareAI-lab/analysis_claude_code
+
+
+
 When I review my [CLAUDE.md/slash](http://claude.md/slash) command and agent files, it feels like reading my own software philosophy—a reflection of what I've learned, what I value, and how I think code should be built. If it doesn't resonate with you personally, it won't guide the AI effectively.
 
+
+1/ shift + tab 先切换到 plan mode, 别一来就猴急脱裤子 2/ 把想要解决的问题想清楚，按照how -> why -> any other better solutions 问个底朝天 3/ 画图，先别急着说 CC 画的图太烂，一图胜千言，画个十几张图架构就清晰了 4/ 千万不要用 YOLO mode, 要不然后面的屎山代码几个月都清理不干净
 
 # Cues
 

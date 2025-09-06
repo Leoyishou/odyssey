@@ -1,8 +1,10 @@
 ---
 date created: 2025-03-24
-date modified: 2025-07-10
+date modified: 2025-08-31
 uid: 4e527a8d-9fac-4f78-aaf4-15c7b71e501f
 ---
+**从零实现 vLLM (1.1)：并行词嵌入**
+https://mp.weixin.qq.com/s/h1cFYDNxcHC30APcarF47A
 
 vLLM 是一个开源的 Python 库，用于快速、高效地部署大型语言模型（LLMs）。它的主要目标是显著提升 LLMs 的推理速度和吞吐量，使其更适用于生产环境。
 

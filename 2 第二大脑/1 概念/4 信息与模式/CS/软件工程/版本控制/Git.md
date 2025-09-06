@@ -1,9 +1,9 @@
 ---
 date created: 2024-06-24
-date modified: 2025-07-10
+date modified: 2025-08-30
 uid: 0d028d36-8ce0-40c6-a466-5e66dd1330bc
 ---
-## Git Commit Message
+# Git Commit Message
 
 |关键词|描述|
 |---|---|
@@ -26,22 +26,22 @@ uid: 0d028d36-8ce0-40c6-a466-5e66dd1330bc
 |**to**|产生diff但不自动修复问题（通常与fix配合使用）|
 |**pub**|适用于静态博客仓库，增加或修改内容|
 
-## 常用操作
+# 常用操作
 
 | 类别   | 子类别  | 命令                | 含义                        |     |
 | ---- | ---- | ----------------- | ------------------------- | --- |
 | 本地操作 | 仓库维度 | `git init`        | 初始化`.git`，文件夹开始被 git 控制   |     |
 |      | 分支维度 | ```bash
 
-## 设置当前仓库
+# 设置当前仓库
 
 git config pull.rebase true
 
-## 或全局设置
+# 或全局设置
 
 git config --global pull.rebase true
 
-## 然后再拉取
+# 然后再拉取
 
 git pull
 

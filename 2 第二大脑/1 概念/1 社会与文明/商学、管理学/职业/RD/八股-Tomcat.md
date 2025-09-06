@@ -1,17 +1,146 @@
 ---
 date created: 2025-05-26
-date modified: 2025-07-10
+date modified: 2025-09-01
 uid: e14f5ca2-36d7-483f-9848-177d014623b9
 ---
+：
 
-[[八股-Tomcat]]/✅Tomcat与Web服务器（如Apache）之间的关系是什么？.md  
-Tomcat/✅Tomcat中有哪些类加载器_.md  
-Tomcat/✅Tomcat处理请求的过程是怎么样的？.md  
-Tomcat/✅Tomcat的启动流程是怎样的？.md  
-Tomcat/✅Tomcat的类加载机制是怎么样的？.md  
-Tomcat/✅为什么Tomcat可以把线程数设置为200，而不是N+1？.md  
-Tomcat/✅介绍一下Tomcat的IO模型？.md  
-Tomcat/✅过滤器和拦截器的区别是什么？.md  
+| 问题                       | 关键词/关键概念                                                                                                                              |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Tomcat与Web服务器(Apache)关系？| **Apache**：静态资源服务器、反向代理、负载均衡<br>**Tomcat**：Servlet容器、处理动态请求、Java应用服务器<br>**配合使用**：Apache处理静态资源+负载均衡、Tomcat处理业务逻辑、mod_jk/mod_proxy连接   |
+| Tomcat的IO模型？| **BIO**：一请求一线程、阻塞IO、Tomcat8.5前默认<br>**NIO**：非阻塞、多路复用、Tomcat8.5+默认<br>**NIO2/AIO**：异步非阻塞<br>**APR**：Apache Portable Runtime、本地库优化      |
+|                          |                                                                                                                                       |
+| 为什么Tomcat线程数可设200而不是N+1？| **IO密集型**：大部分时间等待IO、CPU利用率低<br>**阻塞时间多**：数据库查询、网络调用、文件读写<br>**经验值**：线程数=CPU核数×(1+等待时间/计算时间)、Web应用等待时间远大于计算时间                          |
+| Tomcat中有哪些类加载器？| **Bootstrap**：加载JVM核心类、rt.jar<br>**System**：加载CLASSPATH、tomcat启动类<br>**Common**：加载/lib共享类<br>**WebApp**：加载/WEB-INF/classes和lib、每个应用独立 |
+| Tomcat处理请求的过程？| **流程**：Connector接收→创建Request/Response→Engine处理→Host匹配虚拟主机→Context定位应用→Wrapper找Servlet→Filter链→Servlet处理→返回响应                          |
+| Tomcat的启动流程？| **步骤**：Bootstrap.main()→Catalina.start()→Server初始化→Service启动→Connector启动监听→Engine/Host/Context/Wrapper依次初始化→部署应用                      |
+| Tomcat的类加载机制？| **破坏双亲委派**：WebAppClassLoader优先加载应用类<br>**隔离性**：不同应用类隔离<br>**共享性**：Common加载器共享<br>**顺序**：WEB-INF/classes→WEB-INF/lib→Common→System     |
+| 过滤器和拦截器的区别？| **过滤器Filter**：Servlet规范、函数回调、依赖Servlet容器、作用所有请求<br>**拦截器Interceptor**：Spring框架、反射机制(AOP)、依赖Spring容器、作用Controller层                     |
+
+# Tomcat架构详解
+
+## **整体架构**
+
+```Java
+Server（服务器）
+└── Service（服务）
+    ├── Connector（连接器）- 处理网络连接
+    │   ├── ProtocolHandler - 协议处理
+    │   └── Adapter - 适配器
+    └── Container（容器）- 处理业务逻辑
+        └── Engine（引擎）
+            └── Host（虚拟主机）
+                └── Context（应用上下文）
+                    └── Wrapper（Servlet包装器）
+```
+
+## **请求处理流程详细**
+
+1. **接收请求**：Acceptor接收Socket连接
+2. **协议解析**：ProtocolHandler解析HTTP协议
+3. **创建对象**：创建Request/Response对象
+4. **适配转换**：CoyoteAdapter适配到容器
+5. **容器处理**：
+    - Engine：顶层容器处理
+    - Host：根据域名匹配虚拟主机
+    - Context：根据URL路径匹配应用
+    - Wrapper：定位具体Servlet
+6. **过滤器链**：执行Filter链
+7. **业务处理**：Servlet.service()处理
+8. **返回响应**：逆向返回结果
+
+## **类加载器层次**
+
+```Java
+       Bootstrap ClassLoader
+              ↓
+        System ClassLoader
+              ↓
+        Common ClassLoader
+         ↙        ↘
+    Catalina    Shared ClassLoader
+    ClassLoader        ↓
+                 WebApp ClassLoader
+                       ↓
+                  JSP ClassLoader
+```
+
+## **线程模型**
+
+```java
+// BIO模型
+Acceptor线程 → Worker线程池(固定大小)
+
+// NIO模型  
+Acceptor线程 → Poller线程 → Worker线程池
+
+// 线程池配置
+maxThreads="200"      // 最大线程数
+minSpareThreads="10"  // 最小空闲线程
+acceptCount="100"     // 等待队列长度
+connectionTimeout="20000" // 连接超时
+```
+
+## **连接器配置优化**
+
+```xml
+<Connector port="8080"
+    protocol="org.apache.coyote.http11.Http11NioProtocol"
+    maxThreads="200"
+    minSpareThreads="10"
+    acceptCount="100"
+    maxConnections="10000"
+    connectionTimeout="20000"
+    compression="on"
+    compressionMinSize="2048"/>
+```
+
+## **性能调优要点**
+
+### **JVM调优**
+
+- 堆内存设置：-Xms/-Xmx
+- 垃圾回收器选择
+- JVM参数优化
+
+### **连接器调优**
+
+- 选择合适的IO模型(NIO/NIO2)
+- 调整线程池参数
+- 启用压缩
+- 设置合理超时时间
+
+### **应用优化**
+
+- Session管理优化
+- 静态资源分离
+- 启用缓存
+- 减少日志输出
+
+## **Filter vs Interceptor对比**
+
+|特性|Filter过滤器|Interceptor拦截器|
+|---|---|---|
+|**规范**|Servlet规范|Spring框架|
+|**作用范围**|所有请求(含静态资源)|Controller请求|
+|**执行顺序**|web.xml配置顺序|按Order注解/配置|
+|**依赖**|Servlet容器|Spring容器|
+|**实现方式**|函数回调|反射(AOP)|
+|**生命周期**|容器启动销毁|Spring管理|
+|**使用场景**|编码、CORS、认证|权限、日志、事务|
+
+## **常见问题排查**
+
+- **内存溢出**：调整堆内存、检查内存泄漏
+- **线程池满**：增加maxThreads、优化业务处理时间
+- **连接超时**：调整connectionTimeout、检查网络
+- **404错误**：检查Context配置、应用部署路径
+- **类加载冲突**：检查jar包版本、类加载器顺序
+
+
+
+
+
 
 Tomcat 最大支持的连接数并不是一个固定的数字，它受到**多种因素**的综合影响，包括：
 

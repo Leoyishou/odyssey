@@ -1,6 +1,6 @@
 ---
 date created: 2024-05-19
-date modified: 2025-08-24
+date modified: 2025-09-01
 uid: b5ef6834-6399-4b0b-98b2-df5a5659df91
 aliases: [Summary]
 linter-yaml-title-alias: Summary
@@ -32,7 +32,7 @@ linter-yaml-title-alias: Summary
 | ------------------- | --------------------- | -------------- |
 | [[Exercism]]        | 快速熟悉基础语法 ✅            | 明确定位于语法基础和实例练习 |
 | [[LeetCode]]        | 提升算法和思维能力             | 题目偏算法，难度相对更高   |
-| [[colab]]           | [PyTorch](PyTorch.md) |                |
+| [[Colab]]           | [PyTorch](PyTorch.md) |                |
 | [Kaggle](Kaggle.md) |                       |                |
 
 下面课程的最牛逼的点类似[TDD](TDD.md)，测试驱动学习，[[no black box]]
@@ -42,12 +42,12 @@ linter-yaml-title-alias: Summary
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | [数据结构和算法](数据结构和算法.md)                                |                                                                                             |
 | [[操作系统@]]                                            | [MIT 6.828 Operating System Engineering](MIT%206.828%20Operating%20System%20Engineering.md) |
-| [[网络@]]                                              | [CS144 Computer Network](CS144%20Computer%20Network.md)                                     |
+| [[计算机网络@]]                                              | [CS144 Computer Network](CS144%20Computer%20Network.md)                                     |
 | [[数据库@]]                                             | [[UCB CS186 Introduction to Database System]]                                               |
 | [分布式系统](分布式系统.md) | [MIT 6.824 Distributed System](MIT%206.824%20Distributed%20System.md)                       |
 | [机器学习ML](机器学习ML.md)                                  | [CS229 Machine Learning](CS229%20Machine%20Learning.md)                                     |
 | [[深度学习@]]                                             | [[CS224n Natural Language Processing]]                                                      |
-| [LLM大模型](LLM大模型.md)                                  | [CS336](CS336.md)                                                                           |
+| [大模型](大模型.md)                                  | [CS336](CS336.md)                                                                           |
 
 | 语言                          |
 | --------------------------- |
