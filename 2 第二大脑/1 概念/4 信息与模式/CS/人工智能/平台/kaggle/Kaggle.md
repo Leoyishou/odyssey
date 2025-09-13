@@ -1,6 +1,6 @@
 ---
 date created: 2024-10-13
-date modified: 2025-08-24
+date modified: 2025-09-07
 uid: 13ade5e1-c52c-4190-9b08-ff860c5d0603
 ---
 
@@ -68,6 +68,17 @@ Kaggle 评分时的时间限制
 - **最大运行时间：9 小时**（大多数竞赛）
 - **GPU 竞赛：通常 9 小时**
 - **CPU-only 竞赛：可能 3-9 小时**
+
+这是一个 **系统返回状态分类问题**：不同的错误提示，其实对应不同的原因（文件找不到、执行异常、评分失败…），需要整理成结构化表格，便于快速定位。
+
+| 状态提示                            | 类比 HTTP 状态     | 含义                     | 常见原因                                                     | 排查/解决方法                                                     |
+| ------------------------------- | -------------- | ---------------------- | -------------------------------------------------------- | ----------------------------------------------------------- |
+| ✅ **Succeeded**                 | 200 OK         | 提交成功，系统成功计算并打分         | 输出文件符合要求，格式正确                                            | 检查 Public Score 确认效果                                        |
+| ⚠️ **Submission Scoring Error** | 文件格式/内容问题      | 评分阶段失败，无法计算分数          | - CSV 列名/行数不符合 sample_submission- 含 NaN/非法值- 提交的是类别而不是概率 | 和 sample_submission.csv 严格对齐；用 `.info()`/`.isna().sum()` 检查 |
+| ⚠️ **Notebook Timeout**         | 算力/时间不够        | Notebook 在限定时间内没跑完     | - 模型太大 / 代码效率低- 数据处理卡住                                   | 减小模型规模、优化推理速度，先在本地验证                                        |
+| ⚠️ **Submission CSV Not Found** | 没生成提交文件        | 系统找不到 `submission.csv` | - 文件没生成- 文件保存路径错误- 文件名不符                                 | 确认最后一格保存到 `/kaggle/working/submission.csv`                  |
+| ⚠️ **Notebook Threw Exception** | 代码中途挂了         | Notebook 执行出错，中途崩溃     | - Python 报错（KeyError、FileNotFoundError 等）- 依赖库问题         | 查看 Notebook 日志，修复报错                                         |
+| ⏳ **Pending / Running**         | 102 Processing | 正在运行或排队                | 正常过程                                                     | 等待即可                                                        |
 
 ## Notebook
 

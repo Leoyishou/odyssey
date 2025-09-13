@@ -1,9 +1,12 @@
 ---
 date created: 2024-06-20
-date modified: 2025-07-10
+date modified: 2025-09-08
 uid: 28f3935e-8c6e-4450-b0cf-7b07aa755ef9
 ---
-## 忽略null
+
+3. 而另一种序列化方式 JSON，就可以认为和语言并没有强绑定关系，各大主流语言都有对 JSON 解析的良好支持，所以，如果采用JSON 作为 RPC 框架中的序列化反序列化方式，通常就可以支持跨语言服务的调用。
+4. 但是 [[JSON]] 缺点也很明显，它本质上是纯文本的编码方式，编码空间利用率很低，导致一次 RPC 调用在网络上传输的二进制流长度比JDK 的实现要高很多，而且，编解码需要对 JSON 文本进行嵌套的解析，整体上性能比较差。
+# 忽略null
 
 JsonInclude.Include.NON_NULL 表示在序列化时会忽略值为 null 的字段，不会将它们包含在生成的 JSON 中。
 
@@ -11,7 +14,7 @@ JSON 数据中包括 [文字](2%20第二大脑/1%20概念/4%20信息与模式/�
 
 "" 是唯一用来确定字符串 [文字](2%20第二大脑/1%20概念/4%20信息与模式/语言/文字.md) 的，如果 "" 中还有 "" 就会干扰 JSON 内容的识别，所以如果出现了 "" 嵌套，里面的 "" 一定要通过 [转义](转义.md) 成其他字符
 
-## JSON 只支持下面这六种类型
+# JSON 只支持下面这六种类型
 
 ```json
 {
@@ -29,7 +32,7 @@ JSON 数据中包括 [文字](2%20第二大脑/1%20概念/4%20信息与模式/�
 
 下面这份讲解，会**一次性**帮你把「返回 JSON 对象」与「返回 JSON 字符串」这类常见的问题讲清楚、讲透彻，并通过几个不同的场景/语言举例，帮助你彻底弄懂。你可以在看完后对照自己项目里的实现方式，逐一排查并改进。
 
-## Java 并不需要把所有 json 对应的对象都创建
+# Java 并不需要把所有 json 对应的对象都创建
 
 可以通过 JSONObject 这个对象来做一个类似大 map 的东西
 
@@ -48,14 +51,14 @@ if (StringUtils.isNotEmpty(cachedEventId)) {
 
 ---
 
-## 一、问题背景：为什么会出现"嵌套字符串化 JSON"？
+# 一、问题背景：为什么会出现"嵌套字符串化 JSON"？
 
 > 场景：飞书在验证回调地址时，需要你返回形如 `{ "challenge": "xxxx" }` 的响应。
 > 结果：实际上飞书拿到的响应却变成了 `"{\"challenge\":\"xxxx\"}"`（加引号，里面又是一层 JSON）。
 
 也就是说，==你本应该返回**一个 JSON 对象**，却变成了**返回 JSON 对象转成的字符串**==。对于任何 RESTful API（包括飞书的验证接口），如果它期望的响应是 JSON，那么我们就需要在响应中**直接提供 JSON 对象**，而不是一个字符串。
 
-### 1.1 为什么会出现这层"嵌套的字符串"？
+## 1.1 为什么会出现这层"嵌套的字符串"？
 
 大多数情况下，这是因为：
 
@@ -66,11 +69,11 @@ if (StringUtils.isNotEmpty(cachedEventId)) {
 
 ---
 
-## 二、如何正确地返回 JSON 对象？
+# 二、如何正确地返回 JSON 对象？
 
 关键点是：**框架（Jackson 等）帮我们自动做序列化** 时，方法的返回值只需要是一个合适的"数据结构"（如 `Map`、自定义对象），它就会自动变成我们想要的 JSON 格式。
 
-### 2.1 Spring Boot / Spring MVC 常见写法
+## 2.1 Spring Boot / Spring MVC 常见写法
 
 1. **直接返回一个 Map：**
 
@@ -135,7 +138,7 @@ if (StringUtils.isNotEmpty(cachedEventId)) {
 
     - 返回的依旧是一个 **JSON 对象**，而不是字符串。
 
-### 2.2 Node.js / Express 常见写法
+## 2.2 Node.js / Express 常见写法
 
 ```js
 app.post('/callback/verify', (req, res) => {
@@ -149,7 +152,7 @@ app.post('/callback/verify', (req, res) => {
 
 - `res.json({...})` 会自动把对象序列化成 JSON 发送给客户端。
 
-### 2.3 Python / Flask 常见写法
+## 2.3 Python / Flask 常见写法
 
 ```python
 from flask import Flask, request, jsonify
@@ -167,11 +170,11 @@ def verify():
 
 ---
 
-## 三、常见的错误写法举例
+# 三、常见的错误写法举例
 
 以下演示以 **Spring Boot** 为例，但原理各语言类似，都是**二次序列化**的问题。
 
-### 3.1 在返回前自己用 `ObjectMapper` 转了 JSON，然后再被序列化
+## 3.1 在返回前自己用 `ObjectMapper` 转了 JSON，然后再被序列化
 
 ```java
 @PostMapping("/verify")
@@ -188,7 +191,7 @@ public String verify(@RequestBody Map<String, Object> requestBody) {
 }
 ```
 
-### 3.2 自定义一个统一返回对象，里面 `data` 字段是字符串
+## 3.2 自定义一个统一返回对象，里面 `data` 字段是字符串
 
 ```java
 public class ResponseWrapper {
@@ -223,7 +226,7 @@ public ResponseWrapper verify(@RequestBody Map<String, Object> requestBody) {
 
 ---
 
-## 四、如何避免或修正这些错误？
+# 四、如何避免或修正这些错误？
 
 1. **直接返回对象或 Map**（推荐做法）。不用自己去手动转 JSON 字符串，让框架（Jackson、Gson 等）自动做序列化。
     
@@ -254,7 +257,7 @@ public ResponseWrapper verify(@RequestBody Map<String, Object> requestBody) {
 
 ---
 
-## 五、总结 & 拓展
+# 五、总结 & 拓展
 
 1. **飞书的 URL 验证**：
     
@@ -297,7 +300,7 @@ public ResponseWrapper verify(@RequestBody Map<String, Object> requestBody) {
 
 ---
 
-### TL;DR
+## TL;DR
 
 - **错误做法**：返回了 `"{\"challenge\":\"xxxx\"}"` 这样的字符串，而非 JSON 对象。
 - **正确做法**：让接口直接返回 `{"challenge":"xxxx"}` 对象（或者任何 key-value 形式），不要手动转 JSON 字符串，再让框架去二次处理。

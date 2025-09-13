@@ -1,6 +1,6 @@
 ---
 date created: 2024-04-21
-date modified: 2025-07-10
+date modified: 2025-09-07
 uid: 923bcf1c-0f97-4d9a-a306-c15b9022679c
 ---
 
@@ -10,13 +10,13 @@ uid: 923bcf1c-0f97-4d9a-a306-c15b9022679c
 
 <!-- more -->
 
-## 表设计
+# 表设计
 
 - [ ] word 字段需要加唯一索引 ⏰ 2024-04-24📅 2024-04-25
 
 ![](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F04%2F21%2F22-18-27-4b89d65204db38c122dc8bb9efb6a989-20240421221826-a8c757.png)
 
-## Anki 中插入 oss 的音频
+# Anki 中插入 oss 的音频
 
 <audio src="audiofile.mp3" autoplay> Your browser does not support the audio element. </audio>
 

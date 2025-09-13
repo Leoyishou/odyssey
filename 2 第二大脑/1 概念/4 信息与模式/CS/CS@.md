@@ -1,6 +1,6 @@
 ---
 date created: 2024-05-19
-date modified: 2025-09-01
+date modified: 2025-09-07
 uid: b5ef6834-6399-4b0b-98b2-df5a5659df91
 aliases: [Summary]
 linter-yaml-title-alias: Summary
@@ -28,35 +28,28 @@ linter-yaml-title-alias: Summary
   
 # Cues
 
+下面课程的最牛逼的点类似[TDD](TDD.md)，测试驱动学习，[非黑盒（non-black-box）](非黑盒（non-black-box）.md)
+外表高大上，看着是宾利的壳，其实核心动力是几个老鼠在壳里面蹬三轮呢
+
+| 科目                    | 推荐课程                                                                                                                                    |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [编程语言@](编程语言@.md)     | [Exercism](Exercism.md)、[Shell](Shell.md)、[C语言](C语言.md)、[CPP](CPP.md)、[Java@](Java@.md)、[Python](Python.md)、[JavaScript](JavaScript.md) |
+| [数据结构和算法](数据结构和算法.md) | [LeetCode](LeetCode.md)                                                                                                                 |
+| [[操作系统@]]             | [MIT 6.828 Operating System Engineering](MIT%206.828%20Operating%20System%20Engineering.md)                                             |
+| [[计算机网络@]]            | [CS144 Computer Network](CS144%20Computer%20Network.md)                                                                                 |
+| [[数据库@]]              | [[UCB CS186 Introduction to Database System]]                                                                                           |
+|[大数据$](大数据$.md)       |                                                                                                                                         |
+| [分布式系统](分布式系统.md)     | [MIT 6.824 Distributed System](MIT%206.824%20Distributed%20System.md)                                                                   |
+| [机器学习ML](机器学习ML.md)   | [CS229 Machine Learning](CS229%20Machine%20Learning.md)                                                                                 |
+| [[深度学习@]]             | [[CS224n Natural Language Processing]]                                                                                                  |
+| [大模型](大模型.md)         | [CS336](CS336.md)                                                                                                                       |
+
 | 推荐平台                | 目标                    | 原因             |
 | ------------------- | --------------------- | -------------- |
 | [[Exercism]]        | 快速熟悉基础语法 ✅            | 明确定位于语法基础和实例练习 |
 | [[LeetCode]]        | 提升算法和思维能力             | 题目偏算法，难度相对更高   |
 | [[Colab]]           | [PyTorch](PyTorch.md) |                |
 | [Kaggle](Kaggle.md) |                       |                |
-
-下面课程的最牛逼的点类似[TDD](TDD.md)，测试驱动学习，[[no black box]]
-外表高大上，看着是宾利的壳，其实核心动力是几个老鼠在壳里面蹬三轮呢
-
-| 科目                                                   | 课程                                                                                          |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [数据结构和算法](数据结构和算法.md)                                |                                                                                             |
-| [[操作系统@]]                                            | [MIT 6.828 Operating System Engineering](MIT%206.828%20Operating%20System%20Engineering.md) |
-| [[计算机网络@]]                                              | [CS144 Computer Network](CS144%20Computer%20Network.md)                                     |
-| [[数据库@]]                                             | [[UCB CS186 Introduction to Database System]]                                               |
-| [分布式系统](分布式系统.md) | [MIT 6.824 Distributed System](MIT%206.824%20Distributed%20System.md)                       |
-| [机器学习ML](机器学习ML.md)                                  | [CS229 Machine Learning](CS229%20Machine%20Learning.md)                                     |
-| [[深度学习@]]                                             | [[CS224n Natural Language Processing]]                                                      |
-| [大模型](大模型.md)                                  | [CS336](CS336.md)                                                                           |
-
-| 语言                          |
-| --------------------------- |
-| [C语言](C语言.md)               |
-| [CPP](CPP.md)               |
-| [Java@](Java@.md)           |
-| [Python](Python.md)         |
-| [JavaScript](JavaScript.md) |
-| [Shell](Shell.md)           |
 
 # Notes
 
