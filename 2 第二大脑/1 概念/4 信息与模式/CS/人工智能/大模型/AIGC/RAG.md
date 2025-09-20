@@ -1,10 +1,99 @@
 ---
 date created: 2024-11-25
-date modified: 2025-07-10
+date modified: 2025-09-19
 uid: 330545a4-236b-4c57-ba2f-adda7a3d0d18
 ---
 
+
+#第一性原理  最关键的，你得有套评估体系。
+找个你身边的场景，哪怕就是把你电脑里存的几百篇PDF论文或者笔记整理一下，搭一个最简单的RAG出来。当你真的能用自然语言跟你自己的知识库对话，并且得到靠谱答案的时候，那种感觉，比你在学术榜单上刷高0.1个点要爽得多。
+
+
 ![CleanShot 2025-04-16 at 23.15.49@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_O3jP7AdX37%2F2025%2F04%2F16%2F23-16-02-ef5fe329d3cc4d7db1a070e6f38b3a72-CleanShot%202025-04-16%20at%2023.15.49-2x-30531a.png)
+
+
+标题: LLM RAG值得做吗？
+
+看了一个月论文代码开始怀疑人生，这太正常了。当年我刚从推荐转过来搞NLP的时候，也是天天看谷歌、Meta那些神仙打架的论文，动不动就上千块GPU跑实验，感觉自己要是不租个服务器集群，都不配搞这行。
+但咱得想明白一件事，学术圈发论文，跟咱们在公司里做项目，完全是两码事。
+RAG这东西，到底值不值得做？我的答案是：非常值得，而且很可能是接下来几年里，绝大多数公司能把大模型用起来、做出东西、看到回头钱的最靠谱的一条路。
+但一定要搞清楚自己做 RAG 是为了什么。别一上来就想着拉满配置去对标大厂的全量检索，不然很容易就是钱花了、机器烧了，效果还不稳。
+我这几年看下来，RAG 的玩法大概两种路子。
+1. 一种是“全域型”的，追求把所有能找到的语料都塞进去，比如 Wikipedia、新闻、论坛、公司文档全混一起。这种确实够广，也看着“厉害”，但硬件管着你脖子，动辄几十亿条记录，embedding计算、索引构建、更新维护都要人盯着。我们团队以前做过一次类似的，大概 8 亿条数据，用ES+Faiss跑了快一个月才搞定，embedding 一更新又得重来一次，人手不够直接炸锅，这种规模真不是普通团队能那么轻松玩的。
+2. 另一种是聚焦垂直领域的，这类反而存活率高、效果稳定。比如法律、医疗、金融，语料的量级是几十万到几百万条，而且比较稳定，不用频繁更新。embedding 模型还能微调到领域里，检索更准，硬件压力也小的多。我自己给一家证券公司做过一个内部 RAG，数据才 500 万条不到，用单机加两张高性能卡，200ms 内出结果，用户反馈很稳，这种项目性价比特别高。
+你之所以纠结，就是被学术圈那种玩法给绕进去了。他们搞研究，追求的是在公开数据集上把指标刷到最高，这样才能发顶会，才能证明自己的方法牛逼。所以他们当然要用维基百科、C4这种巨无霸语料库，不然怎么体现出模型的“知识渊博”？这就像是为了测试发动机的极限，非得把车开到德国不限速高速上，往死里踩油门。
+
+可咱们在公司里干活，不是为了破纪录，是为了解决实际问题。没人关心你的系统知不知道八百年前的罗马史，大家只关心它能不能从公司那一堆乱七八糟的文档里，找到解决当前问题的答案。
+
+**RAG的价值不在“大”，恰恰在“小”和“专”**
+
+我给你讲个我前两年带队做的一个项目，你就明白了。
+
+我们给一个做重型机械的老牌国企做内部的专家问答系统。他们的知识库是啥？根本不是什么互联网，就是内部文件服务器上存了几十年的各种技术文档、维修报告、客户现场问题记录单，格式五花八门，PDF、Word、甚至还有扫描版的图片。这些东西加起来，清理干净了也就几十个G。
+
+你想想这个场景：一个年轻的售后工程师，在客户的工地上，对着一台停工的机器满头大汗。以前怎么办？翻纸质手册，或者用他那个破笔记本连内网，用巨慢的搜索引擎搜关键词，下载一堆PDF挨个看，再不行就硬着头皮打电话问快退休的老师傅。
+
+我们做的RAG系统上线后，他直接掏出手机，对着App说：“503型号掘进机液压系统压力异常，错误码E-45，去年在山西项目好像有过类似问题，怎么处理？”
+
+我们的系统这时候干了啥？
+它压根就不会去互联网上瞎搜，而是直接在你说的这几十个G的“私有知识”里做检索。它会很快地把最相关的几段内容给捞出来，比如：
+
+《503型号掘进机维修手册》里关于E-45错误码的那一章。
+
+一份word文档，标题是《关于处理山西XX煤矿503掘进机液压故障的报告》。
+
+几条老师傅们在内部论坛里零散的讨论记录。
+
+然后，系统把这些捞出来的“证据”塞给大模型，告诉它：“你现在是这个厂里最有经验的维修专家，根据下面这些资料，给现场的工程师一个清晰、能直接上手的操作步骤。”
+
+最后，那个年轻工程师在手机上看到的，就是一段非常具体的指导，甚至会提到上次在山西处理这个问题的王工的一些特别注意的事项，比如“先别急着换泵，先检查一下三号滤芯是不是被污染了，上次就是这个问题”。
+
+你看，整个过程，信息是闭环的，答案是可追溯的，内容是绝对专业的。这才是RAG在工业界真正的用武之地。它不是要造一个什么都懂的“博士”，而是要打造一个只懂你公司业务的“资深员工”。
+
+这种系统，对算力的要求真的有那么夸张吗？几十个G的文档做向量化，一台好点的服务器就搞定了。成本的大头可能是大模型的调用费，但你想想，它给公司省下的时间、避免的错误、传承的经验，这点调用费算什么？
+
+想明白了这个，你就知道劲儿该往哪儿使了。别老盯着那些最新的模型、最复杂的算法，RAG是个系统工程，很多时候成败在那些看起来“没技术含量”的地方。
+
+首先是源头，也就是数据处理。垃圾进，垃圾出。你拿到的PDF是两栏的，里面的表格怎么抽？一个长句子被分页符硬生生切开了怎么办？这些东西处理不好，你后面用再牛的Embedding模型都没用。还有就是文本块（Chunk）切分，这是个大学问。按固定字数切是最傻的，效果也最差。能不能按章节、按段落，甚至是用AI模型去理解语义来切？这块的活儿很脏很累，但效果提上来了，比你换个模型参数的回报大得多。
+
+然后是检索过程，这里面门道很多。Embedding模型不是越大越好，有时候一个在你的专业语料上finetune过的中等模型，效果比通用的大家伙好得多。现在比较火的像[[bge]]-large-zh-v1.5之类的，可以拿来当基线。检索也不光是向量检索一条路，很多时候混合搜索，也就是把向量和传统的BM25这种关键词搜索结合起来，效果会好一大截。因为像设备型号、人名这种东西，关键词匹配比向量模糊查找要准得多。
+
+再往深了说，你还可以
+1. 搞查询重写（Query Rewriting）。用户问的问题通常很随意，你可以先让大模型把用户的问题“翻译”成更适合机器检索的精准问题，再去搜。
+2. 还有[精召回（精排）](精召回（精排）.md)重排（Reranking），就是向量检索初步召回20条结果，再用一个更复杂的模型对这20条结果进行精细化打分排序，把最好的那几条喂给大模型。这些都是能显著提升效果的“骚操作”。
+
+**最关键的，你得有套评估体系。**
+
+这是区分草台班子和正规军的地方。你得搞一批真实的问答数据，用它们来量化你的系统效果。比如召回的上下文准确率怎么样？大模型生成的答案有没有瞎编（幻觉）？答案本身有没有解决用户的问题？没有评估，你所有的优化都是凭感觉，今天调个参感觉变好了，明天换个模型又感觉变差了，这活儿就没法干了。
+
+你现在犹豫，主要是两个点：
+
+一个是规模。很多人觉得 RAG 必须上到全网检索的量才能叫“真 RAG”，其实完全没必要。你倒回去想，用户需求是不是全域都有？很多情况下就在一个小圈子里找信息，范围越精准，模型越好调。
+
+另一个是 ROI。学术研究想发重量级论文，还想直接比拼大厂的性能，很可能从数据处理到硬件资源都会被卡死。但如果是为了产品落地，尤其是有明确领域和用户群的，那 RAG 在体验提升上的回报是非常明显的。
+
+所以我的建议是，不要把一开始的精力全压在规模和硬件上，先跑通一个小规模高质量的端到端流程，把检索、模型融合、响应延迟先调顺。后面的优化可以通过改检索策略、做 re-ranking、embedding 微调来拉效果，而不是一味堆数据和算力。
+
+对了，你要是真想学习和落地，可以先摸几个靠谱的工具，像Haystack这种工业级框架，LangChain搭Milvus也挺成熟，另外ColBERT和一系列 LLM reranker 的新方法，可以在没有大规模扩容的情况下显著提效果。
+
+RAG这摊子东西，变化很快，但核心思想还是信息检索（IR）那一套。想搞明白，底子得扎实。
+
+如果你想搞清楚大模型怎么跟外部知识库结合、怎么在实际业务里用起来，字节RAG实践手册就是很好的参考。
+
+下载地址：字节跳动6万字RAG 实践手册流出...（纯free，自由获取）
+
+它不是只讲概念，还从工程实践的角度拆了整个流程：数据怎么准备、知识库怎么构建、检索和生成怎么配合、性能和延迟怎么优化。
+
+不要被那种“我需要跟 GPT-4RAG 一样牛”的心态绑住，大多数真实场景根本用不到那个规模，但一个小范围做得有深度的 RAG，照样能把体验拉得比单纯调用 LLM 强很多。
+
+RAG是现在这个阶段，能把大模型的能力快速、低成本、安全可控地应用到具体业务里最好的方式。这个领域坑很多，但也意味着机会很多。你现在进来，正是时候。
+
+
+动手去干吧。
+
+
+
+___
 
 本文的核心观点总结如下：
 
@@ -39,7 +128,7 @@ ___
 
 LightRAG、GraphRAG和普通RAG系统在多个方面存在显著差异：
 
-## 知识表示
+# 知识表示
 
 **普通RAG**：使用简单的向量存储来索引和检索信息，通常将文档分割成块并存储在向量数据库中[4]。
 
@@ -47,7 +136,7 @@ LightRAG、GraphRAG和普通RAG系统在多个方面存在显著差异：
 
 **LightRAG**：结合了知识图谱和嵌入式检索系统的优点，使用图结构和双层检索范式[5]。
 
-## 检索效率
+# 检索效率
 
 **普通RAG**：在处理大规模数据集时可能面临效率和可扩展性问题[4]。
 
@@ -55,7 +144,7 @@ LightRAG、GraphRAG和普通RAG系统在多个方面存在显著差异：
 
 **LightRAG**：采用双层检索策略，显著提高了检索速度和效率，同时降低了计算成本[1][5]。
 
-## 上下文理解
+# 上下文理解
 
 **普通RAG**：可能难以处理需要复杂推理的查询[4]。
 
@@ -63,7 +152,7 @@ LightRAG、GraphRAG和普通RAG系统在多个方面存在显著差异：
 
 **LightRAG**：结合局部和全局检索，提供全面的上下文理解[1]。
 
-## 可解释性
+# 可解释性
 
 **普通RAG**：通常缺乏可解释性[2]。
 
@@ -71,7 +160,7 @@ LightRAG、GraphRAG和普通RAG系统在多个方面存在显著差异：
 
 **LightRAG**：保留了GraphRAG的可解释性优势[5]。
 
-## 适应性和更新
+# 适应性和更新
 
 **普通RAG**：更新知识库可能需要重新索引整个数据集。
 
@@ -79,7 +168,7 @@ LightRAG、GraphRAG和普通RAG系统在多个方面存在显著差异：
 
 **LightRAG**：支持增量更新，可以快速适应新数据，无需大规模重建索引[1][3]。
 
-## 查询处理
+# 查询处理
 
 **普通RAG**：主要依赖于相似性搜索。
 
@@ -96,7 +185,7 @@ Citations:
 [4]https://www.falkordb.com/blog/what-is-graphrag/  
 [5]https://learnopencv.com/lightrag/
 
-## 动态章节检索
+# 动态章节检索
 
 我们很高兴介绍一种新的检索增强生成（RAG）技术——动态章节检索💫——这种技术确保您可以从文档中检索完整的连续章节，而不仅仅是简单的碎片化块。
 
@@ -118,11 +207,11 @@ Citations:
 
 我将整理这些信息并尽快提供调研报告。
 
-## RAG 技术综述与最新进展
+# RAG 技术综述与最新进展
 
 **检索增强生成**（**RAG**，Retrieval-Augmented Generation）是近年来大模型应用的热门技术，用于将大型语言模型（LLM）的强大生成能力与**外部知识检索**相结合。其核心思想是在生成回答时，先根据用户查询从**知识库**中检索相关信息，将检索结果作为上下文提供给模型，从而提高回答的准确性和时效性 ([What Is Retrieval-Augmented Generation aka RAG | NVIDIA Blogs](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/#:~:text=Lewis%20and%20colleagues%20developed%20retrieval,in%20the%20latest%20technical%20details)) ([What Is Retrieval-Augmented Generation aka RAG | NVIDIA Blogs](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/#:~:text=Retrieval,That%20builds%20trust))。下面我们将分别介绍RAG的最新研究趋势、主流开源工具和实践、大模型在RAG任务中的表现对比，以及知识库问答的最佳实践和实际应用案例。
 
-### RAG 技术的最新趋势
+## RAG 技术的最新趋势
 
 **1. 减少幻觉，增强可控性：** RAG 的提出源于大型模型在知识密集任务上的局限。早在 2020 年，Lewis 等人发表论文提出将预训练生成模型与可检索的非参数知识结合，即在模型推理时动态检索外部文档 ([[2005.11401] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401#:~:text=remain%20open%20research%20problems.%20Pre,We%20compare%20two%20RAG))。这样做一方面让模型能够引用最新的精确资料，避免仅依赖参数中固化的旧知识；另一方面还能为模型回答提供出处，增加结果的**可验证性**和用户信任 ([What Is Retrieval-Augmented Generation aka RAG | NVIDIA Blogs](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/#:~:text=Retrieval,That%20builds%20trust))。RAG 被证明在开放域问答等任务上显著减少了模型"胡编"现象（幻觉），其生成的答案更具体、有根据 ([[2005.11401] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401#:~:text=formulations%2C%20one%20which%20conditions%20on,only%20seq2seq%20baseline))。Meta的博客指出，开发者只需少量代码就能实现基本的RAG管道，比起重新训练模型更快捷低成本 ([What Is Retrieval-Augmented Generation aka RAG | NVIDIA Blogs](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/#:~:text=Another%20great%20advantage%20of%20RAG,as%20five%20lines%20of%20code))。这使得RAG在工业界迅速流行，成为许多生成式AI应用的默认范式之一 ([What Is Retrieval-Augmented Generation aka RAG | NVIDIA Blogs](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/#:~:text=Patrick%20Lewis%2C%20lead%20author%20of,the%20future%20of%20generative%20AI))。
 
@@ -137,11 +226,11 @@ Citations:
 - **更广泛的应用场景：** RAG 的应用已从早期的开放域问答扩展到各行各业。几乎任何需要将专有数据与LLM结合的场景都在探索RAG ([What Is Retrieval-Augmented Generation aka RAG | NVIDIA Blogs](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/#:~:text=For%20example%2C%20a%20generative%20AI,assistant%20linked%20to%20market%20data))。从医疗助手结合最新医学文献、金融分析助手关联市场数据，到企业将内部政策、产品文档构建知识库供客服和员工查询 ([What Is Retrieval-Augmented Generation aka RAG | NVIDIA Blogs](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/#:~:text=For%20example%2C%20a%20generative%20AI,assistant%20linked%20to%20market%20data))。这也催生了云服务商提供RAG即服务的方案，例如 AWS、Azure 等均推出了让大模型安全访问企业内部数据的功能 ([What Is Retrieval-Augmented Generation aka RAG | NVIDIA Blogs](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/#:~:text=The%20broad%20potential%20is%20why,and%20Pinecone%20are%20adopting%20RAG))。总的来看，RAG 正从学术概念走向工业实践的中心舞台，相关论文已达数百篇，许多商业服务围绕这一思想构建，可以说RAG代表了生成式AI的重要发展方向 ([What Is Retrieval-Augmented Generation aka RAG | NVIDIA Blogs](https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/#:~:text=Patrick%20Lewis%2C%20lead%20author%20of,the%20future%20of%20generative%20AI))。
     
 
-### 主流 RAG 开源工具与实践
+## 主流 RAG 开源工具与实践
 
 RAG 技术的实现涉及到**向量检索**、**存储**和**大模型调用**等多个环节。得益于开源社区的努力，如今从底层向量数据库到高层应用框架，都有成熟的工具可用。下面介绍一些主要的开源组件和实践建议：
 
-#### 向量数据库与检索引擎
+### 向量数据库与检索引擎
 
 大规模**向量相似度检索**是 RAG 的基础。目前最常用的开源向量数据库/引擎包括：
 
@@ -160,7 +249,7 @@ _（以上工具均在近期评选的"2024年Top5开源向量数据库"榜单中
 
 **最佳实践：** 在使用向量检索时，需根据场景选择合适的方案。一般来说，**向量索引**可以采用扁平（Flat）索引获得最高准确率，但在数据规模很大时检索速度可能不足，这时HNSW、IVF等近似方法可大幅加速查询 ([Top 5 Open Source Vector Databases in 2024](https://www.gpu-mart.com/blog/top-5-open-source-vector-databases-2024/#:~:text=%E2%80%A2%20Faiss%20is%20widely%20used,support%20in%20the%20AI%20community))。像 Milvus、Weaviate 这样的系统已经集成多种索引类型，可根据数据规模和查询QPS需求调优。另外，应充分利用元数据：比如为每段文本嵌入向量附加来源、主题标签、时间戳等，在查询时通过元数据过滤可以提高相关性和新鲜度（例如只检索最新的文件）。在构建知识库时，预先对文档进行**分块**和清理也很关键，这一点在后文知识库QA最佳实践部分详述。
 
-#### 知识库 RAG 框架与管道
+### 知识库 RAG 框架与管道
 
 在底层存储确定后，还需要将**LLM、检索、数据**串联成完成任务的流水线。为此，业界涌现了多个开源框架，封装了常用的RAG流程，方便开发者快速搭建**知识库问答**等应用：
 
@@ -173,7 +262,7 @@ _（以上工具均在近期评选的"2024年Top5开源向量数据库"榜单中
 - **其余框架和工具：** 除上述外，还有例如 **GPT-Index Hub**（LlamaHub，提供各种数据加载插件）、**Prompt-Engineer** 类库（帮助设计检索后提示模板）以及许多在线服务（如 OpenAI 的 Retrieval Plugin、Cohere Rerank API 等）可供使用。选型时应考虑团队技术栈和项目需求，例如纯Python环境下Chroma+LlamaIndex可能最快上手，而已有ElasticSearch部署的则可直接用其新推出的dense vector功能配合Haystack等。
     
 
-#### 知识库问答的全流程实践
+### 知识库问答的全流程实践
 
 构建一个知识库问答（例如企业文档问答Chatbot）通常需要如下几个主要步骤：
 
@@ -190,7 +279,7 @@ _（以上工具均在近期评选的"2024年Top5开源向量数据库"榜单中
 6. **持续更新迭代：**知识库并非一成不变。最佳实践是设计**定期更新流程**：如每日/每周抓取新的文档，增量地生成嵌入并更新向量索引 ([10 RAG examples and use cases from real companies](https://www.evidentlyai.com/blog/rag-examples#:~:text=The%20company%20shared%20how%20it,removed%20from%20their%20source%20location))。对于删除或过期的内容也要从索引中移除，保持知识库的新鲜和精确。系统还需要定期评估性能，监控回答的准确率和用户反馈，并据此调整。例如可以构造一批测试问答对，用GPT-4等作为评审参考来给出正确率、引用正确性等指标 ([LlamaIndex: RAG Evaluation Showdown with GPT-4 vs. Open-Source Prometheus Model — LlamaIndex - Build Knowledge Assistants over your Enterprise Data](https://www.llamaindex.ai/blog/llamaindex-rag-evaluation-showdown-with-gpt-4-vs-open-source-prometheus-model-14cdca608277#:~:text=source%20Prometheus%20model%20has%20recently,alternative%20for%20such%20evaluation%20tasks)) ([LlamaIndex: RAG Evaluation Showdown with GPT-4 vs. Open-Source Prometheus Model — LlamaIndex - Build Knowledge Assistants over your Enterprise Data](https://www.llamaindex.ai/blog/llamaindex-rag-evaluation-showdown-with-gpt-4-vs-open-source-prometheus-model-14cdca608277#:~:text=1,the%20answer%20to%20the%20query))。许多团队会持续收集真实用户提问和模型响应，人工标注后用于分析哪些问答不佳，找出改进方向（如需要增加哪些知识、调整提示模板或升级模型等）。通过这种闭环迭代，知识库问答系统的效果会越来越好。
     
 
-### 不同大模型在 RAG 任务中的表现对比
+## 不同大模型在 RAG 任务中的表现对比
 
 将RAG应用于具体任务时，不同的底层大模型（LLM）在**准确性、上下文处理能力、推理性能**等方面存在差异。以下对主流的一些大模型在RAG场景下的表现进行分析：
 
@@ -205,11 +294,11 @@ _（以上工具均在近期评选的"2024年Top5开源向量数据库"榜单中
 
 _(注：除了上述模型，一些新兴的定制模型专门针对RAG优化，例如VECTARA推出的"Mockingbird"声称在RAG回答质量和防幻觉上超越GPT-4和Gemini 1.5 ([Mockingbird is a RAG Specific LLM that Beats GPT 4, Gemini 1.5 ...](https://www.vectara.com/blog/mockingbird-is-a-rag-specific-llm-that-beats-gpt-4-gemini-1-5-pro-in-rag-output-quality#:~:text=Mockingbird%20is%20a%20RAG%20Specific,and%20autonomous%20agent%20use%20cases))。这些定制模型通常融入了检索相关的微调或架构改进，但多为商业产品，尚未有公开的独立评测佐证。)_
 
-### 知识库 AI 问答的开源方案与成功案例
+## 知识库 AI 问答的开源方案与成功案例
 
 借助RAG技术，各行业已经构建出众多**知识库问答**应用，涵盖客服、搜索、办公助手等场景。这里我们介绍一些**开源方案**和**最佳实践**，并列举实际成功案例，以展示RAG在知识库问答中的落地效果。
 
-#### 开源方案与实践要点
+### 开源方案与实践要点
 
 **1. 框架选择与架构设计：** 开源工具方面，前文提到的 LangChain、LlamaIndex、Haystack 等都是常用的知识库QA框架。在实际项目中，往往会将它们与向量数据库结合使用，形成**端到端的流水线**。例如，可以使用 Haystack 提供的 Pipeline 接口，将 Milvus 作为文档存储，SentenceTransformer 作为嵌入模型，Flan-T5 等本地模型作为生成器，快速拼装出一个问答系统。同时需要根据需求决定架构：是走经典的"检索-阅读器"提取式问答，还是直接"检索-生成"让LLM自由生成答案（大多数现在选择后者，因为生成式更灵活）。对于要求实时性的场景，也可以考虑用 faster transformer 或量化模型来加速推理，用多线程/异步提高并发。
 
@@ -232,7 +321,7 @@ _(注：除了上述模型，一些新兴的定制模型专门针对RAG优化，
 
 **5. 安全和隐私：** 在企业知识库应用中，往往涉及内部机密或用户隐私数据，必须确保**数据安全**。如果采用云端大模型API，需要做好数据脱敏或选择私有部署的模型。向量数据库也要支持访问控制，防止未经授权的查询。生成阶段还要注意避免泄露敏感信息——LLM可能在回答中无意透露超出权限的内容，必要时要设定内容过滤或规则约束模型输出。此外，RAG系统作为决策支持工具，其答案可能被人直接采用，所以在法律、医疗等高风险场景下，一定要提供**免责声明**并鼓励用户核实提供的来源。如果条件允许，可以在LLM给出答案后，自动匹配答案中的关键事实与原始资料进行二次校验，发现不一致就提醒用户慎重。
 
-#### 实际落地案例
+### 实际落地案例
 
 RAG 在知识库问答方面的价值已在许多真实案例中得到验证。以下列举几个具有代表性的应用场景和成功案例：
 

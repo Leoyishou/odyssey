@@ -1,7 +1,7 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-07-19
+date modified: 2025-09-13
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
@@ -9,18 +9,9 @@ linter-yaml-title-alias: Summary
 
 **Batch size** 是指**一次训练中同时处理的样本数量**。
 
-
-# Cues
-
-
-
-# Notes
-
-## 直观理解
-
 想象你是一位老师批改作业：
 
-```
+```Java
 方式1：一本一本改（batch_size = 1）
 😫 效率低，但能仔细看每本
 
@@ -30,6 +21,15 @@ linter-yaml-title-alias: Summary
 方式3：100本一起改（batch_size = 100）
 😰 效率高，但可能忽略个体差异
 ```
+
+
+# Cues
+
+
+
+# Notes
+
+## 直观理解
 
 ## 具体例子
 

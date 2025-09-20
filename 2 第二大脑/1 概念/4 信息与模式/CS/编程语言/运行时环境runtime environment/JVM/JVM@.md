@@ -1,6 +1,6 @@
 ---
 date created: 2024-07-14
-date modified: 2025-07-10
+date modified: 2025-09-17
 uid: d9daafad-fd98-482b-b6b5-1517615c9036
 ---
 
@@ -31,7 +31,7 @@ https://zhuanlan.zhihu.com/p/111809384
 
 虚拟机外：堆外/直接内存 1和 4
 
-## 1、关于类的：类信息、常量、静态变量（都存在线程安全的问题）
+# 1、关于类的：类信息、常量、静态变量（都存在线程安全的问题）
 
 方法区规范内还包括一个运行时常量池的规范，运行时常量池又包括一个字符串常量池的规范
 
@@ -41,13 +41,13 @@ https://zhuanlan.zhihu.com/p/111809384
 
 JDK7以上版本，静态域存储于定义类型的Class对象中，Class对象如同堆中其他对象一样，存在于GC堆中。
 
-## 2、关于对象的：堆的实现包括新生代和老年代
+# 2、关于对象的：堆的实现包括新生代和老年代
 
 ![](https://cdn-a.markji.com/files/62fc6571889af996baf0075c_hd.png?e=1725356282256&token=xX63b9jqTlDOcGmctt5K9254rV0LG8hS9BmDeFBy:-Z0uL7UIN9XcOHMAdm1qA1PbAyo=)
 
 这是一个对象的内存图
 
-## 3、关于线程的：栈的实现包括虚拟机栈、程序计数器、和本地方法栈
+# 3、关于线程的：栈的实现包括虚拟机栈、程序计数器、和本地方法栈
 
 其中虚拟机栈的栈帧内又包括:"局部变量表"、"操作数栈"、"动态链接"以及"方法出口"四个部分。
 
@@ -59,7 +59,7 @@ JDK7以上版本，静态域存储于定义类型的Class对象中，Class对象
 
 ![](https://cdn-a.markji.com/files/62fc6454889af996baefcfea_hd.png?e=1725356282256&token=xX63b9jqTlDOcGmctt5K9254rV0LG8hS9BmDeFBy:x0H2GQDSSYsjYRx70iyedksc9iQ=)
 
-## 4、直接内存
+# 4、直接内存
 
 1、读写成本小
 

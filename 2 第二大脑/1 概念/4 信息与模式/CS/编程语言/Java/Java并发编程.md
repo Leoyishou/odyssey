@@ -1,8 +1,16 @@
 ---
 date created: 2024-07-14
-date modified: 2025-09-01
+date modified: 2025-09-15
 uid: 51c47649-35c4-4e13-8e4a-4575cee973d6
 ---
+# Summary
+
+
+# Cues
+
+[Java线程池](Java线程池.md)
+
+# Notes
 
 互斥锁，同步锁，临界区，互斥量，信号量，自旋锁之间联系是什么？- 胖君的回答 - 知乎  
 https://www.zhihu.com/question/39850927/answer/242109380

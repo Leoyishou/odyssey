@@ -1,9 +1,10 @@
 ---
 date created: 2025-01-24
-date modified: 2025-07-27
+date modified: 2025-09-13
 uid: aa4b8be9-f140-4d3e-843e-673b90ab548b
 ---
-
+ XGBoost 是 [[GBDT]] 的改进版本
+ 
 #第一性原理 Extreme Gradient Boosting（每一步都计算损失函数的梯度，指导下一棵树往哪个方向去纠正错误）
 
 [[决策树]]就是类似于用纹不纹身来判断一个人是不是好女孩，价值观太单一了，用 xgboost 搞多棵树，逐步补充自己判断失误的地方  

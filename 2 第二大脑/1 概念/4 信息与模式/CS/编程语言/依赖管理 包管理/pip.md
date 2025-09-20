@@ -1,8 +1,10 @@
 ---
 date created: 2025-03-23
-date modified: 2025-07-10
+date modified: 2025-09-20
 uid: 80dd4868-c3f3-4416-9fd5-ee46f3120155
 ---
+[[wheel]]
+
 
 以下是pip常用命令的markdown表格版：
 
@@ -32,7 +34,7 @@ uid: 80dd4868-c3f3-4416-9fd5-ee46f3120155
 
 ---
 
-## ✅ `llama-index[embed]` 是什么？
+# ✅ `llama-index[embed]` 是什么？
 
 这是 Python 的一种 **可选依赖（extras）安装语法**，意思是：
 
@@ -42,7 +44,7 @@ uid: 80dd4868-c3f3-4416-9fd5-ee46f3120155
 
 ---
 
-## 💡 举个例子
+# 💡 举个例子
 
 如果你运行下面这个命令：
 
@@ -67,7 +69,7 @@ pip install llama-index[embed]
 
 ---
 
-## 🧠 为什么这样设计？
+# 🧠 为什么这样设计？
 
 很多现代 Python 包都这样设计，是为了让你按需安装，不浪费资源。例如：
 
@@ -88,7 +90,7 @@ pip install llama-index[all]
 
 ---
 
-## 🔧 补充建议
+# 🔧 补充建议
 
 如果你只是想用 HuggingFace embedding（比如 `bge-large-zh-v1.5`），推荐就用这个：
 

@@ -1,16 +1,21 @@
 ---
 date created: 2024-07-27
-date modified: 2025-08-10
+date modified: 2025-09-17
 uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 ---
-- [Map   选项->参数](#Map%20%20%20%E9%80%89%E9%A1%B9-%3E%E5%8F%82%E6%95%B0)
-- [一个-与两个--](#%E4%B8%80%E4%B8%AA-%E4%B8%8E%E4%B8%A4%E4%B8%AA--)
-- [Shell 是接口，bash 是实现](#Shell%20%E6%98%AF%E6%8E%A5%E5%8F%A3%EF%BC%8Cbash%20%E6%98%AF%E5%AE%9E%E7%8E%B0)
-	- [实现类](#%E5%AE%9E%E7%8E%B0%E7%B1%BB)
-- [作用](#%E4%BD%9C%E7%94%A8)
-- [Shell脚本](#Shell%E8%84%9A%E6%9C%AC)
 
-# Map   选项->参数
+
+
+
+# Summary
+
+常用命令：
+`source.venv/bin/activate`
+
+# Notes
+
+
+## Map   选项->参数
 
 ```Java
 command [options] [arguments]
@@ -22,7 +27,7 @@ Option (key, 带-或--) -> Argument (value，可能为空或隐式布尔值true)
 
 **七步之外 Python 快，七步之内 Shell 更快。**
 
-# 一个-与两个--
+## 一个-与两个--
 
 | 短选项接单个字母 | 长选项接整个单词        | 含义             |
 | -------- | --------------- | -------------- |
@@ -39,7 +44,7 @@ Option (key, 带-或--) -> Argument (value，可能为空或隐式布尔值true)
 | `docker exec container bash`                     | 没有交互终端，非交互执行命令               | ❌ 不等效     |
 |                                                  |                              |           |
 
-# Shell 是接口，bash 是实现
+## Shell 是接口，bash 是实现
 
 Shell是操作系统的外壳，是用户与操作系统内核进行交互的接口。它主要有两个重要功能：
 
@@ -52,7 +57,7 @@ Shell 本质上是：
 
     - 定义了基本的行为（命令执行、IO 处理等）
 
-## 实现类
+### 实现类
 
 不同的 Shell 是这个接口的不同实现：
 
@@ -133,14 +138,10 @@ classDiagram
 - zsh-autosuggestions（自动建议）
 - zsh-syntax-highlighting（语法高亮）
 
-# 作用
+## 作用
 
 Shell的主要作用是：
 
 1. 连接用户和操作系统，作为两者之间的桥梁。
 2. 保护操作系统内核，降低用户直接操作系统的风险。
 3. 提供命令行界面，允许用户通过文本命令控制系统。
-
-# Shell脚本
-
-在Linux系统中，常见的Shell包括bash和sh等。用户可以在Shell终端直接执行命令，也可以编写Shell脚本文件（通常以.sh为扩展名）来执行一系列命令。

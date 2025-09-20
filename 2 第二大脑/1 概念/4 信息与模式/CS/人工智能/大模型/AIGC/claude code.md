@@ -1,7 +1,7 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-08-30
+date modified: 2025-09-15
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
@@ -22,7 +22,11 @@ When I review my [CLAUDE.md/slash](http://claude.md/slash) command and agent f
 
 
 # Notes
-我来介绍一下 Claude Code 的常用命令，包括一些需要谨慎使用的"危险"命令：
+
+## 如何关闭内置的 shell
+
+1. 按向下的方向键进入
+2. kill 关闭
 
 ## 基础命令
 

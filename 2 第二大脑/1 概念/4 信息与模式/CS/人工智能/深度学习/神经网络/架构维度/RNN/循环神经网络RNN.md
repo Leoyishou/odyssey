@@ -17,7 +17,7 @@ uid: 8cf73d5b-9ada-4ee0-9118-5ea82a9f97b9
 
 `<bos>` + long + time + no + see -> `<eos>`
 
-#第一性原理 RNN 最初是为了解决[[Seq2Seq]]的问题，下图中的[Transformer](Transformer.md)
+#第一性原理 RNN 最初是为了解决[[Seq2Seq]]的问题，下图中的[Transformer架构](Transformer架构.md)
 
 如果是这种推理方式，那么 4 字长度的中文，只能得到 4 字长度的英文，这显然是不合理的
 
@@ -356,4 +356,4 @@ LSTM比GRU更复杂，它像是有一个更精细的"记忆管理系统"：
 
 ## 关注后续更高级的主题
 
-- 如 Seq2Seq 的 Attention 机制、[[Transformer]]、以及近年流行的大规模预训练模型 ([[BERT]]、GPT 等)。它们都是在"怎样更好地处理序列信息"的思路上不断演进。
+- 如 Seq2Seq 的 Attention 机制、[[Transformer架构]]、以及近年流行的大规模预训练模型 ([[BERT]]、GPT 等)。它们都是在"怎样更好地处理序列信息"的思路上不断演进。

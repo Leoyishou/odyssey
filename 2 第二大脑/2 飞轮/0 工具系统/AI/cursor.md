@@ -1,12 +1,14 @@
 ---
 date created: 2024-09-09
-date modified: 2025-07-10
+date modified: 2025-09-15
 uid: 227010cd-12da-4fb8-868d-04ac793cc9a0
 ---
 
+
+
 使用 Cursor 写代码时，我逐渐意识到保持节奏感的重要性：将任务拆分为一系列明确的小节点，每个节点完成后立即进行验证和调整，然后再继续下一步。虽然这样工作的节奏变慢了一些，但可以避免后续大量修改带来的疲惫和混乱。这种方式实际上考验着两种能力：一是迅速判断代码能否达到预期目标的敏感度；二是有效地将复杂问题拆解，并准确地向 AI 描述的表达能力。AI 的优势在于执行效率，但执行的前提是清晰的指令与结构化的思考。掌握自己的节奏与思路，让 AI 跟随你，而不是推动你，才能真正发挥 AI 编程工具的长期价值。
 
-## 上下文选择
+# 上下文选择
 
 command + K 代码段落维度
 
@@ -16,7 +18,7 @@ command + K 代码段落维度
 
 @ git branch 维度
 
-## 打印
+# 打印
 
 2. 找bug的时候，我更喜欢用AI自动化的生成很多 print, 然后再根据结构让AI找出问题的地方，缩小bug范围，比直接让AI找出bug，可能更快，因为有时候我们找不到bug，提示词本身就有误导
 3. 从[Dribbble](Dribbble.md)找 UI 灵感，截图给 cursor
@@ -26,20 +28,20 @@ https://www.v2ex.com/t/1070302#reply2
 
  Chat 是有记忆功能的长聊天，Composer 是一次性的对话
 
-## 右侧 review
+# 右侧 review
 
 根据 git 内容的变更，来对代码做增两 review
 
-## RAG
+# RAG
 
 两种方式，`@`或者在setting-feature 里手动加文件  
 所以，如果做什么屎山项目，可以多试试在提问之前，先把RAG给做了。
 
-## Real World Examples
+# Real World Examples
 
 一些函数在 github 里的实际用法案例
 
-## apply 前后版本的 checkout
+# apply 前后版本的 checkout
 
 1/ 先头脑风暴，再写代码 Claude/o1在这里是你最好的助手。你应该创建一个包含项目每一个细节的完整文档。
 

@@ -1,9 +1,28 @@
 ---
 date created: 2025-03-23
-date modified: 2025-07-10
+date modified: 2025-09-19
 uid: c3a087b7-bf8a-4fb1-97a7-510d1b3c1e0e
 ---
+# Summary
 
+1. 当你执行 `python3 -m venv.venv` 命令时，会发生以下事情：
+	1. Python 在你当前所在的目录下，创建一个名为 `.venv` 的新文件夹。
+	2. 在这个 `.venv` 文件夹内部，它会创建一个**独立的、隔离的**Python 运行环境。这包括：
+	    - 一份 Python 解释器的副本（或链接）。
+	    - 一个独立的 `site-packages` 目录，用来存放**只属于这个项目**的第三方库。
+	    - 一些管理脚本（比如 `activate`），用来激活和退出这个环境。
+2. `source.venv/bin/activate` 
+		1. `.venv/bin/activate` 这个文件本质上就是一个 shell 脚本
+		2. `source` 命令的作用是：**在当前的 shell 会话中读取并执行指定文件中的命令。**
+
+
+
+
+
+
+
+
+# Notes
 这属于 **Python虚拟环境（Virtual Environment）的创建和激活操作**。
 
 ---

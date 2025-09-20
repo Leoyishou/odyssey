@@ -1,6 +1,6 @@
 ---
 date created: 2024-06-29
-date modified: 2025-08-29
+date modified: 2025-09-16
 uid: bc090318-53b4-4f46-98e2-e0f9f41d5e3b
 ---
 - [基础](#%E5%9F%BA%E7%A1%80)
@@ -26,6 +26,17 @@ uid: bc090318-53b4-4f46-98e2-e0f9f41d5e3b
 [倒排索引](倒排索引.md)
 
 # Notes
+
+- [行维度](#%E8%A1%8C%E7%BB%B4%E5%BA%A6)
+- [存储与搜索](#%E5%AD%98%E5%82%A8%E4%B8%8E%E6%90%9C%E7%B4%A2)
+- [双存储模式](#%E5%8F%8C%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F)
+- [select](#select)
+- [布尔组合查询](#%E5%B8%83%E5%B0%94%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2)
+- [数据类型与索引](#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%B4%A2%E5%BC%95)
+- [1. 搜索需求](#1.%20%E6%90%9C%E7%B4%A2%E9%9C%80%E6%B1%82)
+- [2. 存储需求](#2.%C2%A0%E5%AD%98%E5%82%A8%E9%9C%80%E6%B1%82)
+- [3. 查询需求](#3.%20%E6%9F%A5%E8%AF%A2%E9%9C%80%E6%B1%82)
+
 
 ## 基础
 ### 行维度
@@ -204,50 +215,50 @@ Mapping 类似 [MySQL](MySQL.md) 的 Desc看字段类型 + CREATE INDEX建索引
 
 # Elasticsearch 知识结构图
 
-| 类别            | 核心概念           | 详细内容                                                    |     |
-| ------------- | -------------- | ------------------------------------------------------- | --- |
-| **基础概念**      | 文档（Document）| JSON格式的数据单元，类似关系型数据库的行                                  | ✅   |
-|               | 索引（Index）| 文档的集合，类似关系型数据库的表                                        | ✅   |
-|               | 类型（Type）| 7.x版本后已废弃，之前用于索引内的逻辑分类                                  |     |
-|               | 字段（Field）| 文档中的属性，类似数据库的列                                          | ✅   |
-|               | 映射（Mapping）| 定义字段类型和索引方式的元数据                                         | ✅   |
-| **集群架构**      | 节点（Node）| 集群中的单个服务器实例                                             |     |
-|               | 集群（Cluster）| 一组协同工作的节点集合                                             |     |
-|               | 分片（Shard）| 索引的物理存储单元，分为主分片和副本分片                                    |     |
-|               | 副本（Replica）| 主分片的复制，提供高可用和负载均衡                                       |     |
-|               | 主节点（Master）| 管理集群状态和元数据的节点                                           |     |
-| **数据操作**      | 索引操作           | PUT/POST 创建或更新文档                                        |     |
-|               | 查询操作           | GET 检索文档                                                | ✅   |
-|               | 更新操作           | POST _update 部分更新文档                                     |     |
-|               | 删除操作           | DELETE 删除文档或索引                                          |     |
-|               | 批量操作           | _bulk API 批量执行多个操作                                      |     |
-| **[[查询DSL]]** | 全文查询           | [match查询](match查询.md)]]：match、match_phrase、multi_match等 |     |
-|               | 精确查询           | [[fuzzy]]、term、terms、range、exists等                      |     |
+| 类别            | 核心概念           | 详细内容                                                  |     |
+| ------------- | -------------- | ----------------------------------------------------- | --- |
+| **基础概念**      | 文档（Document）| JSON格式的数据单元，类似关系型数据库的行                                | ✅   |
+|               | 索引（Index）| 文档的集合，类似关系型数据库的表                                      | ✅   |
+|               | 类型（Type）| 7.x版本后已废弃，之前用于索引内的逻辑分类                                |     |
+|               | 字段（Field）| 文档中的属性，类似数据库的列                                        | ✅   |
+|               | 映射（Mapping）| 定义字段类型和索引方式的元数据                                       | ✅   |
+| **集群架构**      | 节点（Node）| 集群中的单个服务器实例                                           |     |
+|               | 集群（Cluster）| 一组协同工作的节点集合                                           |     |
+|               | 分片（Shard）| 索引的物理存储单元，分为主分片和副本分片                                  |     |
+|               | 副本（Replica）| 主分片的复制，提供高可用和负载均衡                                     |     |
+|               | 主节点（Master）| 管理集群状态和元数据的节点                                         |     |
+| **数据操作**      | 索引操作           | PUT/POST 创建或更新文档                                      |     |
+|               | 查询操作           | GET 检索文档                                              | ✅   |
+|               | 更新操作           | POST _update 部分更新文档                                   |     |
+|               | 删除操作           | DELETE 删除文档或索引                                        |     |
+|               | 批量操作           | _bulk API 批量执行多个操作                                    |     |
+| **[[查询DSL]]** | 全文查询           | [match查询](match查询.md)：match、match_phrase、multi_match等 |     |
+|               | 精确查询           | [[fuzzy]]、term、terms、range、exists等                    |     |
 |               | [[复合查询]]       | bool（must、[[should]]、must_not、filter）|     |
-|               | 聚合查询           | metrics、bucket、pipeline聚合                               |     |
-|               | 高亮显示           | highlight 突出显示匹配内容                                      |     |
-| **分析器**       | 字符过滤器          | 预处理原始文本                                                 |     |
-|               | 分词器（Tokenizer）| 将文本分解为词项                                                |     |
+|               | 聚合查询           | metrics、bucket、pipeline聚合                             |     |
+|               | 高亮显示           | highlight 突出显示匹配内容                                    |     |
+| **分析器**       | 字符过滤器          | 预处理原始文本                                               |     |
+|               | 分词器（Tokenizer）| 将文本分解为词项                                              |     |
 |               | 词项过滤器          | 处理分词后的词项（如转小写、同义词）|     |
-|               | 内置分析器          | standard、simple、whitespace、keyword等                     |     |
+|               | 内置分析器          | standard、simple、whitespace、keyword等                   |     |
 | **数据类型**      | 文本类型           | text（全文搜索）、keyword（精确匹配）|     |
-|               | 数值类型           | long、integer、short、byte、double、float                    |     |
-|               | 日期类型           | date、date_nanos                                         |     |
-|               | 布尔类型           | boolean                                                 |     |
-|               | 复杂类型           | object、nested、geo_point、geo_shape                       |     |
-| **性能优化**      | 索引优化           | 合理设置分片数、使用合适的映射                                         |     |
-|               | 查询优化           | 使用filter代替query、避免深度分页                                  |     |
-|               | 缓存机制           | 节点查询缓存、分片请求缓存、字段数据缓存                                    |     |
-|               | 监控调优           | _cat API、_stats API、慢查询日志                               |     |
-| **高级特性**      | 索引模板           | 预定义索引设置和映射                                              |     |
-|               | 索引生命周期         | ILM自动管理索引的生命周期                                          |     |
-|               | 快照备份           | snapshot/restore API备份恢复数据                              |     |
-|               | 安全认证           | X-Pack Security提供认证授权功能                                 |     |
-|               | 跨集群搜索          | CCS跨多个集群执行搜索                                            |     |
+|               | 数值类型           | long、integer、short、byte、double、float                  |     |
+|               | 日期类型           | date、date_nanos                                       |     |
+|               | 布尔类型           | boolean                                               |     |
+|               | 复杂类型           | object、nested、geo_point、geo_shape                     |     |
+| **性能优化**      | 索引优化           | 合理设置分片数、使用合适的映射                                       |     |
+|               | 查询优化           | 使用filter代替query、避免深度分页                                |     |
+|               | 缓存机制           | 节点查询缓存、分片请求缓存、字段数据缓存                                  |     |
+|               | 监控调优           | _cat API、_stats API、慢查询日志                             |     |
+| **高级特性**      | 索引模板           | 预定义索引设置和映射                                            |     |
+|               | 索引生命周期         | ILM自动管理索引的生命周期                                        |     |
+|               | 快照备份           | snapshot/restore API备份恢复数据                            |     |
+|               | 安全认证           | X-Pack Security提供认证授权功能                               |     |
+|               | 跨集群搜索          | CCS跨多个集群执行搜索                                          |     |
 | **常用插件**      | 分词插件           | IK分词器（中文）、jieba（中文）|     |
-|               | 监控插件           | Kibana、Grafana集成                                        |     |
-|               | 同步插件           | Logstash、Beats数据采集                                      |     |
-|               | 管理插件           | Cerebro、ElasticHQ集群管理                                   |     |
+|               | 监控插件           | Kibana、Grafana集成                                      |     |
+|               | 同步插件           | Logstash、Beats数据采集                                    |     |
+|               | 管理插件           | Cerebro、ElasticHQ集群管理                                 |     |
 
 这个表格涵盖了 Elasticsearch 的主要知识点，从基础概念到高级特性都有涉及。您可以根据学习进度逐步深入每个类别的具体内容。
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F06%2F29%2F17-20-19-83d3934bbb7c374bda5b24e45987e38b-20240629172018-9a370a.png)

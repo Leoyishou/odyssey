@@ -1,10 +1,20 @@
 ---
 date created: 2024-07-11
-date modified: 2025-07-10
+date modified: 2025-09-15
 uid: d79d8e8f-c36e-4a65-9ac3-53ef3a869c96
 ---
 
-setting.json
+
+
+# 语言服务
+
+看你贴的截图，关键线索有两点：底部状态栏左下角显示 **Java: Ready**，设置界面里还在显示 `java.configuration.runtimes`，但你实际打开的是 `.py` 文件。这说明 VS Code 在这个工作区里优先激活了 Java 相关扩展 / 语言服务器，导致 Python 的[[语言服务]]没有正常接管（所以 import 上无法跳转到定义）。
+
+
+
+
+
+# setting.json
 
 作用：obsidian 和 logseq 的批量编辑能力较差，可以用 vscode 打开进行批量编辑，比如正则替换，yaml 区的批量编辑等。安装 foam 插件以后，核心的双链功能已经完美支持了。
 
@@ -29,7 +39,7 @@ setting.json
 
 插件学习
 
-## 不同级别的配置设置
+# 不同级别的配置设置
 
 您说得对,Visual Studio Code 中确实存在多个位置的 settings.json 文件,它们的作用领域是不同的。让我为您简要解释一下:
 
@@ -47,6 +57,6 @@ setting.json
 
 这种分层的设置方式允许您在不同级别上自定义 VS Code 的行为,从而实现更灵活的配置管理。
 
-## 跑[Vue](Vue)项目
+# 跑[Vue](Vue)项目
 
 在 Cursor 的终端中，导航到你的项目根目录，然后运行以下命令：

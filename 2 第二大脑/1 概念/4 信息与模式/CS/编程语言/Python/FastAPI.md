@@ -1,6 +1,6 @@
 ---
 date created: 2024-11-09
-date modified: 2025-07-10
+date modified: 2025-09-13
 uid: 985098b1-2023-4040-9e0e-186c4fafe358
 ---
 
@@ -76,7 +76,7 @@ my_fastapi_project/
 - 每个请求都创建新实例，资源消耗大
 - 并发能力受限
 
-## 写法
+# 写法
 
 ```python:app/main.py
 from fastapi import FastAPI
@@ -118,7 +118,7 @@ def process_text(text: str):
     return service.summarize_text(text)
 ```
 
-## 最佳实践
+# 最佳实践
 
 - 使用**全局实例 + async 方式**
 - 在 FastAPI 中尽量使用异步路由

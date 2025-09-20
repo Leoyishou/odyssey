@@ -1,10 +1,37 @@
 ---
 date created: 2025-03-24
-date modified: 2025-08-31
+date modified: 2025-09-20
 uid: 4e527a8d-9fac-4f78-aaf4-15c7b71e501f
 ---
-**从零实现 vLLM (1.1)：并行词嵌入**
-https://mp.weixin.qq.com/s/h1cFYDNxcHC30APcarF47A
+# Summary
+
+1. 自动批处理
+2. [GPU Kernel 内核](GPU%20Kernel%20内核.md)
+3. PagedAttention 分页注意力
+
+# Cues
+
+
+# Notes
+
+从零实现 vLLM (1.3）：如何加速 Attention 计算：[https://mp.weixin.qq.com/s/BdWG6_ZTaGRknmsbGfFkMQ…](https://t.co/J49S4ccB3g) 从零实现 vLLM (1.2）：如何实现张量并行：[https://mp.weixin.qq.com/s/8BVEVPPqDQhQ2l8L90dMNQ…](https://t.co/wnbHusOQwO)
+**从零实现 vLLM (1.1)：并行词嵌入**https://mp.weixin.qq.com/s/h1cFYDNxcHC30APcarF47A
+
+
+```python
+llm = LLM(
+    model=MODEL_PATH,
+    tokenizer=MODEL_PATH,
+    trust_remote_code=True,
+    dtype="half",
+    quantization="gptq",          # 重点：指定 GPTQ
+    max_model_len=1024,
+    tensor_parallel_size=max(1, torch.cuda.device_count()),
+    gpu_memory_utilization=0.9,
+    tensor_parallel_size=1,        # GPU并行数量
+)
+```
+
 
 vLLM 是一个开源的 Python 库，用于快速、高效地部署大型语言模型（LLMs）。它的主要目标是显著提升 LLMs 的推理速度和吞吐量，使其更适用于生产环境。
 

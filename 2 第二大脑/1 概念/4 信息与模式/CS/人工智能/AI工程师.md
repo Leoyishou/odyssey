@@ -258,7 +258,7 @@ E. 研究科学家 模型架构、效率、对齐策略前沿研究 Torch/XLA、
 
 **学习顺序**：
 
-1. **[[Transformer]]架构**：
+1. **[[Transformer架构]]架构**：
    * 先看 Andrej Karpathy 的 "Let's build GPT: from scratch"（YouTube/B站）
    * 再看李沐的课程
    * 最后读论文《Attention Is All You Need》

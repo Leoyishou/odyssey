@@ -1,15 +1,15 @@
 ---
 date created: 2024-09-17
-date modified: 2025-07-10
+date modified: 2025-09-19
 uid: dbcd2533-1e0c-428f-b556-f0da06953814
 ---
-## 命名规范
+# 命名规范
 
 1. **文件名（模块名）**：使用 **蛇形命名法**（snake_case），例如 my_module.py。
 2. **类名**：使用 **大驼峰命名法**（CapWords 或 CamelCase），例如 MyClass。
 3. **函数名和变量名**：使用 **蛇形命名法**，例如 my_function 或 my_variable。
 
-### 为什么与 Java 不同
+## 为什么与 Java 不同
 
 Python：
 

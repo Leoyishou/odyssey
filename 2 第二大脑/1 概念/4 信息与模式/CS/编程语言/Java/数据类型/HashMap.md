@@ -1,9 +1,12 @@
 ---
 date created: 2024-08-19
-date modified: 2025-07-10
+date modified: 2025-09-17
 uid: 21ee61ac-6fe5-4b13-b3f2-674711e2101c
 ---
-## 拉链法解决哈希冲突
+
+[HashMap扩容](HashMap扩容.md)
+
+# 拉链法解决哈希冲突
 
  当两个不同的键映射到同一个哈希桶时，HashMap不会简单地覆盖已存在的元素。
 

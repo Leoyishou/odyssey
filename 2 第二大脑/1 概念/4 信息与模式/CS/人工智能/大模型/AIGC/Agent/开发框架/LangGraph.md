@@ -1,6 +1,6 @@
 ---
 date created: 2025-04-16
-date modified: 2025-07-10
+date modified: 2025-09-15
 uid: d2c59329-438b-4509-afcb-772862a99b8c
 ---
 1. 持久化与回放 (Checkpointer & Resume) 通过 **Checkpointer** 可把执行状态写入文件 / DB，意外中断后继续执行。
@@ -11,7 +11,7 @@ uid: d2c59329-438b-4509-afcb-772862a99b8c
 
 https://langchain-ai.github.io/langgraph/llms-txt-overview AI 时代的文档
 
-## Python版本LangGraph更新历史
+# Python版本LangGraph更新历史
 
 | 版本号    | 发布日期       | 主要更新内容                                                                   |
 | ------ | ---------- | ------------------------------------------------------------------------ |
@@ -27,7 +27,7 @@ https://langchain-ai.github.io/langgraph/llms-txt-overview AI 时代的文档
 | 0.3.28 | 2025年4月11日 | 允许传递重试策略列表                                                               |
 | 0.3.30 | 2025年4月14日 | 当前最新版本，稳定性与功能更新                                                          |
 
-## LangGraph平台
+# LangGraph平台
 
 |部署选项|特点|
 |---|---|
@@ -36,7 +36,7 @@ https://langchain-ai.github.io/langgraph/llms-txt-overview AI 时代的文档
 |Bring Your Own Cloud (BYOC)|在您的VPC内部署LangGraph平台，作为服务提供和运行|
 |Self-Hosted Enterprise|完全在您自己的基础设施上部署LangGraph|
 
-## 核心概念
+# 核心概念
 
 | concept |     | 解释                             |
 | ------- | --- | ------------------------------ |
@@ -46,14 +46,14 @@ https://langchain-ai.github.io/langgraph/llms-txt-overview AI 时代的文档
 
 下面这张 **LangGraph 高频 API Cheat Sheet** 总结了在日常搭建 StateGraph/Agent 工作流时最常用、最易混淆的核心接口与工具。所有名称都按「**创建 → 执行 → 维护**」的典型步骤编排，方便快速查阅。
 
-### LLM接入
+## LLM接入
 
 ```Java
 from langchain_openai import ChatOpenAI
 from langchain_deepseek import ChatDeepSeek
 ```
 
-## ToolNode 与 Command
+# ToolNode 与 Command
 
 - **流程简单、重点在自动“选工具”** → Tool‑Calling 风格即可，代码最少。
 - **需要复杂状态机、循环、并行** → 用 `Command / goto` 或 `conditional_edges` 更直观。
@@ -62,15 +62,15 @@ from langchain_deepseek import ChatDeepSeek
     2. 工具内部或后段节点，再返回 `Command(...)` 进入严格控制区。
 
 
-## State
+# State
 
 [[MessageState、AgentState]]
 
-### Node
+## Node
 
 [[node、agent]]
 
-### Edge
+## Edge
 
 | *Edge*                                       | *硬编码跳转、少分支*                                                                          |
 | -------------------------------------------- |:----------------------------------------------------------------------------------- |
@@ -83,7 +83,7 @@ from langchain_deepseek import ChatDeepSeek
 | **跳转下一节点**；覆盖 Edge 路由                        | `return Command(goto="__end__")`                                                     |
 | **携带人类输入** 恢复 `interrupt` 暂停                 | `return Command(resume=human)  `                                                     |
 
-### 执行
+## 执行
 
 [[graph 执行]]
 
@@ -178,11 +178,11 @@ flowchart TB
 
   
 
-## LangGraph 基础教程
+# LangGraph 基础教程
 
   
 
-### 目录总览
+## 目录总览
 
   
 
@@ -211,11 +211,11 @@ flowchart TB
 
   
 
-### 第1步：安装与快速体验
+## 第1步：安装与快速体验
 
   
 
-#### 理论介绍
+### 理论介绍
 
 [LangGraph](https://github.com/langgraph-ai/langgraph)（示例链接）是一个基于图（Graph）概念来组织语言模型对话和多步骤推理流程的框架。它允许你将对话步骤抽象为节点，并通过边来定义节点间的数据流；同时内置了对大语言模型和工具函数的调用支持，使得复杂的多步对话、Agent 推断、工具使用都能通过一个可视化或可编排的图形结构来实现。
 
@@ -238,7 +238,7 @@ LangGraph 的典型用法包括：
 
   
 
-#### 编程任务
+### 编程任务
 
   
 
@@ -288,7 +288,7 @@ print("Graph outputs:", outputs)
 
   
 
-#### 验证
+### 验证
 
   
 
@@ -322,11 +322,11 @@ print("第1步通过：LangGraph 安装并进行最小示例调用成功。")
 
   
 
-### 第2步：LangGraph 核心概念——节点 (Node) 与边 (Edge)
+## 第2步：LangGraph 核心概念——节点 (Node) 与边 (Edge)
 
   
 
-#### 理论介绍
+### 理论介绍
 
 在 LangGraph 中，一切都围绕图 (Graph) 来构建。
 
@@ -345,7 +345,7 @@ print("第1步通过：LangGraph 安装并进行最小示例调用成功。")
 
   
 
-#### 编程任务
+### 编程任务
 
   
 
@@ -402,7 +402,7 @@ print("Graph outputs:", outputs)
 
   
 
-#### 验证
+### 验证
 
   
 
@@ -434,11 +434,11 @@ print("第2步通过：节点与边的基本用法已掌握。")
 
   
 
-### 第3步：构建基本流程图（Flow）
+## 第3步：构建基本流程图（Flow）
 
   
 
-#### 理论介绍
+### 理论介绍
 
   
 
@@ -459,7 +459,7 @@ LangGraph 的核心是一张可执行的流程图 (Flow / Graph)。通过编程�
 
   
 
-#### 编程任务
+### 编程任务
 
   
 
@@ -547,7 +547,7 @@ print("Graph outputs:", outputs)
 
   
 
-#### 验证
+### 验证
 
   
 
@@ -586,11 +586,11 @@ print("第3步通过：成功构建并运行一个基础多节点流程图。")
 
   
 
-### 第4步：将 LangGraph 与 LLM 结合
+## 第4步：将 LangGraph 与 LLM 结合
 
   
 
-#### 理论介绍
+### 理论介绍
 
   
 
@@ -609,7 +609,7 @@ print("第3步通过：成功构建并运行一个基础多节点流程图。")
 
   
 
-#### 编程任务
+### 编程任务
 
   
 
@@ -660,7 +660,7 @@ print("Graph outputs:", outputs)
 
   
 
-#### 验证
+### 验证
 
   
 
@@ -685,11 +685,11 @@ print("第4步通过：灵活定制 LLM 节点与 Prompt 模板已完成。")
 
   
 
-### 第5步：Agent 与工具 (Tools) 的使用
+## 第5步：Agent 与工具 (Tools) 的使用
 
   
 
-#### 理论介绍
+### 理论介绍
 
   
 
@@ -710,7 +710,7 @@ print("第4步通过：灵活定制 LLM 节点与 Prompt 模板已完成。")
 
   
 
-#### 编程任务
+### 编程任务
 
   
 
@@ -764,7 +764,7 @@ print("Graph outputs:", outputs)
 
   
 
-#### 验证
+### 验证
 
   
 
@@ -798,11 +798,11 @@ print("第5步通过：Agent + 工具的简单演示完成。")
 
   
 
-### 第6步：多 Agent 协作与高级场景
+## 第6步：多 Agent 协作与高级场景
 
   
 
-#### 理论介绍
+### 理论介绍
 
   
 
@@ -825,7 +825,7 @@ LangGraph 的图式结构让此类场景更易实现：每个 AgentNode 都是�
 
   
 
-#### 编程任务
+### 编程任务
 
   
 
@@ -911,7 +911,7 @@ print("Final Outputs:", outputs)
 
   
 
-#### 验证
+### 验证
 
   
 
@@ -942,11 +942,11 @@ print("第6步通过：多Agent协作与高级场景示例完成。")
 
   
 
-### 第7步：调试与可视化
+## 第7步：调试与可视化
 
   
 
-#### 理论介绍
+### 理论介绍
 
 LangGraph 的图结构为调试提供了优势：你可以查看每个节点的输入、输出、执行日志；如果它支持 GUI 或者导出到某些可视化工具（如 Graphviz 等），就能在图形界面直观地查看节点连接。
 
@@ -963,7 +963,7 @@ LangGraph 的图结构为调试提供了优势：你可以查看每个节点的�
 
   
 
-#### 编程任务
+### 编程任务
 
   
 
@@ -998,7 +998,7 @@ print("已导出到 my_langgraph.dot，可用 graphviz 查看。")
 
   
 
-#### 验证
+### 验证
 
   
 
@@ -1027,11 +1027,11 @@ print("第7步通过：调试与可视化的基础操作成功。")
 
   
 
-### 第8步：示例项目与简单评估
+## 第8步：示例项目与简单评估
 
   
 
-#### 理论介绍
+### 理论介绍
 
   
 
@@ -1067,7 +1067,7 @@ print("第7步通过：调试与可视化的基础操作成功。")
 
   
 
-#### 编程任务
+### 编程任务
 
   
 
@@ -1140,7 +1140,7 @@ print("平均得分:", avg_score)
 
   
 
-#### 验证
+### 验证
 
   
 
@@ -1165,7 +1165,7 @@ print("第8步通过：完整项目示例与简单评估流程完成。")
 
   
 
-## 总结
+# 总结
 
   
 

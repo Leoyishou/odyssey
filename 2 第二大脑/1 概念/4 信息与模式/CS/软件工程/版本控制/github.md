@@ -1,6 +1,6 @@
 ---
 date created: 2024-07-22
-date modified: 2025-07-10
+date modified: 2025-09-19
 uid: ddda7e28-61ae-40d2-b8b8-471ba9f6c282
 ---
 
@@ -60,7 +60,7 @@ Github上的资源很丰富，所以你先得学会如何过滤信息，检索�
 如何开始在 github 上学习东西？- 吴师兄学算法的回答 - 知乎  
 https://www.zhihu.com/question/30119197/answer/1772131025
 
-## fork 和 clone
+# fork 和 clone
 
 fork 和 clone 最大的区别是 fork 之后我 github 账号里的内容会变，而 clone 的话，和我的 github 账号其实没啥关系
 
