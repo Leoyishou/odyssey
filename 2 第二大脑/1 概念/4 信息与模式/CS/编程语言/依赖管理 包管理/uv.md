@@ -1,8 +1,15 @@
 ---
 date created: 2025-03-24
-date modified: 2025-08-09
+date modified: 2025-09-20
 uid: 0fc91684-868b-49f2-9d2e-c4008eef39b5
 ---
+```Java
+# 使用 UV 指定 Python 3.9
+
+uv init --python 3.9
+uv add --requirements requirements.txt
+```
+
 下面是一套**在 PyCharm 里用 `uv` 管理 Python 环境的最佳实践（2025 版）**，尽量做到“IDE 原生支持 + 项目可复现 + 团队可落地”。
 
 ---

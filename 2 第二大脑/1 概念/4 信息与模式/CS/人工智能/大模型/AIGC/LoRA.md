@@ -1,6 +1,6 @@
 ---
 date created: 2025-06-17
-date modified: 2025-08-21
+date modified: 2025-09-20
 uid: dc4f8a14-097c-42ce-9f3a-043a0b67b81d
 ---
 # Summary
@@ -16,6 +16,35 @@ $W' = W + BA, A \in R^{r \times d}, B \in R^{d \times r}, r \ll d$
 > • 推理时把 $BA$ 与原权重相加即可，不引入额外延迟。([arxiv.org](https://arxiv.org/abs/2106.09685?utm_source=chatgpt.com "LoRA: Low-Rank Adaptation of Large Language Models"))
 
 相较于全参微调，LoRA **可将可训练参数减少 10 000 ×、显存占用减少 3 ×**，而在 GPT-3、RoBERTa 等模型上的效果与全参持平甚至更好。([arxiv.org](https://arxiv.org/abs/2106.09685?utm_source=chatgpt.com "LoRA: Low-Rank Adaptation of Large Language Models"))
+
+- **在线 LoRA（runtime / hot-swap）**  
+    在**推理时**将 LoRA 适配器作为增量权重挂载到基座模型上，可**动态加载/卸载/切换多路 LoRA**。
+    
+    - 典型场景：vLLM 的 `LoRARequest(...)`；HF + PEFT 的 `set_adapter/disable_adapter`。
+        
+    - 优点：一套基座，多任务快速切换；无需复制/重打包模型；多租户/AB 测试方便。
+        
+    - 成本：**显存额外占用**（适配层、缓存、索引等）、初始化额外开销；在 16GB 卡上更容易 OOM；某些执行器（如 Punica/SGMV）会带来额外内存与工程复杂度。
+        
+- **离线 LoRA（merged / baked-in）**  
+    先在**离线**把 LoRA 权重**合并**进基座，导出一份**新的完整模型**，推理时就像普通基座一样加载。
+    
+    - 典型场景：PEFT 的 `merge_and_unload()` 后 `save_pretrained()`；或训练/导出时直接“写死”到权重里。
+        
+    - 优点：推理时**更省显存、更稳**（没有在线 LoRA 的额外张量与管理器）；部署简单。
+        
+    - 成本：每个任务/LoRA 都要导出一份模型（存储多、升级慢）；失去“热切换”的灵活性。
+        
+
+---
+
+# 结合你目前的设备/Kaggle场景怎么选
+
+- **单卡 16GB（如 T4/P100）+ 7B 模型**：优先**离线 LoRA 合并**，最稳最省显存。
+    
+- **需要一台机上切多套 LoRA 做对比/AB**：考虑**在线 LoRA**，但要收紧 `max_model_len / kv_cache_dtype / batch / gpu_memory_utilization`，否则易 OOM。
+    
+- **比赛离线评分（一次跑完）**：离线合并几乎总是更省事、报错更少。
 
 ---
 

@@ -1,29 +1,22 @@
 ---
 date created: 2024-07-13
-date modified: 2025-07-10
+date modified: 2025-09-20
 uid: 92689d98-303f-4b22-a8a0-c67872330a2e
 ---
-## Conda 常用命令 Cheatsheet
 
-### 环境管理
 
-#### 创建和激活环境
+
+# 环境管理
+
+## 创建和激活环境
 
 ```bash
-# 创建新环境
-conda create --name myenv python=3.9
-
-# 创建环境并安装包
-conda create --name myenv python=3.9 numpy pandas
-
-# 激活环境
-conda activate myenv
-
-# 退出当前环境
-conda deactivate
+新建： conda create --name projectEnv python=3.9
+进入： conda activate myenv
+退出：conda deactivate
 ```
 
-#### 环境查看和删除
+## 环境查看和删除
 
 ```bash
 # 列出所有环境
@@ -38,9 +31,9 @@ conda env remove --name myenv
 conda create --name newenv --clone oldenv
 ```
 
-### 包管理
+# 包管理
 
-#### 安装包
+## 安装包
 
 ```bash
 # 安装单个包
@@ -56,7 +49,7 @@ conda install numpy pandas matplotlib
 conda install -c conda-forge package_name
 ```
 
-#### 更新和删除包
+## 更新和删除包
 
 ```bash
 # 更新单个包
@@ -72,7 +65,7 @@ conda remove numpy
 conda clean --all
 ```
 
-#### 查看包信息
+## 查看包信息
 
 ```bash
 # 列出已安装的包
@@ -85,7 +78,7 @@ conda search package_name
 conda info package_name
 ```
 
-### 通道管理
+# 通道管理
 
 ```bash
 # 添加通道
@@ -98,7 +91,7 @@ conda config --get channels
 conda config --set channel_priority strict
 ```
 
-### 其他实用命令
+# 其他实用命令
 
 ```bash
 # 更新 conda 自身
@@ -120,7 +113,7 @@ conda --version
 请问大神们，pip install 和 conda install 有什么区别吗？- ZERO-XJ 的回答 - 知乎  
 https://www.zhihu.com/question/395145313/answer/2551141843
 
-### 常用操作
+# 常用操作
 
 ```Java
 conda create -n 环境名 python=3.10
@@ -133,20 +126,20 @@ conda info --envs
 conda activate viva-English
 ```
 
-### 导出 pom
+# 导出 pom
 
 `conda env export > environment.yml`
 
-### pipreqs
+# pipreqs
 
 pipreqs 是一个非常有用的 Python 包，能分析项目里所有 Python 文件中的 import，生成一个只包含必要依赖的 requirements.txt 文件
 
-### Anaconda 是啥？
+# Anaconda 是啥？
 
 conda 类似于 java 的 maven，Anaconda 相当于 maven里的仓库里预装了一些包，可以进行可视化UI,比较用户友好  
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F09%2F19%2F22-10-47-3d47aab1111bbce386c7b6e00f87aebb-202409192210463-918d48.png)
 
-### Channel
+# Channel
 
 如果把Conda比作一个图书馆系统:
 

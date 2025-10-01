@@ -66,7 +66,7 @@ linter-yaml-title-alias: Summary
 
 
 
-用[BM25](BM25.md)实现的，底层靠词频而不是[嵌入 embedding](嵌入%20embedding.md)
+用[BM25](BM25.md)实现的，底层靠词频而不是[embedding](embedding.md)
 
 ## 4. 高级用法对比
 

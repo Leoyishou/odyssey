@@ -77,7 +77,13 @@ Kaggle给机器学习新手和顶尖选手带来的好处是最大的，反倒�
 	- **Notebook 提交打分**时，这些 dependency 配置也会被自动执行 → 确保评分环境里有 vLLM。
 	- 所以作者提交的时候，submission 代码里不需要再装包，直接 import 就能跑。
     
+## Notebook
 
+直接在 Notebook 里写py文件
+
+```Java
+`%%writefile utils.py # 这里写内容`
+```
 ## Submit
 
 有的会存在双重测试集机制

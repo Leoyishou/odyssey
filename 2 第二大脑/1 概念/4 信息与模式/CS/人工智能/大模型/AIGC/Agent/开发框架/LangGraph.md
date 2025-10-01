@@ -1,15 +1,25 @@
 ---
 date created: 2025-04-16
-date modified: 2025-09-15
+date modified: 2025-09-25
 uid: d2c59329-438b-4509-afcb-772862a99b8c
 ---
-1. 持久化与回放 (Checkpointer & Resume) 通过 **Checkpointer** 可把执行状态写入文件 / DB，意外中断后继续执行。
-2. 条件分支、动态路由 **理论介绍**  graph.add_conditional_edges(node, fn)` 允许根据 fn 返回的标签动态路由。常用模式：**Router Node**。
+
+# Summary
+
+langgraph 的[[异步编排]]是 allof逻辑。
+
+1. 持久化与回放 (Checkpointer & Resume) 通过 Checkpointer 可把执行状态写入文件 / DB，意外中断后继续执行。
+2. 条件分支、动态路由 理论介绍  graph.add_conditional_edges(node, fn)` 允许根据 fn 返回的标签动态路由。常用模式：Router Node。
 3. 状态管理、共享上下文  state
 
 ![CleanShot 2025-04-16 at 23.58.52@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_Ks1xGMBeXd%2F2025%2F04%2F16%2F23-59-17-0dd536cf395767f2b253a5bba5654551-CleanShot%202025-04-16%20at%2023.58.52-2x-fd572c.png)
 
 https://langchain-ai.github.io/langgraph/llms-txt-overview AI 时代的文档
+
+
+
+# Cues
+
 
 # Python版本LangGraph更新历史
 
@@ -44,7 +54,7 @@ https://langchain-ai.github.io/langgraph/llms-txt-overview AI 时代的文档
 | state   |     | 类似责任链模式中的 context，一个不断流传的共享记事本 |
 | Edge    |     | 定义 node 之间的顺序，在责任链模式中就是一个单向链表  |
 
-下面这张 **LangGraph 高频 API Cheat Sheet** 总结了在日常搭建 StateGraph/Agent 工作流时最常用、最易混淆的核心接口与工具。所有名称都按「**创建 → 执行 → 维护**」的典型步骤编排，方便快速查阅。
+下面这张 LangGraph 高频 API Cheat Sheet 总结了在日常搭建 StateGraph/Agent 工作流时最常用、最易混淆的核心接口与工具。所有名称都按「创建 → 执行 → 维护」的典型步骤编排，方便快速查阅。
 
 ## LLM接入
 
@@ -55,9 +65,9 @@ from langchain_deepseek import ChatDeepSeek
 
 # ToolNode 与 Command
 
-- **流程简单、重点在自动“选工具”** → Tool‑Calling 风格即可，代码最少。
-- **需要复杂状态机、循环、并行** → 用 `Command / goto` 或 `conditional_edges` 更直观。
-- **需要兼顾** → 两者混搭：
+- 流程简单、重点在自动“选工具” → Tool‑Calling 风格即可，代码最少。
+- 需要复杂状态机、循环、并行 → 用 `Command / goto` 或 `conditional_edges` 更直观。
+- 需要兼顾 → 两者混搭：
     1. 前段用 `ToolNode` 让模型“想干啥就叫啥”；
     2. 工具内部或后段节点，再返回 `Command(...)` 进入严格控制区。
 
@@ -72,16 +82,16 @@ from langchain_deepseek import ChatDeepSeek
 
 ## Edge
 
-| *Edge*                                       | *硬编码跳转、少分支*                                                                          |
+| Edge                                       | 硬编码跳转、少分支                                                                          |
 | -------------------------------------------- |:----------------------------------------------------------------------------------- |
 | 固定顺序跳转（线性工作流）。| `graph_builder.add_edge("tools", "chatbot")`                                         |
 | 条件分支路由；`cond_fn` 返回下一节点名或 END。| `graph_builder.add_conditional_edges("chatbot", tools_condition)`                    |
 | 预构建条件函数：如消息包含 tool_calls → `"tools"`；否则 END。| `graph.add_conditional_edges("chatbot", tools_condition)`                            |
-| *Command*                                    | *prompt+goto 灵活跳转  多智能体、Human‑in‑the‑Loop、异常兜底*                                      |
+| Command                                    | prompt+goto 灵活跳转  多智能体、Human‑in‑the‑Loop、异常兜底                                      |
 | Command = 跳下一个 node + 更新 state               | return Command(<br>        update={"report": report},<br>        goto="__end__"<br>) |
-| **批量修改 State**，含 `messages` 或任意自定义键          | {"messages":[ToolMessage(...)], "step":"done"}                                       |
-| **跳转下一节点**；覆盖 Edge 路由                        | `return Command(goto="__end__")`                                                     |
-| **携带人类输入** 恢复 `interrupt` 暂停                 | `return Command(resume=human)  `                                                     |
+| 批量修改 State，含 `messages` 或任意自定义键          | {"messages":[ToolMessage(...)], "step":"done"}                                       |
+| 跳转下一节点；覆盖 Edge 路由                        | `return Command(goto="__end__")`                                                     |
+| 携带人类输入 恢复 `interrupt` 暂停                 | `return Command(resume=human)  `                                                     |
 
 ## 执行
 
@@ -120,28 +130,28 @@ from langchain_deepseek import ChatDeepSeek
 | 可视化执行图，便于调试与文档。| `graph.get_graph().draw_mermaid_png()`                                                                                                                                                |                                             |
 | 可调式输出                              | 通过 `with_structured_output` + Pydantic Schema 直接拿到布尔/枚举字段，避免解析自然语言导致出错 [Medium](https://medium.com/%40vivekvjnk/the-command-object-in-langgraph-bc29bf57d18f?utm_source=chatgpt.com)。|                                             |
 
-> 💡 **使用顺序小贴士**
+> 💡 使用顺序小贴士
 >
-> 1. **建图**：`StateGraph → add_node/edge → (ToolNode + tools_condition)`
+> 1. 建图：`StateGraph → add_node/edge → (ToolNode + tools_condition)`
 >
-> 2. **持久化**：`compile(checkpointer)`
+> 2. 持久化：`compile(checkpointer)`
 >
-> 3. **运行**：`stream / invoke`
+> 3. 运行：`stream / invoke`
 >
-> 4. **回溯**：`get_state_history` + `checkpoint_id` → “时间旅行”
+> 4. 回溯：`get_state_history` + `checkpoint_id` → “时间旅行”
 >
-> 5. **人工审核**：节点内 `interrupt` → 外部 `Command(resume=...)`
+> 5. 人工审核：节点内 `interrupt` → 外部 `Command(resume=...)`
 >
 
 把这张表收进常用笔记，就能在写 LangGraph 工作流时随手查询，不再频繁翻文档。祝开发顺利!
 
-> **假设前置条件**：读者对 Python 较为熟悉，了解基本的 LLM 概念，对「Agent + 工具调用」或「多步对话流程」等话题有初步了解即可。
+> 假设前置条件：读者对 Python 较为熟悉，了解基本的 LLM 概念，对「Agent + 工具调用」或「多步对话流程」等话题有初步了解即可。
 >
-> **关于环境**：如果在 Colab 环境使用，请先 `!pip install langgraph openai`。
+> 关于环境：如果在 Colab 环境使用，请先 `!pip install langgraph openai`。
 >
-> **关于模型**：本教程以 OpenAI GPT-3.5/4 为例，其他模型或私有 API 的使用方式类似，只需替换相关配置。
+> 关于模型：本教程以 OpenAI GPT-3.5/4 为例，其他模型或私有 API 的使用方式类似，只需替换相关配置。
 >
-> **教学目标**：熟悉 LangGraph 的核心理念和主流用法，能在 1~2 天内快速上手开发多步对话、Agent 工具链和可视化流程图等功能。
+> 教学目标：熟悉 LangGraph 的核心理念和主流用法，能在 1~2 天内快速上手开发多步对话、Agent 工具链和可视化流程图等功能。
 
 ```mermaid
 flowchart TB
@@ -223,13 +233,13 @@ flowchart TB
 
 LangGraph 的典型用法包括：
 
-1. **多步对话流程**：将对话的状态和逻辑拆分成若干节点，动态执行；
+1. 多步对话流程：将对话的状态和逻辑拆分成若干节点，动态执行；
     
-2. **Agent + 工具调用**：在节点中调用外部 API、检索数据库、执行 Python 函数等；
+2. Agent + 工具调用：在节点中调用外部 API、检索数据库、执行 Python 函数等；
     
-3. **可视化**：以图的方式查看流程走向、步骤间数据传递；
+3. 可视化：以图的方式查看流程走向、步骤间数据传递；
     
-4. **易于调试和维护**：和传统的函数式或流水线式组织相比，图结构更具灵活性。
+4. 易于调试和维护：和传统的函数式或流水线式组织相比，图结构更具灵活性。
     
 
   
@@ -242,13 +252,13 @@ LangGraph 的典型用法包括：
 
   
 
-1. **安装 LangGraph**（如未安装）：`pip install langgraph openai`
+1. 安装 LangGraph（如未安装）：`pip install langgraph openai`
     
-2. **导入并初始化**：填写自己的 OpenAI API Key；
+2. 导入并初始化：填写自己的 OpenAI API Key；
     
-3. **创建一个简单的单节点图**：该节点调用 GPT-3.5/4 返回答案；
+3. 创建一个简单的单节点图：该节点调用 GPT-3.5/4 返回答案；
     
-4. **执行图**并查看输出结果。
+4. 执行图并查看输出结果。
     
 
   
@@ -332,11 +342,11 @@ print("第1步通过：LangGraph 安装并进行最小示例调用成功。")
 
   
 
-- **Node（节点）**：对应一个可执行的步骤或算子，比如「LLM 调用」、「Python 函数执行」、「Tool 调用」等；
+- Node（节点）：对应一个可执行的步骤或算子，比如「LLM 调用」、「Python 函数执行」、「Tool 调用」等；
     
-- **Edge（边）**：表示节点之间的数据流，通常包含「源节点输出 -> 目标节点输入」的映射关系；
+- Edge（边）：表示节点之间的数据流，通常包含「源节点输出 -> 目标节点输入」的映射关系；
     
-- **Graph（图）**：由若干节点与边组成，定义了数据在流程中的流向。执行图时，LangGraph 会根据数据依赖关系来依次或并行执行节点，并将各节点输出汇总到最后结果。
+- Graph（图）：由若干节点与边组成，定义了数据在流程中的流向。执行图时，LangGraph 会根据数据依赖关系来依次或并行执行节点，并将各节点输出汇总到最后结果。
     
 
   
@@ -355,7 +365,7 @@ print("第1步通过：LangGraph 安装并进行最小示例调用成功。")
         
     2. 第二个节点调用 GPT 进一步做改写。
         
-2. 使用 **add_edge()** 将这两个节点连接起来，使第一个节点的输出作为第二个节点的输入。
+2. 使用 add_edge() 将这两个节点连接起来，使第一个节点的输出作为第二个节点的输入。
     
 3. 运行并查看结果。
     
@@ -596,11 +606,11 @@ print("第3步通过：成功构建并运行一个基础多节点流程图。")
 
 在上一步我们其实已经用到 LLMNode，但这一节更系统地介绍如何管理 LLM 配置。LangGraph 通常提供：
 
-- **LLMNode**：通用 GPT 调用节点；
+- LLMNode：通用 GPT 调用节点；
     
-- **系统级参数**：如 OpenAI key、model 名称、max_tokens、temperature；
+- 系统级参数：如 OpenAI key、model 名称、max_tokens、temperature；
     
-- **Prompt 模板**：可使用 Jinja2 风格的 `{{var}}` 占位符拼接上下文。
+- Prompt 模板：可使用 Jinja2 风格的 `{{var}}` 占位符拼接上下文。
     
 
   
@@ -697,11 +707,11 @@ print("第4步通过：灵活定制 LLM 节点与 Prompt 模板已完成。")
 
   
 
-1. **AgentNode**：在对话过程中动态决定是否调用工具；
+1. AgentNode：在对话过程中动态决定是否调用工具；
     
-2. **Tool**：可以是 Python 函数、API、数据库查询等；
+2. Tool：可以是 Python 函数、API、数据库查询等；
     
-3. **工具调用过程**：语言模型会根据上下文和提示判断何时调用工具，如何使用其输出，再给出最终回答。
+3. 工具调用过程：语言模型会根据上下文和提示判断何时调用工具，如何使用其输出，再给出最终回答。
     
 
   
@@ -806,7 +816,7 @@ print("第5步通过：Agent + 工具的简单演示完成。")
 
   
 
-**多 Agent 协作**指在同一个对话或流程中，存在多个 Agent 节点，各自有不同的工具或专长，彼此通过图的边进行信息交互，协同完成更复杂的任务。例如：
+多 Agent 协作指在同一个对话或流程中，存在多个 Agent 节点，各自有不同的工具或专长，彼此通过图的边进行信息交互，协同完成更复杂的任务。例如：
 
   
 
@@ -954,11 +964,11 @@ LangGraph 的图结构为调试提供了优势：你可以查看每个节点的�
 
 调试方法：
 
-1. **日志**：LangGraph 可能提供 debug 模式或返回详细的 node execution log；
+1. 日志：LangGraph 可能提供 debug 模式或返回详细的 node execution log；
     
-2. **可视化**：将图导出为.dot 文件或类似格式，用 graphviz、mermaid 或浏览器查看；
+2. 可视化：将图导出为.dot 文件或类似格式，用 graphviz、mermaid 或浏览器查看；
     
-3. **中间结果检查**：在执行后查看每个节点的 outputs，排查出错节点。
+3. 中间结果检查：在执行后查看每个节点的 outputs，排查出错节点。
     
 
   
@@ -1039,11 +1049,11 @@ print("第7步通过：调试与可视化的基础操作成功。")
 
   
 
-1. **创建 Graph** 并添加各类节点（PythonNode、LLMNode、AgentNode 等）；
+1. 创建 Graph 并添加各类节点（PythonNode、LLMNode、AgentNode 等）；
     
-2. **使用 Edge** 在节点之间传递数据；
+2. 使用 Edge 在节点之间传递数据；
     
-3. **配置 LLM、Agent、Tool** 等核心功能。
+3. 配置 LLM、Agent、Tool 等核心功能。
     
 4. 进行基本调试和可视化。
     
@@ -1054,11 +1064,11 @@ print("第7步通过：调试与可视化的基础操作成功。")
 
   
 
-- **功能性评估**：看是否能正确调用工具、正确回答问题；
+- 功能性评估：看是否能正确调用工具、正确回答问题；
     
-- **质量评估**：与基准答案对比或计算相似度、拼写检查等；
+- 质量评估：与基准答案对比或计算相似度、拼写检查等；
     
-- **人工审阅**：对于生成式任务，还可人工标注、打分。
+- 人工审阅：对于生成式任务，还可人工标注、打分。
     
 
   
@@ -1169,25 +1179,25 @@ print("第8步通过：完整项目示例与简单评估流程完成。")
 
   
 
-**恭喜你！** 通过上述 8 个步骤的示例与练习，你已经从零起步，掌握了 **LangGraph** 的核心能力：
+恭喜你！通过上述 8 个步骤的示例与练习，你已经从零起步，掌握了 LangGraph 的核心能力：
 
   
 
-1. **安装与快速体验**：创建最小图、调用 LLM；
+1. 安装与快速体验：创建最小图、调用 LLM；
     
-2. **Node 与 Edge**：理解图中节点和边的本质；
+2. Node 与 Edge：理解图中节点和边的本质；
     
-3. **构建流程图**：多节点串联或并行；
+3. 构建流程图：多节点串联或并行；
     
-4. **整合 LLM**：自定义 Prompt、调参；
+4. 整合 LLM：自定义 Prompt、调参；
     
-5. **Agent + Tools**：让模型在多步对话中调用外部函数；
+5. Agent + Tools：让模型在多步对话中调用外部函数；
     
-6. **多 Agent 协作**：在一个图里并行或串联多个 Agent；
+6. 多 Agent 协作：在一个图里并行或串联多个 Agent；
     
-7. **调试与可视化**：查看节点输入输出、导出.dot 文件；
+7. 调试与可视化：查看节点输入输出、导出.dot 文件；
     
-8. **示例项目与评估**：将知识库问答串联起来，做简单自动化测试。
+8. 示例项目与评估：将知识库问答串联起来，做简单自动化测试。
     
 
   
@@ -1196,4 +1206,4 @@ print("第8步通过：完整项目示例与简单评估流程完成。")
 
   
 
-**祝你在多 Agent 和图式对话编排的道路上越走越远，玩转 LangGraph！**
+祝你在多 Agent 和图式对话编排的道路上越走越远，玩转 LangGraph！

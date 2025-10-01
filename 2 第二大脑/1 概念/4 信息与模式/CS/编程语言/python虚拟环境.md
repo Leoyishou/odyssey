@@ -1,6 +1,6 @@
 ---
 date created: 2025-03-23
-date modified: 2025-09-19
+date modified: 2025-09-20
 uid: c3a087b7-bf8a-4fb1-97a7-510d1b3c1e0e
 ---
 # Summary
@@ -14,9 +14,15 @@ uid: c3a087b7-bf8a-4fb1-97a7-510d1b3c1e0e
 2. `source.venv/bin/activate` 
 		1. `.venv/bin/activate` 这个文件本质上就是一个 shell 脚本
 		2. `source` 命令的作用是：**在当前的 shell 会话中读取并执行指定文件中的命令。**
+3. `rm -rf.venv`
 
+```Java
 
-
+新建：    python3 -m venv.venv
+进入：    source.venv/bin/activate
+退出：    deactivate
+删除：    rm -rf.venv
+```
 
 
 

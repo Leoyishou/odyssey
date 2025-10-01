@@ -1,6 +1,6 @@
 ---
 date created: 2024-05-19
-date modified: 2025-09-07
+date modified: 2025-09-20
 uid: b5ef6834-6399-4b0b-98b2-df5a5659df91
 aliases: [Summary]
 linter-yaml-title-alias: Summary
@@ -12,6 +12,8 @@ linter-yaml-title-alias: Summary
 [[👨🏻‍💻王木头学科学]]
 
 # Summary
+
+#第一性原理 电脑是听话的傻子，只会四件事：加减法、比大小、搬东西、去干另一件事。外表高大上，看着是宾利的壳，其实核心动力是几个老鼠在壳里面蹬三轮呢
 
 [学习@](学习@.md)
 对于理工科领域复杂系统的学习，一般都可以粗略地分为三个阶段：
@@ -29,7 +31,6 @@ linter-yaml-title-alias: Summary
 # Cues
 
 下面课程的最牛逼的点类似[TDD](TDD.md)，测试驱动学习，[非黑盒（non-black-box）](非黑盒（non-black-box）.md)
-外表高大上，看着是宾利的壳，其实核心动力是几个老鼠在壳里面蹬三轮呢
 
 | 科目                    | 推荐课程                                                                                                                                    |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,7 +43,7 @@ linter-yaml-title-alias: Summary
 | [分布式系统](分布式系统.md)     | [MIT 6.824 Distributed System](MIT%206.824%20Distributed%20System.md)                                                                   |
 | [机器学习ML](机器学习ML.md)   | [CS229 Machine Learning](CS229%20Machine%20Learning.md)                                                                                 |
 | [[深度学习@]]             | [[CS224n Natural Language Processing]]                                                                                                  |
-| [大模型](大模型.md)         | [CS336](CS336.md)                                                                                                                       |
+| [LLM大模型](LLM大模型.md)         | [CS336](CS336.md)                                                                                                                       |
 
 | 推荐平台                | 目标                    | 原因             |
 | ------------------- | --------------------- | -------------- |
