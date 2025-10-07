@@ -1,6 +1,6 @@
 ---
 date created: 2025-03-23
-date modified: 2025-09-20
+date modified: 2025-10-03
 uid: c3a087b7-bf8a-4fb1-97a7-510d1b3c1e0e
 ---
 # Summary
@@ -18,8 +18,8 @@ uid: c3a087b7-bf8a-4fb1-97a7-510d1b3c1e0e
 
 ```Java
 
-新建：    python3 -m venv.venv
-进入：    source.venv/bin/activate
+新建：    python3 -m venv .venv
+进入：    source .venv/bin/activate
 退出：    deactivate
 删除：    rm -rf.venv
 ```

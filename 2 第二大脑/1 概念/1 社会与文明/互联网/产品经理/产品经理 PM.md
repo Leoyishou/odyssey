@@ -1,9 +1,14 @@
 ---
 date created: 2025-04-30
-date modified: 2025-09-20
+date modified: 2025-10-04
 uid: b2b29efa-1520-4438-8263-25236030f35c
 ---
 # Summary
+
+初级：漫无目的
+中级：指标思维
+高级：系统思维
+
 
 1. 如何诞生？
 2. 用户模型交易模型，价值流动，社会进步
@@ -26,6 +31,25 @@ uid: b2b29efa-1520-4438-8263-25236030f35c
 #第一性原理 产品经理=[[决策质量]]
 1. 产品经理不是靠人多，而是靠决策质量，。产品经理做决策，关键是权衡取舍，分优先级。别人每天工作10小时，你每天工作15小时，那你的产出顶多提高50%。但如果你做了一个决策，做B项目而不做A项目，或者资源优先用于C项目，最终产出却可能差50倍，甚至决定产品在市场竞争中的胜败。所以，分优先级，这个是优秀产品经理最能体现个人价值的地方。
 2. 做产品只看retention一个指标
+
+
+
+3. G2 软件类产品的对比榜单、用户评分和功能拆解。[https://g2.com](https://t.co/EpWWN09voK) 2. Product hunt 每日新产品发布，尤其适合发现初创和创新型竞品。[https://producthunt.com/categories/knowledge-base](https://t.co/IamZe1FNUb) 3. Capterra 聚焦企业软件，适合 B2B 竞品调研。[https://capterra.com](https://t.co/QMa1z2YvMR) 4. Betalist 展示和推广全球早期初创产品的平台，让创业者获得第一批用户和反馈。[https://betalist.com](https://t.co/YZ8uFhHf2x) 5. Techcrunch 专注科技与创业领域的全球知名媒体，报道新创公司、投融资与趋势。[https://techcrunch.com/category/startups/](https://t.co/3nerZ40SB5) 6. AITools 收录和推荐各种 AI 工具的网站，帮助用户发现合适的 AI 应用。[https://aitools.fyi](https://t.co/HUpmE9HHhp) 7. AI library 一个集合 AI 资源和工具的库，方便快速检索和学习。[https://library.phygital.plus](https://t.co/ZfIXIx7zs1) 8. SaaS AI Tools 专注 SaaS 场景下的 AI 工具目录，方便企业用户筛选使用。[https://saasaitools.com](https://t.co/SEj6rOpMyC) 9. aitools directory 系统化整理 AI 工具的网站，按功能和行业分类。[https://aitoolsdirectory.com](https://t.co/7B7t5MEkWn) 10. Crunchbase 全球最大的新创公司数据库，提供公司、投融资、创始团队等信息。[https://crunchbase.com](https://t.co/LICZUSR6c5) 11. The SaaS Report 关注 SaaS 行业新闻、分析和榜单的媒体，现已更名为 The Software Report。[https://thesoftwarereport.com](https://t.co/9sp3ihLshw) 12. AIDB 和朋友维护着的一个 AI 产品流量榜 [https://aidb.cc](https://t.co/ecBxASbEUM) 13. Reddit 相关主题社区如 r/Productivity、r/SaaS，有真实用户反馈。[https://reddit.com](https://t.co/8GAGitRuq0) 14. LinkedIn 行业动态、专业人士的观点。[https://linkedin.com](https://t.co/uTe9YrPhNZ) 15. Mobbin 有各种设计不错的产品的界面分享 [https://mobbin.com/discover/apps/web/latest](https://t.co/1eOMzH9mSh) 16. 订阅竞品的 release notes / blog / newsletter 邮件订阅竞品的 Newsletter 17. App Store、Google Play 输入关键词（如"AI presentation tool"、"团队协作工具"），找到同类产品。18. Google/ChatGPT 搜索引擎搜索比如 “2025 AI tools”。二、分析竞品的途径 1. Gartner、Forrester 报告：偏大型企业软件趋势。2. SimilarWeb（[https://similarweb.com](https://t.co/tZX7zEgIir)）查看网站流量来源、受众画像、竞品对比。3. App Annie / [http://data.ai](https://t.co/rw99iJPZmQ)（[https://data.ai](https://t.co/gjdtDsCixs)）移动应用下载量、用户留存、收入排行。4. Crunchbase（[https://crunchbase.com](https://t.co/LICZUSR6c5)）融资情况、公司背景、竞争格局。5. BuiltWith（[https://builtwith.com](https://t.co/gL3bW4mMVA)）分析某网站的技术栈，用于理解技术差异。6. Google Trends ([https://trends.google.com/trends/](https://t.co/LkIV9DGXb7))关键词热度对比，判断市场趋势。7. Latka（[https://getlatka.com](https://t.co/6kaTpXvjj9)）Latka 网站通过收集和整理全球SaaS（软件即服务）公司的详细数据，包括收入、增长率、团队规模、盈利情况等，帮助用户快速发现、分析和比较各类SaaS企业。平台的核心特色是基于创始人亲自访谈获得的一手信息，支持按行业、地区、收入等多维度筛选，适合产品经理、投资人、创业者等深入研究SaaS市场和趋势。8. 国内一些咨询报告机构（艾瑞、腾讯研究院、阿里研究院、CBNData、易观分析、每日报告、知乎…）
+
+[
+
+](https://t.co/6YmS3duEaO)
+
+[
+
+  
+
+
+](https://t.co/6YmS3duEaO)
+
+
+
+
 # Cues
 
 [[《俞军产品方法论》]]
@@ -122,13 +146,13 @@ uid: b2b29efa-1520-4438-8263-25236030f35c
 
 ### 一、为什么要“留痕”
 
-> **核心目标：** 在跨职能协作中留下一份**可追溯、可复用、可量化**的知识资产。
+> 核心目标： 在跨职能协作中留下一份可追溯、可复用、可量化的知识资产。
 >
-> - **减少反复对齐**：把已经确认的点固化，避免“上次是谁说的？”
+> - 减少反复对齐：把已经确认的点固化，避免“上次是谁说的？”
 >
-> - **支撑后续决策**：方便开发、测试、运营随时查阅历史来源。
+> - 支撑后续决策：方便开发、测试、运营随时查阅历史来源。
 >
-> - **沉淀最佳实践**：为后续版本或新人提供材料与经验。
+> - 沉淀最佳实践：为后续版本或新人提供材料与经验。
 >
 
 ---
@@ -137,24 +161,24 @@ uid: b2b29efa-1520-4438-8263-25236030f35c
 
 |阶段|主要交互动作|建议产物|保存方式|关键注意点|
 |---|---|---|---|---|
-|需求澄清(Kick-off)|产品经理讲解业务目标、约束、受众|**需求澄清纪要**（关键业务目标 & 成功指标）|🔹Confluence / 飞书文档🔹会议录屏|- 先写“Meeting Note 模板”- 每项结论标 ❗或⭐|
-|信息架构 & 流程梳理|UED 输出 IA / 流程草稿产品补充边界条件|**流程图 + 场景说明**|🔹Figma flow + 备注🔹嵌入 PRD|- 在 Figma 每个节点留 Comment- 用编号与 PRD 对齐|
-|低保真原型评审|双方同步功能流程、交互细节|**低保真原型**评审清单|🔹Figma_版本迭代_🔹Jira/Teambition 评审任务|- 原型版本号 = 日期 + 负责⼈- 评审意见用 checklist 追踪|
-|视觉规范 & 高保真|UED 提供视觉稿产品确认业务一致性|**视觉稿 / Design Token**|🔹Figma Library🔹Zeplin / 蓝湖|- 建立 Design Token 表- 产出色板、组件命名规范|
-|开发走查|产品 & UED 联合 check 还原度|**走查缺陷单**|🔹Tapd / Jira 缺陷单|- 使用 Bug 模板：定位、截图、期望|
-|上线验收 & 复盘|回顾指标、体验问题|**复盘文档**（体验+业务双维度）|🔹Confluence / Notion|- 量化：PV、点击、完成率- 体验：NPS、Heuristic 评分|
+|需求澄清(Kick-off)|产品经理讲解业务目标、约束、受众|需求澄清纪要（关键业务目标 & 成功指标）|🔹Confluence / 飞书文档🔹会议录屏|- 先写“Meeting Note 模板”- 每项结论标 ❗或⭐|
+|信息架构 & 流程梳理|UED 输出 IA / 流程草稿产品补充边界条件|流程图 + 场景说明|🔹Figma flow + 备注🔹嵌入 PRD|- 在 Figma 每个节点留 Comment- 用编号与 PRD 对齐|
+|低保真原型评审|双方同步功能流程、交互细节|低保真原型评审清单|🔹Figma_版本迭代_🔹Jira/Teambition 评审任务|- 原型版本号 = 日期 + 负责⼈- 评审意见用 checklist 追踪|
+|视觉规范 & 高保真|UED 提供视觉稿产品确认业务一致性|视觉稿 / Design Token|🔹Figma Library🔹Zeplin / 蓝湖|- 建立 Design Token 表- 产出色板、组件命名规范|
+|开发走查|产品 & UED 联合 check 还原度|走查缺陷单|🔹Tapd / Jira 缺陷单|- 使用 Bug 模板：定位、截图、期望|
+|上线验收 & 复盘|回顾指标、体验问题|复盘文档（体验+业务双维度）|🔹Confluence / Notion|- 量化：PV、点击、完成率- 体验：NPS、Heuristic 评分|
 
 ---
 
 ### 三、落地技巧
 
-1. **单一事实源（SSOT）**
+1. 单一事实源（SSOT）
     - PRD、设计稿、评审备注都链接到同一条「索引页」。
     - 用互相引用（Embed、Backlink）减少信息孤岛。
-2. **“决策日志”**
+2. “决策日志”
     - 任何争议一旦拍板，快速记录：背景->选项->权衡->最终方案。
     - 建议放在 PRD _Decision_ 区块或单独的 Confluence page，方便后续回溯。
-3. **结构化评审清单**
+3. 结构化评审清单
     ```text
     √  页面信息层级符合业务优先级  
     √  交互反馈（加载、成功、失败）齐全  
@@ -163,21 +187,21 @@ uid: b2b29efa-1520-4438-8263-25236030f35c
     ```
     评审时按清单过一遍，当场标记所有修改项。
 
-4. **版本控制与回滚**
+4. 版本控制与回滚
     - Figma：启用 _Branching_ 或定期 _Duplicate_ 里程碑版本。
     - 文档：使用飞书 _多维表格_ 或 Confluence _版本_，自动生成 Diff。
         
-5. **可搜索的命名规则**
+5. 可搜索的命名规则
     ```Java
     [项目]_[模块]_[类型]_[版本]  
     ex. TripPlanner_PackageFlow_PRD_v2.1
     ```
     
-6. **自动化同步**
-    - **Webhook / 飞书机器人**：PRD 更新→群里推送变更摘要。
-    - **Jira-Figma 插件**：设计评论→自动生成 Jira 子任务。
+6. 自动化同步
+    - Webhook / 飞书机器人：PRD 更新→群里推送变更摘要。
+    - Jira-Figma 插件：设计评论→自动生成 Jira 子任务。
         
-7. **可视化看板**
+7. 可视化看板
     - 用 Jira/飞书 OKR 看板把需求->设计->开发->上线全流程串起；
     - 卡片上直接挂 Design Link & Decision Link。
 

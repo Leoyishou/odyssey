@@ -1,6 +1,6 @@
 ---
 date created: 2024-07-27
-date modified: 2025-09-17
+date modified: 2025-10-07
 uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 ---
 
@@ -12,6 +12,33 @@ uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 常用命令：
 `source.venv/bin/activate`
 
+```Java
+## python 虚拟环境
+---
+新建：    python3 -m venv .venv
+进入：    source .venv/bin/activate
+安装：    pip install -r requirements.txt
+退出：    deactivate
+删除：    rm -rf.venv
+
+## docker
+---
+mac 上看当前走的 docker desktop 还是 orbstack： 
+docker context ls
+
+镜像状态：docker ps
+
+进容器： docker exec -it hive-server bash
+退出容器： exit
+
+
+
+
+
+## 压缩打包
+---
+tar -czf bert-base-model.tar.gz models/bert-base
+```
 # Notes
 
 

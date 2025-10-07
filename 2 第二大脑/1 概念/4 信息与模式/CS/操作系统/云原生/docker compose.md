@@ -1,13 +1,42 @@
 ---
 date created: 2024-07-20
-date modified: 2025-07-10
+date modified: 2025-10-07
 uid: 264eeccd-dc11-4d32-a633-d1b54faf2b01
 ---
+# 场景
+
+假设你要启动一个简单的应用：
+	- 一个前端容器
+	- 一个后端 API 容器
+	- 一个数据库容器（比如 MySQL）
+    
+
+没有 Docker Compose 时，你需要：
 ```Java
+docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8 
+docker run -d --name backend --link mysql:mysql backend:latest 
+docker run -d --name frontend -p 8080:80 frontend:latest
+```
+`
+👉 这就有几个麻烦：
+	- 要记一堆命令和参数；
+	- 容器之间的网络要手动配置
+	- 启动顺序要自己控制（MySQL 得先起来）；
+	- 想修改配置要改好几行命令；
+
+# 解决
+
+本质：指挥一次性把它们拉起来，让它们在同一张网里互相沟通。
+把 `docker-compose.yml` 想成“系统蓝图”，`docker-compose up` 是“指挥”。蓝图定义每个服务怎么建、叫什么、用哪些资源；
+
+
+
+
+l'l```Java
 docker compose build frontend
 docker compose up -d frontend
 
-```
+```Java
 
 **Docker Compose**：在单机上管理多容器应用，使用简单的 `docker-compose.yml` 文件即可快速编排多个容器之间的依赖和网络通信。
 
@@ -29,7 +58,7 @@ Docker Compose 是一个用于定义和运行多容器 [[Docker]] 应用程序�
 
 ---
 
-### 🚩 **问题关键点**
+# 🚩 **问题关键点**
 
 在你的 `environment.yml` 文件中：
 
@@ -57,7 +86,7 @@ dependencies:
 
 ---
 
-### ✅ **正确的修复方法（重要）**
+# ✅ **正确的修复方法（重要）**
 
 现在你要做的其实是**彻底重建 Docker 镜像，确保缓存完全清除**：
 
@@ -71,7 +100,7 @@ docker compose up -d
 
 ---
 
-### 🔍 **为什么之前pip手动装也没生效？**
+# 🔍 **为什么之前pip手动装也没生效？**
 
 你Dockerfile中用的是：
 
@@ -91,9 +120,9 @@ RUN /opt/conda/envs/viva/bin/pip install --no-cache-dir oss2 supermemo2
 
 ---
 
-## 🚨 **建议的最终（推荐）解决方案**
+# 🚨 **建议的最终（推荐）解决方案**
 
-### **Step 1：确保 YAML 文件正确**
+## **Step 1：确保 YAML 文件正确**
 
 （如下的写法都是OK的，推荐保持现状即可：）
 
@@ -109,7 +138,7 @@ dependencies:
       - supermemo2
 ```
 
-### **Step 2：明确 Dockerfile 中使用正确方式（可选但推荐）**
+## **Step 2：明确 Dockerfile 中使用正确方式（可选但推荐）**
 
 ```dockerfile
 FROM continuumio/miniconda3:latest
@@ -141,7 +170,7 @@ CMD ["conda", "run", "-n", "viva", "python", "app/main.py"]
 
 ---
 
-### **Step 3: 强制清理旧镜像并重新构建（最重要）**
+## **Step 3: 强制清理旧镜像并重新构建（最重要）**
 
 ```bash
 docker compose down
@@ -151,7 +180,7 @@ docker compose up -d
 
 ---
 
-## 🌟 **核心总结（一定要记住）**
+# 🌟 **核心总结（一定要记住）**
 
 你现在碰到的情况不是配置文件本身有逻辑错误，而是：
 

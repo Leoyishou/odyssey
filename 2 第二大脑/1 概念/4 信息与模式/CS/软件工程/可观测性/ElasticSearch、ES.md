@@ -23,7 +23,7 @@ uid: bc090318-53b4-4f46-98e2-e0f9f41d5e3b
 
 # Cues
 
-[倒排索引](倒排索引.md)
+[倒排索引 Inverted File](倒排索引%20Inverted%20File.md)
 
 # Notes
 
@@ -70,7 +70,7 @@ Query 关键词 vs 倒排索引存储模式
 | 存储层面     | 倒排索引的存储方式        | 决定数据如何被索引 |
 
 ### 双存储模式
-原始文档模式 + [倒排索引](倒排索引.md)模式
+原始文档模式 + [倒排索引 Inverted File](倒排索引%20Inverted%20File.md)模式
 ```Java
 // 原始文档（_source）
 {

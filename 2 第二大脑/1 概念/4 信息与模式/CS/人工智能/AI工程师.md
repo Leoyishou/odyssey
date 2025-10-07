@@ -153,7 +153,7 @@ LLM变得再快，它的地基没变。地基就是数学和经典的机器学�
 |          |         | Agent 开发：[[ReAct]] 框架                  | 工具调用链                  |
 |          |         | 领域知识微调方案                               | 简历加分项                  |
 |          |         | HuggingFace [[Transformers]]、llama.cpp |                        |
-|          |         | 每天 1 篇 [[Arxiv]]                       |                        |
+|          |         | 每天 1 篇 [[ArXiv]]                       |                        |
 
 2. 角色赛道全景
 
@@ -242,7 +242,7 @@ E. 研究科学家 模型架构、效率、对齐策略前沿研究 Torch/XLA、
 
 **技术栈选择**：
 
-* **框架**：[[LlamaIndex]] > [[LangChain]]（RAG更专注）；[[LangGraph]]（从RAG到Agent）
+* **框架**：[[LlamaIndex]] > [[langchain]]（RAG更专注）；[[LangGraph]]（从RAG到Agent）
 * **[[向量化模型]]**：OpenAI text-embedding-3-small（性价比高）或 bge-large-zh-v1.5（开源）
 * **[[向量数据库]]**：
   * 入门：ChromaDB（本地，pip install即可）

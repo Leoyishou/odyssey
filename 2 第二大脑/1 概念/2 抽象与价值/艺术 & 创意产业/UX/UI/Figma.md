@@ -1,8 +1,11 @@
 ---
 date created: 2024-07-29
-date modified: 2025-07-10
+date modified: 2025-10-04
 uid: 1f30099e-a00d-4896-a4b8-fac5d9147c33
 ---
+figma mcp 用法：[**https://x.com/op7418/status/1971055347331891557?s=46**](https://x.com/op7418/status/1971055347331891557?s=46)
+
+1. ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F10%2F04%2F00-01-30-12109e3c8dd55d063d51cc424ae10d83-202510040001434-edb5f2.png)
 
 以前是脑子里想布局，直接让 AI 写代码。以后可以先用 Figma 拖拽出一个样板图，再用 anima 插件直接生成 vue 代码
 

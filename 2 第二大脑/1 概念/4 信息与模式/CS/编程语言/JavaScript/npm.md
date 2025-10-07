@@ -1,14 +1,14 @@
 ---
 date created: 2024-11-08
-date modified: 2025-07-10
+date modified: 2025-10-04
 uid: 3ef5ea88-e3e3-4032-bdca-05b549ec5ba6
 ---
-## 目录
+# 目录
 
 - node_modules/ - 依赖包目录
 - package-lock.json - 依赖版本锁定文件
 
-## 命令
+# 命令
 
  `npm create vue@latest`
 
