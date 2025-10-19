@@ -1,6 +1,6 @@
 ---
 date created: 2024-11-25
-date modified: 2025-10-06
+date modified: 2025-10-13
 uid: 5537f688-37bd-4195-8235-31e549ab6dbe
 ---
 
@@ -132,7 +132,7 @@ curl https://api.openai.com/v1/chat/completions \
 |                | Migration guide           |                                                                                                                                                                                                                                                                                                                         |
 | ChatGPT        | Actions                   |                                                                                                                                                                                                                                                                                                                         |
 |                | Release notes             |                                                                                                                                                                                                                                                                                                                         |
-| Best practices | [Prompt](Prompt.md)         |                                                                                                                                                                                                                                                                                                                         |
+| Best practices | [Prompt](Prompt.md)       |                                                                                                                                                                                                                                                                                                                         |
 |                | Production best practices |                                                                                                                                                                                                                                                                                                                         |
 |                | Safety best practices     |                                                                                                                                                                                                                                                                                                                         |
 |                | Prompt caching            | Openai 侧的缓存，降低成本                                                                                                                                                                                                                                                                                                        |

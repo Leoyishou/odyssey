@@ -1,7 +1,7 @@
 ---
 aliases: [Metal Performance Shaders]
 date created: 2024-07-17
-date modified: 2025-10-05
+date modified: 2025-10-13
 uid: 4cc40da3-f72f-45f7-8f1a-ca0dca497a7b
 ---
 # 🪄 Summary
@@ -11,11 +11,11 @@ uid: 4cc40da3-f72f-45f7-8f1a-ca0dca497a7b
 > **MPS = Apple 版 CUDA**  
     让你的 Mac GPU（尤其是 M 系列芯片）能跑深度学习。
 
-|平台|GPU 框架|厂商|
-|---|---|---|
-|NVIDIA|CUDA|NVIDIA|
-|AMD|ROCm|AMD|
-|Apple|**MPS (Metal Performance Shaders)**|Apple|
+| 平台     | GPU 框架                              | 厂商     |
+| ------ | ----------------------------------- | ------ |
+| NVIDIA | CUDA                                | NVIDIA |
+| AMD    | ROCm                                | AMD    |
+| Apple  | **MPS (Metal Performance Shaders)** | Apple  |
 
 🖥️ Mac 的 GPU（尤其是 M1 / M2 / M3 芯片）不是 NVIDIA 的，
 👉 所以它不支持 CUDA。

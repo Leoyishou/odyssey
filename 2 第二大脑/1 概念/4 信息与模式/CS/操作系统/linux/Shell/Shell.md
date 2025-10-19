@@ -1,6 +1,6 @@
 ---
 date created: 2024-07-27
-date modified: 2025-10-07
+date modified: 2025-10-16
 uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 ---
 
@@ -31,7 +31,8 @@ docker context ls
 进容器： docker exec -it hive-server bash
 退出容器： exit
 
-
+## 杀端口
+lsof -ti:8000 | xargs kill -9
 
 
 

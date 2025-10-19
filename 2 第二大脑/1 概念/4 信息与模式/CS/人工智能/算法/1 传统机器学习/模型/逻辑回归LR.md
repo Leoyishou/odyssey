@@ -1,6 +1,6 @@
 ---
 date created: 2024-09-22
-date modified: 2025-10-05
+date modified: 2025-10-10
 uid: c43f9fae-7eec-4383-9f08-8319c903d63d
 ---
 【机器学习】逻辑回归（非常详细）- 阿泽的文章 - 知乎  
@@ -67,6 +67,6 @@ $J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \Bigl[y^{(i)} \log(h_\theta(x^{(i)})) +
 
 # 逻辑回归
 
-如果我们想要得到一个概率而不是简单的0或1，那么我们可以用[逻辑回归](逻辑回归.md)，其与感知机的区别是  
+如果我们想要得到一个概率而不是简单的0或1，那么我们可以用[逻辑回归LR](逻辑回归LR.md)，其与感知机的区别是  
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F09%2F22%2F04-19-48-283995d812c3807f93f156332fd9521b-202409220419839-deeb36.png)  
 用了 Sigmoid 函数来把结果映射为概率，而感知机只是用阶跃函数把结果映射为 0 和 1

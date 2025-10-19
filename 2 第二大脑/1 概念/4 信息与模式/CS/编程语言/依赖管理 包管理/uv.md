@@ -1,6 +1,6 @@
 ---
 date created: 2025-03-24
-date modified: 2025-09-20
+date modified: 2025-10-15
 uid: 0fc91684-868b-49f2-9d2e-c4008eef39b5
 ---
 ```Java
@@ -12,7 +12,15 @@ uv add --requirements requirements.txt
 
 下面是一套**在 PyCharm 里用 `uv` 管理 Python 环境的最佳实践（2025 版）**，尽量做到“IDE 原生支持 + 项目可复现 + 团队可落地”。
 
----
+
+
+使用 uv 后，你还可以享受这些便利：
+
+- **更快的速度**：uv 比 pip 快 10-100 倍
+- **直接运行**：`uv run` 可以自动管理虚拟环境
+- **项目管理**：`uv init` 和 `uv add` 可以像 poetry 一样管理项目
+- **锁文件**：`uv lock` 生成 `uv.lock` 确保依赖一致性
+- [ ]
 
 # TL;DR（结论先行）
 

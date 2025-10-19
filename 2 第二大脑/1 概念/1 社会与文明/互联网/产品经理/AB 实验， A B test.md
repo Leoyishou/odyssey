@@ -1,11 +1,20 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-10-07
+date modified: 2025-10-10
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # Summary
+
+推荐系统的AB实验中，为什么会有“小流量占优”的说法？原理是什么？- 朱翔宇的回答 - 知乎
+https://www.zhihu.com/question/422885389/answer/126511149909
+
+
+
+
+所以 AB 实验本质是  [[统计学@]] 中的[[数理统计@]]中的[[假设检验]]问题
+
 
 场景：库里换了新球鞋，三分命中率提升了吗？
 解决：

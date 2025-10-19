@@ -1,7 +1,7 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-10-05
+date modified: 2025-10-09
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
@@ -12,7 +12,7 @@ linter-yaml-title-alias: Summary
 
 text
 
-```
+```Java
 场景：混合检索
 ├─ BM25检索结果：    [Doc5, Doc2, Doc9, Doc1, Doc7]
 └─ 向量检索结果：    [Doc2, Doc5, Doc1, Doc12, Doc8]
@@ -49,7 +49,7 @@ final_score = bm25_score + vector_score  # 15.2 + 0.88 = ???
 
 text
 
-```
+```Java
 RRF_score(d) = Σ  1 / (k + rank_i(d))
               i∈所有检索系统
 

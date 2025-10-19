@@ -1,13 +1,13 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-10-06
+date modified: 2025-10-11
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # Summary
 
-- HNSW 是当前主流 ANN 图索引，查询复杂度近似 log N，对大规模向量库效果／速度最佳 ([Pinecone](https://www.pinecone.io/learn/series/faiss/hnsw/?utm_source=chatgpt.com "Hierarchical Navigable Small Worlds (HNSW) - Pinecone"))。
+- HNSW 是当前主流 [[ANN]] 图索引，查询复杂度近似 log N，对大规模向量库效果／速度最佳 ([Pinecone](https://www.pinecone.io/learn/series/faiss/hnsw/?utm_source=chatgpt.com "Hierarchical Navigable Small Worlds (HNSW) - Pinecone"))。
 
 ## 关键优势
 

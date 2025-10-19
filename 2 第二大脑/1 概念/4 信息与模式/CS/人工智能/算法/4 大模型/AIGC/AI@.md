@@ -1,11 +1,12 @@
 ---
 date created: 2024-11-03
-date modified: 2025-10-06
+date modified: 2025-10-19
 uid: 85f84200-3332-41bf-a78c-51616e70a079
 ---
 
 # Summary
 
+[[ChatBot]]
 
 ## 思考
 
@@ -85,9 +86,9 @@ AI基础设施普及
 
 以下是从过去到现在，按时间顺序梳理的LLM（大型语言模型）关键技术发展节点：
 - 2012年：AlexNet赢得[[ImageNet]]比赛，开启[深度学习@](深度学习@.md)热潮。
-- 2013年：Google提出[[Word2Vec]]，推动[自然语言处理 NLP](自然语言处理%20NLP.md)进入[[深度学习@]]时代。
+- 2013年：Google提出[[Word2Vec]]，推动[自然语言处理 NLP](自然语言处理%20NLP.md)进入[[深度学习@]]时代。从过去的[[词匹配]]有了[[分布式语义]]的概念
 - 2014年：[[Seq2Seq]]与[自注意力机制 Self-attention](自注意力机制%20Self-attention.md)机制问世，显著提升机器翻译能力。
-- 2017年6月：[[Transformer架构]]架构发表（论文《Attention Is All You Need》），NLP进入Transformer时代。
+- 2017年6月：[[Transformer]]架构发表（论文《Attention Is All You Need》），NLP进入Transformer时代。
 - 2018年6月：OpenAI推出GPT-1，开启预训练生成模型时代。
 - 2018年10月：Google提出BERT，建立双向预训练新标准。
 - 2019年6月：Meta推出RoBERTa，优化BERT架构，推动预训练模型研究深入。

@@ -1,8 +1,19 @@
 ---
 date created: 2025-01-29
-date modified: 2025-10-04
+date modified: 2025-10-12
 uid: b73c8155-ab06-4ee4-b1db-fab3f923957d
 ---
+
+
+# 后续改进版本
+
+|模型|最大长度|年份|
+|---|---|---|
+|**RoBERTa**|512|2019|
+|**ALBERT**|512|2019|
+|**Longformer**|**4096**|2020|
+|**BigBird**|**4096**|2020|
+|**LED**|**16384**|2020|
 
 #  一、Transformer架构  vs 传统 RNN
 

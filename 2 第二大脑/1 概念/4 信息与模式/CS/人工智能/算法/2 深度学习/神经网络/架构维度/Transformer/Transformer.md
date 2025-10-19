@@ -1,13 +1,13 @@
 ---
 date created: 2024-07-17
-date modified: 2025-10-06
+date modified: 2025-10-12
 uid: fd6ec90a-6faa-417a-b30a-d5347051d5ad
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # Summary
 
-最牛逼的点：
+其实是 Transformer 架构，最牛逼的点：
 1. [[并行计算]]
 2. [[自注意力机制 Self-attention]]
 
@@ -203,7 +203,7 @@ def generate(self, idx, max_new_tokens, temperature=1.0, do_sample=False, top_k=
 
 ## 一、历史
 
-1. [[Transformer架构]]是 Google Brain + Google Research 的团队在 2017 年的论文《Attention Is All You Need》里提出的。
+1. [[Transformer]]是 Google Brain + Google Research 的团队在 2017 年的论文《Attention Is All You Need》里提出的。
 2. 这篇论文里其实就有了第一个实现类：机器翻译模型 “[[Transformer模型]]” 本身。它包括 Encoder-Decoder 两部分，直接在机器翻译任务（英-德、英-法）上做实验并成功超越了当时的 RNN/CNN 方法。
 3. 除了 [[BERT]] (2018, Google) 之外，还有很多基于 Transformer架构 的模型，你可以理解为不同的“实现类”或“子类”：
 	• GPT 系列 (2018起, OpenAI)：只用 Decoder 堆叠，专注生成。

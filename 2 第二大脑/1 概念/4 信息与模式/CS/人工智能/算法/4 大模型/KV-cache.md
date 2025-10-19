@@ -7,7 +7,7 @@ linter-yaml-title-alias: Summary
 ---
 # Summary
 
-就是[[Transformer架构]]某个函数的参数 ABC，起名叫 QKV，其中 K 和 V 相关的计算可以被缓存，Q 的缓存不了，所以只有 K cache 和 V cache。
+就是[[Transformer]]某个函数的参数 ABC，起名叫 QKV，其中 K 和 V 相关的计算可以被缓存，Q 的缓存不了，所以只有 K cache 和 V cache。
 
 # Cues
 

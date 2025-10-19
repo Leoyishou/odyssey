@@ -1,11 +1,13 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-08-10
+date modified: 2025-10-10
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # Summary
+
+1. 要注意筛选语言，中文的话只看中文
 
 MTEB（**Massive Text Embedding Benchmark**）是 Hugging Face 推出的一个**文本嵌入模型综合评测榜单**，用来评估和比较各种文本向量化模型的性能。
 

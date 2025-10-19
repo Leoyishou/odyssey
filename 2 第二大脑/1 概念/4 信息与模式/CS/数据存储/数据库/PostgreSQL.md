@@ -1,8 +1,27 @@
 ---
 date created: 2024-09-15
-date modified: 2025-07-10
+date modified: 2025-10-09
 uid: 7e78906a-69db-4221-a6a5-76133152b266
 ---
+
+
+
+**使用 Cosine Distance（推荐）：**
+
+- ✅ 文本 embedding（如 BERT, Sentence Transformers）
+- ✅ 图像 embedding（如 ResNet, CLIP）
+- ✅ 不关心向量长度，只关心方向
+
+**使用 Inner Product：**
+
+- ✅ 向量已经归一化的情况
+- ✅ 需要考虑向量幅度（magnitude）的场景
+- ✅ 某些特定的推荐系统
+
+
+
+
+
 ```Java
 
 postgres=# \du
@@ -28,9 +47,9 @@ docker run -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -e POSTGRES_DB=root p
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F12%2F11%2F22-41-58-36c45981869b5cefd5196851aa51fc47-202412112241647-f2b204.png)
 
-## 数据结构
+# 数据结构
 
-### JSSONB
+## JSSONB
 
 使用 `JSONB` 类型的优势包括：
 

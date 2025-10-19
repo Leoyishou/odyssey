@@ -17,7 +17,7 @@ linter-yaml-title-alias: Summary
 
 # Notes
 
-## 一、RMSNorm 在[Transformer架构](Transformer架构.md)中的哪一步？
+## 一、RMSNorm 在[Transformer](Transformer.md)中的哪一步？
 
 为什么使用Pre-Norm架构？
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F09%2F22%2F12-00-37-f26f111d1c80e3a270d7c50ac70163d6-202509221200736-c3cbdb.png)

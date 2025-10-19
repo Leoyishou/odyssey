@@ -1,6 +1,6 @@
 ---
 date created: 2025-02-24
-date modified: 2025-10-07
+date modified: 2025-10-08
 uid: 7c85238c-94d9-43a3-9f59-437dffe75dcd
 ---
 
@@ -9,6 +9,9 @@ Flink：实时流的专家
 Flink 跟 Spark 有点像，也是个计算引擎，但它更擅长处理"实时数据"。比如，你网站上的用户点击数据源源不断地进来，Flink 能一边接收一边处理，延迟很低。Spark 也能做流处理，但它更偏向"微批次"（攒一小批数据再处理），而 Flink 是真正的"流水线式"处理。
 
 Flink 也可以跟 Hadoop 合作，用 HDFS 存数据，但它更专注于实时场景，比如监控系统、实时推荐这种。
+
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F10%2F08%2F18-55-06-dbd36003168ce807c97946e388534ac3-202510081855232-fc99c3.png)
+
 
 # Notes
 

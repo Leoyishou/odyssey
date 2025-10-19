@@ -1,7 +1,7 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-07-19
+date modified: 2025-10-08
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
@@ -39,7 +39,7 @@ Dropout 就是在神经网络训练时，随机“关掉”一部分神经元（
     
     - 不再关掉神经元，全部启用。
         
-    - 为保持数值一致，把训练时学到的权重统一乘以 p （或训练时就提前放大）。这样输出尺度不变。
+    - 为保持数值一致，把训练时学到的权重统一乘以 p（或训练时就提前放大）。这样输出尺度不变。
         
 
 ---

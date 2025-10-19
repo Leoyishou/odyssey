@@ -1,13 +1,15 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-07-27
+date modified: 2025-10-08
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # Summary
 
-
+[[演绎推理]]：
+1. 前提(总体已知):总体均值 = μ,总体方差 = σ²
+2. 结论(推导):当样本量n → ∞时,样本均值 → μ
 
 > **大数定律告诉我们：随机的世界虽然单次不可预测，但只要观察足够多次，“平均”终会显露出它的真容。**
 

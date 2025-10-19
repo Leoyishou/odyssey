@@ -1,6 +1,6 @@
 ---
 date created: 2024-07-29
-date modified: 2025-07-10
+date modified: 2025-10-10
 uid: 6d6afd7e-7287-4ff1-97b5-cbd4d7b38e25
 ---
 
@@ -9,14 +9,14 @@ uid: 6d6afd7e-7287-4ff1-97b5-cbd4d7b38e25
 比较全的组件库  
 https://uiverse.io/joe-watson-sbf/little-goat-24
 
-## 组件库排名
+# 组件库排名
 
 https://ui-libs.vercel.app/
 
 [Element Plus](Element%20Plus.md)  
 [Ant Design](Ant%20Design.md)
 
-## 常用组件
+# 常用组件
 
 | 英文名称            | 中文翻译    |     |     |                                             |
 | --------------- | ------- | --- | --- | ------------------------------------------- |

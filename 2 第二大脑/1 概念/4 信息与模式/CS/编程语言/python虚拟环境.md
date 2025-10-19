@@ -1,6 +1,6 @@
 ---
 date created: 2025-03-23
-date modified: 2025-10-03
+date modified: 2025-10-10
 uid: c3a087b7-bf8a-4fb1-97a7-510d1b3c1e0e
 ---
 # Summary
@@ -25,6 +25,29 @@ uid: c3a087b7-bf8a-4fb1-97a7-510d1b3c1e0e
 ```
 
 
+```shell
+# 基础依赖
+torch>=2.1.0
+torchvision>=0.16.0
+torchaudio>=2.1.0
+
+# Hugging Face
+transformers>=4.40.0
+datasets>=2.19.0
+evaluate>=0.4.0
+
+# 常用工具
+scikit-learn>=1.3.0
+numpy>=1.26.0
+pandas>=2.1.0
+
+# 训练相关
+accelerate>=0.29.0
+tqdm>=4.66.0
+wandb>=0.15.0  # 添加 wandb 用于实验跟踪
+
+# 可选（日志、调试）
+tensorboard>=2.15.0```
 
 
 

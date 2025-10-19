@@ -1,6 +1,6 @@
 ---
 date created: 2024-06-21
-date modified: 2025-07-10
+date modified: 2025-10-13
 uid: 8a1546f6-4274-4956-b166-7031505da93c
 ---
 
@@ -110,11 +110,11 @@ row.find("#t_replay").html("<a target='_blank' href='http://l-siriusvm16.h.cn2.q
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F11%2F03%2F23-37-53-a4f4e78e4f5cda38831a6c32807a9fb1-202411032337457-881f65.png)
 
-## 边距
+# 边距
 
 ![CleanShot 2025-02-16 at 01.18.15@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_bl9yDkE0aJ%2F2025%2F02%2F16%2F01-18-23-004f87cd7acb877ddc824d7f2e82b012-CleanShot%202025-02-16%20at%2001.18.15-2x-650621.png)
 
-## 记忆技巧
+# 记忆技巧
 
 1. **从外到内**
    - 先掌握布局类（决定整体结构）

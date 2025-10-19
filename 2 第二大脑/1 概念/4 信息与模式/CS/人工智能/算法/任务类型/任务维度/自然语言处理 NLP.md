@@ -7,7 +7,7 @@ uid: 0e5dd3ef-b0b4-4f18-bf82-cbfa1dd68e62
 # Summary
 
 真正NLP发展的历史：
-1. 2017年，Google发布[Transformer架构](Transformer架构.md)（attention is all you need）大家：我操，牛逼，一个伟大的时代到来了。
+1. 2017年，Google发布[Transformer](Transformer.md)（attention is all you need）大家：我操，牛逼，一个伟大的时代到来了。
 2. 2018年，Google发布encoder only BERT发布，OpenAI发布decoder only GPT。大家：我操，更牛逼了！一年内，Google官宣：Google搜索里面已经强力嵌入[[BERT]]了，你们每一次搜索都是BERT的结果！
 3. 2019年，大家就知道了，CV已经快死了，想做新东西只能沿着NLP开始做，于是2019年成了BERT大灌水元年，OpenAI发布了GPT-2，2019年，Google发布了当时巨无霸T5，当时人们惊呼，Google发布这么大的model，你不要命了？其实当年T5最大的也只有11b parameters，最小才76 million，跟今天比，简直小太多了；同年Meta也发布了Megatron。
 4. 2020年，OpenAI发布了GPT-3，我清楚记得当年那个震撼的视频，随手拉个表格，一大堆公司的股价和信息自动补全，当时整个科技圈彻底沸腾了，一群人抢着要GPT-3的内测资格，同时Meta也发布了更大号的Megatron。
@@ -72,7 +72,7 @@ uid: 0e5dd3ef-b0b4-4f18-bf82-cbfa1dd68e62
 - 基准[benchmark](benchmark.md)（GLUE/SuperGLUE/SQuAD/XSum/XTREME/[[MMLU]] 等）
 
 ## 语料与预处理
-- 分词/断句/[[Tokenization]]
+- 分词/断句/[[Tokenization 分词]]
 - 词形还原/Lemmatization，词干化
 - 子词/字节切分（BPE/WordPiece）
 - 清洗/去重/对齐/数据均衡

@@ -1,8 +1,12 @@
 ---
 date created: 2024-11-04
-date modified: 2025-07-10
+date modified: 2025-10-19
 uid: e3a4cff8-d82b-4726-b8f7-01cfb19dc6a9
 ---
+
+
+[[中文概念词典（CCD）]]
+
 
 以单词 **"learn"** 为例，WordNet的数据结构通常如下：
 
@@ -32,7 +36,7 @@ uid: e3a4cff8-d82b-4726-b8f7-01cfb19dc6a9
 
 WordNet的数据以这样结构化的方式呈现，有助于深入理解词义之间的关系。​​
 
-## Human language and word meaning
+# Human language and word meaning
 
 人类之所以比类人猿更"聪明"，是因为我们有语言，因此是一个人机网络，其中人类语言作为网络语言。人类语言具有 **信息功能** 和 **社会功能**。
 
@@ -136,7 +140,7 @@ WordNet 是一个在 20 世纪 80 年代由 Princeton 大学的著名认知心�
     - 描述动作的因果关系
     - 例如：'kill' 导致 'die'
 
-## 使用思路
+# 使用思路
 
 1. 可忽视的差异：利用 wordnet 拿到 SYNONYMS，增大对用户的容错
 2. 需要重视的差异：拿到上下位词，进一步去查历史使用记录
@@ -303,26 +307,26 @@ http://wordnetweb.princeton.edu/perl/webwn
 3. **文本相似度计算**
 4. **知识图谱构建**
 
-## 本质是四个图
+# 本质是四个图
 
 WordNet 的大多数关系都只将来自同一词性（Part Of Speech）的词联系起来。因此，wordnet 实际上由四个子图组成，分别是名词、动词、形容词和副词。
 
-### 3.3 动词图
+## 3.3 动词图
 
 动词的 synsets 集合也有类似上述的层次结构。
 
 在这种层级结构中，越靠近叶节点的动词表示动作越来越具体，比如 communicate->talk->whisper（音量越来越具体），move->jog->run（速度越来越具体），like->love->idolize（情感越来越具体）。另外，某些动作与完成这些动作时所必经的一些动作之间也有单向边连接。比如 buy->pay，succeed->try，show->see。
 
-### 3.4 形容词图
+## 3.4 形容词图
 
 形容词 synsets 之间的关系是根据反义词关系来组织的。
 
 比如 dry 和 wet，old 和 young。这些反义词关系表示了 synsets 之间的强语义约束性。而每一个反义词关系两边的形容词 synset 又与很多语义相似的形容词相连，比如 dry 和 parched、arid、dessicated 等相连，wet 和 soggy、waterlogged 等相连。
 
-### 3.5 副词图
+## 3.5 副词图
 
 WordNet 中仅有少量的副词 synsets，比如 hardly、mostly、really 等。也就是朱伟说的副词最不重要了，都是表示程度的，信息熵很低。
 
-### 4、跨词性关系
+## 4、跨词性关系
 
 跨词性的 synsets 关系很少，大部分都是词法关系，比如 observe（动词）、observant（形容词）、observation（名词）。还有一些关系表示名词是动词代表动作的某个语义角色，比如 sleeping car 是 sleep 的 LOCATION，painter 是 paint 的 AGENT 等等。

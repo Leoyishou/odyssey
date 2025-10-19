@@ -1,11 +1,20 @@
 ---
 date created: 2023-11-23
-date modified: 2025-08-30
+date modified: 2025-10-09
 uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
 
 https://github.com/shareAI-lab/analysis_claude_code
 
+Agent 有两个变量，
+1. 一个是控制任务走向的 workflow 工作流，
+2. 一个是控制内容生成的 context 上下文。1）
+
+分类
+1. 如果 workflow 和 context 的确定性都很高，这类任务就容易被自动化，类似传统 RPA，比如在处理发票处理、表单填报任务时，Al 更多是粘合剂，发挥空间比较有限。
+2. 如果 workflow 确定但 context 不确定，也就是流程固定但输入多变，就需要 Agent 在语义和理解上补全，比如客服问答、合同解析，需要通过外部检索、知识图谱等工具来弥补信息的缺口，让推理结果更符合预期。
+3. 如果 workflow 不确定但 context 确定，也就是输入清晰但走法多样，Agent就要去自主规划路径，例如市场分析报告生成、个性化推荐等，大多数 End-to-End RL Agent都擅长做这类任务，因为它们在训练阶段就习得了大量的路径规划和解题思路。
+4. 而当 workflow 和 context 都不确定时，就是最复杂的场景了，既要推理也要探索，像创新方案设计、跨部门信息收集等，这类更偏向于通用型 Agent，它的执行效果，取决于给它配备的工具丰富度，尤其是编程能力要最大化开放，例如让它学会去 Github 找仓库克隆并修改代码来解决问题，让它像人一样干活儿。所以，要把 Agent 做好，首先要明确场景。本质上，自动化解决的是“确定性”问题，而智能化解决的是“不确定性”问题。
 
 
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F08%2F30%2F23-51-58-360bc9dde2b6feb83f301c48dcfc5317-202508302351637-377e9d.png)

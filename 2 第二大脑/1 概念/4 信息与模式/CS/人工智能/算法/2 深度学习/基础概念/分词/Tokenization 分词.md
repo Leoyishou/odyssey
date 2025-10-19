@@ -1,12 +1,13 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-07-20
+date modified: 2025-10-18
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # Summary
 
+中文有 字粒度 和 字词混合粒度 两种，后者分出来的 token 会更少
 
 
 # Cues

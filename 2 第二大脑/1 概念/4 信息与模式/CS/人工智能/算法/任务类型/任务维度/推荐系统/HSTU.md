@@ -1,0 +1,47 @@
+---
+uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+date created: 2025-07-19
+date modified: 2025-10-10
+aliases: [Summary]
+linter-yaml-title-alias: Summary
+---
+# 💡 Summary  
+
+
+**HSTU = Hierarchical Sequential Transduction Units**  
+(分层序列转换单元)
+## 举个例子
+
+你的行为序列:
+
+1. 早上看了健身视频
+2. 中午搜了健康食谱
+3. 晚上浏览运动装备
+
+**传统系统**: 只看到 3 个独立事件
+**HSTU**: 理解到你对"健康生活方式"感兴趣,会推荐相关的完整内容
+
+## 通俗理解
+
+想象你在刷抖音/Instagram Reels:
+
+**传统推荐系统(DLRM)**:
+
+- 就像一个"笨"的推荐员
+- 只看你刚才点赞了什么
+- 不太会从你的历史行为学习
+
+**HSTU 推荐系统**:
+
+- 就像一个"聪明"的推荐员
+- **记住你所有的历史行为**(滑动、点赞、评论、停留时间)
+- **理解这些行为的顺序和模式**
+- 像 ChatGPT 理解语言一样理解你的行为
+
+
+
+# 🧩 Cues
+
+
+
+# 🪞Notes
