@@ -1,13 +1,13 @@
 ---
 date created: 2024-10-13
-date modified: 2025-09-20
+date modified: 2025-10-24
 uid: 13ade5e1-c52c-4190-9b08-ff860c5d0603
 ---
 
 
 # Summary
 
-
+[[Scikit-learn、skleran]]、[[pandas]]
 
 #最佳实践  
 Kaggle给机器学习新手和顶尖选手带来的好处是最大的，反倒对中间选手没什么太大的帮助。

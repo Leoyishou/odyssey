@@ -1,6 +1,6 @@
 ---
 date created: 2025-05-02
-date modified: 2025-09-13
+date modified: 2025-10-25
 uid: 0aba88f6-06ea-4eca-a838-3c42b57e93d9
 ---
 音名：C D E F G A B
@@ -8,7 +8,7 @@ uid: 0aba88f6-06ea-4eca-a838-3c42b57e93d9
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F09%2F13%2F14-40-18-24728a51728ff40bbd6266696abe4dfe-202509131440769-b98bd4.png)
 
 全音半音：
-1   2  3 4  5  6  7 1
+ **1    2   34    5     67**
 **全全半全全全半**
 [[半音]]、[[音程]]
 我们来观察一下上面不完整的钢琴键盘，完整的钢琴有八十八个键，有黑白两种键。我们会发现键盘上是重复出现的cdefgab

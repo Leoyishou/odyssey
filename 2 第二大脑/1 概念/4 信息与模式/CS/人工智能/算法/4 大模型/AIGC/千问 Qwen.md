@@ -1,7 +1,7 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-08-10
+date modified: 2025-10-20
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
@@ -22,22 +22,137 @@ linter-yaml-title-alias: Summary
 
 - **FP8 版本**：表示该模型已被[[模型量化]]为 $8$ 位浮点格式（FP8），大幅减少了显存和计算资源需求，适合资源有限或注重部署效率的场景，**Qwen3‑4B‑Instruct‑2507‑FP8**：即是 Instruct 模式的 FP8 量化版本（不触发 Thinking 模式）
 
-
 # Cues
-
-
 
 # Notes
 
-看这个Qwen3系列，确实有非常多的模型！这种多样性有几个重要原因：
+## Qwen系列模型完整列表
 
-## 不同的模型规模
+### 基础语言模型
 
-Qwen3系列包含从微型$0.6B$参数到巨型$235B$参数的模型：
+|模型名称|参数量|类型|上下文长度|适用场景|
+|---|---|---|---|---|
+|Qwen3-0.5B|5亿|Base/Chat|8K-32K|移动端、边缘设备|
+|Qwen3-1.5B|15亿|Base/Chat|8K-32K|轻量级应用、个人设备|
+|Qwen3-3B|30亿|Base/Chat|32K|小型服务器、个人电脑|
+|Qwen3-7B|70亿|Base/Chat|32K-128K|通用对话、文本生成|
+|Qwen3-14B|140亿|Base/Chat|32K-128K|高质量对话、复杂任务|
+|Qwen3-32B|320亿|Base/Chat|32K-128K|企业级应用|
+|Qwen3-72B|720亿|Base/Chat|32K-128K|旗舰性能、最强推理|
+|Qwen1.5-MoE-A2.7B|2.7B激活|MoE|32K|高效推理、参数利用|
 
-- **小型模型**（$0.6B$、$1.7B$、$4B$）：适合边缘设备、移动应用或资源受限环境
-- **中型模型**（$8B$、$14B$、$30B$、$32B$）：在性能和计算需求之间取得平衡
-- **大型模型**（$235B$）：为复杂任务提供最强性能
+---
+
+### 多模态模型
+
+|模型名称|模态|参数量|功能|
+|---|---|---|---|
+|Qwen-VL|视觉+语言|7B+|图像理解、OCR、视觉问答|
+|Qwen-VL-Chat|视觉+语言|7B+|图像对话、图表分析|
+|Qwen-VL-Plus|视觉+语言|-|增强版视觉理解（API）|
+|Qwen-VL-Max|视觉+语言|-|旗舰级多模态（API）|
+|Qwen-Audio|音频+语言|7B+|语音识别、音频分析|
+|Qwen-Audio-Chat|音频+语言|7B+|语音对话、声音理解|
+
+---
+
+### 垂直领域模型
+
+|模型名称|专业领域|参数量|核心能力|
+|---|---|---|---|
+|CodeQwen1.5|代码生成|7B|多语言编程、代码补全、Bug修复|
+|Qwen-Coder|代码生成|7B/14B|代码理解、算法实现|
+|Qwen-Math|数学推理|7B/14B/72B|复杂数学问题、步骤推理|
+|Qwen-SQL|SQL生成|-|数据库查询、SQL优化|
+|Qwen-Medical|医疗健康|-|医学知识问答、病历分析|
+
+---
+
+### 检索增强模型
+
+|模型名称|类型|参数量|输出维度|使用场景|
+|---|---|---|---|---|
+|Qwen-Embedding-7B|向量化|7B|768+|语义检索、RAG召回|
+|Qwen-Embedding-14B|向量化|14B|768+|高精度检索|
+|Qwen-Reranker-7B|重排序|7B|相关性分数|RAG精排、结果优化|
+|Qwen-Reranker-14B|重排序|14B|相关性分数|高质量重排序|
+
+---
+
+### 量化与部署版本
+
+|格式类型|量化精度|显存占用（7B为例）|推理速度|适用场景|
+|---|---|---|---|---|
+|FP16/BF16|16-bit|~14GB|基准|标准部署|
+|INT8|8-bit|~7GB|快|平衡性能|
+|INT4|4-bit|~4GB|很快|资源受限|
+|GPTQ|4-bit|~4GB|很快|GPU推理优化|
+|AWQ|4-bit|~4GB|很快|高精度量化|
+|GGUF|多精度|可变|中等|CPU推理、llama.cpp|
+
+---
+
+### 云端API服务（DashScope）
+
+|API名称|类型|特点|价格定位|
+|---|---|---|---|
+|qwen-turbo|文本生成|快速响应、高并发|经济型|
+|qwen-plus|文本生成|平衡性能和成本|标准型|
+|qwen-max|文本生成|最强性能|旗舰型|
+|qwen-long|文本生成|超长上下文（10M+ tokens）|长文档|
+|qwen-vl-plus|视觉理解|图像分析|标准型|
+|qwen-vl-max|视觉理解|高级视觉任务|旗舰型|
+|text-embedding-v3|向量化|高质量Embedding|按量计费|
+
+---
+
+### Agent与工具能力
+
+|能力类型|支持模型|功能描述|
+|---|---|---|
+|Function Calling|Qwen-Chat系列|调用外部函数和API|
+|Tool Use|Qwen-Agent|使用计算器、搜索引擎等工具|
+|ReAct|Qwen-Chat系列|推理-行动循环|
+|Code Interpreter|Qwen-Chat系列|代码执行和结果解释|
+|Multi-Agent|Qwen-Agent|多智能体协作|
+
+---
+
+### 特殊版本与实验模型
+
+|模型类型|说明|状态|
+|---|---|---|
+|Qwen-Long|128K-1M tokens上下文|已发布|
+|Qwen-RLHF|强化学习优化版本|研究中|
+|Qwen-DPO|直接偏好优化版本|研究中|
+|Qwen-Distill|知识蒸馏小模型|部分开源|
+
+---
+
+### 模型选型快速参考
+
+|你的需求|推荐模型|部署方式|
+|---|---|---|
+|移动APP|Qwen3-0.5B/1.5B-INT4|本地GGUF|
+|个人电脑聊天|Qwen3-7B-Chat-INT4|Ollama/LM Studio|
+|写代码|CodeQwen1.5-7B|VSCode插件|
+|看图说话|Qwen-VL-Chat|GPU服务器|
+|RAG检索|Qwen-Embedding-7B + Reranker|向量数据库|
+|企业级部署|Qwen3-14B/32B|vLLM集群|
+|快速原型|qwen-turbo API|云端调用|
+|最强性能|Qwen3-72B / qwen-max|GPU集群/API|
+|长文档分析|Qwen-Long / qwen-long|GPU服务器/API|
+|数学题求解|Qwen-Math|GPU服务器|
+
+---
+
+## 补充说明
+
+1. **参数量**：部分模型有多个规格，表格列出代表性版本
+2. **上下文长度**：具体长度因版本而异，持续更新中
+3. **API价格**：请查阅阿里云DashScope官网最新定价
+4. **开源情况**：Base/Chat系列大多开源，部分垂直模型和API专属
+
 
 ## 模型变体和用途
 

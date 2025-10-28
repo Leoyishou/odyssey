@@ -1,8 +1,29 @@
 ---
 date created: 2023-11-23
-date modified: 2025-10-09
+date modified: 2025-10-25
 uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
+
+- 粗略公式
+      - Agent ≈ n 次 [[RunnableSequence]]（每次=提示拼装 → 1 次 LLM）+ 中间穿插的工具执行（不算在 RunnableSequence 里）+ 可选 1 次 response_format 的最终 LLM。
+  - 计数
+      - LLM 次数 = n + (response_format? 1: 0)
+      - Tool API 次数 = 各轮产生的 tool_calls 之和（每轮可能为 0、1、多个）
+  - 退出机制
+	  - 退出条件 = 某次 RunnableSequence 的输出不再包含 tool_calls（或达到步数上限）
+
+  所以，用通俗口径说“n × runnableSequence + response_format 就是 agent”基本对，但要记得工具执行是独立于 RunnableSequence 的插入步骤，不计入 LLM
+  次数。
+
+
+
+
+
+以前模型能力不行，我们要在 prompt 里写死每一步："先做 A，再做 B，然后做 C"；    现在模型更聪明了，我们只需要说"这是你的目标，这些是你的工具，自己看着办"，让 Agent 自主决策。  里面的关键是做好四件事：写清晰的 prompt、设计高效的工具、用即时检索代替预加载、管理好有限的 context 窗口（通过压缩、笔记或拆分  sub agent 等方式）。
+
+
+[[Parlant]]
+
 
 https://github.com/shareAI-lab/analysis_claude_code
 
@@ -40,32 +61,32 @@ Agent 有两个变量，
 
 # ✅ 方向 2：「协议 token + 工具调用接口 + GRPO 微调」
 
-这是**增强工具使用能力的 Agent**架构，关键在于 **明确意图、准确调用工具**，是当前最具实用价值的路径之一。
+这是增强工具使用能力的 Agent架构，关键在于 明确意图、准确调用工具，是当前最具实用价值的路径之一。
 
 ## 🔍 核心构成解释
 
 |概念|说明|
 |---|---|
-|**协议 token**|类似一种“约定俗成的格式化提示语”或“语义标签”。例如：在对话中出现 `[search]东京天气`、`<calc>1+2`，这些都是让 Agent 识别并调用对应工具的“标记符”或“触发信号”。|
-|**工具调用接口**|Agent 可以调用 API（如搜索引擎、数据库、日历等），执行具体任务。这部分类似“插件”机制。|
-|**GRPO 微调**|是指 **对大模型进行轻量微调（如LoRA），以便它更擅长处理工具调用任务**。GRPO 可被理解为 “Generalized Retrieval-Planning-Observation”，是一种让 Agent 更有效在“检索-规划-执行观察反馈”循环中发挥作用的微调范式。|
+|协议 token|类似一种“约定俗成的格式化提示语”或“语义标签”。例如：在对话中出现 `[search]东京天气`、`<calc>1+2`，这些都是让 Agent 识别并调用对应工具的“标记符”或“触发信号”。|
+|工具调用接口|Agent 可以调用 API（如搜索引擎、数据库、日历等），执行具体任务。这部分类似“插件”机制。|
+|GRPO 微调|是指 对大模型进行轻量微调（如LoRA），以便它更擅长处理工具调用任务。GRPO 可被理解为 “Generalized Retrieval-Planning-Observation”，是一种让 Agent 更有效在“检索-规划-执行观察反馈”循环中发挥作用的微调范式。|
 
-👉 **典型代表**：LangChain + Function Calling / OpenAI Toolformer / HuggingGPT 等。
+👉 典型代表：LangChain + Function Calling / OpenAI Toolformer / HuggingGPT 等。
 
 ---
 
 # ✅ 方向 3：「RLVR + 系统级可靠性验证」
 
-这是**最复杂、最可靠也最前沿的 Agent 实现方向**，强调模型在真实任务中的**长期表现和鲁棒性**。
+这是最复杂、最可靠也最前沿的 Agent 实现方向，强调模型在真实任务中的长期表现和鲁棒性。
 
 ## 🔍 核心构成解释
 
 |概念|说明|
 |---|---|
-|**RLVR**|Reinforcement Learning with Verified Rewards，意为“带验证奖励的强化学习”。它改进了传统 RLHF（人类反馈强化学习），避免奖励漂移或不一致，通过**规则验证系统**来判断 Agent 行为的对错。|
-|**系统级可靠性验证**|Agent 不再依赖简单的 prompt 和即时反馈，而是要在 **多轮决策、多工具调用、复杂状态演化中表现出稳定性和正确性**。这涉及任务评估指标设计、测试用例库、错误回滚机制等系统级手段。比如 Agent 是否在处理旅行规划、医疗问答、复杂路由优化中始终靠谱。|
+|RLVR|Reinforcement Learning with Verified Rewards，意为“带验证奖励的强化学习”。它改进了传统 RLHF（人类反馈强化学习），避免奖励漂移或不一致，通过规则验证系统来判断 Agent 行为的对错。|
+|系统级可靠性验证|Agent 不再依赖简单的 prompt 和即时反馈，而是要在 多轮决策、多工具调用、复杂状态演化中表现出稳定性和正确性。这涉及任务评估指标设计、测试用例库、错误回滚机制等系统级手段。比如 Agent 是否在处理旅行规划、医疗问答、复杂路由优化中始终靠谱。|
 
-👉 **典型代表**：AutoGPT、Voyager、Meta的反事实反馈框架、Anthropic 的 Constitutional AI 等。
+👉 典型代表：AutoGPT、Voyager、Meta的反事实反馈框架、Anthropic 的 Constitutional AI 等。
 
 ---
 

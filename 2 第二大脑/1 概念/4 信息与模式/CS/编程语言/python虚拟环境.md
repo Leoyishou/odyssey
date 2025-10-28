@@ -1,6 +1,6 @@
 ---
 date created: 2025-03-23
-date modified: 2025-10-10
+date modified: 2025-10-20
 uid: c3a087b7-bf8a-4fb1-97a7-510d1b3c1e0e
 ---
 # Summary
@@ -47,7 +47,9 @@ tqdm>=4.66.0
 wandb>=0.15.0  # 添加 wandb 用于实验跟踪
 
 # 可选（日志、调试）
-tensorboard>=2.15.0```
+tensorboard>=2.15.0
+
+```
 
 
 

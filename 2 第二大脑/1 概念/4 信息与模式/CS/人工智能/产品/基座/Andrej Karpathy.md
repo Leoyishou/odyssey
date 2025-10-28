@@ -1,7 +1,7 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-10-05
+date modified: 2025-10-20
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
@@ -12,17 +12,32 @@ linter-yaml-title-alias: Summary
 
 |分类|关键词|说明|
 |---|---|---|
-|🎓 学术背景|**Stanford PhD**, **Fei-Fei Li 门下**, **Computer Vision**|斯坦福博士，研究方向为视觉与深度学习，导师是李飞飞。|
-|🧩 技术标签|**Deep Learning**, **Neural Networks**, **Computer Vision**, **Language Models**, **Transformers**|贯穿视觉到语言的端到端神经网络研究者。|
-|🧠 开源项目|**minGPT**, **micrograd**, **makemore**, **karpathy/nanoGPT**|一系列“从零实现”教学型项目，展示 GPT、反向传播、生成模型等核心机制。|
-|🚗 实践领域|**Tesla AI Director**, **Autopilot**, **Dojo Supercomputer**|曾任特斯拉自动驾驶负责人，主导 Autopilot 和 Dojo 训练系统。|
-|🧱 思想关键词|**End-to-End Learning**, **Backpropagation is All You Need**, **Software 2.0**|提出“软件 2.0”理念：未来程序由神经网络权重而非手写规则组成。|
-|💬 教学传播|**CS231n**, **Stanford Lecture Style**, **YouTube Talks**|主讲斯坦福经典课程 CS231n《深度学习与计算机视觉》，风格通俗、体系化。|
-|🧑‍💻 职业履历|**OpenAI Early Member**, **Tesla → OpenAI → 独立开发者**|在 OpenAI 早期参与 GPT 与强化学习研究；后转向教学与开源。|
-|🔬 近期关注|**LLMs 简化实现**, **AI 教育**, **小模型自研**|专注于让 AI 学习变得“人人可懂、可跑、可改”。|
+|🎓 学术背景|Stanford PhD, Fei-Fei Li 门下, Computer Vision|斯坦福博士，研究方向为视觉与深度学习，导师是李飞飞。|
+|🧩 技术标签|Deep Learning, Neural Networks, Computer Vision, Language Models, Transformers|贯穿视觉到语言的端到端神经网络研究者。|
+|🧠 开源项目|minGPT, micrograd, makemore, karpathy/nanoGPT|一系列“从零实现”教学型项目，展示 GPT、反向传播、生成模型等核心机制。|
+|🚗 实践领域|Tesla AI Director, Autopilot, Dojo Supercomputer|曾任特斯拉自动驾驶负责人，主导 Autopilot 和 Dojo 训练系统。|
+|🧱 思想关键词|End-to-End Learning, Backpropagation is All You Need, Software 2.0|提出“软件 2.0”理念：未来程序由神经网络权重而非手写规则组成。|
+|💬 教学传播|CS231n, Stanford Lecture Style, YouTube Talks|主讲斯坦福经典课程 CS231n《深度学习与计算机视觉》，风格通俗、体系化。|
+|🧑‍💻 职业履历|OpenAI Early Member, Tesla → OpenAI → 独立开发者|在 OpenAI 早期参与 GPT 与强化学习研究；后转向教学与开源。|
+|🔬 近期关注|LLMs 简化实现, AI 教育, 小模型自研|专注于让 AI 学习变得“人人可懂、可跑、可改”。|
 
 # 💡 Cues
 
 
 
 # Notes
+
+观点：
+1. 我认为 10 年实现 AGI 已经是一个非常激进的时间表了，只是在当今的炒作氛围下，大家才不这么觉得。
+2. 我对 AI 时间线的看法，比 你在旧金山 AI 派对上或推上听到的普遍预测要悲观 5 到 10 倍，但比起 那些日益增长的 AI 否定者和怀疑论者，我又要乐观得多。这其中的矛盾其实并不存在
+3. 【我挺确定 RL 会继续带来不少阶段性的成果，但我也并不觉得，这就是故事的全部了。RL 的基本逻辑其实就是：嘿，这事儿干得不错（/很糟），那我就给未来所有导致这个结果的动作，都稍微增加（/减少）一点概率。
+4. 最后一点思考——从我个人和长远的角度来看，我非常看好环境和智能体互动，但我_尤其_不看好强化学习本身。我觉得奖励函数这个东西超级不靠谱。而且，我认为人类自己也不是靠强化学习来学习的（也许学一些运动技能时会用上，但在解决需要智力的问题时肯定不是）。
+5. Claude 的系统提示词现在似乎有大约 17000 个词，它不仅规定了基本的行为风格/偏好（例如，拒绝各种与歌词相关的请求），还规定了大量的通用问题解决策略
+6. 孩子们应该在早期教育中学习物理，不是因为他们以后都要搞物理，而是因为这门学科最能启动一个人的大脑。物理学家是智力上的胚胎干细胞
+7. AI 辅助编程的思路，这里的重点是，你必须牢牢牵住缰绳。你要把 AI 想象成一个新来的实习生：他过度热情，是个少年天才，脑子里装着百科全书一样的软件知识……但他同时也整天对你一本正经地胡说八道，胆子大得没边，而且对什么是好代码几乎毫无品味。：慢下来、保持防御姿态、小心、甚至要有点偏执。并且，永远要抓住机会在过程中顺便学习，而不是把工作完全委托给它。
+	 1. 把所有相关的上下文（context）都喂给 AI。（在大型项目里，这可能很花时间。如果项目够小，那就干脆把所有东西都扔进去，比如用 `files-to-prompt. -e ts -e tsx -e css -e md --cxml --ignore node_modules -o prompt.xml` 这样的命令。）
+	 2. 向 AI 描述我们想实现的下一个、单一的、具体的小步改动。关键是：先别急着要代码。先让它给出几种高层级的实现思路，分析一下各自的优缺点。毕竟，做一件事总有好几种方法，而大语言模型（LLM）的判断力并不总是那么靠谱。也可以选择性地让它把思路具体化。
+	 3. 选定一种方法，然后让它生成第一版代码草稿。
+	 4. 审查与学习阶段：（必须手动...）在旁边打开浏览器，查阅所有我以前没调用过、或者不太熟悉的函数的 API 文档。同时，要求 AI 给出解释、澄清细节、进行修改。如果这条路走不通，就果断退回去，试试别的思路。
+	 5. 测试。
+	 6. 提交代码（Git commit）。问问它我们下一步可以实现什么？。然后，重复这个循环。

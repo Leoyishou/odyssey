@@ -1,6 +1,6 @@
 ---
 date created: 2024-07-17
-date modified: 2025-10-12
+date modified: 2025-10-26
 uid: fd6ec90a-6faa-417a-b30a-d5347051d5ad
 aliases: [Summary]
 linter-yaml-title-alias: Summary
@@ -14,25 +14,14 @@ linter-yaml-title-alias: Summary
 Transformer不是抽象的数学玩具，它是现代AI的“骨干”（backbone），支撑着像[[ChatGPT]]、[[BERT]]和[[DALL-E]]这样的产品。它让机器更好地理解、解释和生成人类语言，比之前的[循环神经网络RNN](循环神经网络RNN.md)/[长短期记忆网络LSTM](长短期记忆网络LSTM.md)模型快得多、
 [[Encoder-only]] 更适合[[判别式任务]]，如[[意图识别]]、[[文本分类]]等
 
-# Cues
+[[分布式语义]] Transformer里那一堆Q、K、V矩阵乘来乘去，本质上是在干嘛？是在做“信息提取”和“权重分配”。
 
-[[Transformer 参数]]
-[多头注意力机制](多头注意力机制.md)
-[Positional Encoding 位置编码](Positional%20Encoding%20位置编码.md)
-1. （[[自注意力机制 Self-attention]]）
-2. Batch Norm & Layer Norm（批量标准化/层[[标准化]]）
-3. ResNet（[[残差]]）
-4. Subword Tokenization（子词分词法）
-5. 组装：Transformer
-
-[[dropout]]
-[[涌现]]
-[[词汇表]]
-[[batch]]
-
-[https://zhuanlan.zhihu.com/p/1903109025303883861?share_code=sxLzOfpNsGww&utm_psn=1931375190878717429](https://zhuanlan.zhihu.com/p/1903109025303883861?share_code=sxLzOfpNsGww&utm_psn=1931375190878717429)
-
-# Notes
+| 架构类型                        | 具体模型                                                                               |
+| --------------------------- | ---------------------------------------------------------------------------------- |
+| [[Encoder-only]]嵌入模型        | [[BERT]]                                                                           |
+| Encoder-decoder通用模型         | • Bart<br>[[T5]]<br>• MASS                                                         |
+| Csual [[Decoder-only]]模型    | [[GPT]]系列<br> [[千问 Qwen]]系列<br>• LLaMA系列<br>• LLaMA微调系列<br>• GLM系列<br>• DeepSeek系列 |
+| Non-casual Decoder-only生成模型 | • UniLM<br>• GLM-1                                                                 |
 
 ```shell
 原始 Transformer (Encoder-Decoder):
@@ -100,6 +89,28 @@ BERT (Encoder-only):
 ```
 
 
+
+# Cues
+为什么transformer的FFN需要先升维再降维？- yelfen的回答 - 知乎
+https://www.zhihu.com/question/665731716/answer/1964322329191490141
+
+[[Transformer 参数]]
+[多头注意力机制](多头注意力机制.md)
+[Positional Encoding 位置编码](Positional%20Encoding%20位置编码.md)
+1. （[[自注意力机制 Self-attention]]）
+2. Batch Norm & Layer Norm（批量标准化/层[[标准化]]）
+3. ResNet（[[残差]]）
+4. Subword Tokenization（子词分词法）
+5. 组装：Transformer
+
+[[dropout]]
+[[涌现]]
+[[词汇表]]
+[[batch]]
+
+[https://zhuanlan.zhihu.com/p/1903109025303883861?share_code=sxLzOfpNsGww&utm_psn=1931375190878717429](https://zhuanlan.zhihu.com/p/1903109025303883861?share_code=sxLzOfpNsGww&utm_psn=1931375190878717429)
+
+# Notes
 
 
 ## 一、基本框架
@@ -229,7 +240,7 @@ def generate(self, idx, max_new_tokens, temperature=1.0, do_sample=False, top_k=
 ### 主要脉络
 
 1. 为什么要“干掉 RNN”
-    - [循环神经网络RNN](循环神经网络RNN.md)/LSTM/GRU 速度慢（时序依赖无法并行）＋长程记忆差（梯度消散、遗忘）。
+    - [循环神经网络RNN](循环神经网络RNN.md)/LSTM/[[GRU]] 速度慢（时序依赖无法并行）＋长程记忆差（梯度消散、遗忘）。
     - Google Brain 团队的原始动机：找一种完全并行、无递归的新架构。
         
 2. Attention 已有雏形，但只是配角
@@ -552,4 +563,4 @@ Transformer的发明标志着AI从“递归时代”进入“注意力时代”�
 
   
 
-“BERT 更好还是 LLM 更好？”真正的问题是你现在的约束是什么（标注量、延迟/吞吐、成本、是否常改 schema、是否需要世界知识）。同等“工程约束”下，NER 与常规意图识别多半是BERT/DeBERTa 微调更划算；****约束改成****“****标注极少****/****类开放****/****强知识依赖****”****时，****LLM****（或混合）****更具性价比与迭代效率。以上结论与近年的系统性实验和工业报告一致。
+“BERT 更好还是 LLM 更好？”真正的问题是你现在的约束是什么（标注量、延迟/吞吐、成本、是否常改 schema、是否需要世界知识）。同等“工程约束”下，NER 与常规意图识别多半是BERT/DeBERTa 微调更划算；约束改成“标注极少/类开放/强知识依赖”时，LLM（或混合）更具性价比与迭代效率。以上结论与近年的系统性实验和工业报告一致。

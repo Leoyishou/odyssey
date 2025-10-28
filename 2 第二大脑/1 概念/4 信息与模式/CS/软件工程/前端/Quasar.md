@@ -28,7 +28,7 @@ Quasar 的音标是 `/ˈkweɪzɑːr/`
 
 - [SPA 单页应用](SPA%20单页应用.md) (Single Page Application): 单页应用，适用于纯前端网页应用，运行在浏览器中，页面切换无需刷新。
     
-- [PWA - Progressive Web Apps](PWA%20-%20Progressive%20Web%20Apps.md)]]
+- [PWA - 渐进式 Web 应用](PWA%20-%20渐进式%20Web%20应用.md)]]
 - (Progressive Web App): 渐进式网页应用，具备离线功能、可安装到桌面或手机等特性，接近原生应用体验。
     
 - SSR (Server-Side Rendering): 服务端渲染，服务器生成 HTML 后发送给客户端，适合需要 SEO（搜索引擎优化）或快速首屏加载的场景。

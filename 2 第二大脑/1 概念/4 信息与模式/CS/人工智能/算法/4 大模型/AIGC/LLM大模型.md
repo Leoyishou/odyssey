@@ -1,6 +1,6 @@
 ---
 date created: 2024-10-21
-date modified: 2025-09-20
+date modified: 2025-10-25
 uid: 106902ea-2d32-4870-b823-97b4866c87a5
 aliases: [Cues]
 linter-yaml-title-alias: Cues
@@ -12,6 +12,7 @@ linter-yaml-title-alias: Cues
 - **[[VLM]]**：输入可以包含 **图像/视频（视觉模态）+ 文本**，输出通常是文本（有时也能生成图像、做多模态对齐）。
     
 
+[[LLM 的数学能力]]
 
 
 
@@ -26,16 +27,6 @@ linter-yaml-title-alias: Cues
 
 
 [Transformer](Transformer.md)
-
-| 架构类型                        | 具体模型                                                                       |
-| --------------------------- | -------------------------------------------------------------------------- |
-| Encoder-only嵌入模型            | • Bert<br>• RoBERTa<br>• ALBERT<br>• SpanBERT<br>• XLNet<br>• DeBERTa      |
-|                             | • Sentence-Bert<br>• GTE<br>• BGE<br>• mGTE                                |
-| Encoder-decoder通用模型         | • Bart<br>• Flan-T5<br>• MASS                                              |
-|                             |                                                                            |
-| Non-casual Decoder-only生成模型 | • UniLM<br>• GLM-1                                                         |
-|                             |                                                                            |
-| Csual Decoder-only模型        | • GPT系列<br>• LLaMA系列<br>• LLaMA微调系列<br>• GLM系列<br>• Qwen系列<br>• DeepSeek系列 |
 
 只保留了[[Transformer]]里的[[解码器]]的部分
 

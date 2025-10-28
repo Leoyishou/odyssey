@@ -1,17 +1,15 @@
 ---
 date created: 2024-07-27
-date modified: 2025-10-16
+date modified: 2025-10-25
 uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 ---
-
-
-
-
 # Summary
 
-常用命令：
-`source.venv/bin/activate`
-
+## 项目启动相关
+```Java
+uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
+```
+## 环境相关
 ```Java
 ## python 虚拟环境
 ---
@@ -20,6 +18,20 @@ uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 安装：    pip install -r requirements.txt
 退出：    deactivate
 删除：    rm -rf.venv
+
+---
+# 只创建项目文件   uv init --python 3.11     类似 `npm init` 或 `cargo init`
+# 初始化项目  uv venv           
+             source .venv/bin/activate
+# 安装依赖    uv pip install -r requirements.txt
+# 工作中...   uv pip install transformers  # 需要新包时
+# 完成后退出   deactivate
+---
+
+## NPM
+# 安装 `package.json` 里的依赖
+默认日志级别   npm install
+冗长日志级别   npm install --verbose
 
 ## docker
 ---
@@ -39,10 +51,18 @@ lsof -ti:8000 | xargs kill -9
 ## 压缩打包
 ---
 tar -czf bert-base-model.tar.gz models/bert-base
+
+## vllm
+
+/home/linyang.zhong/.conda/envs/qwen3-8B/bin/python3.10 /home/linyang.zhong/.conda/envs/qwen3-8B/bin/vllm serve /data/models/Qwen/Qwen3-Embedding-4B --served-model-name qwen3-embedding-4b --trust-remote-code --task embed --tensor-parallel-size 4 --gpu-memory-utilization 0.2 --port 8010
 ```
 # Notes
 
-
+ `ps aux`  
+ ps: Process Status（进程状态）命令
+a: 显示所有用户的进程（all users）
+u: 以用户友好的格式显示（user-oriented format）
+x: 显示没有控制终端的进程（processes without controlling terminals）
 ## Map   选项->参数
 
 ```Java

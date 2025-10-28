@@ -1,6 +1,6 @@
 ---
 date created: 2025-03-24
-date modified: 2025-09-20
+date modified: 2025-10-25
 uid: 4e527a8d-9fac-4f78-aaf4-15c7b71e501f
 ---
 # Summary
@@ -17,6 +17,12 @@ uid: 4e527a8d-9fac-4f78-aaf4-15c7b71e501f
 简明答案：**因为你用的是 T4（Turing，SM_75）**。
 FlashAttention-2 需要 **Ampere/Hopper 级别的 GPU（≥SM_80，如 A100/A10/L4/H100）** 才能启用其关键指令路径（如 `cp.async` 等）。在 **Volta(V100, SM_70)** 和 **Turing(T4, SM_75)** 上不满足硬件要求，vLLM 就会自动回退到 **xFormers** 后端，所以日志里写着：
 # Notes
+
+
+```Java
+
+```
+
 
 从零实现 vLLM (1.3）：如何加速 Attention 计算：[https://mp.weixin.qq.com/s/BdWG6_ZTaGRknmsbGfFkMQ…](https://t.co/J49S4ccB3g) 从零实现 vLLM (1.2）：如何实现张量并行：[https://mp.weixin.qq.com/s/8BVEVPPqDQhQ2l8L90dMNQ…](https://t.co/wnbHusOQwO)
 **从零实现 vLLM (1.1)：并行词嵌入**https://mp.weixin.qq.com/s/h1cFYDNxcHC30APcarF47A

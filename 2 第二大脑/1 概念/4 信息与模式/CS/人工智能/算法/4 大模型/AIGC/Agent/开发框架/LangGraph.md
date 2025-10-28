@@ -1,6 +1,6 @@
 ---
 date created: 2025-04-16
-date modified: 2025-09-25
+date modified: 2025-10-25
 uid: d2c59329-438b-4509-afcb-772862a99b8c
 ---
 
@@ -17,7 +17,145 @@ langgraph 的[[异步编排]]是 allof逻辑。
 https://langchain-ai.github.io/langgraph/llms-txt-overview AI 时代的文档
 
 
+# Cues
 
+[[LangGraph 之 State]]
+[[LangGraph 之 reAct]]
+# notes
+
+版本与上下文
+  - 你项目里固定版本：`requirements.txt:39 为langgraph==0.4.7，requirements.txt:42 为 langgraph-prebuilt==0.2.1`。
+
+
+  核心执行流程
+  - 工具绑定：对 assistant 节点的模型做 tools 绑定，让模型能以函数调用的形式请求工具。
+  - 提示拼装：若传入 prompt，每轮 assistant 调用前会优先用它生成输入（支持 callable 基于当前 state 动态构造消息）。
+  - 工具执行：把工具列表规范化为一个 ToolNode，按调用顺序执行并把 ToolMessage 追加到 state。
+  - 终止与最终回答：
+      - 没有工具调用时结束；若给了 response_format，会额外跑一轮“无工具、结构化输出/JSON”作为最终回答，再结束。
+      - 可用 RemainingSteps 限制循环轮数，你的 graph/types.py:159 已定义此字段。
+
+  函数签名与参数语义（该版本的实际用法）
+  - `model`: LangChain 聊天模型对象（或可解析到模型的字符串）。需要支持工具绑定。
+  - tools: BaseTool、@tool 装饰的函数、工具 dict，或一个现成的 ToolNode。传列表时内部会创建 ToolNode。
+  - prompt:
+      - 省略：直接用 `state["messages"]`。
+      - Prompt/Runnable：作为 assistant 的输入前处理。
+      - `Callable[[state]-> LanguageModelInput]`：每轮动态生成输入消息。你的用法就是这种（`graph/trip_react_node.py:204`）。
+  - response_format：开启“最终一轮结构化输出”模式（例如 JSON/模式化输出）；计划/工具阶段不受约束，只有最后一轮受约束。
+  - state_schema：自定义 TypedDict（需包含 messages）。你的 State 基于 MessagesState，可直接用（graph/trip_react_node.py:206）。
+
+  典型实现骨架（简化伪代码）
+
+  - 规范化工具：
+      - 若是列表 → 包一层 ToolNode；若已是 ToolNode → 直接用。
+  - 构建图：
+      - StateGraph(state_schema or AgentState)
+      - assistant(state)：
+          - msgs = prompt(state) 或 state["messages"]
+          - model.bind_tools(tools) 调用 → 追加 AIMessage
+      - route(state)：
+          - 若最后一条 AIMessage 有 tool_calls → "tools"
+          - 否则 → 有 response_format 则 "final"；否则 END
+      - tools(state)：执行工具 → 追加 ToolMessage
+      - 可选 final(state)：用模型的结构化输出能力（如 with_structured_output(response_format)）生成最终回答 → 追加 AIMessage
+      - 连线：assistant ↔ tools 循环；assistant 条件跳转到 final/END；final → END
+  - 编译返回可.invoke/.stream 的执行器；返回值是更新后的 state（最后一条 AIMessage 即最终回复，见 graph/trip_react_node.py:217）。
+
+  使用与注意点
+
+  - 动态提示：本版本 prompt 支持 callable，你已用来按业务场景注入系统提示（graph/trip_react_node.py:200–206）。
+  - 结构化最终输出：response_format 仅影响最后一轮回答；设计好让最后一轮能从对话轨迹中生成目标 schema。
+  - 工具结果体量：尽量裁剪/摘要，避免上下文爆炸。
+  - 防无限循环：结合 RemainingSteps（你已在 State 中加入）限制最大工具交互轮数。
+
+  需要我直接安装 langgraph-prebuilt==0.2.1 并打印 create_react_agent 的源码确认细节吗？如果需要，我可以申请网络权限后拉取并贴出函数体。
+
+```Java
+关键判断点
+
+  - 状态 schema 切换
+      - 当指定 response_format 时，使用带结构化字段的 schema；否则用普通 schema。
+      - 代码：
+          - 校验外部自定义 schema 必含键：
+              - if state_schema is not None:
+              - required_keys = {"messages", "remaining_steps"}
+              - if response_format is not None: required_keys.add("structured_response")
+          - 未传自定义 schema 时的默认 schema：
+              - state_schema = (AgentStateWithStructuredResponse if response_format is not None else AgentState)
+  - 生成“结构化输出”节点
+      - 专门定义了最终一轮结构化输出的节点函数，仅在有 response_format 时才会用：
+          - def generate_structured_response(...):
+              - model_with_structured_output = _get_model(model).with_structured_output(response_format)
+              - return {"structured_response": response}
+          - 异步版 agenerate_structured_response(...) 同理
+  - 无工具场景下的接线
+      - 若没有可用工具，仍会在有 response_format 时追加“结构化输出”节点；否则直接结束：
+          - if response_format is not None:
+              - workflow.add_node("generate_structured_response", ...)
+              - workflow.add_edge("agent" 或 "post_model_hook", "generate_structured_response")
+          - 否则不加该节点，直接编译返回
+  - 有工具场景下的路由与接线
+      - 在“agent”节点结束、且本轮没有 tool_calls 时：
+          - def should_continue(state):
+              - if not last_message.tool_calls:
+                  - if post_model_hook is not None: return "post_model_hook"
+                  - elif response_format is not None: return "generate_structured_response"
+                  - else: return END
+      - 构图时，仅在有 response_format 时才添加该节点并把路径指向它：
+          - if response_format is not None:
+              - workflow.add_node("generate_structured_response", ...)
+              - agent_paths.append("generate_structured_response")（或经 post_model_hook_paths 指向）
+          - 否则：
+              - agent_paths.append(END)（或 post_model_hook_paths.append(END)）
+  - 带 post_model_hook 的额外路由
+      - post_model_hook_router 中也有同样的分支：
+          - elif response_format is not None: return "generate_structured_response"
+          - 否则 return END
+
+  一句话总结
+
+  - “response_format 可选”体现在所有出现 if response_format is not None: 的分支：决定是否
+      - 切换到包含 structured_response 的 state schema，
+      - 添加并路由到 generate_structured_response 节点（最后追加一轮仅 LLM 的格式化输出），
+      - 以及在无工具/有工具、有无 post_model_hook 时的不同连边。
+```
+
+只做“思考→工具→思考…→无工具则结束”；不追加最终的格式化 LLM 调用。
+```Java
+最简用法（不做结构化收尾）
+
+  - 调用
+      - agent_executor = create_react_agent(react_agent_llm, react_agent_tools, prompt=prompt_fn, state_schema=State, version="v2",
+  name="trip_react")
+  - 说明
+      - 只做“思考→工具→思考…→无工具则结束”；不追加最终的格式化 LLM 调用。
+```
+
+
+```Java
+  开启结构化收尾（response_format）
+
+  - 做法有两种，二选一：
+  - 方案 A（推荐，保持你现有 State）：
+	  - 在 graph/types.py:159 邻近位置，给 State 增加一行：structured_response: Optional[dict]（或你的精确类型）
+	  - 调用时加上 response_format：
+		  - 例：agent_executor = create_react_agent(react_agent_llm, react_agent_tools, prompt=prompt_fn, state_schema=State,
+response_format=MySchema, version="v2", name="trip_react")
+		  - 也可用元组：response_format=("请用JSON输出以下字段…", MySchema)
+                
+                
+- 方案 B（不改 State）：
+  - 不传 state_schema 参数（让内部自动用带 structured_response 的默认 schema）：
+	  - agent_executor = create_react_agent(react_agent_llm, react_agent_tools, prompt=prompt_fn, response_format=MySchema, version="v2",
+name="trip_react")
+  - 注意：这样你的自定义 state 字段不是强类型声明，但仍会随输入一起传入子图并可被 prompt_fn 使用。
+    
+- 常见 response_format 取值
+- 可用 TypedDict/Pydantic/JSON Schema/OpenAI function schema
+- 例如（TypedDict）：class MySchema(TypedDict): hotels: list[dict]; summary: str
+
+```
 # Cues
 
 
@@ -74,7 +212,7 @@ from langchain_deepseek import ChatDeepSeek
 
 # State
 
-[[MessageState、AgentState]]
+[[LangGraph 之 State]]
 
 ## Node
 

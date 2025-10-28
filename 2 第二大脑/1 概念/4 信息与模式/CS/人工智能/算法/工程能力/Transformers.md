@@ -1,12 +1,50 @@
 ---
 date created: 2024-07-18
-date modified: 2025-10-05
+date modified: 2025-10-20
 uid: 7e558a2c-e8d2-4561-ae99-58c6d43f241d
 ---
 
 # Summary
 
 相当于[[后端开发]]的[[Spring]]，这个库大大简化了使用和微调这些强大模型的过程。
+设计简洁，只有 configuration，models 和 tokenizer 三个主要类。因此它不是一个基础的神经网络库来一步一步构造 Transformer，而是把常见的 Transformer 模型封装成一个 building block，我们可以方便的在 PyTorch 或者 TensorFlow 里使用它。
+
+## Model
+
+Model类（如 BertModel）,包括30+的 PyTorch模型（torch.nn.Module）和对应的 TensorFlow HEY (tf.keras.Model) o
+### Tokenizer
+Tokenizer 的作用大致就是分词，然后把词变成的整数ID，当然有些模型会使用subword。但是不管怎么样，最终的目的是把一段文本变成ID 的序列。当然它也必须能够反过来把ID 序列变成文本。下面我们来看一个例子：
+### config
+如果你想自定义模型（这里指的是调整模型的超参数，比如网络的层数，每层的 attention head 个数等等，如果你要实现一个全新的模型，那就不能用这里的方法了），那么你需要构造配置类。每个模型都有对应的配置类，比如DistilBertConfig。你可以通过它来指定隐单元的个数，dropout等等。如果你修改了核心的超参数（比如隐单元的个数），那么就不能使用from_pretrained 加载预训练的模型了，这时你必须从头开始训练模型。当然 Tokenizer 一般还是可以复用的。
+## pipeline
+Transformers 提供了很多开箱即用的 Pipeline
+
+3.3 Pipeline 使用预训练模型最简单的方法就是使用 pipeline 函数，它支持如下的任务：• 情感分析（Sentiment analysis）：一段文本是正面还是负面的情感倾向 • 文本生成（Text generation）：给定一段文本，让模型补充后面的内容 • 命名实体识别（Name entity recognition）：识别文字中出现的人名地名的命名实体 • 问答（Question answering）：给定一段文本以及针对它的一个问题，从文本中抽取答案 • 填词（Filling masked text）：把一段文字的某些部分 mask 住，然后让模型填空 • 摘要（Summarization）：根据一段长文本中生成简短的摘要 • 翻译（Translation）：把一种语言的文字翻译成另一种语言 • 特征提取（Feature extraction）：把一段文字用一个向量来表示
+
+
+它帮你**自动完成**以下所有步骤：
+
+```python
+from transformers import pipeline
+
+# 一行代码搞定情感分析
+classifier = pipeline("sentiment-analysis")
+result = classifier("这个电影太棒了！")
+print(result)
+# 输出: [{'label': 'POSITIVE', 'score': 0.9998}]
+```
+
+在背后，Pipeline 自动做了：
+1. **加载预训练模型**（自动选择合适的模型）
+2. **加载 Tokenizer**（文本转数字）
+3. **预处理输入**（分词、编码）
+4. **模型推理**（喂给神经网络）
+5. **后处理输出**（把结果转成人类可读的格式）
+
+
+
+
+
 
 # Notes
 

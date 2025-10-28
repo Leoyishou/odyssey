@@ -1,12 +1,12 @@
 ---
 date created: 2025-03-24
-date modified: 2025-10-15
+date modified: 2025-10-22
 uid: 0fc91684-868b-49f2-9d2e-c4008eef39b5
 ---
 ```Java
 # 使用 UV 指定 Python 3.9
 
-uv init --python 3.9
+uv init --python 3.11
 uv add --requirements requirements.txt
 ```
 
@@ -21,6 +21,10 @@ uv add --requirements requirements.txt
 - **项目管理**：`uv init` 和 `uv add` 可以像 poetry 一样管理项目
 - **锁文件**：`uv lock` 生成 `uv.lock` 确保依赖一致性
 - [ ]
+
+
+
+
 
 # TL;DR（结论先行）
 
