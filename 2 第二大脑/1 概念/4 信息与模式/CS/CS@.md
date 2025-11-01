@@ -1,6 +1,6 @@
 ---
 date created: 2024-05-19
-date modified: 2025-09-20
+date modified: 2025-11-01
 uid: b5ef6834-6399-4b0b-98b2-df5a5659df91
 aliases: [Summary]
 linter-yaml-title-alias: Summary
@@ -35,15 +35,17 @@ linter-yaml-title-alias: Summary
 | 科目                    | 推荐课程                                                                                                                                    |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | [编程语言@](编程语言@.md)     | [Exercism](Exercism.md)、[Shell](Shell.md)、[C语言](C语言.md)、[CPP](CPP.md)、[Java@](Java@.md)、[Python](Python.md)、[JavaScript](JavaScript.md) |
+| [[Shell]]             | https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md                                                               |
 | [数据结构和算法](数据结构和算法.md) | [LeetCode](LeetCode.md)                                                                                                                 |
 | [[操作系统@]]             | [MIT 6.828 Operating System Engineering](MIT%206.828%20Operating%20System%20Engineering.md)                                             |
 | [[计算机网络@]]            | [CS144 Computer Network](CS144%20Computer%20Network.md)                                                                                 |
 | [[数据库@]]              | [[UCB CS186 Introduction to Database System]]                                                                                           |
 |[大数据$](大数据$.md)       |                                                                                                                                         |
 | [分布式系统](分布式系统.md)     | [MIT 6.824 Distributed System](MIT%206.824%20Distributed%20System.md)                                                                   |
-| [机器学习ML@](机器学习ML@.md)   | [CS229 Machine Learning](CS229%20Machine%20Learning.md)                                                                                 |
+| [机器学习ML@](机器学习ML@.md) | [CS229 Machine Learning](CS229%20Machine%20Learning.md)                                                                                 |
 | [[深度学习@]]             | [[CS224n Natural Language Processing]]                                                                                                  |
-| [LLM大模型](LLM大模型.md)         | [CS336](CS336.md)                                                                                                                       |
+| [LLM大模型](LLM大模型.md)   | [CS336](CS336.md)                                                                                                                       |
+| [[计算机图形学]]            |                                                                                                                                         |
 
 | 推荐平台                | 目标                    | 原因             |
 | ------------------- | --------------------- | -------------- |
@@ -123,30 +125,7 @@ linter-yaml-title-alias: Summary
 
 #第一性原理 每一个 lab 就像一份 PRD，因为他们的本质都是用数据结构抽象某种事物，学 Lab 的过程就像做需求一样，只不过后者是理解业务，前者是理解 CS
 
-| 主题                | 子主题                                         |     |
-| ----------------- | ------------------------------------------- | --- |
-| 数学进阶              | - <br>- <br>- <br>- <br>- <br>-             |     |
-| 编程入门              | - <br>- <br>- <br>- <br>- <br>- <br>- <br>- |     |
-| 电子基础              | - <br>- <br>-                               |     |
-| 数据结构与算法           | - <br>- <br>- <br>- <br>-                   |     |
-| [软件工程@](软件工程@.md) | - <br>- <br>-                               |     |
-| 计算机系统基础           | - <br>-                                     |     |
-| 体系结构              | - <br>- <br>- <br>-                         |     |
-| 操作系统              | - <br>- <br>- <br>-                         |     |
-| 并行与分布式系统          | - <br>-                                     |     |
-| 计算机系统安全           | - <br>- <br>- <br>- <br>- <br>-             |     |
-| 计算机网络             | - <br>- <br>-                               |     |
-| 数据库系统             | - <br>- <br>- <br>- <br>-                   |     |
-| 编译原理              | - <br>- <br>- <br>-                         |     |
-| 编程语言设计与分析         | - <br>- <br>- <br>-                         |     |
-| 计算机图形学            | - <br>- <br>- <br>- <br>- <br>-             |     |
-| Web开发             | - <br>- <br>- <br>-                         |     |
-| 数据科学              | -                                           |     |
-| 人工智能              | - <br>-                                     |     |
-| 机器学习              | - <br>- <br>-                               |     |
-| 机器学习系统            | - <br>- <br>-                               |     |
-| 深度学习              | - <br>- <br>- <br>- <br>- <br>- <br>-       |     |
-| 机器学习进阶            | - <br>- <br>- <br>- <br>-                   |     |
+
 
 计算机基础学习顺序是什么？- 编程指北的回答 - 知乎  
 https://www.zhihu.com/question/473267862/answer/2009648056

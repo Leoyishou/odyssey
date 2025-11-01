@@ -1,8 +1,20 @@
 ---
 date created: 2023-12-18
-date modified: 2025-10-25
+date modified: 2025-11-01
 uid: f5a5e42c-4168-4335-9f26-8bee4d1e7f0f
 ---
+
+# Summary
+
+
+## 相对导入
+
+相对导入（from.xxx import）会失败：python file.py`（直接运行）
+可以处理相对导入 ： `python -m x.py`（模块方式运行）
+
+
+# Notes
+
 ```python
 hotels = result.get("hotels", [])[:top_n] if result else []
 

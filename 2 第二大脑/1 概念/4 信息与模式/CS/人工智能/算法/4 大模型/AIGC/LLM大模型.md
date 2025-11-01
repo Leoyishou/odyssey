@@ -1,6 +1,6 @@
 ---
 date created: 2024-10-21
-date modified: 2025-10-25
+date modified: 2025-11-01
 uid: 106902ea-2d32-4870-b823-97b4866c87a5
 aliases: [Cues]
 linter-yaml-title-alias: Cues
@@ -11,6 +11,8 @@ linter-yaml-title-alias: Cues
 - **LLM**：输入是文本 → 输出是文本。
 - **[[VLM]]**：输入可以包含 **图像/视频（视觉模态）+ 文本**，输出通常是文本（有时也能生成图像、做多模态对齐）。
     
+[[数据@]] + [[算力]] + [[Transformer]]
+
 
 [[LLM 的数学能力]]
 

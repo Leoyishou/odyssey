@@ -1,8 +1,12 @@
 ---
 date created: 2025-05-02
-date modified: 2025-10-25
+date modified: 2025-11-01
 uid: 0aba88f6-06ea-4eca-a838-3c42b57e93d9
 ---
+# Summary
+
+**C4 = 261.63 Hz**
+
 音名：C D E F G A B
 唱名：do re mi fa sol la si
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F09%2F13%2F14-40-18-24728a51728ff40bbd6266696abe4dfe-202509131440769-b98bd4.png)

@@ -1,6 +1,6 @@
 ---
 date created: 2024-10-13
-date modified: 2025-10-28
+date modified: 2025-11-01
 uid: 13ade5e1-c52c-4190-9b08-ff860c5d0603
 ---
 
@@ -29,6 +29,8 @@ Kaggle给机器学习新手和顶尖选手带来的好处是最大的，反倒�
 # Cues
 
 [[Code Competition 模式]]
+[[baseline]]
+
 # Notes
 
 熟悉 Kaggle 平台的基本用法比较容易，本质就是一种面向对象的思维
@@ -55,88 +57,6 @@ Kaggle给机器学习新手和顶尖选手带来的好处是最大的，反倒�
 |                  | 安装库             | `!pip install package-name`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **资源**           | 官方文档            | [Kaggle官方文档](https://www.kaggle.com/docs)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |                  | 入门教程            | [Kaggle Learn入门教程](https://www.kaggle.com/learn)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-
-## 环境
-1. Kaggle 的 Dependency Manager
-	- Kaggle 最近加了一个 **“Dependencies”** 功能，你可以在 **左侧面板 → Dependency Installation Code** 里提前写好 `pip install...`。
-	- Kaggle 在 Notebook 启动时会 **自动运行这些安装命令**，相当于“前置隐藏单元格”。
-	- 所以等到 Notebook 的第一个可见单元格执行时，`vllm`、`logits-processor-zoo` 这些包已经被装进环境了，自然可以直接 `import`。
-	- 需要注意的是：每次切换 GPU 配置（T4x2 → T4x1）都会启动新容器 → Kaggle 会再次执行这些安装命令。
-	- - Kaggle 会在一个**离线、无外网的新容器**里重新跑你的 Notebook，从头到尾执行。
-	- 这个环境不允许 `pip install` 从外网拉包。
-	- 但 **Dependency Manager** 的配置仍然会在容器启动时执行 → 相当于 Kaggle 在后台跑了一次 `pip install vllm==0.10.0...`。
-    
-2. 和传统写法的区别
-- 传统：在 Notebook 顶部手动写：
-    `!pip install vllm==0.10.0!pip install logits-processor-zoo==0.1.10`
-- Dependency Manager：在侧边栏配置好：
-    `pip install vllm==0.10.0 pip install logits-processor-zoo==0.1.10 pip install triton==3.2.0 pip install clean-text pip install -U --no-deps bitsandbytes peft accelerate datasets`
-    这样就不会污染 Notebook 里逻辑代码，更干净。
-    
-1. 在 Kaggle “Submit” 时的效果
-	- **Notebook 提交打分**时，这些 dependency 配置也会被自动执行 → 确保评分环境里有 vLLM。
-	- 所以作者提交的时候，submission 代码里不需要再装包，直接 import 就能跑。
-    
-## Notebook
-
-直接在 Notebook 里写py文件
-
-```Java
-`%%writefile utils.py # 这里写内容`
-```
-## Submit
-
-有的会存在双重测试集机制
-
-- **Kaggle Notebook 本地 run时：`test.csv` 只包含 10 行样例数据（让你测试代码）
-- **提交评分时**：Kaggle 会自动替换为**完整的隐藏测试集**（2000+ 行）
-
-Kaggle 评分时的时间限制
-### **标准限制**
-
-- **最大运行时间：9 小时**（大多数竞赛）
-- **GPU 竞赛：通常 9 小时**
-- **CPU-only 竞赛：可能 3-9 小时**
-
-这是一个 **系统返回状态分类问题**：不同的错误提示，其实对应不同的原因（文件找不到、执行异常、评分失败…），需要整理成结构化表格，便于快速定位。
-
-| 状态提示                            | 类比 HTTP 状态     | 含义                     | 常见原因                                                     | 排查/解决方法                                                     |
-| ------------------------------- | -------------- | ---------------------- | -------------------------------------------------------- | ----------------------------------------------------------- |
-| ✅ **Succeeded**                 | 200 OK         | 提交成功，系统成功计算并打分         | 输出文件符合要求，格式正确                                            | 检查 Public Score 确认效果                                        |
-| ⚠️ **Submission Scoring Error** | 文件格式/内容问题      | 评分阶段失败，无法计算分数          | - CSV 列名/行数不符合 sample_submission- 含 NaN/非法值- 提交的是类别而不是概率 | 和 sample_submission.csv 严格对齐；用 `.info()`/`.isna().sum()` 检查 |
-| ⚠️ **Notebook Timeout**         | 算力/时间不够        | Notebook 在限定时间内没跑完     | - 模型太大 / 代码效率低- 数据处理卡住                                   | 减小模型规模、优化推理速度，先在本地验证                                        |
-| ⚠️ **Submission CSV Not Found** | 没生成提交文件        | 系统找不到 `submission.csv` | - 文件没生成- 文件保存路径错误- 文件名不符                                 | 确认最后一格保存到 `/kaggle/working/submission.csv`                  |
-| ⚠️ **Notebook Threw Exception** | 代码中途挂了         | Notebook 执行出错，中途崩溃     | - Python 报错（KeyError、FileNotFoundError 等）- 依赖库问题         | 查看 Notebook 日志，修复报错                                         |
-| ⏳ **Pending / Running**         | 102 Processing | 正在运行或排队                | 正常过程                                                     | 等待即可                                                        |
-
-## Notebook
-
-整体而言，Kaggle Notebook 的设计本意就是方便复现，大部分高评分 Notebook 都是可以直接运行的。
-
-```mermaid
-graph TD
-    A[开始] --> B[数据加载与探索]
-    B --> C[数据预处理]
-    C --> D[特征工程]
-    D --> E[数据集分割]
-    E --> F[模型训练]
-    F --> G[模型评估]
-    G --> H[在测试集上预测]
-    H --> I[生成提交文件]
-    I --> J[提交到Kaggle]
-    J --> K[查看得分]
-    K --> L{是否满意?}
-    L -->|是| M[结束]
-    L -->|否| N[优化模型]
-    N --> D
-```
-
-
-希望以上内容能帮助你更快地熟悉和掌握 Kaggle 平台的使用！
-
-___
-
-[[baseline]]
 
 装依赖  
 ![CleanShot 2025-03-17 at 02.32.44@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_3XbejjHF4p%2F2025%2F03%2F17%2F02-33-17-288bf40aa581e22c89234b458a46f1c4-CleanShot%202025-03-17%20at%2002.32.44-2x-4b06bb.png)
@@ -173,88 +93,8 @@ ___
 - 检查代码中的数据路径是否正确
 - 确保已经加入了该比赛
 
-这样，你就能使用这个baseline来参与Kaggle比赛并获得你的第一个提交结果了。
-
-```Java
-
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
 
 
-"""
-To evaluate the equitable prediction of transplant survival outcomes,
-we use the concordance index (C-index) between a series of event
-times and a predicted score across each race group.
- 
-It represents the global assessment of the model discrimination power:
-this is the model’s ability to correctly provide a reliable ranking
-of the survival times based on the individual risk scores.
- 
-The concordance index is a value between 0 and 1 where:
- 
-0.5 is the expected result from random predictions,
-1.0 is perfect concordance (with no censoring, otherwise <1.0),
-0.0 is perfect anti-concordance (with no censoring, otherwise >0.0)
-
-"""
-
-import pandas as pd
-import pandas.api.types
-import numpy as np
-from lifelines.utils import concordance_index
-
-class ParticipantVisibleError(Exception):
-    pass
-
-
-def score(solution: pd.DataFrame, submission: pd.DataFrame, row_id_column_name: str) -> float:
-    """
-    >>> import pandas as pd
-    >>> row_id_column_name = "id"
-    >>> y_pred = {'prediction': {0: 1.0, 1: 0.0, 2: 1.0}}
-    >>> y_pred = pd.DataFrame(y_pred)
-    >>> y_pred.insert(0, row_id_column_name, range(len(y_pred)))
-    >>> y_true = { 'efs': {0: 1.0, 1: 0.0, 2: 0.0}, 'efs_time': {0: 25.1234,1: 250.1234,2: 2500.1234}, 'race_group': {0: 'race_group_1', 1: 'race_group_1', 2: 'race_group_1'}}
-    >>> y_true = pd.DataFrame(y_true)
-    >>> y_true.insert(0, row_id_column_name, range(len(y_true)))
-    >>> score(y_true.copy(), y_pred.copy(), row_id_column_name)
-    0.75
-    """
-    
-    del solution[row_id_column_name]
-    del submission[row_id_column_name]
-    
-    event_label = 'efs'
-    interval_label = 'efs_time'
-    prediction_label = 'prediction'
-    for col in submission.columns:
-        if not pandas.api.types.is_numeric_dtype(submission[col]):
-            raise ParticipantVisibleError(f'Submission column {col} must be a number')
-    # Merging solution and submission dfs on ID
-    merged_df = pd.concat([solution, submission], axis=1)
-    merged_df.reset_index(inplace=True)
-    merged_df_race_dict = dict(merged_df.groupby(['race_group']).groups)
-    metric_list = []
-    for race in merged_df_race_dict.keys():
-        # Retrieving values from y_test based on index
-        indices = sorted(merged_df_race_dict[race])
-        merged_df_race = merged_df.iloc[indices]
-        # Calculate the concordance index
-        c_index_race = concordance_index(
-                        merged_df_race[interval_label],
-                        -merged_df_race[prediction_label],
-                        merged_df_race[event_label])
-        metric_list.append(c_index_race)
-    return float(np.mean(metric_list)-np.sqrt(np.var(metric_list)))
-```
-
-这篇回答深入探讨了**Kaggle与实际工作的差异和联系**，可以总结为以下几个要点：
-
-# 一、对 Kaggle 的偏见和反驳
-
-作者反驳了一些常见的偏见：
 
 - **偏见1：Kaggle 问题与实际问题差异大**  
     事实上，Kaggle 的问题种类繁多，本质上和现实工作场景一样，不同任务之间差异本来就很大。
@@ -262,205 +102,50 @@ def score(solution: pd.DataFrame, submission: pd.DataFrame, row_id_column_name: 
     
 - **偏见2：Kaggle 模型难以落地、ensemble 过拟合、靠抱大腿刷排名**  
     反驳理由：
-    
     - Kaggle 是商业平台，如果模型毫无实际价值，平台早就无法维持。
-        
     - 一些企业反复举办比赛，且长期与选手合作，说明模型实际有用。
-        
     - 不能以少部分刷牌子的人否定整体，很多顶级方案能上顶刊论文。
         
 - **偏见3：模型重于数据，轻视 Kaggle 的数据驱动方法**  
     事实上，数据的重要性被严重低估，现实工作中数据敏感度至关重要。
     
 
----
-
-# 二、Kaggle 与科班培养出的特质的对比
-
-作者强调 Kaggle 和科班各有培养侧重：
-
-## （一）Kaggle 培养的优势特质
-
+Kaggle 培养的优势特质
 1. **数据敏感度**  
     每个比赛数据各异，都要从零探索（EDA）。
-    
 2. **快速学习新领域的能力**  
     由于每个比赛可能涉及不同的领域，需要快速入门并上手。
-    
 3. **Pipeline 构建能力与大局观**  
     需要从数据清理到特征、模型搭建、模型融合完整的流程，培养整体观念。
-    
 4. **高效执行、抗压能力强**  
     每场比赛有 deadline，能培养快速推进的执行力。
-    
 5. **结果导向的创新能力和接受新想法的开放性**  
     在 Kaggle，只要能赢就是好想法。无需过于拘泥于理论支持和模型结构是否优雅。
-    
 6. **对验证集（public）与真实未知集（private）的差距警惕性**  
     提高了对过拟合和泛化能力的关注，在实际场景（如量化金融）尤其重要。
     
 
----
-
-## （二）Kaggle 出身的选手（尤其非科班出身）可能存在的缺点
-
+Kaggle 出身的选手（尤其非科班出身）可能存在的缺点
 1. **对源码理解不足**  
     更倾向于“拼乐高”，忽视对底层代码逻辑的深入理解，限制了更高层次的发挥。
-    
 2. **代码规范性差**  
     因快速迭代导致代码不够整洁、优雅，可维护性低。
-    
 3. **前沿科研反应滞后**  
     Kaggle 社区通常对最新论文成果的吸收较慢，且更多是实用主义，缺少学术敏锐性。
-    
 4. **对计算机底层性能优化能力不足**  
     在实际工作中数据存储、分布式计算优化非常重要，但 Kaggle 主要集中在应用层（特征工程、模型调参），对底层优化技术缺乏锻炼。
     
 
----
 
-# 三、结论与建议
-
-作者认为 Kaggle 是**很好的自学深度学习的平台**，能够培养很多实际工作需要的能力：
-
-- 数据敏感度
-    
-- 快速入门新领域
-    
-- pipeline 大局观
-    
-- 强执行力和创新能力
-    
-- 对泛化的谨慎态度
-    
-
-但也提醒大家**意识到 Kaggle 的局限性**，应弥补不足：
-
-- 提升源码理解和编写能力
-    
-- 提高代码规范性和工程可维护性
-    
-- 更及时关注科研前沿
-    
-- 加强底层性能优化能力
-    
-
-只有做到这些，才能更好地与科班出身的人才形成互补，在职场中获得更广阔的发展空间。
-
----
-
-# 四、实际工业界工作场景补充（第二位答主的观点）
-
-后面第二个回答（腾讯优图实验室员工）补充了工业界真实工作的差异：
-
-- 工业应用场景下，性能并不是唯一考虑因素（如移动端部署约束，需回归传统轻量级模型）
-    
-- 很多精妙复杂的模型工业界不一定采纳，实际工程化的模型往往更简单稳健
-    
-- 大量时间花费在工程化（C++模型部署、权重转换、优化）而非理论上
-    
-- **编程能力和工程能力往往比比赛成绩更重要**
-    
-
----
-
-# 总结
-
-两位答主的观点结合起来就是：
-
-- Kaggle 有其非常积极的作用，但也有明显局限。
-    
-- 工业实际工作更强调编程与工程能力，比赛能力只是锦上添花。
-    
-- 对 Kaggle 出身者来说，意识到短板并有意识地提升，才是获得长远发展和竞争力的关键。
-    
-
-这是非常客观、清晰、并且具备指导性的观点。
-
-___
-
-谢邀。
-
-人在 Kaggle，刚下赛场，圈内人，利益相关。
-
-看到题主问新手打 Kaggle 需要啥基础，特别是瞄准了经典的 [Titanic](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=Titanic&zhida_source=entity) 生存预测，这个问题下面想必又会堆满了各种“你需要精通[线性代数](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0&zhida_source=entity)、[微积分](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=%E5%BE%AE%E7%A7%AF%E5%88%86&zhida_source=entity)、[概率论](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=%E6%A6%82%E7%8E%87%E8%AE%BA&zhida_source=entity)、[统计学](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=%E7%BB%9F%E8%AE%A1%E5%AD%A6&zhida_source=entity)、机器学习理论……”以及“Python/[R 语言](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=R+%E8%AF%AD%E8%A8%80&zhida_source=entity)必须掌握到能手写 XXX 算法”的劝退清单。
-
-**但我想说，那些可能都是“正确的废话”。**
-
-咱们换个思路，来点实在的，甚至有点“反常识”的。
-
-**一、基础？关键在于“动手”的基础，而非“理论完美”的基础**
-
-**你不需要成为数学/统计学大师才开始。**
-
-- **传统观念** 没有扎实的数理基础，搞机器学习/数据科学就是空中楼阁。
-- **我的看法：** 对于 Titanic 这种入门级项目，你需要的数学知识，可能比你想象的要少得多。初高中级别的**基本统计概念**（均值、中位数、众数、方差、标准差）+ 对**概率**有基本直觉 + 理解**坐标系**（能看懂图表）就足够让你起步了。线性代斯、微积分？重要，但不是 _现在_ 卡住你的门槛。它们在你深入理解模型原理、进行更复杂优化时会变得关键，但 **做 Titanic，更重要的是理解数据、处理数据和调用模型的能力**。先跑起来，遇到不懂的数学原理，再去针对性地补，效率高得多。**“用到再学” (Just-in-time Learning) 在这里比“学完再用” (Just-in-case Learning) 更实际。**
-
-- **你需要的基础是：**
-
-1. **基本的数据分析思维：** 知道拿到数据要看什么（缺失值、异常值、数据分布），怎么看（描述性统计、可视化），如何提出假设并验证。这比背一堆公式重要。
-2. **对机器学习核心流程的理解：** 知道什么是特征（Features）、标签（Labels/Target），明白训练集（Train Set）和测试集（Test Set）的区别，了解模型训练（Fit）、预测（Predict）和评估（Evaluation）这几个基本步骤。Titanic 主要涉及**分类问题**，知道这个就够了。
-3. **工具使用能力 > 理论背诵能力：** 知道用什么工具（后面语言部分会详说）来完成数据加载、清洗、探索、建模、评估。
-
-**二、语言掌握程度？“够用”即可，精通是进阶后的事**
-
-- **你不需要精通 Python/R 的所有语法细节和高级特性。**  
-    
-
-- **传统观念：** 语言是基础，必须掌握牢固，面向对象、装饰器、异步编程……都要懂。
-- **我的看法：** 对于 Kaggle 新手，尤其是 Titanic，语言只是**工具**。你需要掌握的不是语言本身有多精妙，而是**如何用这门语言去调用解决数据问题的库**。
-- **语言程度要求：**
 
 1. **基本语法：** 变量、数据类型（数字、字符串、列表、字典）、条件语句（if/else）、循环（for/while）、函数定义和调用。这是底线。
 2. **核心库的熟练使用（以 Python 为例）：**
 
 - **Pandas:** 这是**重中之重**！你需要熟练使用 Pandas 进行数据读取（`pd.read_csv`）、数据查看（`.head()`, `.info()`, `.describe()`）、数据清洗（处理缺失值 `.fillna()`, `.dropna()`）、数据选择和过滤（`loc`, `iloc`）、数据转换（类型转换 `.astype()`, 应用函数 `.apply()`）、数据合并（`merge`, `concat`）。**可以说，做 Titanic 80% 的时间可能都在和 Pandas 打交道。** 对 Pandas 的熟练度，比你对 Python 语言本身很多高级特性的掌握，对这个项目来说重要得多。
-- **[NumPy](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=NumPy&zhida_source=entity):** 通常和 Pandas 配合使用，需要了解其核心数据结构 `ndarray`，以及一些基本的数学运算和数组操作。Pandas 底层很多是基于 NumPy 的。
-- **[Scikit-learn](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=Scikit-learn&zhida_source=entity):** 这是机器学习库。你需要会：
-
-- 数据预处理（`SimpleImputer` 填充缺失值，`StandardScaler` 或 `MinMaxScaler` 进行特征缩放，`OneHotEncoder` 或 `LabelEncoder` 处理分类变量）。
-- 模型调用（导入你想用的模型，比如 `LogisticRegression`, `DecisionTreeClassifier`, `RandomForestClassifier`，然后用 `.fit()` 训练，`.predict()` 预测）。
-- 模型评估（`accuracy_score`, `confusion_matrix`, `classification_report` 等）。
-
+- [[NumPy]]  
+- [[Scikit-learn、sklearn]] 这是机器学习库。你需要会：
 - **[Matplotlib](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=Matplotlib&zhida_source=entity) / [Seaborn](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=Seaborn&zhida_source=entity):** 用于数据可视化，帮助你理解数据（EDA - Exploratory Data Analysis）。会画基本的图（散点图、直方图、箱线图、热力图）来看数据分布、特征间关系、异常值等。
 
-- **读懂别人的代码，比自己从零写出完美代码更重要（初期）。**  
-    
-
-- Kaggle 的一大精髓在于其开放的社区和 Notebooks。去看别人（特别是高分大佬）是怎么处理 Titanic 数据的，他们用了哪些特征工程技巧，模型是怎么选择和调优的。**初期，你的目标不是写出最优雅、最高效的代码，而是能理解、借鉴、修改别人的代码，让它在你的环境里跑起来，并理解每一步是为什么。** 模仿是最好的学习。你需要掌握的语言程度，至少要能**读懂**这些常用库的代码示例和 Kaggle 上的公开 Notebook。
-
-**三、如何针对 Titanic 下手？**
-
-1. **环境准备：** 安装 Anaconda (自带 Python, Jupyter Notebook, Pandas, NumPy, Scikit-learn 等常用库)。或者直接用 Kaggle 提供的在线 Notebook 环境，更方便。
-2. **学习资源：**
-
-- 找一个好的 Pandas 教程（比如官方文档的十分钟入门，或者一些评价不错的在线课程/博客）。
-
-推荐这个资源给你：[太赞了！Pandas官方文档中文版PDF，免费开放下载！](https://link.zhihu.com/?target=https%3A//mp.weixin.qq.com/s/4rvNooiQOoR5Dkewpc6fjQ)
-
-- 找一个 Scikit-learn 的入门教程，重点看分类模型和预处理部分。
-- **直接去看 Kaggle Titanic 比赛页面下的 “Code” (以前叫 Kernels/Notebooks)。** 按点赞数排序，从最简单的 EDA + 基础模型开始看。别贪多，找一个你觉得代码风格清晰、解释详细的，跟着复现一遍。
-
-1. **动手实践：**
-
-- **第一步：加载数据，做探索性数据分析 (EDA)。** 用 Pandas 加载 `train.csv` 和 `test.csv`，用 `.info()`, `.describe()`, 可视化库看看数据长什么样，有哪些缺失值，不同特征和生存率（`Survived`）有什么关系。这是最重要的环节之一，能极大启发你后续的特征工程。
-- **第二步：数据预处理和特征工程。** 处理缺失值（比如 Age, Cabin, Embarked），把文本类特征（Sex, Embarked）转换成模型能理解的数字，可能的话，基于现有特征创造一些新特征（比如家庭大小 `FamilySize = SibSp + Parch + 1`）。这是提升模型效果的关键。
-- **第三步：选择并训练一个简单模型。** 从逻辑回归（Logistic Regression）或决策树（Decision Tree）开始，用 `train.csv` 里的特征和 `Survived` 标签进行训练 (`.fit()`)。
-- **第四步：进行预测并提交。** 用训练好的模型对 `test.csv` 进行预测 (`.predict()`)，生成符合提交格式要求的 `submission.csv` 文件（通常是 `PassengerId` 和 `Survived` 两列），然后在 Kaggle 页面提交，看看你的分数。
-- **第五步：迭代优化。** 根据分数和对他人的学习，回头改进你的 EDA、数据预处理、特征工程或尝试更复杂的模型（如随机森林、梯度提升树），重复步骤 3-4。
-
-**总结一下：**
-
-- **心态上：** 不要被“完美基础”吓倒，Kaggle 是一个**实践场**，边做边学是常态。完成比完美重要（尤其对新手）。
-- **基础上：** 重视**数据分析思维**和**机器学习流程**的理解，数学理论可在实践中逐步深化。
-- **语言上：** 聚焦 Python，**精通 Pandas 是关键**，熟练使用 Scikit-learn 和可视化库是核心要求。目标是**能用这些库解决问题，能读懂别人的代码**，而非语言本身的精通。
-- **行动上：** 立刻开始看 Titanic 的数据和高赞 Notebook，动手实践，提交你的第一个结果，哪怕分数很低。从错误和模仿中学习，是 Kaggle 成长的最快路径。
-
-对于像入门的新手可以推荐看看Coggle数据科学的三个板块（竞赛总结、竞赛知识、**竞赛baseline**）的系列文章，点击即可进行学习。
-
-（看到这里了，提示大家可以收藏下帖子，以后回看的时候就不迷路了）
-
-此外，还有一套中文版的教程，也是我当初入门kaggle的时候刷过的。详细内容都在此链接中了。
 
 # **竞赛总结**
 

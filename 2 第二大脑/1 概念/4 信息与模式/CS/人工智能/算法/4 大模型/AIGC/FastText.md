@@ -1,13 +1,27 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-07-27
+date modified: 2025-11-01
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # Summary
 
-FastText 是 Facebook Research 开发的一个高效的文本分类和词向量学习库。以下是它的主要能力：
+FastText 是 [[Facebook]] Research 开发的一个高效的文本分类和词向量学习库。以下是它的主要能力：
+
+1. FastText 的工作原理
+	1. 词嵌入：将文本转换为数值向量
+	2. 神经网络：使用浅层神经网络分类
+	3. 子词特征：捕捉词根、前缀、后缀等信息
+	4. 输出：二分类或多分类的概率分布
+
+2. 可以基于 fastText 框架**训练**针对不同任务**的独立模型
+
+|模型文件|任务|训练数据|输出|
+|---|---|---|---|
+|`lid.176.bin`|**语言识别**|多语言语料|176种语言标签 + 置信度|
+|`dolma_fasttext_nsfw_jigsaw_model.bin`|**NSFW 内容检测**|Jigsaw + 其他数据|NSFW 概率|
+|`dolma_fasttext_hatespeech_jigsaw_model.bin`|**仇恨言论检测**|Jigsaw 毒性数据|Toxic 概率|
 
 # Cues
 

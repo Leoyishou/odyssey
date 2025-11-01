@@ -1,11 +1,11 @@
 ---
 date created: 2024-07-27
-date modified: 2025-10-31
+date modified: 2025-11-01
 uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 ---
 # Summary
 
-
+[[bash]]
 ## SSH
 ```Java
 ## 跳板机

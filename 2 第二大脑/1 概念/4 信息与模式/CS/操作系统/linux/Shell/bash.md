@@ -1,8 +1,16 @@
 ---
 date created: 2024-07-11
-date modified: 2025-07-10
+date modified: 2025-11-01
 uid: e103055b-8fea-4002-9fc7-b259613bfb09
 ---
+# Summa
+
+**Bash 是最通用的 shell**，功能已经足够强大并且到几乎总是可用的（如果你_只_学习 zsh，fish 或其他的 shell 的话，在你自己的设备上会显得很方便，但过度依赖这些功能会给您带来不便，例如当你需要在服务器上工作时）。
+
+```Java
+`man` 用来查看 **manual pages**（手册页）
+```
+
 ## Bash 命令速查手册
 
 ### 简介
