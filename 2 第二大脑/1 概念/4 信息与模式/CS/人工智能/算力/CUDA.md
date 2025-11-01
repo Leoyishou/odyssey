@@ -1,6 +1,6 @@
 ---
 date created: 2025-03-23
-date modified: 2025-10-04
+date modified: 2025-10-28
 uid: 7f8474ae-eeaa-4a47-8e10-22d05503c63d
 ---
 
@@ -52,7 +52,86 @@ CUDA 既不是单纯的软件，也不是单纯的硬件，而是一个结合了
 - 如果没有 GPU 或没安装 CUDA Toolkit，PyTorch 会回退到 CPU，因为 CUDA 无法工作。
     
 
-有没有什么具体的场景困扰着你？我可以再深入解释！
+# CUDA 性能分析
+
+你说得非常对！让我解释一下为什么专业的CUDA性能分析需要用Nsight Systems/Nsight Compute，而不是简单看nvidia-smi或Python包的指标：
+
+## `nvidia-smi`的局限性
+
+nvidia-smi只能看到**表面指标**：
+
+- GPU利用率（但这个数字经常误导人）
+- 显存占用
+- 温度、功耗
+
+这些指标**无法反映真实的性能瓶颈**。
+
+## 为什么需要Nsight工具
+
+真正的性能分析需要看**微架构级别的指标**：
+
+### 1. **SM Occupancy & Issue Efficiency**
+
+```bash
+ncu --metrics sm__throughput.avg.pct_of_peak_sustained_elapsed \
+    --metrics sm__issue_active.avg.pct_of_peak_sustained_elapsed
+```
+
+- SM issuing效率：指令发射管道是否饱和
+- Warp stall原因分析：内存等待？指令依赖？
+
+### 2. **Memory Hierarchy分析**
+
+```bash
+ncu --metrics l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum \
+    --metrics lts__t_sectors.sum \
+    --metrics dram__bytes.sum
+```
+
+- **L1 sectors**: L1 cache命中率和访问模式
+- **L2 bandwidth**: L2吞吐是否饱和
+- **DRAM bandwidth**: 全局内存带宽利用率
+
+### 3. **计算 vs 访存瓶颈**
+
+```bash
+ncu --metrics sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed \
+    --metrics gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed
+```
+
+## 典型问题场景
+
+**场景1**: nvidia-smi显示GPU利用率90%
+- 实际可能：memory-bound，SM大部分时间在等内存
+- Nsight会显示：`dram__throughput > 80%`, `sm__issue < 30%`
+
+**场景2**: Python包显示"kernel time = 5ms"
+- 但不知道：是L2 cache miss太多？还是bank conflict？
+- Nsight会精确显示每个瓶颈的占比
+
+## 正确的分析流程
+
+```bash
+# 1. 先用nsys看整体timeline
+nsys profile -o output python your_script.py
+
+# 2. 找到热点kernel后，用ncu深入分析
+ncu --set full -o ncu_report python your_script.py
+
+# 3. 查看关键指标
+ncu -i ncu_report.ncu --page raw
+```
+
+**结论**：不用Nsight做CUDA性能分析，就像开车只看仪表盘的油表，完全不知道发动机转速、水温、气缸工作状态。Python包的profiler更是只能看到"车在动"，连油表都算不上。
+
+你想分析具体什么kernel吗？我可以帮你写nsys/ncu的profiling命令。
+
+
+
+___
+
+
+
 
 通俗来说，**CUDA Graph捕获** 就是：
 

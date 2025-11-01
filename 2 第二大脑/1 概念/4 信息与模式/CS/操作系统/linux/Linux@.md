@@ -1,11 +1,72 @@
 ---
 date created: 2024-11-25
-date modified: 2025-08-06
+date modified: 2025-10-28
 uid: b87d3d45-2f74-4c71-971e-169b6929a9ae
 ---
 # Linux 系统参考指南
 
 > 一切皆文件
+
+```Java
+
+
+# docker、nginx、ssh 配置放哪里？
+etc  包含系统配置文件，这些文件通常用于配置系统服务和应用程序
+
+# conda、anaconda3、cuda 放哪里？
+opt 安装额外的软件包，通常不是由系统的包管理器安装，而是由用户手动安装 38
+
+usr 用户相关的应用程序和文件的存放地，如用户安装的软件、库文件等
+
+
+# ===== /usr 代表 Unix 系统资源 =====
+/usr/bin/python3                   # Python解释器
+/usr/bin/vim                       # Vim编辑器
+/usr/bin/git                       # Git版本控制
+
+
+# ===== /etc 配置文件 比如 nginx、ssh=====
+/etc/                              # 系统配置根目录
+/etc/nginx/                        # Nginx配置目录
+/etc/nginx/nginx.conf              # Nginx主配置文件
+
+
+/etc/ssh/                          # SSH配置目录
+/etc/ssh/sshd_config               # SSH服务端配置
+/etc/ssh/ssh_config                # SSH客户端配置
+
+
+# ===== /opt、optional  第三方软件，比如 cuda、anaconda =====
+/opt/                              # 第三方软件根目录
+/opt/cuda/                         # CUDA（如果装在这里）
+
+/opt/anaconda3/                    # Anaconda
+/opt/anaconda3/bin/                # Anaconda命令
+
+
+
+# ===== /home 用户目录 =====
+/home/                             # 用户主目录根
+/home/yishou.liu/                  # 你的用户目录
+/home/yishou.liu/.bashrc           # 用户bash配置
+/home/yishou.liu/.bash_profile     # 登录时执行
+/home/yishou.liu/.profile          # 登录配置
+/home/yishou.liu/.config/          # 用户应用配置
+/home/yishou.liu/.config/pip/      # 用户pip配置
+/home/yishou.liu/.config/pip/pip.conf  # pip配置文件
+/home/yishou.liu/.local/           # 用户级安装
+/home/yishou.liu/.local/bin/       # 用户命令
+/home/yishou.liu/.local/lib/       # 用户库
+
+/home/yishou.liu/qwen-fast-test/   # 你的项目目录
+/home/yishou.liu/qwen-fast-test/venv/  # 虚拟环境
+/home/yishou.liu/qwen-fast-test/venv/bin/python  # 虚拟环境Python
+/home/yishou.liu/qwen-fast-test/venv/lib/python3.10/site-packages/  # 包安装位置
+
+
+
+
+```
 ![image.png|600](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F08%2F06%2F14-33-06-c19f3bb70c53a9042b88efc580da2a34-202508061433716-84e3dd.png)
 
 # 文件
@@ -19,83 +80,6 @@ uid: b87d3d45-2f74-4c71-971e-169b6929a9ae
 | /var | variable              | 代表可变数据，用于存放可变数据，如数据库文件、软件包数据、用户数据等 |
 
 `/var/lib/` 存储系统运行时的持久性数据，
-
-## 一、常用命令速查表
-
-### 1. 文件和目录操作
-
-| 命令 | 说明 |
-|------|------|
-| `ls` | 列出文件和目录 |
-| `ls -l` | 长格式列表（显示权限、所有者、大小、日期）|
-| `ls -a` | 显示隐藏文件（以点开头的文件）|
-| `ls -lh` | 以人类可读格式显示文件大小 |
-| `cd /path/to/directory` | 切换到指定目录 |
-| `cd..` | 返回上级目录 |
-| `cd ~` | 进入家目录 |
-| `cd -` | 返回上次所在目录 |
-| `mkdir myFolder` | 创建新目录 |
-| `mkdir -p dir1/dir2` | 创建嵌套目录 |
-
-### 2. 文件操作
-
-| 命令 | 说明 |
-|------|------|
-| `cp source.txt destination.txt` | 复制文件 |
-| `cp -r /source/directory /dest/directory` | 递归复制目录 |
-| `mv old_name.txt new_name.txt` | 重命名文件 |
-| `mv file.txt /path/to/destination` | 移动文件 |
-| `rm file.txt` | 删除文件 |
-| `rm -r directory/` | 删除目录及其内容 |
-| `rm -rf directory/` | 强制删除目录及其内容 |
-
-### 3. 文件内容操作
-
-| 命令 | 说明 |
-|------|------|
-| `cat file.txt` | 输出整个文件内容 |
-| `less file.txt` | 分页查看文件内容 |
-| `head file.txt` | 查看文件前10行 |
-| `tail file.txt` | 查看文件后10行 |
-| `tail -f logfile.log` | 实时查看文件末尾（常用于日志）|
-| `grep "search_term" file.txt` | 在文件中搜索内容 |
-| `grep -r "search_term" /path` | 递归搜索目录中的文件内容 |
-| `grep -i "search_term" file.txt` | 不区分大小写搜索 |
-
-### 4. 系统信息和进程管理
-
-| 命令 | 说明 |
-|------|------|
-| `uname -a` | 显示内核版本和系统信息 |
-| `df -h` | 显示文件系统使用情况 |
-| `free -h` | 显示内存使用情况 |
-| `top` | 实时系统资源监控 |
-| `ps aux` | 列出所有运行进程 |
-| `kill[pid]` | 终止指定进程 |
-| `kill -9[pid]` | 强制终止进程 |
-| `killall process_name` | 终止所有指定名称的进程 |
-
-### 5. 权限管理
-
-| 命令 | 说明 |
-|------|------|
-| `chmod 755 file.txt` | 设置权限（所有者：rwx，组：r-x，其他：r-x）|
-| `chmod u+x script.sh` | 给所有者添加执行权限 |
-| `chmod -R 777 /directory` | 递归设置目录权限 |
-| `chown user:group file.txt` | 更改文件所有者和组 |
-| `chown -R user:group /dir` | 递归更改目录所有权 |
-
-### 6. 文件查找和压缩
-
-| 命令 | 说明 |
-|------|------|
-| `find /path -name "file.txt"` | 按文件名搜索 |
-| `find /path -type f -size +100M` | 查找大于100MB的文件 |
-| `find /path -mtime -1` | 查找24小时内修改的文件 |
-| `tar -cvf archive.tar /path` | 创建tar归档 |
-| `tar -xvf archive.tar` | 解压tar归档 |
-| `tar -czvf archive.tar.gz /path` | 创建压缩的tar归档 |
-| `tar -xzvf archive.tar.gz` | 解压压缩的tar归档 |
 
 ## 二、系统目录结构
 

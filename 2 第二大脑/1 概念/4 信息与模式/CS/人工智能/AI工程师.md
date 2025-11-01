@@ -1,7 +1,7 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-09-01
+date modified: 2025-10-28
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
@@ -129,31 +129,31 @@ LLM变得再快，它的地基没变。地基就是数学和经典的机器学�
 就说这么多吧，希望能帮到你。路还长，慢慢来，比较快。
 ## 📊 核心动作表
 
-| 阶段       | 周次      | 核心动作                                   | 重点/产出                  |
-| -------- | ------- | -------------------------------------- | ---------------------- |
-| 阶段1 基础筑基 | Week1-2 | 手推 BPE / WordPiece 分词算法                | 对比压缩率，理解文本表示方式         |
-|          |         | 精读 Word2Vec (Skip-gram + 负采样)          | 词向量与分布式假设              |
-|          |         | 手写 Self-Attention 矩阵                   | 复杂度计算 √                |
-|          |         | 周末：PyTorch 实现 Transformer Encoder      | 完成基础模型编码器              |
-|          | Week3-4 | 推导 RoPE 旋转位置编码                         | 面试手撕重点                 |
-|          |         | 对比 LayerNorm / RMSNorm 梯度差异            | 理解归一化差别                |
-|          |         | 解析 FFN 结构                              | 世界知识为何存于 MLP           |
-|          |         | 周末：BatchNorm 在预训练为何失效                  | 面试题准备                  |
-| 阶段2 进阶实战 | Week5   | 数据清洗：实现 MinHash 去重                     | 保证训练集干净                |
-|          |         | 掌握 ZeRO-3 分布式 (DeepSpeed)              | 大模型训练可扩展性              |
-|          |         | 梯度累积 + 混合精度训练                          | 训练提效关键                 |
-|          |         | 面试题：百度训练数据配比策略                         | 企业实战经验                 |
-|          | Week6   | LoRA / P-Tuning 原理对比                   | 参数高效微调                 |
-|          |         | 图解 PPO / DPO 算法                        | RLHF 对齐核心              |
-|          |         | 考点：SFT vs 预训练 Loss 差异                  | 面试准备                   |
-|          | Week7   | [[FlashAttention]] 手撕优化                | 显存降低 ~70%              |
-|          |         | [[KV Cache]] 机制解析                      | vLLM 源码解读              |
-|          |         | MoE vs Transformer 架构                  | Gemini 前沿思路            |
-|          | Week8   | 搭建 RAG 系统 (HNSW + Query 重排)            | 实战 Retrieval-Augmented |
-|          |         | Agent 开发：[[ReAct]] 框架                  | 工具调用链                  |
-|          |         | 领域知识微调方案                               | 简历加分项                  |
-|          |         | HuggingFace [[Transformers]]、llama.cpp |                        |
-|          |         | 每天 1 篇 [[ArXiv]]                       |                        |
+| 阶段       | 周次      | 核心动作                                        | 重点/产出                  |
+| -------- | ------- | ------------------------------------------- | ---------------------- |
+| 阶段1 基础筑基 | Week1-2 | 手推 BPE / WordPiece 分词算法                     | 对比压缩率，理解文本表示方式         |
+|          |         | 精读 Word2Vec (Skip-gram + 负采样)               | 词向量与分布式假设              |
+|          |         | 手写 Self-Attention 矩阵                        | 复杂度计算 √                |
+|          |         | 周末：PyTorch 实现 Transformer Encoder           | 完成基础模型编码器              |
+|          | Week3-4 | 推导 RoPE 旋转位置编码                              | 面试手撕重点                 |
+|          |         | 对比 LayerNorm / RMSNorm 梯度差异                 | 理解归一化差别                |
+|          |         | 解析 FFN 结构                                   | 世界知识为何存于 MLP           |
+|          |         | 周末：BatchNorm 在预训练为何失效                       | 面试题准备                  |
+| 阶段2 进阶实战 | Week5   | 数据清洗：实现 MinHash 去重                          | 保证训练集干净                |
+|          |         | 掌握 ZeRO-3 分布式 (DeepSpeed)                   | 大模型训练可扩展性              |
+|          |         | 梯度累积 + 混合精度训练                               | 训练提效关键                 |
+|          |         | 面试题：百度训练数据配比策略                              | 企业实战经验                 |
+|          | Week6   | LoRA / P-Tuning 原理对比                        | 参数高效微调                 |
+|          |         | 图解 PPO / DPO 算法                             | RLHF 对齐核心              |
+|          |         | 考点：SFT vs 预训练 Loss 差异                       | 面试准备                   |
+|          | Week7   | [[FlashAttention]] 手撕优化                     | 显存降低 ~70%              |
+|          |         | [[KV Cache]] 机制解析                           | vLLM 源码解读              |
+|          |         | MoE vs Transformer 架构                       | Gemini 前沿思路            |
+|          | Week8   | 搭建 RAG 系统 (HNSW + Query 重排)                 | 实战 Retrieval-Augmented |
+|          |         | Agent 开发：[[ReAct]] 框架                       | 工具调用链                  |
+|          |         | 领域知识微调方案                                    | 简历加分项                  |
+|          |         | [[Hugging Face]] [[Transformers]]、llama.cpp |                        |
+|          |         | 每天 1 篇 [[ArXiv]]                            |                        |
 
 2. 角色赛道全景
 

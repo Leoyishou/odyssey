@@ -1,23 +1,74 @@
 ---
 date created: 2024-07-27
-date modified: 2025-10-25
+date modified: 2025-10-31
 uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 ---
 # Summary
 
+
+## SSH
+```Java
+## 跳板机
+ssh yishou.liu@l-rtools1.ops.cn0
+ssh yishou.liu@l-rtools1.ops.cn1.qunar.com
+
+## KVM机器
+ssh yishou.liu@l-taurus-pf.user.beta.cn0
+
+## GPU机器
+ssh yishou.liu@10.70.128.152
+密码：876538
+公共环境vllm，使用命令 conda activate /home/work/env/vllm
+
+scp -r /home/yishou.liu yishou.liu@10.70.128.152:/home/yishou.liu/model/qwen3-4b
+
+```
 ## 项目启动相关
 ```Java
 uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
 ```
 ## 环境相关
+
+| 维度 | venv | conda |
+|------|------|-------|
+| **环境位置** | 分散在各项目目录 | 集中在 `~/anaconda3/envs/` |
+| **包来源** | PyPI (pip) | Anaconda 仓库 + PyPI |
+| **依赖解析** | 简单（可能冲突）| 强大（SAT solver）|
+| **非 Python 包** | ❌ 不支持 | ✅ 支持（如 CUDA、系统库）|
+
 ```Java
 ## python 虚拟环境
 ---
 新建：    python3 -m venv .venv
 进入：    source .venv/bin/activate
+换源：    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 安装：    pip install -r requirements.txt
 退出：    deactivate
 删除：    rm -rf.venv
+
+## conda
+---
+查看所有环境   conda env list
+新建：    conda create -n myenv python=3.11
+进入：    conda activate myenv
+
+换华为源 
+conda config --add channels https://repo.huaweicloud.com/anaconda/pkgs/main/ 
+conda config --add channels https://repo.huaweicloud.com/anaconda/pkgs/free/ 
+conda config --add channels https://repo.huaweicloud.com/anaconda/cloud/conda-forge/ # 设置搜索时显示通道地址 
+conda config --set show_channel_urls yes
+
+安装：    conda install --file requirements.txt
+退出：    conda deactivate
+删除：    conda env remove -n myenv
+
+## uv
+
+
+
+
+
+
 
 ---
 # 只创建项目文件   uv init --python 3.11     类似 `npm init` 或 `cargo init`
@@ -55,6 +106,90 @@ tar -czf bert-base-model.tar.gz models/bert-base
 ## vllm
 
 /home/linyang.zhong/.conda/envs/qwen3-8B/bin/python3.10 /home/linyang.zhong/.conda/envs/qwen3-8B/bin/vllm serve /data/models/Qwen/Qwen3-Embedding-4B --served-model-name qwen3-embedding-4b --trust-remote-code --task embed --tensor-parallel-size 4 --gpu-memory-utilization 0.2 --port 8010
+```
+
+
+## Linux
+
+```Java
+# 看机器的磁盘使用情况
+df -h
+
+# 发送文件到远程
+
+scp -r local_folder user@server_ip:/remote/path/
+
+
+
+modelscope download --model 'Qwen/Qwen3-4B' --local_dir ./
+```
+
+
+## VIM
+```Java
+
+:%d
+```
+
+## less、more
+```Markdown
+是的，你现在在一个分页查看器（pager）中，通常是 `less` 或 `more`。这是因为 `git diff` 的输出内容太长，Git 自动使用分页器来显示。
+
+**退出方法：**
+
+- 按 `q` 键退出 - **quit**（退出）
+
+**其他常用操作：**
+
+- 按 `空格键` 或 `f` - 向下翻页 - **forward**（向前）
+- 按 `b` - 向上翻页 - **backward**（向后）
+- 按 `d` - 向下翻半页 - **down**（向下）
+- 按 `u` - 向上翻半页 - **up**（向上）
+- 按 `/` 然后输入文字 - 搜索 - **search**（搜索，`/` 是类Unix系统的搜索惯例）
+- 按 `n` - 跳到下一个搜索结果 - **next**（下一个）
+- 按 `g` - 跳到开头 - **go to top**（去顶部）
+- 按 `G` - 跳到结尾 - **Go to bottom**（去底部，大写表示相反方向）
+  
+  
+```
+
+```Java
+
+## Shell - bash
+```Java
+# 执行脚本
+source ~/.bashrc
+
+
+
+# 给 bash 配置环境变量：   
+sudo vim .bashrc
+
+## conda 的bash 环境变量
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/otp/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/otp/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/otp/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/otp/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+```
+
+
+## git
+
+```Java
+git diff origin/master > my_changes.patch
 ```
 # Notes
 

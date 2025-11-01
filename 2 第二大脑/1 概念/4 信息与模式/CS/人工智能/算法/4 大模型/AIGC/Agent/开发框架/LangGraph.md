@@ -1,16 +1,18 @@
 ---
 date created: 2025-04-16
-date modified: 2025-10-25
+date modified: 2025-10-28
 uid: d2c59329-438b-4509-afcb-772862a99b8c
 ---
 
 # Summary
 
-langgraph 的[[异步编排]]是 allof逻辑。
+1. langgraph 的[[异步编排]]是 allof逻辑。
+2. 一个 node 做一件"概念上完整"的事
 
-1. 持久化与回放 (Checkpointer & Resume) 通过 Checkpointer 可把执行状态写入文件 / DB，意外中断后继续执行。
-2. 条件分支、动态路由 理论介绍  graph.add_conditional_edges(node, fn)` 允许根据 fn 返回的标签动态路由。常用模式：Router Node。
-3. 状态管理、共享上下文  state
+
+3. 持久化与回放 (Checkpointer & Resume) 通过 Checkpointer 可把执行状态写入文件 / DB，意外中断后继续执行。
+4. 条件分支、动态路由 理论介绍  graph.add_conditional_edges(node, fn)` 允许根据 fn 返回的标签动态路由。常用模式：Router Node。
+5. 状态管理、共享上下文  state
 
 ![CleanShot 2025-04-16 at 23.58.52@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_Ks1xGMBeXd%2F2025%2F04%2F16%2F23-59-17-0dd536cf395767f2b253a5bba5654551-CleanShot%202025-04-16%20at%2023.58.52-2x-fd572c.png)
 
@@ -23,8 +25,47 @@ https://langchain-ai.github.io/langgraph/llms-txt-overview AI 时代的文档
 [[LangGraph 之 reAct]]
 # notes
 
+## 一、版本
+
 版本与上下文
   - 你项目里固定版本：`requirements.txt:39 为langgraph==0.4.7，requirements.txt:42 为 langgraph-prebuilt==0.2.1`。
+
+
+## 二、Node
+
+  **Node 只是一个函数接口**，只要满足：
+
+- 接收 state 作为参数
+- 返回一个 dict 用于更新 state
+
+它可以在内部做**任何事情**：
+
+- ✅ 调用 LLM
+- ✅ 调用 RESTful API
+- ✅ 调用 gRPC 服务
+- ✅ 查询数据库
+- ✅ 读写文件
+- ✅ 执行复杂计算
+- ✅ 调用第三方服务
+
+## 一次[[Function Call]]算几个 node？
+
+|场景|推荐 Node 数|理由|
+|---|---|---|
+|简单工具调用|1 个|简洁，够用|
+|标准 Agent|2-3 个|平衡灵活性和复杂度|
+|复杂业务流程|3+ 个|便于调试、监控、扩展|
+
+**核心原则**：
+
+- ✅ 按**业务逻辑**划分，不是按技术实现
+- ✅ 一个 node 做一件"概念上完整"的事
+- ✅ 需要独立控制/监控的逻辑 → 独立 node
+
+所以答案是：**没有固定规则，1-5 个 nodes 都可以**，取决于你的粒度需求！
+
+
+
 
 
   核心执行流程

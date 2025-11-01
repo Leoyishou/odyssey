@@ -1,8 +1,12 @@
 ---
 date created: 2024-06-10
-date modified: 2025-10-25
+date modified: 2025-10-28
 uid: dddd476b-9353-4b26-a75b-bb7ad468b362
 ---
+
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F07%2F28%2F17-54-02-1f2507170892882f0f33041d5bc96dc1-20240728175401-324dd2.png)  
+[MapReduce](MapReduce.md)
+
 
 谷歌证明了几件事情：
 

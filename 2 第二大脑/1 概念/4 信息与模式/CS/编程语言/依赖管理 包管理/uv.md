@@ -1,8 +1,21 @@
 ---
 date created: 2025-03-24
-date modified: 2025-10-22
+date modified: 2025-10-28
 uid: 0fc91684-868b-49f2-9d2e-c4008eef39b5
 ---
+
+# Summary
+
+用 conda 管"环境"，用 [[uv]] 装"Python 包"（快！）
+```Java
+conda create -n ml_project python=3.11
+conda activate ml_project
+conda install cudatoolkit  # conda 装系统级依赖
+
+uv pip install torch torchvision pandas scikit-learn
+```
+
+
 ```Java
 # 使用 UV 指定 Python 3.9
 
@@ -26,7 +39,9 @@ uv add --requirements requirements.txt
 
 
 
-# TL;DR（结论先行）
+# Notes
+
+## TL;DR（结论先行）
 
 - **用 PyCharm 自带的 `uv` 解释器类型**建/选环境，不要混用 pip/conda 的新建方式。自 2024.3.2 起 PyCharm 原生支持 `uv`，2025.1/2025.2 又补上了 Jupyter 与锁文件的 UI 按钮。([The JetBrains Blog](https://blog.jetbrains.com/pycharm/2025/01/pycharm-2024-3-2/?utm_source=chatgpt.com "PyCharm 2024.3.2: uv Package Management Support and More!"), [JetBrains](https://www.jetbrains.com/pycharm/whatsnew/2025-1/?utm_source=chatgpt.com "What's New in PyCharm 2025.1 - JetBrains"))
 
@@ -40,7 +55,7 @@ uv add --requirements requirements.txt
 
 ---
 
-# 一、准备工作
+## 一、准备工作
 
 1. **升级 PyCharm**：建议使用 2025.1 及以上（含 `uv` 解释器、Jupyter with uv），2025.2 还在 `.toml` 编辑器里提供了“Sync/Lock/Update”持久按钮来操作依赖与锁文件。([JetBrains](https://www.jetbrains.com/pycharm/whatsnew/2025-1/?utm_source=chatgpt.com "What's New in PyCharm 2025.1 - JetBrains"))
 

@@ -1,6 +1,6 @@
 ---
 date created: 2024-07-22
-date modified: 2025-09-19
+date modified: 2025-10-30
 uid: ddda7e28-61ae-40d2-b8b8-471ba9f6c282
 ---
 
@@ -10,6 +10,35 @@ uid: ddda7e28-61ae-40d2-b8b8-471ba9f6c282
 
 Github上有很多优秀的[开源项目](https://zhida.zhihu.com/search?content_id=712626173&content_type=Answer&match_order=1&q=%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE&zhida_source=entity)，要复刻或者学习开源项目，首先需要定一个目标，自己想要学会哪些东西，比如说想学习操作系统，可以复刻一个开源小型操作系统的实现，如果想自己搭建一个个人博客，可以照着开源博客实现前后端程序，或者只是想了解一点一些有意思的项目，可以确定自己想要使用的技术栈，看看有没有人做过。
 
+
+
+# Notes
+
+## PR
+
+### 1. **基础定义**
+
+PR = **代码合并请求** (Pull Request / Merge Request)
+- GitHub 叫 Pull Request
+- GitLab 叫 Merge Request
+- 本质相同
+
+### 2. **包含的内容**
+
+```Java
+PR = git diff + 协作流程 + 代码审查工具
+```
+
+|组成部分|说明|对应功能|
+|---|---|---|
+|**diff**|代码变更对比|`git diff feature..main`|
+|**描述**|改动说明、背景|标题 + 详细描述|
+|**讨论**|代码评审、提问|逐行评论|
+|**CI/CD**|自动测试结果|构建状态、测试覆盖率|
+|**审批**|批准/拒绝机制|Approve / Request Changes|
+|**元数据**|关联信息|Issue 链接、标签、里程碑|
+
+## 资源搜索
 Github上的资源很丰富，所以你先得学会如何过滤信息，检索自己需要的内容，下面是一些搜索技巧：
 
 **1.关键词组合搜索**

@@ -1,6 +1,6 @@
 ---
 date created: 2025-03-23
-date modified: 2025-08-11
+date modified: 2025-10-29
 uid: 62ba879d-3d7a-4190-8a97-e1d7a46a167f
 ---
 # Summary
@@ -22,7 +22,12 @@ nvidia-smi dmon -s pucvmet -d 5
 | 专业级  | A800     | Ampere     | 40GB/80GB HBM2e | ~312 TFLOPS      | 特供版，中高端，性价比高          | 中高级                                       |
 |      | A100     |            |                 |                  |                       | 与A800同架构（Ampere），但A100是原版，A800是针对中国市场的特供版 |
 |      | H100     | Hopper     | 80GB HBM3       | ~1979 TFLOPS（稀疏）| 顶级专业卡，算力猛、显存快，价格昂贵    | 顶级                                        |
+|      |          |            |                 |                  |                       |                                           |
+|      |          |            |                 |                  |                       |                                           |
 
+# Cues
+
+[[nvidia-smi]]
 # Notes
 
 ## ⏱️ 训练速度直观对比（经验值）

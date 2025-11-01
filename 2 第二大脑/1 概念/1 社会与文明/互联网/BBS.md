@@ -1,0 +1,39 @@
+---
+uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+date created: 2025-07-19
+date modified: 2025-10-30
+aliases: [Summary]
+linter-yaml-title-alias: Summary
+---
+# 💡 Summary  
+
+BBS（Bulletin Board System，电子公告板系统）的历史可以追溯到个人电脑和调制解调器的早期时代：
+
+# 🧩 Cues
+
+
+
+# 🪞Notes
+
+
+
+## 起源（1970年代末）
+
+1978年，Ward Christensen 和 Randy Suess 在美国芝加哥创建了第一个 BBS 系统 CBBS（Computerized Bulletin Board System）。当时是为了在暴风雪期间让计算机爱好者能够交流信息。
+
+## 黄金时代（1980-1990年代）
+
+- **技术特点**：用户通过电话线和调制解调器拨号连接到 BBS，速度从最初的 300 baud 逐渐提升到 56K
+- **功能发展**：提供消息留言板、文件下载、在线游戏、电子邮件等功能
+- **社区文化**：形成了独特的在线社区文化，系统管理员（SysOp）负责维护和管理
+- **流行软件**：出现了许多知名 BBS 软件，如 WWIV、RemoteAccess、PCBoard 等
+
+## 在中国的发展
+
+- 1991年，中国第一个 BBS "水木清华" 在清华大学诞生
+- 1990年代中后期，各大高校和地区都建立了 BBS，如北大未名、南京小百合等
+- 成为中国早期互联网文化的重要组成部分
+
+## 衰落（1990年代中后期）
+
+随着互联网的普及和万维网的兴起，传统拨号 BBS 逐渐被基于网页的论坛所取代。但 BBS 的社区文化和交流方式对后来的网络论坛产生了深远影响。

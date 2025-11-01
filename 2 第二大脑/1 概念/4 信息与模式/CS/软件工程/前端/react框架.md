@@ -1,11 +1,31 @@
 ---
 uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
 date created: 2025-07-19
-date modified: 2025-10-23
+date modified: 2025-10-31
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # 💡 Summary  
+
+
+[[Vue3@]] vs React (TSX + Less) 对比表
+
+| 特性       | Vue                           | React (TSX + Less)             |
+| -------- | ----------------------------- | ------------------------------ |
+| **文件后缀** | `.vue`                        | `.tsx` + `.less`               |
+| **文件结构** | 单文件组件 (SFC)                   | 分离文件                           |
+| **模板语法** | `<template>` 标签               | JSX (直接在 JS 中写)                |
+| **脚本部分** | `<script setup>` 或 `<script>` | 直接在 `.tsx` 中                   |
+| **样式部分** | `<style>` 或 `<style scoped>`  | 独立 `.less` 文件                  |
+| **类型支持** | `.vue` + TypeScript           | `.tsx` (原生支持 TS)               |
+| **数据绑定** | `{{ data }}`                  | `{data}`                       |
+| **条件渲染** | `v-if` / `v-show`             | `{condition && <div>}` / 三元表达式 |
+| **循环渲染** | `v-for`                       | `.map()`                       |
+| **事件绑定** | `@click` / `v-on:click`       | `onClick`                      |
+| **样式绑定** | `:class` / `:style`           | `className` / `style` 对象       |
+
+## 文件示例对比
+
 
   对比一览
 

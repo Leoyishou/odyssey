@@ -1,6 +1,6 @@
 ---
 date created: 2025-03-03
-date modified: 2025-07-10
+date modified: 2025-10-28
 uid: f757f3a3-de2a-4f77-ac26-8695a7683921
 ---
 
@@ -8,30 +8,30 @@ uid: f757f3a3-de2a-4f77-ac26-8695a7683921
 
 ---
 
-## 📊 一、数据科学竞赛平台（类似 Kaggle）
+# 📊 一、数据科学竞赛平台（类似 Kaggle）
 
-### 1. **DrivenData**
+## 1. **DrivenData**
 
 - 🔑 网站：[drivendata.org](https://www.drivendata.org/)
 - ✨ 特点：
     - 关注社会公益、环保、公共健康领域的数据问题。
     - 和 Kaggle 类似的竞赛机制，更强调社会价值。
 
-### 2. **AIcrowd**
+## 2. **AIcrowd**
 
 - 🔑 网站：[aicrowd.com](https://www.aicrowd.com/)
 - ✨ 特点：
     - 聚焦机器学习、AI 竞赛，游戏、强化学习、计算机视觉等。
     - 经常有趣味性、游戏性较强的任务（如游戏AI训练）。
 
-### 3. **Tianchi（天池）**
+## 3. **Tianchi（天池）**
 
 - 🔑 网站：[tianchi.aliyun.com](https://tianchi.aliyun.com/)
 - ✨ 特点：
     - 阿里巴巴主办，国内知名的数据科学竞赛平台。
     - 涵盖金融、医疗、工业、推荐系统、CV、NLP等多个领域，参与度高。
 
-### 4. **Signate**
+## 4. **Signate**
 
 - 🔑 网站：[signate.jp](https://signate.jp/)
 - ✨ 特点：
@@ -39,36 +39,36 @@ uid: f757f3a3-de2a-4f77-ac26-8695a7683921
 
 ---
 
-## 💻 二、算法刷题平台（类似 LeetCode）
+# 💻 二、算法刷题平台（类似 LeetCode）
 
-### 1. **HackerRank**
+## 1. **HackerRank**
 
 - 🔑 网站：[hackerrank.com](https://www.hackerrank.com/)
 - ✨ 特点：
     - 支持算法、SQL、AI、Linux、Shell 等多种技能考核。
     - 经常用于公司面试考核在线编程。
 
-### 2. **Codeforces**
+## 2. **Codeforces**
 
 - 🔑 网站：[codeforces.com](https://codeforces.com/)
 - ✨ 特点：
     - 俄罗斯著名的算法竞赛平台，算法题目质量高。
     - 强调竞技性，有排名机制，适合高级算法学习者。
 
-### 3. **AtCoder**
+## 3. **AtCoder**
 
 - 🔑 网站：[atcoder.jp](https://atcoder.jp/)
 - ✨ 特点：
     - 日本主办的平台，题目涵盖初学者到竞赛选手。
     - 举办定期的算法竞赛，用户体验较好。
 
-### 4. **CodeChef**
+## 4. **CodeChef**
 
 - 🔑 网站：[codechef.com](https://www.codechef.com/)
 - ✨ 特点：
     - 印度最大的算法学习和竞赛平台，社区活跃，适合初中高级学习者。
 
-### 5. **洛谷（Luogu）**
+## 5. **洛谷（Luogu）**
 
 - 🔑 网站：[luogu.com.cn](https://www.luogu.com.cn/)
 - ✨ 特点：
@@ -76,16 +76,16 @@ uid: f757f3a3-de2a-4f77-ac26-8695a7683921
 
 ---
 
-## 🎯 三、AI研究与开源社区平台
+# 🎯 三、AI研究与开源社区平台
 
-### 1. **Hugging Face**
+## 1. **Hugging Face**
 
 - 🔑 网站：[huggingface.co](https://huggingface.co/)
 - ✨ 特点：
     - 专注 NLP、大模型，提供开源模型、数据集、社区讨论、竞赛和排行榜。
     - AI 研究者非常活跃的平台，很多最新模型都会发布在这里。
 
-### 2. **Papers with Code**
+## 2. **Papers with Code**
 
 - 🔑 网站：[paperswithcode.com](https://paperswithcode.com/)
 - ✨ 特点：
@@ -94,21 +94,21 @@ uid: f757f3a3-de2a-4f77-ac26-8695a7683921
 
 ---
 
-## 🚀 四、其他专业技术学习平台
+# 🚀 四、其他专业技术学习平台
 
-### 1. **Exercism**
+## 1. **Exercism**
 
 - 🔑 网站：[exercism.io](https://exercism.io/)
 - ✨ 特点：
     - 提供超多语言的编程练习题，注重代码质量与社区反馈，适合系统学习新语言。
 
-### 2. **GeeksforGeeks**
+## 2. **GeeksforGeeks**
 
 - 🔑 网站：[geeksforgeeks.org](https://www.geeksforgeeks.org/)
 - ✨ 特点：
     - 算法、数据结构、面试技巧、系统设计全覆盖，文章详细，面试备考好帮手。
 
-### 3. **LintCode**
+## 3. **LintCode**
 
 - 🔑 网站：[lintcode.com](https://www.lintcode.com/)
 - ✨ 特点：
@@ -116,7 +116,7 @@ uid: f757f3a3-de2a-4f77-ac26-8695a7683921
 
 ---
 
-## 🌟 推荐总结
+# 🌟 推荐总结
 
 - **数据科学竞赛**：Kaggle、DrivenData、AIcrowd、天池
 - **算法与面试刷题**：LeetCode、HackerRank、Codeforces、AtCoder、洛谷
@@ -131,7 +131,7 @@ uid: f757f3a3-de2a-4f77-ac26-8695a7683921
 
 ---
 
-## 🎮 一、博弈AI（Game AI）与强化学习（RL）竞赛
+# 🎮 一、博弈AI（Game AI）与强化学习（RL）竞赛
 
 通过开发AI智能体，来与其他人或系统进行博弈对抗，例如：
 
@@ -146,7 +146,7 @@ uid: f757f3a3-de2a-4f77-ac26-8695a7683921
 
 ---
 
-## 🛠️ 二、信息安全与网络攻防竞赛（CTF）
+# 🛠️ 二、信息安全与网络攻防竞赛（CTF）
 
 CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型，涵盖以下方向：
 
@@ -169,7 +169,7 @@ CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型�
 
 ---
 
-## 💾 三、系统编程与底层开发竞赛
+# 💾 三、系统编程与底层开发竞赛
 
 通过底层开发与优化（如数据库优化、分布式系统），提升工程能力：
 
@@ -183,7 +183,7 @@ CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型�
 
 ---
 
-## 🚀 四、机器人与无人机开发竞赛
+# 🚀 四、机器人与无人机开发竞赛
 
 用程序控制机器人、无人车、无人机等物理设备完成特定任务：
 
@@ -198,7 +198,7 @@ CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型�
 
 ---
 
-## 🌐 五、Web开发、UI/UX设计、前端竞技赛
+# 🌐 五、Web开发、UI/UX设计、前端竞技赛
 
 在限定时间内完成具有实际需求的Web应用开发：
 
@@ -213,7 +213,7 @@ CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型�
 
 ---
 
-## ☁️ 六、云计算、容器化竞赛
+# ☁️ 六、云计算、容器化竞赛
 
 围绕 Kubernetes、Docker、云原生技术展开，优化云环境部署效率、扩展性、稳定性：
 
@@ -227,7 +227,7 @@ CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型�
 
 ---
 
-## 🎲 七、计算机图形学与游戏开发竞赛
+# 🎲 七、计算机图形学与游戏开发竞赛
 
 在短时间内实现游戏Demo或3D交互应用：
 
@@ -242,7 +242,7 @@ CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型�
 
 ---
 
-## 🔍 八、开源贡献与社区项目挑战
+# 🔍 八、开源贡献与社区项目挑战
 
 参与或发起对开源社区有重大贡献或意义的项目开发：
 
@@ -256,7 +256,7 @@ CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型�
 
 ---
 
-## 📱 九、移动应用开发竞技
+# 📱 九、移动应用开发竞技
 
 围绕移动端应用，进行创意开发或优化：
 
@@ -270,7 +270,7 @@ CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型�
 
 ---
 
-## 🔬 十、硬核底层技术实践（如编译器、操作系统内核挑战）
+# 🔬 十、硬核底层技术实践（如编译器、操作系统内核挑战）
 
 围绕系统级底层技术，完成功能实现或优化：
 
@@ -284,7 +284,7 @@ CTF（Capture The Flag，夺旗赛）是非常流行的信息安全竞赛类型�
 
 ---
 
-## ✨ 总结一下，这些方向适合什么样的兴趣
+# ✨ 总结一下，这些方向适合什么样的兴趣
 
 |领域|核心技术|适合人群|
 |---|---|---|
