@@ -4,15 +4,9 @@ date created: 2025-02-14
 date modified: 2025-10-19
 ---
 # Summary
-让模型学会把“词语”映射成一个向量，使得语义相似的词在向量空间中距离也近。
 
-
-# Notes
-
-## 接口与实现
-
-Embedding 是一种接口，[[Word2Vec]]、[[FastText]]、[[BGE]]等都是实现类，榜单是[[MTEB]]
-
+1. 让模型学会把“词语”映射成一个向量，使得语义相似的词在向量空间中距离也近。
+2. Embedding 是一种接口，[[Word2Vec]]、[[FastText]]、[[BGE]]等都是实现类，榜单是[[MTEB]]
 ```Java
 Embedding（嵌入）
     ├─ Word Embedding（词嵌入）
@@ -26,6 +20,8 @@ Embedding（嵌入）
     └─ Graph Embedding（图嵌入）
 ```
 
+[[Word2Vec]] 让 [[embedding]] 真正普及开来
+# Notes
 
 
 ## 需不需要做向量的归一化

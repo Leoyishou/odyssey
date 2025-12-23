@@ -6,11 +6,10 @@ aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
 # 🧩 Summary  
-## RRF（Reciprocal Rank Fusion）算法详解
 
-### **核心问题：如何融合不同来源的排序结果？**
+RRF（Reciprocal Rank Fusion）
 
-text
+### **核心问题：[[混合检索]]后，如何融合不同来源的排序结果？**
 
 ```Java
 场景：混合检索
@@ -21,8 +20,6 @@ text
 ```
 
 ### **❌ 错误方案：直接加权分数**
-
-python
 
 ```python
 # 问题：不同算法的分数量纲不同
@@ -45,11 +42,7 @@ final_score = bm25_score + vector_score  # 15.2 + 0.88 = ???
 
 ### **✅ RRF方案：只看排名，不看分数**
 
-#### **RRF公式**
-
-text
-
-```Java
+```
 RRF_score(d) = Σ  1 / (k + rank_i(d))
               i∈所有检索系统
 
@@ -57,8 +50,6 @@ RRF_score(d) = Σ  1 / (k + rank_i(d))
 - k: 常数（通常取60），防止除零并平滑排名差异
 - rank_i(d): 文档d在第i个检索系统中的排名
 ```
-
-#### **完整**
 
 
 # 💡 Cues

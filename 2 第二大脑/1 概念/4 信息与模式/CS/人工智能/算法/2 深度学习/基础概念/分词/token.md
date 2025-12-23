@@ -5,8 +5,6 @@ uid: 36a434ec-fb87-4d3e-ae67-e5db22b9f97e
 ---
 # Summary
 
-token的最佳翻译「词汇表中的词」
-
-
+token的最佳翻译「词汇表中的词」，来自什么词汇表，取决于用什么[[tokenizer]]做[[Tokenization 分词]]，比如[[BPE]]
 
 https://tiktokenizer.f2api.com   可以输入一段文字看到不同模型的分词结果

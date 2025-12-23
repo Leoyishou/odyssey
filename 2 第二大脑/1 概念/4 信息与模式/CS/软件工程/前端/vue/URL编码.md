@@ -4,13 +4,18 @@ date modified: 2025-07-10
 uid: 20ea8a60-18bc-451d-81ea-6f6f4134bec5
 ---
 
+# Summa
+
+
+先用 UTF‑8 把字符变成字节，再把“每个非安全字节”写成 %XX 的形式，这就是 URL 编码。
+
 URL 中使用特殊字符时，不会引起歧义或错误
 
-<!-- more -->
 
 URL 编码（也称为百分号编码）最初是由 Tim Berners-Lee 提出的，他是万维网（World Wide Web）的发明者之一。URL 编码用于将 URL 中的特殊字符转换为能够在 URL 中安全传输的格式。
 
   
+# Notes
 
 **URL 编码的提出背景**
 

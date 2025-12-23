@@ -7,6 +7,8 @@ linter-yaml-title-alias: Summary
 ---
 # Summary
 
+**FLOPs（Floating‑Point Operations）是什么？**
+- **定义**：一次 **浮点运算**（加、减、乘、除、乘加等）计为 1 FLOP。
 
 
 # Cues

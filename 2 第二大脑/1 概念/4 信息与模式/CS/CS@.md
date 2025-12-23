@@ -40,7 +40,7 @@ linter-yaml-title-alias: Summary
 | [[操作系统@]]             | [MIT 6.828 Operating System Engineering](MIT%206.828%20Operating%20System%20Engineering.md)                                             |
 | [[计算机网络@]]            | [CS144 Computer Network](CS144%20Computer%20Network.md)                                                                                 |
 | [[数据库@]]              | [[UCB CS186 Introduction to Database System]]                                                                                           |
-|[大数据$](大数据$.md)       |                                                                                                                                         |
+| [大数据$](大数据$.md)       |                                                                                                                                         |
 | [分布式系统](分布式系统.md)     | [MIT 6.824 Distributed System](MIT%206.824%20Distributed%20System.md)                                                                   |
 | [机器学习ML@](机器学习ML@.md) | [CS229 Machine Learning](CS229%20Machine%20Learning.md)                                                                                 |
 | [[深度学习@]]             | [[CS224n Natural Language Processing]]                                                                                                  |

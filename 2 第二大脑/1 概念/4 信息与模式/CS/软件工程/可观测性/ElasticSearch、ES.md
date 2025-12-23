@@ -16,9 +16,9 @@ uid: bc090318-53b4-4f46-98e2-e0f9f41d5e3b
 
 # Summary
 
-1. 与 mysql 的 sql 语言不同，es 操作都是http 接口
+1. 与 mysql 的 sql 语言不同，es 操作都是 http 接口
 2. 一张表叫 index，一行数据叫一个 document，本质就是一个 Json，key 就是字段名，叫 field
-3. Mapping 类似 [MySQL](MySQL.md) 的 Desc看字段类型 + CREATE INDEX建索引
+3. Mapping 类似 [MySQL](MySQL.md) 的 Desc 看字段类型 + CREATE INDEX 建索引
 
 
 # Cues
@@ -27,18 +27,8 @@ uid: bc090318-53b4-4f46-98e2-e0f9f41d5e3b
 
 # Notes
 
-- [行维度](#%E8%A1%8C%E7%BB%B4%E5%BA%A6)
-- [存储与搜索](#%E5%AD%98%E5%82%A8%E4%B8%8E%E6%90%9C%E7%B4%A2)
-- [双存储模式](#%E5%8F%8C%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F)
-- [select](#select)
-- [布尔组合查询](#%E5%B8%83%E5%B0%94%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2)
-- [数据类型与索引](#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%B4%A2%E5%BC%95)
-- [1. 搜索需求](#1.%20%E6%90%9C%E7%B4%A2%E9%9C%80%E6%B1%82)
-- [2. 存储需求](#2.%C2%A0%E5%AD%98%E5%82%A8%E9%9C%80%E6%B1%82)
-- [3. 查询需求](#3.%20%E6%9F%A5%E8%AF%A2%E9%9C%80%E6%B1%82)
 
-
-## 基础
+## 一、基础
 ### 行维度
 
 一行数据就是一个 Json
@@ -59,7 +49,7 @@ Json 的 key 就是 field
 
 
 
-## 存储与搜索
+## 二、存储与搜索
 
 
 Query 关键词 vs 倒排索引存储模式
@@ -69,7 +59,8 @@ Query 关键词 vs 倒排索引存储模式
 | Query 层面 | term、match 等查询类型 | 决定如何搜索    |
 | 存储层面     | 倒排索引的存储方式        | 决定数据如何被索引 |
 
-### 双存储模式
+### 2.1 双存储模式
+
 原始文档模式 + [倒排索引 Inverted File](倒排索引%20Inverted%20File.md)模式
 ```Java
 // 原始文档（_source）
@@ -92,7 +83,10 @@ curl -X GET "http://localhost:9200/_cat/indices?v"
 curl -X PUT "http://localhost:9200/tours"
 ```
 
-### select
+### 2.2 查询 select
+
+把一段文本（帖子）与一条“查询”进行打分，衡量它们相关程度：[[BM25]]是搜索引擎经典的 基于词频的排序公式
+
 [[match查询]]
 match 是支持分词的，用「北京市」可以搜出「北京」的结果
 ```http
@@ -117,7 +111,7 @@ curl -X GET "http://localhost:9200/tours/_search" -H 'Content-Type: application/
 ```
 
 
-### 布尔组合查询
+### 2.3 布尔组合查询
 
 布尔查询允许组合多个条件：
 - `must`（AND）
@@ -137,7 +131,24 @@ curl -X GET "http://localhost:9200/tours/_search" -H 'Content-Type: application/
 }'
 
 ```
-## 数据类型与索引
+
+### 2.4 向量检索
+
+可以直接存其他地方处理完的 [[embedding]]、也用 ES 自己内置的 [[ELSER]] 做[[embedding]]
+
+|特性|ELSER (ES 自动用的)|BGE (你可以自己用的)|
+|---|---|---|
+|**向量类型**|稀疏向量|密集向量|
+|**维度**|~30,000 维（但大部分为 0）|768/1024 维|
+|**模型来源**|Elastic 官方|北京智源研究院|
+|**多语言**|✅ 支持多种语言|✅ 中英文效果很好|
+|**中文效果**|🟡 可以，但不如专门的中文模型|✅ 中文效果很好|
+|**计算位置**|ES 内部|需要外部计算|
+|**需要 GPU**|可选（有 GPU 更快）|推荐用 GPU|
+
+
+## 三、数据类型与索引
+
 Mapping 类似 [MySQL](MySQL.md) 的 Desc看字段类型 + CREATE INDEX建索引
 
 ```json

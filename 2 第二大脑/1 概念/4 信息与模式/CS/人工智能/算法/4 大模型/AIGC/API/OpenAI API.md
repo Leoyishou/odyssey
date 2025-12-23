@@ -7,21 +7,51 @@ uid: 5537f688-37bd-4195-8235-31e549ab6dbe
 ```http
 curl https://api.openai.com/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{
-    "model": "gpt-5",
+    "model": "gpt-4-turbo-preview",
     "messages": [
       {
-        "role": "developer",
-        "content": "You are a helpful assistant."
+        "role": "system",
+        "content": "**参数提取指南**:\n- departure: 从用户消息中提取，或使用默认值\"上海\"\n- arrival: 必须从用户消息中提取目的地（这是核心参数）\n- days: 提取天数，未提及则默认3天\n- start_date: 提取出发日期，未提及则使用明天的日期\n- select_tags/trip_style: 提取用户偏好（如\"亲子游\"、\"文化深度游\"）\n\n**示例触发语句**:\n- \"我想去北京玩三天\"\n- \"下周去杭州，帮我安排行程\"\n- \"国庆想带孩子去成都\"\n\n### 2. adjust_trip_route - 调整现有行程\n**触发条件**（满足任一即调用）:\n- 对话中已经有生成的行程，用户要求修改\n- 用户说\"把XX景点换成YYY\"、\"帮我第二天的XX\"\n- 用户说\"增加/添加XX景点\"\n- 用户说\"行程太紧张，帮我放松点\"\n- 用户说\"行程可以帮把到别天吗？\"\n- 用户说\"行程可以帮加到5天吗？\"\n\n### 3. import_trip_route_note - 导入已有攻略\n**触发条件**（满足任一即调用）:\n- 用户直接粘贴了一段完整的旅游攻略/行程\n- 用户说\"帮我整理一下这个行程\"并附上文字\n- 用户分享了小红书/其他平台的行程内容\n- 内容包含明确的目地、景点、时间安排\n\n### 4. 直接回答（无需调用工具）\n仅在以下情况直接回答:\n- 旅游常识性问题（如\"XX景点门票多少钱\"）\n- 目的地咨询（如\"推荐一个适合亲子游的城市\"）\n- 旅行建议（如\"去云南什么季节最好\"）\n- 用户只是询问，没有明确的行程规划需求\n\n## 重要提醒:\n1. **当用户明确表达了去某地旅游的意图时，必须立即调用ai_generate_trip_route，不要只是归头回答**\n2. 如果信息不足（如没说目的地），先简短询问缺失的关键信息，获得后立即调用工具\n3. 参数优先从用户消息中提取，缺失的使用合理默认值，不要反复追问\n4. 保持回复简洁友好，重点是快速帮用户生成可用的行程"
       },
       {
         "role": "user",
-        "content": "Hello!"
+        "content": "南京"
+      },
+      {
+        "role": "assistant",
+        "content": "AI开启行程"
+      },
+      {
+        "role": "user",
+        "content": "西班牙"
+      },
+      {
+        "role": "assistant",
+        "content": "AI开启行程"
+      },
+      {
+        "role": "user",
+        "content": "行程可以帮加到3天吗"
       }
-    ]
+    ],
+    "temperature": 1,
+    "max_tokens": 4096
   }'
 
+
+
+{
+  "messages": [
+    {"role": "system", "content": "..."},
+    {"role": "user", "content": "南京"},           // 历史消息 1
+    {"role": "assistant", "content": "AI开启行程"},  // 历史消息 2
+    {"role": "user", "content": "西班牙"},          // 历史消息 3
+    {"role": "assistant", "content": "AI开启行程"},  // 历史消息 4
+    {"role": "user", "content": "行程可以帮加到3天吗"} // ← 这是最新的
+  ]
+}
 ```
 
 # Request body

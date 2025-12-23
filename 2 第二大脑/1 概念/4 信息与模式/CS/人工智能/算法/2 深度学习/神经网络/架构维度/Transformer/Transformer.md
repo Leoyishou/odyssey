@@ -120,8 +120,9 @@ https://www.zhihu.com/question/665731716/answer/1964322329191490141
 2. 是选哪些词，[注意力机制](注意力机制.md)解决的是许多词组合在一起之后，整体体现出来的那个语义。
 3. 是行文顺序，[[Positional Encoding 位置编码]]
 
-
+### 训练阶段
 ```shell
+# 一、全流程
 def forward(self, idx, targets=None):
     # 1. idx 就是输入的索引序列，形状是 (batch_size, sequence_length)
 	device = idx.device
@@ -142,8 +143,61 @@ def forward(self, idx, targets=None):
 	if targets is not None:
 		loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1), ignore_index=-1)
 	return logits, loss
+
+# 二、Block 内部包括多头注意力和 FFN 两部分
+def forward(self, x):
+	x = x + self.attn(self.ln_1(x))
+	x = x + self.mlpf(self.ln_2(x))
+	return x
 	
-	
+##  2.1 多头注意力
+def forward(self, x):
+	B, T, C = x.size() # batch size, sequence length, embedding dimensionality (n_embd)
+
+	# calculate query, key, values for all heads in batch and move head forward to be the batch dim
+	q, k ,v  = self.c_attn(x).split(self.n_embd, dim=2)
+	k = k.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
+	q = q.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
+	v = v.view(B, T, self.n_head, C // self.n_head).transpose(1, 2) # (B, nh, T, hs)
+
+	# causal self-attention; Self-attend: (B, nh, T, hs) x (B, nh, hs, T) -> (B, nh, T, T)
+	att = (q @ k.transpose(-2, -1)) * (1.0 / math.sqrt(k.size(-1)))
+	att = att.masked_fill(self.bias[:,:,:T,:T] == 0, float('-inf'))
+	att = F.softmax(att, dim=-1)
+	att = self.attn_dropout(att)
+	y = att @ v # (B, nh, T, T) x (B, nh, T, hs) -> (B, nh, T, hs)
+	y = y.transpose(1, 2).contiguous().view(B, T, C) # re-assemble all head outputs side by side
+
+	# output projection
+	y = self.resid_dropout(self.c_proj(y))
+	return y
+## 2.2 FFN
+self.mlpf = lambda x: m.dropout(m.c_proj(m.act(m.c_fc(x))))   
+### c_fc 第一个线性层
+### act 激活函数
+### c_proj 第2个线性层
+### dropout 正则化
+
+输入: x
+  形状: (batch_size, seq_length, d_model)
+  ↓
+c_fc(x)          ← 升维：d_model → d_ff (通常是 4×d_model)
+  形状: (batch_size, seq_length, d_ff)
+  ↓
+act(...)         ← 激活函数（GELU/ReLU），维度不变
+  形状: (batch_size, seq_length, d_ff)
+  ↓
+c_proj(...)      ← 降维：d_ff → d_model
+  形状: (batch_size, seq_length, d_model)
+  ↓
+dropout(...)     ← Dropout，维度不变
+  形状: (batch_size, seq_length, d_model)
+  ↓
+输出
+```
+
+### 推理阶段
+```        
 @torch.no_grad()
 def generate(self, idx, max_new_tokens, temperature=1.0, do_sample=False, top_k=None):
 	for _ in range(max_new_tokens):

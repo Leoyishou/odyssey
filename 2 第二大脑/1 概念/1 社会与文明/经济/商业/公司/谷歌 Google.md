@@ -52,7 +52,7 @@ AlphaGo /AlphaZero革命性地推动了强化学习与博弈 AI。
 
 Google File System 分布式文件系统，奠定了后来的 HDFS（Hadoop 分布式文件系统）的基础。
 
-MapReduce大规模并行计算框架，后来催生了Hadoop、Spark 等大数据生态。
+[[MapReduce]]大规模并行计算框架，后来催生了Hadoop、Spark 等大数据生态。[[Jeff Dean]]
 
 Bigtable分布式数据库系统，启发了 HBase、Cassandra 等 NoSQL 数据库。
 
