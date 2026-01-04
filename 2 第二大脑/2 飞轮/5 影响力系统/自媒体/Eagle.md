@@ -7,6 +7,10 @@ linter-yaml-title-alias: Summary
 ---
 # 💡 Summary  
 
+> [!info]
+> **Eagle 的默认行为是“吞噬”（Copy & Encapsulate），而不是“引用”（Pointer/Symlink）。**当你把文件拖入 Eagle 时，它**并不是**在这个文件原来的位置上打个标签，而是把文件**物理复制**（或者移动，取决于你的设置）到了 Eagle 自己的 `.library` 文件夹那个“黑盒”里。
+> 
+
 Eagle素材管理软件深度评测与使用指南：从底层逻辑到实战技巧
 
 🗂️ 核心概述

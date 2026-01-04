@@ -4,6 +4,141 @@ date modified: 2025-10-25
 uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
 
+## Agent 设计
+
+1. 对于 Manus、Devin、Claude Code 这些产品来说，Model（模型）是水电煤，Orchestration Code（调度层代码）才是真正的发动机。
+2. - 调度层代码 (Orchestration)：这是包含了人类工程师无数次 Debug 经验的结晶。它把一个“会说话的 AI”变成了一个“会干活的 Agent”。
+
+
+你提到的 Claude Code、Gemini CLI、Codex (Copilot) 的核心 Agent 调度逻辑目前都是闭源的。它们把这部分代码视为核心商业机密。
+
+
+
+|                  |                                              |
+| ---------------- | -------------------------------------------- |
+| 编排层orchestration | 1. 先用 Claude Code，<br>2. 然后慢慢自研              |
+| 给 AI 用的 Tool 的设计 | 1. 模拟用户阅读小红书，可以在选项卡问用户平常是否喜欢参考社交媒体里的攻略<br>2. |
+| 沙箱环境             | 1. 先用 docker                                 |
+| 上下文              | 1. 潜台词，用户浏览记录、籍贯                             |
+| 后置 hook 做最终的结果约束 | 出一份agent的结果 全部使用schema                       |
+
+
+
+
+
+
+
+2. 把chat 和agent两个事分开，one by one 或者 one by n
+3. 
+
+
+
+
+
+
+
+## 2）在 Claude Code 上做扩展（plugins / slash commands / agents / hooks / MCP）——这是官方鼓励的路
+
+Claude Code 的官方定位就是“终端里的可组合、可脚本化工具”，并且支持用 MCP 接外部工具、用 插件系统做自定义命令/专用 agent。([Claude Code](https://code.claude.com/docs/en/overview "Claude Code overview - Claude Code Docs"))
+
+对“行程规划 agent”来说，最合理的做法是：不要把 Claude Code 当成旅游 App，而是当成你的 agent 运行壳，把旅行能力放在“可控的工具层”。
+
+---
+
+## 2.1 工具层
+
+Claude Code 能通过 `.mcp.json` 配置 MCP server，并且有清晰的作用域/优先级（本地/项目/企业）与环境变量注入，适合放 API Key。([Claude Code](https://code.claude.com/docs/en/mcp "Connect Claude Code to tools via MCP - Claude Code Docs"))
+
+你可以做一个 `travel-mcp`，提供工具（Tools）比如：
+
+- `search_poi(query, city)`：POI 搜索/去重/打标签
+    
+- `route_time(from, to, mode)`：交通时间（步行/公共交通/驾车）
+    
+- `open_hours(poi, date)`：营业/预约/季节性关闭
+    
+- `weather(city, date_range)`：天气 + “雨天替代方案”触发
+    
+- `budget_estimate(itinerary)`：粗略预算校验（门票/交通/餐饮）
+    
+
+这样模型就不会靠“脑补”，而是每次规划都查工具。
+
+> `.mcp.json` 结构示意（最小形态）：
+
+```json
+{
+  "mcpServers": {
+    "travel": {
+      "type": "http",
+      "url": "${TRAVEL_MCP_URL}",
+      "headers": { "Authorization": "Bearer ${TRAVEL_MCP_KEY}" }
+    }
+  }
+}
+```
+
+（环境变量展开是官方支持的。）([Claude Code](https://code.claude.com/docs/en/mcp "Connect Claude Code to tools via MCP - Claude Code Docs"))
+
+## B. 用插件/自定义 slash command 做入口
+
+Claude Code 支持自定义 slash commands，且有命名空间等机制，适合做 `/trip`、`/replan`、`/day2` 这种交互入口。([Claude Code](https://code.claude.com/docs/en/slash-commands?utm_source=chatgpt.com "Slash commands - Claude Code Docs"))  
+插件市场/分发也有官方文档路径（你可以把自己的插件打包给团队装）。([Claude Code](https://code.claude.com/docs/en/plugin-marketplaces?utm_source=chatgpt.com "Create and distribute a plugin marketplace"))
+
+你最终的用户体验可以是：
+
+- `/trip 上海 3天 预算2000 喜欢citywalk 住静安`
+    
+- Claude Code 调 MCP：拉 POI → 算动线 → 查天气 → 输出行程（Markdown + JSON）
+    
+- `/replan day2 雨天`：只重排第二天，并保持预算与强约束
+    
+
+## Hooks
+
+Claude Code 有 hooks 机制（从 CHANGELOG 可见 hooks 已作为特性加入并持续演进），适合做：
+
+- 输出后自动跑一个 `validate_itinerary.py`：检查每日时间总和、跨城不合理、预算超标、POI 重复等
+    
+- 校验不过就让 Claude 自动修（给出具体错误列表）
+    
+
+（hooks 的存在与演进在官方 changelog 中可以看到。）([GitHub](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md?utm_source=chatgpt.com "https://raw.githubusercontent.com/anthropics/claud..."))
+
+## 上下文
+
+你可以把这个“行程规划”当成一个 repo/项目：
+
+- `CLAUDE.md` 写产品规则：必须输出结构化 JSON、必须给备选、必须标注风险点
+    
+- `profiles/` 放不同用户画像模板（亲子/摄影/老年/特种兵）
+    
+
+Claude Code 本来就擅长在“项目上下文”里工作。([Claude Code](https://code.claude.com/docs/en/overview "Claude Code overview - Claude Code Docs"))
+
+---
+
+# 什么时候“不该用 Claude Code”而该用别的？
+
+如果你要把它做成面向 C 端的产品（网页/小程序/APP），Claude Code 会显得别扭：它是开发者工具壳。官方也明确有 Claude Agent SDK（用于真正搭 agent 应用），更适合产品化落地。([Anthropic](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk?utm_source=chatgpt.com "Building agents with the Claude Agent SDK"))
+
+---
+
+# 最小落地路线（你今天就能开工的那种）
+
+1. 先写一个 `travel-mcp`：哪怕只实现 `search_poi` + `route_time` 两个工具
+    
+2. 在 Claude Code 里配 `.mcp.json` 接上它([Claude Code](https://code.claude.com/docs/en/mcp "Connect Claude Code to tools via MCP - Claude Code Docs"))
+    
+3. 做一个 `/trip` 命令：输入城市/天数/预算/偏好，输出 Markdown + JSON([Claude Code](https://code.claude.com/docs/en/slash-commands?utm_source=chatgpt.com "Slash commands - Claude Code Docs"))
+    
+4. 加一个校验脚本 + hook：保证“可执行性”底线([GitHub](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md?utm_source=chatgpt.com "https://raw.githubusercontent.com/anthropics/claud..."))
+    
+
+如果你告诉我你希望 MCP 里接的“真实数据源”是哪类（OSM/Google Places/高德/携程或你们内部 POI 库/天气/交通），我可以直接给你一套 travel-mcp 的工具接口定义（tool schema） + 行程 JSON schema + 校验规则清单，让你能快速把评测/可执行性做起来。
+
+
+
 - 粗略公式
       - Agent ≈ n 次 [[RunnableSequence]]（每次=提示拼装 → 1 次 LLM）+ 中间穿插的工具执行（不算在 RunnableSequence 里）+ 可选 1 次 response_format 的最终 LLM。
   - 计数
