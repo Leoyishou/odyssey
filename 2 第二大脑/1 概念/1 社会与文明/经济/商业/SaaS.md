@@ -3,11 +3,13 @@ date created: 2024-11-12
 date modified: 2025-07-10
 uid: 78592cb7-0061-4c88-a30c-21365a75c8cf
 ---
+[[linear]]
+
+**SaaS/产品启示**：这非常像 [[SaaS]] 的**订阅制（Subscription）**。只要用户复购（续费），模型就成立。为了让用户续费，你必须提供极致的“价值感”，而不是在单次交易中宰客。
 
 用户不需要在本地安装软件，可以直接通过浏览器或移动应用程序访问和使用软件。
 
 常见的SaaS应用程序包括：
-
 1. office软件（如Google Workspace）
 2. CRM系统（如Salesforce）
 3. 项目管理工具（如Asana）

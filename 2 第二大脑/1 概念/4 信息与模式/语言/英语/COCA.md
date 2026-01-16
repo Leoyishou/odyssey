@@ -4,9 +4,12 @@ date modified: 2025-07-10
 uid: 47158cdb-aba1-42ab-9de9-b6acd43cceb9
 ---
 
-excerpt
 
-<!-- more -->
+| 1级    | coca 排名 | 2级      | coca 排名 | 3 级 |
+| ----- | ------- | ------- | ------- | --- |
+| good  | 300     | great   | 500     |     |
+| happy | 200     | excited | 600     |     |
+| bad   | 240     | awful   | 700     |     |
 
 ## 定义
 

@@ -5,7 +5,11 @@ date modified: 2025-10-07
 aliases: [Summary]
 linter-yaml-title-alias: Summary
 ---
-# 💡 Summary  
+#  💡Summary  
+
+> [!Info]
+> 一句话说清楚
+> 
 
 
 

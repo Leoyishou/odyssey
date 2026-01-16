@@ -7,7 +7,14 @@ linter-yaml-title-alias: Summary
 ---
 # 💡 Summary  
 
+
 如果你做 iOS 开发，**必须用 Xcode**；如果做 Python/Java，JetBrains 的工具会更强大专业。
+
+
+
+- 有人直播演示：用 Claude Code + Xcode Build MCP，从零构建复杂 iOS/macOS app（比如带语音输入、Liquid Glass UI 的笔记 app），全程自动修复编译错误、UI 测试，甚至上架 App Store。
+- 英文圈更多实战：有人 79 分钟建好 macOS 记事本 app（零 Swift 经验）；有人用 Claude Code 重构整个项目，修复内存泄漏；还有人分享“深度访谈法”让 Claude 问 39 个问题，从模糊需求建出烟花 app。
+
 
 # 🧩 Cues
 

@@ -3,6 +3,33 @@ date created: 2023-11-23
 date modified: 2025-10-25
 uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
+a
+> [!info]
+> LLM + 一个图灵完备的机器 = Agent
+> 
+
+KOL：@yetone
+
+[[图灵完备]]
+
+1. [[bash]]强的可怕，因为 LLM 训练数据里有海量的 Linux 操作记录，它天生就会用 Linux。
+## 最佳实践
+### Thariq Shihipar 的 Workshop 核心（“8点心得”深度解析）
+
+这个视频名为《Claude Agent SDK [Full Workshop]》，Thariq 在其中手把手演示了如何用 Claude Agent SDK 构建一个 Agent。X 上流传的“8点心得”通常涵盖以下核心逻辑：
+
+
+**Agent Loop 的本质（The Loop）**
+
+- **流程：** 所有的 Agent 最终都简化为一个死循环： `Context（环境）` -> `Thought（思考）` -> `Action（行动/工具调用）` -> `Observation（观察执行结果）` -> `回到 Context`。
+    
+- **简单性：** 不要设计复杂的图（Graph），先跑通这个最简单的单线程循环。
+
+
+1. Claude Agent SDK + 提示词编写初版 Agent，然后根据效果去细化提示词指令，再把确定性部分尽可能抽离成 Agent Skill 和配套脚本。
+2. 如果满足不了需求，再考虑更细粒度的 Multi-Agent 框架比如 CrewAI、AutoGen。
+3. 再满足不了就自己 LangChain/LangGraph/纯 OpenAI SDK 手撸或者拿 OpenCode 等框架去改。
+
 
 ## Agent 设计
 
@@ -14,17 +41,46 @@ uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 
 
 
-|                  |                                              |
-| ---------------- | -------------------------------------------- |
-| 编排层orchestration | 1. 先用 Claude Code，<br>2. 然后慢慢自研              |
-| 给 AI 用的 Tool 的设计 | 1. 模拟用户阅读小红书，可以在选项卡问用户平常是否喜欢参考社交媒体里的攻略<br>2. |
-| 沙箱环境             | 1. 先用 docker                                 |
-| 上下文              | 1. 潜台词，用户浏览记录、籍贯                             |
-| 后置 hook 做最终的结果约束 | 出一份agent的结果 全部使用schema                       |
+|                  |                                               |
+| ---------------- | --------------------------------------------- |
+| 编排层orchestration | 1. 先用 Claude Code，<br>2. 然后基于 OpenCode 试试慢慢自研 |
+| 给 AI 用的 Tool 的设计 | 1. 模拟用户阅读小红书，可以在选项卡问用户平常是否喜欢参考社交媒体里的攻略<br>2.  |
+| 沙箱环境             | 1. 先用 docker                                  |
+| 上下文              | 1. 潜台词，用户浏览记录、籍贯                              |
+| 后置 hook 做最终的结果约束 | 出一份agent的结果 全部使用schema                        |
 
 
 
+## 核心调度循环
 
+```
+// 核心调度循环
+while (true) {
+  // 1. 调用 LLM 流式输出
+  const stream = await LLM.stream(streamInput)
+  
+  for await (const value of stream.fullStream) {
+    // ... 处理 token 流 ...
+    
+    // 2. 自动检测 "Doom Loop" (死循环)
+    // 如果连续 3 次调用同一个工具且参数完全一样，立刻暂停并询问用户
+    if (lastThree.length === DOOM_LOOP_THRESHOLD && lastThree.every(isSameTool)) {
+       await PermissionNext.ask({ permission: "doom_loop", ... })
+    }
+  }
+
+  // 3. 执行工具 (Tool Execution)
+  // ...
+
+  // 4. 自动快照 (Snapshot)
+  // 每次执行完工具，都会对文件系统做一次快照，记录变更 (Diff)
+  snapshot = await Snapshot.track()
+  
+  // 5. 上下文压缩 (Context Compaction)
+  // 如果 Token 溢出，触发压缩逻辑
+  if (needsCompaction) return "compact"
+}
+```
 
 
 

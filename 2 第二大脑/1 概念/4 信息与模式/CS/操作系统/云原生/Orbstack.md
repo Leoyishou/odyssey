@@ -3,6 +3,43 @@ date created: 2024-09-15
 date modified: 2025-10-07
 uid: 22d93b7f-936f-4ae6-955b-3ee4da9d74f5
 ---
+
+### 1. 极速启动与执行（Agent 不会“卡住”）
+
+Claude Code 执行任务时，经常会运行 `docker run` 来启动数据库、测试环境或验证代码。
+
+- **Docker Desktop:** 启动引擎通常需要几十秒甚至更久。如果你的 Docker 后台没开，Agent 执行命令会报错，或者让你等很久。
+    
+- **OrbStack:** 几乎是秒开（Instant startup）。即使后台没挂着，Claude Code 敲下命令的瞬间，OrbStack 就能唤醒并执行。这保证了 Agent 的“心流”不被打断。
+    
+
+### 2. 资源占用极低（留给 LLM 和 IDE）
+
+运行 Claude Code（尤其是本地模型或高频 API 调用）本身就消耗系统资源，你肯定不希望 Docker 再吃掉 4GB+ 内存。
+
+- **Docker Desktop:** 基于传统虚拟机，吃内存大户，空载也容易发热。
+    
+- **OrbStack:** 采用轻量级虚拟化技术，内存占用极低（通常只有 DD 的 1/5），CPU 占用更是几乎可以忽略不计。这对于保持电脑流畅运行 Agent 至关重要。
+    
+
+### 3. Agent 友好的网络与域名特性
+
+这是 OrbStack 最“杀手”的功能，对 Agent 开发 web 应用特别方便。
+
+- **场景:** Claude Code 写了一个 web 服务，运行在容器的 8000 端口。
+    
+- **Docker Desktop:** 你得去检查端口映射 (`-p 8000:8000`)，然后用 `localhost:8000` 访问。如果端口冲突，Agent 可能会报错。
+    
+- **OrbStack:** 它自动分配域名。容器名是 `my-app`，你（和 Agent）直接访问 `http://my-app.orb.local` 即可，甚至不需要手动做端口映射。这减少了 Agent 写 `docker-compose.yml` 时的复杂度和出错率。
+    
+
+### 4. 完美的 Socket 兼容性
+
+Claude Code 本质上是调用 shell 命令。OrbStack 会自动在这个路径建立软连接：`/var/run/docker.sock`。 这意味着：**Claude Code 根本不知道自己在用 OrbStack，它以为自己在用 Docker。** 你不需要对 Agent 做任何特殊配置，直接用即可。
+
+
+
+
 docker 桌面版本在 macOS上实在不好玩，还是 orbstack 好用，占用资源更少。
 
 
