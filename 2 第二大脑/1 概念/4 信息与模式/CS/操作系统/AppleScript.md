@@ -1,0 +1,33 @@
+---
+uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+date created: 2025-07-19
+date modified: 2025-10-07
+aliases: [Summary]
+linter-yaml-title-alias: Summary
+---
+# 💡 Summary  
+
+AppleScript 简单来说就是苹果电脑（Mac）上的一种"自动化语言"，让你可以用简单的类似英语的指令来控制电脑和软件，帮你自动完成重复性的工作。
+
+想象一下，你每天上班都要打开同样的几个软件，整理一堆文件，发送固定格式的邮件。如果手动做，可能要花 10 分钟，但用 AppleScript 写一段小程序，点一下就能在几秒钟内完成。它就像是你的"私人助理"，可以按照你的吩咐去操作电脑。
+
+**AppleScript 能做什么？**
+
+比如你可以让它自动给一堆照片重命名、把文件按类型分类到不同文件夹、定时打开某个网页、批量处理 Excel 表格、甚至控制 iTunes 播放音乐等等。只要是 Mac 上支持 AppleScript 的软件（大部分系统自带软件都支持），你都可以用它来控制。
+
+**为什么说它"通俗"？**
+
+AppleScript 的语法设计得很像英语，比如：
+
+- `tell application "Safari" to open location "https://www.apple.com"` （告诉 Safari 浏览器打开苹果网站）
+- `say "Hello"` （让电脑说"Hello"）
+
+不需要像传统编程那样记很多复杂的符号和规则，普通人花点时间也能学会基本操作。
+
+当然，它也有局限性——只能在 Mac 上用，而且功能主要是自动化操作，不太适合开发复杂的应用程序。但对于日常办公自动化来说，它是个非常实用的工具。
+
+# 🧩 Cues
+
+
+
+# 🪞Notes

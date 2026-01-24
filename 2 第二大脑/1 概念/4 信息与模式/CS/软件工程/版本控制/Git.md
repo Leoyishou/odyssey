@@ -3,7 +3,16 @@ date created: 2024-06-24
 date modified: 2025-08-30
 uid: 0d028d36-8ce0-40c6-a466-5e66dd1330bc
 ---
-# Git Commit Message
+
+## 情况与解决
+
+| s                     |                     |
+| --------------------- | ------------------- |
+| Branch 里有脏历史          | `Git Filter-Repo`   |
+| 忘记切 branch 就 commit 了 | `cherry-pick`       |
+| **合代码发现冲突太多，想先放弃合并**  | `git merge --abort` |
+
+## Git Commit Message
 
 |关键词|描述|
 |---|---|
@@ -350,38 +359,7 @@ git config --get pull.rebase
 git config --get pull.ff
 ```
 
-需要我详细解释某个方案吗？
 
-```Java
------BEGIN CERTIFICATE-----
-MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDaWyT+qv8dduj8
-6M4EBcV08mF3pzqQQ5mHhTIhP94u4A4Z/Vb70cmucG64LkDP1tCWhrcHCDpNgmL5
-uSqB++wra5KS6faqKjyTTUZU+d9VHbvEzjMzE6525IZW65scQgKNzIRI1tSeDh3a
-c7vYdMLxVdDH94ED8erCKYvcnkPMdHRRY7hsHTQ0z0FD2bWspTcOao5jwSfg1MVs
-WlELMl0sCV866DR2O9Nc8C+BQ+GIP1hXAvxv8/nLVUSpdtPr8dZgoiXb2EbI9fTn
-6NODo6WkTX2jx/klK/rlJV7z6AXOlIg5x6KGGnp4v7iV9RLjoAYTl9m8TYUy2Pl8
-B4SEqHvNAgMBAAECggEAAbxsrNKp6kkBY4HFVSTBM/1GVzSlUE024zjLOnzyJ9Mm
-5/MXiTNOJDzA5v/evfHiOpDx7RSJaoekgLUSa7I+Gsurs88E464n/G+f/sZ2AL/J
-0aMZc89BzJbjo4n5gHrDRiKi+mis2MamqALSDELdyhxQARSZOiSm/jayDDjwGif4
-gBtXmeqJUUjlXjXONbw/rbvgWeYCCu8jx1lrnkLoEeFvKuRTSYqTDO9iAAtesAc9
-yvLpjHeD9FIT/fAopnvdnKR9WEuBqj3vZh/nGVKCNxKGQ6a3tuLW7fbJLEYRq2tI
-EocXu6gU+hJ6k/rp5JVpCJJ6Fs+7VLDX+WGJZeNVaQKBgQD92n09G/opiLFEh2jJ
-I9fQM6LaMXB2KOrXz3v3pD/qKvgw6rZlmq0z9jxrxlDr7FZtk63X+bWH+psFqiwp
-67JNxN+t16j1XZvYVO59Kq8dzS2rnJZ+2qCRidNiBZypFezc562Eotmh9IuBIK8b
-4hRvXaSiBbGMKpjb2JmXB/EVxQKBgQDcM9CW8ggNSlz/Q2skIZjl1/olEGjx6aS+
-n7GuFuACczjnmaALgJveHOovXTiDk1jBM9dkMh22aOvQS71w6ej3RfNcYy4Vuarp
-t9mthOZQLwBPIQVTR2Xw6LBTt5DWZsbSpV9jELea2rKCWtHt6wRSNJThJjOMJUZy
-R6u+2WM2aQKBgD94W4vl7Nxpovjhal+wKIuT/YnUhqvkeyNOa051sM1ZxQhmBwjM
-bbXqQR0pTp5OTyXCoNq5QpwnGo+GBtjMZ55uNQcAPuxqZUbnpWGCRJqM7HhWBILf
-IvqAnWuKv6q/IqPxAT+CgCuwOxkkFORB2J4nqbwg9E15cRK2y2ApyiuJAoGAcD8d
-YgRoJFY2x4wXTmit5uPMSB5wUHhYGS+QQ/y3HaicZjqCQbrCOVul6JTtXOy8Pmft
-sM53JOeg5SHmpGsn7PxETGDmOf7V56NnG7N2L4N19eAQNd5cUYxbbaFR/GiRiwjv
-cbEw1ogKnLYs8sls/3Z8ObTea98IZPKx0mw/zZkCgYA49/x9SH8CnLT/W6zunbQ7
-QpQKB5QmOCh7uxSi6CxGs3KTyCmEqDj2p9/ajtqWnscNYbQu9Dyj+ASoqcLZnPBB
-iP8DD7UZEMHFzUEj1TFQ9VynH3EpjML75uEk6v+gLq9qhFp3G+HOo1mGlGguq3wm
-XcnteNJZzErXw2I/VbPdDQ==
------END CERTIFICATE-----
+## Branch 里有脏历史
 
-
-
-```
+![CleanShot 2026-01-25 at 00.43.19@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_NzpDiYQIAy%2F2026%2F01%2F25%2F00-43-47-c2207ea17879c8b7843f4b7564d1e57a-CleanShot%202026-01-25%20at%2000.43.19-2x-b27dd2.png)
