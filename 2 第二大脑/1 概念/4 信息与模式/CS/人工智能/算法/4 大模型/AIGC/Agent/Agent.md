@@ -13,6 +13,8 @@ KOL：@yetone
 [[图灵完备]]
 
 1. [[bash]]强的可怕，因为 LLM 训练数据里有海量的 Linux 操作记录，它天生就会用 Linux。
+2. [[本地 Agent $]]
+3. 
 ## 最佳实践
 ### Thariq Shihipar 的 Workshop 核心（“8点心得”深度解析）
 
@@ -29,6 +31,9 @@ KOL：@yetone
 1. Claude Agent SDK + 提示词编写初版 Agent，然后根据效果去细化提示词指令，再把确定性部分尽可能抽离成 Agent Skill 和配套脚本。
 2. 如果满足不了需求，再考虑更细粒度的 Multi-Agent 框架比如 CrewAI、AutoGen。
 3. 再满足不了就自己 LangChain/LangGraph/纯 OpenAI SDK 手撸或者拿 OpenCode 等框架去改。
+
+
+## 全自动模式很重要
 
 
 ## Agent 设计
