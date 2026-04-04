@@ -1,0 +1,21 @@
+---
+uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+date created: 2025-07-19
+date modified: 2025-10-07
+aliases: [Summary]
+linter-yaml-title-alias: Summary
+---
+#  💡Summary  
+
+> [!Info]
+> 一句话说清楚
+> 
+
+我后来慢慢理解到所谓的 vibe marketing。 它不是强调参数，而是建立一种整体气质，让人愿意靠近。 很多人不是因为功能更强而购买，而是因为感觉对了。 而我过去做营销时，其实是躲在产品后面的。 我不太喜欢在公众场合表达自己，也不太愿意露脸，于是我们只做产品内容，没有创始人的声音。那种表达是安全的，但也是冷的。
+
+
+# 🧩 Cues
+
+
+
+# 🪞Notes

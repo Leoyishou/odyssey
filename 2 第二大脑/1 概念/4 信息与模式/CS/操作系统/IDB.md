@@ -3,6 +3,23 @@ date created: 2025-04-15
 date modified: 2025-07-10
 uid: 883783a3-aefd-4ce0-82e6-1b2f432b8e2d
 ---
+![CleanShot 2026-02-04 at 13.56.22@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_qQgHr2Iqzb%2F2026%2F02%2F04%2F13-57-23-29c2fa71027a0bdf5e4007e81d68e039-CleanShot%202026-02-04%20at%2013.56.22-2x-982ed7.png)
+
+
+
+```
+  IDB 控制 UI 滚动 → 截图 → OCR 提取文字 → 得到数据
+
+  流程：
+  1. Appium/IDB 启动 app、自动登录
+  2. 滚动浏览 feed
+  3. 每屏截图
+  4. Vision API / OCR 提取内容
+  5. 存入数据库
+
+  优点：完全不碰网络层，不需要越狱，不触发反爬
+  缺点：速度慢，数据不如 API 结构化
+```
 
 当然可以！下面是对 **IDB** 的形象介绍：
 

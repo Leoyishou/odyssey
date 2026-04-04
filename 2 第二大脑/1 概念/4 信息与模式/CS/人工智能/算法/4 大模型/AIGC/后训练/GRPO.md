@@ -7,7 +7,7 @@ linter-yaml-title-alias: Summary
 ---
 # Summary
 
-这里的 group，是大模型对一同一 prompt 生成的多个回答
+这里的 group，是大模型对同一 prompt 生成的多个回答
 这就像**让一个学生做同一道题多次**，然后告诉他哪些答案更好，帮助他改进！
 
 **对齐对象**：AI 生成的组内得分最高的答案

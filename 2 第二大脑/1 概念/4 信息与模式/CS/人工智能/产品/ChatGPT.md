@@ -7,3 +7,6 @@ uid: a9a1e1be-c31e-4d0a-9d31-bcc579c32254
 
 
 [[minGPT]]
+
+[[John Schulman]]
+

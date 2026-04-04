@@ -3,7 +3,114 @@ date created: 2024-06-24
 date modified: 2025-08-30
 uid: 0d028d36-8ce0-40c6-a466-5e66dd1330bc
 ---
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2026%2F03%2F06%2F17-31-32-93a5ab9d20e20ec5527cb2b7445a887a-202603061731771-f74d36.png)
 
+[[worktree]]
+
+```
+Git_VersionControl/
+└── Repository(仓库/工程)/
+    ✅├── Workflows_Zones(工作流区域)/
+    │   ├── WorkingDirectory(工作区/写代码的地方)
+    │   │   ├── Untracked(未追踪文件)
+    │   │   └── Modified(已修改文件)
+    │   ├── StagingArea_Index(暂存区/准备提交)
+    │   │   └── CachedFiles(即将提交的快照)
+    │   ├── LocalRepository(本地仓库/历史记录)
+    │   │   └── HEAD(当前指针/游标) -> 指向当前分支的最新提交
+    │   └── RemoteRepository(远程仓库/云端备份)/
+    │       ├── Origin(默认远程源)
+    │       └── Upstream(上游仓库)
+    │
+    ├── Worktree_Manager(工作树管理/多屏协作模式) 🔥/
+    │   │
+    │   ├── MainWorktree(主工作树/主显示器)/
+    │   │   ├── .git/ (核心数据库实体在此)
+    │   │   └── ProjectFiles(当前项目文件 - 分支A)
+    │   │
+    │   └── LinkedWorktrees(关联工作树/扩展显示器)/
+    │       ├── Side_Folder_1(副目录1)/
+    │       │   ├── .git (这里只是一个指向主库的文件 reference)
+    │       │   └── ProjectFiles(另一套文件 - 分支B)✅
+    │       │
+    │       └── Side_Folder_2(副目录2)/
+    │           ├── .git (reference file)
+    │           └── ProjectFiles(另一套文件 - 分支C)
+    │  
+    │
+    ├── Database_Objects(对象存储/.git目录)/
+    │   ├── Blob(文件内容块/相当于素材)
+    │   ├── Tree(目录树结构/相当于文件夹)
+    │   ✅├── Commit(提交/快照/相当于关键帧)* /
+    │   │   ├── Author/Date(作者/日期)
+    │   │   ├── Message(提交说明)
+    │   │   ├── Parent(父节点/上一个版本)
+    │   │   └── SHA-1(哈希指纹/唯一ID)
+    │   ✅├── Refs(引用/指针)/
+    │   │   ├── Heads(本地分支指针)
+    │   │   │   ├── Main/Master(主分支)
+    │   │   │   └── Feature(功能分支)
+    │   │   ├── Tags(标签/里程碑) -> v1.0, v2.0
+    │   │   └── Remotes(远程跟踪分支)
+    │   └── Logs(日志/操作记录)/
+    │       └── Reflog(引用日志/后悔药)
+    │
+    ✅├── Operations(操作/指令)/
+    │   ├── Setup(初始设置)/
+    │   │   ├── Init(初始化)
+    │   │   └── Clone(克隆)
+    │   ├── Snapshotting(快照/保存)/
+    │   │   ├── Add(添加到暂存区)
+    │   │   ├── Commit(提交到本地仓库)
+    │   │   ├── Status(查看状态)
+    │   │   └── Diff(查看差异/比对)
+    │   ├── Branching(分支管理/平行宇宙)/
+    │   │   ├── Branch(创建/查看分支)
+    │   │   ├── Checkout/Switch(切换分支/恢复文件)
+    │   │   ├── Merge(合并分支/融合)
+    │   │   ├── Rebase(变基/整理历史)
+    │   │   └── Cherry-Pick(优选/只取某次提交)
+    │   └── Worktree_Ops(多工作区指令)/
+    │       ├── List(查看所有窗口列表)
+    │       ├── Add(新建一个窗口/路径)✅
+    │       │   └── Example: `git worktree add ../hotfix master`
+    │       ├── Remove(关闭窗口/删除路径)
+    │       ├── Prune(清理无效的窗口记录)
+    │       └── Lock(锁定/防止被自动清理)
+    
+    │   ├── Syncing(同步/网络)/
+    │   │   ├── Fetch(拉取信息但不合并)
+    │   │   ├── Pull(拉取并合并/Fetch+Merge)
+    │   │   └── Push(推送/上传)
+    │   └── Undo_Fix(撤销/修正)/
+    │       ├── Reset(重置/回退) -> Soft/Mixed/Hard
+    │       ├── Revert(反做/生成新提交抵消旧提交)
+    │       ├── Stash(暂存/临时保存现场)
+    │       └── Clean(清理未追踪文件)
+    │
+    ├── Visualization(可视化/查看)/
+    │   ✅├── Log(提交日志/历史线)
+    │   │   ├── Graph(图形化显示)
+    │   │   └── Oneline(单行简洁显示)
+    │   ✅├── Blame(追责/查看每一行是谁写的)
+    │   └── Bisect(二分查找/定位Bug)
+    │
+    └── Configuration(配置/环境)/
+        ├── GitConfig(配置文件)/
+        │   ├── Global(全局配置/用户级)
+        │   │   ├── User.name
+        │   │   └── User.email
+        │   ├── Local(仓库级配置)
+        │   └── System(系统级配置)
+        ✅├── Ignore(.gitignore/忽略文件列表)
+        │   ├── Node_modules
+        │   ├── Build/Dist
+        │   └── Secrets(密钥/敏感信息)
+        ├── Attributes(.gitattributes/文件属性)
+        ✅└── Hooks(钩子/自动化脚本)/
+            ├── Pre-commit(提交前检查)
+            └── Pre-push(推送前检查)
+```
 ## 情况与解决
 
 | s                     |                     |

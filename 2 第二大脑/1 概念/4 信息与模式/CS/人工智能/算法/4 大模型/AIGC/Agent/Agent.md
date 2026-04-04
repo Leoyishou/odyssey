@@ -3,18 +3,36 @@ date created: 2023-11-23
 date modified: 2025-10-25
 uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
-a
+[[个人Agent]]
+[[Agent-Tools]]
+
+
+
 > [!info]
-> LLM + 一个图灵完备的机器 = Agent
+> LLM + 一个图灵完备的机器 = Agent，**智力资源像水一样，**变得成了便宜稳定的供给
 > 
 
 KOL：@yetone
 
+**日常的****ai****充其量的效果就是雇了个保姆** **找村口老李问了问建议**  **之后背后千百个****agent****被组织起来工作** **才能每天消耗一亿****token**     **中国起飞或者工程师红利就得益于恢复高考后的全民总****token****输出提高**   **给你一千万花完很难给你一亿****token****花完也很难**
+
+
+
+Agent 是面向结果交付的，所以**和** **Agent** **打交道的时候，先无脑说出自己想要的最终效果，等发现他少什么图，再补就好。**
 [[图灵完备]]
 
 1. [[bash]]强的可怕，因为 LLM 训练数据里有海量的 Linux 操作记录，它天生就会用 Linux。
 2. [[本地 Agent $]]
-3. 
+3. [[browse Use]]
+4. [[phone Use]]
+
+## Mac OS
+
+`security` 命令，就是 macOS 专门提供给开发者，用来在命令行里操作 Keychain 的内置系统级指令。
+
+
+
+
 ## 最佳实践
 ### Thariq Shihipar 的 Workshop 核心（“8点心得”深度解析）
 
@@ -532,90 +550,6 @@ https://docs.llamaindex.ai/en/stable/understanding/
 - LLama_Factory+LORA大模型微调.ts
 - PPO微调Llama-3.2.ts
 - window系统微调QLORA.ts
-
-### 4-大模型Agent开发实战
-
-- Ch 1.1 大模型应用发展与Agent前沿技术趋势.ts
-- Ch 1.2 大模型应用的本地知识库问答核心技术-RAG.ts
-- Ch 1.3 AI Agent爆发的根本原因.ts
-- Ch 1.4 AI Agent 经典核心架构与 AgentExcuter.ts
-- Ch 10.1 LangGraph中ReAct的构建原理.ts
-- Ch 10.2 案例实操：构建复杂工具应用的ReAct自治代理.ts
-- Ch 10.3 LangGraph中如何使用流式输出.ts
-- Ch 10.4 LangGraph中的事件流.ts
-- Ch 11.1 Agent长短期记忆认知.ts
-- Ch 11.2 LangGraph的短期记忆及Checkpointer(检查点).ts
-- Ch 11.3 检查点的特定实现类型-MemorySaver.ts
-- Ch 11.4 检查点的特定实现类型-SqliteSaver.ts
-- Ch 11.5 长期记忆和Store（仓库）.ts
-- Ch 12.1 LangGraph知识点概述总结.ts
-- Ch 12.2 LangGraph中的HIL实现思路.ts
-- Ch 12.3 标准图结构中如何添加断点.ts
-- Ch 12.4 复杂代理架构中如何添加动态断点.ts
-- Ch 12.5 案例：具备人机交互的完整Agent信息管理系统.ts
-- Ch 13.1 Single-Agent 存在的局限.ts
-- Ch 13.2 Multi-Agent 架构分类及子图的通信模式 - 副本.ts
-- Ch 13.3 父、子图状态中无共同键的通信方式.ts
-- Ch 13.4 案例：基于网络架构实现智能BI数据分析多代理系统（上）.ts
-- Ch 13.5 案例：基于网络架构实现智能BI数据分析多代理系统（下）.ts
-- Ch 14.1 Supervisor 架构介绍与基本构建原理.ts
-- Ch 14.2 案例：基于 Supervisor 架构实现多代理系统.ts
-- Ch 14.3 GraphRAG 基本介绍与核心架构.ts
-- Ch 14.4 案例：Multi-Agent 实现混合多知识库检索.ts
-- Ch 2.1 AI Agent与LLMs + RAG的本质区别.ts
-- Ch 2.2 AI Agent三种应用类型及Python实现可交互的聊天机器人.ts
-- Ch 2.3 Funcation Calling 完整生命周期细节复现.ts
-- Ch 2.4 实现具备 Funcation Calling的智能电商客服.ts
-- Ch 2.5 Function Calling并行调用和多函数调用的应用方法.ts
-- Ch 2.6 加餐：OpenAI最新推出的结构化输出功能介绍.ts
-- Ch 3.1 Funcation Calling 与 AI Agent的本质区别.ts
-- Ch 3.2 提示工程到代理工程的平滑过渡.ts
-- Ch 3.3 ReAct Agent框架的基础理论.ts
-- Ch 3.4 案例：从零复现ReAct Agent的完整流程.ts
-- Ch 3.5 项目：基于ReAct Agent构建电商智能客服_batch.ts
-- Ch 4.1 Assistant API 框架的整体介绍.ts
-- Ch 4.2 Assistant对象的创建方法.ts
-- Ch 4.3 Thread、Messges及Run应用方法.ts
-- Ch 4.4 Run运行时的状态转移机制.ts
-- Ch 4.5 实现Run状态的轮询方法，并实现Assistant API完整链路.ts
-- Ch 5.1 Assistant API 进阶应用方法介绍.ts
-- Ch 5.2 File Search内置工具说明及文件管理.ts
-- Ch 5.3 基于 Assistant API 创建在线私有知识库.ts
-- Ch 5.4 在 Assistant 和 Thread 定义 File Search 工具的四种策略.ts
-- Ch 5.5 如何处理 Assistant API输出响应中的注释.ts
-- Ch 5.6 Code Interpreter（代码解释器）的应用技巧.ts
-- Ch 5.7 基于 Funcation Calling实现本地代码解释器.ts
-- Ch 6.1 为什么企业级应用必须接入流式输出.ts
-- Ch 6.2 Assistant API中流式输出的开启方法.ts
-- Ch 6.3 Assistant API 流式传输中的事件流原理细节.ts
-- Ch 6.4 如何在 Assistant API 流式传输中接入外部函数.ts
-- Ch 6.5 应用案例（1）：异步构建Assistant对象的工程化代码.ts
-- Ch 6.6 应用案例（2）：集成外部函数方法及项目完整功能介绍.ts
-- Ch 7.1 LangChain的AI Agent开发框架架构设计.ts
-- Ch 7.2 LangGraph 的底层构建原理.ts
-- Ch 7.3 Langgraph底层源码解析.ts
-- Ch 7.4 LangGraph中如何接入大模型做问答流程.ts
-- Ch 8.1 LangGraph中State的定义模式.ts
-- Ch 8.2 使用字典类型定义状态的方法与优劣势.ts
-- Ch 8.3 LangGraph状态管理中Reducer函数的使用.ts
-- Ch 8.4 MessageGraph源码功能解析.ts
-- Ch 8.5 LangSmith基本原理与使用入门.ts
-- Ch 9.1 LangGraph代理架构及Router Agent介绍.ts
-- Ch 9.2 LangGraph中可应用的三种结构化输出方法.ts
-- Ch 9.3 结合结构化输出构建Router Agent（数据库）.ts
-- Ch 9.4 Tool Calling Agent 中ToolNode的使用.ts
-- Ch 9.5 Tool Calling Agent的完整实现案例：实时搜索与数据库集成.ts
-- LangGraph 多代理与 GraphRAG 综合应用实战.ts
-- 【MateGenPro】Ch 1. MateGen Pro 项目整体架构介绍.ts
-- 【MateGenPro】Ch 2. 本地运行MateGen Pro项目流程.ts
-- 【MateGenPro】Ch 3. MateGen Pro 后端API核心模块设计.ts
-- 【MateGenPro】Ch 4. SQLAlchemy原理与项目接入.ts
-- 【MateGenPro】Ch 5. MateGen 数据库初始化逻辑.ts
-- 【MateGenPro】Ch 6 API_Key接口初始化与校验.ts
-- 【MateGenPro】Ch 7 缓存池与系统初始化逻辑.ts
-- 【MateGenPro】Ch 8 会话管理模块表结构设计与代码讲解.ts
-- 大模型应用发展及Agent前沿技术趋势.MP4
-- 项目开发实战一：从零搭建多功能智能体 MateGen Pro（第二部分）.ts
 
 ### 5-RAG项目实战企业篇
 

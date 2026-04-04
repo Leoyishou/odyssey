@@ -4,6 +4,8 @@ date modified: 2025-10-09
 uid: 7e78906a-69db-4221-a6a5-76133152b266
 ---
 
+[[PG schema]]
+
 
 
 **使用 Cosine Distance（推荐）：**

@@ -1,0 +1,27 @@
+---
+uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+date created: 2025-07-19
+date modified: 2025-10-07
+aliases: [Summary]
+linter-yaml-title-alias: Summary
+---
+#  💡Summary  
+
+> [!Info]
+> 一句话说清楚
+> 
+
+
+
+# 🧩 Cues
+
+
+
+# 🪞Notes
+### 1. Symlink (Symbolic Link) - 符号链接 / 软链接
+
+- **这是什么：** 也就是我们俗称的 **“快捷方式”**。
+    
+- **通俗解释：** 想象一下，你的 `claude` 程序被 `fnm` 安装在一个藏得很深的文件夹里（比如 `~/Users/.fnm/versions/v1.0/bin/claude`），而且这个路径可能会随着版本更新而改变。 当你运行一个“detached 进程”（后台独立进程）时，它很笨，不知道去那个深层文件夹里找。 **创建 Symlink** 就是在系统最显眼的地方（比如大路边的 `/usr/local/bin`）放一个路牌，上面写着“`claude` 在这边”。这样，任何程序只要看一眼路牌，就能找到它。
+    
+- **为什么说“稳定”：** 因为源文件路径可能会变（比如升级了），但这个“路牌”的位置固定不变。

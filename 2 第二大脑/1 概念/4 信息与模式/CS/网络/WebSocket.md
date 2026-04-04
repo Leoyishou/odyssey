@@ -8,7 +8,7 @@ excerpt
 
 <!-- more -->
 
-WebSocket 是基于 [TCP](TCP.md) 的轻量级网络通信协议，和 [2 第二大脑/2 知识/CS/互联网/HTTP](2%20第二大脑/2%20知识/CS/互联网/HTTP) 同级的。
+WebSocket 是基于 [TCP](TCP.md) 的轻量级网络通信协议，和 [HTTP](HTTP.md) 同级的。
 
 [HTTP 1.1](HTTP%201.1.md)握手+[TCP](TCP.md)长连接实现**双向通信
 

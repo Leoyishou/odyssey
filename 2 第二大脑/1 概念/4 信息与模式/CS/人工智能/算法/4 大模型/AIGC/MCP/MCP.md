@@ -4,6 +4,11 @@ date modified: 2025-10-04
 uid: 656a8baa-58d9-4b8f-a2ae-772c6a2a7f04
 ---
 
+1. 所以 tool 的本质都是api+提示词，区别是mcp进程常驻，cli不常驻
+2. MCP 常驻的好处：能保持状态。比如 OAuth token 缓存在内存里，不用每次重新认证。CLI 每次冷启动，要么从文件读 token，要么重新走认证流程。
+
+
+
 MCP 的本质是一个拥有很多实用 API 的公司，愿意开放给外界 API 层数据的善意。
 
 真正有用的 MCP：

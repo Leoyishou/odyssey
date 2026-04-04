@@ -1,0 +1,26 @@
+---
+uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+date created: 2025-07-19
+date modified: 2025-10-07
+aliases: [Summary]
+linter-yaml-title-alias: Summary
+---
+#  💡Summary  
+
+> [!Info]
+> 一句话说清楚
+> 
+
+- **VPC (Virtual Private Cloud)**
+    - **技术定义**：虚拟私有云。
+    - **通俗解释**：**你在云上的“出租屋”**。
+    - 你在阿里云或腾讯云上租了一块地盘，用逻辑隔离围起来，里面跑着你的云服务器。这块地盘是私有的，别人进不来。
+        
+
+> **云[[专线]]的作用**：就是拉一根线，把地面的**“老家” (IDC)** 和天上的**“出租屋” (VPC)** 连通起来，让数据可以来回跑。
+
+# 🧩 Cues
+
+
+
+# 🪞Notes

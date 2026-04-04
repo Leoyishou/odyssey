@@ -8,16 +8,7 @@ date modified: 2025-07-27
 PPO 是 Proximal Policy Optimization（近端策略优化）的缩写，是一种强化学习算法。
 PPO就是让AI"保守地学习"，避免一次更新就大幅改变行为，确保训练稳定可靠。
 
-
-
-
 # Notes
-
-让我详细解释PPO的思想，并找到项目中的具体实现。
-
-Search files...
-Ran tool
-现在我来详细解释PPO的思想，并找到项目中的具体实现：
 
 ## PPO（Proximal Policy Optimization）的核心思想
 

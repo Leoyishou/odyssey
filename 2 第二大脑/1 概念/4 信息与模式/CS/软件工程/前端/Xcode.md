@@ -7,6 +7,8 @@ linter-yaml-title-alias: Summary
 ---
 # 💡 Summary  
 
+clean：`command shit k`
+build：`command R`
 
 如果你做 iOS 开发，**必须用 Xcode**；如果做 Python/Java，JetBrains 的工具会更强大专业。
 

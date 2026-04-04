@@ -3,6 +3,13 @@ date created: 2025-03-13
 date modified: 2025-07-10
 uid: fd28c536-b228-4ebc-bb7d-64adf0621067
 ---
+
+你说得对！playwright-cli 支持通过 --extension 连接已有 Chrome 浏览器继承登录状态，或用 --persistent 使用持久化 profile。但上次发现 
+  playwright-cli 命令找不到。让我先找到它或安装。
+
+
+
+
 **Playwright** 是一个由微软开发的开源的浏览器自动化测试框架，专门用来做网页和前端自动化测试。
 
 ---

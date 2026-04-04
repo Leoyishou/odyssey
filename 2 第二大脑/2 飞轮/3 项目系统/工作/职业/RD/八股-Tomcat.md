@@ -5,17 +5,16 @@ uid: e14f5ca2-36d7-483f-9848-177d014623b9
 ---
 ：
 
-| 问题                       | 关键词/关键概念                                                                                                                              |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Tomcat与Web服务器(Apache)关系？| **Apache**：静态资源服务器、反向代理、负载均衡<br>**Tomcat**：Servlet容器、处理动态请求、Java应用服务器<br>**配合使用**：Apache处理静态资源+负载均衡、Tomcat处理业务逻辑、mod_jk/mod_proxy连接   |
-| Tomcat的IO模型？| **BIO**：一请求一线程、阻塞IO、Tomcat8.5前默认<br>**NIO**：非阻塞、多路复用、Tomcat8.5+默认<br>**NIO2/AIO**：异步非阻塞<br>**APR**：Apache Portable Runtime、本地库优化      |
-|                          |                                                                                                                                       |
-| 为什么Tomcat线程数可设200而不是N+1？| **IO密集型**：大部分时间等待IO、CPU利用率低<br>**阻塞时间多**：数据库查询、网络调用、文件读写<br>**经验值**：线程数=CPU核数×(1+等待时间/计算时间)、Web应用等待时间远大于计算时间                          |
-| Tomcat中有哪些类加载器？| **Bootstrap**：加载JVM核心类、rt.jar<br>**System**：加载CLASSPATH、tomcat启动类<br>**Common**：加载/lib共享类<br>**WebApp**：加载/WEB-INF/classes和lib、每个应用独立 |
-| Tomcat处理请求的过程？| **流程**：Connector接收→创建Request/Response→Engine处理→Host匹配虚拟主机→Context定位应用→Wrapper找Servlet→Filter链→Servlet处理→返回响应                          |
-| Tomcat的启动流程？| **步骤**：Bootstrap.main()→Catalina.start()→Server初始化→Service启动→Connector启动监听→Engine/Host/Context/Wrapper依次初始化→部署应用                      |
-| Tomcat的类加载机制？| **破坏双亲委派**：WebAppClassLoader优先加载应用类<br>**隔离性**：不同应用类隔离<br>**共享性**：Common加载器共享<br>**顺序**：WEB-INF/classes→WEB-INF/lib→Common→System     |
-| 过滤器和拦截器的区别？| **过滤器Filter**：Servlet规范、函数回调、依赖Servlet容器、作用所有请求<br>**拦截器Interceptor**：Spring框架、反射机制(AOP)、依赖Spring容器、作用Controller层                     |
+| 问题                           | 关键词/关键概念                                                                                                                              |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| [[Tomcat与Web服务器(Apache)关系？]] | **Apache**：静态资源服务器、反向代理、负载均衡<br>**Tomcat**：Servlet容器、处理动态请求、Java应用服务器<br>**配合使用**：Apache处理静态资源+负载均衡、Tomcat处理业务逻辑、mod_jk/mod_proxy连接   |
+| [[Tomcat的IO模型？]]             | **BIO**：一请求一线程、阻塞IO、Tomcat8.5前默认<br>**NIO**：非阻塞、多路复用、Tomcat8.5+默认<br>**NIO2/AIO**：异步非阻塞<br>**APR**：Apache Portable Runtime、本地库优化      |
+| [[为什么Tomcat线程数可设200而不是N+1？]] | **IO密集型**：大部分时间等待IO、CPU利用率低<br>**阻塞时间多**：数据库查询、网络调用、文件读写<br>**经验值**：线程数=CPU核数×(1+等待时间/计算时间)、Web应用等待时间远大于计算时间                          |
+| Tomcat中有哪些类加载器？              | **Bootstrap**：加载JVM核心类、rt.jar<br>**System**：加载CLASSPATH、tomcat启动类<br>**Common**：加载/lib共享类<br>**WebApp**：加载/WEB-INF/classes和lib、每个应用独立 |
+| Tomcat处理请求的过程？               | **流程**：Connector接收→创建Request/Response→Engine处理→Host匹配虚拟主机→Context定位应用→Wrapper找Servlet→Filter链→Servlet处理→返回响应                          |
+| Tomcat的启动流程？                 | **步骤**：Bootstrap.main()→Catalina.start()→Server初始化→Service启动→Connector启动监听→Engine/Host/Context/Wrapper依次初始化→部署应用                      |
+| Tomcat的类加载机制？                | **破坏双亲委派**：WebAppClassLoader优先加载应用类<br>**隔离性**：不同应用类隔离<br>**共享性**：Common加载器共享<br>**顺序**：WEB-INF/classes→WEB-INF/lib→Common→System     |
+| 过滤器和拦截器的区别？                  | **过滤器Filter**：Servlet规范、函数回调、依赖Servlet容器、作用所有请求<br>**拦截器Interceptor**：Spring框架、反射机制(AOP)、依赖Spring容器、作用Controller层                     |
 
 # Tomcat架构详解
 

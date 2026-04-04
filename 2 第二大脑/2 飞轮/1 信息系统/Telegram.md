@@ -3,8 +3,7 @@ date created: 2024-07-13
 date modified: 2025-07-10
 uid: f60b2cb2-1868-4fda-8cc1-84cdaa56a6bc
 ---
-
- 世界上最流行的信息传递应用程序之一。它简单，快速，安全，而且免费。
+世界上最流行的信息传递应用程序之一。它简单，快速，安全，而且免费。
 
 Telegram 最好的一点是，它非常安全。信息是用一种几乎不可能被破解的秘密酱汁加密的。此外，Telegram 是为数不多的提供端对端加密的信息传递应用程序之一。这意味着，你的信息从发送者到接收者都是完全安全的。
 
@@ -14,52 +13,77 @@ Telegram 使用起来也非常简单。用户界面很精简，易于理解。�
 
 ## 开发
 
+## 消息类型
+
+五、Demo 脚本额外支持
+
+telegram_demo.py 中还演示了：
+
+| 类型        | 说明                     |
+| :---------- | :----------------------- |
+| 🗳️ 投票     | 多选投票，最多 10 个选项 |
+| ⏰ 定时消息 | 指定时间自动发送         |
+| 🎲 骰子动画 | 🎲 🎯 🏀 ⚽ 🎳 🎰        |
+| 📞 回调监听 | 按钮点击后触发操作       |
+六、尚未实现（可按需添加）
+
+| 组件           | 说明                    |
+| :------------- | :---------------------- |
+| Reply Keyboard | 底部固定键盘            |
+| 位置消息       | 发送地理坐标            |
+| 联系人         | 发送名片                |
+| 语音/视频      | voice_note / video_note |
+| 贴纸           | .webp 文件              |
+| 消息编辑       | 修改已发送消息          |
+| 消息转发       | 转发到其他聊天          |
+| Pin 消息       | 置顶消息                |
+
 ### 控制自己账号
 
 telethon
 
-|         | 对应的类   |         |       |
-| ------- | ------ | ------- | ----- |
-| 聊天对象、群组 | dialog |         |       |
-|         | 个人     | user    |       |
-|         | 普通群组   | group   |       |
-|         | 超级群组   | channel |       |
-|         |        | 话题      | topic |
+|          | 对应的类 |       |       |
+| :------- | :----- | :---- | :---- |
+| 聊天对象、群组 | dialog |       |       |
+|          | 个人     | user  |       |
+|          | 普通群组   | group |       |
+|          | 超级群组   | channel |       |
+|          |        | 话题    | topic |
 ![image.png|500](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F10%2F06%2F16-24-42-d6fd06ee2002b96eb307397f5e435d74-202410061624731-9cf0d0.png)
 
 ![image.png|1800](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2024%2F10%2F06%2F16-33-00-98e8d6c058d815ba572dbca41da613b6-202410061633934-677085.png)
 
 ### 控制 bot
 
- [Bots: An introduction for developers (telegram.org)](https://core.telegram.org/bots)
+[Bots: An introduction for developers (telegram.org)](https://core.telegram.org/bots)
 
 ## 频道
 
 - 阿里云盘盘
-	- https://t.me/yunpanpan
+  - https://t.me/yunpanpan
 - 9527
-	- [Telegram: Contact @fku0007](https://t.me/fku0007)
+  - [Telegram: Contact @fku0007](https://t.me/fku0007)
 - 竹新社
-	- [Telegram: Contact @tnews365](https://t.me/tnews365)
+  - [Telegram: Contact @tnews365](https://t.me/tnews365)
 - 链接收藏
-	- https://t.me/LDList
+  - https://t.me/LDList
 - 🎉 Efficiency 资源干货全收录
-	- [Telegram: Contact @quanshoulu](https://t.me/quanshoulu)
+  - [Telegram: Contact @quanshoulu](https://t.me/quanshoulu)
 - APPDO 数字生活指南
-	- [Telegram: Contact @AppDoDo](https://t.me/AppDoDo)
+  - [Telegram: Contact @AppDoDo](https://t.me/AppDoDo)
 - 硬核小卒
-	- [Telegram: Contact @yinghexiaozu](https://t.me/yinghexiaozu)
+  - [Telegram: Contact @yinghexiaozu](https://t.me/yinghexiaozu)
 - 不求甚解
-	- [Telegram: Contact @fakeye](https://t.me/fakeye)
+  - [Telegram: Contact @fakeye](https://t.me/fakeye)
 - 发现博客
-	- [Telegram: Contact @FindBlog](https://t.me/FindBlog)
+  - [Telegram: Contact @FindBlog](https://t.me/FindBlog)
 - Notion
-	- @Notionso
+  - @Notionso
 - 不良林 - 交流群
 - RSSHub
-	- https://t.me/rsshub
+  - https://t.me/rsshub
 - 简悦
-	- https://t.me/simpreadgroup
+  - https://t.me/simpreadgroup
 
 ## 群组
 
@@ -68,11 +92,9 @@ telethon
 ## 机器人
 
 - zlib 找电子书
-	- @zlibrary2bot
+  - @zlibrary2bot
 
 [2022电报群推荐/Telegram频道/机器人推荐：免费资源、羊毛、合租](https://pandavpnpro.com/blog/zh-cn/telegram-group-channel-bot)
-
-  
 
 添加 jisou123bot，最强 TG 搜索机器人。添加 sharebooks4you，下载杂志期刊、精选电子书。添加 jieniguijichang，最全的机场评测。添加 FindBlog，发现全网独立博客。添加 Aliyun_4K_Movies，获取阿里云盘 4K 影视资源。
 

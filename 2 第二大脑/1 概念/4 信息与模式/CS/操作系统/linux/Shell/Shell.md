@@ -5,6 +5,19 @@ uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 ---
 # Summary
 
+
+> [!info]
+> shell 是抽象类，[[bash]]、[[zsh]]是实现类
+> 
+
+
+![CleanShot 2026-02-01 at 14.46.08@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fmedia%2Fmedia_JxM0egXknP%2F2026%2F02%2F01%2F14-46-25-74b46627ee9ab5bd2b65e2c01e3e72c8-CleanShot%202026-02-01%20at%2014.46.08-2x-2d2ceb.png)
+
+
+
+
+
+
 [[bash]]
 ## SSH
 ```Java

@@ -7,7 +7,7 @@ linter-yaml-title-alias: Summary
 ---
 # Summary
 
-本质是一个命令行工具，用来发 HTTP 请求。
+本质是一个[[Shell]]命令行工具，用来发 HTTP 请求。
 
 ```shell
 curl --location --request POST 'http://localhost:8000/chat/stream' \

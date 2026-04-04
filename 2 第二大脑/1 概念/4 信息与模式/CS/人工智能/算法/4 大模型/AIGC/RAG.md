@@ -5,6 +5,11 @@ uid: 330545a4-236b-4c57-ba2f-adda7a3d0d18
 ---
 # Summary
 
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2026%2F02%2F12%2F22-01-22-ae6bb97c53df015c481af5e15735fe0b-202602122201121-32955d.png)
+
+
+
+
 为 LLM 寻找相关上下文就是"[[搜索]]"。这就是为什么向量数据库和 LLM 就像饼干和奶油一样完美搭配。
 
 在**语义完整**（保留专业术语）、**格式统一**（去除冗余标签）和**检索效率**（控制Chunk大小）之间找到黄金平衡点。

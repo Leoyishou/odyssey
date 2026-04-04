@@ -1,0 +1,42 @@
+---
+uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+date created: 2025-07-19
+date modified: 2025-10-07
+aliases: [Summary]
+linter-yaml-title-alias: Summary
+---
+#  💡Summary  
+
+> [!Info]
+> MinerU 的“杀手锏”就是这个官方微调的 MinerU2.5 VLM + 配套 prompt/workflow，
+> 
+
+1. LLM 基座可以换，MinerU 的强点确实很大程度上在于它的 workflow（pipeline/流程设计），而非单纯依赖某个特别强的单一基座模型。这也是它在开源 PDF 解析工具里能脱颖而出、被很多人称为“目前最均衡/最实用”的核心原因。
+# 🧩 Cues
+
+
+
+# 🪞Notes
+
+MinerU 的 pipeline 设计特别注重端到端的实用性和鲁棒性，这在实际 RAG/Agent 场景里体现得淋漓尽致：
+
+1. 自动类型判断 + 自适应处理
+    - 文本 PDF → 直接提取文本（快、不丢信息）
+    - 扫描件/图片 PDF → 自动触发 OCR
+    - 混合内容 → hybrid 后端智能切换，避免纯 VLM 的高成本或纯 pipeline 的低精度
+2. 多任务协同 + 误差最小化
+    - 先布局 → 再针对性 OCR/公式/表格 → 最后重建阅读顺序
+    - 避免了“先 OCR 全图再布局”那种常见的误差累积（很多工具的痛点）
+3. 结构化输出极度友好
+    - Markdown：保留标题层级、列表、表格（HTML 嵌入）、公式（LaTeX）、图片（带描述或 base64）
+    - JSON：带 span/bbox/阅读顺序，完美喂给 LLM
+    - 自动去页眉页脚、脚注、页码 → 输出干净连贯，几乎不用后处理
+4. 复杂排版适配极强（社区公认）
+    - 中文学术论文的多栏、公式嵌套、表格跨页
+    - 竖排古籍、日韩竖排
+    - 代码块、化学结构式
+    - 阅读顺序基本靠谱（比很多工具少翻车）
+5. 可扩展 & 生产友好
+    - 支持 visualization（画出布局框看效果）
+    - 参数可调（e.g. 公式 inline/block 切换、表格标题关联）
+    - 最新版 2.5 后用小 VLM（1.2B）做 decoupled 解析，速度和精度平衡更好

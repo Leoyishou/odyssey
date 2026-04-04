@@ -3,6 +3,10 @@ date created: 2025-01-13
 date modified: 2025-07-10
 uid: 36ba53d4-9e43-4b33-ac62-a44d23ffee32
 ---
+wish vs hope： wish 用于不可能的事
+
+[[虚拟语气]]
+
 
 Hope (希望):
 
