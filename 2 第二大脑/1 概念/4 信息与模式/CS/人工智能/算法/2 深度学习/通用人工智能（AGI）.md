@@ -7,6 +7,7 @@ linter-yaml-title-alias: Summary
 ---
 # Summary💡
 
+自动化全球的 [[GDP]] 创造过程，头部 SOTA Model 公司成为全球 GDP 的操作系统
 **AI** = 工具；
 **AGI** = 学习者；
 **[[ASI（超级智能）]]** = 思考者。

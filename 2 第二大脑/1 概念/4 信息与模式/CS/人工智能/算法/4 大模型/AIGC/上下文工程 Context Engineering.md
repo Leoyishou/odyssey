@@ -7,6 +7,11 @@ linter-yaml-title-alias: Summary
 ---
 # Summary
 
+1. 去掉什么？ 本质是context的30% 阈值（约 60k/200k）是业界常见的"显著衰减点"
+2. [ ] 增加什么？更好的上下文给模型更多参考
+
+
+
 最佳实践：https://code.claude.com/docs/en/context-window 这个网站可以交互式地看到[[Claude Code]] 的上下文加载顺序
 ![CleanShot 2026-04-04 at 21.50.27@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/CleanShot%202026-04-04%20at%2021.50.27%402x.png)
 

@@ -19,7 +19,26 @@ uid: 4862e2d1-d026-4926-8786-965b63a4d1ea
 
 
 [[bash]]
-## SSH
+
+## 给命令起缩写
+
+```
+永久生效要写进 ~/.zshrc（你用的是 zsh）：                                        
+
+echo 'alias job="cd ~/usr/personal-ai-company/job-bu && claude --dangerously-skip-permissions"' >> ~/.zshrc          
+                       
+source ~/.zshrc 
+```
+## 软连接
+
+意思是<源路径>可以作为<目标位置>的子文件夹，当目标是一个目录时，Linux 会自动在该目录下创建一个同名的 symlink（symbol link）
+```
+ln -sf <源路径> <目标位置>                                                 
+
+比如：                                  
+ln -sf /personal-ai-company/job-bu/.claude/skills/lark-doc \                     /personal-ai-company/project/my-ai-lesson/.claude/skills/ 
+```
+## 一、SSH
 ```Java
 ## 跳板机
 ssh yishou.liu@l-rtools1.ops.cn0

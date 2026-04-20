@@ -57,41 +57,41 @@ curl https://api.openai.com/v1/chat/completions \
 # Request body
 
 |                   | 参数                      | 类型                                 | 可选性/默认值                          | 描述                                                                                                 |
-|:---------------- |:---------------------- |:--------------------------------- |:------------------------------- |:------------------------------------------------------------------------------------------------- |
-|                   | `model`                 | string                             | **Required**                     | 用于生成响应的模型 ID，如 `gpt-4o` 或 `o3`。|
-|                   | `messages`              | array                              | **Required**                     | 构成迄今为止对话的消息列表。根据您使用的模型，支持不同的消息类型（模态），如文本、图像和音频。|
-| 上下文限制             | `max_completion_tokens` | integer or null                    | Optional                         | 补全可生成的令牌数量上限，包括可见输出令牌和推理令牌。|
-|                   | `audio`                 | object or null                     | Optional                         | 音频输出的参数。当请求音频输出时（`modalities:["audio"]`）为必需。|
-| [[Function Call]] | `tool_choice`           | string or object                   | Optional                         | 控制模型调用哪个（或哪些）工具。`none` 表示不调用，`auto` 表示模型自行选择，`required` 表示必须调用。|
-|                   | `tools`                 | array                              | Optional                         | 模型可能调用的工具列表。您可以提供自定义工具或函数工具。|
-| ✅                 | `frequency_penalty`     | number or null                     | Optional<br>Defaults to `0`      | 介于 -2.0 和 2.0 之间的数字。正值会根据新令牌在文本中已有的频率对其进行惩罚，从而降低模型逐字重复同一行的可能性。|
-| ✅                 | `temperature`           | number                             | Optional<br>Defaults to `1`      | 使用的采样温度，介于 0 和 2 之间。|
-| ✅                 | `top_p`                 | number                             | Optional<br>Defaults to `1`      | 一种替代温度采样的核采样方法。|
-| ✅                 | `presence_penalty`      | number or null                     | Optional<br>Defaults to `0`      | 介于 -2.0 和 2.0 之间的数字。正值会根据新令牌是否已在文本中出现来对其进行惩罚，从而增加模型谈论新话题的可能性。|
-|                   | `logit_bias`            | map                                | Optional<br>Defaults to `null`   | 修改指定令牌在补全中出现的可能性。接受一个 JSON 对象，将令牌（由其在分词器中的令牌 ID 指定）映射到 -100 到 100 的关联偏置值。|
-|                   | `logprobs`              | boolean or null                    | Optional<br>Defaults to `false`  | 是否返回输出令牌的对数概率。如果为 `true`，则返回 `message` 内容中每个输出令牌的对数概率。|
-|                   | `metadata`              | map                                | Optional                         | 可附加到对象的 16 个键值对集合。|
-|                   | `modalities`            | array                              | Optional                         | 您希望模型生成的输出类型。默认为 `["text"]`。`gpt-4o-audio-preview` 模型可使用 `["text", "audio"]`。|
-|                   | `n`                     | integer or null                    | Optional<br>Defaults to `1`      | 为每个输入消息生成多少个聊天补全选项。|
-|                   | `parallel_tool_calls`   | boolean                            | Optional<br>Defaults to `true`   | 在工具使用期间是否启用并行函数调用。|
-|                   | `prediction`            | object                             | Optional                         | 预测输出的配置，当模型响应的大部分内容预先知道时，可以显著改善响应时间。|
-|                   | `prompt_cache_key`      | string                             | Optional                         | OpenAI 用于缓存相似请求的响应以优化缓存命中率。取代 `user` 字段。|
-|                   | `reasoning_effort`      | string                             | Optional<br>Defaults to `medium` | 约束推理模型的推理工作量。支持 `minimal`, `low`, `medium`, `high`。|
-|                   | `response_format`       | object                             | Optional                         | 指定模型必须输出的格式的对象。例如，`{ "type": "json_object" }` 或 `{ "type": "json_schema", "json_schema": {...} }`。|
-|                   | `safety_identifier`     | string                             | Optional                         | 一个稳定的标识符，用于帮助检测可能违反 OpenAI 使用策略的应用程序用户。|
-|                   | `service_tier`          | string                             | Optional<br>Defaults to `auto`   | 指定用于处理请求的服务层级。可以是 `auto`, `default`, `flex`, 或 `priority`。|
-|                   | `stop`                  | string / array / null              | Optional<br>Defaults to `null`   | API 将停止生成更多令牌的最多 4 个序列。最新的推理模型 `o3` 和 `o4-mini` 不支持。|
-|                   | `store`                 | boolean or null                    | Optional<br>Defaults to `false`  | 是否存储此聊天补全请求的输出，用于模型蒸馏或评估产品。|
-|                   | `stream`                | boolean or null                    | Optional<br>Defaults to `false`  | 如果设置为 `true`，模型响应数据将在生成时使用服务器发送事件（server-sent events）流式传输到客户端。|
-|                   | `stream_options`        | object                             | Optional<br>Defaults to `null`   | 流式响应的选项。仅在设置 `stream: true` 时设置此项。|
-|                   | `top_logprobs`          | integer                            | Optional                         | 一个介于 0 和 20 之间的整数，指定在每个令牌位置返回的最可能令牌的数量。|
-|                   | `verbosity`             | string                             | Optional<br>Defaults to `medium` | 约束模型响应的详细程度。支持 `low`, `medium`, `high`。|
-|                   | `web_search_options`    | object                             | Optional                         | 此工具在网络上搜索相关结果以用于响应。|
-|                   | `function_call`         | **Deprecated**<br>string or object | Optional                         | 已弃用，推荐使用 `tool_choice`。控制模型调用哪个（或是否调用）函数。|
-|                   | `functions`             | **Deprecated**<br>array            | Optional                         | 已弃用，推荐使用 `tools`。模型可能为其生成 JSON 输入的函数列表。|
-|                   | `seed`                  | **Deprecated**<br>integer or null  | Optional                         | **此功能处于 Beta 阶段。** 如果指定，系统将尽力进行确定性采样。|
-|                   | `max_tokens`            | **Deprecated**<br>integer or null  | Optional                         | 聊天补全中可生成的最大令牌数。此值现已弃用，推荐使用 `max_completion_tokens`，且与 o-series 模型不兼容。|
-|                   | `user`                  | **Deprecated**<br>string           | Optional                         | 此字段正在被 `safety_identifier` 和 `prompt_cache_key` 取代。|
+| :---------------- | :---------------------- | :--------------------------------- | :------------------------------- | :------------------------------------------------------------------------------------------------- |
+|                   | `model`                 | string                             | **Required**                     | 用于生成响应的模型 ID，如 `gpt-4o` 或 `o3`。                                                                    |
+|                   | `messages`              | array                              | **Required**                     | 构成迄今为止对话的消息列表。根据您使用的模型，支持不同的消息类型（模态），如文本、图像和音频。                                                    |
+| 上下文限制             | `max_completion_tokens` | integer or null                    | Optional                         | 补全可生成的令牌数量上限，包括可见输出令牌和推理令牌。                                                                        |
+|                   | `audio`                 | object or null                     | Optional                         | 音频输出的参数。当请求音频输出时（`modalities:["audio"]`）为必需。                                                       |
+| [[Function Call]] | `tool_choice`           | string or object                   | Optional                         | 控制模型调用哪个（或哪些）工具。`none` 表示不调用，`auto` 表示模型自行选择，`required` 表示必须调用。                                    |
+|                   | `tools`                 | array                              | Optional                         | 模型可能调用的工具列表。您可以提供自定义工具或函数工具。                                                                       |
+| ✅                 | `frequency_penalty`     | number or null                     | Optional<br>Defaults to `0`      | 介于 -2.0 和 2.0 之间的数字。正值会根据新令牌在文本中已有的频率对其进行惩罚，从而降低模型逐字重复同一行的可能性。                                     |
+| ✅                 | `temperature`           | number                             | Optional<br>Defaults to `1`      | 使用的采样温度，介于 0 和 2 之间。                                                                               |
+| ✅                 | `top_p`                 | number                             | Optional<br>Defaults to `1`      | 一种替代温度采样的核采样方法。                                                                                    |
+| ✅                 | `presence_penalty`      | number or null                     | Optional<br>Defaults to `0`      | 介于 -2.0 和 2.0 之间的数字。正值会根据新令牌是否已在文本中出现来对其进行惩罚，从而增加模型谈论新话题的可能性。                                      |
+|                   | `logit_bias`            | map                                | Optional<br>Defaults to `null`   | 修改指定令牌在补全中出现的可能性。接受一个 JSON 对象，将令牌（由其在分词器中的令牌 ID 指定）映射到 -100 到 100 的关联偏置值。                          |
+|                   | `logprobs`              | boolean or null                    | Optional<br>Defaults to `false`  | 是否返回输出令牌的对数概率。如果为 `true`，则返回 `message` 内容中每个输出令牌的对数概率。                                             |
+|                   | `metadata`              | map                                | Optional                         | 可附加到对象的 16 个键值对集合。                                                                                 |
+|                   | `modalities`            | array                              | Optional                         | 您希望模型生成的输出类型。默认为 `["text"]`。`gpt-4o-audio-preview` 模型可使用 `["text", "audio"]`。                      |
+|                   | `n`                     | integer or null                    | Optional<br>Defaults to `1`      | 为每个输入消息生成多少个聊天补全选项。                                                                                |
+|                   | `parallel_tool_calls`   | boolean                            | Optional<br>Defaults to `true`   | 在工具使用期间是否启用并行函数调用。                                                                                 |
+|                   | `prediction`            | object                             | Optional                         | 预测输出的配置，当模型响应的大部分内容预先知道时，可以显著改善响应时间。                                                               |
+|                   | `prompt_cache_key`      | string                             | Optional                         | OpenAI 用于缓存相似请求的响应以优化缓存命中率。取代 `user` 字段。                                                           |
+|                   | `reasoning_effort`      | string                             | Optional<br>Defaults to `medium` | 约束推理模型的推理工作量。支持 `minimal`, `low`, `medium`, `high`。                                                |
+|                   | `response_format`       | object                             | Optional                         | 指定模型必须输出的格式的对象。例如，`{ "type": "json_object" }` 或 `{ "type": "json_schema", "json_schema": {...} }`。 |
+|                   | `safety_identifier`     | string                             | Optional                         | 一个稳定的标识符，用于帮助检测可能违反 OpenAI 使用策略的应用程序用户。                                                            |
+|                   | `service_tier`          | string                             | Optional<br>Defaults to `auto`   | 指定用于处理请求的服务层级。可以是 `auto`, `default`, `flex`, 或 `priority`。                                         |
+|                   | `stop`                  | string / array / null              | Optional<br>Defaults to `null`   | API 将停止生成更多令牌的最多 4 个序列。最新的推理模型 `o3` 和 `o4-mini` 不支持。                                               |
+|                   | `store`                 | boolean or null                    | Optional<br>Defaults to `false`  | 是否存储此聊天补全请求的输出，用于模型蒸馏或评估产品。                                                                        |
+|                   | `stream`                | boolean or null                    | Optional<br>Defaults to `false`  | 如果设置为 `true`，模型响应数据将在生成时使用服务器发送事件（server-sent events）流式传输到客户端。                                     |
+|                   | `stream_options`        | object                             | Optional<br>Defaults to `null`   | 流式响应的选项。仅在设置 `stream: true` 时设置此项。                                                                 |
+|                   | `top_logprobs`          | integer                            | Optional                         | 一个介于 0 和 20 之间的整数，指定在每个令牌位置返回的最可能令牌的数量。                                                            |
+|                   | `verbosity`             | string                             | Optional<br>Defaults to `medium` | 约束模型响应的详细程度。支持 `low`, `medium`, `high`。                                                            |
+|                   | `web_search_options`    | object                             | Optional                         | 此工具在网络上搜索相关结果以用于响应。                                                                                |
+|                   | `function_call`         | **Deprecated**<br>string or object | Optional                         | 已弃用，推荐使用 `tool_choice`。控制模型调用哪个（或是否调用）函数。                                                          |
+|                   | `functions`             | **Deprecated**<br>array            | Optional                         | 已弃用，推荐使用 `tools`。模型可能为其生成 JSON 输入的函数列表。                                                            |
+|                   | `seed`                  | **Deprecated**<br>integer or null  | Optional                         | **此功能处于 Beta 阶段。** 如果指定，系统将尽力进行确定性采样。                                                              |
+|                   | `max_tokens`            | **Deprecated**<br>integer or null  | Optional                         | 聊天补全中可生成的最大令牌数。此值现已弃用，推荐使用 `max_completion_tokens`，且与 o-series 模型不兼容。                              |
+|                   | `user`                  | **Deprecated**<br>string           | Optional                         | 此字段正在被 `safety_identifier` 和 `prompt_cache_key` 取代。                                                |
 
 以下是对这些 LLM（大型语言模型）相关参数和选项的解释与介绍：
 

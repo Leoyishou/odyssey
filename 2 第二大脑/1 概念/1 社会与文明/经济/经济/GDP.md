@@ -8,7 +8,7 @@ linter-yaml-title-alias: Summary
 #  💡Summary  
 
 > [!Info]
-> 一句话说清楚
+> 你的 GDP 贡献通常是 工资 + 你帮公司赚的利润 + 你交的税。
 > 
 
 G 是 **Gross**，意思是"总的、全部的"。

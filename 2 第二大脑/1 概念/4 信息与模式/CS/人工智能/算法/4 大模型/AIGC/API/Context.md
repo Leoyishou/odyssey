@@ -6,7 +6,7 @@ uid: f9f9c5fb-418f-484e-96ee-bbd70300ded4
 # Summary
 
 **公司的本质就是定义目标后** **解决长记忆的问题**  **cc****只应该做三件事代码产品杠杆** **自媒体杠杆**  **投资杠杆**
-
+• Bad Context: "Redis 是一种 KV 数据库。" (这是通识，AI 本来就知道，没必要记)• Good Context: "Redis 在我的项目 A 中被用来做 Session 缓存，因为之前的 MySQL 方案导致了延迟。" (这是你的独家 Context，是 AI 无法从训练集中获得的)
 
 Context is everything！
 

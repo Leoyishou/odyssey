@@ -14,6 +14,8 @@ linter-yaml-title-alias: Summary
 
 # Cues
 
+[[codex]]
+
 [[ Claude Code 最佳实践]]
 [[Claude Code 插件]]
 [[harness]]
@@ -27,6 +29,9 @@ linter-yaml-title-alias: Summary
 
 # Notes
 
+
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/20260413130704229.png)
+
 ## 一、核心对象
 ### 1.1 基座模型
 1. haiku 最快
@@ -39,8 +44,7 @@ linter-yaml-title-alias: Summary
 
 ### 1.3 skills
 [[skills]]继承
-api-draw 是一个断裂的符号链接（broken symlink）。它指向
-/Users/liuyishou/.claude/skills/api-draw，但当前机器的用户是 bytedance，这个路径不存在。
+
 
 ### 1.4 上下文
 一个session里，因为有[[SubAgent]]的存在可能对应多套上下文

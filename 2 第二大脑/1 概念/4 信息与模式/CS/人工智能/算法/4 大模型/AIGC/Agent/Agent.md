@@ -5,8 +5,10 @@ uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
 [[个人Agent]]
 [[Agent-Tools]]
+[[ralph loop]]
+[[Agent IM]]
 
-
+今日 vibe 感想：我认为无论在什么行业，知识工作基本上分为三类。第一是创意（发散），第二是分解与执行（收敛），第三是一致性确认（对齐）。三者循环一次就是一个 agentic loop
 
 > [!info]
 > LLM + 一个图灵完备的机器 = Agent，**智力资源像水一样，**变得成了便宜稳定的供给
@@ -25,6 +27,15 @@ Agent 是面向结果交付的，所以**和** **Agent** **打交道的时候，
 2. [[本地 Agent $]]
 3. [[browse Use]]
 4. [[phone Use]]
+5. [[human in the loop]]
+6. 
+
+## 好用的资源
+
+https://github.com/AccumulateMore/CV
+
+
+
 
 ## Mac OS
 
