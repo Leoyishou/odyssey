@@ -10,13 +10,13 @@ linter-yaml-title-alias: Summary
 > [!Info]
 > 一句话说清楚
 
-| 维度 | 方案一：Infi-loop | 方案二：SubAgent | 方案三：外置脚本 |
+| 维度    | 方案一：Infi-loop                      | 方案二：SubAgent                                  | 方案三：外置脚本                                                          |
 | :---- | :--------------------------------- | :-------------------------------------------- | :---------------------------------------------------------------- |
-| 原理 | 官方提供的 stop-hook 阻止退出，同一 session 循环 | 每个 task 派一个 subagent | 每个 task 起一个全新 claude 进程 |
-| 上下文隔离 | 无（同一 session） | 部分（subagent 独立，但对 main agent 有开销） | 完全隔离（独立进程） |
-| 实现 | 官方的 ralph-loop 插件 | openspec apply + openspec-task-executor agent | openspec-runner.sh 外置脚本<br><br>https://github.com/snarktank/ralph |
-| 适用规模 | 任务少、快速完成 | 中等任务量（<100 tasks） | 大规模任务（理论上无上限） |
-| 主要风险 | 长时运行触发 auto-compaction | main agent 上下文随 task 数增长 | 无跨 task 上下文，需靠文件传递状态 |
+| 原理    | 官方提供的 stop-hook 阻止退出，同一 session 循环 | 每个 task 派一个 subagent                          | 每个 task 起一个全新 claude 进程                                           |
+| 上下文隔离 | 无（同一 session）                      | 部分（subagent 独立，但对 main agent 有开销）             | 完全隔离（独立进程）                                                        |
+| 实现    | 官方的 ralph-loop 插件                  | openspec apply + openspec-task-executor agent | openspec-runner.sh 外置脚本<br><br>https://github.com/snarktank/ralph |
+| 适用规模  | 任务少、快速完成                           | 中等任务量（<100 tasks）                             | 大规模任务（理论上无上限）                                                     |
+| 主要风险  | 长时运行触发 auto-compaction             | main agent 上下文随 task 数增长                      | 无跨 task 上下文，需靠文件传递状态                                              |
 
 
 

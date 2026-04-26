@@ -15,7 +15,7 @@ linter-yaml-title-alias: Summary
 # Cues
 
 [[codex]]
-
+[[脚本启动Claude Code]]
 [[ Claude Code 最佳实践]]
 [[Claude Code 插件]]
 [[harness]]
