@@ -7,6 +7,8 @@ linter-yaml-title-alias: Summary
 ---
 #  💡Summary  
 
+[[codex]]中多 subAgent 的本质是[[有向无环图 DAG]]
+
 > [!Info]
 > Spawn [multiple Claude Code agents](https://code.claude.com/docs/en/sub-agents) that work on different parts of a task simultaneously. A lead agent coordinates the work, assigns subtasks, and merges results.
 > 

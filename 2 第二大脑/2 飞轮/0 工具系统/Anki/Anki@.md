@@ -4,11 +4,8 @@ date modified: 2025-07-10
 uid: e85fb2fc-c7e0-4bf9-8ed7-0893bf6f31d4
 ---
 
-excerpt
 
-<!-- more -->
-
-卡片的 [三个状态](三个状态.md)
+卡片的 [anki卡片状态机](anki卡片状态机.md)
 
 [bury](bury.md) 临时冻结
 

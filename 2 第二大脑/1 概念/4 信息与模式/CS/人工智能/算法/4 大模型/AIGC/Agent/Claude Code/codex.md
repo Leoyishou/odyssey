@@ -64,6 +64,8 @@ Claude Code 的 hooks 是很明确的产品概念；Codex 里更常见的是通�
 
 # 🧩 Cues
 
+[[codex最佳实践]]
+
 
 
 # 🪞Notes

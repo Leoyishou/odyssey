@@ -23,7 +23,7 @@ linter-yaml-title-alias: Summary
 [[Agentic loop]]
 [[Agent 定时任务]]
 [[上下文工程 Context Engineering]]
-[[multi agents]]
+[[多Agent，multi agents]]
 1. [[SubAgent]]
 2. [[【cc】Agent Team]]
 
