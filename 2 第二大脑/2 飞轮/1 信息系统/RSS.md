@@ -11,7 +11,19 @@ uid: 766edaed-af05-4f2f-a90d-d473ff1992a3
 
 RSS（**Really Simple Syndication** 或 **Rich Site Summary**）是一种基于XML的内容分发技术。它最初设计的目的，是让网站能够以一种统一、简洁的格式发布和更新内容（例如新闻、博客文章、播客、视频等），并且让用户可以通过RSS阅读器或聚合器（Aggregator）来统一订阅和阅读多个网站的更新。下面从**原理**、**优势**以及**在算法推荐时代的意义**三个方面，为你解读RSS的本质与价值。
 
----
+
+
+
+所以最简单组合是：
+
+| 用途             | 推荐                  |
+| ---------------- | --------------------- |
+| 日常 RSS 阅读    | Feedly                |
+| 播客收听         | Apple Podcasts Web    |
+| 重度信息监控     | Inoreader             |
+| Mac 本地漂亮 App | Reeder 或 NetNewsWire |
+|                  |                       |
+|                  |                       |
 
 ## 一、RSS是什么，怎么用？
 
