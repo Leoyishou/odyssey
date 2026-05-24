@@ -3,6 +3,11 @@ date created: 2025-05-23
 date modified: 2025-10-20
 uid: 2e37e4c7-5461-4b92-959e-ae9b3b6d5eac
 ---
+
+#第一性原理  结构化理解、结构化方案 与 非架构化效果之间的矛盾
+
+
+
 z
 lovable
 

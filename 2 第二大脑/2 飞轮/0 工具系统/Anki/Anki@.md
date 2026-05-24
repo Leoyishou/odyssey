@@ -3,6 +3,27 @@ date created: 2024-05-12
 date modified: 2025-07-10
 uid: e85fb2fc-c7e0-4bf9-8ed7-0893bf6f31d4
 ---
+1. **不要把 Anki 当学习本体，把它当“懒惰点探测器 + 复现调度器”。** 每次刷卡时你不是在证明自己会了，而是在寻找哪里还只是熟悉、哪里还没有真正建模。
+2. 要让 **懒惰点变成一等公民**：刷卡的目标不是全部答对，而是每天抓到几个“我其实没 dive in”的点。
+3. 大脑会偷懒地选择最省力路径：
+	- 看到卡面有熟悉感，就按 Good
+	- 看到答案后觉得“哦我知道”，但其实没主动想出来
+	- 遇到难卡不 deep dive，只想赶紧过
+	- 只记住这张卡的问法，换个问法就不会了
+4. Karpicke & Roediger 2008 的实验强调 repeated testing 比 repeated studying 更能巩固长期记忆
+
+# Cues
+
+[[Goodhart's law]]
+
+
+
+# Notes
+
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/20260521144041224.png)
+
+
+
 
 
 卡片的 [anki卡片状态机](anki卡片状态机.md)

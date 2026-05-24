@@ -1,0 +1,24 @@
+---
+uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+date created: 2025-07-19
+date modified: 2025-10-07
+aliases: [Summary]
+linter-yaml-title-alias: Summary
+---
+#  💡Summary  
+
+> [!Info]
+> 相当于这把尺子的可靠刻度大概是 5%
+> 
+
+MDE = 5.05%
+相当于这把尺子的可靠刻度大概是 5%
+
+真实变化 >= 5%    比较容易测出来
+真实变化 < 5%     测得不稳定，可能靠运气显著
+
+# 🧩 Cues
+
+
+
+# 🪞Notes
