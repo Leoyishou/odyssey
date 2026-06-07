@@ -8,8 +8,15 @@ linter-yaml-title-alias: Summary
 #  💡Summary  
 
 > [!Info]
-> 一句话说清楚
+>  p 指的是 **cumulative probability mass**，也就是“累计概率质量”。
 > 
+
+![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/20260605140631140.png)
+
+
+
+
+
 
 如果调低 temperature，A 会变得更占优势，输出更稳定。  
 如果设置 top_p = 0.9，模型只会在 A、B、C 里选，因为它们累计概率已经到 90%，D/E 被排除。

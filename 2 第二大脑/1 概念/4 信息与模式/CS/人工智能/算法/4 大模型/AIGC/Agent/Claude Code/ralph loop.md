@@ -8,7 +8,16 @@ linter-yaml-title-alias: Summary
 # 💡Summary
 
 > [!Info]
-> 一句话说清楚
+> Standard software practices is to build it vertically brick by brick - like Jenga but these days I approach everything as a loop.
+
+| 传统软件开发                            | 他所谓的 Ralph loop                                  |
+| --------------------------------------- | ---------------------------------------------------- |
+| 人手动拆需求、写代码、调 bug            | 人设计目标、提示词、约束和验证机制                   |
+| AI 只是 Cursor/Claude Code 里的提效工具 | AI 是“可编程的新电脑”，工程师是在编程这个 loop       |
+| 重点是一次性写出正确代码                | 重点是让失败暴露出来，然后把失败变成下一轮改进       |
+| 多 agent / agent 通信看起来很高级       | 他更偏向单进程、单仓库、单任务循环，避免非确定性混乱 |
+|                                         |                                                      |
+|                                         |                                                      |
 
 | 维度    | 方案一：Infi-loop                      | 方案二：SubAgent                                  | 方案三：外置脚本                                                          |
 | :---- | :--------------------------------- | :-------------------------------------------- | :---------------------------------------------------------------- |
