@@ -1,9 +1,7 @@
 ---
-uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+uid: 0df2d24b-f6c8-4d86-9c42-08cd8fb28e06
 date created: 2025-07-19
 date modified: 2025-11-02
-aliases: [Summary]
-linter-yaml-title-alias: Summary
 ---
 # Summary💡
 [[K-Means]]、[[DBSCAN]]

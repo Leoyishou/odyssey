@@ -1,9 +1,7 @@
 ---
-uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+uid: 9470a7c9-296b-4620-a6c2-e4a759f60eab
 date created: 2025-07-19
 date modified: 2025-07-20
-aliases: [Summary]
-linter-yaml-title-alias: Summary
 ---
 # Summary
 

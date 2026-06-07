@@ -1,10 +1,6 @@
----
-uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
-date created: 2025-07-19
-date modified: 2025-10-07
-aliases: [Summary]
-linter-yaml-title-alias: Summary
----
+<%*
+tR += `---\nuid: ${crypto.randomUUID()}\ndate created: ${tp.file.creation_date("YYYY-MM-DD")}\ndate modified: ${tp.file.last_modified_date("YYYY-MM-DD")}\n---\n`;
+-%>
 #  💡Summary  
 
 > [!Info]

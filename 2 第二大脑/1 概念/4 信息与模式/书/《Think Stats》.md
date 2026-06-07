@@ -1,9 +1,7 @@
 ---
-uid: a6c9b39d-84a1-48e1-bb65-6652660bbca5
+uid: 849ebf21-8f9f-4c00-b7e6-dff28d9ee776
 date created: 2025-07-19
 date modified: 2025-08-10
-aliases: [Summary]
-linter-yaml-title-alias: Summary
 ---
 # Summary
 https://github.com/AllenDowney/ThinkStats

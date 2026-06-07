@@ -2,8 +2,6 @@
 date created: 2025-04-07
 date modified: 2025-08-06
 uid: 230f28b4-80db-4c5f-8ec5-b104e8863a27
-aliases: [Summary]
-linter-yaml-title-alias: Summary
 ---
 Transformer学习笔记一：Positional Encoding（位置编码）- 猛猿的文章 - 知乎
 https://zhuanlan.zhihu.com/p/454482273

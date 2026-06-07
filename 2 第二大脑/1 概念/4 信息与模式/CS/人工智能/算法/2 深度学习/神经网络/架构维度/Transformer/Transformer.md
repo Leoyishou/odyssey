@@ -2,8 +2,6 @@
 date created: 2024-07-17
 date modified: 2025-10-26
 uid: fd6ec90a-6faa-417a-b30a-d5347051d5ad
-aliases: [Summary]
-linter-yaml-title-alias: Summary
 ---
 # Summary
 

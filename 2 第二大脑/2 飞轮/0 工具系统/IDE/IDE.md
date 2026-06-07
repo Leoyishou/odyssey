@@ -1,7 +1,5 @@
 ---
 uid: 7455356a-b1b6-49a2-a6ac-d227ad737715
-aliases: [Cues]
-linter-yaml-title-alias: Cues
 date created: 2025-07-20
 date modified: 2025-07-20
 ---
