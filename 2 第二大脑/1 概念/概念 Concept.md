@@ -4,6 +4,11 @@ date modified: 2025-07-14
 uid: 1f98be45-0204-4b50-b66b-83732efb4b8d
 ---
 
+李笑来一直在强调概念很重要，甚至把判断聪明人的标准是脑子中有多少清晰准确的概念。
+
+
+
+
 There are countless dots out there to connect, but if you are looking in the same places as everyone else, you're going to end up being just like everyone else.
 
 "输入输出...三维时空...神经元...时间是空间变化引起的幻觉..."当我想从语言文字思考而感到不解时，就想到维特根斯坦的语言即世界，就感到释怀。今年因人工智能增加了人们许多理论思考及新观点及认知？还是这些抽象文字的概念的界限已变及扩大？从而"语言的边界就是世界的边界"。
