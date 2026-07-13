@@ -22,6 +22,18 @@ anki如何规避思维懒惰点，自己如何发现并迎接思维懒惰点
 
 # Notes
 
+## 顽固词
+
+|指标|含义|用法|
+|---|---|---|
+|`lapses`|学会后又忘了几次|最核心指标，`>=2` 就算顽固|
+|`Again 次数`|总共点过几次 Again|反映真实失败次数|
+|`近30天 Again`|最近还在忘|判断是否需要马上干预|
+|`Again率`|Again / 总复习次数|防止低复习量词被低估|
+|`当前间隔 interval`|现在隔多久复习|间隔还很短但反复忘，说明卡片有问题|
+|`ease因子 factor`|Anki 对这张卡的难度估计|越低越难，低于 2300 要注意|
+
+
 ![image.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/20260521144041224.png)
 
 
