@@ -16,7 +16,7 @@ uid: 9567f36d-db88-4385-b926-bb1b44596182
 
 - [[数据@]](Data)：原始的、未经处理的事实和观察结果
 - [[信息]](Information)：经过组织和解释的数据，具有上下文和意义
-- [[2 第二大脑/1 概念/3 意识与心智/知识]](Knowledge)：通过经验和学习内化的信息，能够指导行动
+- [[2 第二大脑/1 概念/3 心智与认知/知识]](Knowledge)：通过经验和学习内化的信息，能够指导行动
 - [[智慧]](Wisdom)：对知识的深度理解和创造性应用，涉及判断和洞察
 ![image.png|500](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/fix-dir%2Fpicgo%2Fpicgo-clipboard-images%2F2025%2F04%2F23%2F19-05-15-862162b3677e5d48915e456b421ae122-202504231905883-da7220.png)
 
