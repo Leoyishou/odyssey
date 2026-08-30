@@ -109,7 +109,7 @@ https://zhuanlan.zhihu.com/p/678130904
 |                 | `torch.nn.Parameter()`                                 | 将张量包装为模型的可学习参数。|
 |                 | `torch.equal()`                                        | 检查两个张量是否逐元素完全相等。|
 |                 | `torch.allclose()`                                     | 检查两个张量是否在容忍误差内逐元素接近（适用于浮点数比较）。|
-|                 | `torch.softmax(scores, dim=-1)`                        | 对`scores张量的最后一个维度（`dim=-1`）进行softmax运算，将原本任意大小的得分（score）转化为0到1之间的概率（权重）。                     |
+|                 | `torch.softmax(scores, dim=-1)`                        | 对 scores 张量的最后一个维度（`dim=-1`）进行 softmax 运算，将原本任意大小的得分（score）转化为 0 到 1 之间的概率（权重）。             |
 |                 | `.view()` / `.reshape()`                               | 改变张量形状 (理论中提及)。                                                                              |
 |                 | `.add_()`                                              | 原地加法操作 (理论中提及作为原地操作示例)。                                                                      |
 |                 |                                                        |                                                                                              |
