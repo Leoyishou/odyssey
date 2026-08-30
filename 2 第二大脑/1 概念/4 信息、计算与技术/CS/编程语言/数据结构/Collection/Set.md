@@ -21,7 +21,7 @@ Set 的本质是一个带了去重功能的 `List<Entry>`
 |获取大小|`len(my_set)`|`mySet.size()`|Python 函数 vs Java 方法。|
 |遍历元素|`for item in my_set:`|`for (Type item: mySet)` / `mySet.forEach(...)`|迭代方式类似。`set`/`HashSet` 无序；`LinkedHashSet` 插入顺序；`TreeSet` 排序。|
 |**集合运算**|||**显著差异**：Python 对集合运算支持更直接（操作符/方法）。|
-|- 并集 (Union)|`set1|set2`/`.union()`|`Set<T> u = new HashSet<>(s1); u.addAll(s2);`|
+|- 并集 (Union)|set1 \| set2 / `.union()`|`Set<T> u = new HashSet<>(s1); u.addAll(s2);`|
 |- 交集 (Intersection)|`set1 & set2` / `.intersection()`|`Set<T> i = new HashSet<>(s1); i.retainAll(s2);`|Python 有操作符/方法；Java 需 `retainAll`。|
 |- 差集 (Difference)|`set1 - set2` / `.difference()`|`Set<T> d = new HashSet<>(s1); d.removeAll(s2);`|Python 有操作符/方法；Java 需 `removeAll`。|
 |- 对称差集 (Symmetric Diff.)|`set1 ^ set2` / `.symmetric_difference()`|_需手动组合 `addAll`/`removeAll`/`retainAll`_|Python 有操作符/方法；Java 无直接方法，实现较繁琐。|
