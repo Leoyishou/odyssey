@@ -1,7 +1,7 @@
 ---
 uid: 014276ef-04b2-4fc3-bf3f-f557e717e80d
 date created: 2025-07-19
-date modified: 2025-10-07
+date modified: 2026-10-22
 ---
 # 💡Summary
 
@@ -30,6 +30,34 @@ date modified: 2025-10-07
 # 🧩 Cues
 
 # 🪞Notes
+
+## 本质：Loop Engineering
+
+> [!Info]
+> 把你从「下指令的人」变成「**设计反馈回路的人**」。关键不在 prompt 写得多巧，而在**验收条件够不够硬**。
+
+Ralph loop 只是一种实现。2026 年 6 月这个说法被带火：Boris Cherny（Claude Code 负责人）说「是循环在提示 Claude，我的工作是写循环」；Peter Steinberger（OpenClaw 作者）说「别再给 agent 写 prompt，去设计提示它们的循环」；Addy Osmani 写文章起名 Loop Engineering。
+
+一个循环四样东西：
+
+| 要素 | 回答的问题 | 例子 |
+| --- | --- | --- |
+| 触发 | 什么时候开一轮 | 定时、新事件、上一轮没完成 |
+| 任务来源 | 这一轮干什么 | 待办清单、issue、报错日志、prd.json 里的下一条 story |
+| **验收** | 怎么判断做完了 | 测试通过、检查脚本跑过、另一个模型来审（上面的 `<promise>COMPLETE</promise>`） |
+| 状态 | 进度记在哪 | git、progress.txt、状态文件——每轮开新会话也不丢 |
+
+验收写清楚，agent 能自己一轮轮跑到对；写不清楚，循环只会反复产出垃圾。
+
+容易混的三个「循环」：
+- Claude Code 的 `/loop`：定时任务，按固定间隔重复跑同一个 prompt。
+- ReAct：一轮对话**内部**模型自己读、动手、检查，转几圈再回答。
+- Ralph loop / Loop Engineering：**外面**再套一层，跨会话地找活、派活、验收。定时任务和 ReAct 只是它的零件。
+
+自己的 bot 体系就是一个例子：routine 负责触发，管理 bot 盯待办并派活，各 bot 自己核实做没做完。
+
+> 来源：调研 bot 10-21 19:42、19:45。
+
 
 ## 方案一的原理
 一句话：利用 Claude Code 的 Stop Hook，在 Claude 想退出时拦截它、把原始任务重新喂给它，强迫它继续干活。
