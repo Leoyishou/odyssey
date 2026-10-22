@@ -2,7 +2,8 @@
 date created: 2025-02-03
 date modified: 2025-07-20
 uid: 94051886-deab-49b4-9122-4fcb82f99d85
-aliases: [为什么是 Q 和 K 两个矩阵相乘]
+aliases:
+  - 为什么是 Q 和 K 两个矩阵相乘
 linter-yaml-title-alias: 为什么是 Q 和 K 两个矩阵相乘
 ---
 
