@@ -1,0 +1,20 @@
+{
+  "name": "odyssey",
+  "private": true,
+  "type": "module",
+  "description": "agent project: odyssey",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "dev": "agent-sdk dev",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "eval": "agent-sdk eval"
+  },
+  "dependencies": {
+    "@grok/agent-sdk": "0.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "6.0.3"
+  }
+}
