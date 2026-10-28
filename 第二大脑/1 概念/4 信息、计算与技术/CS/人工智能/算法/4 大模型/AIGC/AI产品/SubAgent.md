@@ -6,7 +6,8 @@ date modified: 2025-10-07
 # 💡Summary
 
 > [!Info]
-> 一个进程、一个session、两个context
+> 1. 有向无环图的任务，subagent 才有意义
+> 2. 一个进程、一个session、两个context
 
 # 🧩 Cues
 
