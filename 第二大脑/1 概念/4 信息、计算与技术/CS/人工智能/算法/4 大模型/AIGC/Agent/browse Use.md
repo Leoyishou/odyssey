@@ -5,6 +5,21 @@ date modified: 2025-10-07
 ---
 # 💡Summary
 
+
+
+
+| 路线                | 代表方案                                                                | 优势                                                                                                                       | 短板                                                                       | 适用场景                                                                                         |
+| ------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| ① 传统自动化        | Playwright、Puppeteer、Selenium                                         | 精准、确定、可复现；毫秒级、零 Token                                                                                       | 页面改版后维护选择器成本高；遇到未知页面要引入 AI                          | 稳定的端到端测试、固定自动化任务                                                                 |
+| ② CDP + MCP/CLI     | Chrome DevTools MCP、Playwright MCP/CLI、agent-browser、Browser Harness | 生态成熟、开箱即用，不用自己维护浏览器内核                                                                                 | CDP 只是底层协议，不是完整产品；每步数据太多容易撑爆上下文                 | 把现成浏览器接给 Agent；Browser Harness 可接管本机已登录的 Chrome                                |
+| ③ 浏览器插件        | OpenCLI、Kimi 扩展、ChatGPT 扩展、Claude in Chrome、Nanobrowser         | 门槛低，直接复用 Cookie 和登录态；OpenCLI 还能把高频网站封装成本地 CLI 命令                                                | 权限要求高，受宿主浏览器稳定性制约；高并发和长期无人值守需要额外防故障设计 | 接管日常已登录的 Chrome（OpenCLI、Browser Harness、Kimi 扩展）                                   |
+| ④ 原生 Agent 浏览器 | Ego Lite、BrowserOS neo                                                 | 基于定制 Chromium，内嵌 Node.js，原生 Snapshot，独立 Space 供人和 Agent 并行，可人机接管验证码，用 Skill 对接 Coding Agent | Ego Lite 只开源 Harness 和 Skill，核心闭源；BrowserOS neo 完全开源         | 人和 Agent 在同一浏览器里并行协作                                                                |
+| ⑤ AI 自主操作       | Browser Use、Stagehand、Skyvern、Jev Ultrafast                          | 灵活：Browser Use 全自主；Stagehand 固定步骤写代码、动态节点交给 AI；Skyvern 用视觉模型加工作流；Jev 压低延迟和成本        | 全自主 Token 开销大、结果有波动；Jev 能覆盖的网页复杂度有限                | 探索陌生站点（Browser Use）；做混合型自动化（Stagehand + Playwright）；企业长链路业务（Skyvern） |
+| ⑥ 云端浏览器        | Browserbase、Steel Browser、Cloudflare Browser Run                      | 托管并发调度、资源隔离、会话持久化、代理轮换、防封禁                                                                       | 云端账单；多租户安全隔离复杂                                               | 服务器端高并发、多实例任务                                                                       |
+| ⑦ 专业数据采集      | Crawl4AI、Firecrawl                                                     | 针对大规模抓取、动态渲染、去噪、转 Markdown/JSON 做过优化，吞吐高、成本低                                                  | 遇到强交互或复杂登录拦截的网站不如通用浏览器                               | 海量公开网页抓取、知识库清洗                                                                     |
+| ⑧ 底层标准          | WebMCP（Google、微软推动）                                              | 网站主动通过标准接口暴露能力，Agent 不用猜按钮位置                                                                         | 还在早期试验，普及还很远                                                   | 长期方向，暂时不能直接用                                                                         |
+|                     |                                                                         |                                                                                                                            |                                                                            |                                                                                                  |
+|                     |                                                                         |                                                                                                                            |                                                                            |                                                                                                  |
 --cdp 是「直接拿你本人去办事」
 
 > [!Info]
