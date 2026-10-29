@@ -2,6 +2,15 @@
 *
 !/.gitignore
 
+# Versioned cloud assistant; local credentials and runtime state stay ignored.
+!/agents/
+!/agents/odyssey/
+!/agents/odyssey/**
+/agents/odyssey/node_modules/
+/agents/odyssey/.env*
+/agents/odyssey/.agent-serve/
+/agents/odyssey/memory/
+
 !/第二大脑/
 !/第二大脑/**/
 !/第二大脑/*.md
