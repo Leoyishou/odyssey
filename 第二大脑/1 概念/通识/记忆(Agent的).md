@@ -18,7 +18,7 @@ date modified: 2026-10-26
 
  1. mem0
  2. claude-mem
- 3. hindsight
+ 3. [[hindsight]]
  4. llm wiki
 
 # 🪞Notes
