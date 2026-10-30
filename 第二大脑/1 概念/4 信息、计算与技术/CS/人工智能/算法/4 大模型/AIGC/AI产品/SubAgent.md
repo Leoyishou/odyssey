@@ -9,6 +9,9 @@ date modified: 2025-10-07
 > 1. 有向无环图的任务，subagent 才有意义
 > 2. 一个进程、一个session、两个context
 
+2. 启动 [[subAgent]] 时候用的命令
+	1. codex --dangerously-bypass-approvals-and-sandbox
+	2. dsh 把「沙箱模式」和「审批策略」分成两个旋钮：沙箱有 `workspace-write`、`danger-full-access` 等，审批有 `ask`（要确认）和 `never`（不确认）。权限预设插件 `@deepseek-ai/dsh-permission-presets` 默认就带两档：
 # 🧩 Cues
 
 # 🪞Notes
