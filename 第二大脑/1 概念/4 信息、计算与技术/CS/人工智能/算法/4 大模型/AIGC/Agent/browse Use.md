@@ -5,6 +5,13 @@ date modified: 2025-10-07
 ---
 # 💡Summary
 
+1. 就是说命令行启动的 codex，无法用 ChatGPT 的 browse Use 插件，而是新开一个chrome是吧
+
+
+
+
+
+
 [[CDP]]
 
 
