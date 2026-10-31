@@ -6,15 +6,17 @@ date modified: 2026-10-26
 #  💡Summary  
 
 > [!Info]
-> 1. 代码场景[[Agentic search]]更牛逼（[[Pi Agent]]）
+> 结论：
+> 1. 代码场景[[Agentic search]]更牛逼
 > 2. 自然语言场景[[RAG]]更牛逼
-
 > 
 
+## 代码场景
+
+[[Pi Agent]]
 
 
-
-
+## 自然语言场景
 
 1. 生成记忆本质是对 session log 的索引，不同的技术代表[[索引Index]]不同
 > 3. 回忆的本质是[[搜索]]
@@ -35,11 +37,6 @@ date modified: 2026-10-26
 [[grep]]
 
 # 🪞Notes
-
-
-## **agentic search**，也就是让模型自己动手搜：
-
-用 `ls` / `find` 定位文件 → 用 `grep` 精确找到行 → 用 `read` 读上下文 → 根据读到的内容换关键词，再搜一轮
 
 
 
