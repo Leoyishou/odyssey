@@ -5,7 +5,8 @@ uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
 
 
-Agent 的核心是目的Goal 
+1. Agent 的核心是目的Goal ，没有目的的 Agent 毫无意义。
+2. 目的不同反过来决定了上下文的不同。财务 Agent、健康 Agent、设计 Agent 因为目的比较纯粹明确，所以上下文的隔离性也比较强
 
 
 
