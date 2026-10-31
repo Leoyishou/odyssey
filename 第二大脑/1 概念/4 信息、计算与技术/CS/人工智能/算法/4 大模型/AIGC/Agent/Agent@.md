@@ -201,10 +201,6 @@ while (true) {
 
 #最佳实践
 
-https://docs.llamaindex.ai/en/stable/getting_started/concepts/
-
-https://docs.llamaindex.ai/en/stable/understanding/
-
 |                                        |                                        |                                                                                                                                                                     |             |
 | -------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | 大标题                                    | 类别                                     | 工具                                                                                                                                                                  | 最佳实践？|
@@ -230,10 +226,6 @@ https://docs.llamaindex.ai/en/stable/understanding/
 |                                        | Agent Teammates                        | Astral, bolt.ax, DEVIN, Dropzone AI                                                                                                                                 | DEVIN       |
 |                                        | Agent Swarms                           | aaru, SOCIETIES, Canopy, CommonRoom                                                                                                                                 |             |
 
-# 九
-[[langmanus]]
-
----
 
 1. 不一定要从ota的视角出发，而是从AI本身出发，然后再带入ota的框架可能更好，就像互联网对旅行社的冲击一样。AI的本质是信息的流动速度会加剧，可能无网络时代-网络时代-到微软GUI-到现在AI
 	1. 异地出行会面对信息爆炸，横向对比产品，票-酒-poi-饮食的联动是刚需（票酒在前是我们的优势）
