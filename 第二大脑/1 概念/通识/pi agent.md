@@ -17,6 +17,7 @@ date modified: 2026-10-31
 
 # 🪞Notes
 
+
 ## 核心四个工具
 
 | 工具           | 作用               | 要点                                                                    | 默认开启 |
@@ -31,13 +32,9 @@ date modified: 2026-10-31
 
 ## 搜索工具
 
+用 `ls` / `find` 定位文件 → 用 `grep` 精确找到行 → 用 `read` 读上下文 → 根据读到的内容换关键词，再搜一轮
+
 |工具|搜什么|匹配依据|返回|
 |---|---|---|---|
 |`find`|**文件**|文件名或路径，用 glob 模式，比如 `**/*Board*.tsx`|文件路径列表|
 |`grep`|**文件里的行**|行内容，用正则或普通字符串|`路径:行号: 内容`|
-
-⁠[![](https://img.notionusercontent.com/ext/https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fdomain%3Dgithub.com%26sz%3D64/raw?imgBuildSrc=createUnsignedImageVariantURL)](https://github.com/nicobailon/pi-mono/blob/main/packages/coding-agent/README.md)⁠ ⁠[![](https://img.notionusercontent.com/ext/https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fdomain%3Dpi.dev%26sz%3D64/raw?imgBuildSrc=createUnsignedImageVariantURL)](https://pi.dev/docs/latest/cli)⁠
-
-**按用途分成三组**
-
-- **找**：`ls` 看目录结构，`find` 按路径找文
