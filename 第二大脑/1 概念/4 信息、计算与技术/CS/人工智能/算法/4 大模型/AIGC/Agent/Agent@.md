@@ -101,44 +101,10 @@ Agent 是面向结果交付的，所以**和** **Agent** **打交道的时候，
 https://github.com/AccumulateMore/CV
 
 
-![CleanShot 2026-08-05 at 19.26.07@2x.png|1000](https://imagehosting4picgo.oss-cn-beijing.aliyuncs.com/imagehosting/CleanShot%202026-08-05%20at%2019.26.07%402x.png)
-
-
-## Mac OS
-
-`security` 命令，就是 macOS 专门提供给开发者，用来在命令行里操作 Keychain 的内置系统级指令。
-
-
-
-
-## 最佳实践
-### Thariq Shihipar 的 Workshop 核心（“8点心得”深度解析）
-
-这个视频名为《Claude Agent SDK [Full Workshop]》，Thariq 在其中手把手演示了如何用 Claude Agent SDK 构建一个 Agent。X 上流传的“8点心得”通常涵盖以下核心逻辑：
-
-
-**Agent Loop 的本质（The Loop）**
-
-- **流程：** 所有的 Agent 最终都简化为一个死循环： `Context（环境）` -> `Thought（思考）` -> `Action（行动/工具调用）` -> `Observation（观察执行结果）` -> `回到 Context`。
-    
-- **简单性：** 不要设计复杂的图（Graph），先跑通这个最简单的单线程循环。
-
-
-1. Claude Agent SDK + 提示词编写初版 Agent，然后根据效果去细化提示词指令，再把确定性部分尽可能抽离成 Agent Skill 和配套脚本。
-2. 如果满足不了需求，再考虑更细粒度的 Multi-Agent 框架比如 CrewAI、AutoGen。
-3. 再满足不了就自己 LangChain/LangGraph/纯 OpenAI SDK 手撸或者拿 OpenCode 等框架去改。
 
 
 ## 全自动模式很重要
 
-
-## Agent 设计
-
-1. 对于 Manus、Devin、Claude Code 这些产品来说，Model（模型）是水电煤，Orchestration Code（调度层代码）才是真正的发动机。
-2. - 调度层代码 (Orchestration)：这是包含了人类工程师无数次 Debug 经验的结晶。它把一个“会说话的 AI”变成了一个“会干活的 Agent”。
-
-
-你提到的 Claude Code、Gemini CLI、Codex (Copilot) 的核心 Agent 调度逻辑目前都是闭源的。它们把这部分代码视为核心商业机密。
 
 
 
@@ -185,22 +151,7 @@ while (true) {
 
 
 
-2. 把chat 和agent两个事分开，one by one 或者 one by n
-3. 
 
-
-
-
-
-
-
-## 2）在 Claude Code 上做扩展（plugins / slash commands / agents / hooks / MCP）——这是官方鼓励的路
-
-Claude Code 的官方定位就是“终端里的可组合、可脚本化工具”，并且支持用 MCP 接外部工具、用 插件系统做自定义命令/专用 agent。([Claude Code](https://code.claude.com/docs/en/overview "Claude Code overview - Claude Code Docs"))
-
-对“行程规划 agent”来说，最合理的做法是：不要把 Claude Code 当成旅游 App，而是当成你的 agent 运行壳，把旅行能力放在“可控的工具层”。
-
----
 
 ## 2.1 工具层
 
@@ -261,25 +212,6 @@ Claude Code 有 hooks 机制（从 CHANGELOG 可见 hooks 已作为特性加入�
     
 
 （hooks 的存在与演进在官方 changelog 中可以看到。）([GitHub](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md?utm_source=chatgpt.com "https://raw.githubusercontent.com/anthropics/claud..."))
-
-## 上下文
-
-你可以把这个“行程规划”当成一个 repo/项目：
-
-- `CLAUDE.md` 写产品规则：必须输出结构化 JSON、必须给备选、必须标注风险点
-    
-- `profiles/` 放不同用户画像模板（亲子/摄影/老年/特种兵）
-    
-
-Claude Code 本来就擅长在“项目上下文”里工作。([Claude Code](https://code.claude.com/docs/en/overview "Claude Code overview - Claude Code Docs"))
-
----
-
-# 什么时候“不该用 Claude Code”而该用别的？
-
-如果你要把它做成面向 C 端的产品（网页/小程序/APP），Claude Code 会显得别扭：它是开发者工具壳。官方也明确有 Claude Agent SDK（用于真正搭 agent 应用），更适合产品化落地。([Anthropic](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk?utm_source=chatgpt.com "Building agents with the Claude Agent SDK"))
-
----
 
 # 最小落地路线（你今天就能开工的那种）
 
