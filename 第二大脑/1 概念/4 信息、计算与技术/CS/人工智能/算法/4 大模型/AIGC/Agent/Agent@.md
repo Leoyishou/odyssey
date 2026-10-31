@@ -5,6 +5,11 @@ uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
 
 
+> [!info]
+> LLM + 一个图灵完备的机器 = Agent，智力资源像水一样，变得成了便宜稳定的供给
+> 
+
+
 1. Agent 的核心是目的Goal ，没有目的的 Agent 毫无意义。
 2. 目的不同反过来决定了上下文的不同。财务 Agent、健康 Agent、设计 Agent 因为目的比较纯粹明确，所以上下文的隔离性也比较强
 
@@ -34,6 +39,8 @@ harness 是 OpenAI 的，环境、上下文和 UX 是我们的
 
 ## 三、人与 Agent
 
+日常的ai充其量的效果就是雇了个保姆 找村口老李问了问建议  之后背后千百个agent被组织起来工作 才能每天消耗一亿token     中国起飞或者工程师红利就得益于恢复高考后的全民总token输出提高   给你一千万花完很难给你一亿token花完也很难
+
 ### 人参与 loop 时
 
 1. 人的[[认知带宽]]是有限的，和 Agent 协作的时候同时只做三件事最佳
@@ -44,11 +51,11 @@ harness 是 OpenAI 的，环境、上下文和 UX 是我们的
 1. 北极星指标：谁能消耗更多 agent？
 2. 两个关键要素：
 	1. Goal 目标达成的状态是否能清晰描述
-		1. **告诉 AI 要做什么（What），而不是怎么做（How）**
+		1. 告诉 AI 要做什么（What），而不是怎么做（How）
 		    1. 感受一下 loop 全程自己不参与，但是又能获得高于自己能力的作品的感受。
 		    2. 最偷懒的做法是，给现成的别人优质结果让 AI 复现，最省事的定义 what 的方式。
 	2. Context 是否充分
-		1. **人最大程度从 loop 中撤退**：真的非我不可吗？
+		1. 人最大程度从 loop 中撤退：真的非我不可吗？
 		    1. 离开机器不中断：锁屏不中断，电脑、手机都做一些特殊设置
 		    2. 比如跨设备的 apple 账号登录，人其实做的就是眼睛从 a 设备看到验证码，再输入 b 设备，连指纹和脸部生物识别都不需要，那么这件事就是可以 AI 闭环的。
 
@@ -76,45 +83,16 @@ harness 是 OpenAI 的，环境、上下文和 UX 是我们的
 
 
 
-> [!info]
-> LLM + 一个图灵完备的机器 = Agent，**智力资源像水一样，**变得成了便宜稳定的供给
-> 
-
-KOL：@yetone
-
-**日常的****ai****充其量的效果就是雇了个保姆** **找村口老李问了问建议**  **之后背后千百个****agent****被组织起来工作** **才能每天消耗一亿****token**     **中国起飞或者工程师红利就得益于恢复高考后的全民总****token****输出提高**   **给你一千万花完很难给你一亿****token****花完也很难**
 
 
+Agent 是面向结果交付的，所以和 Agent 打交道的时候，先无脑说出自己想要的最终效果，等发现他少什么图，再补就好。
 
-Agent 是面向结果交付的，所以**和** **Agent** **打交道的时候，先无脑说出自己想要的最终效果，等发现他少什么图，再补就好。**
 [[图灵完备]]
-
 1. [[bash]]强的可怕，因为 LLM 训练数据里有海量的 Linux 操作记录，它天生就会用 Linux。
 2. [[本地 Agent $]]
-3. [[browse Use]]
-4. [[phone Use]]
-5. [[human in the loop]]
-6. 
+3. [[human in the loop]]
+4. 
 
-## 好用的资源
-
-https://github.com/AccumulateMore/CV
-
-
-
-
-## 全自动模式很重要
-
-
-
-
-|                  |                                               |
-| ---------------- | --------------------------------------------- |
-| 编排层orchestration | 1. 先用 Claude Code，<br>2. 然后基于 OpenCode 试试慢慢自研 |
-| 给 AI 用的 Tool 的设计 | 1. 模拟用户阅读小红书，可以在选项卡问用户平常是否喜欢参考社交媒体里的攻略<br>2.  |
-| 沙箱环境             | 1. 先用 docker                                  |
-| 上下文              | 1. 潜台词，用户浏览记录、籍贯                              |
-| 后置 hook 做最终的结果约束 | 出一份agent的结果 全部使用schema                        |
 
 
 
@@ -149,101 +127,6 @@ while (true) {
 }
 ```
 
-
-
-
-
-## 2.1 工具层
-
-Claude Code 能通过 `.mcp.json` 配置 MCP server，并且有清晰的作用域/优先级（本地/项目/企业）与环境变量注入，适合放 API Key。([Claude Code](https://code.claude.com/docs/en/mcp "Connect Claude Code to tools via MCP - Claude Code Docs"))
-
-你可以做一个 `travel-mcp`，提供工具（Tools）比如：
-
-- `search_poi(query, city)`：POI 搜索/去重/打标签
-    
-- `route_time(from, to, mode)`：交通时间（步行/公共交通/驾车）
-    
-- `open_hours(poi, date)`：营业/预约/季节性关闭
-    
-- `weather(city, date_range)`：天气 + “雨天替代方案”触发
-    
-- `budget_estimate(itinerary)`：粗略预算校验（门票/交通/餐饮）
-    
-
-这样模型就不会靠“脑补”，而是每次规划都查工具。
-
-> `.mcp.json` 结构示意（最小形态）：
-
-```json
-{
-  "mcpServers": {
-    "travel": {
-      "type": "http",
-      "url": "${TRAVEL_MCP_URL}",
-      "headers": { "Authorization": "Bearer ${TRAVEL_MCP_KEY}" }
-    }
-  }
-}
-```
-
-（环境变量展开是官方支持的。）([Claude Code](https://code.claude.com/docs/en/mcp "Connect Claude Code to tools via MCP - Claude Code Docs"))
-
-## B. 用插件/自定义 slash command 做入口
-
-Claude Code 支持自定义 slash commands，且有命名空间等机制，适合做 `/trip`、`/replan`、`/day2` 这种交互入口。([Claude Code](https://code.claude.com/docs/en/slash-commands?utm_source=chatgpt.com "Slash commands - Claude Code Docs"))  
-插件市场/分发也有官方文档路径（你可以把自己的插件打包给团队装）。([Claude Code](https://code.claude.com/docs/en/plugin-marketplaces?utm_source=chatgpt.com "Create and distribute a plugin marketplace"))
-
-你最终的用户体验可以是：
-
-- `/trip 上海 3天 预算2000 喜欢citywalk 住静安`
-    
-- Claude Code 调 MCP：拉 POI → 算动线 → 查天气 → 输出行程（Markdown + JSON）
-    
-- `/replan day2 雨天`：只重排第二天，并保持预算与强约束
-    
-
-## Hooks
-
-Claude Code 有 hooks 机制（从 CHANGELOG 可见 hooks 已作为特性加入并持续演进），适合做：
-
-- 输出后自动跑一个 `validate_itinerary.py`：检查每日时间总和、跨城不合理、预算超标、POI 重复等
-    
-- 校验不过就让 Claude 自动修（给出具体错误列表）
-    
-
-（hooks 的存在与演进在官方 changelog 中可以看到。）([GitHub](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md?utm_source=chatgpt.com "https://raw.githubusercontent.com/anthropics/claud..."))
-
-# 最小落地路线（你今天就能开工的那种）
-
-1. 先写一个 `travel-mcp`：哪怕只实现 `search_poi` + `route_time` 两个工具
-    
-2. 在 Claude Code 里配 `.mcp.json` 接上它([Claude Code](https://code.claude.com/docs/en/mcp "Connect Claude Code to tools via MCP - Claude Code Docs"))
-    
-3. 做一个 `/trip` 命令：输入城市/天数/预算/偏好，输出 Markdown + JSON([Claude Code](https://code.claude.com/docs/en/slash-commands?utm_source=chatgpt.com "Slash commands - Claude Code Docs"))
-    
-4. 加一个校验脚本 + hook：保证“可执行性”底线([GitHub](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md?utm_source=chatgpt.com "https://raw.githubusercontent.com/anthropics/claud..."))
-    
-
-如果你告诉我你希望 MCP 里接的“真实数据源”是哪类（OSM/Google Places/高德/携程或你们内部 POI 库/天气/交通），我可以直接给你一套 travel-mcp 的工具接口定义（tool schema） + 行程 JSON schema + 校验规则清单，让你能快速把评测/可执行性做起来。
-
-
-
-- 粗略公式
-      - Agent ≈ n 次 [[RunnableSequence]]（每次=提示拼装 → 1 次 LLM）+ 中间穿插的工具执行（不算在 RunnableSequence 里）+ 可选 1 次 response_format 的最终 LLM。
-  - 计数
-      - LLM 次数 = n + (response_format? 1: 0)
-      - Tool API 次数 = 各轮产生的 tool_calls 之和（每轮可能为 0、1、多个）
-  - 退出机制
-	  - 退出条件 = 某次 RunnableSequence 的输出不再包含 tool_calls（或达到步数上限）
-
-  所以，用通俗口径说“n × runnableSequence + response_format 就是 agent”基本对，但要记得工具执行是独立于 RunnableSequence 的插入步骤，不计入 LLM
-  次数。
-
-
-
-
-
-以前模型能力不行，我们要在 prompt 里写死每一步："先做 A，再做 B，然后做 C"；    现在模型更聪明了，我们只需要说"这是你的目标，这些是你的工具，自己看着办"，让 Agent 自主决策。  里面的关键是做好四件事：写清晰的 prompt、设计高效的工具、用即时检索代替预加载、管理好有限的 context 窗口（通过压缩、笔记或拆分  sub agent 等方式）。
 
 
 [[Parlant]]
