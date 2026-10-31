@@ -17,7 +17,7 @@ date modified: 2026-10-31
 
 # 🪞Notes
 
-除了 `find` 和 `grep`，Pi 内置的还有这几个：⁠[![](https://img.notionusercontent.com/ext/https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fdomain%3Dpi.dev%26sz%3D64/raw?imgBuildSrc=createUnsignedImageVariantURL)](https://pi.dev/docs/latest/cli)⁠
+## 核心四个工具
 
 | 工具           | 作用               | 要点                                                                    | 默认开启 |
 | ------------ | ---------------- | --------------------------------------------------------------------- | ---- |
@@ -26,6 +26,15 @@ date modified: 2026-10-31
 | `edit`       | 对文件做精确的文本替换      | 要替换的原文必须**完全一致**，连空格都要对上。原文找不到、或者出现多次都会报错                             | ✅    |
 | `bash`       | 执行 shell 命令      | 返回 stdout 和 stderr，可以设 `timeout`                                      | ✅    |
 
+
+
+
+## 搜索工具
+
+|工具|搜什么|匹配依据|返回|
+|---|---|---|---|
+|`find`|**文件**|文件名或路径，用 glob 模式，比如 `**/*Board*.tsx`|文件路径列表|
+|`grep`|**文件里的行**|行内容，用正则或普通字符串|`路径:行号: 内容`|
 
 ⁠[![](https://img.notionusercontent.com/ext/https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fdomain%3Dgithub.com%26sz%3D64/raw?imgBuildSrc=createUnsignedImageVariantURL)](https://github.com/nicobailon/pi-mono/blob/main/packages/coding-agent/README.md)⁠ ⁠[![](https://img.notionusercontent.com/ext/https%3A%2F%2Fwww.google.com%2Fs2%2Ffavicons%3Fdomain%3Dpi.dev%26sz%3D64/raw?imgBuildSrc=createUnsignedImageVariantURL)](https://pi.dev/docs/latest/cli)⁠
 
