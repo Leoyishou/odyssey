@@ -18,7 +18,7 @@ date modified: 2026-10-28
 
 # 🧩 Cues
 
-[[Agent]]
+[[Agent@]]
 
 # 🪞Notes
 

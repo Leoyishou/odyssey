@@ -6,7 +6,7 @@ uid: 2e37e4c7-5461-4b92-959e-ae9b3b6d5eac
 # 能力模型
 ## 一、AI特色
 
-1. [[OpenAI API]]、[[Function Call]]、[[Agent]] 的本质理解
+1. [[OpenAI API]]、[[Function Call]]、[[Agent@]] 的本质理解
 2. 评测，黑盒+白盒
 3. [[UE 用户体验]]：https://www.shapeof.ai/
 4. 算法基础知识
