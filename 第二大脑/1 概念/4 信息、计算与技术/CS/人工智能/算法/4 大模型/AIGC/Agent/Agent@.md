@@ -67,6 +67,9 @@ harness 是 OpenAI 的，环境、上下文和 UX 是我们的
 	1. 软件的需求并没有变，不管开发了多少APP，能装在用户手机上的始终只有那么多
 	2. 自己当热源 还是找一个热源系统  老的好的软件已经充分吸热了 所以要在优秀软件上做和自己的适配化而不是重新写一个 不要会抄而是要会搬
 
+## 开发 Agent 应用
+
+得看需求，你是就做做客服，还是能干活的Personal Agent。 后者我问过AI，给的回答是 ： Cloudflare Agents SDK + 每用户一个 UserAgent Durable Object + 每会话一个 ChatAgent 子实例 + Workflows + 受控工具网关 + 按需启动的 Sandbox / Browser Run
 
 ## 应用
 
