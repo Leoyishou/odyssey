@@ -23,7 +23,7 @@ date modified: 2026-10-28
 # 🪞Notes
 
 ```
-
+一般都开subagent，subagent都用6.1sol 中等 fast
 **1. 补一句对偶规矩（最重要）**  
 「只有你跟我说话；subagent 不准直接回我，做完只回报给你。」不然会刷屏、抢话。
 
