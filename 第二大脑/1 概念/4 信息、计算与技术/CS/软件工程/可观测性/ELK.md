@@ -17,7 +17,7 @@ uid: f9e319fc-0c1d-4bdc-8b16-9e12fd21a86f
 
 用 ELK（Elasticsearch+Logstash+Kibana）技术栈，自行搭建一个日志存储和分析系统。
 
-1. [ElasticSearch、ES](ElasticSearch、ES.md):
+1. [ElasticSearch](ElasticSearch.md):
     - Elasticsearch 是一个分布式、实时的搜索和分析引擎。它用于存储和检索大量的数据，支持全文搜索、结构化搜索和复杂查询。Elasticsearch 的强大之处在于其分布式性能、高可用性和水平扩展能力，使得它成为处理日志和大数据的理想选择。
 2. [Kibana](Kibana.md):
     - Kibana 是一个用于数据可视化和分析的工具。它允许用户通过创建仪表盘、图表和可视化图像来探索存储在 Elasticsearch 中的数据。Kibana 提供了一个直观的用户界面，使用户能够通过交互式方式进行数据分析和可视化。

@@ -28,7 +28,7 @@ uid: 0e5dd3ef-b0b4-4f18-bf82-cbfa1dd68e62
 - 对话安全/内容审控/用户建模
 
 检索与排序（IR/语义检索）
-- 关键词检索（[倒排索引 Inverted File](倒排索引%20Inverted%20File.md)/[[BM25]]）
+- 关键词检索（[倒排索引](倒排索引.md)/[[BM25]]）
 - 密集检索（双塔）与向量索引[embedding](embedding.md)
 - 交互式重排（Cross-Encoder/Rerank）
 - 检索式问答组件（Retriever for QA）
@@ -53,13 +53,13 @@ uid: 0e5dd3ef-b0b4-4f18-bf82-cbfa1dd68e62
 - 作者/风格/体裁/讽刺反语检测
 
 语音与语言（边界学科）
-- [[语音识别 ASR]] 自动语音识别（语音→文本）
+- [[语音识别]] 自动语音识别（语音→文本）
 - [[TTS]] 语音合成（文本→语音）
 - 语音理解/说话人/情感识别
 
 LLM 时代的工作流（现代范式）
 - [Prompt](Prompt.md) 设计（CoT/少样本/结构化输出）
-- 指令微调（[监督微调 SFT](监督微调%20SFT.md)）
+- 指令微调（[监督微调](监督微调.md)）
 - 偏好对齐（[[RLHF]]/[[DPO]]）
 - [[RAG]] 管线（切分→索引→检索→重排→生成）
 - 工具/函数调用[Function Call](Function%20Call.md)与代理（Agents/Tool Use）

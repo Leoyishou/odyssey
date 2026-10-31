@@ -110,9 +110,9 @@ Firebase的核心本质是一个**后端即服务（BaaS, Backend-as-a-Service�
 
 把我之前快速写完插件后，想要约定大于配置的事情全都做了
 
-[应用认证 (App Attestation)](应用认证%20(App%20Attestation).md)
+[应用认证](应用认证.md)
 
-[认证（Authentication）](认证（Authentication）.md)
+[认证](认证.md)
 
 [[Genkit]]
 

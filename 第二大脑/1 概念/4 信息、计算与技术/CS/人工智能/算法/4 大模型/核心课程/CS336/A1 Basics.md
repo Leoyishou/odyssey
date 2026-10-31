@@ -84,9 +84,9 @@ Assignment 1: 你实现的是一个 GPT 风格的自回归语言模型，而不�
 | 测试文件             | 测试函数                         | 测试目的                                                     |     |
 | ---------------- | ---------------------------- | -------------------------------------------------------- | --- |
 | test_nn_utils.py | test_softmax_matches_pytorch | 验证 [[softmax]] 实现与 PyTorch 一致，包括数值稳定性                    | ✅   |
-| test_nn_utils.py | test_cross_entropy           | 验证[交叉熵 cross_entropy](交叉熵%20cross_entropy.md)损失计算，包括溢出处理 | ✅   |
+| test_nn_utils.py | test_cross_entropy           | 验证[交叉熵](交叉熵.md)损失计算，包括溢出处理 | ✅   |
 | test_nn_utils.py | test_gradient_clipping       | 验证[[梯度裁剪]]功能                                             | ✅   |
-| test_model.py    | test_linear                  | 验证[[全连接层，线性层]]实现                                         | ✅   |
+| test_model.py    | test_linear                  | 验证[[全连接层]]实现                                         | ✅   |
 | test_model.py    | test_embedding               | 验证[embedding](embedding.md)实现                    | ✅   |
 | test_model.py    | test_silu_matches_pytorch    | 验证 SiLU [[激活函数]]与 PyTorch 一致                             | ✅   |
 | test_model.py    | test_rmsnorm                 | 验证 RMSNorm [[归一化]]层                                      | ✅   |
@@ -96,7 +96,7 @@ Assignment 1: 你实现的是一个 GPT 风格的自回归语言模型，而不�
 | 测试文件              | 测试函数                                 | 测试目的                                                                   |     |
 | ----------------- | ------------------------------------ | ---------------------------------------------------------------------- | --- |
 | test_model.py     | test_swiglu                          | 验证 [[SwiGLU]] [[前馈网络]]组件                                               | ✅   |
-| test_model.py     | test_rope                            | 验证旋转[Positional Encoding 位置编码](Positional%20Encoding%20位置编码.md) (RoPE) | ✅   |
+| test_model.py     | test_rope                            | 验证旋转[位置编码](位置编码.md) (RoPE) | ✅   |
 | test_model.py     | test_scaled_dot_product_attention    | 验证 3D 缩放点积注意力机制                                                        | ✅   |
 | test_model.py     | test_4d_scaled_dot_product_attention | 验证 4D 批次化[[注意力机制]]                                                     | ✅   |
 | test_optimizer.py | test_adamw                           | 验证 AdamW 优化器实现                                                         | ✅   |

@@ -7,9 +7,9 @@ uid: fd6ec90a-6faa-417a-b30a-d5347051d5ad
 
 其实是 Transformer 架构，最牛逼的点：
 1. [[并行计算]]
-2. [[自注意力机制 Self-attention]]
+2. [[自注意力机制]]
 
-Transformer不是抽象的数学玩具，它是现代AI的“骨干”（backbone），支撑着像[[ChatGPT]]、[[BERT]]和[[DALL-E]]这样的产品。它让机器更好地理解、解释和生成人类语言，比之前的[循环神经网络RNN](循环神经网络RNN.md)/[长短期记忆网络LSTM](长短期记忆网络LSTM.md)模型快得多、
+Transformer不是抽象的数学玩具，它是现代AI的“骨干”（backbone），支撑着像[[ChatGPT]]、[[BERT]]和[[DALL-E]]这样的产品。它让机器更好地理解、解释和生成人类语言，比之前的[循环神经网络](循环神经网络.md)/[长短期记忆网络](长短期记忆网络.md)模型快得多、
 [[Encoder-only]] 更适合[[判别式任务]]，如[[意图识别]]、[[文本分类]]等
 
 [[分布式语义]] Transformer里那一堆Q、K、V矩阵乘来乘去，本质上是在干嘛？是在做“信息提取”和“权重分配”。
@@ -18,7 +18,7 @@ Transformer不是抽象的数学玩具，它是现代AI的“骨干”（backbon
 | --------------------------- | ---------------------------------------------------------------------------------- |
 | [[Encoder-only]]嵌入模型        | [[BERT]]                                                                           |
 | Encoder-decoder通用模型         | • Bart<br>[[T5]]<br>• MASS                                                         |
-| Csual [[Decoder-only]]模型    | [[GPT]]系列<br> [[千问 Qwen]]系列<br>• LLaMA系列<br>• LLaMA微调系列<br>• GLM系列<br>• DeepSeek系列 |
+| Csual [[Decoder-only]]模型    | [[GPT]]系列<br> [[千问]]系列<br>• LLaMA系列<br>• LLaMA微调系列<br>• GLM系列<br>• DeepSeek系列 |
 | Non-casual Decoder-only生成模型 | • UniLM<br>• GLM-1                                                                 |
 
 ```shell
@@ -94,8 +94,8 @@ https://www.zhihu.com/question/665731716/answer/1964322329191490141
 
 [[Transformer 参数]]
 [多头注意力机制](多头注意力机制.md)
-[Positional Encoding 位置编码](Positional%20Encoding%20位置编码.md)
-1. （[[自注意力机制 Self-attention]]）
+[位置编码](位置编码.md)
+1. （[[自注意力机制]]）
 2. Batch Norm & Layer Norm（批量标准化/层[[标准化]]）
 3. ResNet（[[残差]]）
 4. Subword Tokenization（子词分词法）
@@ -113,10 +113,10 @@ https://www.zhihu.com/question/665731716/answer/1964322329191490141
 
 ## 一、基本框架
 
->  类比一个英国人想成为一个中文作家，中文真实含义 = 词典（[[潜空间]]中的[[词向量]]们）+ 选哪些词（[注意力机制](注意力机制.md)）+ 行文顺序[Positional Encoding 位置编码](Positional%20Encoding%20位置编码.md)
+>  类比一个英国人想成为一个中文作家，中文真实含义 = 词典（[[潜空间]]中的[[词向量]]们）+ 选哪些词（[注意力机制](注意力机制.md)）+ 行文顺序[位置编码](位置编码.md)
 1. 是掌握基本的外语词汇量，[embedding](embedding.md)解决单个词，单个语义的问题，相当于是建立了一个[[潜空间]]的翻译方式
 2. 是选哪些词，[注意力机制](注意力机制.md)解决的是许多词组合在一起之后，整体体现出来的那个语义。
-3. 是行文顺序，[[Positional Encoding 位置编码]]
+3. 是行文顺序，[[位置编码]]
 
 ### 训练阶段
 ```shell
@@ -292,7 +292,7 @@ def generate(self, idx, max_new_tokens, temperature=1.0, do_sample=False, top_k=
 ### 主要脉络
 
 1. 为什么要“干掉 RNN”
-    - [循环神经网络RNN](循环神经网络RNN.md)/LSTM/[[GRU]] 速度慢（时序依赖无法并行）＋长程记忆差（梯度消散、遗忘）。
+    - [循环神经网络](循环神经网络.md)/LSTM/[[GRU]] 速度慢（时序依赖无法并行）＋长程记忆差（梯度消散、遗忘）。
     - Google Brain 团队的原始动机：找一种完全并行、无递归的新架构。
         
 2. Attention 已有雏形，但只是配角
@@ -305,7 +305,7 @@ def generate(self, idx, max_new_tokens, temperature=1.0, do_sample=False, top_k=
         ① 点积而非加性 ② 缩放除√d ③ 多头并保持维度一致。
         
 4. Transformer Block 的定型
-    - 有了 MHA + 前馈 + 残差 + [Positional Encoding 位置编码](Positional%20Encoding%20位置编码.md)，完全摆脱递归，计算可全并行。
+    - 有了 MHA + 前馈 + 残差 + [位置编码](位置编码.md)，完全摆脱递归，计算可全并行。
     - “Transformer” 名字更多是情怀梗（变形金刚）+“层层变换”双关。
         
 5. 后续演化的“流水”与“MHA”这根铁钉

@@ -158,7 +158,7 @@ AI基础设施普及
 以下是从过去到现在，按时间顺序梳理的LLM（大型语言模型）关键技术发展节点：
 - 2012年：AlexNet赢得[[ImageNet]]比赛，开启[深度学习@](深度学习@.md)热潮。
 - 2013年：Google提出[[Word2Vec]]，推动[自然语言处理 NLP](自然语言处理%20NLP.md)进入[[深度学习@]]时代。从过去的[[词匹配]]有了[[分布式语义]]的概念
-- 2014年：[[Seq2Seq]]与[自注意力机制 Self-attention](自注意力机制%20Self-attention.md)机制问世，显著提升机器翻译能力。
+- 2014年：[[Seq2Seq]]与[自注意力机制](自注意力机制.md)机制问世，显著提升机器翻译能力。
 - 2017年6月：[[Transformer]]架构发表（论文《Attention Is All You Need》），NLP进入Transformer时代。
 - 2018年6月：OpenAI推出GPT-1，开启预训练生成模型时代。
 - 2018年10月：Google提出BERT，建立双向预训练新标准。
@@ -348,7 +348,7 @@ PersonaTalk：字节跳动音频驱动嘴型，暂未发布
 | [[线性回归]]理论                 | 1805 | Carl Gauss        |
 | [[梯度下降]]                   | 1847 | Augustin Cauchy   |
 | 人工[[神经网络]]                 | 1943 | McCulloch, Pitts  |
-| [[交叉熵 cross_entropy]]信息熵函数 | 1948 | Shannon           |
+| [[交叉熵]]信息熵函数 | 1948 | Shannon           |
 | [[多层感知机 MLP]]网络            | 1957 | Rosenblatt        |
 | [[机器学习ML@]]理论              | 1959 |                   |
 | [[反向传播]]理论                 | 1960 | Henry Kelley      |
@@ -369,7 +369,7 @@ Brook: 用GPU进行计算 （2004.08）
 
 [[AlexNet]]: 深度学习的开端（2012.10）
 
-对序列建模：[[Seq2Seq]]和[[自注意力机制 Self-attention]]的引入（2014.09）
+对序列建模：[[Seq2Seq]]和[[自注意力机制]]的引入（2014.09）
 
 蒸馏：模型能被学习吗？（2015.03）
 
@@ -377,7 +377,7 @@ Brook: 用GPU进行计算 （2004.08）
 
 [[Transformer]]来了！拉开一个时代的序幕（2017.06）
 
-AlphaGo Zero: [[强化学习(Reinforcement Learning)]]的突破（2017.10）
+AlphaGo Zero: [[强化学习]]的突破（2017.10）
 
 现代MoE的开端（2017.01）
 

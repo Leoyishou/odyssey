@@ -27,17 +27,17 @@ uid: 106902ea-2d32-4870-b823-97b4866c87a5
 [[LLM大模型]]
 1. 数据[[Common Crawl]]+算力[[GPU 显卡]]+模型[[Transformer]]
 2. [[预训练]]：[[自回归]]，遮住后一个词用前面的预测，基于前缀预测下一个token，用交叉熵损失训练。
-3. [[后训练 post training]]
-	1. [[监督微调 SFT]]
+3. [[后训练]]
+	1. [[监督微调]]
 		1. [[模型蒸馏]]从教师模型迁移能力的方法，常通过SFT实现
-	2. [[强化学习(Reinforcement Learning)]]
+	2. [[强化学习]]
 		1. [[RLHF]]
 		2. [[RLVR]]：可验证奖励＋[[PPO]]/[[GRPO]]
 		
 # Cues
 
-[后训练 post training](后训练%20post%20training.md)
-[后训练（Post-training）技术分类](后训练%20post%20training.md)
+[后训练](后训练.md)
+[后训练（Post-training）技术分类](后训练.md)
 
 - **LLM**：输入是文本 → 输出是文本。
 - **[[VLM]]**：输入可以包含 **图像/视频（视觉模态）+ 文本**，输出通常是文本（有时也能生成图像、做多模态对齐）。
@@ -136,7 +136,7 @@ business conrext 过于个性化甚至是不可言说之物。
 
 | 周次     | 内容主题 | 学习时长 | 具体内容                                                                                                      |
 | ------ | ---- | ---- | --------------------------------------------------------------------------------------------------------- |
-| ❤️ 第一周 | 基本概念 | 4小时  | 环境搭建（[[Python]]/[[PyTorch]]）、[[Transformer]]架构简介、[[自注意力机制 Self-attention]]机制、基础文本生成（Hello World示例）|
+| ❤️ 第一周 | 基本概念 | 4小时  | 环境搭建（[[Python]]/[[PyTorch]]）、[[Transformer]]架构简介、[[自注意力机制]]机制、基础文本生成（Hello World示例）|
 | ❤️ 第二周 | 核心组件 | 5小时  | [词向量、词嵌入](词向量、词嵌入.md)嵌入（Word Embeddings）、位置编码（Positional Encoding）、多头注意力（Multi-Head Attention）、前馈网络（Feed-Forward）|
 | ❤️ 第三周 | 实践入门 | 5小时  | 实现简单Transformer模块、微调预训练模型（如BERT）、文本分类任务（基于Hugging Face库）|
 | ❤️ 第四周 | 进阶应用 | 6小时  | 生成任务（GPT文本生成）、模型压缩技术（知识蒸馏）、Prompt Engineering、模型评估（BLEU/ROUGE指标）|

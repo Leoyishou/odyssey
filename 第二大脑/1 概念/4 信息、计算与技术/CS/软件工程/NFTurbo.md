@@ -5,7 +5,7 @@ uid: a06f6a9c-08c7-441c-8af5-8af11f28035b
 ---
 ## 目标
 
-熟悉一下[ElasticSearch、ES](ElasticSearch、ES.md)，对电商中除了报价之外的其他模块的代码实现有一个思路
+熟悉一下[ElasticSearch](ElasticSearch.md)，对电商中除了报价之外的其他模块的代码实现有一个思路
 
 ## 模块
 

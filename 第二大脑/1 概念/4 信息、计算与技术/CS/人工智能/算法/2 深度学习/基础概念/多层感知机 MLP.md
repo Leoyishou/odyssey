@@ -2,7 +2,9 @@
 date created: 2025-02-14
 date modified: 2025-07-20
 uid: 34a61e6c-b5a2-4e7d-9cdd-15896d4e9fb3
-aliases: [案例]
+aliases:
+  - "案例"
+  - "多层感知机"
 linter-yaml-title-alias: 案例
 ---
 # 案例

@@ -24,7 +24,7 @@ date modified: 2026-10-26
 	1. 写入时，先由大模型把原文提取成**事实、实体、关系和时间**，再建立检索结构。（[写入机制](https://hindsight.vectorize.io/developer/retain)）
 2. 构建四路索引
 3. 搜索（多路召回 → 按排名融合 → 模型重新排序）
-	1. [[reranker 重排序]]默认是 `cross-encoder/ms-marco-MiniLM-L-6-v2`
+	1. [[重排序]]默认是 `cross-encoder/ms-marco-MiniLM-L-6-v2`
 4. 新增数据
 	1. 构建四路索引
 	2. 归纳：后台将多条事实归纳成持续更新的 observations。例如，从多次交流归纳出“用户以前偏爱 React，现在转向 Vue”。

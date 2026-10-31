@@ -2,6 +2,8 @@
 date created: 2024-07-19
 date modified: 2025-07-10
 uid: 2cac7ac0-3c62-478b-8468-7c915ea19155
+aliases:
+  - "Dict"
 ---
 ## 认知
 

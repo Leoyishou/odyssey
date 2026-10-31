@@ -9,7 +9,7 @@ date modified: 2025-09-22
     - 自定义CUDA kernel实现
     - 块级并行计算优化
     - 内存访问模式优化
-2. **分布式训练** (`test_ddp*.py`) [分布式数据并行 DDP](分布式数据并行%20DDP.md)
+2. **分布式训练** (`test_ddp*.py`) [分布式数据并行](分布式数据并行.md)
     - 梯度桶化策略：减少通信开销
     - All-reduce同步：保证参数一致性
     - Gloo后端：CPU测试环境
@@ -20,7 +20,7 @@ date modified: 2025-09-22
 
 # Cues
 
-[[分布式数据并行 DDP]]
+[[分布式数据并行]]
 
 
 
@@ -115,7 +115,7 @@ Lab 2 的起点里 _应该_ 已经带着一份能跑通的 Lab 1 参考实
 | `test_rmsnorm.py`                   | `test_rmsnorm_backward_x_triton`                    | 验证Triton实现的输入梯度计算                         |     |
 | `test_rmsnorm.py`                   | `test_rmsnorm_backward_g_triton`                    | 验证[[Triton]]实现的参数梯度计算                     |     |
 | `test_sharded_optimizer.py`         | `_test_sharded_optimizer`                           | 验证[[优化器状态分片技术]]的单进程行为                     |  ✅  |
-| `test_ddp_individual_parameters.py` | `_test_DistributedDataParallelIndividualParameters` | 验证逐参数同步的[分布式数据并行 DDP](分布式数据并行%20DDP.md)实现 |  ✅  |
+| `test_ddp_individual_parameters.py` | `_test_DistributedDataParallelIndividualParameters` | 验证逐参数同步的[分布式数据并行](分布式数据并行.md)实现 |  ✅  |
 
 ### Level 3: 模块级测试 (复杂组合组件)
 
@@ -129,7 +129,7 @@ Lab 2 的起点里 _应该_ 已经带着一份能跑通的 Lab 1 参考实
 | 测试文件                                | 测试函数                                               | 测试目的                                                                                                  | 状态  |
 |:---------------------------------- |:------------------------------------------------- |:---------------------------------------------------------------------------------------------------- |:-: |
 | **分布式数据并行测试**                       |                                                    |                                                                                                       |     |
-| `test_ddp.py`                       | `test_DistributedDataParallelCPU`                  | 验证[分布式数据并行 DDP](分布式数据并行%20DDP.md)训练<br>- 测试梯度桶化策略(0.0016/0.0001/0.01 MB)<br>- 验证参数同步正确性<br>- 支持参数共享模型 |  ✅  |
+| `test_ddp.py`                       | `test_DistributedDataParallelCPU`                  | 验证[分布式数据并行](分布式数据并行.md)训练<br>- 测试梯度桶化策略(0.0016/0.0001/0.01 MB)<br>- 验证参数同步正确性<br>- 支持参数共享模型 |  ✅  |
 | `test_ddp_individual_parameters.py` | `test_DistributedDataParallelIndividualParameters` | 验证无桶化的DDP实现<br>- 逐参数梯度同步<br>- 适用于小模型或调试                                                               |  ✅  |
 | **优化器状态分片测试**                       |                                                    |                                                                                                       |     |
 | `test_sharded_optimizer.py`         | `test_sharded_optimizer`                           | 验证[[ZeRO-1]] [优化器状态分片技术](优化器状态分片技术.md)<br>- AdamW优化器状态分布式存储<br>- 内存效率提升验证<br>- 10轮迭代数值一致性             |  ✅  |

@@ -5,7 +5,7 @@ date modified: 2025-10-25
 ---
 # Summary
 
-[[因果语言建模 CLM]]
+[[因果语言建模]]
 
 - **架构**：仅使用 Decoder 的 Transformer（GPT 系列）
 - **任务**：自回归语言建模（Autoregressive Language Modeling）

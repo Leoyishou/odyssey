@@ -20,7 +20,7 @@ date modified: 2025-09-15
 [[Claude Code 自动记忆 auto memory]]
 [[Agentic loop]]
 [[Agent 定时任务]]
-[[上下文工程 Context Engineering]]
+[[上下文工程]]
 [[多Agent，multi agents]]
 1. [[SubAgent]]
 2. [[【cc】Agent Team]]
@@ -197,7 +197,7 @@ Claude Code on the web 在研究预览中可供以下用户使用：
 
 ## 三、机制理解
 ### 上下文加载
-[[上下文工程 Context Engineering]]
+[[上下文工程]]
 
 #### rules
 `~/.claude/rules/workflow.md` 是你用来**“调教”** Claude Code 的地方，专门用于存储你个人的**标准作业程序（SOP）**。

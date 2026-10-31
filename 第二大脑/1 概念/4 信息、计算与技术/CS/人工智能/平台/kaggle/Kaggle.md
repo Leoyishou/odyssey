@@ -7,7 +7,7 @@ uid: 13ade5e1-c52c-4190-9b08-ff860c5d0603
 
 # Summary
 
-[[Scikit-learn、sklearn]]、[[pandas]]
+[[Scikit-learn]]、[[pandas]]
 
 #最佳实践  
 Kaggle给机器学习新手和顶尖选手带来的好处是最大的，反倒对中间选手没什么太大的帮助。
@@ -143,7 +143,7 @@ Kaggle 出身的选手（尤其非科班出身）可能存在的缺点
 
 - **Pandas:** 这是**重中之重**！你需要熟练使用 Pandas 进行数据读取（`pd.read_csv`）、数据查看（`.head()`, `.info()`, `.describe()`）、数据清洗（处理缺失值 `.fillna()`, `.dropna()`）、数据选择和过滤（`loc`, `iloc`）、数据转换（类型转换 `.astype()`, 应用函数 `.apply()`）、数据合并（`merge`, `concat`）。**可以说，做 Titanic 80% 的时间可能都在和 Pandas 打交道。** 对 Pandas 的熟练度，比你对 Python 语言本身很多高级特性的掌握，对这个项目来说重要得多。
 - [[NumPy]]  
-- [[Scikit-learn、sklearn]] 这是机器学习库。你需要会：
+- [[Scikit-learn]] 这是机器学习库。你需要会：
 - **[Matplotlib](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=Matplotlib&zhida_source=entity) / [Seaborn](https://zhida.zhihu.com/search?content_id=723958624&content_type=Answer&match_order=1&q=Seaborn&zhida_source=entity):** 用于数据可视化，帮助你理解数据（EDA - Exploratory Data Analysis）。会画基本的图（散点图、直方图、箱线图、热力图）来看数据分布、特征间关系、异常值等。
 
 

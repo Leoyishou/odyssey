@@ -6,7 +6,7 @@ date modified: 2025-10-07
 #  💡Summary  
 
 1. multi-agent 不该 cosplay 公司，应该做可验证的并行任务。
-2. [[codex]]中多 subAgent 的本质是[[有向无环图 DAG]]
+2. [[codex]]中多 subAgent 的本质是[[有向无环图]]
 3. 最近有个体会 多agent的设计本质是为了解决context window隔离的问题
 > [!Info]
 > Spawn [multiple Claude Code agents](https://code.claude.com/docs/en/sub-agents) that work on different parts of a task simultaneously. A lead agent coordinates the work, assigns subtasks, and merges results.

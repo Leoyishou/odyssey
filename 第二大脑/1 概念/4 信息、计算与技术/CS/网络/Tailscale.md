@@ -6,13 +6,13 @@ date modified: 2026-10-22
 #  💡Summary  
 
 > [!Info]
-> **Tailscale = 把散在各地的手机、电脑、服务器拉进同一个虚拟[[局域网 LAN]]。** 底层是 WireGuard 加密隧道，Tailscale 替你管钥匙和「谁能连谁」。
+> **Tailscale = 把散在各地的手机、电脑、服务器拉进同一个虚拟[[局域网]]。** 底层是 WireGuard 加密隧道，Tailscale 替你管钥匙和「谁能连谁」。
 
 # 🧩 Cues
 
-[[局域网 LAN]]
+[[局域网]]
 [[内网穿透]]
-[[代理 Proxy]]
+[[代理]]
 [[SSH]]
 
 # 🪞Notes
@@ -29,7 +29,7 @@ date modified: 2026-10-22
 
 - **WireGuard**：一个很轻的 VPN 协议，代码量小、加密强、连接快。手搓 WireGuard 要自己配每台机器的公钥、IP、路由。
 - **Tailscale**：在 WireGuard 上加了一层「控制面」——登录同一个账号，自动发钥匙、分地址（`100.x.y.z` 段）、打洞直连；打不通时走它的中继服务器。
-- 所以你 [[局域网 LAN]] 里记的 Mac「门牌号」`100.84.194.21`，大概率就是 Tailscale 分的地址（待核），不是家里路由器分的。
+- 所以你 [[局域网]] 里记的 Mac「门牌号」`100.84.194.21`，大概率就是 Tailscale 分的地址（待核），不是家里路由器分的。
 
 ## 为啥 DHH 在国内用 Claude Code 要先走 Tailscale
 
