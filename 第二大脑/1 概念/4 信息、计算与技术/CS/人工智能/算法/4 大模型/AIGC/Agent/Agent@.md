@@ -17,7 +17,7 @@ uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 
 ## 一、Agent 核心要素
 
-1. 环境
+1. 环境、[[sandbox]]、[[权限]]
 2. [[LLM大模型]]
 3. 循环、[[harness]]、[[magpie]]
 	1. [[goal driven]]
