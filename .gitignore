@@ -21,3 +21,7 @@
 # Obsidian 每台设备自己的界面布局，不同步
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+
+# Explicitly recovered company diagram and preview; keep other exclusions.
+!/第二大脑/1 概念/4 信息、计算与技术/CS/人工智能/算法/4 大模型/AIGC/Agent/AI 公司/开公司依赖图-飞书预览.png
+!/第二大脑/1 概念/4 信息、计算与技术/CS/人工智能/算法/4 大模型/AIGC/Agent/AI 公司/开公司依赖图.canvas
