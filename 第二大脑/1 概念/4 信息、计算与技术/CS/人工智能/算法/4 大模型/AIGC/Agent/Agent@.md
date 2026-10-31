@@ -3,6 +3,12 @@ date created: 2023-11-23
 date modified: 2025-10-25
 uid: ef5d9acb-a676-4e3e-868d-e402443c0181
 ---
+
+
+Agent 的核心是目的Goal 
+
+
+
 ## 一、Agent 核心要素
 
 1. 环境
