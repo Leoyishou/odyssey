@@ -6,7 +6,7 @@ date modified: 2025-10-07
 #  💡Summary  
 
 > [!Info]
-> 一句话说清楚
+> 只有端到端和代码做视频两种
 > 
 
 
@@ -20,11 +20,9 @@ date modified: 2025-10-07
 # 🪞Notes
 
 
-#  💡Summary  
 
-> [!Info]
-> 一句话说清楚
-> 
+## 类型一：端到端
+
 
 按 **Seedance 2.5＋OpenRouter**，日常优先调这六类。支持范围已[实时核对](https://openrouter.ai/api/v1/videos/models)。
 
@@ -40,16 +38,13 @@ date modified: 2025-10-07
 进阶还有：`seed` 辅助复现（不保证完全一致）、`previous_job_id` 编辑或延长、精确尺寸、水印、完成回调。[完整参数](https://openrouter.ai/docs/api/api-reference/video-generation/submit-a-video-generation-request)
 
 本地脚本通过 `--config` 传完整参数。你直接告诉我“**5秒、竖屏、720p、带环境声**”即可。
-
-# 🧩 Cues
-
-
-
-# 🪞Notes
-
-
+## 类型二：代码做视频
 
 Claude Opus5.5做出来很惊艳的视频，所用到的技术大多是下面这几种技术组合编排演变而来： Blender：三维建模布光、写实材质渲染，产品 CG、角色与场景短片 Three.js：网页实时 3D 场景、镜头漫游、立体文字，轻量化三维交互动画 p5.js + p5.brush：水彩、彩铅质感，程序化手绘笔触，写意艺术动画 WebGL 着色器：流体、波光、折射光晕，高级光影质感特效 小尺寸 Canvas 整数放大：复古像素颗粒画面，像素风动画 Canvas 2D：深色氛围感画面、发光粒子、流光拖尾，打造电影感动态短片 Manim：数学公式推演、几何变换演示，严谨数理可视化动画 HTML + CSS + SVG：清爽图文排版、数据图表、UI 过渡动效，矢量画面清晰锐利
+
+
+
+
 
 
 基于之前的探讨，这一类“8秒内引发强烈社会联想”的视频内容，在传播学和心理学上具有非常独特的属性。
