@@ -76,6 +76,7 @@ session 生命周期：
 不是"一个 bot 绑一个 session"，而是"每个独立的对话上下文绑一个 CC session"——跟你在 Claude.ai 网页上每个对话窗口是一个 conversation 是一个概念。
 
 ## 如何新建session
+
 源码里 `/new` 应该做的三件事：
 
 1. 清空旧 session 的 agent_session_id（置为空字符串）
