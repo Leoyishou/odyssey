@@ -1,31 +1,42 @@
 # Odyssey
 
-Local-first knowledge editor combining Obsidian-style links and workspace navigation with a native rich-text and table editor. Built with Rust + GPUI, based on [quiet.md](https://github.com/s1dashu/quiet-md).
+**本地优先 + Obsidian 双链体验 + 类飞书编辑体验。**
 
-[Preview downloads](https://github.com/Leoyishou/odyssey/releases) · [简体中文](README.zh-CN.md) · [Product boundaries](PRODUCT.md)
+Odyssey 是一个本地优先的知识编辑器，将 Obsidian 式双链与工作区导航，和原生富文本、表格编辑结合。基于 [quiet.md](https://github.com/s1dashu/quiet-md) 二次开发，采用 Rust + GPUI。
 
-## Current status
+[下载预览版](https://github.com/Leoyishou/odyssey/releases) · [English](README.en.md) · [产品定位](PRODUCT.md)
 
-This is an early development snapshot (local build 5), not a feature-complete release. The Cargo version remains the upstream 0.1.5; it does not imply an Odyssey public release with that version.
+## 愿景与设计原则
 
-Implemented and exercised on macOS Apple Silicon:
+让个人知识留在自己手里，写起来顺手、连接起来自然，长期积累成可检索、可复用的知识网络。表格是核心，单元格与正文拥有同等的知识连接能力。
 
-- Native rich-text editing and tables inherited from quiet.md.
-- Document-link completion using `[[`, `【【`, `［［` and the existing `@` picker.
-- Display aliases, selection-to-link with `⌘⇧K`, persistent unresolved links and creation on click.
-- Plain-text-colored inline references (no leading document icon or chip), hover previews, existing incoming/outgoing reference lists.
-- Links inside tables, navigation back to the source cell, rename identity preservation, undo/redo and save/reopen scenarios.
-- Four-column workspace using the existing quiet.md visual components and editor actions; outline and reference lists in the right sidebar.
-- Create/open/recent vaults; save before opening a separate vault window; independent library processes and last-vault restoration.
-- Independent Odyssey application identity and default data directory; upstream automatic updates are disabled.
+- **本地优先**：本地笔记不默认上传，优先确保保存可靠、编辑流畅与知识连接顺畅。
+- **UI 延续 quiet.md**：保留字体、配色、控件和视觉风格；原有富文本与表格编辑动作逻辑保持。
+- **UX 按四栏重组**：工具栏 → 文件导航 → 主编辑器 → 大纲与引用辅助栏；外围导航参考 Obsidian。
+- **基础功能免费**：未来仅 Publish 发布服务收费，其余功能全部免费。当前专注基础体验，暂不开发 Publish、支付或托管服务。
 
-Still incomplete: full workspace restore, workspace tabs and splits, persistent block/heading/cell anchors, document-level aliases, unresolved-title disambiguation, unlinked mentions, embeds/cycle protection, graph views and complete import/export/performance regression. The main editor remains rich text; this is **not** a Markdown-only Obsidian vault implementation or a claim of Obsidian plugin compatibility.
+## 当前进展
 
-Long inline reference labels remain atomic editor objects: if too wide, the object starts on a new line and wraps internally. Surrounding text does not yet flow through that object.
+当前为 **build 5 开发预览版**，完整功能仍在开发与验收中。Cargo 包版本暂沿用上游的 `0.1.5`，不代表 Odyssey 以该版本号正式发布。
 
-## Build and test
+已实现并在 macOS Apple Silicon 上验证过的主要场景：
 
-Use the Rust version pinned in `rust-toolchain.toml`. macOS requires Xcode and its Metal toolchain. If Metal compilation reports a missing toolchain, install it with `xcodebuild -downloadComponent MetalToolchain`.
+- 继承 quiet.md 的原生富文本与表格编辑。
+- 输入 `[[`、`【【`、`［［` 弹出文档候选，保留原有 `@` 入口。
+- 链接显示别名、通过 `⌘⇧K` 将选中文字转为链接、未创建链接的持久保存及点击创建。
+- 行内链接仅改变文字颜色，无前置文档图标或胶囊背景；支持悬浮预览、反向引用与出站引用列表。
+- 表格内建链、反链回到来源单元格、重命名保持引用身份，以及撤销重做、保存重开场景。
+- 四栏工作区复用 quiet.md 的视觉组件与编辑动作，右侧栏承载大纲与引用列表。
+- 新建库、打开库、最近库；开库前保存当前文档，目标库在独立窗口运行，原窗口保留；独立库进程及最近使用库恢复。
+- 独立的 Odyssey 应用身份和默认数据目录，上游自动更新已禁用。
+
+**尚未完成的能力**：完整工作区恢复、标签页与分屏、持久块/标题/单元格锚点、文档级多别名、未解析标题消歧、未链接提及、嵌入与循环保护、图谱，以及完整导入导出和性能回归。
+
+主编辑区使用富文本，当前尚未实现 Markdown-only 的 Obsidian Vault，也不宣称兼容 Obsidian 插件生态。长行内链接仍是独立编辑对象：宽度过大时整体移到下一行，再在对象内部换行，周围文字尚不能连续流入对象内部。
+
+## 构建与测试
+
+使用 `rust-toolchain.toml` 固定的 Rust 版本。macOS 需要 Xcode 与 Metal 工具链；如提示缺少 Metal 工具链，可执行 `xcodebuild -downloadComponent MetalToolchain` 安装。
 
 ```sh
 cargo build --release --locked
@@ -34,22 +45,20 @@ scripts/check.sh
 python3 scripts/package-odyssey.py
 ```
 
-`package-odyssey.py` creates `dist/Odyssey.app` with local ad-hoc signing. It does not install, publish, notarize, or stop applications. Public distribution needs its own signing/notarization process. Upstream release/upload scripts are disabled in this fork.
+打包脚本生成 `dist/Odyssey.app`，使用本地 ad-hoc 签名；脚本不负责安装、发布、Apple 公证或退出正在运行的应用。当前预览包尚未完成 Apple 开发者签名与公证。上游的发布和上传脚本已在此分支禁用。
 
-The default library is `~/Documents/Odyssey`. `ODYSSEY_HOME` overrides it; `QUIET_MD_HOME` remains supported for the upstream test harness. Never point development tests at a real user's notes. Data uses DocxXML with stable document UUIDs; plain text is not a lossless export of every rich-text/table feature.
+默认文档库为 `~/Documents/Odyssey`，可用 `ODYSSEY_HOME` 指定独立目录；保留 `QUIET_MD_HOME` 以支持上游测试工具。**开发测试请使用独立测试库，不要指向真实笔记。** 数据采用 DocxXML 与稳定文档 UUID；纯文本导出不能无损保留所有富文本和表格结构。
 
-Release acceptance criteria: [docs/ACCEPTANCE.md](docs/ACCEPTANCE.md); release procedure: [docs/RELEASE-CHECKLIST.md](docs/RELEASE-CHECKLIST.md). Prior-build checks are historical, not proof for a new release.
+- [功能验收清单](docs/ACCEPTANCE.md)
+- [版本发布检查流程](docs/RELEASE-CHECKLIST.md)
+- [GUI 测试工具说明](tools/harness/README.md)
 
-GUI harness instructions: [tools/harness/README.md](tools/harness/README.md). Automated checks cover the workspace tests, bundled-guide round trips and clippy. Screenshots, personal libraries and local session logs are intentionally not included in this public source snapshot.
+自动检查涵盖工作区测试、内置指南往返校验与 clippy。大版本需运行自动化与关键界面回归，旧版本通过记录不能代替新版验证。公开源码快照不包含个人文档库、截图与本地会话日志。
 
-## Product boundaries
+## 开源许可与致谢
 
-The visual style, typography and controls retain quiet.md; Obsidian guides UX only. The document area retains the native rich-text and table interactions. Workspace navigation around it is being developed toward Obsidian-like behavior. Non-Publish functionality is intended to remain free. Publish is not being developed in this phase; no payment or hosting integration is included, and notes are not uploaded by default.
+采用 [MIT 许可证](LICENSE)，保留原 quiet.md 版权声明。第三方依赖与素材遵循各自许可证，详见 [THIRD_PARTY.md](THIRD_PARTY.md)。
 
-## License and attribution
+Odyssey 应用图标为原创罗盘设计。上游商业界面图标已替换为 ISC/MIT 编辑器图标与原创几何图形；quiet.md 名称及应用品牌归原项目所有。
 
-MIT: see [LICENSE](LICENSE). Original quiet.md copyright is preserved. Third-party dependencies and assets retain their respective licenses: see [THIRD_PARTY.md](THIRD_PARTY.md).
-
-The Odyssey app icon is an original compass design. The upstream commercial shell icons have been replaced with ISC/MIT editor icons and original geometry. Quiet.md's name and application branding are not claimed by this fork.
-
-Upstream source checkpoint: `52afb284d7132dba1a1efb2944a456aaed9d44f3`. See [ODYSSEY.md](ODYSSEY.md) for the current fork notes and [docs/FORMAT.md](docs/FORMAT.md) for storage extensions.
+上游源码基点：`52afb284d7132dba1a1efb2944a456aaed9d44f3`。分支说明见 [ODYSSEY.md](ODYSSEY.md)，存储扩展见 [docs/FORMAT.md](docs/FORMAT.md)。
