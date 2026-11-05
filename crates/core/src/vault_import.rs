@@ -8,12 +8,13 @@ use std::{collections::BTreeMap, fs, path::{Component, Path, PathBuf}};
 pub struct Warning { pub file: String, pub detail: String }
 #[derive(Clone, Debug, Default, Serialize)]
 pub struct Report {
-    pub notes: usize, pub folders: usize, pub attachments: usize, pub resolved_links: usize,
+    pub mode: String,
+    pub notes: usize, pub native_notes: usize, pub native_attachments: usize, pub native_trash: usize, pub folders: usize, pub attachments: usize, pub resolved_links: usize,
     pub warnings: Vec<Warning>,
     pub paths: BTreeMap<String, String>,
 }
 struct Original { relative: PathBuf, bytes: Vec<u8> }
-struct Note { relative: PathBuf, id: String, title: String, doc: Document }
+struct Note { relative: PathBuf, id: String, title: String, doc: Document, native: bool }
 #[derive(Clone)]
 struct Token { key: String, raw: String, target: String, label: Option<String>, embed: bool }
 pub struct Plan {
@@ -21,6 +22,7 @@ pub struct Plan {
     pub report: Report,
     notes: Vec<Note>, folders: BTreeMap<PathBuf, String>, originals: Vec<Original>,
     assets: BTreeMap<PathBuf, Vec<u8>>,
+    native: Option<crate::native_vault_snapshot::Snapshot>, asset_prefix: String,
 }
 fn key(p: &Path) -> String { p.to_string_lossy().replace('\\', "/") }
 fn is_markdown(p: &Path) -> bool { p.extension().is_some_and(|e| e.eq_ignore_ascii_case("md") || e.eq_ignore_ascii_case("markdown")) }
@@ -47,16 +49,17 @@ fn decode(s: &str) -> String {
     }
     String::from_utf8(out).unwrap_or_else(|_| s.into())
 }
-fn discover(root: &Path, report: &mut Report) -> Result<Vec<PathBuf>> {
+fn discover(root: &Path, native: bool, report: &mut Report) -> Result<Vec<PathBuf>> {
     let mut found = Vec::new(); let mut todo = vec![PathBuf::new()];
     while let Some(relative) = todo.pop() {
         for entry in fs::read_dir(root.join(&relative))? {
             let e = entry?; let path = relative.join(e.file_name()); let ft = e.file_type()?;
             if ft.is_symlink() { warning(report, &path, "符号链接已跳过，未读取其目标"); continue; }
             if e.file_name().to_string_lossy().starts_with('.') { continue; }
+            if native && relative.as_os_str().is_empty() && ["assets", "trash", "themes"].iter().any(|n| e.file_name() == *n) { continue; }
             if ft.is_dir() { todo.push(path); }
             else if ft.is_file() && is_markdown(&path) { found.push(path); }
-            else if path.starts_with("docs") && path.extension().is_some_and(|e| e == "xml") { warning(report, &path, "已有 XML 文档保留在源目录；本次只复制导入 Markdown"); }
+            else if !native && path.starts_with("docs") && path.extension().is_some_and(|e| e == "xml") { warning(report, &path, "已有 XML 文档保留在源目录；本次只复制导入 Markdown"); }
         }
     }
     found.sort(); Ok(found)
@@ -93,10 +96,19 @@ fn tokenize(text: &str) -> (String, Vec<Token>) {
 impl Plan {
     /// No directory creation, Store mutation, networking or source writes.
     pub fn scan(source: &Path) -> Result<Self> {
+        Self::scan_mode(source, true)
+    }
+    pub fn recover_native(source: &Path) -> Result<Self> {
+        Self::scan_mode(source, false)
+    }
+    fn scan_mode(source: &Path, markdown: bool) -> Result<Self> {
         let source = source.canonicalize()?; ensure!(source.is_dir(), "请选择 Markdown 文件夹");
-        let mut plan = Self { source, report: Report::default(), notes: vec![], folders: BTreeMap::new(), originals: vec![], assets: BTreeMap::new() };
-        let paths = discover(&plan.source, &mut plan.report)?;
-        ensure!(!paths.is_empty(), "未找到可导入的 Markdown 文件；没有创建目标库");
+        let native = crate::native_vault_snapshot::Snapshot::read(&source)?;
+        let asset_prefix = if native.is_some() { format!("imported-{}", uuid::Uuid::new_v4()) } else { "imported".into() };
+        let mut plan = Self { source, report: Report::default(), notes: vec![], folders: BTreeMap::new(), originals: vec![], assets: BTreeMap::new(), native, asset_prefix };
+        plan.report.mode = if markdown { "markdown_and_native" } else { "native_only" }.into();
+        let paths = if markdown { discover(&plan.source, plan.native.is_some(), &mut plan.report)? } else { vec![] };
+        ensure!(!paths.is_empty() || plan.native.as_ref().is_some_and(|n| !n.docs.is_empty()), "未找到可导入的 Markdown 文件；没有创建目标库");
         let mut total = 0;
         for relative in paths {
             let bytes = read_bounded(&plan.source.join(&relative), 16 * 1024 * 1024)?; total += bytes.len();
@@ -105,12 +117,22 @@ impl Plan {
             let id = uuid::Uuid::new_v4().to_string();
             plan.report.paths.insert(key(&relative), id.clone());
             let title = relative.file_stem().unwrap_or_default().to_string_lossy().to_string();
-            plan.notes.push(Note { relative: relative.clone(), id, title, doc: Document::default() });
+            plan.notes.push(Note { relative: relative.clone(), id, title, doc: Document::default(), native: false });
             let mut parent = relative.parent();
             while let Some(p) = parent.filter(|p| !p.as_os_str().is_empty()) { plan.folders.entry(p.to_path_buf()).or_insert_with(|| uuid::Uuid::new_v4().to_string()); parent = p.parent(); }
             plan.originals.push(Original { relative, bytes });
         }
-        for i in 0..plan.notes.len() {
+        let markdown_count = plan.notes.len();
+        if let Some(native) = &plan.native {
+            plan.report.native_notes = native.docs.len(); plan.report.native_attachments = native.assets; plan.report.native_trash = native.trash;
+            for (id, doc) in &native.docs {
+                let relative = PathBuf::from(format!("docs/{id}.xml"));
+                plan.report.paths.insert(key(&relative), id.clone());
+                plan.notes.push(Note { relative, id: id.clone(), title: doc.title.text.clone(), doc: doc.clone(), native: true });
+            }
+            for detail in &native.warnings { warning(&mut plan.report, Path::new("native"), detail); }
+        }
+        for i in 0..markdown_count {
             let path = plan.notes[i].relative.clone(); let raw = std::str::from_utf8(&plan.originals[i].bytes)?.trim_start_matches('\u{feff}').to_string();
             let mut text = raw.clone();
             if let Some(after) = raw.strip_prefix("---\n") && let Some(end) = after.find("\n---") {
@@ -130,7 +152,7 @@ impl Plan {
             let xml = docxml::serialize(&plan.notes[i].doc);
             ensure!(!tokens.iter().any(|t| xml.contains(&t.key)), "无法可靠转换该文档的嵌套语法，未创建目标库：{}", path.display());
         }
-        plan.report.notes = plan.notes.len(); plan.report.folders = plan.folders.len(); plan.report.attachments = plan.assets.len();
+        plan.report.notes = markdown_count; plan.report.folders = plan.folders.len(); plan.report.attachments = plan.assets.len();
         Ok(plan)
     }
 
@@ -158,7 +180,7 @@ impl Plan {
                 ensure!(self.assets.values().map(Vec::len).sum::<usize>() + bytes.len() <= 512 * 1024 * 1024, "附件总量超过本次预览上限");
                 self.assets.insert(relative.clone(), bytes);
             }
-            return Ok(Some(FileBlock { src_kind: "path".into(), src: format!("assets/imported/{}", key(&relative)), name: relative.file_name().unwrap_or_default().to_string_lossy().to_string(), view: FileView::Card }));
+            return Ok(Some(FileBlock { src_kind: "path".into(), src: format!("assets/{}/{}", self.asset_prefix, key(&relative)), name: relative.file_name().unwrap_or_default().to_string_lossy().to_string(), view: FileView::Card }));
         }
         Ok(None)
     }
@@ -221,15 +243,20 @@ impl Plan {
         ensure!(!parent.starts_with(&self.source), "目标必须位于源库之外；源库未修改");
         for original in &self.originals { ensure!(fs::read(self.source.join(&original.relative))? == original.bytes, "源文件已变化，请重新预览：{}", original.relative.display()); }
         for (relative, bytes) in &self.assets { ensure!(&fs::read(self.source.join(relative))? == bytes, "源附件已变化，请重新预览：{}", relative.display()); }
+        if let Some(native) = &self.native {
+            native.verify_source(&self.source)?;
+            ensure!(self.notes.iter().filter(|n| !n.native).all(|n| !native.has_id(&n.id)) && self.folders.values().all(|id| !native.has_id(id)), "新旧文档 ID 冲突，请重新预览");
+        }
         let stage = parent.join(format!(".odyssey-import-{}", uuid::Uuid::new_v4())); fs::create_dir(&stage)?;
         let result = (|| -> Result<()> {
+            if let Some(native) = &self.native { native.write_to(&stage)?; }
             let mut store = Store::open_at(stage.clone())?;
             for (folder, id) in &self.folders {
                 let doc = Document { title: RichText::plain(folder.file_name().unwrap_or_default().to_string_lossy()), blocks: vec![Block::new(BlockKind::SubPageList, RichText::default())], ..Default::default() };
                 store.save(id, &doc)?;
                 if let Some(parent) = folder.parent().and_then(|p| self.folders.get(p)) { store.set_parent(id, Some(parent))?; }
             }
-            for note in &self.notes {
+            for note in self.notes.iter().filter(|n| !n.native) {
                 store.save(&note.id, &note.doc)?;
                 if let Some(parent) = note.relative.parent().and_then(|p| self.folders.get(p)) { store.set_parent(&note.id, Some(parent))?; }
             }
@@ -237,8 +264,10 @@ impl Plan {
                 let dest = stage.join(".odyssey-import/source").join(&original.relative); fs::create_dir_all(dest.parent().unwrap())?; fs::write(dest, &original.bytes)?;
             }
             for (relative, bytes) in &self.assets {
-                let dest = stage.join("assets/imported").join(relative); fs::create_dir_all(dest.parent().unwrap())?; fs::write(dest, bytes)?;
+                let dest = stage.join("assets").join(&self.asset_prefix).join(relative); fs::create_dir_all(dest.parent().unwrap())?; fs::write(dest, bytes)?;
             }
+            fs::create_dir_all(stage.join(".odyssey-import"))?;
+            if let Some(native) = &self.native { native.finish(&stage)?; }
             fs::write(stage.join(".odyssey-import/report.json"), serde_json::to_vec_pretty(&self.report)?)?;
             ensure!(crate::vault::inspect(&stage)?.format == FORMAT, "目标格式验证失败");
             for note in &self.notes { let loaded = store.load(&note.id)?; ensure!(loaded.doc_links().len() == note.doc.doc_links().len(), "链接往返校验失败"); }
@@ -337,5 +366,101 @@ mod tests {
         t.put("stage/content", b"stage");
         assert!(publish_new(&t.0.join("stage"), &t.0.join("target")).is_err());
         assert!(t.0.join("stage/content").exists()); assert!(t.0.join("target").is_dir());
+    }
+
+    fn snapshot(root: &Path) -> BTreeMap<PathBuf, Vec<u8>> {
+        let mut out = BTreeMap::new(); let mut todo = vec![root.to_path_buf()];
+        while let Some(dir) = todo.pop() { for e in fs::read_dir(dir).unwrap() {
+            let p = e.unwrap().path(); if p.is_dir() { todo.push(p); } else { out.insert(p.strip_prefix(root).unwrap().to_path_buf(), fs::read(p).unwrap()); }
+        } }
+        out
+    }
+
+    #[test]
+    fn mixed_vault_preserves_twelve_native_documents_metadata_and_assets_without_source_writes() {
+        let t = Temp::new(); let source = t.0.join("src"); fs::create_dir(&source).unwrap(); crate::vault::create(&source).unwrap();
+        let mut index = serde_json::Map::new();
+        for i in 0..12 {
+            let xml = format!("<title>Native {i}</title><table><tbody><tr><td><p><cite type=\"doc\" doc-id=\"native-1\" file-type=\"docx\">Native 1</cite></p></td></tr></tbody></table><img path=\"assets/image.png\"/>");
+            t.put(&format!("src/docs/native-{i}.xml"), xml.as_bytes());
+            index.insert(format!("native-{i}"), serde_json::json!({"created":i,"modified":i+1,"parent":if i==0 {None} else {Some("native-0")},"order":i,"future_metadata":"retain"}));
+        }
+        t.put("src/index.json", &serde_json::to_vec(&index).unwrap());
+        t.put("src/preferences.json", b"{\"english\":false}"); t.put("src/settings.json", b"{\"sidebar_width\":333}");
+        t.put("src/assets/image.png", b"original native image"); t.put("src/assets/imported/guide.md", b"resource, not a note");
+        t.put("src/trash/deleted.xml", b"<title>Deleted original</title>");
+        t.put("src/trash/index.json", b"{\"deleted\":{\"meta\":{\"created\":1,\"modified\":2},\"deleted\":9999999999}}");
+        t.put("src/.obsidian/config.json", b"do not touch"); t.put("src/.git/config", b"do not touch");
+        t.put("src/New.md", b"[[Native 1|existing]] [[Missing]]");
+        let before = snapshot(&source); let plan = Plan::scan(&source).unwrap();
+        assert_eq!(plan.report.notes, 1); assert_eq!(plan.report.native_notes, 12); assert_eq!(plan.report.native_attachments, 2);
+        assert_eq!(plan.report.native_trash, 1);
+        assert_eq!(plan.report.resolved_links, 1); assert!(!plan.report.warnings.is_empty());
+        let target = plan.write_new(&t.0.join("dest")).unwrap();
+        assert_eq!(snapshot(&source), before); assert!(!source.join(".lock").exists());
+        for i in 0..12 {
+            let rel = format!("docs/native-{i}.xml");
+            assert_eq!(fs::read(target.join(&rel)).unwrap(), before[Path::new(&rel)]);
+            assert_eq!(fs::read(target.join(".odyssey-import/native").join(&rel)).unwrap(), before[Path::new(&rel)]);
+        }
+        let copied: serde_json::Value = serde_json::from_slice(&fs::read(target.join("index.json")).unwrap()).unwrap();
+        for (id, meta) in index { assert_eq!(copied[&id], meta); }
+        assert_eq!(fs::read(target.join("assets/image.png")).unwrap(), b"original native image");
+        assert_eq!(fs::read(target.join("preferences.json")).unwrap(), before[Path::new("preferences.json")]);
+        assert_eq!(fs::read(target.join("trash/deleted.xml")).unwrap(), before[Path::new("trash/deleted.xml")]);
+        assert_eq!(fs::read(target.join("trash/index.json")).unwrap(), before[Path::new("trash/index.json")]);
+        let store = Store::open_at(target).unwrap();
+        assert_eq!(store.load(&plan.report.paths["New.md"]).unwrap().doc_links()[0].target, "native-1");
+    }
+
+    #[test]
+    fn native_only_recovery_leaves_markdown_unread_and_rejects_changed_native_files() {
+        let t = Temp::new(); let source = t.0.join("src"); fs::create_dir(&source).unwrap(); crate::vault::create(&source).unwrap();
+        t.put("src/docs/keep.xml", b"<title>Keep</title><p>unchanged</p>");
+        t.put("src/.obsidian/config", b"private"); t.put("src/invalid.md", &[0xff]);
+        let before = snapshot(&source); let plan = Plan::recover_native(&source).unwrap();
+        assert_eq!(plan.report.notes, 0); assert_eq!(plan.report.native_notes, 1);
+        let target = plan.write_new(&t.0.join("native-copy")).unwrap();
+        assert_eq!(snapshot(&source), before); assert!(!target.join("invalid.md").exists());
+        assert_eq!(Store::open_at(target).unwrap().load("keep").unwrap().title.text, "Keep");
+        t.put("src/docs/keep.xml", b"<title>Changed since preview</title>");
+        assert!(plan.write_new(&t.0.join("stale")).is_err()); assert!(!t.0.join("stale").exists());
+        t.put("src/index.json", b"corrupt"); assert!(Plan::recover_native(&source).is_err());
+        assert_eq!(fs::read(source.join("index.json")).unwrap(), b"corrupt");
+    }
+    #[cfg(unix)]
+    #[test]
+    fn read_only_mixed_source_is_copied_and_native_symlinks_are_rejected() {
+        use std::os::unix::fs::PermissionsExt;
+        let t = Temp::new(); let source = t.0.join("src"); fs::create_dir(&source).unwrap(); crate::vault::create(&source).unwrap();
+        t.put("src/docs/note.xml", b"<title>Read only</title>"); t.put("src/Note.md", b"[[Read only]]");
+        t.put("src/.obsidian/config", b"untouched");
+        let before = snapshot(&source);
+        for rel in before.keys() { fs::set_permissions(source.join(rel), fs::Permissions::from_mode(0o444)).unwrap(); }
+        let dirs = [source.clone(), source.join("docs"), source.join("assets"), source.join("trash"), source.join(".obsidian")];
+        for d in &dirs { fs::set_permissions(d, fs::Permissions::from_mode(0o555)).unwrap(); }
+        let result = Plan::scan(&source).and_then(|p| p.write_new(&t.0.join("copied")));
+        for d in &dirs { fs::set_permissions(d, fs::Permissions::from_mode(0o755)).unwrap(); }
+        assert!(result.is_ok(), "{result:?}"); assert_eq!(snapshot(&source), before);
+        t.put("outside", b"private"); std::os::unix::fs::symlink(t.0.join("outside"), source.join("assets/escape")).unwrap();
+        assert!(Plan::recover_native(&source).is_err()); assert!(!t.0.join("unexpected").exists());
+    }
+    #[test]
+    fn native_absolute_assets_and_covers_survive_source_move_and_repeated_recovery() {
+        let t = Temp::new(); let source = t.0.join("src"); fs::create_dir(&source).unwrap(); crate::vault::create(&source).unwrap();
+        t.put("src/assets/image.png", b"independent asset");
+        let asset = source.join("assets/image.png");
+        let doc = Document { title: RichText::plain("Preserved"), cover: Some(Cover { src: asset.display().to_string(), x: 0., y: 0. }), blocks: vec![Block::new(BlockKind::Image { src_kind: "path".into(), src: asset.display().to_string(), width: None, height: None, caption: None, crop: None }, RichText::default())], ..Default::default() };
+        let xml = docxml::serialize(&doc); t.put("src/docs/keep.xml", xml.as_bytes()); t.put("src/Keep.md", b"original markdown");
+        let plan = Plan::recover_native(&source).unwrap(); assert!(plan.report.warnings.is_empty());
+        let target = plan.write_new(&t.0.join("copy")).unwrap();
+        fs::rename(&source, t.0.join("source-moved")).unwrap();
+        assert_eq!(fs::read_to_string(target.join("docs/keep.xml")).unwrap(), xml);
+        let resolved = crate::store::asset_path_at(&target, &asset.display().to_string()).unwrap();
+        assert_eq!(resolved, target.join("assets/image.png")); assert_eq!(fs::read(resolved).unwrap(), b"independent asset");
+        let second = Plan::recover_native(&target).unwrap().write_new(&t.0.join("second")).unwrap();
+        fs::rename(&target, t.0.join("copy-moved")).unwrap();
+        assert_eq!(fs::read(crate::store::asset_path_at(&second, &asset.display().to_string()).unwrap()).unwrap(), b"independent asset");
+        assert_eq!(fs::read_to_string(second.join("docs/keep.xml")).unwrap(), xml);
     }
 }

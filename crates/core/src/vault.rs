@@ -39,7 +39,7 @@ fn contains_markdown(root: &Path) -> Result<bool> {
         for entry in fs::read_dir(&path).with_context(|| format!("无法读取目录：{}", path.display()))? {
             let entry = entry?; let name = entry.file_name(); let kind = entry.file_type()?;
             if name == ".obsidian" || entry.path().extension().is_some_and(|e| e.eq_ignore_ascii_case("md") || e.eq_ignore_ascii_case("markdown")) { return Ok(true); }
-            if kind.is_dir() && ![".git", "assets", "trash", ".odyssey-import"].iter().any(|n| name == *n) { todo.push(entry.path()); }
+            if kind.is_dir() && ![".git", "assets", "trash", "themes", ".odyssey-import"].iter().any(|n| name == *n) { todo.push(entry.path()); }
         }
     }
     Ok(false)

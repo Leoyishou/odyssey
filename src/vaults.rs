@@ -55,16 +55,12 @@ pub fn startup() -> anyhow::Result<()> {
     let strict = explicit.is_some();
     let requested = strict || env_root.is_some();
     let recent = read_at(&state_dir()).last;
-    let legacy = if explicit.is_none() && env_root.is_none() && recent.is_none() {
-        let old = dirs::document_dir().map(|p| p.join("Odyssey"));
-        old.and_then(|p| if p.exists() {
-            match fdl_core::vault::inspect(&p) {
-                Ok(info) => Some(info.path),
-                Err(e) => { let _ = STARTUP_NOTICE.set(format!("原默认位置未作为库打开：{e}。新默认库使用 Odyssey 应用数据目录；没有搬迁或修改原文件。")); None },
-            }
-        } else { None })
+    let automatic = if !requested {
+        let (path, notice) = select_automatic_root(recent, dirs::document_dir().map(|p| p.join("Odyssey")));
+        if let Some(notice) = notice { let _ = STARTUP_NOTICE.set(notice); }
+        path
     } else { None };
-    let selected = explicit.or_else(|| env_root.clone().map(PathBuf::from)).or(recent).or(legacy);
+    let selected = explicit.or_else(|| env_root.clone().map(PathBuf::from)).or(automatic);
     if let Some(path) = selected {
         if !strict && env_root.is_some() { validate_initial_root(&path)?; if !path.join("format.json").exists() { return Ok(()); } }
         let info = match fdl_core::vault::inspect(&path) {
@@ -79,6 +75,19 @@ pub fn startup() -> anyhow::Result<()> {
         unsafe { std::env::set_var("ODYSSEY_HOME", info.path); }
     }
     validate_initial_root(&crate::store::Store::root_dir())
+}
+
+/// Read-only selection, separately testable without changing HOME or process state.
+fn select_automatic_root(recent: Option<PathBuf>, legacy: Option<PathBuf>) -> (Option<PathBuf>, Option<String>) {
+    let mut notices = vec![];
+    for (path, required) in recent.into_iter().map(|p| (p, true)).chain(legacy.into_iter().map(|p| (p, false))) {
+        if !required && !path.exists() { continue; }
+        match fdl_core::vault::inspect(&path) {
+            Ok(info) => return (Some(info.path), (!notices.is_empty()).then(|| notices.join("\n"))),
+            Err(e) => notices.push(format!("未打开文档库 {}：{e}。没有删除或搬迁原文件；可重新定位，或使用下方“只复制原生文档”将原 XML 复制到独立新库。", path.display())),
+        }
+    }
+    (None, (!notices.is_empty()).then(|| notices.join("\n")))
 }
 
 fn validate_initial_root(path: &Path) -> anyhow::Result<()> {
@@ -147,13 +156,13 @@ impl Workspace {
 
 
 impl Workspace {
-    pub(crate) fn preview_vault_import(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+    pub(crate) fn preview_vault_import(&mut self, native_only: bool, window: &mut Window, cx: &mut Context<Self>) {
         if self.vault_import_busy { return; }
         let pick = pick_folder(false, cx);
         cx.spawn_in(window, async move |this, cx| {
             let Some(source) = pick.await else { return };
             let _ = this.update(cx, |w, cx| { w.vault_import_busy = true; cx.notify(); });
-            let result = cx.background_executor().spawn(async move { fdl_core::vault_import::Plan::scan(&source) }).await;
+            let result = cx.background_executor().spawn(async move { if native_only { fdl_core::vault_import::Plan::recover_native(&source) } else { fdl_core::vault_import::Plan::scan(&source) } }).await;
             let _ = this.update(cx, |w, cx| {
                 w.vault_import_busy = false;
                 match result {
@@ -189,14 +198,14 @@ impl Workspace {
         if self.confirm.is_some() { return None; }
         let plan = self.vault_import.as_ref()?;
         let report = &plan.report; let busy = self.vault_import_busy;
-        let summary = format!("{} Markdown · {} {} · {} {} · {} {}", report.notes,
-            report.folders, tr("层级目录页", "folder pages"), report.resolved_links, tr("已解析双链", "resolved links"), report.attachments, tr("本地附件", "local attachments"));
+        let summary = format!("{} Markdown · {} XML · {} {} · {} {} · {} {} (+{} {}) · {} {}", report.notes, report.native_notes,
+            report.folders, tr("层级目录页", "folder pages"), report.resolved_links, tr("已解析双链", "resolved links"), report.attachments, tr("本地附件", "local attachments"), report.native_attachments, tr("原生", "native"), report.native_trash, tr("回收站文档", "trashed documents"));
         let body = crate::ui::dialog("vault-import-dialog").w(px(620.)).max_w_full().max_h_full().overflow_y_scroll().p(px(24.)).flex().flex_col().gap(px(12.))
             .on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation())
             .child(div().text_size(px(16.)).font_weight(FontWeight::SEMIBOLD).child(tr("复制导入预览", "Copy import preview")))
             .child(div().text_size(px(12.)).text_color(crate::theme::Theme::text_caption()).child(plan.source.display().to_string()))
             .child(div().text_size(px(14.)).child(summary))
-            .child(div().text_size(px(13.)).child(tr("源目录不会修改。原始 Markdown 逐字节保存在新库的 .odyssey-import/source，转换报告在 .odyssey-import/report.json。文件夹以目录页保留层级。", "The source is unchanged. Original Markdown is archived byte-for-byte under .odyssey-import/source, with report.json beside it. Folder pages preserve the hierarchy.")))
+            .child(div().text_size(px(13.)).child(tr("源目录不会修改。原生 XML 保留 UUID 和字节，索引层级、附件、设置与回收站复制到新库；XML 和元数据原件在 .odyssey-import/native。Markdown 原件在 .odyssey-import/source，完整报告为 .odyssey-import/report.json。", "The source is unchanged. Native XML retains IDs and bytes; metadata, assets, settings and trash are copied. Native originals are archived under .odyssey-import/native; Markdown originals under .odyssey-import/source, with report.json beside them.")))
             .child(div().text_size(px(13.)).child(tr("只转换基础 Markdown、可解析的文档链接及本地附件。属性、插件、文档嵌入和标题/块锚点不保证保真；原文保留供核对。", "Only basic Markdown, resolvable document links and local assets are converted. Properties, plugins, note embeds and heading/block anchors are not guaranteed; originals are retained for comparison.")))
             .child(div().id("vault-import-warnings").max_h(px(240.)).overflow_y_scroll().flex().flex_col().gap(px(6.))
                 .children(report.warnings.iter().take(200).map(|w| div().text_size(px(12.)).text_color(crate::theme::Theme::text_caption()).child(format!("{}: {}", w.file, w.detail)))))
@@ -211,6 +220,39 @@ impl Workspace {
 #[cfg(test)]
 mod tests {
     use super::{Registry, edit_registry, read_at};
+    #[test]
+    fn pure_legacy_default_remains_discoverable_and_opens_in_place() {
+        let dir = std::env::temp_dir().join(format!("odyssey-legacy-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir(&dir).unwrap(); let old = dir.join("Odyssey");
+        fdl_core::vault::create(&old).unwrap();
+        let xml = "<title>Existing note</title><p>Original content</p>";
+        std::fs::write(old.join("docs/keep.xml"), xml).unwrap();
+        let (selected, notice) = super::select_automatic_root(None, Some(old.clone()));
+        assert_eq!(selected, Some(old.canonicalize().unwrap())); assert!(notice.is_none());
+        let store = fdl_core::store::Store::open_at(selected.unwrap()).unwrap();
+        assert_eq!(store.load("keep").unwrap().title.text, "Existing note");
+        assert_eq!(std::fs::read_to_string(old.join("docs/keep.xml")).unwrap(), xml);
+        assert!(!old.join(".lock").exists());
+        let (fallback, notice) = super::select_automatic_root(Some(dir.join("moved")), Some(old.clone()));
+        assert_eq!(fallback, Some(old.canonicalize().unwrap())); assert!(notice.is_some());
+        std::fs::remove_dir_all(dir).unwrap();
+    }
+    #[test]
+    fn mixed_legacy_is_declined_without_hiding_a_valid_recent_vault_or_writing_source() {
+        let dir = std::env::temp_dir().join(format!("odyssey-legacy-mixed-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir(&dir).unwrap(); let old = dir.join("odyssey"); let recent = dir.join("recent");
+        fdl_core::vault::create(&old).unwrap(); fdl_core::vault::create(&recent).unwrap();
+        std::fs::write(old.join("note.md"), "untouched markdown").unwrap();
+        std::fs::write(old.join("docs/keep.xml"), "<title>Keep</title>").unwrap();
+        let (selected, notice) = super::select_automatic_root(None, Some(old.clone()));
+        assert!(selected.is_none()); assert!(notice.unwrap().contains("只复制原生文档"));
+        assert_eq!(std::fs::read_to_string(old.join("note.md")).unwrap(), "untouched markdown");
+        assert_eq!(std::fs::read_to_string(old.join("docs/keep.xml")).unwrap(), "<title>Keep</title>");
+        assert!(!old.join(".lock").exists());
+        let (selected, notice) = super::select_automatic_root(Some(recent.clone()), Some(old));
+        assert_eq!(selected, Some(recent.canonicalize().unwrap())); assert!(notice.is_none());
+        std::fs::remove_dir_all(dir).unwrap();
+    }
     #[test]
     fn startup_rejects_non_vault_environment_paths_without_writes() {
         let dir = std::env::temp_dir().join(format!("odyssey-startup-{}", uuid::Uuid::new_v4()));

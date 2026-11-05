@@ -8,6 +8,7 @@ pub mod emoji;
 pub mod lang;
 pub mod markdown;
 pub mod model;
+mod native_vault_snapshot;
 pub mod palette;
 pub mod paste;
 pub mod store;

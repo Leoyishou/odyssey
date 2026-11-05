@@ -682,6 +682,7 @@ impl Workspace {
             tr("在文件资源管理器中显示", "Show in File Explorer")
         } else { tr("在文件管理器中显示", "Show in File Manager") };
         div().w_full().flex().flex_col().gap(px(8.))
+            .children(crate::vaults::STARTUP_NOTICE.get().map(|notice| div().p(px(12.)).rounded(px(8.)).bg(Theme::fill_hover()).text_size(px(13.)).child(notice.clone())))
             .child(group(None, vec![
                 row(tr("文档库文件夹", "Documents folder"), Some(location.into()),
                     button("reveal-library", reveal).on_click(|_, _, cx| cx.reveal_path(&crate::store::Store::root_dir()))).into_any_element(),
@@ -691,7 +692,10 @@ impl Workspace {
                     button("vault-open", tr("打开", "Open")).on_click(cx.listener(|w, _, window, cx| w.pick_vault(false, window, cx)))).into_any_element(),
                 row(tr("复制导入 Markdown / Obsidian", "Copy Markdown / Obsidian vault"), Some(tr("先只读预览；复制到独立新库，保留源文件和转换报告", "Preview first; copy into a separate new vault with originals and a conversion report").into()),
                     button("vault-import-preview", if self.vault_import_busy { tr("正在扫描…", "Scanning…") } else { tr("选择源目录并预览", "Choose source and preview") })
-                        .on_click(cx.listener(|w, _, window, cx| w.preview_vault_import(window, cx)))).into_any_element(),
+                        .on_click(cx.listener(|w, _, window, cx| w.preview_vault_import(false, window, cx)))).into_any_element(),
+                row(tr("恢复旧库 / 混合库中的原生文档", "Recover native documents from a legacy / mixed vault"), Some(tr("只读复制 XML、原 UUID、索引、附件和设置，不扫描或转换 Markdown", "Copy XML, original IDs, metadata, assets and settings; do not scan or convert Markdown").into()),
+                    button("vault-native-preview", tr("只复制原生文档", "Copy native documents only"))
+                        .on_click(cx.listener(|w, _, window, cx| w.preview_vault_import(true, window, cx)))).into_any_element(),
                 row(tr("回收站", "Trash"), Some(if english() { format!("Deleted documents are kept for {} days.", crate::store::TRASH_DAYS) } else { format!("删除的文档保留 {} 天后自动清除。", crate::store::TRASH_DAYS) }.into()),
                     button("open-trash", tr("打开", "Open")).on_click(cx.listener(|w, _, _, cx| w.show_view(View::Trash, cx)))).into_any_element(),
             ]))

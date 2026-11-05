@@ -272,12 +272,28 @@ fn save_json<T: Serialize>(path: &std::path::Path, v: &T) -> Result<()> {
 
 /// Image path for an image block source (only local files are displayed).
 pub fn image_path(src: &str) -> Option<PathBuf> {
+    asset_path_at(&Store::root_dir(), src)
+}
+
+/// Recovery keeps XML byte-identical. Map old absolute asset roots to this
+/// library, so a moved/copied vault never needs to read the original assets.
+pub fn asset_path_at(root: &std::path::Path, src: &str) -> Option<PathBuf> {
     let p = PathBuf::from(src.strip_prefix("file://").unwrap_or(src));
     if p.is_absolute() {
+        if let Ok(bytes) = std::fs::read(root.join(".odyssey-relocations.json"))
+            && let Ok(origins) = serde_json::from_slice::<Vec<PathBuf>>(&bytes)
+        {
+            for origin in origins {
+                if let Ok(relative) = p.strip_prefix(origin)
+                    && relative.starts_with("assets")
+                    && relative.components().all(|c| matches!(c, std::path::Component::Normal(_)))
+                { return Some(root.join(relative)); }
+            }
+        }
         return Some(p);
     }
     // Relative to the library (`assets/…`); not a URI or a cloud token.
-    (!src.is_empty() && !src.contains(':') && src.contains('/')).then(|| Store::root_dir().join(p))
+    (!src.is_empty() && !src.contains(':') && src.contains('/')).then(|| root.join(p))
 }
 
 impl Store {

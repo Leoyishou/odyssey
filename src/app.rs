@@ -452,7 +452,10 @@ impl Workspace {
             ws.show_toast_kind(ToastKind::Error, &msg, cx);
             ws.status = SaveStatus::Failed(msg);
         }
-        if let Some(notice) = crate::vaults::STARTUP_NOTICE.get() { ws.show_toast_kind(ToastKind::Error, notice, cx); }
+        if let Some(notice) = crate::vaults::STARTUP_NOTICE.get() {
+            ws.settings_page = crate::settings::Page::Library; ws.show_view(View::Settings, cx);
+            ws.show_toast_kind(ToastKind::Error, notice, cx);
+        }
         ws
     }
 

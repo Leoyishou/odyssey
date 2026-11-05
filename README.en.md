@@ -55,3 +55,5 @@ The Odyssey app icon is an original compass design. The upstream commercial shel
 Upstream source checkpoint: `52afb284d7132dba1a1efb2944a456aaed9d44f3`. See [ODYSSEY.md](ODYSSEY.md) for the current fork notes and [docs/FORMAT.md](docs/FORMAT.md) for storage extensions.
 
 Build6 adds previewed copy import into a new separate vault, byte-for-byte original Markdown archives and conversion reports. Folder pages preserve hierarchy; resolvable note links and referenced local attachments are copied. This is not native Obsidian storage compatibility. YAML, plugins, note embeds and heading/block anchors are limited; see the Chinese README for details.
+
+Build6-r3 preserves native XML bytes/IDs, original metadata, assets, settings and trash during mixed-vault copy import. A native-only recovery option skips Markdown entirely. Old absolute asset paths resolve through a vault-local relocation map, allowing the source to move while copied images remain independent. Pure legacy default vault discovery is covered by tests; rejected legacy paths lead to persistent recovery guidance. Source files remain untouched.
