@@ -1121,6 +1121,7 @@ impl Workspace {
         }
         let record_more = self.more_btn_bounds.clone();
         let auxiliary_open = self.editor.as_ref().is_some_and(|ed| ed.read(cx).auxiliary_visible());
+        let auxiliary_reserved = self.editor.as_ref().map_or(0., |ed| ed.read(cx).auxiliary_reserved_width());
         let more = self.current.is_some().then(|| seg("doc-more", "ellipsis")
             .relative().when(self.doc_menu, |d| d.bg(Theme::fill_hover()))
             .when(!self.doc_menu, |d| d.tip(crate::settings::tr("文档菜单", "Document menu"), None))
@@ -1203,8 +1204,9 @@ impl Workspace {
                             .text_color(theme::c(craft::R400)).overflow_hidden().whitespace_nowrap().text_ellipsis().child(error),
                     )),
             )
-            .children(more)
             .child(div().flex_1().min_w(px(16.)))
+            .children(more)
+            .child(div().flex_none().w(px((auxiliary_reserved - 32.).max(8.))))
             .child(seg("toggle-right-sidebar", if auxiliary_open { "panel-right-close" } else { "panel-right-open" })
                 .when(auxiliary_open, |d| d.bg(Theme::fill_hover()))
                 .tip(crate::settings::tr(if auxiliary_open { "收起右侧栏" } else { "展开右侧栏" }, if auxiliary_open { "Hide right sidebar" } else { "Show right sidebar" }), None)

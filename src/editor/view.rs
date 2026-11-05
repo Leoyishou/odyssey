@@ -2664,6 +2664,9 @@ impl Editor {
     pub(crate) fn auxiliary_visible(&self) -> bool {
         self.auxiliary_open && (f32::from(self.auxiliary_bounds.get().size.width) >= self.auxiliary_width + 400. || self.auxiliary_forced)
     }
+    pub(crate) fn auxiliary_reserved_width(&self) -> f32 {
+        if self.auxiliary_open && f32::from(self.auxiliary_bounds.get().size.width) >= self.auxiliary_width + 400. { self.auxiliary_width } else { 0. }
+    }
     pub(crate) fn toggle_auxiliary(&mut self, cx: &mut Context<Self>) {
         let visible = self.auxiliary_visible();
         self.auxiliary_open = !visible;

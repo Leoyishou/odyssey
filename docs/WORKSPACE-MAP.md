@@ -34,5 +34,5 @@ Build 5 exercised outline jump, source-cell navigation, body/table undo, both si
 ## Build6 entry corrections
 
 - Right auxiliary visibility uses the fixed upper-right panel icon; no body text toggle or collapsed spacer. Width/open preferences and owning editor are reused.
-- Whole-vault search stays in left navigation; new document stays in the file navigation toolbar; document more-menu sits beside the document title. Keyboard actions and save gates are unchanged.
+- Whole-vault search stays in left navigation; new document stays in the file navigation toolbar; document more-menu sits at the right edge of the document header, separately from the window-level sidebar toggle. It follows reserved sidebar width; floating narrow-window panels do not reserve header space. Keyboard actions and save gates are unchanged.
 - Import is a preview followed by an explicit new-directory copy; mixed Markdown/XML libraries are rejected before writes. No user source library is migrated in place.

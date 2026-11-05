@@ -1614,7 +1614,10 @@ impl Render for Editor {
                     }))));
         let drag = self.auxiliary_drag.map(|(x, width)| deferred(div().id("auxiliary-drag").absolute().inset_0().occlude().cursor(CursorStyle::ResizeLeftRight)
             .on_mouse_move(cx.listener(move |ed, ev: &MouseMoveEvent, _, cx| {
-                if ev.pressed_button == Some(MouseButton::Left) { ed.auxiliary_width = (width + x - f32::from(ev.position.x)).clamp(240., 420.); }
+                if ev.pressed_button == Some(MouseButton::Left) {
+                    ed.auxiliary_width = (width + x - f32::from(ev.position.x)).clamp(240., 420.);
+                    cx.emit(super::view::EditorEvent::AuxiliaryChanged);
+                }
                 else { ed.auxiliary_drag = None; crate::settings::save_auxiliary(ed.auxiliary_open, ed.auxiliary_width); }
                 cx.notify();
             }))
