@@ -1,0 +1,11 @@
+wait 2500
+shot a0
+wheel 820 470 500
+wait 400
+shot a1
+wheel 820 470 500
+wait 400
+shot a2
+wheel 820 470 600
+wait 400
+shot a3

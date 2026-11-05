@@ -1,0 +1,44 @@
+# The 开始指南 screenshots. SHOT is `shot` (offscreen check) or `deskshot`
+# (on the wallpaper, via shots.sh). Window positions assume a 1352×878 screen.
+resize 1280 800
+place 126 104
+wait 900
+key cmd-alt-home
+wait 1200
+move 1090 690
+wait 400
+SHOT home
+click 120 232
+wait 1200
+move 1270 790
+wait 400
+SHOT editor
+resize 900 600
+place 226 154
+wait 700
+move 890 590
+wait 400
+key cmd-n
+wait 900
+type Weekend plans
+key enter
+wait 300
+type This week's notes are organized. Time to write the review.
+key enter
+type Select some text to reveal the formatting toolbar.
+key enter
+type Share the first draft with the team before Friday.
+wait 300
+key up
+key cmd-left
+key right right right right
+key shift-right shift-right shift-right shift-right shift-right shift-right shift-right shift-right shift-right
+wait 900
+SHOT toolbar
+key down
+key down
+key cmd-right
+key enter
+type /
+wait 900
+SHOT slash

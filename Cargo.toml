@@ -1,0 +1,74 @@
+[package]
+name = "quiet_md"
+version = "0.1.5"
+edition = "2024"
+description = "A fast, local-first rich text notes app for macOS and Windows, drawn with GPUI and compatible with Feishu DocxXML"
+license = "MIT"
+readme = "README.md"
+authors = ["s1dashu"]
+keywords = ["notes", "markdown", "editor", "gpui", "local-first"]
+categories = ["text-editors"]
+
+# `fdl_core` is the GPUI-free document engine; plain `cargo test` covers both.
+[workspace]
+members = ["crates/core"]
+default-members = [".", "crates/core"]
+
+[dependencies]
+fdl_core = { path = "crates/core" }
+anyhow = "1.0.104"
+dirs = "7.0.0"
+gpui = "0.2.2"
+quick-xml = "0.37"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+unicode-segmentation = "1.13.3"
+uuid = { version = "1.28.0", features = ["v4"] }
+image = { version = "0.25", default-features = false, features = ["png"] }
+raw-window-handle = "0.6"
+rustc-hash = "2.1"
+katex-rs = { version = "0.3", default-features = false }
+regex = "1"
+html5ever = "0.27"
+markup5ever_rcdom = "0.3"
+base64 = "0.22"
+minisign-verify = "0.3.0"
+log = "0.4"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+core-graphics = "0.24"
+core-foundation = "=0.10.0"
+objc = "0.2"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows-registry = "0.5"
+# PDF and printing (printing.rs): WebView2, on the same `windows` as GPUI.
+webview2-com = "0.38"
+windows = { version = "0.61", features = ["Win32_Foundation", "Win32_Graphics_Gdi", "Win32_System_Com", "Win32_System_Memory", "Win32_UI_Controls_Dialogs", "Win32_UI_WindowsAndMessaging"] }
+
+# GPUI 0.2.2 with local changes: glyphs are rasterized without font
+# smoothing (Feishu's `-webkit-font-smoothing: antialiased`) and grids take
+# explicit pixel column widths. Taffy 0.9.0 with the beyond-limits fix for
+# items spanning several auto rows (merged table cells).
+[patch.crates-io]
+gpui = { path = "vendor/gpui" }
+taffy = { path = "vendor/taffy" }
+
+# `objc`'s msg_send! checks `feature = "cargo-clippy"`, which rustc no longer
+# knows about.
+[workspace.lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("cargo-clippy"))'] }
+
+# Style lints that fight the code's deliberate shape (GPUI closures with
+# long types, pixel tables indexed by column, enums of laid-out lines).
+[workspace.lints.clippy]
+type_complexity = "allow"
+too_many_arguments = "allow"
+needless_range_loop = "allow"
+large_enum_variant = "allow"
+field_reassign_with_default = "allow"
+wrong_self_convention = "allow"
+unusual_byte_groupings = "allow"
+
+[lints]
+workspace = true

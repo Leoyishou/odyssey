@@ -1,0 +1,61 @@
+<title>Code and equations</title>
+<p>Keep a useful script, document an API or work through an equation. Code blocks provide syntax highlighting and line numbers, while LaTeX equations sit naturally alongside your writing.</p>
+<h1>Inline code</h1><p>Use inline code for commands, filenames and function names: <code>brew install ripgrep</code> or <code>~/.zshrc</code>. Wrap text in backticks as you type, or select it and press <code>⌘ ⌃ C</code>.</p>
+<h1>Code blocks</h1><h2>Insert a block</h2><ul><li>Type three backticks at the start of a line, then Space or Enter. Add a language, as in <code>```python</code>, to select it immediately.</li><li>Choose Code block from the slash menu, or press <code>⌘ ⌥ C</code>.</li><li>Use the block menu to turn an existing paragraph into code.</li></ul>
+<p>Inside a code block, Tab inserts four spaces, Shift-Tab reduces indentation, and Enter starts a new line. Markdown formatting is disabled and pasted content is treated as plain text.</p>
+<h2>Languages and highlighting</h2><p>Hover over a code block to choose its language. The searchable picker supports more than seventy languages.</p>
+<pre lang="python" caption="fetch_weather.py"><code>import json
+from urllib.request import urlopen
+
+def fetch_weather(city: str) -&gt; dict:
+    """Example client; replace the placeholder API before running."""
+    url = f"https://api.example.com/weather?city={city}"
+    with urlopen(url, timeout=5) as response:
+        return json.load(response)
+
+if __name__ == "__main__":
+    print(fetch_weather("London")["temp"], "°C")</code></pre>
+<pre lang="typescript" caption="useDebounce.ts"><code>import { useEffect, useState } from "react";
+
+// Update only after the input has been quiet for delay milliseconds.
+export function useDebounce&lt;T&gt;(value: T, delay = 300): T {
+  const [debounced, setDebounced] = useState(value);
+  useEffect(() =&gt; {
+    const id = setTimeout(() =&gt; setDebounced(value), delay);
+    return () =&gt; clearTimeout(id);
+  }, [value, delay]);
+  return debounced;
+}</code></pre>
+<pre lang="rust" caption="word_count.rs"><code>use std::collections::HashMap;
+
+/// Count each word, ignoring capitalization.
+fn word_count(text: &amp;str) -&gt; HashMap&lt;String, usize&gt; {
+    let mut counts = HashMap::new();
+    for word in text.split_whitespace() {
+        *counts.entry(word.to_lowercase()).or_insert(0) += 1;
+    }
+    counts
+}</code></pre>
+<pre lang="sql" caption="Monthly active users"><code>SELECT date_trunc('month', visited_at) AS month,
+       COUNT(DISTINCT user_id)         AS mau
+FROM   visits
+WHERE  visited_at &gt;= '2026-01-01'
+GROUP  BY 1
+ORDER  BY 1;</code></pre>
+<pre lang="json" caption="settings.json"><code>{
+  "sidebar_width": 284,
+  "window_size": [1280, 800],
+  "quick_note_size": [640, 800]
+}</code></pre>
+<pre lang="bash" caption="Back up your documents"><code># Create a dated archive of your documents.
+cd ~/Documents
+tar -czf "Quiet-$(date +%F).tar.gz" Quiet.md</code></pre>
+<h2>Names and wrapping</h2><p>Click the caption above a code block to give it a filename or a useful description. Long lines scroll horizontally by default. Enable wrapping in the block's controls when you would rather read them without scrolling.</p>
+<pre lang="plaintext" caption="Example error log" wrap="true"><code>2026-11-01 09:42:17.381 ERROR [save] No space left on device. The document remains unsaved; free some space and save again.</code></pre>
+<h2>Copy and fold</h2><ul><li>The copy button copies the complete code block without its line numbers.</li><li>Use the triangle on the left to fold a long block.</li><li>The document theme controls line numbers. Craft, Feishu and Obsidian show them; Notion does not.</li></ul>
+<h1>Equations</h1><h2>Insert an equation</h2><p>Type LaTeX between dollar signs: <code>$a^2+b^2=c^2$</code> becomes <latex>a^2+b^2=c^2</latex> when you type the closing dollar sign. Double-dollar delimiters work too.</p><p>You can also choose Equation from the slash menu. Press Esc to finish editing. Click an existing equation to edit it again; invalid input is marked without damaging the document.</p>
+<h2>Common examples</h2><table><colgroup><col width="300"/><col width="390"/></colgroup><thead><tr><th><p>Result</p></th><th><p>LaTeX</p></th></tr></thead><tbody>
+<tr><td><p><latex>\frac{a}{b} + \sqrt{x}</latex></p></td><td><p><code>\frac{a}{b} + \sqrt{x}</code></p></td></tr><tr><td><p><latex>x_1, x_2, \ldots, x_n</latex></p></td><td><p><code>x_1, x_2, \ldots, x_n</code></p></td></tr><tr><td><p><latex>\sum_{i=1}^{n} i = \frac{n(n+1)}{2}</latex></p></td><td><p><code>\sum_{i=1}^{n} i = \frac{n(n+1)}{2}</code></p></td></tr><tr><td><p><latex>\int_0^1 x^2 \, dx = \frac{1}{3}</latex></p></td><td><p><code>\int_0^1 x^2 \, dx = \frac{1}{3}</code></p></td></tr><tr><td><p><latex>\lim_{x \to 0} \frac{\sin x}{x} = 1</latex></p></td><td><p><code>\lim_{x \to 0} \frac{\sin x}{x} = 1</code></p></td></tr><tr><td><p><latex>\alpha, \beta, \gamma, \Delta, \Omega</latex></p></td><td><p><code>\alpha, \beta, \gamma, \Delta, \Omega</code></p></td></tr><tr><td><p><latex>A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}</latex></p></td><td><p><code>\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}</code></p></td></tr><tr><td><p><latex>f(x) = \begin{cases} x &amp; x \ge 0 \\ -x &amp; x &lt; 0 \end{cases}</latex></p></td><td><p><code>\begin{cases} x &amp; x \ge 0 \\ -x &amp; x &lt; 0 \end{cases}</code></p></td></tr>
+</tbody></table>
+<h2>Math in your writing</h2><p>The quadratic equation <latex>ax^2 + bx + c = 0</latex> has solutions <latex>x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</latex>. When <latex>\Delta = b^2 - 4ac &lt; 0</latex>, it has no real solutions.</p><p>For an equation on its own line, put it in a centered paragraph:</p><p align="center"><latex>e^{i\pi} + 1 = 0</latex></p><p align="center"><latex>\mathbb{E}[X] = \sum_x x \, P(X=x)</latex></p>
+<callout emoji="📐" background-color="light-purple" border-color="purple"><p>Markdown export preserves equations as <code>$…$</code>, ready for another editor that supports LaTeX.</p></callout><hr/><p>Next: <cite type="doc" doc-id="0c7532c1-edcc-534d-8efe-7bf6da8718ba" file-type="docx">Images, files and covers</cite>.</p>

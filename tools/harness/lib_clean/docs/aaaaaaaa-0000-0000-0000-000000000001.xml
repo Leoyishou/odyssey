@@ -1,0 +1,21 @@
+<title>全部 Block 样式审查</title>
+<p>普通 <b>加粗</b> <em>斜体</em> <u>下划线</u> <del>删除线</del> <code>行内代码</code> <span text-color="red">红字</span> <span background-color="light-yellow">黄底</span> <a href="https://a.com">链接</a> 公式 <latex>E=mc^2</latex></p>
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<ul><li>无序一<ul><li>无序子</li></ul></li><li>无序二</li></ul>
+<ol><li>有序一</li><li>有序二</li></ol>
+<checkbox done="false">待办</checkbox>
+<checkbox done="true">已完成待办</checkbox>
+<blockquote><p>引用块内容</p></blockquote>
+<pre lang="rust" caption="示例"><code>fn main() {
+    println!("hello");
+}</code></pre>
+<hr/>
+<callout emoji="💡" background-color="light-orange" border-color="orange"><p>高亮块内容</p></callout>
+<grid><column width-ratio="0.5"><p>分栏左</p></column><column width-ratio="0.5"><p>分栏右</p></column></grid>
+<grid><column width-ratio="0.3333"><p>三栏一</p></column><column width-ratio="0.3333"><p>三栏二</p></column><column width-ratio="0.3334"><p>三栏三</p></column></grid>
+<table><colgroup><col width="160"/><col width="160"/><col width="160"/></colgroup><thead><tr><th background-color="light-gray"><p>表头A</p></th><th><p>表头B</p></th><th><p>表头C</p></th></tr></thead><tbody><tr><td colspan="2"><p>合并单元格</p></td><td><p>3</p></td></tr><tr><td><p>4</p></td><td><p>5</p></td><td><p>6</p></td></tr></tbody></table>
+<img href="/tmp/fdlaudit/lib_clean/assets/sample-hypnogram.png" width="300" caption="图片标题"/>
+<whiteboard type="blank"></whiteboard>
+<p>结尾</p>

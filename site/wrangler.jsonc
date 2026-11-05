@@ -1,0 +1,8 @@
+// quiet.md 官网：public/ 下的静态页面，部署：npx wrangler@4 deploy（在 site/ 目录下）
+{
+  "name": "quiet-md-site",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./public" },
+  "workers_dev": false,
+  "routes": [{ "pattern": "quiet.md", "custom_domain": true }]
+}

@@ -1,0 +1,25 @@
+# The document engine: model, DocxXML, the editing core, the library on
+# disk, import and export. No GPUI, so it builds and tests on its own.
+[package]
+name = "fdl_core"
+version = "0.1.5"
+edition = "2024"
+description = "The document engine behind Quiet.md: model, DocxXML, editing core, library"
+license = "MIT"
+readme = "../../README.md"
+authors = ["s1dashu"]
+
+[dependencies]
+anyhow = "1.0.104"
+dirs = "7.0.0"
+quick-xml = "0.37"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+unicode-segmentation = "1.13.3"
+uuid = { version = "1.28.0", features = ["v4"] }
+rustc-hash = "2.1"
+html5ever = "0.27"
+markup5ever_rcdom = "0.3"
+
+[lints]
+workspace = true

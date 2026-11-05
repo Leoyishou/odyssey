@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>quiet.md — 又快又安静的本地笔记</title>
+<meta name="description" content="Rust + GPUI 原生绘制的本地笔记应用。百万字文档依然流畅，笔记全部存在你的电脑上，兼容飞书文档格式。支持 macOS 和 Windows。">
+<meta name="theme-color" content="#eef0ee">
+<meta property="og:title" content="quiet.md — 又快又安静的本地笔记">
+<meta property="og:description" content="原生绘制，本地优先，兼容飞书文档格式。macOS 与 Windows 免费下载。">
+<meta property="og:image" content="https://quiet.md/home.jpg">
+<meta property="og:url" content="https://quiet.md/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" as="image" href="/bg.png">
+<style>
+  :root {
+    color-scheme: light;
+    --ink: #1d211f;
+    --ink-2: #4a514d;
+    --glass: rgba(255, 255, 255, .62);
+    --glass-line: rgba(255, 255, 255, .75);
+    --dark: #18191b;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Hiragino Sans GB", "Segoe UI", "Microsoft YaHei", Inter, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    font-family: var(--font);
+    color: var(--ink);
+    background: #dfe6e2 url(/bg.png) center 30% / cover no-repeat; image-rendering: pixelated;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  /* Soft sky wash keeps the headline readable over the photo. */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: radial-gradient(ellipse 50% 38% at 50% 26%, rgba(20, 60, 120, .18), rgba(20, 60, 120, 0));
+  }
+  .page { min-height: 100svh; display: flex; flex-direction: column; position: relative; z-index: 0; }
+
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 68px; padding: 0 max(16px, 3vw); }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 650; font-size: 17px; letter-spacing: -.01em; }
+  .brand img { width: 30px; height: 30px; }
+  .pill-link {
+    display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 14px; border-radius: 999px;
+    color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 550;
+    background: var(--glass); border: 1px solid var(--glass-line);
+    backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    transition: background .15s;
+  }
+  .pill-link:hover { background: rgba(255, 255, 255, .85); }
+  .pill-link svg { width: 16px; height: 16px; }
+
+  header { text-align: center; padding: clamp(8px, 3.2vh, 40px) 16px 0; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px; height: 28px; padding: 0 12px 0 4px; border-radius: 999px;
+    font-size: 13px; font-weight: 550; color: var(--ink-2);
+    background: var(--glass); border: 1px solid var(--glass-line);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  }
+  .badge b { padding: 2px 8px; border-radius: 999px; background: #2f7d4f; color: #fff; font-size: 12px; font-weight: 600; }
+  h1 {
+    margin: clamp(14px, 2.4vh, 24px) 0 0; font-size: clamp(36px, 5.4vw, 72px); line-height: 1.12;
+    font-weight: 650; letter-spacing: -.03em;
+  }
+  h1 span { color: #23663d; }
+  .lede { max-width: 560px; margin: clamp(12px, 2vh, 20px) auto 0; font-size: clamp(15px, 1.25vw, 17px); line-height: 1.6; color: #2f3633; font-weight: 500; text-wrap: balance; }
+
+  .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: clamp(18px, 3vh, 30px); }
+  .dl {
+    display: inline-flex; align-items: center; gap: 12px; height: 54px; padding: 0 22px 0 18px; border-radius: 14px;
+    text-decoration: none; text-align: left; transition: transform .15s, box-shadow .15s, background .15s;
+  }
+  .dl:hover { transform: translateY(-1px); }
+  .dl svg { width: 22px; height: 22px; flex: none; }
+  .dl small { display: block; font-size: 11.5px; font-weight: 500; opacity: .7; line-height: 1.2; }
+  .dl strong { display: block; font-size: 17px; font-weight: 650; line-height: 1.25; letter-spacing: -.01em; }
+  .dl.mac { background: var(--dark); color: #fff; box-shadow: 0 1px 0 rgba(255, 255, 255, .12) inset, 0 8px 24px -8px rgba(0, 0, 0, .45); }
+  .dl.mac:hover { background: #000; box-shadow: 0 1px 0 rgba(255, 255, 255, .12) inset, 0 12px 28px -8px rgba(0, 0, 0, .5); }
+  .dl.win { color: var(--ink); background: rgba(255, 255, 255, .78); border: 1px solid rgba(255, 255, 255, .9); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); box-shadow: 0 8px 24px -10px rgba(20, 40, 30, .35); }
+  .dl.win:hover { background: rgba(255, 255, 255, .92); }
+  .dl.win svg { color: #0078d4; }
+
+  /* The app window rises from the bottom edge; its lower part is cut off by the screen. */
+  .stage { flex: 1; min-height: 220px; display: flex; justify-content: center; align-items: flex-start; padding: clamp(24px, 4.5vh, 52px) 16px 0; overflow: hidden; }
+  .window {
+    width: min(1080px, 100%, 112svh); aspect-ratio: 2000 / 1453; border-radius: 1.45% / 2%; overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .06), 0 30px 80px -20px rgba(10, 40, 20, .45), 0 12px 30px -12px rgba(10, 40, 20, .3);
+    background: #fff;
+  }
+  .window img { display: block; width: 100%; height: 100%; }
+
+  footer { position: absolute; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex-wrap: wrap; padding: 10px 16px; font-size: 11.5px; color: rgba(255, 255, 255, .92); text-shadow: 0 1px 2px rgba(0, 0, 0, .45); pointer-events: none; }
+  footer a { color: inherit; pointer-events: auto; }
+
+  @media (min-height: 700px) and (min-width: 900px) { .page { height: 100svh; } .stage { min-height: 0; } }
+  @media (max-width: 640px) {
+    nav { height: 58px; }
+    .pill-link span { display: none; }
+    .actions { flex-direction: column; align-items: stretch; max-width: 320px; margin-left: auto; margin-right: auto; }
+    .dl { justify-content: center; }
+    .stage { min-height: 260px; }
+    footer { position: static; flex-direction: row; justify-content: center; gap: 14px; padding-bottom: 14px; }
+  }
+
+  .nav-end { display: flex; align-items: center; gap: 8px; }
+  .lang { appearance: none; -webkit-appearance: none; cursor: pointer; font: inherit; font-size: 13px; padding: 0 28px 0 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%231d211f' stroke-width='1.6'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 11px center; }
+  :lang(zh-Hant) { --font: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Segoe UI", Helvetica, Arial, sans-serif; }
+  :lang(ja) { --font: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", "Meiryo", "Segoe UI", Helvetica, Arial, sans-serif; }
+  :lang(en) h1 { letter-spacing: -.035em; }
+
+  /* White type over the dithered sky. */
+  .brand, h1 { color: #fff; }
+  h1 { text-shadow: 0 2px 18px rgba(10, 40, 90, .35); }
+  h1 span { color: #e4f7c6; }
+  .lede { color: rgba(255, 255, 255, .95); text-shadow: 0 1px 8px rgba(10, 40, 90, .45); }
+  .brand { text-shadow: 0 1px 6px rgba(10, 40, 90, .35); }
+</style>
+</head>
+<body>
+<div class="page">
+  <nav>
+    <a class="brand" href="/"><img src="/logo.png" alt="">quiet.md</a>
+    <div class="nav-end">
+    <select class="pill-link lang" id="lang" aria-label="Language">
+      <option value="zh-Hans">简体中文</option>
+      <option value="zh-Hant">繁體中文</option>
+      <option value="en">English</option>
+      <option value="ja">日本語</option>
+    </select>
+    <a class="pill-link" href="https://github.com/s1dashu/quiet-md">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span>GitHub</span>
+    </a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="badge"><b>Beta</b><span data-i18n="badge">开源免费 · macOS 与 Windows</span></div>
+    <h1 data-i18n-html="title">又快又安静的<br><span>本地笔记</span></h1>
+    <p class="lede" data-i18n="lede">Rust + GPUI 原生绘制，百万字文档依然流畅。笔记全部存在你的电脑上，兼容飞书文档格式。</p>
+    <div class="actions">
+      <a class="dl mac" href="https://download.quiet.md/latest/quiet-md-macos-arm64.zip">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+        <span><small data-i18n="dlMac">下载 · Apple Silicon</small><strong>macOS</strong></span>
+      </a>
+      <a class="dl win" href="https://download.quiet.md/latest/quiet-md-windows-x64-setup.exe">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0h11.2v11.2H0zM12.8 0H24v11.2H12.8zM0 12.8h11.2V24H0zM12.8 12.8H24V24H12.8z"/></svg>
+        <span><small data-i18n="dlWin">下载 · x64</small><strong>Windows</strong></span>
+      </a>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="window"><img id="shot" src="/home-1400.webp" srcset="/home-1400.webp 1400w, /home-2000.webp 2000w" sizes="(max-width: 1112px) calc(100vw - 32px), 1080px" width="2000" height="1453" fetchpriority="high" alt="quiet.md 的主页：左侧是文档树，右侧按网格排列所有笔记。"></div>
+  </main>
+
+  <footer>
+    <span>© 2026 quiet.md</span>
+    <a href="https://unsplash.com/photos/a-grassy-hill-under-a-blue-sky-with-clouds-Js1QZNSz2uk">Photo: Spencer DeMera / Unsplash</a>
+  </footer>
+</div>
+<script>
+// Static i18n: ?lang= wins, then the saved choice, then the browser language; Simplified Chinese is the markup default.
+const T = {
+  "zh-Hans": { doc: "quiet.md — 又快又安静的本地笔记", desc: "Rust + GPUI 原生绘制的本地笔记应用。百万字文档依然流畅，笔记全部存在你的电脑上，兼容飞书文档格式。支持 macOS 和 Windows。",
+    badge: "开源免费 · macOS 与 Windows", title: "又快又安静的<br><span>本地笔记</span>", lede: "Rust + GPUI 原生绘制，百万字文档依然流畅。笔记全部存在你的电脑上，兼容飞书文档格式。",
+    dlMac: "下载 · Apple Silicon", dlWin: "下载 · x64", alt: "quiet.md 的主页：左侧是文档树，右侧按网格排列所有笔记。" },
+  "zh-Hant": { doc: "quiet.md — 又快又安靜的本地筆記", desc: "以 Rust + GPUI 原生繪製的本地筆記應用。百萬字文件依然流暢，筆記全部存在你的電腦上，相容飛書文件格式。支援 macOS 與 Windows。",
+    badge: "開源免費 · macOS 與 Windows", title: "又快又安靜的<br><span>本地筆記</span>", lede: "Rust + GPUI 原生繪製，百萬字文件依然流暢。筆記全部存在你的電腦上，相容飛書文件格式。",
+    dlMac: "下載 · Apple Silicon", dlWin: "下載 · x64", alt: "quiet.md 的首頁：左側是文件樹，右側以網格排列所有筆記。" },
+  en: { doc: "quiet.md — Fast, quiet, local notes", desc: "A native notes app drawn with Rust + GPUI. Smooth even with million-character documents, your notes stay on your computer, and it reads and writes Feishu (Lark) docs. For macOS and Windows.",
+    badge: "Free & open source · macOS and Windows", title: "Fast, quiet<br><span>local notes</span>", lede: "Drawn natively with Rust + GPUI, smooth even with million-character documents. Your notes stay on your computer, compatible with Feishu (Lark) docs.",
+    dlMac: "Download · Apple Silicon", dlWin: "Download · x64", alt: "The quiet.md home screen: a document tree on the left and all notes in a grid on the right." },
+  ja: { doc: "quiet.md — 速くて静かなローカルノート", desc: "Rust + GPUI でネイティブ描画するノートアプリ。100万字の文書でもなめらかで、ノートはすべてあなたのPCに保存。Feishu（Lark）ドキュメント形式に対応。macOS と Windows に対応。",
+    badge: "無料・オープンソース · macOS と Windows", title: "速くて静かな<br><span>ローカルノート</span>", lede: "Rust + GPUI によるネイティブ描画で、100万字の文書もなめらか。ノートはすべてあなたのPCに保存され、Feishu（Lark）ドキュメント形式に対応します。",
+    dlMac: "ダウンロード · Apple Silicon", dlWin: "ダウンロード · x64", alt: "quiet.md のホーム画面：左にドキュメントツリー、右にすべてのノートをグリッド表示。" },
+};
+function detect() {
+  const q = new URLSearchParams(location.search).get("lang");
+  if (q && T[q]) return q;
+  try { const saved = localStorage.getItem("lang"); if (saved && T[saved]) return saved; } catch {}
+  for (const l of navigator.languages || [navigator.language]) {
+    const v = (l || "").toLowerCase();
+    if (/^zh-(tw|hk|mo|hant)/.test(v)) return "zh-Hant";
+    if (v.startsWith("zh")) return "zh-Hans";
+    if (v.startsWith("ja")) return "ja";
+    if (v.startsWith("en")) return "en";
+  }
+  return "en";
+}
+function apply(lang) {
+  const t = T[lang];
+  document.documentElement.lang = lang === "zh-Hans" ? "zh-CN" : lang === "zh-Hant" ? "zh-Hant" : lang;
+  document.title = t.doc;
+  document.querySelector('meta[name="description"]').content = t.desc;
+  document.querySelectorAll("[data-i18n]").forEach(e => e.textContent = t[e.dataset.i18n]);
+  document.querySelectorAll("[data-i18n-html]").forEach(e => e.innerHTML = t[e.dataset.i18nHtml]);
+  document.getElementById("shot").alt = t.alt;
+  document.getElementById("lang").value = lang;
+}
+apply(detect());
+document.getElementById("lang").addEventListener("change", e => {
+  apply(e.target.value);
+  try { localStorage.setItem("lang", e.target.value); } catch {}
+});
+</script>
+</body>
+</html>

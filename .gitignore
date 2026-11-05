@@ -1,0 +1,22 @@
+/target
+/dist
+/dist-preview
+.DS_Store
+/archive/
+/shared-mock/*
+!/shared-mock/library/
+!/shared-mock/guides/
+
+/dist-release.*
+.wrangler/
+
+# Local validation and upstream-only app branding
+/evidence/
+/test-libraries/
+/assets/branding/hamster-source.png
+/assets/branding/quiet-q/
+.env
+.env.*
+*.pem
+/assets/icons/LICENSE-nucleo
+/.github/workflows/

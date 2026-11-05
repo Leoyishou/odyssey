@@ -1,0 +1,39 @@
+<title>Blocks: lists, quotes and callouts</title>
+<p>A document is made of blocks. Paragraphs, headings, list items, images and tables are all blocks you can insert, transform or move. Learn these few operations and the rest of the editor will feel familiar.</p>
+<h1>Three ways to work with blocks</h1><h2>The slash menu</h2><p>Type <code>/</code> on an empty line. Keep typing to narrow the list, use the arrow keys to choose an item, and press Enter to insert it.</p>
+<img src="assets/guides/slash.jpg" caption="Type a slash, search for a block, then press Enter" align="center"/>
+<p>The menu includes text, headings, lists, tasks, code, quotes, callouts, dividers, links, images, files, tables, columns, equations, buttons, child-page lists, reminders and countdowns. Try <code>/table</code>, <code>/code</code>, <code>/callout</code> or <code>/countdown</code>.</p>
+<h2>The block handle</h2><p>Hover to the left of a block to reveal its handle. Click it to open the block menu.</p>
+
+<ol><li><b>Turn into:</b> change a paragraph into a heading, list, task, quote, callout or code block without retyping it.</li><li><b>Indent and align:</b> adjust hierarchy and horizontal alignment.</li><li><b>Color:</b> set the block's text and background colors.</li><li><b>Cut, copy or delete:</b> act on the block and its children.</li><li><b>Add below:</b> insert another block directly underneath.</li></ol><p>On an empty line, the handle becomes a plus button that opens the insert menu.</p>
+<h2>Move blocks</h2><p>Drag the handle to move a block. A blue line marks its destination; dragging to the right can nest it under the previous block. Select several blocks to move them together. You can also press <code>⌃ ⇧ ↑</code> or <code>⌃ ⇧ ↓</code> to move the current block one place.</p>
+<h1>Lists</h1><h2>Bulleted lists</h2><p>Type <code>- </code> or press <code>⌘ ⇧ 8</code>. Use <code>Tab</code> and <code>⇧ Tab</code> to change the nesting level.</p>
+<ul><li>Pack for the trip<ul><li>Documents<ul><li>Passport</li><li>Travel reservations</li></ul></li><li>Charger, adapter and power bank</li></ul></li><li>On departure day<ul><li>Leave enough time to get to the station</li></ul></li></ul>
+<p>Press Enter on an empty list item to return to body text.</p>
+<h2>Numbered lists</h2><p>Type <code>1. </code> or press <code>⌘ ⇧ 7</code>. Numbers update automatically, and nested lists use a different numbering style.</p>
+<ol><li>Prepare the ingredients<ol><li>15 g of coffee, ground medium-fine</li><li>250 ml of hot water</li></ol></li><li>Pour 30 ml of water and wait 30 seconds</li><li>Add the remaining water in three pours</li></ol>
+<p>Click a number to continue a previous list, start a new one or choose a starting value.</p><ol><li seq="5">Remove the dripper and gently swirl the coffee</li><li>Pour into a warm cup</li></ol>
+<h2>Fold a list</h2><p>List items with children have a fold triangle. Try this one:</p><ul><li folded="true">Reference notes<ul><li>Grind size changes extraction time</li><li>Use the same recipe when comparing beans</li></ul></li></ul>
+<h1>Tasks</h1><p>Type <code>[] </code> or press <code>⌘ ⌥ T</code>. Click the checkbox, or press <code>⌘ Enter</code> while the cursor is in the task, to toggle it.</p>
+<checkbox done="true">Choose a release date</checkbox><checkbox done="true">Finish the design review</checkbox><checkbox done="false">Prepare the release<checkbox done="true">Write the notes</checkbox><checkbox done="false">Capture screenshots</checkbox><checkbox done="false">Review the English copy</checkbox></checkbox><checkbox done="false">Share the update</checkbox>
+<p>Tasks can be nested, colored and moved, and can live inside tables or callouts.</p>
+<h1>Quotes</h1><p>Type <code>&gt; </code> or press <code>⌘ ⇧ &gt;</code> to create a quote. Quotes can contain several paragraphs and lists.</p>
+<blockquote><p><b>Notes from our review</b></p><ul><li>Prioritize reliability before adding new features.</li><li>Review the week's changes every Friday.</li></ul></blockquote>
+<h1>Callouts</h1><p>A callout combines an icon, a background and optional borders. Insert one from the slash menu or transform an existing paragraph.</p>
+<callout emoji="💡" background-color="light-blue" border-color="blue"><p><b>Tip:</b> use a callout for a useful detail readers might otherwise miss.</p></callout>
+<callout emoji="✅" background-color="light-green" border-color="green"><p><b>Complete:</b> the review is done and the next step is clear.</p></callout>
+<callout emoji="⚠️" background-color="light-yellow" border-color="yellow"><p><b>Remember:</b> keep a backup of the notes you care about.</p></callout>
+<callout emoji="📚" background-color="light-purple" border-color="purple"><p>Choose a consistent color for each kind of note.</p></callout>
+<callout emoji="🗒️" background-color="light-gray"><p>A quiet, borderless note for supporting details.</p></callout>
+<p>Hover over a callout to change its text, border and fill colors with the palette control. Click its icon to choose another emoji.</p>
+<h1>Dividers</h1><p>Type <code>---</code> or press <code>⌘ ⌥ S</code>. The document theme decides whether the divider is dotted, solid or dashed.</p><hr/>
+<h1>Interactive blocks</h1><h2>Date reminders</h2><p>Insert a reminder from the slash menu or press <code>⌘ ⌥ W</code>. For example, a review could be scheduled for <time expire-time="1794236400000" notify-time="1794236400000" should-notify="true">2026-11-09 10:00</time>, with a year-end deadline of <time expire-time="1798779540000" notify-time="1798725600000" should-notify="true" is-whole-day="true">2026-12-31</time>.</p>
+<ul><li>Click the date to edit it. Add a time or use an all-day event.</li><li>Choose a notification at the event time or in advance. All-day reminders use 9:00 a.m.</li><li>Upcoming dates within a week appear orange, overdue dates red, and later dates blue.</li></ul>
+<callout emoji="🔔" background-color="light-yellow" border-color="yellow"><p>Quiet.md must be running to send a reminder notification. Quitting the app stops reminders until it is running again.</p></callout>
+<h2>Countdowns</h2><p>Insert a countdown, then use its pencil control to set a duration or a date. Use the palette to change its color. This example counts down to New Year's Day:</p>
+<countdown duration="4917027" start-time="1793862574000" notify="true" color="#4E83FD" timing="date" date="2027-01-01" time="00:00"/>
+<p>You can enable an in-app notification when the countdown finishes.</p>
+<h2>Buttons</h2><p>A button can open a URL or duplicate the current document. A duplicate button is useful on a reusable meeting or journal template.</p>
+<p><button action="OpenLink" src="https://www.apple.com/macos/" background-color="light-blue">Explore macOS</button> <button action="DuplicatePage" background-color="light-green">Make a copy of this guide</button></p><p>Hover over a button and edit it to change its label, color or action.</p>
+<h1>Child-page lists</h1><p>A child-page list automatically shows the documents nested under the current page. It updates as you add or remove children. See <cite type="doc" doc-id="a9990a8f-54d2-50bf-aa14-94226d01fb8e" file-type="docx">Organize and find your notes</cite> for a working example.</p>
+<hr/><p>Next: <cite type="doc" doc-id="7012a014-8f62-5ad2-a811-6a75ddbfce29" file-type="docx">Tables and columns</cite>.</p>

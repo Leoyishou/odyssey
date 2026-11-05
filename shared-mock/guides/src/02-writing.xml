@@ -1,0 +1,48 @@
+<title>Writing: text, headings and paragraphs</title>
+<p>Good structure makes a document easier to write and easier to read. This guide covers headings, text styles and paragraph layout, with keyboard shortcuts for the things you will do most often.</p>
+<h1>Headings give your writing structure</h1>
+<p>Quiet.md supports nine heading levels. Two or three are usually enough; deeper levels are useful for long specifications and detailed outlines.</p>
+<h2>Heading levels</h2><p>Here are a few examples:</p>
+<h3>A section within a chapter</h3><h4>A smaller point</h4><h5>One more level of detail</h5>
+<p>Type one to nine <code>#</code> characters followed by a space. You can also use <code>⌘ ⌥ 1</code> through <code>⌘ ⌥ 9</code>. The slash menu lists the first five levels; <code>⌘ ⌥ 0</code> turns a heading back into body text.</p>
+<table><colgroup><col width="200"/><col width="240"/><col width="250"/></colgroup><thead><tr><th><p>Style</p></th><th><p>Type</p></th><th><p>Shortcut</p></th></tr></thead><tbody>
+<tr><td><p>Body text</p></td><td><p>—</p></td><td><p><code>⌘ ⌥ 0</code></p></td></tr>
+<tr><td><p>Heading 1</p></td><td><p><code># </code></p></td><td><p><code>⌘ ⌥ 1</code></p></td></tr>
+<tr><td><p>Heading 2</p></td><td><p><code>## </code></p></td><td><p><code>⌘ ⌥ 2</code></p></td></tr>
+<tr><td><p>Heading 3</p></td><td><p><code>### </code></p></td><td><p><code>⌘ ⌥ 3</code></p></td></tr>
+<tr><td><p>Headings 4–9</p></td><td><p><code>#### </code> through <code>######### </code></p></td><td><p><code>⌘ ⌥ 4</code> through <code>⌘ ⌥ 9</code></p></td></tr>
+</tbody></table>
+<p>Headings appear automatically in the page outline. For a long document, write the outline first and then fill in each section.</p>
+<h2>Numbered headings</h2><p>Type <code>1. </code> at the beginning of a heading to enable automatic numbering. Numbers follow the heading hierarchy and update when you insert or move a section.</p>
+<h3 seq="auto">Research</h3><p>Start with the problem you want to understand.</p><h4 seq="auto">Interviews</h4><h4 seq="auto">Existing solutions</h4><h3 seq="auto">Design</h3><p>Numbering also appears in the outline.</p>
+<h2>Fold a section</h2><p>Hover to the left of a heading and click its triangle to hide or show the section below it. Paragraphs and list items with children can fold too.</p>
+<h3 folded="true">Expand this heading</h3><p>Folding changes what you see, not what is saved. Click the triangle again to fold this section.</p>
+<h1>Text styles</h1><p>Select some text to reveal the formatting toolbar, or use a shortcut.</p>
+<img src="assets/guides/toolbar.jpg" caption="Select text to reveal the formatting toolbar" align="center"/>
+<table><colgroup><col width="200"/><col width="210"/><col width="280"/></colgroup><thead><tr><th><p>Style</p></th><th><p>Shortcut</p></th><th><p>Markdown</p></th></tr></thead><tbody>
+<tr><td><p><b>Bold</b></p></td><td><p><code>⌘ B</code></p></td><td><p><code>**text**</code></p></td></tr>
+<tr><td><p><em>Italic</em></p></td><td><p><code>⌘ I</code></p></td><td><p><code>*text*</code></p></td></tr>
+<tr><td><p><u>Underline</u></p></td><td><p><code>⌘ U</code></p></td><td><p><code>~text~</code></p></td></tr>
+<tr><td><p><del>Strikethrough</del></p></td><td><p><code>⌘ ⇧ X</code></p></td><td><p><code>~~text~~</code></p></td></tr>
+<tr><td><p><code>Inline code</code></p></td><td><p><code>⌘ ⌃ C</code></p></td><td><p>Surround text with backticks</p></td></tr>
+<tr><td><p><b><em>Bold italic</em></b></p></td><td><p><code>⌘ B</code>, then <code>⌘ I</code></p></td><td><p><code>***text***</code></p></td></tr>
+</tbody></table>
+<p>Styles can overlap: <b><u>bold and underlined</u></b>, or <del><em>italic and crossed out</em></del>. Markdown formatting is applied when you type the closing marker. Press <code>⌘ Z</code> once to undo the conversion and keep the literal characters.</p>
+<callout emoji="📌" background-color="light-yellow" border-color="yellow"><p><code>~text~</code>, <code>_italic_</code> and <code>__bold__</code> need spaces or line boundaries around them. This keeps a name such as <code>file_name</code> from turning into formatting.</p></callout>
+<h1>Color and highlighting</h1><p>The toolbar's A control offers text colors and background highlights. Reusing a small set of colors helps readers understand what each one means.</p>
+<h2>Text colors</h2><p><span text-color="gray">Gray</span>, <span text-color="red">red</span>, <span text-color="orange">orange</span>, <span text-color="yellow">yellow</span>, <span text-color="green">green</span>, <span text-color="blue">blue</span> and <span text-color="purple">purple</span>.</p>
+<h2>Highlights</h2><p><span background-color="light-gray">Light gray</span> <span background-color="light-red">Light red</span> <span background-color="light-orange">Light orange</span> <span background-color="light-yellow">Light yellow</span> <span background-color="light-green">Light green</span> <span background-color="light-blue">Light blue</span> <span background-color="light-purple">Light purple</span></p>
+<p><span background-color="medium-gray">Medium gray</span> <span background-color="gray">Gray</span> <span background-color="red">Red</span> <span background-color="orange">Orange</span> <span background-color="yellow">Yellow</span> <span background-color="green">Green</span> <span background-color="blue">Blue</span> <span background-color="purple">Purple</span></p>
+<p>You can combine colors: <span text-color="red" background-color="light-red">needs attention</span> or <span text-color="green" background-color="light-green">checked and complete</span>. Press <code>⌘ ⌥ H</code> to apply your last-used colors to another selection. Use the reset option in the color panel to remove them.</p>
+<h2>Paragraph backgrounds</h2><p background-color="light-blue">To color a whole paragraph, open its block menu and choose a background color. This paragraph uses light blue.</p><p background-color="light-green">Adjacent paragraphs with the same background visually join into one area.</p>
+<h1>Links</h1><p>Select text and press <code>⌘ K</code> to add a URL, such as the <a href="https://www.apple.com/macos/">macOS website</a>. With no selection, you can enter both the label and the URL.</p>
+<ul><li>Typing an address beginning with <code>https://</code>, <code>http://</code> or <code>www.</code>, followed by a space, turns it into a link.</li><li>Hover over a link to edit it, remove it or copy its address.</li><li>Click a link to open it in your browser.</li><li>For links between notes, type <code>@</code>; see {{doc:organize}}.</li></ul>
+<h1>Paragraph layout</h1><h2>New paragraphs and line breaks</h2><p><code>Enter</code> starts a new paragraph. <code>⇧ Enter</code> inserts a line break inside the current one.<br/>This line belongs to the same paragraph as the one above.</p>
+<h2>Alignment</h2><p align="center">Center text with <code>⌘ ⇧ E</code>.</p><p align="right">Align right with <code>⌘ ⇧ R</code>.</p><p>Restore left alignment with <code>⌘ ⇧ L</code>. These controls are also in the block menu.</p>
+<h2>Indentation</h2><p>Press <code>Tab</code> to make a paragraph a child of the one above it. Press <code>⇧ Tab</code> to move it back out.<p>This is a child paragraph. It moves and folds with its parent.<p>Children can have children of their own.</p></p></p>
+<h1>Markdown input reference</h1><p>At the start of a line, type a marker followed by a space unless noted otherwise.</p>
+<table><colgroup><col width="310"/><col width="380"/></colgroup><tbody>
+<tr><td><p><code>#</code> through <code>#########</code></p></td><td><p>Heading levels 1–9</p></td></tr><tr><td><p><code>-</code>, <code>*</code> or <code>+</code></p></td><td><p>Bulleted list</p></td></tr><tr><td><p><code>1.</code></p></td><td><p>Numbered list; <code>5.</code> starts at five</p></td></tr><tr><td><p><code>[]</code></p></td><td><p>Task</p></td></tr><tr><td><p><code>&gt;</code></p></td><td><p>Quote</p></td></tr><tr><td><p><code>```</code> or <code>```python</code></p></td><td><p>Code block; Space or Enter completes it</p></td></tr><tr><td><p><code>---</code></p></td><td><p>Divider, as soon as you type the third dash</p></td></tr><tr><td><p><code>$E=mc^2$</code></p></td><td><p>Inline equation <latex>E=mc^2</latex></p></td></tr>
+</tbody></table>
+<h1>Undo, copy and paste</h1><ul><li><code>⌘ Z</code> undoes an edit; <code>⌘ ⇧ Z</code> or <code>⌘ Y</code> redoes it. Continuous typing is grouped into a single undo step.</li><li>Copying within Quiet.md preserves styles, colors, tables and images.</li><li>Pasting from a web page or Feishu preserves supported document structure. Markdown text is converted on paste.</li><li><code>⌘ ⇧ V</code> pastes plain text.</li><li>The bottom-right counter shows the word count of selected text.</li></ul>
+<hr/><p>Next: {{doc:blocks}}.</p>
