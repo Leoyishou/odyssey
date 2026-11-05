@@ -184,6 +184,11 @@ pub struct Editor {
     pub(super) layout: super::catalogue::PageLayout,
     /// 文档目录 pinned open (per document).
     pub cat_pinned: bool,
+    pub(super) auxiliary_open: bool,
+    pub(super) auxiliary_forced: bool,
+    pub(super) auxiliary_bounds: Rc<Cell<Bounds<Pixels>>>,
+    pub(super) auxiliary_width: f32,
+    pub(super) auxiliary_drag: Option<(f32, f32)>,
     /// Child pages of the open document (kept current by the workspace).
     pub sub_pages: Vec<SubPage>,
     pub(super) cat_entries: Rc<Vec<super::catalogue::CatEntry>>,
@@ -405,6 +410,11 @@ impl Editor {
             page_width,
             layout: Default::default(),
             cat_pinned: false,
+            auxiliary_open: crate::settings::prefs().auxiliary_open,
+            auxiliary_forced: false,
+            auxiliary_bounds: Rc::default(),
+            auxiliary_width: crate::settings::prefs().auxiliary_width.clamp(240., 420.),
+            auxiliary_drag: None,
             sub_pages: vec![],
             cat_entries: Rc::default(),
             cat_generation: None,

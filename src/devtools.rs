@@ -559,7 +559,7 @@ fn run(cmd: &str, rest: &str, window: &mut Window, cx: &mut App) {
                 _ => (cur.0, body),
             });
         }
-        "pick" => *PICK.lock().unwrap() = Some(rest.trim().split('|').map(std::path::PathBuf::from).collect()),
+        "pick" => *PICK.lock().unwrap() = Some(rest.trim().split('|').filter(|s| !s.is_empty()).map(std::path::PathBuf::from).collect()),
         // `deskshot name margin`: the window as it sits on screen, with
         // `margin` pt of whatever is below it (a wallpaper backdrop for the
         // 开始指南 screenshots) and the system's own corners and shadow.
@@ -625,9 +625,15 @@ fn frame(window: &mut Window, cx: &mut App) -> anyhow::Result<(usize, usize, Vec
 #[cfg(target_os = "macos")]
 fn capture(window: &mut Window, cx: &mut App, path: &str) -> anyhow::Result<()> {
     let (w, h, mut px) = frame(window, cx)?;
+    // Offscreen GPU frames omit native glass underneath transparent pixels.
+    // Composite onto the semantic window surface instead of making transparency black.
+    let bg: gpui::Rgba = crate::theme::c(crate::theme::craft::WINDOW).into();
+    let bg = [bg.r, bg.g, bg.b].map(|v| (v * 255.).round() as u16);
     for p in px.as_chunks_mut::<4>().0 {
         // BGRA (little-endian premultiplied first) → opaque RGBA.
         p.swap(0, 2);
+        let transparent = 255 - u16::from(p[3]);
+        for c in 0..3 { p[c] = (u16::from(p[c]) + (bg[c] * transparent + 127) / 255).min(255) as u8; }
         p[3] = 255;
     }
     image::save_buffer(path, &px, w as u32, h as u32, image::ColorType::Rgba8)?;

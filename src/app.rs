@@ -448,6 +448,7 @@ impl Workspace {
             ws.show_toast_kind(ToastKind::Error, &msg, cx);
             ws.status = SaveStatus::Failed(msg);
         }
+        if let Some(notice) = crate::vaults::STARTUP_NOTICE.get() { ws.show_toast_kind(ToastKind::Error, notice, cx); }
         ws
     }
 
@@ -953,14 +954,15 @@ impl Workspace {
     /// linking to it (双向链接).
     pub(crate) fn sync_links(&mut self, cx: &mut Context<Self>) {
         let (Some(id), Some(ed)) = (self.current.clone(), self.editor.clone()) else { return };
+        let paths = crate::tree::document_paths(&self.entries);
         let mut docs: Vec<crate::editor::links::DocRef> = self
             .entries
             .iter()
-            .map(|e| crate::editor::links::DocRef { id: e.id.clone(), title: e.title.clone(), preview: e.body.chars().take(600).collect(), pending: false, icon: e.icon.clone(), modified: e.meta.modified, opened: e.meta.opened })
+            .map(|e| crate::editor::links::DocRef { id: e.id.clone(), title: e.title.clone(), path: paths.get(&e.id).cloned().unwrap_or_default(), preview: e.body.chars().take(600).collect(), pending: false, icon: e.icon.clone(), modified: e.meta.modified, opened: e.meta.opened })
             .collect();
         for link in self.entries.iter().flat_map(|e| &e.links) {
             if let Some(title) = &link.pending_title && !docs.iter().any(|d| d.id == link.target) {
-                docs.push(crate::editor::links::DocRef { id: link.target.clone(), title: title.clone(), preview: "尚未创建，点击链接后创建文档".into(), pending: true, icon: None, modified: 0, opened: 0 });
+                docs.push(crate::editor::links::DocRef { id: link.target.clone(), title: title.clone(), path: crate::settings::tr("尚未创建，点击链接后创建", "Not created; open the link to create").into(), preview: "尚未创建，点击链接后创建文档".into(), pending: true, icon: None, modified: 0, opened: 0 });
             }
         }
         let backlinks = self
@@ -1230,7 +1232,8 @@ pub(crate) const HEADER_ACTIONS_H: f32 = 32.;
 
 impl Render for Workspace {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
-        self.native_sidebar.sync(if self.sidebar_open { self.sidebar_w(window) } else { 0. }, window);
+        self.native_sidebar.sync(crate::sidebar::RAIL_W + if self.sidebar_open { self.sidebar_w(window) } else { 0. }, window);
+        let rail = self.render_tool_rail(cx);
         let sidebar = if self.sidebar_open { Some(if matches!(self.view, View::Settings | View::Trash) { self.render_settings_sidebar(window, cx) } else { self.render_sidebar(window, cx) }) } else { None };
         let row_menu = self.render_row_menu(window, cx);
         let resize = self.sidebar_open.then(|| self.render_resize_handle(window, cx));
@@ -1369,6 +1372,7 @@ impl Render for Workspace {
                 if w.search_open { w.close_search(window, cx); } else { w.open_search(window, cx); }
                 cx.stop_propagation();
             }))
+            .child(rail)
             .children(sidebar)
             .child(note)
             .children(resize)

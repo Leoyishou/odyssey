@@ -49,7 +49,8 @@ pub fn initialize(root: &Path) -> anyhow::Result<()> {
         fs::create_dir_all(path.parent().unwrap())?;
         let windows = cfg!(target_os = "windows") && name.starts_with("docs/") && name.ends_with(".xml");
         match std::str::from_utf8(bytes) {
-            Ok(xml) if windows => fs::write(path, for_windows(xml))?,
+            Ok(xml) if windows => fs::write(path, for_windows(xml).replace("Quiet.md", "Odyssey"))?,
+            Ok(xml) if name.starts_with("docs/") && name.ends_with(".xml") => fs::write(path, xml.replace("Quiet.md", "Odyssey"))?,
             _ => fs::write(path, bytes)?,
         }
     }

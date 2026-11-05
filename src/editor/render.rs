@@ -1226,7 +1226,6 @@ impl Editor {
             Item::Below => div()
                 .id("below")
                 .w_full()
-                .children(self.refs_list(window, cx))
                 .child(div().h(px(200.)).w_full())
                 .on_mouse_down(MouseButton::Left, cx.listener(Self::on_click_below))
                 .into_any_element(),
@@ -1316,7 +1315,7 @@ impl Editor {
         self.code_rows = code_rows(&self.cache.borrow());
         // Sets the margins `sync_items` keys on.
         self.update_catalogue();
-        let catalogue = self.render_catalogue(window, cx);
+
         // Reads last frame's bar segments.
         self.table_autoscroll(window);
         self.block_autoscroll(window);
@@ -1574,7 +1573,6 @@ impl Editor {
             )
             .child(self.page_scrollbar())
             .children(file_line)
-            .children(catalogue)
             .children(overlays)
             .children(col_overlay)
             .children(table_overlay)
@@ -1596,9 +1594,47 @@ fn code_rows(cache: &HashMap<BlockId, super::text::TextLayout>) -> HashMap<Block
 impl Render for Editor {
     fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         let t0 = std::time::Instant::now();
-        let el = self.render_editor(window, cx);
+        let el = self.render_editor(window, cx).into_any_element();
+        let outline = self.render_catalogue(window, cx);
+        let refs = self.refs_list(window, cx);
+        let open = self.auxiliary_open;
+        // On small windows collapse the auxiliary area without changing the saved preference.
+        let available = f32::from(self.auxiliary_bounds.get().size.width);
+        let fits = available >= self.auxiliary_width + 400.;
+        let visible = open && (fits || self.auxiliary_forced);
+        let floating = visible && !fits;
+        let toggle = div().id("auxiliary-toggle").h(px(32.)).px(px(8.)).flex().items_center().cursor_pointer()
+            .text_size(px(12.)).text_color(Theme::text_caption()).hover(|s| s.bg(Theme::fill_hover()))
+            .child(if visible { crate::settings::tr("收起辅助栏", "Hide sidebar") } else { crate::settings::tr("大纲 / 引用", "Outline / Links") })
+            .on_click(cx.listener(move |ed, _, _, cx| {
+                ed.auxiliary_open = !open; ed.auxiliary_forced = false; crate::settings::save_auxiliary(ed.auxiliary_open, ed.auxiliary_width); cx.notify();
+            }));
+        let panel = div().id("auxiliary").relative().h_full().flex_none().flex().flex_col()
+            .w(px(if visible { self.auxiliary_width.min(available.max(160.)) } else { 32. })).bg(Theme::bg_body())
+            .when(floating, |d| d.absolute().right_0().top_0().bottom_0().border_l_1().border_color(Theme::line_divider()).occlude())
+            .when(visible, |d| d.px(px(12.)).child(toggle)
+                .child(div().id("auxiliary-scroll").flex_1().min_h_0().overflow_y_scroll().children(outline).children(refs))
+                .child(div().id("auxiliary-resize").absolute().left_0().top_0().bottom_0().w(px(6.)).cursor(CursorStyle::ResizeLeftRight)
+                    .on_mouse_down(MouseButton::Left, cx.listener(|ed, ev: &MouseDownEvent, _, cx| {
+                        ed.auxiliary_drag = Some((f32::from(ev.position.x), ed.auxiliary_width)); cx.stop_propagation(); cx.notify();
+                    }))))
+            .when(!visible, |d| d.child(div().id("auxiliary-show").mt(px(8.)).size(px(28.)).cursor_pointer()
+                .child(crate::editor_ui::icon("catalogue-list", 18., Theme::text_caption()))
+                .on_click(cx.listener(|ed, _, _, cx| { ed.auxiliary_open = true; ed.auxiliary_forced = true; crate::settings::save_auxiliary(ed.auxiliary_open, ed.auxiliary_width); cx.notify(); }))));
+        let drag = self.auxiliary_drag.map(|(x, width)| deferred(div().id("auxiliary-drag").absolute().inset_0().occlude().cursor(CursorStyle::ResizeLeftRight)
+            .on_mouse_move(cx.listener(move |ed, ev: &MouseMoveEvent, _, cx| {
+                if ev.pressed_button == Some(MouseButton::Left) { ed.auxiliary_width = (width + x - f32::from(ev.position.x)).clamp(240., 420.); }
+                else { ed.auxiliary_drag = None; crate::settings::save_auxiliary(ed.auxiliary_open, ed.auxiliary_width); }
+                cx.notify();
+            }))
+            .on_mouse_up(MouseButton::Left, cx.listener(|ed, _, _, cx| { ed.auxiliary_drag = None; crate::settings::save_auxiliary(ed.auxiliary_open, ed.auxiliary_width); cx.notify(); }))).with_priority(4));
         crate::devtools::RENDER_NS.fetch_add(t0.elapsed().as_nanos() as u64, std::sync::atomic::Ordering::Relaxed);
-        el
+        let bounds_cell = self.auxiliary_bounds.clone();
+        let entity = cx.entity();
+        let measure = canvas(move |bounds, _, _| bounds, move |bounds, _, window, _| {
+            if bounds_cell.replace(bounds) != bounds { let e = entity.clone(); window.on_next_frame(move |_, cx| e.update(cx, |_, cx| cx.notify())); }
+        }).absolute().inset_0();
+        div().size_full().relative().flex().child(div().flex_1().min_w_0().h_full().child(el)).child(panel).children(drag).child(measure)
     }
 }
 

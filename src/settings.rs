@@ -41,16 +41,25 @@ pub struct Preferences {
     pub appearance: String,
     /// The last version that opened this library (changelog.rs).
     pub seen_version: String,
+    pub auxiliary_open: bool,
+    pub auxiliary_width: f32,
 }
 
 impl Default for Preferences {
-    fn default() -> Self { Preferences { theme: String::new(), feishu: true, english: true, remote_images: true, quick_hotkey: true, auto_update: true, appearance: String::new(), seen_version: String::new() } }
+    fn default() -> Self { Preferences { theme: String::new(), feishu: true, english: true, remote_images: true, quick_hotkey: true, auto_update: true, appearance: String::new(), seen_version: String::new(), auxiliary_open: true, auxiliary_width: 280. } }
 }
 
 impl Preferences {
     pub fn theme_id(&self) -> String {
         if !self.theme.is_empty() { self.theme.clone() } else if self.feishu { "feishu".into() } else { "craft".into() }
     }
+}
+
+
+pub(crate) fn save_auxiliary(open: bool, width: f32) {
+    let mut p = prefs(); p.auxiliary_open = open; p.auxiliary_width = width;
+    if let Err(e) = save(&p) { crate::logging::write(&format!("workspace layout: {e}")); }
+    *PREFS.write().unwrap() = Some(p);
 }
 
 fn path() -> std::path::PathBuf { crate::store::Store::root_dir().join("preferences.json") }
@@ -676,9 +685,23 @@ impl Workspace {
             .child(group(None, vec![
                 row(tr("文档库文件夹", "Documents folder"), Some(location.into()),
                     button("reveal-library", reveal).on_click(|_, _, cx| cx.reveal_path(&crate::store::Store::root_dir()))).into_any_element(),
+                row(tr("新建文档库", "Create vault"), Some(tr("选择新文件夹，当前文档保存后在独立窗口打开", "Choose a new folder; save this document and open a separate window").into()),
+                    button("vault-create", tr("新建", "Create")).on_click(cx.listener(|w, _, window, cx| w.pick_vault(true, window, cx)))).into_any_element(),
+                row(tr("打开已有文档库", "Open existing vault"), Some(tr("仅打开 Odyssey 库；不修改 Markdown / Obsidian 源库", "Odyssey vaults only; Markdown / Obsidian folders are left untouched").into()),
+                    button("vault-open", tr("打开", "Open")).on_click(cx.listener(|w, _, window, cx| w.pick_vault(false, window, cx)))).into_any_element(),
                 row(tr("回收站", "Trash"), Some(if english() { format!("Deleted documents are kept for {} days.", crate::store::TRASH_DAYS) } else { format!("删除的文档保留 {} 天后自动清除。", crate::store::TRASH_DAYS) }.into()),
                     button("open-trash", tr("打开", "Open")).on_click(cx.listener(|w, _, _, cx| w.show_view(View::Trash, cx)))).into_any_element(),
             ]))
+            .child(caption(tr("最近文档库", "Recent vaults")))
+            .children(crate::vaults::recent().into_iter().enumerate().map(|(i, path)| {
+                let title = path.file_name().unwrap_or_default().to_string_lossy().into_owned();
+                let open = path.clone(); let forget = path.clone();
+                div().w_full().py(px(8.)).flex().items_center().gap(px(8.))
+                    .child(div().flex_1().min_w_0().child(div().text_size(px(13.)).child(title))
+                        .child(div().text_size(px(12.)).text_color(Theme::text_caption()).child(path.display().to_string())))
+                    .child(button(("vault-recent", i), tr("打开", "Open")).on_click(cx.listener(move |w, _, window, cx| w.open_vault(open.clone(), false, window, cx))))
+                    .child(button(("vault-forget", i), tr("移除", "Remove")).on_click(cx.listener(move |w, _, _, cx| w.forget_vault(&forget, cx))))
+            }))
             .into_any_element()
     }
 
@@ -686,7 +709,7 @@ impl Workspace {
         div().w_full().flex().flex_col().gap(px(28.)).child(div().w_full().pt(px(24.)).flex().flex_col().items_center().gap(px(10.))
             .child(img(about_icon()).size(px(88.)))
             .child(div().text_size(px(20.)).line_height(px(26.)).font_weight(FontWeight::SEMIBOLD).child("Odyssey"))
-            .child(div().text_size(px(13.)).line_height(px(18.)).text_color(Theme::text_caption()).child(format!("{} {}", tr("版本", "Version"), env!("CARGO_PKG_VERSION"))))
+            .child(div().text_size(px(13.)).line_height(px(18.)).text_color(Theme::text_caption()).child(format!("{} {} (build {})", tr("版本", "Version"), env!("CARGO_PKG_VERSION"), crate::BUILD)))
             .child(div().text_size(px(13.)).line_height(px(20.)).text_color(Theme::text_caption()).child(tr("本地优先的笔记应用：无需账号，文档就是你电脑上的文件。", "Local-first notes: no account, your documents are files on your Mac."))))
             .child(group(None, vec![update_row(cx).into_any_element()]))
             .into_any_element()

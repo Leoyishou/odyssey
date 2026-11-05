@@ -5,7 +5,7 @@ use super::core::TITLE;
 use super::render::{TOP, flattens, visible_with_gaps};
 use super::view::{Editor, EditorEvent};
 use crate::model::*;
-use crate::feishu_theme::{self as theme, Theme, craft};
+use crate::feishu_theme::{self as theme, Theme};
 use crate::editor_ui::{TipExt, TipSide, icon, ui_text};
 use gpui::{prelude::FluentBuilder, *};
 use std::cell::Cell;
@@ -19,11 +19,6 @@ const UNFOLD: f32 = 236.5;
 const EDITOR_MIN: f32 = 520.;
 /// RESPONSE_MIN: the narrowest pinned catalogue.
 const RESPONSE_MIN: f32 = 144.;
-/// RESPONSE_MAX.
-const RESPONSE_MAX: f32 = 265.;
-/// Catalogue padding-top; the pin row (PIN_HEIGHT 40) sits below it.
-const CAT_TOP: f32 = 54.;
-const PIN_H: f32 = 40.;
 /// Item height: a 22px line plus 8px padding-bottom.
 const ROW_H: f32 = 30.;
 /// Indent per level.
@@ -193,7 +188,7 @@ impl Editor {
             self.cat_entries = Rc::new(entries(&self.core.doc));
         }
         let o = f32::from(self.pane_size().width);
-        self.layout = page_layout(o, self.column_max(), !self.cat_entries.is_empty(), self.cat_pinned);
+        self.layout = page_layout(o, self.column_max(), false, false);
     }
 
     /// Scroll-spy: the last heading at most 90px below the viewport top. A
@@ -275,62 +270,16 @@ impl Editor {
     }
 
     pub(super) fn render_catalogue(&mut self, window: &mut Window, cx: &mut Context<Self>) -> Option<AnyElement> {
-        let mode = self.layout.cat;
-        if mode == CatMode::None {
-            return None;
-        }
-        let floating = mode == CatMode::Forced;
+        if self.cat_entries.is_empty() { return None; }
         let pinned = self.cat_pinned;
-        let pin = div()
-            .id(SharedString::from(format!("cat-pin-{pinned}")))
-            .absolute()
-            .left(px(14.))
-            .top(px(10.))
-            .size(px(24.))
-            .rounded(px(4.))
-            .flex()
-            .items_center()
-            .justify_center()
-            .cursor_pointer()
-            .group("cat-pin")
-            .hover(|s| s.bg(Theme::fill_hover_strong()))
-            .active(|s| s.bg(theme::ta(31, 35, 41, 0.2)))
-            .child(
-                icon(if pinned { "catalogue-collapse" } else { "catalogue-list" }, 18., Theme::text_caption())
-                    .group_hover("cat-pin", |s| s.text_color(theme::c(craft::old::B500))),
-            )
-            .tip_label(if pinned { crate::settings::text("收起目录") } else { crate::settings::text("展开目录") }.into(), TipSide::Above)
-            .on_click(cx.listener(move |ed, _, _, cx| ed.set_cat_pinned(!pinned, cx)));
-
-        let list_w = match mode {
-            CatMode::Pinned(u) => Some(u.min(RESPONSE_MAX) - 4.),
-            CatMode::Forced if floating => Some(UNFOLD),
-            _ => None,
-        };
-        let pane = self.pane_size();
-        // Below the cover while it is in view.
-        let top = CAT_TOP + self.core.doc.cover.as_ref().map_or(0., |_| {
-            let at = self.list.logical_scroll_top();
-            if at.item_ix == 0 { (super::cover::cover_height(window) - f32::from(at.offset_in_item)).max(0.) } else { 0. }
-        });
-        let body = list_w.map(|w| self.catalogue_list(w, f32::from(pane.height) - top - PIN_H - 40., window, cx));
-        Some(
-            div()
-                .id("catalogue")
-                .absolute()
-                .left_0()
-                .top(px(top))
-                .pl(px(4.))
-                .pt(px(PIN_H))
-                .block_mouse_except_scroll()
-                .cursor(CursorStyle::Arrow)
-                .when(list_w.is_none(), |d| d.w(px(42.)).h(px(PIN_H)).pt_0())
-                .when(floating, |d| d.bg(theme::ta(255, 255, 255, 0.96)).rounded(px(8.)))
-                .on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation())
-                .child(pin)
-                .children(body)
-                .into_any_element(),
-        )
+        let body = pinned.then(|| self.catalogue_list(self.auxiliary_width - 24., (f32::from(self.pane_size().height) * 0.45).max(120.), window, cx));
+        Some(div().id("catalogue").w_full().flex().flex_col()
+            .child(div().id("cat-pin").h(px(36.)).flex().items_center().gap(px(8.)).cursor_pointer()
+                .text_size(px(13.)).text_color(Theme::text_caption()).hover(|s| s.bg(Theme::fill_hover()))
+                .child(icon(if pinned { "catalogue-collapse" } else { "catalogue-list" }, 18., Theme::text_caption()))
+                .child(crate::settings::tr("文档大纲", "Outline"))
+                .on_click(cx.listener(move |ed, _, _, cx| ed.set_cat_pinned(!pinned, cx))))
+            .children(body).into_any_element())
     }
 
     fn catalogue_list(&mut self, width: f32, max_h: f32, window: &mut Window, cx: &mut Context<Self>) -> AnyElement {

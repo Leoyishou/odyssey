@@ -9,19 +9,16 @@ use gpui::{div, px, AnyElement, ClickEvent, FontWeight, Window, App};
 use crate::theme::Theme;
 use crate::ui::icon;
 
-const VERSION: &str = env!("CARGO_PKG_VERSION");
+const VERSION: &str = "odyssey-build-5";
 const RADIUS: f32 = 12.;
 
 /// Each version's notes: (version, [(中文, English)]). Only the running
 /// version's are shown; a version without notes shows nothing.
 const NOTES: &[(&str, &[(&str, &str)])] = &[
-    ("0.1.5", &[
-        ("应用更名为 Quiet.md", "The app is now called Quiet.md"),
-        ("首页新增批量管理：创建副本、移动、删除", "Manage several documents at once from Home: duplicate, move, delete"),
-        ("回收站可以一键清空", "Empty the Trash in one step"),
-        ("插入菜单的图标可以用方向键移动", "Arrow keys move through the insert menu's icons"),
-        ("删除全部文档后不再自动新建空文档", "Deleting every document no longer creates an empty one"),
-        ("Windows：快捷键显示为 Ctrl / Alt，启动失败时会提示并记录日志", "Windows: shortcuts read Ctrl / Alt, and a failed launch explains itself and leaves a log"),
+    (VERSION, &[
+        ("双括号文档搜索与显示别名", "Document search with double brackets and display aliases"),
+        ("正文与表格中的纯文字链接、悬浮预览", "Plain text document links and previews in paragraphs and tables"),
+        ("本地独立文档库，更多工作区能力仍在开发", "Independent local library; more workspace features are in development"),
     ]),
 ];
 
@@ -35,7 +32,7 @@ fn notes() -> Option<&'static [(&'static str, &'static str)]> { NOTES.iter().fin
 pub fn startup(existed: bool) {
     let mut p = crate::settings::prefs();
     if p.seen_version == VERSION { return }
-    let upgraded = existed && (p.seen_version.is_empty() || crate::update::newer(VERSION, &p.seen_version));
+    let upgraded = existed && p.seen_version != VERSION;
     PENDING.store(upgraded && notes().is_some(), Ordering::Relaxed);
     p.seen_version = VERSION.into();
     if let Err(e) = crate::settings::save(&p) { log::warn!("changelog: {e:#}"); }
@@ -45,7 +42,7 @@ pub fn startup(existed: bool) {
 pub fn card(on_close: impl Fn(&ClickEvent, &mut Window, &mut App) + 'static) -> Option<AnyElement> {
     if !PENDING.load(Ordering::Relaxed) { return None }
     let notes = notes()?;
-    let title = crate::localized_format!("已更新到 {}", "Updated to {}", VERSION);
+    let title = crate::settings::tr("Odyssey 开发版", "Odyssey development build");
     let mut list = div().mt(px(6.)).w_full().min_w_0().flex().flex_col().gap(px(4.));
     for &(zh, en) in notes {
         list = list.child(div().w_full().min_w_0().flex().gap(px(6.)).text_size(px(12.)).line_height(px(18.)).text_color(Theme::text_caption())

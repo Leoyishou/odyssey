@@ -18,6 +18,7 @@ use gpui::{prelude::FluentBuilder, *};
 pub struct DocRef {
     pub id: String,
     pub title: String,
+    pub path: String,
     pub preview: String,
     pub pending: bool,
     pub icon: Option<String>,
@@ -214,7 +215,7 @@ impl Editor {
         }
         if !q.is_empty() && !out.iter().any(|d| d.title.to_lowercase() == q) {
             let title = query.trim_end_matches(&[']', '】', '］'][..]).split('|').next().unwrap_or("").trim().to_string();
-            out.push(DocRef { id: uuid::Uuid::new_v4().to_string(), title, preview: "尚未创建，点击链接后创建文档".into(), pending: true, icon: None, modified: 0, opened: 0 });
+            out.push(DocRef { id: uuid::Uuid::new_v4().to_string(), path: crate::settings::tr("尚未创建，点击链接后创建", "Not created; open the link to create").into(), title, preview: "尚未创建，点击链接后创建文档".into(), pending: true, icon: None, modified: 0, opened: 0 });
         }
         out.truncate(20);
         out
@@ -350,9 +351,9 @@ impl Editor {
                                 div()
                                     .text_size(px(11.))
                                     .line_height(px(16.))
-                                    .text_color(Theme::text_placeholder())
+                                    .text_color(Theme::text_caption())
                                     .truncate()
-                                    .child(ui_text(crate::localized_format!("最近修改：{}", "Last modified: {}", format!("{} · {}", crate::editor_ui::format_ago(d.modified), &d.id[..d.id.len().min(8)])))),
+                                    .child(ui_text(d.path.clone())),
                             ),
                     ),
             );
@@ -386,7 +387,7 @@ impl Editor {
         let tab = |id: &'static str, name: &str, n: usize, active: bool, b: bool| {
             div()
                 .id(id)
-                .mr(px(32.))
+                .mr(px(8.))
                 .relative()
                 .flex()
                 .items_center()
@@ -426,12 +427,12 @@ impl Editor {
             .flex()
             .items_center()
             .justify_between()
-            .mr(px(20.))
+            .mr(px(8.))
             .border_b_1()
             .border_color(Theme::line_divider())
-            .child(div().flex().items_center().child(tab("refs-tab-back", crate::settings::text("反向引用"), nb, back, true).child(help)).child(tab("refs-tab-refs", crate::settings::text("本文引用"), nr, !back, false)))
+            .child(div().flex().flex_wrap().items_center().child(tab("refs-tab-back", crate::settings::text("反向引用"), nb, back, true).child(help)).child(tab("refs-tab-refs", crate::settings::text("本文引用"), nr, !back, false)))
             .child(close);
-        let mut list = div().py(px(12.)).pr(px(20.)).flex().flex_col();
+        let mut list = div().py(px(12.)).pr(px(8.)).flex().flex_col();
         let docs = self.links.docs.clone();
         let font = window.text_style().font();
         let title_row = |id: String, row: usize, chevron: Option<bool>, cx: &mut Context<Self>| {
@@ -582,9 +583,9 @@ impl Editor {
         Some(
             div()
                 .id("refs")
-                .mt(px(40.))
-                .mb(px(40.))
-                .pl(px(20.))
+                .mt(px(12.))
+                .mb(px(12.))
+                .pl(px(8.))
                 .pt(px(8.))
                 .rounded(px(CARD))
                 .bg(Theme::bg_overlay())

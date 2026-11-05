@@ -1,4 +1,6 @@
 #!/bin/zsh
+echo "Upstream-only script disabled in Odyssey. See scripts/package-odyssey.py and README.md." >&2
+exit 1
 # Replace the running hand-test build (dist-preview) with target/release. It
 # runs as dist-preview/quiet.md.app (so the menu bar says Quiet.md) on the
 # saved preview library, or ~/Documents/Quiet.md. The app initializes the

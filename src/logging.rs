@@ -12,16 +12,16 @@ static OPENED: OnceLock<PathBuf> = OnceLock::new();
 /// `~/Library/Logs/quiet.md` on macOS, `%LOCALAPPDATA%\quiet.md\logs` on
 /// Windows; independent of where the program itself lives.
 pub fn dir() -> PathBuf {
-    if let Some(d) = std::env::var_os("QUIET_MD_LOG_DIR") { return PathBuf::from(d) }
+    if let Some(d) = std::env::var_os("ODYSSEY_LOG_DIR").or_else(|| std::env::var_os("QUIET_MD_LOG_DIR")) { return PathBuf::from(d) }
     #[cfg(target_os = "macos")]
-    let base = dirs::home_dir().map(|h| h.join("Library").join("Logs").join("quiet.md"));
+    let base = dirs::home_dir().map(|h| h.join("Library").join("Logs").join("Odyssey"));
     #[cfg(not(target_os = "macos"))]
-    let base = dirs::data_local_dir().map(|d| d.join("quiet.md").join("logs"));
-    base.unwrap_or_else(|| std::env::temp_dir().join("quiet.md-logs"))
+    let base = dirs::data_local_dir().map(|d| d.join("Odyssey").join("logs"));
+    base.unwrap_or_else(|| std::env::temp_dir().join("Odyssey-logs"))
 }
 
 /// The file actually written (the temp fallback included).
-pub fn path() -> PathBuf { OPENED.get().cloned().unwrap_or_else(|| dir().join("quiet-md.log")) }
+pub fn path() -> PathBuf { OPENED.get().cloned().unwrap_or_else(|| dir().join("odyssey.log")) }
 
 struct Logger;
 
@@ -39,14 +39,14 @@ impl log::Log for Logger {
 pub fn init() {
     let open = |dir: PathBuf| -> std::io::Result<File> {
         std::fs::create_dir_all(&dir)?;
-        let p = dir.join("quiet-md.log");
+        let p = dir.join("odyssey.log");
         let big = std::fs::metadata(&p).is_ok_and(|m| m.len() > 1 << 20);
-        if big { let _ = std::fs::rename(&p, dir.join("quiet-md.old.log")); }
+        if big { let _ = std::fs::rename(&p, dir.join("odyssey.old.log")); }
         let f = OpenOptions::new().create(true).append(true).open(&p)?;
         let _ = OPENED.set(p);
         Ok(f)
     };
-    if let Ok(f) = open(dir()).or_else(|_| open(std::env::temp_dir().join("quiet.md-logs"))) { let _ = FILE.set(Mutex::new(f)); }
+    if let Ok(f) = open(dir()).or_else(|_| open(std::env::temp_dir().join("Odyssey-logs"))) { let _ = FILE.set(Mutex::new(f)); }
     let _ = log::set_logger(&Logger).map(|()| log::set_max_level(log::LevelFilter::Info));
     let default = std::panic::take_hook();
     std::panic::set_hook(Box::new(move |info| {

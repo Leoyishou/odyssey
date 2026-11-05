@@ -24,6 +24,8 @@ fn row_menu_height(items: usize, dividers: usize) -> f32 {
 /// 30pt with radius 9 on a 31pt pitch, glyphs (18pt) centre at 37pt and
 /// labels start at 54pt; groups are 16pt apart, a section header is 34pt
 /// (6 above its 28pt label).
+pub(crate) const RAIL_W: f32 = 44.;
+
 pub(crate) const SB_X: f32 = 14.;
 pub(crate) const ROW_H: f32 = 30.;
 const DOC_ROW_H: f32 = ROW_H;
@@ -90,11 +92,26 @@ pub(crate) fn checkbox(state: Check, disabled: bool, group: &'static str) -> Div
 }
 
 impl Workspace {
+    pub(crate) fn render_tool_rail(&self, cx: &mut Context<Self>) -> AnyElement {
+        let tool = |id, name: &str, label| div().id(id).size(px(32.)).rounded(px(8.))
+            .flex().items_center().justify_center().cursor_pointer().hover(|s| s.bg(Theme::sidebar_hover()))
+            .tip(label, None).child(icon(name, 18., Theme::icon()));
+        div().w(px(RAIL_W)).flex_none().h_full().pt(px(crate::app::HEADER_H + 8.)).pb(px(10.))
+            .flex().flex_col().items_center().gap(px(8.))
+            .child(tool("rail-new", "plus", crate::settings::tr("新建文档", "New document")).on_click(cx.listener(|w, _, window, cx| w.new_doc(window, cx))))
+            .child(tool("rail-search", "search", crate::settings::tr("搜索", "Search")).on_click(cx.listener(|w, _, window, cx| w.open_search(window, cx))))
+            .child(tool("rail-sidebar", "panel-left-close", crate::settings::tr("显示/隐藏导航", "Toggle navigation")).on_click(cx.listener(|w, _, _, cx| { w.sidebar_open = !w.sidebar_open; cx.notify(); })))
+            .child(div().flex_1())
+            .child(tool("rail-vault", "folder-input", crate::settings::tr("文档库", "Vaults")).on_click(cx.listener(|w, _, _, cx| w.open_settings(crate::settings::Page::Library, cx))))
+            .child(tool("rail-settings", "settings-gear", crate::settings::tr("设置", "Settings")).on_click(cx.listener(|w, _, _, cx| w.show_view(View::Settings, cx))))
+            .into_any_element()
+    }
+
     /// Sidebar width for the current window: the dragged width, kept between
     /// 268 and min(800, window − 540).
     pub(crate) fn sidebar_w(&self, window: &Window) -> f32 {
         let vw = f32::from(window.viewport_size().width);
-        let max = theme::SIDEBAR_MAX.min(vw - theme::SIDEBAR_MIN_CONTENT).max(theme::SIDEBAR_MIN);
+        let max = theme::SIDEBAR_MAX.min(vw - RAIL_W - theme::SIDEBAR_MIN_CONTENT).max(theme::SIDEBAR_MIN);
         self.sidebar_width.clamp(theme::SIDEBAR_MIN, max)
     }
 
@@ -107,7 +124,7 @@ impl Workspace {
             .flex_none()
             .flex()
             .items_center()
-            .pl(px(theme::TRAFFIC_LIGHTS_W))
+            .pl(px((theme::TRAFFIC_LIGHTS_W - RAIL_W).max(0.)))
             .pr(px(12.))
             .title_bar()
             .when(cfg!(target_os = "windows"), |d| d.child(self.header_navigation(cx)))
@@ -218,8 +235,8 @@ impl Workspace {
             .flex_col()
             .when(self.batch.is_none(), |d| {
                 d.child(footer_slot(
-                    footer_row("ft-settings", "settings-gear", crate::settings::tr("设置", "Settings"))
-                        .on_click(cx.listener(|w, _, _, cx| w.show_view(View::Settings, cx))),
+                    footer_row("ft-vault", "folder-input", crate::settings::tr("文档库", "Vaults"))
+                        .on_click(cx.listener(|w, _, _, cx| w.open_settings(crate::settings::Page::Library, cx))),
                 ))
             })
             // 批量操作 toolbar: 创建副本 | 移动到 | 删除, minus the cloud ones.
@@ -240,6 +257,7 @@ impl Workspace {
             .flex_col()
             .child(header)
             .child(nav)
+            .child(div().px(px(SB_X + 6.)).pb(px(8.)).text_size(px(12.)).text_color(Theme::text_caption()).truncate().child(crate::store::Store::root_dir().file_name().unwrap_or_default().to_string_lossy().into_owned()))
             .child(div().id("doc-list").flex_1().min_h_0().overflow_y_scroll().track_scroll(&self.list_scroll).child(list))
             .children(crate::changelog::card(cx.listener(|_, _, _, cx| cx.notify())))
             .child(footer)
@@ -250,7 +268,7 @@ impl Workspace {
     /// 9px over the note's margin). Borderless like the sidebar: only the
     /// cursor changes, and a faint line shows while dragging.
     pub(crate) fn render_resize_handle(&self, window: &Window, cx: &mut Context<Self>) -> AnyElement {
-        let w = self.sidebar_w(window);
+        let w = self.sidebar_w(window) + RAIL_W;
         let dragging = self.sidebar_drag;
         div()
             .id("sidebar-resize")
@@ -310,7 +328,7 @@ impl Workspace {
                         if ev.pressed_button != Some(MouseButton::Left) {
                             return end(ws, cx);
                         }
-                        ws.sidebar_width = f32::from(ev.position.x);
+                        ws.sidebar_width = f32::from(ev.position.x) - RAIL_W;
                         ws.sidebar_width = ws.sidebar_w(window);
                         cx.notify();
                     }))

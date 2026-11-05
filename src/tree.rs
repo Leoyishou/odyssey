@@ -13,6 +13,34 @@ use crate::ui::{ROW_RADIUS, icon, ui_text};
 use gpui::{prelude::FluentBuilder, *};
 use std::collections::{HashMap, HashSet};
 
+/// Logical library paths for link completion, distinct from physical XML filenames.
+pub(crate) fn document_paths(entries: &[Entry]) -> HashMap<String, String> {
+    let by_id: HashMap<&str, &Entry> = entries.iter().map(|e| (e.id.as_str(), e)).collect();
+    let mut out = HashMap::new();
+    for entry in entries {
+        let mut labels = vec![display_title(&entry.title).to_string()];
+        let mut seen = HashSet::from([entry.id.as_str()]);
+        let mut parent = entry.meta.parent.as_deref();
+        while let Some(e) = parent.and_then(|id| by_id.get(id)) {
+            if !seen.insert(e.id.as_str()) { break }
+            labels.push(display_title(&e.title).to_string());
+            parent = e.meta.parent.as_deref();
+        }
+        labels.reverse();
+        out.insert(entry.id.clone(), format!("/{}", labels.join(" / ")));
+    }
+    let mut counts = HashMap::new();
+    for path in out.values() { *counts.entry(path.clone()).or_insert(0) += 1; }
+    // IDs appear only when even the full logical paths are identical.
+    for (id, path) in &mut out {
+        if counts.get(path).is_some_and(|n| *n > 1) {
+            let suffix: String = id.chars().rev().take(8).collect::<String>().chars().rev().collect();
+            path.push_str(&format!(" · {suffix}"));
+        }
+    }
+    out
+}
+
 /// Children of every page, keyed by parent (`None`: the top level, in list
 /// order); siblings oldest first. A page whose parent is gone, or that sits
 /// in a parent cycle, is shown at the top level.
@@ -417,5 +445,29 @@ impl Workspace {
             .with_priority(3)
             .into_any_element(),
         )
+    }
+}
+
+#[cfg(test)]
+mod link_path_tests {
+    use super::document_paths;
+    use crate::store::Entry;
+    fn entry(id: &str, title: &str, parent: Option<&str>) -> Entry {
+        Entry { id: id.into(), title: title.into(), meta: crate::store::Meta { parent: parent.map(str::to_string), ..Default::default() }, icon: None, body: String::new(), reminders: vec![], links: vec![] }
+    }
+    #[test]
+    fn same_title_in_different_parents_has_useful_paths() {
+        let entries = vec![entry("a", "工作", None), entry("b", "学习", None), entry("x", "LLM", Some("a")), entry("y", "LLM", Some("b"))];
+        let paths = document_paths(&entries);
+        assert_eq!(paths["x"], "/工作 / LLM");
+        assert_eq!(paths["y"], "/学习 / LLM");
+    }
+    #[test]
+    fn malformed_cycles_terminate_and_duplicate_paths_are_distinct() {
+        let entries = vec![entry("循环甲", "甲", Some("循环乙")), entry("循环乙", "乙", Some("循环甲")), entry("中文标识一", "同名", None), entry("中文标识二", "同名", None)];
+        let paths = document_paths(&entries);
+        assert_eq!(paths.len(), 4);
+        assert_ne!(paths["中文标识一"], paths["中文标识二"]);
+        assert!(paths["循环甲"].contains("甲"));
     }
 }

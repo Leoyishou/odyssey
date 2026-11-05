@@ -466,35 +466,6 @@ impl TipExt for Stateful<Div> {
     }
 }
 
-/// Human-friendly modification time ("今天 14:03", "昨天", "10月3日").
-pub fn format_time(secs: u64) -> String {
-    let now = crate::time::now();
-    let (y, mo, d, h, mi) = civil(secs);
-    let (ny, nmo, nd, _, _) = civil(now);
-    let (yy, ymo, yd, _, _) = civil(now.saturating_sub(86_400));
-    if (y, mo, d) == (ny, nmo, nd) {
-        crate::localized_format!("今天 {h:02}:{mi:02}", "Today {h:02}:{mi:02}")
-    } else if (y, mo, d) == (yy, ymo, yd) {
-        crate::localized_format!("昨天 {h:02}:{mi:02}", "Yesterday {h:02}:{mi:02}")
-    } else if y == ny {
-        crate::localized_format!("{mo}月{d}日", "{mo:02}-{d:02}")
-    } else {
-        if crate::settings::english() { format!("{y}-{mo:02}-{d:02}") } else { format!("{y}年{mo}月{d}日") }
-    }
-}
-
-/// Header status time ("刚刚", "5 分钟前", then like `format_time`).
-pub fn format_ago(secs: u64) -> String {
-    let ago = crate::time::now().saturating_sub(secs);
-    if ago < 60 {
-        crate::settings::text("刚刚").into()
-    } else if ago < 3600 {
-        crate::localized_format!("{} 分钟前", "{} min ago", ago / 60)
-    } else {
-        format_time(secs)
-    }
-}
-
 /// Full date ("2025年12月2日"), as in 文档信息.
 pub fn format_date(secs: u64) -> String {
     let (y, mo, d, _, _) = civil(secs);

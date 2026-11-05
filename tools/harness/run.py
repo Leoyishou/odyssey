@@ -16,9 +16,12 @@ script = os.path.join(work, 's.txt')
 open(script, 'w').write(open(sys.argv[1]).read() + '\nquit\n')
 lib = os.path.join(work, 'lib')
 shutil.rmtree(lib, ignore_errors=True); shutil.copytree(lib_src, lib)
+# Historical fixtures predate format.json; normalize only this disposable copy.
+if not os.path.exists(os.path.join(lib, 'format.json')):
+    open(os.path.join(lib, 'format.json'), 'w').write('{"format":1}\n')
 binary = os.environ.get('FDL_BIN') or os.path.join(repo, 'target', 'release', 'quiet_md')
 env = {'HOME': os.path.expanduser('~'), 'QUIET_MD_HOME': lib, 'FDL_SCRIPT': script,
-       'FDL_SHOTS': work, 'PATH': '/opt/homebrew/bin:/usr/bin:/bin'}
+       'FDL_SHOTS': work, 'ODYSSEY_LOG_DIR': work, 'PATH': '/opt/homebrew/bin:/usr/bin:/bin'}
 for k in ('FDL_TRACE', 'FDL_NOPARK', 'FDL_WINDOW_CAPTURE', 'FDL_NOBLINK', 'FDL_RECORD_FPS'):
     if k in os.environ: env[k] = os.environ[k]
 subprocess.run(binary, env=env, cwd=work, stdout=open(os.path.join(work, 'log'), 'w'), stderr=subprocess.STDOUT)

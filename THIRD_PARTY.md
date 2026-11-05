@@ -768,7 +768,7 @@ Windows 安装包随附未修改的 Microsoft Visual C++ Runtime `vcruntime140.d
 |---|---|
 | `assets/editor-icons/`（编辑器与文档里的 195 个图标） | 其中 49 个直接取自 Lucide（ISC，见同目录 `LICENSE-lucide`），其余按同一 24px / 2px 描边规格绘制 |
 | `assets/icons/` | Odyssey 替换为 `assets/editor-icons/` 的 ISC / MIT 图标；arrow-left、expand、settings-gear 为 Odyssey 自绘 MIT。未分发上游 Nucleo 图形。 |
-| `assets/branding/app-icon.png` | Odyssey 原创指南针图标，MIT； |
+| `assets/branding/app-icon.png` | Odyssey 原创指南针图标，MIT；脚本见scripts/odyssey-icon.swift。 |
 
 ## 封面与插画
 

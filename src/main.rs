@@ -41,6 +41,8 @@ mod trash;
 mod tree;
 mod ui;
 mod update;
+mod vaults;
+pub const BUILD: &str = "5";
 
 use fdl_core::{docxml, lang, markdown, model, palette, paste, store, time};
 
@@ -91,6 +93,7 @@ fn open_main_window(scripted: bool, cx: &mut App) {
 
 fn main() {
     logging::init();
+    if let Err(err) = vaults::startup() { logging::fatal("无法打开所选文档库 / Could not open the selected vault", &err); }
     let scripted = std::env::var_os("FDL_SCRIPT").is_some();
     // No single-instance guard: copies may share a library (builds tested
     // side by side). `Store` rereads an index another copy rewrote before
@@ -121,7 +124,7 @@ fn main() {
         changelog::startup(existed);
         shortcuts::init(cx);
         match shared_store::SharedStore::open() {
-            Ok(s) => cx.set_global(s),
+            Ok(s) => { cx.set_global(s); if let Err(e) = vaults::remember(&root) { logging::write(&format!("recent vaults: {e}")); } },
             Err(err) => logging::fatal("无法打开文档库 / Could not open the library", &err),
         }
         let quick_enabled = !scripted;

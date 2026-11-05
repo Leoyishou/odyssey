@@ -20,3 +20,9 @@
 *.pem
 /assets/icons/LICENSE-nucleo
 /.github/workflows/
+
+/publish/
+
+*.p12
+
+*.pfx
