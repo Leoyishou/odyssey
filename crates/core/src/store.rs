@@ -272,21 +272,38 @@ fn save_json<T: Serialize>(path: &std::path::Path, v: &T) -> Result<()> {
 
 /// Image path for an image block source (only local files are displayed).
 pub fn image_path(src: &str) -> Option<PathBuf> {
+    asset_path_at(&Store::root_dir(), src)
+}
+
+/// Recovery keeps XML byte-identical. Map old absolute asset roots to this
+/// library, so a moved/copied vault never needs to read the original assets.
+pub fn asset_path_at(root: &std::path::Path, src: &str) -> Option<PathBuf> {
     let p = PathBuf::from(src.strip_prefix("file://").unwrap_or(src));
     if p.is_absolute() {
+        if let Ok(bytes) = std::fs::read(root.join(".odyssey-relocations.json"))
+            && let Ok(origins) = serde_json::from_slice::<Vec<PathBuf>>(&bytes)
+        {
+            for origin in origins {
+                if let Ok(relative) = p.strip_prefix(origin)
+                    && relative.starts_with("assets")
+                    && relative.components().all(|c| matches!(c, std::path::Component::Normal(_)))
+                { return Some(root.join(relative)); }
+            }
+        }
         return Some(p);
     }
     // Relative to the library (`assets/…`); not a URI or a cloud token.
-    (!src.is_empty() && !src.contains(':') && src.contains('/')).then(|| Store::root_dir().join(p))
+    (!src.is_empty() && !src.contains(':') && src.contains('/')).then(|| root.join(p))
 }
 
 impl Store {
-    /// `QUIET_MD_HOME`, else a folder of
-    /// its own in the user's Documents, where they can see and back it up.
+    /// Explicit roots win; the default lives in the app's own data directory.
+    /// Never assume Documents/Odyssey is free: case-insensitive volumes may
+    /// resolve it to an existing Documents/odyssey Obsidian vault.
     pub fn root_dir() -> PathBuf {
         std::env::var_os("ODYSSEY_HOME").or_else(|| std::env::var_os("QUIET_MD_HOME"))
             .map(PathBuf::from)
-            .unwrap_or_else(|| dirs::document_dir().or_else(|| dirs::home_dir().map(|h| h.join("Documents"))).unwrap_or_else(|| PathBuf::from(".")).join("Odyssey"))
+            .unwrap_or_else(|| dirs::data_local_dir().or_else(|| dirs::home_dir().map(|h| h.join(".local/share"))).unwrap_or_else(|| PathBuf::from(".")).join("Odyssey").join("Vaults").join("Default"))
     }
 
     /// Where pasted / inserted images are copied to.

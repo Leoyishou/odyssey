@@ -42,7 +42,7 @@ mod tree;
 mod ui;
 mod update;
 mod vaults;
-pub const BUILD: &str = "5";
+pub const BUILD: &str = "6";
 
 use fdl_core::{docxml, lang, markdown, model, palette, paste, store, time};
 

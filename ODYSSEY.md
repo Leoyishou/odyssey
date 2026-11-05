@@ -11,7 +11,7 @@
 - 文档引用悬浮显示摘要，可打开原文。
 - 别名保存在 cite 元素的可选 alias 属性中；无别名的旧格式保持原样。
 
-数据默认在 `~/Documents/Odyssey`。`ODYSSEY_HOME` 优先，其次兼容开发 harness 的 `QUIET_MD_HOME`。不要把这些变量指向真实 Quiet.md 库进行开发验证。
+build6 新默认库在 `~/Library/Application Support/Odyssey/Vaults/Default`，兼容保留原位的旧纯 XML 库；混合 Markdown 库拒绝写入。`ODYSSEY_HOME` 优先，其次兼容开发 harness 的 `QUIET_MD_HOME`。不要把这些变量指向真实 Quiet.md 库进行开发验证。
 
 尚未完成完整验收清单。文档级别名管理、稳定块锚点、标签/分屏/历史、未链接提及、嵌入、关系图等仍待开发；当前版本不能宣称完整 Obsidian 体验。已有反链按文档块序号定位；永久块引用尚未实现。
 

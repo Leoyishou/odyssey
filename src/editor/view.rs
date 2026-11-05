@@ -26,6 +26,7 @@ pub enum EditorEvent {
     Search(String),
     /// 展开目录 / 收起目录, remembered per document.
     Catalogue(bool),
+    AuxiliaryChanged,
     /// A 子页面列表 item or an @文档 link was clicked.
     OpenDoc(String),
     OpenPending(String, String),
@@ -2658,3 +2659,19 @@ fn guard<A: Action, F: Fn(&mut Editor, &A, &mut Window, &mut Context<Editor>) + 
 }
 
 impl Editor { pub(crate) fn refresh_theme(&mut self) { self.items_key = None; self.menu = None; } }
+
+impl Editor {
+    pub(crate) fn auxiliary_visible(&self) -> bool {
+        self.auxiliary_open && (f32::from(self.auxiliary_bounds.get().size.width) >= self.auxiliary_width + 400. || self.auxiliary_forced)
+    }
+    pub(crate) fn auxiliary_reserved_width(&self) -> f32 {
+        if self.auxiliary_open && f32::from(self.auxiliary_bounds.get().size.width) >= self.auxiliary_width + 400. { self.auxiliary_width } else { 0. }
+    }
+    pub(crate) fn toggle_auxiliary(&mut self, cx: &mut Context<Self>) {
+        let visible = self.auxiliary_visible();
+        self.auxiliary_open = !visible;
+        self.auxiliary_forced = !visible;
+        crate::settings::save_auxiliary(self.auxiliary_open, self.auxiliary_width);
+        cx.emit(EditorEvent::AuxiliaryChanged); cx.notify();
+    }
+}

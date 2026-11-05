@@ -10,7 +10,7 @@ use crate::settings::display_title;
 use crate::store::Entry;
 use crate::shared_store::SharedStore;
 use crate::theme::{self, Theme, craft};
-use crate::ui::{TipExt, TipSide, TitleBarExt, ToastKind, icon, ui_text};
+use crate::ui::{TipExt, TitleBarExt, ToastKind, icon, ui_text};
 use gpui::{prelude::FluentBuilder, *};
 use std::cell::{Cell, RefCell};
 use std::collections::{HashMap, HashSet};
@@ -202,6 +202,8 @@ pub struct Rename {
 
 pub struct Workspace {
     pub quick_note: bool,
+    pub vault_import: Option<std::sync::Arc<fdl_core::vault_import::Plan>>,
+    pub vault_import_busy: bool,
     pub shortcut_recording: Option<String>,
     pub shortcut_strokes: Vec<String>,
     /// The failed change: (action, message); an empty action is page-wide.
@@ -379,6 +381,8 @@ impl Workspace {
         let sidebar_width = store.settings().sidebar_width.unwrap_or(theme::SIDEBAR_WIDTH);
         let mut ws = Workspace {
             quick_note: quick,
+            vault_import: None,
+            vault_import_busy: false,
             shortcut_recording: None,
             shortcut_strokes: vec![],
             shortcut_error: None,
@@ -448,7 +452,10 @@ impl Workspace {
             ws.show_toast_kind(ToastKind::Error, &msg, cx);
             ws.status = SaveStatus::Failed(msg);
         }
-        if let Some(notice) = crate::vaults::STARTUP_NOTICE.get() { ws.show_toast_kind(ToastKind::Error, notice, cx); }
+        if let Some(notice) = crate::vaults::STARTUP_NOTICE.get() {
+            ws.settings_page = crate::settings::Page::Library; ws.show_view(View::Settings, cx);
+            ws.show_toast_kind(ToastKind::Error, notice, cx);
+        }
         ws
     }
 
@@ -546,6 +553,7 @@ impl Workspace {
                     this.duplicate_doc(&id, window, cx);
                 }
             }
+            EditorEvent::AuxiliaryChanged => cx.notify(),
             EditorEvent::Catalogue(pinned) => {
                 if let Some(id) = this.current.clone() {
                     if let Some(e) = this.entries.iter_mut().find(|e| e.id == id) {
@@ -1115,6 +1123,14 @@ impl Workspace {
             crumbs.push(sep());
         }
         let record_more = self.more_btn_bounds.clone();
+        let auxiliary_open = self.editor.as_ref().is_some_and(|ed| ed.read(cx).auxiliary_visible());
+        let auxiliary_reserved = self.editor.as_ref().map_or(0., |ed| ed.read(cx).auxiliary_reserved_width());
+        let more = self.current.is_some().then(|| seg("doc-more", "ellipsis")
+            .relative().when(self.doc_menu, |d| d.bg(Theme::fill_hover()))
+            .when(!self.doc_menu, |d| d.tip(crate::settings::tr("文档菜单", "Document menu"), None))
+            .child(canvas(move |b, _, _| record_more.set(Some(b)), |_, _, _, _| {}).absolute().inset_0())
+            .on_click(cx.listener(|w, _, _, cx| { w.doc_menu = !w.doc_menu; w.doc_sub = None; cx.notify(); })));
+
         div()
             .id("top-bar").relative()
             .h(px(HEADER_H))
@@ -1192,37 +1208,15 @@ impl Workspace {
                     )),
             )
             .child(div().flex_1().min_w(px(16.)))
-            .child(
-                div().gap(px(4.))
-                    .h(px(HEADER_ACTIONS_H)).flex_none()
-                    .flex()
-                    .items_center()
-                    .when(self.current.is_some(), |d| {
-                        d.child(
-                            // No tooltip while its dropdown is open; the menu hangs
-                            // from this button's right edge.
-                            seg("doc-more", "ellipsis")
-                                .relative()
-                                .when(self.doc_menu, |d| d.bg(Theme::fill_hover()))
-                                .when(!self.doc_menu, |d| d.tip(crate::settings::tr("更多", "More"), None))
-                                .child(canvas(move |b, _, _| record_more.set(Some(b)), |_, _, _, _| {}).absolute().inset_0())
-                                .on_click(cx.listener(|w, _, _, cx| {
-                                    w.doc_menu = !w.doc_menu;
-                                    w.doc_sub = None;
-                                    cx.notify();
-                                })),
-                        )
-                    })
-                    .child(
-                        seg("doc-search", "search")
-                            .tip_label(crate::shortcuts::keys(crate::settings::text("搜索(⌘ + J)")).into(), TipSide::Below)
-                            .on_click(cx.listener(|_, _, window, cx| window.dispatch_action(Box::new(FocusSearch), cx))),
-                    )
-                    .child(
-                        // Straight to a new document: no 新建 menu, as 导入 is rare.
-                        seg("doc-new", "plus").tip(crate::settings::tr("新建文档", "New document"), None).on_click(cx.listener(|w, _, window, cx| w.new_doc(window, cx))),
-                    ).into_any_element()
-            )
+            .children(more)
+            .child(div().flex_none().w(px((auxiliary_reserved - 32.).max(8.))))
+            .child(seg("toggle-right-sidebar", if auxiliary_open { "panel-right-close" } else { "panel-right-open" })
+                .when(auxiliary_open, |d| d.bg(Theme::fill_hover()))
+                .tip(crate::settings::tr(if auxiliary_open { "收起右侧栏" } else { "展开右侧栏" }, if auxiliary_open { "Hide right sidebar" } else { "Show right sidebar" }), None)
+                .on_click(cx.listener(|w, _, _, cx| {
+                    if let Some(ed) = &w.editor { ed.update(cx, |ed, cx| ed.toggle_auxiliary(cx)); }
+                    cx.notify();
+                })))
     }
 }
 
@@ -1242,6 +1236,7 @@ impl Render for Workspace {
         let doc_menu = self.render_doc_menu(window, cx);
         let doc_info = self.render_doc_info(cx);
         let confirm = self.render_confirm(cx);
+        let vault_import = self.render_vault_import(cx);
         let trash_menu = self.render_trash_menu(cx);
         let home_menus = self.render_home_menus(cx);
         let theme_menu = self.render_theme_menu(cx);
@@ -1348,6 +1343,9 @@ impl Render for Workspace {
             // Esc leaves 批量操作 (closing its menu or confirmation first), even from the editor.
             .capture_key_down(cx.listener(|w, ev: &KeyDownEvent, _, cx| {
                 if w.record_shortcut(ev, cx) { return; }
+                if ev.keystroke.key == "escape" && w.vault_import.is_some() && w.confirm.is_none() && !w.vault_import_busy {
+                    w.vault_import = None; cx.stop_propagation(); cx.notify(); return;
+                }
                 // Esc cancels a confirmation dialog.
                 if ev.keystroke.key == "escape" && (w.confirm.is_some() || w.export_md.is_some()) {
                     w.confirm = None;
@@ -1385,6 +1383,7 @@ impl Render for Workspace {
             .children(home_menus)
             .children(theme_menu)
             .children(confirm)
+            .children(vault_import)
             .children(move_dlg)
             .children(export_md)
             .children(search)

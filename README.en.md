@@ -6,7 +6,7 @@ Local-first knowledge editor combining Obsidian-style links and workspace naviga
 
 ## Current status
 
-This is an early development snapshot (local build 5), not a feature-complete release. The Cargo version remains the upstream 0.1.5; it does not imply an Odyssey public release with that version.
+This is an early development snapshot (local build 6), not a feature-complete release. The Cargo version remains the upstream 0.1.5; it does not imply an Odyssey public release with that version.
 
 Implemented and exercised on macOS Apple Silicon:
 
@@ -36,7 +36,7 @@ python3 scripts/package-odyssey.py
 
 `package-odyssey.py` creates `dist/Odyssey.app` with local ad-hoc signing. It does not install, publish, notarize, or stop applications. Public distribution needs its own signing/notarization process. Upstream release/upload scripts are disabled in this fork.
 
-The default library is `~/Documents/Odyssey`. `ODYSSEY_HOME` overrides it; `QUIET_MD_HOME` remains supported for the upstream test harness. Never point development tests at a real user's notes. Data uses DocxXML with stable document UUIDs; plain text is not a lossless export of every rich-text/table feature.
+The new macOS default library is `~/Library/Application Support/Odyssey/Vaults/Default`; existing pure Odyssey legacy vaults stay in place, while mixed Markdown folders are refused before writes. `ODYSSEY_HOME` overrides it; `QUIET_MD_HOME` remains supported for the upstream test harness. Never point development tests at a real user's notes. Data uses DocxXML with stable document UUIDs; plain text is not a lossless export of every rich-text/table feature.
 
 Release acceptance criteria: [docs/ACCEPTANCE.md](docs/ACCEPTANCE.md); release procedure: [docs/RELEASE-CHECKLIST.md](docs/RELEASE-CHECKLIST.md). Prior-build checks are historical, not proof for a new release.
 
@@ -53,3 +53,7 @@ MIT: see [LICENSE](LICENSE). Original quiet.md copyright is preserved. Third-par
 The Odyssey app icon is an original compass design. The upstream commercial shell icons have been replaced with ISC/MIT editor icons and original geometry. Quiet.md's name and application branding are not claimed by this fork.
 
 Upstream source checkpoint: `52afb284d7132dba1a1efb2944a456aaed9d44f3`. See [ODYSSEY.md](ODYSSEY.md) for the current fork notes and [docs/FORMAT.md](docs/FORMAT.md) for storage extensions.
+
+Build6 adds previewed copy import into a new separate vault, byte-for-byte original Markdown archives and conversion reports. Folder pages preserve hierarchy; resolvable note links and referenced local attachments are copied. This is not native Obsidian storage compatibility. YAML, plugins, note embeds and heading/block anchors are limited; see the Chinese README for details.
+
+Build6-r3 preserves native XML bytes/IDs, original metadata, assets, settings and trash during mixed-vault copy import. A native-only recovery option skips Markdown entirely. Old absolute asset paths resolve through a vault-local relocation map, allowing the source to move while copied images remain independent. Pure legacy default vault discovery is covered by tests; rejected legacy paths lead to persistent recovery guidance. Source files remain untouched.

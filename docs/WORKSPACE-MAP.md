@@ -1,4 +1,4 @@
-# Four-column migration map (build 5)
+# Four-column migration map (build 6)
 
 Visual constraint: retain quiet.md typography, themes, icon style, controls, radii and spacing. Obsidian informs workspace UX only, not a replacement skin. The explicitly requested plain inline link style remains.
 
@@ -6,7 +6,7 @@ The central document editor keeps its existing rich-text, block, slash-menu and 
 
 | Existing entry | Four-column destination | Existing behavior to retain |
 |---|---|---|
-| Document new buttons / Cmd-N | Tool rail | `NewDoc` → `Workspace::new_doc` → `save_before` → create/open/focus |
+| Document new buttons / Cmd-N | Left file navigation toolbar | `NewDoc` → `Workspace::new_doc` → `save_before` → create/open/focus |
 | Home entry | Left navigation | `GoHome` → `show_view(View::Home)`; keep the live editor and its autosave |
 | Search entry / Cmd-J | Left navigation | `FocusSearch` → `open_search` → `pick_search` → `open/try_open`; restore editor focus on close |
 | Document tree rows | Left navigation | `doc_row` → `open/try_open` with the existing save gate |
@@ -30,3 +30,9 @@ The central document editor keeps its existing rich-text, block, slash-menu and 
 ## Remaining regressions
 
 Build 5 exercised outline jump, source-cell navigation, body/table undo, both sidebar resizing/collapse and failed-save blocking. See RELEASE-CHECKLIST.md and ACCEPTANCE.md. Still to broaden: outline tracking and fold persistence; reference count/tab/collapse/more/hide/restore; source-cell navigation; footer caret placement; focus and editor shortcuts after sidebar interaction; failed-save behavior on document/vault changes; narrow window/resize; two libraries with identical document IDs; layout restore. Existing build-4 editor tests do not prove these new layout behaviors.
+
+## Build6 entry corrections
+
+- Right auxiliary visibility uses the fixed upper-right panel icon; no body text toggle or collapsed spacer. Width/open preferences and owning editor are reused.
+- Whole-vault search stays in left navigation; new document stays in the file navigation toolbar; document more-menu sits at the right edge of the document header, separately from the window-level sidebar toggle. It follows reserved sidebar width; floating narrow-window panels do not reserve header space. Keyboard actions and save gates are unchanged.
+- Import is a preview followed by an explicit new-directory copy; mixed Markdown/XML libraries are rejected before writes. No user source library is migrated in place.
