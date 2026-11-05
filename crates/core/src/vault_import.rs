@@ -33,6 +33,16 @@ fn read_bounded(path: &Path, max: u64) -> Result<Vec<u8>> {
     ensure!(fs::metadata(path)?.len() <= max, "文件过大，停止预览：{}", path.display());
     fs::read(path).with_context(|| format!("无法读取：{}", path.display()))
 }
+pub(crate) fn read_source_file(root: &Path, relative: &Path, max: u64) -> Result<Vec<u8>> {
+    let mut path = root.to_path_buf();
+    for part in relative.components() {
+        ensure!(matches!(part, Component::Normal(_)), "源文件路径无效：{}", relative.display());
+        path.push(part);
+        ensure!(!fs::symlink_metadata(&path)?.file_type().is_symlink(), "源文件路径包含符号链接，请重新预览：{}", relative.display());
+    }
+    ensure!(path.canonicalize()?.starts_with(root) && path.is_file(), "源文件越界或不是普通文件：{}", relative.display());
+    read_bounded(&path, max)
+}
 fn normalized(base: &Path, target: &str) -> Option<PathBuf> {
     let p = Path::new(target); if p.is_absolute() || target.contains(':') { return None; }
     let mut out = base.to_path_buf();
@@ -111,7 +121,7 @@ impl Plan {
         ensure!(!paths.is_empty() || plan.native.as_ref().is_some_and(|n| !n.docs.is_empty()), "未找到可导入的 Markdown 文件；没有创建目标库");
         let mut total = 0;
         for relative in paths {
-            let bytes = read_bounded(&plan.source.join(&relative), 16 * 1024 * 1024)?; total += bytes.len();
+            let bytes = read_source_file(&plan.source, &relative, 16 * 1024 * 1024)?; total += bytes.len();
             ensure!(total <= 256 * 1024 * 1024, "Markdown 总量超过本次预览上限，尚未创建目标库");
             std::str::from_utf8(&bytes).with_context(|| format!("文件不是 UTF-8，停止导入以免损坏文字：{}", relative.display()))?;
             let id = uuid::Uuid::new_v4().to_string();
@@ -176,7 +186,7 @@ impl Plan {
             ensure!(canonical.starts_with(&self.source), "附件越出源文件夹，停止导入：{}", relative.display());
             let metadata = fs::symlink_metadata(&path)?; ensure!(!metadata.file_type().is_symlink(), "附件是符号链接，停止导入：{}", relative.display());
             if !self.assets.contains_key(&relative) {
-                let bytes = read_bounded(&path, 64 * 1024 * 1024)?;
+                let bytes = read_source_file(&self.source, &relative, 64 * 1024 * 1024)?;
                 ensure!(self.assets.values().map(Vec::len).sum::<usize>() + bytes.len() <= 512 * 1024 * 1024, "附件总量超过本次预览上限");
                 self.assets.insert(relative.clone(), bytes);
             }
@@ -241,8 +251,14 @@ impl Plan {
         crate::vault::validate_new_parent(target)?;
         let parent = target.parent().ok_or_else(|| anyhow::anyhow!("请选择目标父目录"))?.canonicalize()?;
         ensure!(!parent.starts_with(&self.source), "目标必须位于源库之外；源库未修改");
-        for original in &self.originals { ensure!(fs::read(self.source.join(&original.relative))? == original.bytes, "源文件已变化，请重新预览：{}", original.relative.display()); }
-        for (relative, bytes) in &self.assets { ensure!(&fs::read(self.source.join(relative))? == bytes, "源附件已变化，请重新预览：{}", relative.display()); }
+        ensure!(self.source.canonicalize()? == self.source, "源目录位置已变化，请重新预览");
+        if self.report.mode != "native_only" {
+            let paths = discover(&self.source, self.native.is_some(), &mut Report::default())?;
+            ensure!(paths == self.originals.iter().map(|o| o.relative.clone()).collect::<Vec<_>>(), "Markdown 文件列表已变化，请重新预览");
+        }
+        ensure!(self.source.join("format.json").try_exists()? == self.native.is_some(), "源库格式已变化，请重新预览");
+        for original in &self.originals { ensure!(read_source_file(&self.source, &original.relative, 16 * 1024 * 1024)? == original.bytes, "源文件已变化，请重新预览：{}", original.relative.display()); }
+        for (relative, bytes) in &self.assets { ensure!(&read_source_file(&self.source, relative, 64 * 1024 * 1024)? == bytes, "源附件已变化，请重新预览：{}", relative.display()); }
         if let Some(native) = &self.native {
             native.verify_source(&self.source)?;
             ensure!(self.notes.iter().filter(|n| !n.native).all(|n| !native.has_id(&n.id)) && self.folders.values().all(|id| !native.has_id(id)), "新旧文档 ID 冲突，请重新预览");
@@ -336,6 +352,69 @@ mod tests {
         assert_eq!(plan.report.resolved_links, 0); assert_eq!(plan.report.warnings.len(), 4);
         let start = plan.notes.iter().find(|n| n.title == "Start").unwrap();
         assert!(docxml::serialize(&start.doc).contains("[[Guide]]"));
+    }
+    #[test]
+    fn aliases_code_and_multilevel_hierarchy_survive_save_and_reopen() {
+        let t = Temp::new();
+        t.put("src/Projects/Deep/Start.md", b"[[../../Reference/Design|body alias]]\n\n| Link | Code |\n| --- | --- |\n| [[../../Reference/Design|cell alias]] | `[[../../Reference/Design]]` |\n\n`[[../../Reference/Design|literal alias]]` and `[literal](../../Reference/Design.md)`\n\n```text\n[[../../Reference/Design]]\n[literal](../../Reference/Design.md)\n```\n");
+        t.put("src/Reference/Design.md", b"Target"); t.put("src/.obsidian/config", b"private");
+        let before = snapshot(&t.0.join("src")); let plan = Plan::scan(&t.0.join("src")).unwrap();
+        assert_eq!(plan.report.resolved_links, 2); assert!(plan.report.warnings.is_empty());
+        let target = plan.write_new(&t.0.join("dest")).unwrap();
+        let id = &plan.report.paths["Projects/Deep/Start.md"]; let reference = &plan.report.paths["Reference/Design.md"];
+        {
+            let mut store = Store::open_at(target.clone()).unwrap(); let doc = store.load(id).unwrap(); store.save(id, &doc).unwrap();
+        }
+        let mut store = Store::open_at(target).unwrap(); let doc = store.load(id).unwrap(); let mut links = vec![];
+        doc.for_each_block(|b| { for run in &b.text.runs { if let Some(link) = run.marks.inline.as_ref().and_then(Inline::doc_link) { links.push((link.id.clone(), link.alias.clone())); } } });
+        assert_eq!(links, vec![(reference.clone(), Some("body alias".into())), (reference.clone(), Some("cell alias".into()))]);
+        let table = doc.blocks.iter().find_map(|b| if let BlockKind::Table(t) = &b.kind { Some(t) } else { None }).unwrap();
+        assert!(table.rows.iter().flatten().flat_map(|c| &c.blocks).any(|b| b.text.runs.iter().any(|r| r.marks.inline.as_ref().and_then(Inline::doc_link).is_some_and(|l| l.alias.as_deref() == Some("cell alias")))));
+        let xml = docxml::serialize(&doc); assert!(xml.contains("[[../../Reference/Design|literal alias]]")); assert!(xml.contains("[literal](../../Reference/Design.md)"));
+        let entries = store.list(); let entry = entries.iter().find(|e| &e.id == id).unwrap();
+        assert_eq!(entry.meta.parent.as_ref(), Some(&plan.folders[Path::new("Projects/Deep")]));
+        let deep = entries.iter().find(|e| e.id == plan.folders[Path::new("Projects/Deep")]).unwrap();
+        assert_eq!(deep.meta.parent.as_ref(), Some(&plan.folders[Path::new("Projects")]));
+        assert_eq!(snapshot(&t.0.join("src")), before);
+    }
+    #[test]
+    fn explicit_paths_disambiguate_duplicate_titles_and_decode_spaces() {
+        let t = Temp::new();
+        t.put("src/A/Start.md", b"[[Guide|local]] [[B/Guide|root path]] [[../B/Space%20Note|encoded]]");
+        t.put("src/A/Guide.md", b"A"); t.put("src/B/Guide.md", b"B"); t.put("src/B/Space Note.md", b"Space");
+        t.put("src/Start.md", b"[[Guide|ambiguous]]");
+        let plan = Plan::scan(&t.0.join("src")).unwrap(); assert_eq!(plan.report.resolved_links, 3); assert_eq!(plan.report.warnings.len(), 1);
+        let note = plan.notes.iter().find(|n| n.relative == Path::new("A/Start.md")).unwrap();
+        let links = note.doc.doc_links(); assert_eq!(links.len(), 3);
+        for (link, path) in links.iter().zip(["A/Guide.md", "B/Guide.md", "B/Space Note.md"]) { assert_eq!(link.target, plan.report.paths[path]); }
+        let unresolved = plan.notes.iter().find(|n| n.relative == Path::new("Start.md")).unwrap(); assert!(docxml::serialize(&unresolved.doc).contains("[[Guide|ambiguous]]"));
+    }
+    #[test]
+    fn added_notes_format_changes_and_changed_assets_invalidate_preview() {
+        let t = Temp::new(); t.put("src/Note.md", b"![[media/picture.png]]"); t.put("src/media/picture.png", b"before");
+        let plan = Plan::scan(&t.0.join("src")).unwrap();
+        t.put("src/New.md", b"new since preview"); assert!(plan.write_new(&t.0.join("added")).is_err()); assert!(!t.0.join("added").exists());
+        fs::remove_file(t.0.join("src/New.md")).unwrap();
+        t.put("src/format.json", b"{}"); assert!(plan.write_new(&t.0.join("format-changed")).is_err()); assert!(!t.0.join("format-changed").exists());
+        fs::remove_file(t.0.join("src/format.json")).unwrap();
+        t.put("src/media/picture.png", b"changed"); let before = snapshot(&t.0.join("src"));
+        assert!(plan.write_new(&t.0.join("asset-changed")).is_err()); assert!(!t.0.join("asset-changed").exists()); assert_eq!(snapshot(&t.0.join("src")), before);
+    }
+    #[cfg(unix)]
+    #[test]
+    fn attachment_parent_escape_and_symlink_components_never_get_copied() {
+        use std::os::unix::fs::symlink;
+        let t = Temp::new(); t.put("outside.png", b"private"); t.put("src/Note.md", b"![[../outside.png]]");
+        let plan = Plan::scan(&t.0.join("src")).unwrap(); assert_eq!(plan.report.attachments, 0); assert_eq!(plan.report.warnings.len(), 1);
+        assert!(docxml::serialize(&plan.notes[0].doc).contains("![[../outside.png]]"));
+        t.put("src/real/picture.png", b"inside"); symlink("real", t.0.join("src/media")).unwrap();
+        t.put("src/Note.md", b"![[media/picture.png]]"); assert!(Plan::scan(&t.0.join("src")).is_err());
+        fs::remove_file(t.0.join("src/media")).unwrap(); symlink("real/picture.png", t.0.join("src/picture.png")).unwrap();
+        t.put("src/Note.md", b"![[picture.png]]"); assert!(Plan::scan(&t.0.join("src")).is_err());
+        fs::remove_file(t.0.join("src/picture.png")).unwrap(); t.put("src/picture.png", b"inside");
+        let plan = Plan::scan(&t.0.join("src")).unwrap(); fs::remove_file(t.0.join("src/picture.png")).unwrap(); symlink("real/picture.png", t.0.join("src/picture.png")).unwrap();
+        assert!(plan.write_new(&t.0.join("changed-link")).is_err()); assert!(!t.0.join("changed-link").exists());
+        assert_eq!(fs::read(t.0.join("outside.png")).unwrap(), b"private");
     }
     #[test]
     fn source_changes_and_existing_or_nested_targets_do_not_publish() {

@@ -103,7 +103,7 @@ impl Snapshot {
     pub fn has_id(&self, id: &str) -> bool { self.index.contains_key(id) || self.docs.iter().any(|(i, _)| i == id) }
     pub fn verify_source(&self, root: &Path) -> Result<()> {
         ensure!(paths(root)? == self.files.keys().cloned().collect::<Vec<_>>(), "原生文件列表已变化，请重新预览");
-        for (rel, bytes) in &self.files { ensure!(fs::read(root.join(rel))? == *bytes, "原生文件已变化，请重新预览：{}", rel.display()); }
+        for (rel, bytes) in &self.files { ensure!(crate::vault_import::read_source_file(root, rel, 64 * 1024 * 1024)? == *bytes, "原生文件已变化，请重新预览：{}", rel.display()); }
         Ok(())
     }
     pub fn write_to(&self, target: &Path) -> Result<()> {
