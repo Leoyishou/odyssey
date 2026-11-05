@@ -54,7 +54,17 @@ pub fn startup() -> anyhow::Result<()> {
     let env_root = std::env::var_os("ODYSSEY_HOME").or_else(|| std::env::var_os("QUIET_MD_HOME"));
     let strict = explicit.is_some();
     let requested = strict || env_root.is_some();
-    let selected = explicit.or_else(|| env_root.clone().map(PathBuf::from)).or_else(|| read_at(&state_dir()).last);
+    let recent = read_at(&state_dir()).last;
+    let legacy = if explicit.is_none() && env_root.is_none() && recent.is_none() {
+        let old = dirs::document_dir().map(|p| p.join("Odyssey"));
+        old.and_then(|p| if p.exists() {
+            match fdl_core::vault::inspect(&p) {
+                Ok(info) => Some(info.path),
+                Err(e) => { let _ = STARTUP_NOTICE.set(format!("原默认位置未作为库打开：{e}。新默认库使用 Odyssey 应用数据目录；没有搬迁或修改原文件。")); None },
+            }
+        } else { None })
+    } else { None };
+    let selected = explicit.or_else(|| env_root.clone().map(PathBuf::from)).or(recent).or(legacy);
     if let Some(path) = selected {
         if !strict && env_root.is_some() { validate_initial_root(&path)?; if !path.join("format.json").exists() { return Ok(()); } }
         let info = match fdl_core::vault::inspect(&path) {
@@ -72,8 +82,11 @@ pub fn startup() -> anyhow::Result<()> {
 }
 
 fn validate_initial_root(path: &Path) -> anyhow::Result<()> {
-    if !path.try_exists()? { return Ok(()); }
-    if path.is_dir() && fs::read_dir(path)?.next().is_none() { return Ok(()); }
+    if !path.try_exists()? { return fdl_core::vault::validate_new_parent(path); }
+    if path.is_dir() && fs::read_dir(path)?.next().is_none() {
+        anyhow::ensure!(!fs::symlink_metadata(path)?.file_type().is_symlink(), "空目录是符号链接，未初始化文档库：{}", path.display());
+        return fdl_core::vault::validate_new_parent(path);
+    }
     fdl_core::vault::inspect(path).map(|_| ())
 }
 
@@ -132,6 +145,69 @@ impl Workspace {
     }
 }
 
+
+impl Workspace {
+    pub(crate) fn preview_vault_import(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        if self.vault_import_busy { return; }
+        let pick = pick_folder(false, cx);
+        cx.spawn_in(window, async move |this, cx| {
+            let Some(source) = pick.await else { return };
+            let _ = this.update(cx, |w, cx| { w.vault_import_busy = true; cx.notify(); });
+            let result = cx.background_executor().spawn(async move { fdl_core::vault_import::Plan::scan(&source) }).await;
+            let _ = this.update(cx, |w, cx| {
+                w.vault_import_busy = false;
+                match result {
+                    Ok(plan) => w.vault_import = Some(std::sync::Arc::new(plan)),
+                    Err(e) => w.show_toast_kind(ToastKind::Error, &e.to_string(), cx),
+                }
+                cx.notify();
+            });
+        }).detach();
+    }
+
+    pub(crate) fn confirm_vault_import(&mut self, window: &mut Window, cx: &mut Context<Self>) {
+        if self.vault_import_busy { return; }
+        if !self.save_before(cx, |w, window, cx| w.confirm_vault_import(window, cx)) { return; }
+        let Some(plan) = self.vault_import.clone() else { return };
+        let pick = pick_folder(true, cx);
+        cx.spawn_in(window, async move |this, cx| {
+            let Some(target) = pick.await else { return };
+            let _ = this.update(cx, |w, cx| { w.vault_import_busy = true; cx.notify(); });
+            let result = cx.background_executor().spawn(async move { plan.write_new(&target) }).await;
+            let _ = this.update_in(cx, |w, window, cx| {
+                w.vault_import_busy = false;
+                match result {
+                    Ok(path) => { w.vault_import = None; w.open_vault(path, false, window, cx); },
+                    Err(e) => w.show_toast_kind(ToastKind::Error, &e.to_string(), cx),
+                }
+                cx.notify();
+            });
+        }).detach();
+    }
+
+    pub(crate) fn render_vault_import(&self, cx: &mut Context<Self>) -> Option<AnyElement> {
+        if self.confirm.is_some() { return None; }
+        let plan = self.vault_import.as_ref()?;
+        let report = &plan.report; let busy = self.vault_import_busy;
+        let summary = format!("{} Markdown · {} {} · {} {} · {} {}", report.notes,
+            report.folders, tr("层级目录页", "folder pages"), report.resolved_links, tr("已解析双链", "resolved links"), report.attachments, tr("本地附件", "local attachments"));
+        let body = crate::ui::dialog("vault-import-dialog").w(px(620.)).max_w_full().max_h_full().overflow_y_scroll().p(px(24.)).flex().flex_col().gap(px(12.))
+            .on_mouse_down(MouseButton::Left, |_, _, cx| cx.stop_propagation())
+            .child(div().text_size(px(16.)).font_weight(FontWeight::SEMIBOLD).child(tr("复制导入预览", "Copy import preview")))
+            .child(div().text_size(px(12.)).text_color(crate::theme::Theme::text_caption()).child(plan.source.display().to_string()))
+            .child(div().text_size(px(14.)).child(summary))
+            .child(div().text_size(px(13.)).child(tr("源目录不会修改。原始 Markdown 逐字节保存在新库的 .odyssey-import/source，转换报告在 .odyssey-import/report.json。文件夹以目录页保留层级。", "The source is unchanged. Original Markdown is archived byte-for-byte under .odyssey-import/source, with report.json beside it. Folder pages preserve the hierarchy.")))
+            .child(div().text_size(px(13.)).child(tr("只转换基础 Markdown、可解析的文档链接及本地附件。属性、插件、文档嵌入和标题/块锚点不保证保真；原文保留供核对。", "Only basic Markdown, resolvable document links and local assets are converted. Properties, plugins, note embeds and heading/block anchors are not guaranteed; originals are retained for comparison.")))
+            .child(div().id("vault-import-warnings").max_h(px(240.)).overflow_y_scroll().flex().flex_col().gap(px(6.))
+                .children(report.warnings.iter().take(200).map(|w| div().text_size(px(12.)).text_color(crate::theme::Theme::text_caption()).child(format!("{}: {}", w.file, w.detail)))))
+            .child(div().text_size(px(12.)).child(format!("{} {}", report.warnings.len(), tr("条转换提示（此处最多显示200条，完整报告将写入新库）", "conversion notices (up to 200 shown; full report saved in the new vault)"))))
+            .child(div().flex().justify_end().gap(px(12.))
+                .child(crate::ui::secondary_button("vault-import-cancel", tr("取消", "Cancel")).on_click(cx.listener(|w, _, _, cx| { if !w.vault_import_busy { w.vault_import = None; cx.notify(); } })))
+                .child(crate::ui::primary_button("vault-import-confirm", if busy { tr("正在复制…", "Copying…") } else { tr("选择新目录并复制导入", "Choose new location and copy") }).on_click(cx.listener(|w, _, window, cx| w.confirm_vault_import(window, cx)))));
+        Some(deferred(div().absolute().inset_0().flex().items_center().justify_center().p(px(16.)).bg(crate::ui::scrim()).child(body)).with_priority(5).into_any_element())
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::{Registry, edit_registry, read_at};
@@ -147,6 +223,18 @@ mod tests {
         std::fs::write(dir.join("format.json"), "{\"format\":999}").unwrap();
         assert!(super::validate_initial_root(&dir).is_err());
         assert!(!dir.join("docs").exists());
+        std::fs::remove_dir_all(dir).unwrap();
+    }
+
+    #[cfg(unix)]
+    #[test]
+    fn empty_root_symlink_is_not_initialized() {
+        let dir = std::env::temp_dir().join(format!("odyssey-empty-alias-{}", uuid::Uuid::new_v4()));
+        std::fs::create_dir(&dir).unwrap();
+        let target = dir.join("original"); std::fs::create_dir(&target).unwrap();
+        let alias = dir.join("alias"); std::os::unix::fs::symlink(&target, &alias).unwrap();
+        assert!(super::validate_initial_root(&alias).is_err());
+        assert_eq!(std::fs::read_dir(&target).unwrap().count(), 0);
         std::fs::remove_dir_all(dir).unwrap();
     }
 

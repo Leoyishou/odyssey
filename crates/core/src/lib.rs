@@ -13,3 +13,4 @@ pub mod paste;
 pub mod store;
 pub mod time;
 pub mod vault;
+pub mod vault_import;

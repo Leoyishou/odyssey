@@ -9,16 +9,16 @@ use gpui::{div, px, AnyElement, ClickEvent, FontWeight, Window, App};
 use crate::theme::Theme;
 use crate::ui::icon;
 
-const VERSION: &str = "odyssey-build-5";
+const VERSION: &str = "odyssey-build-6";
 const RADIUS: f32 = 12.;
 
 /// Each version's notes: (version, [(中文, English)]). Only the running
 /// version's are shown; a version without notes shows nothing.
 const NOTES: &[(&str, &[(&str, &str)])] = &[
     (VERSION, &[
-        ("双括号文档搜索与显示别名", "Document search with double brackets and display aliases"),
-        ("正文与表格中的纯文字链接、悬浮预览", "Plain text document links and previews in paragraphs and tables"),
-        ("本地独立文档库，更多工作区能力仍在开发", "Independent local library; more workspace features are in development"),
+        ("混合文档库安全检测，默认库避免 Documents 名称碰撞", "Mixed-vault protection and a dedicated default library location"),
+        ("Markdown 复制导入预览，原文归档与转换报告", "Preview Markdown copy import, with original files and a conversion report"),
+        ("右上角辅助栏开关，搜索与新建入口归位", "Right sidebar toggle in the header; search and new document entries relocated"),
     ]),
 ];
 

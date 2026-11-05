@@ -98,7 +98,6 @@ impl Workspace {
             .tip(label, None).child(icon(name, 18., Theme::icon()));
         div().w(px(RAIL_W)).flex_none().h_full().pt(px(crate::app::HEADER_H + 8.)).pb(px(10.))
             .flex().flex_col().items_center().gap(px(8.))
-            .child(tool("rail-new", "plus", crate::settings::tr("新建文档", "New document")).on_click(cx.listener(|w, _, window, cx| w.new_doc(window, cx))))
             .child(tool("rail-search", "search", crate::settings::tr("搜索", "Search")).on_click(cx.listener(|w, _, window, cx| w.open_search(window, cx))))
             .child(tool("rail-sidebar", "panel-left-close", crate::settings::tr("显示/隐藏导航", "Toggle navigation")).on_click(cx.listener(|w, _, _, cx| { w.sidebar_open = !w.sidebar_open; cx.notify(); })))
             .child(div().flex_1())

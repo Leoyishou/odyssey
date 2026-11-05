@@ -188,3 +188,15 @@
 - 自动化：88 core + 50 app、指南往返与clippy通过；安装签名与实际安装包独立屏外启动通过。
 - 证据：`projects/odyssey/evidence/build5-gui/README.md`、`build5-process/result.json`、`build5-tests.log`、`build5-install.txt`。脚本UI开库只记请求收据；真实跨进程测试另在build5-process，不把两者混同。
 - 本版未验证真实系统IME、原生文件选择器、系统窗口材质。旧版勾选保留历史属性，不作为build5全部已复测。
+
+### build5 混合库缺陷重新打开
+
+真实反馈发现 Documents/Odyssey 与 Documents/odyssey 大小写别名碰撞，含format.json的混合XML/Markdown目录会被接受但md不显示。VAULT-08的历史纯Markdown测试不足，重新置为未通过；build6补充混合目录/大小写/符号链接/零写入，以及复制导入预览、原件归档和报告测试。用户源库不作开发写入或批量导入。
+
+### build6 修复回归（2026-11-06，本地候选包，未替换 build5）
+
+- VAULT-08 重新通过：有效标记的混合库在 UI 和显式启动均拒绝且源文件 SHA 不变；嵌套 Markdown、大小写别名、符号链接和空目录别名补测通过。新默认路径使用应用数据目录。
+- Markdown 复制导入：预览→确认独立新目录→生成 2 篇文档/1 层级页/3 链接/1 附件→真实新进程重开通过；源 Markdown 和归档逐字节一致，未解析内容明确报告。未导入用户真实库。
+- WORKSPACE-01/07 局部复测：右上图标、标题旁菜单、左侧入口、独立开合、窄窗、调宽重启，正文表格输入撤销及候选通过；整项未测部分不追加勾选。
+- 自动化：95 core + 51 app、2000 fuzz seeds、指南往返、clippy 通过。证据 projects/odyssey/evidence/build6-tests-final.log、build6-gui/README.md、build6-import-gui/result.json、reject-result.json。
+- 仍未验证原生选择器/真实 IME/大型库/全量主题，详见 source/docs/BUILD6-VALIDATION.md。当前安装及公开 Release 仍 build5；build6 包供独立验收。

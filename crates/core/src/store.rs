@@ -281,12 +281,13 @@ pub fn image_path(src: &str) -> Option<PathBuf> {
 }
 
 impl Store {
-    /// `QUIET_MD_HOME`, else a folder of
-    /// its own in the user's Documents, where they can see and back it up.
+    /// Explicit roots win; the default lives in the app's own data directory.
+    /// Never assume Documents/Odyssey is free: case-insensitive volumes may
+    /// resolve it to an existing Documents/odyssey Obsidian vault.
     pub fn root_dir() -> PathBuf {
         std::env::var_os("ODYSSEY_HOME").or_else(|| std::env::var_os("QUIET_MD_HOME"))
             .map(PathBuf::from)
-            .unwrap_or_else(|| dirs::document_dir().or_else(|| dirs::home_dir().map(|h| h.join("Documents"))).unwrap_or_else(|| PathBuf::from(".")).join("Odyssey"))
+            .unwrap_or_else(|| dirs::data_local_dir().or_else(|| dirs::home_dir().map(|h| h.join(".local/share"))).unwrap_or_else(|| PathBuf::from(".")).join("Odyssey").join("Vaults").join("Default"))
     }
 
     /// Where pasted / inserted images are copied to.

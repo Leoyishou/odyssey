@@ -689,6 +689,9 @@ impl Workspace {
                     button("vault-create", tr("新建", "Create")).on_click(cx.listener(|w, _, window, cx| w.pick_vault(true, window, cx)))).into_any_element(),
                 row(tr("打开已有文档库", "Open existing vault"), Some(tr("仅打开 Odyssey 库；不修改 Markdown / Obsidian 源库", "Odyssey vaults only; Markdown / Obsidian folders are left untouched").into()),
                     button("vault-open", tr("打开", "Open")).on_click(cx.listener(|w, _, window, cx| w.pick_vault(false, window, cx)))).into_any_element(),
+                row(tr("复制导入 Markdown / Obsidian", "Copy Markdown / Obsidian vault"), Some(tr("先只读预览；复制到独立新库，保留源文件和转换报告", "Preview first; copy into a separate new vault with originals and a conversion report").into()),
+                    button("vault-import-preview", if self.vault_import_busy { tr("正在扫描…", "Scanning…") } else { tr("选择源目录并预览", "Choose source and preview") })
+                        .on_click(cx.listener(|w, _, window, cx| w.preview_vault_import(window, cx)))).into_any_element(),
                 row(tr("回收站", "Trash"), Some(if english() { format!("Deleted documents are kept for {} days.", crate::store::TRASH_DAYS) } else { format!("删除的文档保留 {} 天后自动清除。", crate::store::TRASH_DAYS) }.into()),
                     button("open-trash", tr("打开", "Open")).on_click(cx.listener(|w, _, _, cx| w.show_view(View::Trash, cx)))).into_any_element(),
             ]))

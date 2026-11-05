@@ -12,7 +12,7 @@ for size in (16,32,128,256,512):
   dest=icons/f'icon_{size}x{size}{"@2x" if scale==2 else ""}.png'
   subprocess.run(['sips','-z',str(size*scale),str(size*scale),str(root/'assets/branding/app-icon.png'),'--out',str(dest)],check=True,stdout=subprocess.DEVNULL)
 subprocess.run(['iconutil','-c','icns',str(icons),'-o',str(res/'Odyssey.icns')],check=True)
-info={'CFBundleName':'Odyssey','CFBundleDisplayName':'Odyssey','CFBundleIdentifier':'app.odyssey.local','CFBundleExecutable':'odyssey','CFBundleIconFile':'Odyssey.icns','CFBundlePackageType':'APPL','CFBundleShortVersionString':'0.1.5','CFBundleVersion':'5','NSHighResolutionCapable':True,'LSMinimumSystemVersion':'13.0','NSDocumentsFolderUsageDescription':'Odyssey stores local notes in Documents/Odyssey.'}
+info={'CFBundleName':'Odyssey','CFBundleDisplayName':'Odyssey','CFBundleIdentifier':'app.odyssey.local','CFBundleExecutable':'odyssey','CFBundleIconFile':'Odyssey.icns','CFBundlePackageType':'APPL','CFBundleShortVersionString':'0.1.5','CFBundleVersion':'6','NSHighResolutionCapable':True,'LSMinimumSystemVersion':'13.0','NSDocumentsFolderUsageDescription':'Odyssey opens only the local note folders you select.'}
 (app/'Contents/Info.plist').write_bytes(plistlib.dumps(info))
 for f in ('LICENSE','THIRD_PARTY.md'):
  shutil.copy2(root/f,res/f)
